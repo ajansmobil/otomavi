@@ -21,8 +21,16 @@
 | Kurumsal / iç sayfa | `tp5jo4` | **`page-desing-5`** |
 | CTA şerit | `t1ct01` | `cta-1` |
 | Slider | `k4t90c` | `slider-text` |
+| İletişim harita | `bi4hta` | `map` — görsel `img/bi4hta/map.png` · `backgroundcolor: #ffffff` |
 
 **Kullanılmaz:** `t1pd01` / `page-desing-otomavi` (iç sayfa UX zayıf — Paket 29 ile değiştirildi).
+
+## Harita (map)
+
+- Dalga SVG fill = `desing.backgroundcolor` → **beyaz** (`#ffffff`); siyah dalga haritayı yutar
+- Varsayılan: `webmodules/body/map|map-2|map-3` `backgroundcolor: #ffffff`
+- Görsel: Sanayi Mah. (Şehitkamil) statik harita → `matrix/img/bi4hta/map.png`
+- Tıklanınca `externalUrl` Google Maps araması
 
 ## SSS / FAQ (KATI yasak)
 
