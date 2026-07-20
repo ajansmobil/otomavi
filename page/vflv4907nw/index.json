@@ -1,0 +1,32 @@
+{
+  "id": "vflv4907nw",
+  "path": "asinma-sensoru",
+  "name": {
+    "tr": "Aşınma Sensörü"
+  },
+  "status": "play",
+  "category": "omfren02",
+  "description": {
+    "tr": "Balata kalınlığını izleyen aşınma sensörü uyarı lambasını yakar; kablolu pad setlerinde sensör ayrı satılır, sol/sağ uzunluk aksa göre değişir."
+  },
+  "keyword": {
+    "tr": "balata aşınma sensörü, brake wear sensor, pad uyarı kablosu, fren sensörü, BMW aşınma"
+  },
+  "title": {
+    "tr": "Aşınma Sensörü | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Aşınma Sensörü</h2><p style=\"font-size: 16px;\">Aşınma sensörü balata bitmeden uyarı verir. Kopuk kablo sürekli lamba yakabilir.</p><p style=\"font-size: 16px;\">Oto Mavi ön/arka sensör uzunluklarını aks koduna göre ayırır.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "sensors",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

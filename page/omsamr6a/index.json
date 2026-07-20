@@ -1,0 +1,32 @@
+{
+  "id": "omsamr6a",
+  "path": "amortisor",
+  "name": {
+    "tr": "Amortisör"
+  },
+  "status": "play",
+  "category": "omsusp06",
+  "description": {
+    "tr": "Yağlı veya gazlı MacPherson damper gövdesi ön/arka aks tipine göre ayrılır; kaçak varsa çift değişim önerilir, sürüş yüksekliği korunur."
+  },
+  "keyword": {
+    "tr": "MacPherson damper gövdesi, gazlı shock absorber, ön arka aks damper, kaçak çift değişim, sürüş yüksekliği shock"
+  },
+  "title": {
+    "tr": "Amortisör | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Amortisör</h2><p style=\"font-size: 16px;\">Amortisör salınımı sönümleyerek lastik temasını korur. Oto Mavi ön/arka BMW amortisörlerinde gazlı seçenekler bulunur.</p><p style=\"font-size: 16px;\">Tek taraflı değişim dengesizlik yaratabilir; çift önerilir. Yay ve takoz durumu da kontrol edilmeli.</p><p style=\"font-size: 16px;\">Süspansiyon: 0544 717 18 28</p>"
+  },
+  "icon": "height",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "omickl1c",
+  "path": "kol-dayama",
+  "name": {
+    "tr": "Kol Dayama"
+  },
+  "status": "play",
+  "category": "omicdn11",
+  "description": {
+    "tr": "Orta konsolda depolama sunan armrest storage unit menteşe ve kapak derisiyle gelir; konsol tipine göre stoktan seçim yapılır."
+  },
+  "keyword": {
+    "tr": "armrest storage unit, orta konsol dayama, menteşeli dayama kapağı, deri konsol armrest, depolamalı kol dayama"
+  },
+  "title": {
+    "tr": "Kol Dayama | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Kol Dayama</h2><p style=\"font-size: 16px;\">Orta konsol kol dayama konfor ve küçük eşya deposu sağlar. Oto Mavi BMW kol dayama ünitelerinde menteşe ve kilit mekanizması kontrol edilir.</p><p style=\"font-size: 16px;\">Deri / kumaş kaplama model paketine göredir.</p><p style=\"font-size: 16px;\">Sipariş: 0544 717 18 28</p>"
+  },
+  "icon": "airline_seat_recline_extra",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

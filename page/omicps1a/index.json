@@ -1,0 +1,32 @@
+{
+  "id": "omicps1a",
+  "path": "paspas-seti",
+  "name": {
+    "tr": "Paspas Seti"
+  },
+  "status": "play",
+  "category": "omicdn11",
+  "description": {
+    "tr": "Kauçuk veya halı floor mat seti tünel ve pedalı örter; 4 parça zemin + bagaj örtüsü ayrı satılır, klips delikleri modele göredir."
+  },
+  "keyword": {
+    "tr": "kauçuk floor mat, halı paspas seti, 4 parça zemin örtü, bagaj örtü paspas, tünel pedal mat"
+  },
+  "title": {
+    "tr": "Paspas Seti | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Paspas Seti</h2><p style=\"font-size: 16px;\">Model kesimli paspas seti kabin halısını korur. Oto Mavi havuzlu ve tekstil BMW paspas seçenekleri sunar.</p><p style=\"font-size: 16px;\">Kaymaz taban ve klips uyumu kontrol edilir. Şasi / model yılı ile sipariş verin.</p><p style=\"font-size: 16px;\">İç donanım: 0544 717 18 28</p>"
+  },
+  "icon": "grid_on",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

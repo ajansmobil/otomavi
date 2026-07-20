@@ -1,0 +1,32 @@
+{
+  "id": "7ghzidgxaz",
+  "path": "isi-esanjoru",
+  "name": {
+    "tr": "Isı Eşanjörü"
+  },
+  "status": "play",
+  "category": "omklma07",
+  "description": {
+    "tr": "Kabin ısıtma radyatörü (ısı eşanjörü) sıcak suyu havaya aktarır; tıkanmış çekirdek üşüyen kabin ve ıslak halı bırakır, kutu içinde değişir."
+  },
+  "keyword": {
+    "tr": "ısı eşanjörü, heater core, kalorifer radyatörü, kabin ısıtıcı, BMW ısıtma"
+  },
+  "title": {
+    "tr": "Isı Eşanjörü | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Isı Eşanjörü</h2><p style=\"font-size: 16px;\">Isı eşanjörü tıkanınca kalorifer üflemesi soğuk kalır. Kaçak halıyı ıslatır.</p><p style=\"font-size: 16px;\">Oto Mavi çekirdek ölçülerini klima/kalorifer kutusuna göre verir.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "device_thermostat",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

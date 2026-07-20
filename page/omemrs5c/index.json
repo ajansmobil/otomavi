@@ -1,0 +1,32 @@
+{
+  "id": "omemrs5c",
+  "path": "mars-motoru",
+  "name": {
+    "tr": "Marş Motoru"
+  },
+  "status": "play",
+  "category": "omelek05",
+  "description": {
+    "tr": "Volana diş geçen marş ünitesinde bendix ve solenoid kW gücüne göre değişir; yavaş çevirme şikayetinde starter motor seçilir."
+  },
+  "keyword": {
+    "tr": "marş bendix solenoid, starter motor kW, volan dişli marş, yavaş çevirme starter, solenoid bobin ünitesi"
+  },
+  "title": {
+    "tr": "Marş Motoru | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Marş Motoru</h2><p style=\"font-size: 16px;\">Marş motoru soğukta yüksek tork ister; tıkırtı veya yavaş çevirme aşınma belirtisidir. Oto Mavi BMW marş motorlarında bendiks ve solenoit kalitesi önemlidir.</p><p style=\"font-size: 16px;\">Akü sağlıklı değilse önce şarj/akü kontrolü yapın.</p><p style=\"font-size: 16px;\">İletişim: 0544 717 18 28</p>"
+  },
+  "icon": "power",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

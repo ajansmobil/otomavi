@@ -1,0 +1,32 @@
+{
+  "id": "omfykt1a",
+  "path": "yakit-filtresi",
+  "name": {
+    "tr": "Yakıt Filtresi"
+  },
+  "status": "play",
+  "category": "omfltr01",
+  "description": {
+    "tr": "Yüksek basınç hattını koruyan yakıt süzgeci enjektör tıkanmasını azaltır; şasi numarasıyla OEM veya eşdeğer kod Oto Mavi deposunda seçilir."
+  },
+  "keyword": {
+    "tr": "yakıt süzgeci OEM, enjektör koruma elemanı, yüksek basınç hat filtresi, dizel fuel filter, E90 yakıt süzgeci"
+  },
+  "title": {
+    "tr": "Yakıt Filtresi | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Yakıt Filtresi</h2><p style=\"font-size: 16px;\">Enjektör ve yüksek basınç pompasını koruyan yakıt filtresi, BMW dizel ve benzin hatlarında kir tutma kapasitesiyle öne çıkar. Oto Mavi stokunda OEM ve eşdeğer seçenekler bulunur.</p><p style=\"font-size: 16px;\">Değişim aralığı yakıt kalitesine göre kısalabilir; tıkanma belirtisinde motor çekiş kaybı yaşanır. Şasi numaranızı iletin, doğru kodu birlikte seçelim.</p><p style=\"font-size: 16px;\">Sipariş: 0544 717 18 28 · info@otomavi.com — sepet yok, telefon/WhatsApp ile.</p>"
+  },
+  "icon": "filter_alt",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

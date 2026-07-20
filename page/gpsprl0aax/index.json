@@ -1,0 +1,32 @@
+{
+  "id": "gpsprl0aax",
+  "path": "cam-kolu",
+  "name": {
+    "tr": "Cam Kolu"
+  },
+  "status": "play",
+  "category": "omicdn11",
+  "description": {
+    "tr": "Manuel cam çevirme kolu veya elektrikli cam düğme paneli kapı kartına oturur; kırık klips boşluk yapar, sol/sağ ve ön/arka ayrı kodlanır."
+  },
+  "keyword": {
+    "tr": "cam kolu, window crank, cam düğmesi, kapı cam kolu, BMW cam açma"
+  },
+  "title": {
+    "tr": "Cam Kolu | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Cam Kolu</h2><p style=\"font-size: 16px;\">Manuel kol veya elektrik düğme paneli araç donanımına göre değişir. Klips kırığı sık görülür.</p><p style=\"font-size: 16px;\">Oto Mavi kapı tarafına göre doğru parçayı ayırır.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "window",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

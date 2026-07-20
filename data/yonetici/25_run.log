@@ -1,0 +1,16 @@
+# Paket 25 — WhatsApp sipariş dili (sepet değil)
+
+**Tarih:** 2026-07-20  
+**Amaç:** Oto Mavi’de Sepete Ekle / Teklif Al yerine **WhatsApp ile Sipariş**.
+
+## Güncellenen
+- `urun-liste-otomavi` / `urun-detay-otomavi` / `page-desing-otomavi` desing metinleri
+- `modules.json`: t1ulo01, t1udo01, t1pd01, t1ct01
+- `.cursorrules` + `webmodules/mantik/mantik.md`
+
+## CTA
+- Buton: **WhatsApp ile Sipariş**
+- wa.me metin: “…WhatsApp siparişi oluşturmak istiyorum…”
+
+## Render
+status=ok · warningCount=0 · `/tr/yakit-filtresi/` ve `/tr/filtreler/` doğrulandı (Teklif Al / Sepete yok)

@@ -1,0 +1,32 @@
+{
+  "id": "omfblt2b",
+  "path": "fren-balatasi",
+  "name": {
+    "tr": "Fren Balatası"
+  },
+  "status": "play",
+  "category": "omfren02",
+  "description": {
+    "tr": "Sessiz sürtünmeli seramik pad seti aşınma kablolu veya kablosuz gelir; aks tarafına göre paketlenir, rotor yüzeyiyle birlikte değerlendirilir."
+  },
+  "keyword": {
+    "tr": "seramik pad seti, aşınma kablolu balata, pedal hissi pad, brake pad kit F30, aks tarafı balata"
+  },
+  "title": {
+    "tr": "Fren Balatası | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Fren Balatası</h2><p style=\"font-size: 16px;\">Balata seti sürtünme malzemesi ve arka plaka kalitesiyle sessiz frenleme sağlar. Oto Mavi BMW balatalarında aşınma sensörü kablolu seçenekler vardır.</p><p style=\"font-size: 16px;\">Disk yüzeyi kontrol edilmeden sadece balata değişimi önerilmez. Set halinde sipariş verin.</p><p style=\"font-size: 16px;\">WhatsApp / 0544 717 18 28</p>"
+  },
+  "icon": "horizontal_rule",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

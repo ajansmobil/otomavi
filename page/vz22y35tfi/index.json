@@ -1,0 +1,32 @@
+{
+  "id": "vz22y35tfi",
+  "path": "park-sensoru",
+  "name": {
+    "tr": "Park Sensörü"
+  },
+  "status": "play",
+  "category": "upq7zjks3k",
+  "description": {
+    "tr": "Tampona gömülen ultrasonik park sensörü mesafe bipini üretir; boya kalınlığı ve frekans uyumu kritiktir, sol/sağ/merkez konumları ayrıdır."
+  },
+  "keyword": {
+    "tr": "park sensörü, PDC sensör, ultrasonik park, tampon sensörü, BMW park yardımı"
+  },
+  "title": {
+    "tr": "Park Sensörü | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Park Sensörü</h2><p style=\"font-size: 16px;\">Park sensörü sürekli öter veya hiç çalışmazsa konnektör nemi veya membran delinmesi sık sebeptir.</p><p style=\"font-size: 16px;\">Oto Mavi frekans ve renk halkasına göre sensör seçer.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "sensors",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "omeaku5a",
+  "path": "aku",
+  "name": {
+    "tr": "Akü"
+  },
+  "status": "play",
+  "category": "omelek05",
+  "description": {
+    "tr": "AGM veya EFB tip start-stop bataryada soğuk crank amperi ve kutup yerleşimi ah etiketine göre seçilir; kutup polaritesi kontrol edilir."
+  },
+  "keyword": {
+    "tr": "AGM start-stop batarya, EFB ah etiket, soğuk crank CCA, kutup yerleşimli akü, polarite kontrollü batarya"
+  },
+  "title": {
+    "tr": "Akü | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Akü</h2><p style=\"font-size: 16px;\">Start-stop sistemli BMW’lerde AGM / EFB akü tercih edilir. Oto Mavi Ah kapasitesi ve kutup yönüne göre akü önerir.</p><p style=\"font-size: 16px;\">Kayıt kodlama gerektiren modellerde atölye bilgilendirmesi yapılır. Eski akü boyutunu ölçün.</p><p style=\"font-size: 16px;\">Sipariş: 0544 717 18 28</p>"
+  },
+  "icon": "battery_full",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

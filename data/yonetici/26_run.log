@@ -1,0 +1,11 @@
+# Paket 26 — Buton kontrast (WhatsApp ile sor)
+
+**Sorun:** Sonuç panelinde lacivert metin (`resultcolor`) WA butonuna miras kalıyor; lacivert zemin + lacivert yazı okunmuyor.
+
+**Çözüm:**
+- `arac-parca-arama-otomavi` + `arac-parca-arama`: WA butonu `waBtnBg=#25D366` + `waBtnColor=#ffffff`; span/ikon ayrı beyaz
+- Arama butonu çocuklarına `btncolor` zorlandı
+- Liste/detay/page-desing/cta-1: WA/CTA çocuk renkleri beyaz
+- `modules.json` t1af01 tokens; `.cursorrules` kontrast notu
+
+**Render:** ok · filtreler `style.css` → `.b0000-wa { background:#25D366; color:#ffffff }`

@@ -1,0 +1,32 @@
+{
+  "id": "pir7d4kref",
+  "path": "atf",
+  "name": {
+    "tr": "ATF"
+  },
+  "status": "play",
+  "category": "omsivi09",
+  "description": {
+    "tr": "Otomatik şanzıman ATF yağı sürtünme ve soğutma sağlar; yanlış ATF vites savrulması yapar, değişimde filtre ve conta ile birlikte planlanır."
+  },
+  "keyword": {
+    "tr": "ATF, otomatik şanzıman yağı, transmission fluid, Dexron, BMW ATF"
+  },
+  "title": {
+    "tr": "ATF | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">ATF</h2><p style=\"font-size: 16px;\">ATF tipi kutu koduna göre değişir. Renk ve koku yağ durumu hakkında fikir verir ama tek başına yeterli değildir.</p><p style=\"font-size: 16px;\">Oto Mavi doğru spesifikasyonu şasiyle doğrular.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "opacity",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

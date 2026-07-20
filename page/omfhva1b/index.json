@@ -1,0 +1,32 @@
+{
+  "id": "omfhva1b",
+  "path": "hava-filtresi",
+  "name": {
+    "tr": "Hava Filtresi"
+  },
+  "status": "play",
+  "category": "omfltr01",
+  "description": {
+    "tr": "Emiş kutusundaki panel hava elemanı toz partikülünü tutarak yanmayı dengeler; N serisi motorlarda kuru tip süzgeç stokta ayrılır."
+  },
+  "keyword": {
+    "tr": "panel emiş elemanı, kuru tip hava süzgeci, motor intake filter, N47 hava elemanı, emiş kutusu paneli"
+  },
+  "title": {
+    "tr": "Hava Filtresi | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Hava Filtresi</h2><p style=\"font-size: 16px;\">Motor emiş yolunu toz ve polenden koruyan hava filtresi, yanma verimini doğrudan etkiler. Oto Mavi BMW hava filtrelerinde kağıt medya ve çerçeve kalitesi kontrol edilir.</p><p style=\"font-size: 16px;\">Tozlu bölgelerde daha sık değişim önerilir. Model yılı ve motor koduyla stok sorgulayın.</p><p style=\"font-size: 16px;\">Gaziantep Oto Mavi: 0544 717 18 28</p>"
+  },
+  "icon": "air",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

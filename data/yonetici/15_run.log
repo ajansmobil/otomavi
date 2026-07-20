@@ -1,0 +1,138 @@
+# Paket 15 — Geotech tam ürün kataloğu — RUN LOG
+
+**Tarih:** 2026-07-20  
+**Proje:** otomavi / Oto Mavi  
+**cwd:** D:\projeler\otomavi\Web\matrix  
+**Referans:** data/yonetici/14_analiz.md · geotechotomotiv.com
+
+---
+
+## Özet tablo
+
+| Metrik | Değer |
+|--------|-------|
+| Üst kategori | **21** (önce 14, +7) |
+| Ürün satırı | **89** (önce 43, +46) |
+| Hedef | üst ≥20 · ürün ≥75 — **OK** |
+| Render | **200 / status=ok** |
+| renderId | `5d97j6eh` |
+| renderMs | 1078 |
+| dogrula | **hata=0** uyarı=1 |
+| derin tarama | error=0 warn=5 (önceki borç: menu-2 / placeholder) |
+| ComfyUI | 7 üst kategori özgün (z_image_turbo) |
+| Alt ürün görselleri | parent kategori `index.webp` kopyası |
+| eticaret | false (sepet yok) |
+
+---
+
+## 1) Yeni üst kategoriler (page-id servisi)
+
+| id | path | name.tr | alt | görsel |
+|----|------|---------|-----|--------|
+| dnhgnxo0hg | turbo-zorlamali-emme | Turbo / Zorlamalı Emme | 4 | ComfyUI |
+| ry99uefxh8 | direksiyon | Direksiyon | 4 | ComfyUI |
+| knzebtecct | sanizman | Şanzıman | 4 | ComfyUI |
+| yut4w6lws1 | lastik-jant | Lastik ve Jant | 4 | ComfyUI |
+| t3uqlrk7uh | suspansiyon-poyra | Süspansiyon / Poyra | 4 | ComfyUI |
+| upq7zjks3k | park-elektronik | Park ve Elektronik | 4 | ComfyUI |
+| joh4ngy8qk | arac-ekipmanlari | Araç Ekipmanları | 4 | ComfyUI |
+
+ID kaynağı: `GET http://localhost/webmaker/services/page-id?projepath=otomavi&count=55`  
+İstemci uydurma ID yok. Kullanılan: 53 / 55.
+
+Body korundu: üst `[t1pd01,t1pc03]` · ürün `[t1pd01]` · hub `[t1pd01,t1plpr]`.
+
+---
+
+## 2) Mevcut üstlere eklenen alt ürünler (§3.1)
+
+| Üst | Yeni path |
+|-----|-----------|
+| omfren02 | asinma-sensoru, tambur-fren |
+| omgvde03 | kapilar, yakit-deposu |
+| omklma07 | isi-esanjoru |
+| omkysi13 | titresim-sonumleyici |
+| omsusp06 | yaprak-yay |
+| omelek05 | role-baslatici |
+| ommotr04 | lambda-sensoru, oil-cooler |
+| omatsg08 | atesleme-kablosu |
+| omsivi09 | hidrolik-yagi, atf, yag-katkisi |
+| omicdn11 | vites-topuzu, cam-kolu |
+| omaydn12 | sinyal-lambasi |
+| omslck14 | silecek-motoru |
+
+Toplam eksik tamamlama: **18** satır.
+
+---
+
+## 3) Menü / hub
+
+- `t1ls01` (ana sayfa page-list-3): `desing.max` **8 → 24** — yeni üstler listelenir (`category: ""`).
+- `t1plpr` (ürünler hub): `desing.size` **8 → 24**.
+- `hs54qzyeyo` description yeni departmanları kapsayacak şekilde güncellendi.
+- Mevcut 14 üst id bozulmadı.
+
+---
+
+## 4) Görsel
+
+### ComfyUI (kategori başı 1 özgün)
+- CLI: `node D:\matrix\public\comfyui\scripts\run.js generate --workflow z_image_turbo`
+- Çıktı PNG → ffmpeg libwebp → `page/<id>/index.webp`
+- Ham PNG: `data/yonetici/15_comfy/*.png`
+
+| id | durum |
+|----|-------|
+| dnhgnxo0hg | COMFY_OK |
+| ry99uefxh8 | COMFY_OK |
+| knzebtecct | COMFY_OK |
+| yut4w6lws1 | COMFY_OK |
+| t3uqlrk7uh | COMFY_OK |
+| upq7zjks3k | COMFY_OK |
+| joh4ngy8qk | COMFY_OK |
+
+### Kopya
+- 46 alt ürün + (Comfy öncesi geçici üst kopyaları) parent kategoriden `index.webp`.
+- Ürün satırlarında eksik webp: **0**.
+- Kurumsal 11 sayfa webp eksikliği (hakkimizda, misyon, …) bu paketin ürün kapsamı dışında — Paket 16/18 borç.
+
+---
+
+## 5) Render + dogrula
+
+```powershell
+Invoke-RestMethod -Method POST -Uri http://localhost/webmaker/services/webmaker/ -ContentType application/json -Body '{"path":"otomavi"}'
+# → status=ok renderId=5d97j6eh
+
+node D:/projeler/elo/web/talimatlar/web/webmaker-analiz.js otomavi
+# → dogrula hata=0 uyarı=1 · SONUÇ: temiz
+```
+
+Render uyarıları (9): kurumsal `style.css` placeholder sızıntısı (`--border_radius--` vb.) — Paket 15 katalog dışı, bilinçli ertelenen.
+
+---
+
+## 6) DONE kontrol
+
+| Kriter | Durum |
+|--------|-------|
+| Üst ≥ 20 | ✓ 21 |
+| Ürün ≥ 75 | ✓ 89 |
+| Geotech departman kapsaması (§3) | ✓ |
+| dogrula hata=0 | ✓ |
+| Render 200 | ✓ |
+| 15_run.log | ✓ (bu dosya) |
+| Commit/push | yapılmadı (yasak) |
+| eticaret/sepet | yok |
+
+---
+
+## Dosyalar
+
+- `products.json` — genişletildi
+- `page/<yeni-id>/index.json` + `index.webp` — 53 yeni
+- `modules.json` — t1ls01.max, t1plpr.size
+- `data/yonetici/15_katalog_build.js` — üretim scripti
+- `data/yonetici/15_build_summary.json`
+- `data/yonetici/15_render.json`
+- `data/yonetici/15_comfy/` — ComfyUI kaynak PNG

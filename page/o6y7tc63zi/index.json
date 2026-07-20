@@ -1,0 +1,32 @@
+{
+  "id": "o6y7tc63zi",
+  "path": "oil-cooler",
+  "name": {
+    "tr": "Oil Cooler / Yağ Soğutucu"
+  },
+  "status": "play",
+  "category": "ommotr04",
+  "description": {
+    "tr": "Motor yağ soğutucusu (oil cooler) yüksek sıcaklıkta viskoziteyi korur; tıkanmış veya delik soğutucu hararet ve yağ-su karışımı riski taşır."
+  },
+  "keyword": {
+    "tr": "oil cooler, yağ soğutucu, motor yağ radyatörü, oil heat exchanger, BMW yağ soğutma"
+  },
+  "title": {
+    "tr": "Oil Cooler / Yağ Soğutucu | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Oil Cooler / Yağ Soğutucu</h2><p style=\"font-size: 16px;\">Yağ soğutucu kaçaklarında hem yağ hem antifriz kaybı görülebilir. Conta seti şarttır.</p><p style=\"font-size: 16px;\">Oto Mavi cooler ve hortum bağlantılarını motor koduna göre listeler.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "water_drop",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

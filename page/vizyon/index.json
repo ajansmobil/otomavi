@@ -1,0 +1,33 @@
+{
+  "name": {
+    "tr": "Vizyon"
+  },
+  "status": "play",
+  "id": "vizyon",
+  "path": "vizyon",
+  "category": "",
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi Vizyonumuz</h2>\n    <p style=\"font-size: 16px;\">\n        Vizyonumuz, Türkiye’nin en çok tercih edilen BMW yedek parça tedarikçisi haline gelmektir. Gaziantep deposundan uygun fiyat ve 1. sınıf kaliteyle orijinal ile eşdeğer parçaları sunarak güven veren bir marka olmak istiyoruz.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Müşteri odaklı yaklaşımımız; uzman destek, hızlı tedarik ve geniş seçim ile büyümeyi güçlendirir. Filtreden frene, motordan klimaya tek noktadan çözüm sunarız.\n    </p>\n    <p style=\"font-size: 16px;\">\n        0544 717 18 28 · info@otomavi.com · otomavi.com\n    </p>"
+  },
+  "desing": {
+    "header": [],
+    "body": [
+      "tp5jo4",
+      "t1ct01"
+    ],
+    "footer": []
+  },
+  "index": 2,
+  "icon": "home",
+  "title": {
+    "tr": "Vizyon | Oto Mavi"
+  },
+  "description": {
+    "tr": "Oto Mavi vizyonu: Türkiye’nin en çok tercih edilen BMW yedek parça tedarikçisi olmak — Gaziantep’ten güvenilir tedarik."
+  },
+  "keyword": {
+    "tr": "Oto Mavi, vizyon, BMW yedek parça, Gaziantep, tedarikçi"
+  },
+  "update": "2026-07-20",
+  "date": "2026-05-19"
+}

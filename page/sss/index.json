@@ -1,0 +1,33 @@
+{
+  "name": {
+    "tr": "Sıkça Sorulan Sorular"
+  },
+  "status": "stop",
+  "id": "sss",
+  "path": "sss",
+  "category": "",
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi — Sıkça Sorulan Sorular</h2>\n    <h3 style=\"font-size: 18px;\">1) Teslimat süresi ne kadar?</h3>\n    <p style=\"font-size: 16px;\">Gaziantep deposumuzdaki stoktan siparişlerde teslimat genellikle 1–3 iş günü içinde tamamlanır. Stok dışı veya özel siparişlerde süre WhatsApp veya telefon görüşmesinde netleştirilir.</p>\n    <h3 style=\"font-size: 18px;\">2) Nasıl sipariş verebilirim?</h3>\n    <p style=\"font-size: 16px;\">Sitede sepet yoktur. İhtiyacınız olan parçayı seçip WhatsApp (0544 717 18 28) veya telefon ile Oto Mavi’ye yazın; stok ve fiyat bilgisini hızlıca iletiriz. E-posta: info@otomavi.com.</p>\n    <h3 style=\"font-size: 18px;\">3) Orijinal mi eşdeğer mi satıyorsunuz?</h3>\n    <p style=\"font-size: 16px;\">Hem orijinal hem eşdeğer BMW yedek parça seçenekleri sunuyoruz. Bütçe ve kullanım ihtiyacınıza göre uygun fiyatlı, 1. sınıf kalitede alternatifleri birlikte netleştiririz.</p>\n    <h3 style=\"font-size: 18px;\">4) Depo ve mağaza nerede?</h3>\n    <p style=\"font-size: 16px;\">Adresimiz: Sanayi mah. 60081 nolu cadde no 43 Şehitkamil Gaziantep. Çalışma saatleri: Sabah 08:00 – 22:00. Sahibinden’de Oto Mavi olarak da bilinebilirsiniz (mağaza URL’si ayrıca paylaşılır).</p>\n    <h3 style=\"font-size: 18px;\">5) İade politikası nedir?</h3>\n    <p style=\"font-size: 16px;\">Yanlış veya hasarlı ürünlerde iade/değişim taleplerini WhatsApp veya e-posta ile alınır; parça durumu ve fatura bilgisiyle değerlendirilir. Kullanılmış veya montajı yapılmış parçalarda iade koşulları sipariş anında belirtilir. Detay için 0544 717 18 28 veya info@otomavi.com.</p>"
+  },
+  "desing": {
+    "header": [],
+    "body": [
+      "tp5jo4",
+      "t1ct01"
+    ],
+    "footer": []
+  },
+  "index": 4,
+  "icon": "help",
+  "title": {
+    "tr": "SSS | Oto Mavi"
+  },
+  "description": {
+    "tr": "Oto Mavi SSS: teslimat 1–3 gün, WhatsApp ile teklif, orijinal/eşdeğer seçim, Gaziantep depo ve iade koşulları."
+  },
+  "keyword": {
+    "tr": "Oto Mavi SSS, teslimat, WhatsApp sipariş, orijinal parça, eşdeğer, Gaziantep, iade"
+  },
+  "update": "2026-07-20",
+  "date": "2026-07-20"
+}

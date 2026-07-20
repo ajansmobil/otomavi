@@ -1,0 +1,32 @@
+{
+  "id": "pmbqcljbet",
+  "path": "basinc-donusturucu",
+  "name": {
+    "tr": "Basınç Dönüştürücü"
+  },
+  "status": "play",
+  "category": "dnhgnxo0hg",
+  "description": {
+    "tr": "Wastegate veya VNT aktüatörünü yöneten basınç dönüştürücü solenoidi boost haritasını korur; arızada aşırı veya düşük basınç ve hata kodu görülür."
+  },
+  "keyword": {
+    "tr": "basınç dönüştürücü, boost solenoid, wastegate vana, VNT aktüatör, N75 benzeri"
+  },
+  "title": {
+    "tr": "Basınç Dönüştürücü | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Basınç Dönüştürücü</h2><p style=\"font-size: 16px;\">Basınç dönüştürücü (boost solenoid) turbo kontrol hattındaki elektrik-pnömatik köprüdür. Tıkalı hortum veya arızalı bobin düzensiz boost üretir.</p><p style=\"font-size: 16px;\">Kod okuma sonrası Oto Mavi deposundan doğru pin ve hortum çıkışlı üniti seçin.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "speed",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "1zvs97tk5x",
+  "path": "silecek-motoru",
+  "name": {
+    "tr": "Silecek Motoru"
+  },
+  "status": "play",
+  "category": "omslck14",
+  "description": {
+    "tr": "Cam silecek motoru ve redüktör kolu park konumuna getirir; yavaş çalışan motor fırça aşınması veya dişli kırığı işaretidir, bağlantı koluyla birlikte bakılır."
+  },
+  "keyword": {
+    "tr": "silecek motoru, wiper motor, silecek redüktör, cam silme motoru, BMW silecek"
+  },
+  "title": {
+    "tr": "Silecek Motoru | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Silecek Motoru</h2><p style=\"font-size: 16px;\">Silecek motoru park etmiyorsa park anahtarı veya dişli aşınması olabilir.</p><p style=\"font-size: 16px;\">Oto Mavi motor ve kol bağlantısını şasiye göre temin eder.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "settings",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

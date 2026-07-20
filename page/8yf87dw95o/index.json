@@ -1,0 +1,32 @@
+{
+  "id": "8yf87dw95o",
+  "path": "ters-isik-anahtari",
+  "name": {
+    "tr": "Ters Işık Anahtarı"
+  },
+  "status": "play",
+  "category": "knzebtecct",
+  "description": {
+    "tr": "Geri vites konumunda stop lambasını yakan ters ışık anahtarı şanzıman gövdesine vidalanır; arızada geri lamba yanmaz veya sürekli yanar."
+  },
+  "keyword": {
+    "tr": "ters ışık anahtarı, reverse switch, geri vites müşürü, şanzıman anahtarı, BMW reverse"
+  },
+  "title": {
+    "tr": "Ters Işık Anahtarı | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Ters Işık Anahtarı</h2><p style=\"font-size: 16px;\">Ters ışık anahtarı küçük bir müşürdür ama güvenlik için şarttır. Yağ sızıntılı şanzımanda anahtar da etkilenebilir.</p><p style=\"font-size: 16px;\">Diş adımı ve pin tipini Oto Mavi katalogundan seçin.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "light_mode",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

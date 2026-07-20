@@ -1,0 +1,144 @@
+﻿{
+  "proje": "otomavi",
+  "veriKoku": "D:\\projeler\\otomavi\\Web\\matrix",
+  "veriKokuKanonik": true,
+  "zaman": "2026-07-20T12:13:10.991Z",
+  "dokumanlar": [
+    {
+      "doc": "webmaker/webmaker",
+      "bytes": 23340,
+      "updated": "2026-07-16T12:23"
+    },
+    {
+      "doc": "webmaker/admin",
+      "bytes": 110,
+      "updated": "2026-06-09T09:10"
+    },
+    {
+      "doc": "webmaker/degisiklikler",
+      "bytes": 39405,
+      "updated": "2026-07-19T18:16"
+    },
+    {
+      "doc": "webmaker/derin-tarama",
+      "bytes": 15309,
+      "updated": "2026-07-13T20:47"
+    },
+    {
+      "doc": "webmaker/gelistirme-master-plan",
+      "bytes": 15210,
+      "updated": "2026-06-24T07:11"
+    },
+    {
+      "doc": "webmaker/gelistirme-yol-haritasi",
+      "bytes": 1865,
+      "updated": "2026-06-16T21:52"
+    },
+    {
+      "doc": "webmaker/mantik",
+      "bytes": 31391,
+      "updated": "2026-07-19T18:32"
+    },
+    {
+      "doc": "webmaker/page-text-html",
+      "bytes": 3184,
+      "updated": "2026-07-13T20:43"
+    },
+    {
+      "doc": "webmaker/plan",
+      "bytes": 3906,
+      "updated": "2026-07-19T18:32"
+    },
+    {
+      "doc": "webmaker/rust",
+      "bytes": 16333,
+      "updated": "2026-07-19T18:16"
+    },
+    {
+      "doc": "webmaker/webmodules-entegrasyon",
+      "bytes": 6782,
+      "updated": "2026-06-25T06:27"
+    },
+    {
+      "doc": "webmodules/kurallar",
+      "bytes": 435,
+      "updated": "2026-06-24T07:10"
+    },
+    {
+      "doc": "webmodules/admin",
+      "bytes": 160,
+      "updated": "2026-06-24T07:07"
+    },
+    {
+      "doc": "webmodules/mantik",
+      "bytes": 20429,
+      "updated": "2026-07-20T12:11"
+    },
+    {
+      "doc": "webmodules/plan",
+      "bytes": 472,
+      "updated": "2026-07-09T19:56"
+    },
+    {
+      "doc": "webmodules/rust",
+      "bytes": 10059,
+      "updated": "2026-07-16T13:55"
+    }
+  ],
+  "modulKatalog": {
+    "header": 30,
+    "body": 143,
+    "footer": 22,
+    "not": "Detay: mcp__webmaker__module_list / module_info / module_file_read"
+  },
+  "dogrula": {
+    "hata": 0,
+    "uyari": 1,
+    "hatalar": [],
+    "msj": "UYARILAR (1): ICERIK: modules.json ÔÇö placeholder y├Ânerge/adres metni (uydurma/placeholder; ger├ğek veriyle de─şi┼ştirin veya bo┼ş b─▒rak─▒n) /// BASARILI (14): R0: path dogrudan web/matrix veri kokudur | Zorunlu dosyalar mevcut | R5: Aktif diller (tr once): tr | R5: domain formati dogru | R5: description dil objesi dogru | R5: keyword dil objesi dogru | MIMARI: Model B (cok kategori) | R4: pagesetting.json yapisi dogru | R8: Header ve footer modulleri tanimli | R16: Ana sayfa govdesi ve slider gorsel baglari dogru | R13: Model B projede page.json statik profil uyumlu (detail:false, img:false) | R9: page.json mevcut | R9: products.json mevcut | R9: kurumsal.json mevcut /// OZET: hata=0, uyari=1, benzerlik_toplam=0 (text=0, keyword=0, description=0)"
+  },
+  "katalogDisiModuller": [],
+  "matrix": {
+    "base": "http://localhost:80",
+    "ulasilabilir": true,
+    "projeOzet": {
+      "name": "Oto Mavi",
+      "domain": "otomavi.com",
+      "langs": {
+        "tr": true,
+        "en": false,
+        "ar": false,
+        "de": false,
+        "ru": false,
+        "es": false,
+        "fr": false,
+        "it": false,
+        "ja": false,
+        "zh": false,
+        "ko": false,
+        "pt": false
+      },
+      "hasWebData": true,
+      "kategoriler": [
+        {
+          "path": "page",
+          "active": true
+        },
+        {
+          "path": "products",
+          "active": true
+        },
+        {
+          "path": "kurumsal",
+          "active": true
+        }
+      ]
+    },
+    "modulKullanim": 15
+  },
+  "durum": {
+    "dogrulaHata": 0,
+    "derinTaramaHata": null,
+    "temiz": true
+  }
+}

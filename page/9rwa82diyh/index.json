@@ -1,0 +1,32 @@
+{
+  "id": "9rwa82diyh",
+  "path": "titresim-sonumleyici",
+  "name": {
+    "tr": "Titreşim Sönümleyici"
+  },
+  "status": "play",
+  "category": "omkysi13",
+  "description": {
+    "tr": "Krank kasnağı damper (titreşim sönümleyici) kayış hattındaki titreşimi emer; çatlamış elastomer squeal ve krank hasarı riski yaratır."
+  },
+  "keyword": {
+    "tr": "titreşim sönümleyici, krank damper, harmonic balancer, kasnak damper, BMW kayış"
+  },
+  "title": {
+    "tr": "Titreşim Sönümleyici | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Titreşim Sönümleyici</h2><p style=\"font-size: 16px;\">Harmonic balancer aşınması kayış ömrünü kısaltır. Görsel çatlak ve salgı kontrolü yapılmalıdır.</p><p style=\"font-size: 16px;\">Oto Mavi damper kasnaklarını triger/aksesuar setiyle birlikte önerir.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "vibration",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

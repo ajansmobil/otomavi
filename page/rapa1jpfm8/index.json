@@ -1,0 +1,32 @@
+{
+  "id": "rapa1jpfm8",
+  "path": "sinyal-lambasi",
+  "name": {
+    "tr": "Sinyal Lambası"
+  },
+  "status": "play",
+  "category": "omaydn12",
+  "description": {
+    "tr": "Ön/arka sinyal lambası veya ampül/LED ünitesi dönüş uyarısını verir; su alan duyda buhar oluşur, sol/sağ cam ve far tipi uyumu kontrol edilir."
+  },
+  "keyword": {
+    "tr": "sinyal lambası, dönüş lambası, indicator light, flasher, BMW sinyal"
+  },
+  "title": {
+    "tr": "Sinyal Lambası | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Sinyal Lambası</h2><p style=\"font-size: 16px;\">Sinyal lambası hızlı yanıp sönüyorsa ampül veya LED uyumsuzluğu sık sebeptir.</p><p style=\"font-size: 16px;\">Oto Mavi duy tipi ve renk camına göre lamba seçer.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "swipe_right_alt",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

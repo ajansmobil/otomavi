@@ -1,0 +1,32 @@
+{
+  "id": "3flq48i5oy",
+  "path": "role-baslatici",
+  "name": {
+    "tr": "Röle Başlatıcı"
+  },
+  "status": "play",
+  "category": "omelek05",
+  "description": {
+    "tr": "Marş devresini anahtarlayan başlatıcı röle yüksek akımı yönetir; yapışkan kontak sürekli çalıştırma veya hiç çalışmama üretir, soket amperi etiketle eşleşir."
+  },
+  "keyword": {
+    "tr": "başlatıcı röle, starter relay, marş rölesi, ana kontak röle, BMW start röle"
+  },
+  "title": {
+    "tr": "Röle Başlatıcı | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Röle Başlatıcı</h2><p style=\"font-size: 16px;\">Marş rölesi arızası akü ve marş motoru sağlamken bile start engeller. Soket ısısı ipucudur.</p><p style=\"font-size: 16px;\">Oto Mavi amper ve ayak düzenine göre röle seçer.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "power",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

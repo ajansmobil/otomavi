@@ -1,0 +1,32 @@
+{
+  "id": "o870xzst25",
+  "path": "yag-katkisi",
+  "name": {
+    "tr": "Yağ Katkısı"
+  },
+  "status": "play",
+  "category": "omsivi09",
+  "description": {
+    "tr": "Motor veya şanzıman katkıları sızdırmazlık ve sürtünme düzenlemesi için kullanılır; aşırı doz filtre tıkanması riski taşır, üretici uyarısına uyulur."
+  },
+  "keyword": {
+    "tr": "yağ katkısı, oil additive, sızdırmazlık katkısı, motor katkı, BMW katkı"
+  },
+  "title": {
+    "tr": "Yağ Katkısı | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Yağ Katkısı</h2><p style=\"font-size: 16px;\">Katkı ürünleri bakımın yerini tutmaz; bilinçli ve dozunda kullanılmalıdır.</p><p style=\"font-size: 16px;\">Oto Mavi katkı seçiminde yağ tipi ve şikayeti birlikte değerlendirir.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "science",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "fd8zen2pom",
+  "path": "hidrolik-yagi",
+  "name": {
+    "tr": "Hidrolik Yağı"
+  },
+  "status": "play",
+  "category": "omsivi09",
+  "description": {
+    "tr": "Direksiyon veya üst yapı hidroliği için CHF/ATF sınıfı yağlar ayrılır; yanlış spesifikasyon pompa uğultusu ve conta şişmesi yaratır, litre litre satılır."
+  },
+  "keyword": {
+    "tr": "hidrolik yağı, CHF 11S, direksiyon hidroliği, hydraulic fluid, BMW hidrolik"
+  },
+  "title": {
+    "tr": "Hidrolik Yağı | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Hidrolik Yağı</h2><p style=\"font-size: 16px;\">Hidrolik yağ spesifikasyonu araç etiketinde yazar. Karışım yapmayın.</p><p style=\"font-size: 16px;\">Oto Mavi onaylı hidrolik yağları litre olarak temin eder.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "water_drop",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

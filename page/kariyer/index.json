@@ -1,0 +1,33 @@
+{
+  "name": {
+    "tr": "Kariyer"
+  },
+  "status": "play",
+  "id": "kariyer",
+  "path": "kariyer",
+  "category": "",
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi Kariyer</h2>\n    <p style=\"font-size: 16px;\">\n        Oto Mavi, Gaziantep’te BMW oto yedek parça tedarikinde büyüyen bir ekiptir. Uygun fiyat ve 1. sınıf kaliteyle müşterilere çözüm sunan, sahada ve depoda güçlü bir ekip arkadaşlığı arıyoruz.\n    </p>\n    <h3 style=\"font-size: 18px;\">Açık pozisyonlar</h3>\n    <ul style=\"font-size: 16px;\">\n        <li><strong>Yedek parça satış danışmanı</strong> — stok, uyumluluk ve WhatsApp/telefon sipariş süreçlerinde müşteri desteği.</li>\n        <li><strong>Depo / sevkiyat personeli</strong> — Gaziantep deposunda paketleme, stok düzeni ve 1–3 günlük sevkiyat hazırlığı.</li>\n    </ul>\n    <p style=\"font-size: 16px;\">\n        Başvuru için özgeçmişinizi <a href=\"mailto:info@otomavi.com\">info@otomavi.com</a> adresine gönderin; konu satırına başvurduğunuz pozisyonu yazın. Telefon: 0544 717 18 28. Adres: Sanayi mah. 60081 nolu cadde no 43 Şehitkamil Gaziantep.\n    </p>"
+  },
+  "desing": {
+    "header": [],
+    "body": [
+      "tp5jo4",
+      "t1ct01"
+    ],
+    "footer": []
+  },
+  "index": 5,
+  "icon": "work",
+  "title": {
+    "tr": "Kariyer | Oto Mavi"
+  },
+  "description": {
+    "tr": "Oto Mavi kariyer: Gaziantep BMW yedek parça ekibine katılın. Başvurular info@otomavi.com adresine e-posta ile."
+  },
+  "keyword": {
+    "tr": "Oto Mavi kariyer, iş ilanı, Gaziantep, yedek parça, satış danışmanı, depo"
+  },
+  "update": "2026-07-20",
+  "date": "2026-07-20"
+}

@@ -1,0 +1,206 @@
+﻿{
+    "status":  "ok",
+    "renderId":  "cu5pkg3a",
+    "renderMs":  629,
+    "timings":  {
+                    "sanitize":  0,
+                    "loadJson":  2,
+                    "mainIndex":  4,
+                    "pages":  300,
+                    "additional":  181,
+                    "strip":  85,
+                    "robots":  0,
+                    "sitemap":  2,
+                    "manifest":  0
+                },
+    "warnings":  [
+                     {
+                         "file":  "tr\\gizlilikpolitikasi\\style.css",
+                         "placeholders":  [
+                                              "--border_radius--",
+                                              "--bgcolor--",
+                                              "--card_shadow--",
+                                              "--colortitle--",
+                                              "--color--",
+                                              "--coloractive--"
+                                          ],
+                         "brokenAttrs":  [
+
+                                         ],
+                         "badText":  [
+
+                                     ]
+                     },
+                     {
+                         "file":  "tr\\hakkimizda\\style.css",
+                         "placeholders":  [
+                                              "--border_radius--",
+                                              "--bgcolor--",
+                                              "--card_shadow--",
+                                              "--colortitle--",
+                                              "--color--",
+                                              "--coloractive--"
+                                          ],
+                         "brokenAttrs":  [
+
+                                         ],
+                         "badText":  [
+
+                                     ]
+                     },
+                     {
+                         "file":  "tr\\kalitepolitikamiz\\style.css",
+                         "placeholders":  [
+                                              "--border_radius--",
+                                              "--bgcolor--",
+                                              "--card_shadow--",
+                                              "--colortitle--",
+                                              "--color--",
+                                              "--coloractive--"
+                                          ],
+                         "brokenAttrs":  [
+
+                                         ],
+                         "badText":  [
+
+                                     ]
+                     },
+                     {
+                         "file":  "tr\\kariyer\\style.css",
+                         "placeholders":  [
+                                              "--border_radius--",
+                                              "--bgcolor--",
+                                              "--card_shadow--",
+                                              "--colortitle--",
+                                              "--color--",
+                                              "--coloractive--"
+                                          ],
+                         "brokenAttrs":  [
+
+                                         ],
+                         "badText":  [
+
+                                     ]
+                     },
+                     {
+                         "file":  "tr\\kisiselveriler\\style.css",
+                         "placeholders":  [
+                                              "--border_radius--",
+                                              "--bgcolor--",
+                                              "--card_shadow--",
+                                              "--colortitle--",
+                                              "--color--",
+                                              "--coloractive--"
+                                          ],
+                         "brokenAttrs":  [
+
+                                         ],
+                         "badText":  [
+
+                                     ]
+                     },
+                     {
+                         "file":  "tr\\kullanicahaklari\\style.css",
+                         "placeholders":  [
+                                              "--border_radius--",
+                                              "--bgcolor--",
+                                              "--card_shadow--",
+                                              "--colortitle--",
+                                              "--color--",
+                                              "--coloractive--"
+                                          ],
+                         "brokenAttrs":  [
+
+                                         ],
+                         "badText":  [
+
+                                     ]
+                     },
+                     {
+                         "file":  "tr\\misyon\\style.css",
+                         "placeholders":  [
+                                              "--border_radius--",
+                                              "--bgcolor--",
+                                              "--card_shadow--",
+                                              "--colortitle--",
+                                              "--color--",
+                                              "--coloractive--"
+                                          ],
+                         "brokenAttrs":  [
+
+                                         ],
+                         "badText":  [
+
+                                     ]
+                     },
+                     {
+                         "file":  "tr\\sss\\style.css",
+                         "placeholders":  [
+                                              "--border_radius--",
+                                              "--bgcolor--",
+                                              "--card_shadow--",
+                                              "--colortitle--",
+                                              "--color--",
+                                              "--coloractive--"
+                                          ],
+                         "brokenAttrs":  [
+
+                                         ],
+                         "badText":  [
+
+                                     ]
+                     },
+                     {
+                         "file":  "tr\\style.css",
+                         "placeholders":  [
+                                              "--bgcolor--"
+                                          ],
+                         "brokenAttrs":  [
+
+                                         ],
+                         "badText":  [
+
+                                     ]
+                     },
+                     {
+                         "file":  "tr\\vizyon\\style.css",
+                         "placeholders":  [
+                                              "--border_radius--",
+                                              "--bgcolor--",
+                                              "--card_shadow--",
+                                              "--colortitle--",
+                                              "--color--",
+                                              "--coloractive--"
+                                          ],
+                         "brokenAttrs":  [
+
+                                         ],
+                         "badText":  [
+
+                                     ]
+                     },
+                     {
+                         "file":  "tr\\yasaluyari\\style.css",
+                         "placeholders":  [
+                                              "--border_radius--",
+                                              "--bgcolor--",
+                                              "--card_shadow--",
+                                              "--colortitle--",
+                                              "--color--",
+                                              "--coloractive--"
+                                          ],
+                         "brokenAttrs":  [
+
+                                         ],
+                         "badText":  [
+
+                                     ]
+                     }
+                 ],
+    "warningCount":  11,
+    "issueCounts":  {
+                        "placeholder":  61,
+                        "brokenAttr":  0,
+                        "badText":  0
+                    }
+}

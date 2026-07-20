@@ -1,0 +1,32 @@
+{
+  "id": "k01d2cqsgr",
+  "path": "aksesuar-seti",
+  "name": {
+    "tr": "Aksesuar Seti"
+  },
+  "status": "play",
+  "category": "joh4ngy8qk",
+  "description": {
+    "tr": "Bagaj file, telefon tutucu ve kabin düzen aksesuarları günlük kullanımı kolaylaştırır; yapışkanlı ürünlerde torpido yüzeyi uyumu kontrol edilir."
+  },
+  "keyword": {
+    "tr": "araç aksesuar seti, bagaj file, kabin düzen, telefon tutucu, BMW aksesuar"
+  },
+  "title": {
+    "tr": "Aksesuar Seti | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Aksesuar Seti</h2><p style=\"font-size: 16px;\">Aksesuar setleri konfor odaklıdır; güvenlik ekipmanının yerini tutmaz. Montaj yüzeyi temiz olmalıdır.</p><p style=\"font-size: 16px;\">Oto Mavi stokundan modele uygun seçenek isteyin.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "widgets",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

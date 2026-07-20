@@ -1,0 +1,106 @@
+﻿# Paket 22 — Ürünler kategori grid + kırık hero — RUN LOG
+
+**Tarih:** 2026-07-20 16:54:14
+**Proje:** otomavi / Oto Mavi
+**cwd:** D:\projeler\otomavi\Web\matrix
+**webmodules:** D:\matrix\webmodules
+
+---
+
+## Değişiklikler
+
+- page.json + page/hs54qzyeyo/index.json body → `[t1plpr]` (t1pd01 kaldırıldı)
+- pagesetting products kök body → `[t1plpr]`
+- page-desing-otomavi/back.js: page.img yok/boş/placeholder → hero media basılmaz
+- Menü path: urunler (products boş kök değil)
+- Görsel kopyası: yok (R13 img:false; body’den t1pd01 yeterli)
+
+---
+
+## 1) Render
+
+```powershell
+Invoke-RestMethod -Method POST -Uri "http://localhost/webmaker/services/webmaker/" -ContentType "application/json" -Body '{"path":"otomavi","mode":"matrix"}'
+```
+
+| Metrik | Değer |
+|--------|-------|
+| status | **ok** |
+| renderId | `m7t21tet` |
+| renderMs | 1640 |
+| warningCount | 0 |
+
+---
+
+## 2) Doğrulama HTML
+
+| Kontrol | Sonuç |
+|---------|--------|
+| kırık hs54qzyeyo/index.webp | yok — OK |
+| Filtreler kartı | OK |
+| Frenler kartı | OK |
+| hero-media bloğu | yok |
+| kategori card sayısı (b0000-card) | **21** |
+
+---
+
+## 3) Dogrula
+
+```
+node D:/projeler/elo/web/talimatlar/web/webmaker-analiz.js otomavi
+```
+
+| Metrik | Değer |
+|--------|-------|
+| hata | **0** |
+| uyarı | 0 |
+
+### dogrula özet (son satırlar)
+
+```
+=== webmaker toplu analiz — otomavi ===
+Veri kökü: D:\projeler\otomavi\Web\matrix (kanonik ✓)
+
+İşleyiş dokümanları (16): webmaker/webmaker, webmaker/admin, webmaker/degisiklikler, webmaker/derin-tarama, webmaker/gelistirme-master-plan, webmaker/gelistirme-yol-haritasi, webmaker/mantik, webmaker/page-text-html, webmaker/plan, webmaker/rust, webmaker/webmodules-entegrasyon, webmodules/kurallar, webmodules/admin, webmodules/mantik, webmodules/plan, webmodules/rust
+Modül kataloğu: header=30 body=146 footer=22
+
+✓ dogrula: hata=0 uyarı=0
+
+Matrix proje özeti: hasWebData=true kategoriler=page,category,products,kurumsal
+✓ derin tarama: error=0 warn=4 info=12
+   [warn] WEBMODULES_BACKJS_HARDCODED_TEXT: back.js sabit UI metni iceriyor; index.json desing/data + {{key}} kullanin (W1): webmodules/body/page-desing-otomavi — L1: Turkce karakter; L185: Turkce karakter; L186: Turkce karakter; L250: "" target="_blank" rel="noopener noreferrer">"
+   [warn] WEBMODULES_HTML_HARDCODED_TEXT: index.html sabit UI metni iceriyor; index.json desing/data + {{key}} kullanin (W1): webmodules/header/menu-2 — L154: Turkce karakter; L155: Turkce karakter; L156: Turkce karakter
+   [warn] ADMIN_PAGE_HTML_MISSING: Admin sayfada HTML yok: database/database.html
+   [warn] ADMIN_PAGE_JS_MISSING: Admin sayfada JS yok: database/database.js
+
+✓ SONUÇ: temiz
+
+JSON çıktı için --json ekleyin.
+
+```
+
+---
+
+## DONE
+
+- [x] Ürünler body yalnız t1plpr (kategori grid)
+- [x] Kırık hero img yok (body + back.js koruma)
+- [x] Menü /tr/urunler/
+- [x] render mode matrix
+- Commit: yok
+
+
+
+## Özet tablo (son)
+
+| Metrik | Değer |
+|--------|-------|
+| Render | **status=ok** · renderId `m7t21tet` · warningCount **0** |
+| dogrula | **hata=0 uyarı=0** |
+| /tr/urunler/ body | yalnız `t1plpr` (Tüm Kategoriler) |
+| kategori kartı | **21** (`b0000-card`) |
+| kırık `/page/hs54qzyeyo/index.webp` | **yok** |
+| hero-media | **yok** |
+| menü Ürünler | `/tr/urunler/` |
+| Commit | yok |
+

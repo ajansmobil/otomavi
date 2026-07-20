@@ -1,0 +1,32 @@
+{
+  "id": "omkkmp7a",
+  "path": "klima-kompresoru",
+  "name": {
+    "tr": "Klima Kompresörü"
+  },
+  "status": "play",
+  "category": "omklma07",
+  "description": {
+    "tr": "Soğutucu gazı sıkan kompresör debriyajlı veya debriyajsız gelir; R134a hattı ve kasnak oluğuna göre A/C compressor seçilir."
+  },
+  "keyword": {
+    "tr": "debriyajlı klima kompresör, R134a A/C compressor, kasnak oluk kompresör, gaz sıkıştırma ünitesi, debriyajsız compressor"
+  },
+  "title": {
+    "tr": "Klima Kompresörü | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Klima Kompresörü</h2><p style=\"font-size: 16px;\">Klima kompresörü soğutma çevriminin kalbidir; gürültü veya yağ kaçığı arıza işaretidir. Oto Mavi BMW kompresörlerinde kavrama ve yağ tipi modele göredir.</p><p style=\"font-size: 16px;\">Sistem vakum ve gaz dolumu atölye işidir. Eski kompresör kodunu iletin.</p><p style=\"font-size: 16px;\">Klima hattı: 0544 717 18 28</p>"
+  },
+  "icon": "ac_unit",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

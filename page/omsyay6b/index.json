@@ -1,0 +1,32 @@
+{
+  "id": "omsyay6b",
+  "path": "helezon-yay",
+  "name": {
+    "tr": "Helezon Yay"
+  },
+  "status": "play",
+  "category": "omsusp06",
+  "description": {
+    "tr": "Oturma yüksekliğini belirleyen helezon telinde kırık tur ve çökme kontrol edilir; sol/sağ coil spring sertlik koduyla seçilir."
+  },
+  "keyword": {
+    "tr": "helezon tel yayı, coil spring sertlik, kırık tur yay, oturma yüksekliği coil, sol sağ yay kodu"
+  },
+  "title": {
+    "tr": "Helezon Yay | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Helezon Yay</h2><p style=\"font-size: 16px;\">Helezon yay oturma yüksekliği ve yük taşıma karakterini belirler. Oto Mavi BMW yaylarında şasi ve motor varyantına göre sertlik seçilir.</p><p style=\"font-size: 16px;\">Kırık veya çökmüş yayda lastik aşınması artar. Sol/sağ aynı partiden alın.</p><p style=\"font-size: 16px;\">info@otomavi.com</p>"
+  },
+  "icon": "compress",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

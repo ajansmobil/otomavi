@@ -1,0 +1,99 @@
+{
+  "name": "Sayfalar",
+  "path": "page",
+  "desc": [],
+  "data": [
+    {
+      "name": {
+        "tr": "Ürünler"
+      },
+      "status": "play",
+      "category": "",
+      "id": "hs54qzyeyo",
+      "url": "",
+      "path": "urunler",
+      "index": 0,
+      "icon": "home",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1plpr"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Oto Mavi BMW yedek parça kataloğu: filtre, fren, motor, elektrik, turbo, direksiyon, şanzıman, süspansiyon, lastik ve araç ekipmanları."
+      },
+      "text": {
+        "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi Ürünler</h2>\n    <p style=\"font-size: 16px;\">\n        Oto Mavi olarak Gaziantep’te BMW oto yedek parçası tedarik ediyoruz. Filtreler, frenler, gövde, motor, elektrik, sönümleme/süspansiyon, klima, ateşleme, yağlar ve sıvılar, bakım kiti, iç donanım, aydınlatma, kayışlar ve silecekler kategorilerinde orijinal ile eşdeğer parçaları uygun fiyat ve 1. sınıf kaliteyle bulabilirsiniz.\n    </p>\n    <p style=\"font-size: 16px;\">\n        BMW yedek parça denince akla Oto Mavi gelsin: performans, koruma ve dayanıklılık için ihtiyacınız olan parçaları tek yerden seçin. Sipariş ve destek için 0544 717 18 28 veya info@otomavi.com üzerinden bize ulaşabilirsiniz.\n    </p>"
+      }
+    },
+    {
+      "name": {
+        "tr": "Hakkımızda"
+      },
+      "status": "play",
+      "category": "",
+      "id": "yvi9dlb59o",
+      "url": "",
+      "path": "kurumsal",
+      "index": 1,
+      "desing": {
+        "header": [],
+        "body": [
+          "t1in01",
+          "tp5jo4"
+        ],
+        "footer": []
+      },
+      "pathnext": "hakkimizda",
+      "description": {
+        "tr": "Oto Mavi kurumsal sayfaları: hakkımızda, misyon, vizyon, kalite, kariyer ve yasal metinler. Gaziantep BMW oto yedek parçaları."
+      },
+      "text": {
+        "tr": "<p style=\"font-size: 16px;\">Oto Mavi — Gaziantep BMW oto yedek parçaları. Kurumsal bilgiler, kariyer ve politikalar için alt sayfalarımızı inceleyebilirsiniz.</p>"
+      }
+    },
+    {
+      "name": {
+        "tr": "İletişim"
+      },
+      "status": "play",
+      "category": "",
+      "id": "xnzu5au0ag",
+      "url": "",
+      "path": "iletisim",
+      "index": 2,
+      "icon": "home",
+      "desing": {
+        "header": [],
+        "body": [
+          "tp5jo4",
+          "fhxr98",
+          "bi4hta"
+        ],
+        "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Oto Mavi iletişim: hızlı destek, sipariş ve bilgilendirme. Gaziantep BMW oto yedek parça talepleriniz için bize ulaşın."
+      },
+      "text": {
+        "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi İletişim</h2>\n    <p style=\"font-size: 16px;\">\n        Adres: Sanayi mah. 60081 nolu cadde no 43 Şehitkamil Gaziantep<br>\n        Telefon: 0544 717 18 28<br>\n        E-posta: info@otomavi.com<br>\n        Çalışma saatleri: Sabah 08:00 – 22:00\n    </p>\n    <p style=\"font-size: 16px;\">\n        Sipariş ve stok sorgusu için WhatsApp üzerinden Oto Mavi’ye yazın — sepet yok; uzman ekibimiz size uygun parçayı hızlıca iletir. Sahibinden’de Oto Mavi notu için de bizi arayabilirsiniz.\n    </p>"
+      }
+    }
+  ],
+  "index": 0,
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "modulestatus": {
+    "page": true,
+    "body": true,
+    "detail": false,
+    "img": false
+  }
+}

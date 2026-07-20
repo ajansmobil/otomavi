@@ -1,0 +1,32 @@
+{
+  "id": "cmc6a6rqa3",
+  "path": "tasima-destek",
+  "name": {
+    "tr": "Taşıma / Destek"
+  },
+  "status": "play",
+  "category": "joh4ngy8qk",
+  "description": {
+    "tr": "Bagaj sabitleme kayışı ve taşıma destek aparatları yük güvenliğini artırır; aşırı yük şasi ve lastik limitini aşmamalıdır."
+  },
+  "keyword": {
+    "tr": "taşıma kayışı, bagaj sabitleme, yük destek, araç taşıma aparatı, BMW bagaj"
+  },
+  "title": {
+    "tr": "Taşıma / Destek | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Taşıma / Destek</h2><p style=\"font-size: 16px;\">Yük taşırken sabitleme kayışı kaymayı önler. Araç üretici ağırlık limitine uyun.</p><p style=\"font-size: 16px;\">Oto Mavi ekipman reyonundan pratik taşıma aparatları talep edin.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "luggage",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

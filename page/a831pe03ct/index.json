@@ -1,0 +1,32 @@
+{
+  "id": "a831pe03ct",
+  "path": "hiz-sensoru",
+  "name": {
+    "tr": "Hız Sensörü"
+  },
+  "status": "play",
+  "category": "knzebtecct",
+  "description": {
+    "tr": "Şanzıman çıkış veya tekerlek hız sensörü ABS ve gösterge hızını besler; arızada hız göstergesi sıfırlanır veya vites adaptasyonu bozulur."
+  },
+  "keyword": {
+    "tr": "hız sensörü, VSS, şanzıman hız algılayıcı, ABS tekerlek sensörü, BMW speed sensor"
+  },
+  "title": {
+    "tr": "Hız Sensörü | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Hız Sensörü</h2><p style=\"font-size: 16px;\">Hız sensörü manyetik halka üzerinden sinyal üretir. Kirli uç veya kopuk kablo hata kodu bırakır.</p><p style=\"font-size: 16px;\">Pin sayısı ve konnektör yönü Oto Mavi’de şasiyle doğrulanır.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "speed",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

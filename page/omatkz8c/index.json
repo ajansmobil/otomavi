@@ -1,0 +1,32 @@
+{
+  "id": "omatkz8c",
+  "path": "kizdirma-bujisi",
+  "name": {
+    "tr": "Kızdırma Bujisi"
+  },
+  "status": "play",
+  "category": "omatsg08",
+  "description": {
+    "tr": "Dizel yanma odasını ısıtan glow plug soğuk sabah çalıştırmayı kolaylaştırır; voltaj ve ısınma süresi motor koduna göredir."
+  },
+  "keyword": {
+    "tr": "dizel glow plug, kızdırma voltaj ucu, soğuk start ısıtıcı, yanma odası glow, ısınma süre kodu"
+  },
+  "title": {
+    "tr": "Kızdırma Bujisi | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Kızdırma Bujisi</h2><p style=\"font-size: 16px;\">Dizel ön ısıtmada kızdırma bujisi soğuk çalıştırmayı kolaylaştırır. Oto Mavi BMW kızdırma bujilerinde süre ve akım değerleri modele göredir.</p><p style=\"font-size: 16px;\">Tek buji yerine set değişimi tercih edilir. Röle ve kablo da kontrol edilmeli.</p><p style=\"font-size: 16px;\">0544 717 18 28</p>"
+  },
+  "icon": "whatshot",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

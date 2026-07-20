@@ -1,0 +1,37 @@
+{
+    "id":  "omgvde03",
+    "path":  "govde",
+    "name":  {
+                 "tr":  "Gövde"
+             },
+    "status":  "play",
+    "category":  "",
+    "description":  {
+                        "tr":  "Çarpışma sonrası tampon kapağı, ayna gövdesi ve sac panel onarımında kontur uyumu kritik; boyasız gövde stoku şasi ölçüsüyle doğrulanır."
+                    },
+    "keyword":  {
+                    "tr":  "kaporta onarım reyonu, tampon ayna sac, boyasız gövde stoku, kontur uyum paneli, çarpışma onarım parçası"
+                },
+    "title":  {
+                  "tr":  "Gövde | Oto Mavi"
+              },
+    "text":  {
+                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eGövde\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eTampon, ayna ve kaporta panelleri için Oto Mavi stokları. BMW gövde onarımında doğru parça, doğru renk ve hızlı sevkiyat.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eTeknik destek: 0544 717 18 28 · info@otomavi.com\u003c/p\u003e"
+             },
+    "icon":  "directions_car",
+    "update":  "2026-07-20",
+    "date":  "2026-07-20",
+    "img":  "index.webp",
+    "desing":  {
+                   "header":  [
+
+                              ],
+                   "body":  [
+                                "t1af01",
+                                "t1ulo01"
+                            ],
+                   "footer":  [
+
+                              ]
+               }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ombcnt0c",
+  "path": "conta-kiti",
+  "name": {
+    "tr": "Conta Kiti"
+  },
+  "status": "play",
+  "category": "ombkim10",
+  "description": {
+    "tr": "Üst kapak ve yağ yuvası gasket grubunu içeren valve cover kit sızıntı tadilatında cıvata setiyle birlikte eksiksiz tamamlanır."
+  },
+  "keyword": {
+    "tr": "valve cover kit, yağ yuvası gasket, sızıntı tadilat contası, cıvatalı conta seti, üst kapak gasket kit"
+  },
+  "title": {
+    "tr": "Conta Kiti | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Conta Kiti</h2><p style=\"font-size: 16px;\">Conta kiti belirli bir motor işi (kapak, emme manifoldu vb.) için gerekli contaları paketler. Oto Mavi atölye siparişlerinde set halinde teslim eder.</p><p style=\"font-size: 16px;\">İş kapsamını yazın; eksik conta kalmasın.</p><p style=\"font-size: 16px;\">0544 717 18 28</p>"
+  },
+  "icon": "category",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

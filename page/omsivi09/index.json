@@ -1,0 +1,37 @@
+{
+    "id":  "omsivi09",
+    "path":  "yaglar",
+    "name":  {
+                 "tr":  "Yağlar ve Sıvılar"
+             },
+    "status":  "play",
+    "category":  "",
+    "description":  {
+                        "tr":  "Longlife yağ, alüminyum korumalı soğutucu ve yüksek kaynama fren sıvısı litre litre ayrılır; onay kodu ve DOT sınıfı etiketle netleşir."
+                    },
+    "keyword":  {
+                    "tr":  "yağ sıvı reyonu, longlife litre yağ, alüminyum soğutucu sıvı, DOT kaynama sıvısı, onay kodu etiket"
+                },
+    "title":  {
+                  "tr":  "Yağlar ve Sıvılar | Oto Mavi"
+              },
+    "text":  {
+                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eYağlar ve Sıvılar\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eMotor yağı, antifriz ve fren hidroliği dahil BMW bakım sıvıları. Spec uyumlu ürünlerle periyodik bakım.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş: 0544 717 18 28 · info@otomavi.com\u003c/p\u003e"
+             },
+    "icon":  "water_drop",
+    "update":  "2026-07-20",
+    "date":  "2026-07-20",
+    "img":  "index.webp",
+    "desing":  {
+                   "header":  [
+
+                              ],
+                   "body":  [
+                                "t1af01",
+                                "t1ulo01"
+                            ],
+                   "footer":  [
+
+                              ]
+               }
+}

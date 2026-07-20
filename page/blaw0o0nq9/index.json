@@ -1,0 +1,32 @@
+{
+  "id": "blaw0o0nq9",
+  "path": "role-kontrol-unitesi",
+  "name": {
+    "tr": "Röle / Kontrol Ünitesi"
+  },
+  "status": "play",
+  "category": "upq7zjks3k",
+  "description": {
+    "tr": "Fan, yakıt pompası veya far rölesi ile küçük kontrol kutuları akım anahtarlar; yanık kontak aralıklı arıza üretir, amper ve pin haritası etiketle doğrulanır."
+  },
+  "keyword": {
+    "tr": "röle, kontrol ünitesi, fan rölesi, yakıt pompası röle, BMW röle kutusu"
+  },
+  "title": {
+    "tr": "Röle / Kontrol Ünitesi | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Röle / Kontrol Ünitesi</h2><p style=\"font-size: 16px;\">Röle arızası çoğu zaman ‘arada bir’ çalışan sistemlerle kendini gösterir. Soket yanığı kontrol edilmelidir.</p><p style=\"font-size: 16px;\">Oto Mavi röle ve mini kontrol ünitelerini numara ve ayak düzenine göre verir.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "electrical_services",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

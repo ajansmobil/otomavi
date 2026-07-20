@@ -1,0 +1,32 @@
+{
+  "id": "rkhqhabbns",
+  "path": "disli-cark",
+  "name": {
+    "tr": "Dişli / Çark"
+  },
+  "status": "play",
+  "category": "knzebtecct",
+  "description": {
+    "tr": "Senkronize dişli ve ara çark grubu vites geçişini sessizleştirir; kırık diş metal sesi ve vites atlaması yaratır, kutu açılımıyla OEM ölçü doğrulanır."
+  },
+  "keyword": {
+    "tr": "şanzıman dişlisi, senkronize çark, gear set, ara dişli, BMW şanzıman parçası"
+  },
+  "title": {
+    "tr": "Dişli / Çark | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Dişli / Çark</h2><p style=\"font-size: 16px;\">Dişli ve çark değişimi çoğu zaman profesyonel kutu revizyonu gerektirir. Parça numarası kutu koduna bağlıdır.</p><p style=\"font-size: 16px;\">Oto Mavi tedarik zinciriyle doğru dişliyi temin eder; teklif için kutu kodunu iletin.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "settings",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": {
+    "tr": "Kalite Politikamız"
+  },
+  "status": "play",
+  "id": "kalitepolitikamiz",
+  "path": "kalitepolitikamiz",
+  "category": "",
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi Kalite Politikamız</h2>\n    <p style=\"font-size: 16px;\">\n        Oto Mavi kalite politikası: uygun fiyat ile 1. sınıf kaliteyi birlikte sunmak. Gaziantep BMW oto yedek parçalarında orijinal ve eşdeğer ürünleri doğru seçim ve hızlı tedarikle ulaştırırız.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Her siparişte doğru ürünü doğru zamanda teslim etmeyi ilke ediniriz. Castrol, Bosch, Dayco, Ridex, Ravenol ve benzeri üretici hatlarından seçenekleri müşteri ihtiyacına göre netleştiririz.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Kalite veya ürün sorularınız için 0544 717 18 28 veya info@otomavi.com.\n    </p>"
+  },
+  "desing": {
+    "header": [],
+    "body": [
+      "tp5jo4",
+      "t1ct01"
+    ],
+    "footer": []
+  },
+  "index": 3,
+  "icon": "home",
+  "title": {
+    "tr": "Kalite Politikamız | Oto Mavi"
+  },
+  "description": {
+    "tr": "Oto Mavi kalite politikası: Gaziantep BMW oto yedek parçalarında uygun fiyat, 1. sınıf kalite ve sürekli iyileştirme."
+  },
+  "keyword": {
+    "tr": "Oto Mavi, kalite politikası, BMW yedek parça, 1. sınıf kalite, Gaziantep, orijinal parça"
+  },
+  "update": "2026-07-20",
+  "date": "2026-05-19"
+}

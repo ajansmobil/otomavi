@@ -1,0 +1,30 @@
+{
+  "order": false,
+  "user": false,
+  "description": {
+    "tr": "Oto Mavi — Gaziantep BMW oto yedek parçaları. Orijinal ve eşdeğer parçalar, uygun fiyat ve güvenilir tedarik."
+  },
+  "keyword": {
+    "tr": "BMW yedek parça, Oto Mavi, Gaziantep, orijinal parça, eşdeğer parça, oto yedek parçaları"
+  },
+  "category": "Kurumsal",
+  "name": "Oto Mavi",
+  "domain": "otomavi.com",
+  "langs": {
+    "tr": true,
+    "en": false,
+    "ar": false,
+    "de": false,
+    "ru": false,
+    "es": false,
+    "fr": false,
+    "it": false,
+    "ja": false,
+    "zh": false,
+    "ko": false,
+    "pt": false
+  },
+  "logo": "logo.png",
+  "multi": false,
+  "eticaret": false
+}

@@ -1,0 +1,37 @@
+{
+    "id":  "omicdn11",
+    "path":  "ic-donanim",
+    "name":  {
+                 "tr":  "İç Donanım"
+             },
+    "status":  "play",
+    "category":  "",
+    "description":  {
+                        "tr":  "Kabin zemin örtüsü, kapı kaplama çerçevesi ve konsol dayaması konforu yeniler; renk kodlu iç mekân parçaları klips tipine göre seçilir."
+                    },
+    "keyword":  {
+                    "tr":  "iç mekân reyonu, zemin örtü paspas, kapı kaplama çerçevesi, konsol dayama ünitesi, renk kodlu trim"
+                },
+    "title":  {
+                  "tr":  "İç Donanım | Oto Mavi"
+              },
+    "text":  {
+                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eİç Donanım\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003ePaspas, trim ve kol dayama ile kabin konforu. BMW iç donanım parçaları Oto Mavi stoklarında.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eİletişim: 0544 717 18 28\u003c/p\u003e"
+             },
+    "icon":  "airline_seat_recline_extra",
+    "update":  "2026-07-20",
+    "date":  "2026-07-20",
+    "img":  "index.webp",
+    "desing":  {
+                   "header":  [
+
+                              ],
+                   "body":  [
+                                "t1af01",
+                                "t1ulo01"
+                            ],
+                   "footer":  [
+
+                              ]
+               }
+}

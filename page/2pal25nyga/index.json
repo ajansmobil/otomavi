@@ -1,0 +1,32 @@
+{
+  "id": "2pal25nyga",
+  "path": "atesleme-kablosu",
+  "name": {
+    "tr": "Ateşleme Kablosu"
+  },
+  "status": "play",
+  "category": "omatsg08",
+  "description": {
+    "tr": "Bobin ile buji arasını bağlayan ateşleme kablosu yüksek voltaj taşır; çatlamış izolasyon misfire ve radyo paraziti üretir, ohm değeri kontrol edilir."
+  },
+  "keyword": {
+    "tr": "ateşleme kablosu, buji kablosu, ignition wire, HT kablo, BMW ateşleme"
+  },
+  "title": {
+    "tr": "Ateşleme Kablosu | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Ateşleme Kablosu</h2><p style=\"font-size: 16px;\">Kablo tipi ateşleme hâlâ bazı motorlarda kullanılır. Nemli havada kaçak artar.</p><p style=\"font-size: 16px;\">Oto Mavi set halinde direnç uyumlu kablo sunar.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "cable",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

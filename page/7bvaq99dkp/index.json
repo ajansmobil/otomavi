@@ -1,0 +1,32 @@
+{
+  "id": "7bvaq99dkp",
+  "path": "rot-basi",
+  "name": {
+    "tr": "Rot Başı / Çubuk Ucu"
+  },
+  "status": "play",
+  "category": "ry99uefxh8",
+  "description": {
+    "tr": "Direksiyon çubuğu ucundaki rot başı tekerlek kamberini korur; aşınmış mafsal titreşim ve düzensiz lastik aşınması yaratır, sol/sağ uç ayrı kodlanır."
+  },
+  "keyword": {
+    "tr": "rot başı, çubuk ucu, tie rod end, direksiyon mafsalı, BMW rot"
+  },
+  "title": {
+    "tr": "Rot Başı / Çubuk Ucu | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Rot Başı / Çubuk Ucu</h2><p style=\"font-size: 16px;\">Rot başı aşınması direksiyonda tıkırtı ve savrulma hissi verir. Değişimden sonra rot ayarı (alignment) şarttır.</p><p style=\"font-size: 16px;\">Oto Mavi sol/sağ rot başlarını aks tipine göre stoklar.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "build",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

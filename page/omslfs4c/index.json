@@ -1,0 +1,32 @@
+{
+  "id": "omslfs4c",
+  "path": "fiskiye-pompasi",
+  "name": {
+    "tr": "Fıskiye Pompası"
+  },
+  "status": "play",
+  "category": "omslck14",
+  "description": {
+    "tr": "Depodaki suyu memelere basan washer pump tek veya çift çıkışlıdır; hortum çapına göre meme besleme motoru stoktan seçilir."
+  },
+  "keyword": {
+    "tr": "washer pump dual, cam yıkama motoru, fıskiye su pompası, hortum çaplı pump, meme besleme motoru"
+  },
+  "title": {
+    "tr": "Fıskiye Pompası | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Fıskiye Pompası</h2><p style=\"font-size: 16px;\">Fıskiye pompası cam yıkama suyunu püskürtür; tek veya çift çıkışlı olabilir. Oto Mavi BMW yıkama pompalarında elektrik konektörü uyumu kontrol edilir.</p><p style=\"font-size: 16px;\">Depo süzgeci tıkanıklığı pompayı zorlar; birlikte kontrol edin.</p><p style=\"font-size: 16px;\">Sipariş (sepet yok): 0544 717 18 28 · WhatsApp</p>"
+  },
+  "icon": "water_drop",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "ommcta4a",
+  "path": "conta-seti",
+  "name": {
+    "tr": "Conta Seti"
+  },
+  "status": "play",
+  "category": "ommotr04",
+  "description": {
+    "tr": "Üst kapak ve manifold sızdırmazlığını sağlayan gasket seti yağ kaçaklarını keser; silindir kapağı ile karter contası ayrı kitlenir."
+  },
+  "keyword": {
+    "tr": "silindir kapağı gasket, manifold conta seti, karter yağ seal, üst kapak sızdırmazlık, yağ kaçak gasket"
+  },
+  "title": {
+    "tr": "Conta Seti | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Conta Seti</h2><p style=\"font-size: 16px;\">Üst/alt conta setleri yağ ve soğutma kaçaklarını önler. Oto Mavi BMW conta setlerinde motor kodu eşleşmesi zorunludur.</p><p style=\"font-size: 16px;\">Tek conta yerine set kullanmak işçilik tekrarını azaltır. İş tipinizi (kapak, karter, emme) belirtin.</p><p style=\"font-size: 16px;\">Atölye siparişi: 0544 717 18 28</p>"
+  },
+  "icon": "layers",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

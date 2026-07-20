@@ -1,0 +1,32 @@
+{
+  "id": "omgtmp3a",
+  "path": "tampon",
+  "name": {
+    "tr": "Tampon"
+  },
+  "status": "play",
+  "category": "omgvde03",
+  "description": {
+    "tr": "Park sensörü ve sis yuvası delikli tampon kapağı darbede ezilir; boyasız veya astarlı bumper cover modele özel konturla gelir."
+  },
+  "keyword": {
+    "tr": "park sensörlü tampon, sis yuvası bumper, boyasız tampon kapağı, ön arka bumper cover, astarlı tampon gövdesi"
+  },
+  "title": {
+    "tr": "Tampon | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Tampon</h2><p style=\"font-size: 16px;\">Ön veya arka tampon, park manevrası ve küçük darbelerde ilk koruma katmanıdır. Oto Mavi BMW tamponlarında boyasız gövde veya boyalı seçenekler sunulur.</p><p style=\"font-size: 16px;\">Park sensörü ve sis farı yuvası modele göre değişir; fotoğraf veya şasi ile eşleştirme yapıyoruz.</p><p style=\"font-size: 16px;\">Kaporta siparişi: 0544 717 18 28</p>"
+  },
+  "icon": "directions_car",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

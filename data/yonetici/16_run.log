@@ -1,0 +1,118 @@
+# Paket 16 — Site bilgileri + kurumsal (Geotech → Oto Mavi) — RUN LOG
+
+**Tarih:** 2026-07-20  
+**Proje:** otomavi / Oto Mavi  
+**cwd:** D:\projeler\otomavi\Web\matrix  
+**Referans:** data/yonetici/14_analiz.md §4 · data/yonetici/16_site_bilgi_kurumsal.md
+
+---
+
+## Özet tablo
+
+| Metrik | Değer |
+|--------|-------|
+| Render | **status=ok** (HTTP pipeline 200) |
+| renderId | `cf9rliyr` |
+| renderMs | 647 |
+| dogrula | **hata=0** uyarı=2 |
+| derin tarama | error=0 warn=5 (önceki borç: menu-2 / page-desing-otomavi / admin) |
+| SSS | canlı (`/tr/sss/` · title/meta OK) |
+| Kariyer | canlı (`/tr/kariyer/` · title/meta OK) |
+| eticaret / sepet | yok |
+| Commit / push | yok |
+
+---
+
+## 1) İletişim yüzeyi
+
+### contact `fhxr98`
+- Tel: 0544 717 18 28  
+- E-posta: info@otomavi.com  
+- Adres: Sanayi mah. 60081 nolu cadde no 43 Şehitkamil Gaziantep  
+- Çalışma: Sabah 08:00 – 22:00 (`schedule`)  
+- WhatsApp CTA: `wa.me/905447171828` — Oto Mavi teklif metni  
+
+### İletişim sayfa `xnzu5au0ag` / path `iletisim`
+- Body: `t1pd01` + `fhxr98` + `bi4hta`  
+- R11: `text` liste satırında (`page.json`); detay `index.json`’da text yok  
+
+### Footer `txt39m`
+- Path: `footer-1` → **`footer-5`** (id korundu)  
+- Adres + çalışma saati + tel + e-posta  
+- Yasal linkler: Hakkımızda, SSS, Kariyer, Gizlilik, KVKK, Yasal Uyarı  
+- Sahibinden: **URL yok** → yalnızca “Sahibinden’de Oto Mavi” notu (`ssl_text`)  
+- WhatsApp satırı: 0544 717 18 28 · otomavi.com  
+
+---
+
+## 2) Kurumsal
+
+### Güçlendirilen metinler
+- Hakkımızda / Misyon / Vizyon / Kalite — uygun fiyat · 1. sınıf kalite · WhatsApp sipariş · Gaziantep depo  
+
+### Yeni sayfalar
+| id/path | İçerik |
+|---------|--------|
+| `sss` | 5 Soru-Cevap: teslimat 1–3 gün, WhatsApp sipariş, orijinal/eşdeğer, Gaziantep depo, iade özeti |
+| `kariyer` | Açık pozisyonlar (satış danışmanı, depo/sevkiyat) · başvuru `info@otomavi.com` |
+
+### Body
+- Kurumsal sayfalar: `tp5jo4` → **`t1pd01`** (+ `t1ct01`)  
+- `pagesetting.json` kurumsal body: `t1pd01`  
+- `kurumsal.json` desing body: `t1pd01`  
+
+---
+
+## 3) Ana sayfa değer / güven şeridi
+
+### `t1st01` (stats-1) — 4 madde
+1. Uzman Hizmet — **7 gün**  
+2. Uygun Fiyat — **1. sınıf**  
+3. Hızlı Tedarik — **3 gün** (1–3 gün bandı)  
+4. Geniş Parça Seçimi — **5000+**  
+
+### `t1in01`
+- Slogan: “BMW Yedek Parça · Uygun Fiyat · 1. Sınıf Kalite”  
+- Sepet dili yok; WhatsApp / telefon teklif vurgusu  
+
+### `t1ct01`
+- **Ürünleri İncele** → `urunler`  
+- **WhatsApp ile Teklif Al** → `wa.me/905447171828`  
+
+### Marka şeridi `t1br01` (path `text`)
+- “Öne çıkan üreticiler: Castrol · Bosch · Dayco · Ridex · Ravenol”  
+- `desing.json` body: … `t1st01` → `t1br01` → `t1ct01`  
+
+---
+
+## 4) Menü (`vey1el` / `page.json`)
+
+Anasayfa · **Ürünler** · **Hakkımızda** · **SSS** · **İletişim**  
+- SSS menü kaydı: id `1ol7p3rfpv` (page-id servisi), `path=kurumsal`, `pathnext=sss`  
+- Kariyer: kurumsal altı (menüde ayrı üst öğe yok)  
+
+---
+
+## 5) Render + dogrula komutları
+
+```powershell
+Invoke-RestMethod -Method POST -Uri http://localhost/webmaker/services/webmaker/ -ContentType application/json -Body '{"path":"otomavi"}'
+node D:/projeler/elo/web/talimatlar/web/webmaker-analiz.js otomavi
+```
+
+Kanıt dosyaları:
+- `data/yonetici/16_render.json`
+- `data/yonetici/16_dogrula.txt`
+- `data/yonetici/16_run.log` (bu dosya)
+
+---
+
+## 6) DONE kontrol
+
+- [x] SSS + Kariyer canlı (public `tr/sss`, `tr/kariyer` · SEO title/description)
+- [x] İletişim + footer + stats tutarlı (doğrulanmış adres/tel)
+- [x] dogrula **hata=0**
+- [x] render **status=ok**
+- [x] Sepet / uydurma URL / commit yok
+
+**PAKET16_OK**

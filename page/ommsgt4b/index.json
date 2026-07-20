@@ -1,0 +1,32 @@
+{
+  "id": "ommsgt4b",
+  "path": "sogutma-parcasi",
+  "name": {
+    "tr": "Soğutma Parçası"
+  },
+  "status": "play",
+  "category": "ommotr04",
+  "description": {
+    "tr": "Termostat gövdesi, radyatör hortumu ve soğutma ağzı harareti düşürür; debimetre uyumlu cooling part Oto Mavi stokundan seçilir."
+  },
+  "keyword": {
+    "tr": "termostat gövdesi hortum, radyatör soğutma ağzı, cooling system part, hararet düşürücü eleman, debimetre uyumlu soğutma"
+  },
+  "title": {
+    "tr": "Soğutma Parçası | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Soğutma Parçası</h2><p style=\"font-size: 16px;\">Termostat, hortum ve radyatör grubu motor ısısını dengede tutar. Oto Mavi BMW soğutma parçalarında sızıntı ve aşırı ısınma şikayetlerine yönelik stok vardır.</p><p style=\"font-size: 16px;\">Antifriz tipi ile birlikte değişim önerilir. Arıza belirtisini yazın.</p><p style=\"font-size: 16px;\">Destek: 0544 717 18 28</p>"
+  },
+  "icon": "thermostat",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

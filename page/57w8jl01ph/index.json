@@ -1,0 +1,32 @@
+{
+  "id": "57w8jl01ph",
+  "path": "yakit-deposu",
+  "name": {
+    "tr": "Yakıt Deposu"
+  },
+  "status": "play",
+  "category": "omgvde03",
+  "description": {
+    "tr": "Plastik veya sac yakıt deposu çatlak ve paslanma durumunda değişir; pompa flanşı ve şamandıra contası birlikte değerlendirilir, emniyet kurallarına uyulur."
+  },
+  "keyword": {
+    "tr": "yakıt deposu, fuel tank, şamandıra flanş, depo conta, BMW yakıt tankı"
+  },
+  "title": {
+    "tr": "Yakıt Deposu | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Yakıt Deposu</h2><p style=\"font-size: 16px;\">Yakıt deposu çalışması uzmanlık ve güvenlik gerektirir. Çatlak koku ve sızıntıyla anlaşılır.</p><p style=\"font-size: 16px;\">Oto Mavi depo ve flanş conta setlerini model yılına göre listeler.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "local_gas_station",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

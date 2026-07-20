@@ -1,0 +1,32 @@
+{
+  "id": "z61o8tyuub",
+  "path": "tambur-fren",
+  "name": {
+    "tr": "Tambur Fren"
+  },
+  "status": "play",
+  "category": "omfren02",
+  "description": {
+    "tr": "Arka tambur, pabuç ve yay seti kampana fren sistemini yeniler; el freni teliyle birlikte ayarlanır, çatlak tambur titreşim üretir."
+  },
+  "keyword": {
+    "tr": "tambur fren, kampana, fren pabucu, drum brake, BMW arka fren"
+  },
+  "title": {
+    "tr": "Tambur Fren | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Tambur Fren</h2><p style=\"font-size: 16px;\">Bazı BMW arka aks uygulamalarında tambur/pabuç sistemi kullanılır. Yay seti olmadan montaj eksik kalır.</p><p style=\"font-size: 16px;\">Oto Mavi tambur çapı ve pabuç genişliğine göre set sunar.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "album",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

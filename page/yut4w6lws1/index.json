@@ -1,0 +1,37 @@
+{
+    "id":  "yut4w6lws1",
+    "path":  "lastik-jant",
+    "name":  {
+                 "tr":  "Lastik ve Jant"
+             },
+    "status":  "play",
+    "category":  "",
+    "description":  {
+                        "tr":  "Lastik, jant kapağı, tamir kiti ve ara parça ile tekerlek çevresini tamamlayın; ebat ve PCD bilgisini Oto Mavi’ye ileterek doğru lastik-jant uyumunu sağlayın."
+                    },
+    "keyword":  {
+                    "tr":  "BMW lastik, jant kapağı, lastik tamir kiti, tekerlek ara parça, PCD ebat"
+                },
+    "title":  {
+                  "tr":  "Lastik ve Jant | Oto Mavi"
+              },
+    "text":  {
+                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eLastik ve Jant\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eLastik ebatı, yük indeksi ve jant PCD değeri yanlış seçilirse ABS ve sürüş güvenliği bozulur. Oto Mavi lastik ve jant yan ürünlerinde ebat doğrulaması yapar.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eMevsimlik değişim ve acil tamir kitleri için stok sorgusu yapabilirsiniz.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.\u003c/p\u003e"
+             },
+    "icon":  "tire_repair",
+    "update":  "2026-07-20",
+    "date":  "2026-07-20",
+    "img":  "index.webp",
+    "desing":  {
+                   "header":  [
+
+                              ],
+                   "body":  [
+                                "t1af01",
+                                "t1ulo01"
+                            ],
+                   "footer":  [
+
+                              ]
+               }
+}

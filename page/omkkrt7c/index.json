@@ -1,0 +1,32 @@
+{
+  "id": "omkkrt7c",
+  "path": "kurutucu",
+  "name": {
+    "tr": "Kurutucu"
+  },
+  "status": "play",
+  "category": "omklma07",
+  "description": {
+    "tr": "Sistem nemini tutan receiver-drier kompresör değişiminde mutlaka yenilenir; o-ring setli desiccant bag ile birlikte teslim edilir."
+  },
+  "keyword": {
+    "tr": "receiver drier nem, desiccant bag kurutucu, klima o-ring seti, A/C accumulator drier, nem tutucu filtre"
+  },
+  "title": {
+    "tr": "Kurutucu | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Kurutucu</h2><p style=\"font-size: 16px;\">Klima kurutucusu (receiver/drier) nemi tutarak kompresörü korur. Açık sistemde veya kompresör değişiminde kurutucu da yenilenmelidir.</p><p style=\"font-size: 16px;\">Oto Mavi stokunda gaz tipine uygun kurutucular vardır.</p><p style=\"font-size: 16px;\">Sipariş: 0544 717 18 28</p>"
+  },
+  "icon": "invert_colors",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

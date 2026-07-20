@@ -1,0 +1,32 @@
+{
+  "id": "omsbrc6c",
+  "path": "salincak-burcu",
+  "name": {
+    "tr": "Salıncak Burcu"
+  },
+  "status": "play",
+  "category": "omsusp06",
+  "description": {
+    "tr": "Salıncak pivotundaki kauçuk burç vuruntu ve lastik aşınmasını azaltır; hidrolik veya katı control arm bush seçenekleri vardır."
+  },
+  "keyword": {
+    "tr": "salıncak pivot burcu, control arm bush, hidrolik kauçuk burç, sessiz pivot yatak, lastik aşınma burcu"
+  },
+  "title": {
+    "tr": "Salıncak Burcu | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Salıncak Burcu</h2><p style=\"font-size: 16px;\">Salıncak burcu aşınınca direksiyon boşluğu ve lastik iç kenar aşınması görülür. Oto Mavi BMW burçlarında kauçuk sertliği OEM’e yakın tutulur.</p><p style=\"font-size: 16px;\">Rot başı ve salıncak kolu ile birlikte muayene önerilir.</p><p style=\"font-size: 16px;\">Sipariş: 0544 717 18 28</p>"
+  },
+  "icon": "settings_input_component",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "omfpln1d",
+  "path": "polen-filtresi",
+  "name": {
+    "tr": "Polen Filtresi"
+  },
+  "status": "play",
+  "category": "omfltr01",
+  "description": {
+    "tr": "Menfezden gelen tozu kesen aktif karbonlu kabin filtresi alerjen ve egzoz kokusunu azaltır; pollen cabin elemanı stokta bulunur."
+  },
+  "keyword": {
+    "tr": "aktif karbon kabin, pollen cabin elemanı, menfez hava filtresi, alerjen kesici filtre, iç hava kabin süzgeci"
+  },
+  "title": {
+    "tr": "Polen Filtresi | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Polen Filtresi</h2><p style=\"font-size: 16px;\">Kabin / polen filtresi, klima ve ısıtma hattından gelen toz, polen ve kokuyu azaltır. Aktif karbonlu varyantlar Oto Mavi stokunda mevcuttur.</p><p style=\"font-size: 16px;\">Koku veya üfleme gücünde düşüş varsa filtreyi kontrol ettirin. BMW modelinize göre kesim farklıdır.</p><p style=\"font-size: 16px;\">İletişim: info@otomavi.com · 0544 717 18 28</p>"
+  },
+  "icon": "spa",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

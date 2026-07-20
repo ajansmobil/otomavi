@@ -1,0 +1,32 @@
+{
+  "id": "omgayn3b",
+  "path": "yan-ayna",
+  "name": {
+    "tr": "Yan Ayna"
+  },
+  "status": "play",
+  "category": "omgvde03",
+  "description": {
+    "tr": "Katlanır motorlu ısıtmalı yan ayna ünitesinde cam, gövde ve sinyalli kapak ayrı satılabilir; sol/sağ ayna kodu net ayrılır."
+  },
+  "keyword": {
+    "tr": "katlanır ayna ünitesi, ısıtmalı ayna camı, sinyalli ayna kapağı, mirror assembly sol, elektrikli ayna motoru"
+  },
+  "title": {
+    "tr": "Yan Ayna | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Yan Ayna</h2><p style=\"font-size: 16px;\">Yan ayna elektrikli katlama, ısıtma ve sinyal entegreli olabilir. Oto Mavi sol/sağ BMW ayna gövdelerini renk koduna göre temin eder.</p><p style=\"font-size: 16px;\">Cam kırığı ile gövde hasarı farklı parçalardır; ihtiyacı netleştirin.</p><p style=\"font-size: 16px;\">info@otomavi.com · 0544 717 18 28</p>"
+  },
+  "icon": "flip",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

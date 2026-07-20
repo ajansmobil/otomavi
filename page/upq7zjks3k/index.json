@@ -1,0 +1,37 @@
+{
+    "id":  "upq7zjks3k",
+    "path":  "park-elektronik",
+    "name":  {
+                 "tr":  "Park ve Elektronik"
+             },
+    "status":  "play",
+    "category":  "",
+    "description":  {
+                        "tr":  "Park sensörü, motor beyni (ECU) ve röle/kontrol üniteleriyle elektronik yardımcılar burada; hata kodu ve konnektör tipine göre Oto Mavi elektronik reyonundan ilerleyin."
+                    },
+    "keyword":  {
+                    "tr":  "park sensörü, motor beyni ECU, röle kontrol ünitesi, kablo demeti, BMW elektronik"
+                },
+    "title":  {
+                  "tr":  "Park ve Elektronik | Oto Mavi"
+              },
+    "text":  {
+                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003ePark ve Elektronik\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003ePark yardım sensörleri, motor kontrol beyni ve röle üniteleri sürüş güvenliğini destekler. Yanlış kodlanmış ECU veya arızalı sensör sürekli uyarı üretir.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eOto Mavi elektronik parçalarında pin, frekans ve yazılım notunu şasiyle doğrular; sepet yok, teklif hattı açıktır.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.\u003c/p\u003e"
+             },
+    "icon":  "sensors",
+    "update":  "2026-07-20",
+    "date":  "2026-07-20",
+    "img":  "index.webp",
+    "desing":  {
+                   "header":  [
+
+                              ],
+                   "body":  [
+                                "t1af01",
+                                "t1ulo01"
+                            ],
+                   "footer":  [
+
+                              ]
+               }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "omsyag9a",
+  "path": "motor-yagi",
+  "name": {
+    "tr": "Motor Yağı"
+  },
+  "status": "play",
+  "category": "omsivi09",
+  "description": {
+    "tr": "Longlife onaylı sentetik 5W-30 / 5W-40 litre litre satılır; yağ onay kodu etiketle netleşir, süzgeçle birlikte önerilir."
+  },
+  "keyword": {
+    "tr": "Longlife 5W30 yağ, sentetik 5W40 litre, BMW LL onay kodu, viskozite etiket yağ, süzgeçle yağ paketi"
+  },
+  "title": {
+    "tr": "Motor Yağı | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Motor Yağı</h2><p style=\"font-size: 16px;\">BMW Longlife ve ACEA sınıfları motor tipine göre değişir. Oto Mavi spec’e uygun motor yağlarını litre seçenekleriyle sunar.</p><p style=\"font-size: 16px;\">Yanlış viskozite yakıt ve turbo ömrünü etkiler. Kılavuzdaki onay kodunu paylaşın.</p><p style=\"font-size: 16px;\">Yağ siparişi: 0544 717 18 28 · info@otomavi.com</p>"
+  },
+  "icon": "water_drop",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

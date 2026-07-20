@@ -1,0 +1,9 @@
+# Paket 28 — İncele butonu kontrast
+
+**Kök neden:** `webmodules/ham/src/css.css` → `a:link,a:visited{color:#000}` özgüllüğü sınıfı eziyor.
+
+**Çözüm:** `urun-liste-otomavi` / `urun-detay-otomavi` / arama / page-desing → `color:#ffffff !important` (+ `a.modulex-btn-*`).
+
+**Kural:** `.cursorrules` § UI kontrast Paket 28
+
+Render: ok · filtreler `.b0001-btn-view{color:#ffffff !important}`

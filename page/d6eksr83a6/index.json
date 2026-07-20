@@ -1,0 +1,32 @@
+{
+  "id": "d6eksr83a6",
+  "path": "elektronik-kablo-demeti",
+  "name": {
+    "tr": "Elektronik Kablo Demeti"
+  },
+  "status": "play",
+  "category": "upq7zjks3k",
+  "description": {
+    "tr": "Sensör ve ünite arası onarım demeti kopuk pinleri giderir; su giren konnektörlerde korozyon yaygındır, kesit ve fiş kilidi OEM uyumlu seçilir."
+  },
+  "keyword": {
+    "tr": "kablo demeti, wiring repair, konnektör pin, sensör kablosu, BMW elektrik tesisat"
+  },
+  "title": {
+    "tr": "Elektronik Kablo Demeti | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Elektronik Kablo Demeti</h2><p style=\"font-size: 16px;\">Onarım demetleri kısa devre ve kopuk sinyal hatlarında ekonomik çözümdür. Yanlış kesit ısınma yaratır.</p><p style=\"font-size: 16px;\">Oto Mavi pin ve fiş tipine göre demet önerir.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "cable",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "omsant9b",
+  "path": "antifriz",
+  "name": {
+    "tr": "Antifriz"
+  },
+  "status": "play",
+  "category": "omsivi09",
+  "description": {
+    "tr": "Alüminyum radyatore uyumlu G12/G13 konsantre soğutucu korozyonu önler; renk ve karışım oranı antifreeze şişesinde yazar."
+  },
+  "keyword": {
+    "tr": "G12 konsantre soğutucu, G13 alüminyum antifreeze, karışım oranı antifriz, renk kodlu soğutucu, korozyon önleyici sıvı"
+  },
+  "title": {
+    "tr": "Antifriz | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Antifriz</h2><p style=\"font-size: 16px;\">Antifriz rengi ve kimyası (G11/G12/G13) karıştırılmamalıdır. Oto Mavi BMW soğutma sıvılarında konsantre ve hazır karışım bulunur.</p><p style=\"font-size: 16px;\">Donma ve korozyon koruması için doğru oran kritiktir.</p><p style=\"font-size: 16px;\">Bilgi: 0544 717 18 28</p>"
+  },
+  "icon": "ac_unit",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

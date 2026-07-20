@@ -1,0 +1,32 @@
+{
+  "id": "ommsns4c",
+  "path": "motor-sensoru",
+  "name": {
+    "tr": "Motor Sensörü"
+  },
+  "status": "play",
+  "category": "ommotr04",
+  "description": {
+    "tr": "Lambda, krank pozisyon ve ECT algılayıcı OBD kodunda pin sayısına göre eşleşir; konnektör şekilli sensör stokta ayrılır."
+  },
+  "keyword": {
+    "tr": "lambda oksijen algılayıcı, krank pozisyon sensörü, ECT sıcaklık sensörü, OBD pin sayılı, konnektör şekilli sensör"
+  },
+  "title": {
+    "tr": "Motor Sensörü | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Motor Sensörü</h2><p style=\"font-size: 16px;\">Oksijen, krank ve sıcaklık sensörleri ECU’ya doğru sinyal gönderir. Oto Mavi’de arıza koduna göre BMW sensör seçimi yapılır.</p><p style=\"font-size: 16px;\">Yanlış sensör yakıt tüketimini bozar; OBD kodunu paylaşın.</p><p style=\"font-size: 16px;\">Teknik hat: 0544 717 18 28 · info@otomavi.com</p>"
+  },
+  "icon": "sensors",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

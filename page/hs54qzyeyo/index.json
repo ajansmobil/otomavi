@@ -1,0 +1,31 @@
+{
+  "name": {
+    "tr": "Ürünler"
+  },
+  "status": "play",
+  "category": "",
+  "id": "hs54qzyeyo",
+  "url": "",
+  "path": "urunler",
+  "index": 0,
+  "icon": "home",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1plpr"
+    ],
+    "footer": []
+  },
+  "pathnext": "",
+  "description": {
+    "tr": "Oto Mavi BMW yedek parça kataloğu: filtre, fren, motor, elektrik, turbo, direksiyon, şanzıman, süspansiyon, lastik ve araç ekipmanları."
+  },
+  "title": {
+    "tr": "Ürünler | Oto Mavi"
+  },
+  "keyword": {
+    "tr": "Oto Mavi ürünler, BMW yedek parça, turbo, direksiyon, şanzıman, lastik, Gaziantep katalog"
+  },
+  "update": "2026-07-20",
+  "date": "2026-05-19"
+}

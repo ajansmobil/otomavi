@@ -1,0 +1,37 @@
+{
+    "id":  "omfltr01",
+    "path":  "filtreler",
+    "name":  {
+                 "tr":  "Filtreler"
+             },
+    "status":  "play",
+    "category":  "",
+    "description":  {
+                        "tr":  "Yakıt süzgeci, emiş paneli, yağ kartuşu ve kabin elemanını aynı reyon altında toplayın; Gaziantep deposunda filtre kodları şasiye göre ayrılır."
+                    },
+    "keyword":  {
+                    "tr":  "filtre reyonu kataloğu, emiş yakıt süzgeç listesi, kabin elemanı grubu, bakım süzgeç reyonu, filtre kod eşlemesi"
+                },
+    "title":  {
+                  "tr":  "Filtreler | Oto Mavi"
+              },
+    "text":  {
+                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eFiltreler\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eOto Mavi olarak BMW araçlarınız için yakıt, hava, yağ ve polen filtrelerini orijinal ve eşdeğer seçeneklerle sunuyoruz. Temiz yakıt hattı, sağlıklı yanma ve kabin hava kalitesi için doğru filtre kritiktir.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003ePeriyodik bakımlarda filtre değişimini ihmal etmeyin; tıkanmış filtre yakıt tüketimini artırır ve motor ömrünü kısaltır. Stok ve uyumluluk için 0544 717 18 28 veya info@otomavi.com üzerinden Oto Mavi’ye ulaşın.\u003c/p\u003e"
+             },
+    "icon":  "filter_alt",
+    "update":  "2026-07-20",
+    "date":  "2026-07-20",
+    "img":  "index.webp",
+    "desing":  {
+                   "header":  [
+
+                              ],
+                   "body":  [
+                                "t1af01",
+                                "t1ulo01"
+                            ],
+                   "footer":  [
+
+                              ]
+               }
+}

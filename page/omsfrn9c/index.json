@@ -1,0 +1,32 @@
+{
+  "id": "omsfrn9c",
+  "path": "fren-hidroligi-sivi",
+  "name": {
+    "tr": "Fren Hidroliği (Sıvı)"
+  },
+  "status": "play",
+  "category": "omsivi09",
+  "description": {
+    "tr": "Yüksek kaynama noktalı DOT4 / DOT5.1 brake fluid periyodik flush ile nemden arındırılır; litre şişe yağlar reyonundadır."
+  },
+  "keyword": {
+    "tr": "DOT4 brake fluid, DOT5.1 kaynama sıvısı, fren flush litre, nem arındırma sıvısı, hidrolik yağ şişesi"
+  },
+  "title": {
+    "tr": "Fren Hidroliği (Sıvı) | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Fren Hidroliği (Sıvı)</h2><p style=\"font-size: 16px;\">DOT 4 ve DOT 5.1 sınıfları farklı kaynama noktalarına sahiptir. Oto Mavi yağlar kategorisinde fren sıvısı bakımı için stok tutar.</p><p style=\"font-size: 16px;\">Açık şişeyi uzun süre saklamayın; nem alır. Değişimde sistem havası alınmalıdır.</p><p style=\"font-size: 16px;\">0544 717 18 28</p>"
+  },
+  "icon": "science",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

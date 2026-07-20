@@ -1,0 +1,32 @@
+{
+  "id": "omkknd7b",
+  "path": "kondanser",
+  "name": {
+    "tr": "Kondanser"
+  },
+  "status": "play",
+  "category": "omklma07",
+  "description": {
+    "tr": "Ön panelde ısı atan alüminyum kondanser çekirdeği taş çarpmasında delinir; kurutucuyla birlikte condenser core değişimi önerilir."
+  },
+  "keyword": {
+    "tr": "alüminyum kondanser çekirdek, ön panel heat exchanger, A/C condenser core, taş delik kondanser, ısı atım çekirdeği"
+  },
+  "title": {
+    "tr": "Kondanser | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Kondanser</h2><p style=\"font-size: 16px;\">Kondanser ön panelde ısıyı dışarı atar; taş darbesi sızıntıya yol açabilir. Oto Mavi BMW kondanserlerinde alüminyum gövde ve fan uyumu kontrol edilir.</p><p style=\"font-size: 16px;\">Radyatör ve intercooler ile birlikte montaj sırası önemlidir.</p><p style=\"font-size: 16px;\">0544 717 18 28 · info@otomavi.com</p>"
+  },
+  "icon": "device_thermostat",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

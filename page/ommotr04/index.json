@@ -1,0 +1,37 @@
+{
+    "id":  "ommotr04",
+    "path":  "motor",
+    "name":  {
+                 "tr":  "Motor"
+             },
+    "status":  "play",
+    "category":  "",
+    "description":  {
+                        "tr":  "Sızdırmazlık conta grubu, soğutma elemanı ve algılayıcı sensörlerle motor sağlığını toparlayın; hararet ve kaçak şikayetlerinde teknik parça reyonu."
+                    },
+    "keyword":  {
+                    "tr":  "motor teknik reyonu, conta soğutma algılayıcı, kaçak önleme parçası, hararet teknik seti, ECU sinyal elemanı"
+                },
+    "title":  {
+                  "tr":  "Motor | Oto Mavi"
+              },
+    "text":  {
+                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eMotor\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eConta, soğutma ve sensör grubunda Oto Mavi BMW motor çözümleri. Atölye ve araç sahipleri için güvenilir stok.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş: 0544 717 18 28\u003c/p\u003e"
+             },
+    "icon":  "settings",
+    "update":  "2026-07-20",
+    "date":  "2026-07-20",
+    "img":  "index.webp",
+    "desing":  {
+                   "header":  [
+
+                              ],
+                   "body":  [
+                                "t1af01",
+                                "t1ulo01"
+                            ],
+                   "footer":  [
+
+                              ]
+               }
+}

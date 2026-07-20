@@ -1,0 +1,19 @@
+=== webmaker toplu analiz — otomavi ===
+Veri kökü: D:\projeler\otomavi\Web\matrix (kanonik ✓)
+
+İşleyiş dokümanları (16): webmaker/webmaker, webmaker/admin, webmaker/degisiklikler, webmaker/derin-tarama, webmaker/gelistirme-master-plan, webmaker/gelistirme-yol-haritasi, webmaker/mantik, webmaker/page-text-html, webmaker/plan, webmaker/rust, webmaker/webmodules-entegrasyon, webmodules/kurallar, webmodules/admin, webmodules/mantik, webmodules/plan, webmodules/rust
+Modül kataloğu: header=30 body=144 footer=22
+
+✓ dogrula: hata=0 uyarı=0
+
+Matrix proje özeti: hasWebData=true kategoriler=page,products,kurumsal,category
+✓ derin tarama: error=0 warn=5 info=12
+   [warn] WEBMODULES_BACKJS_HARDCODED_TEXT: back.js sabit UI metni iceriyor; index.json desing/data + {{key}} kullanin (W1): webmodules/body/page-desing-otomavi — L1: Turkce karakter; L218: "" target="_blank" rel="noopener noreferrer">"
+   [warn] WEBMODULES_HTML_HARDCODED_TEXT: index.html sabit UI metni iceriyor; index.json desing/data + {{key}} kullanin (W1): webmodules/header/menu-2 — L154: Turkce karakter; L155: Turkce karakter; L156: Turkce karakter
+   [warn] ADMIN_PAGE_HTML_MISSING: Admin sayfada HTML yok: database/database.html
+   [warn] ADMIN_PAGE_JS_MISSING: Admin sayfada JS yok: database/database.js
+   [warn] OUTPUT_PLACEHOLDER_LEAK: Cikti dosyasinda replace edilmemis placeholder: --x--=2, {{x}}=0, @x@=0
+
+✓ SONUÇ: temiz
+
+JSON çıktı için --json ekleyin.

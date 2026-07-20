@@ -1,0 +1,32 @@
+{
+  "id": "l3pah7xqy4",
+  "path": "atolye-sarf",
+  "name": {
+    "tr": "Atölye Sarf"
+  },
+  "status": "play",
+  "category": "joh4ngy8qk",
+  "description": {
+    "tr": "Conta macunu, temizleyici sprey ve eldiven gibi atölye sarfı montaj kalitesini etkiler; yanlış kimyasal plastik ve boyaya zarar verebilir."
+  },
+  "keyword": {
+    "tr": "atölye sarf, conta macunu, fren temizleyici, montaj yağı, servis sarf"
+  },
+  "title": {
+    "tr": "Atölye Sarf | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Atölye Sarf</h2><p style=\"font-size: 16px;\">Doğru sarf malzemesi conta ve hortum ömrünü uzatır. Silikon tipi contaya göre seçilmelidir.</p><p style=\"font-size: 16px;\">Oto Mavi bakım ve montaj sarflarını kitlerle birlikte sunar.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "science",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

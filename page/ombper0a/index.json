@@ -1,0 +1,32 @@
+{
+  "id": "ombper0a",
+  "path": "periyodik-bakim-seti",
+  "name": {
+    "tr": "Periyodik Bakım Seti"
+  },
+  "status": "play",
+  "category": "ombkim10",
+  "description": {
+    "tr": "Servis kilometresine göre yağ ve seçili süzgeçleri tek kutuda toplayan inspection package şasi listesiyle hazırlanıp sunulur."
+  },
+  "keyword": {
+    "tr": "inspection package kutu, kilometre servis seti, yağ süzgeç bakımı, şasi servis listesi, periyodik kutu paketi"
+  },
+  "title": {
+    "tr": "Periyodik Bakım Seti | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Periyodik Bakım Seti</h2><p style=\"font-size: 16px;\">Periyodik bakım seti yağ + filtre kombinasyonunu tek siparişte toplar. Oto Mavi BMW bakım setleri km / yıl aralığına göre paketler.</p><p style=\"font-size: 16px;\">Model ve motor koduyla set içeriğini netleştiriyoruz; eksik parça kalmaz.</p><p style=\"font-size: 16px;\">Set siparişi: 0544 717 18 28</p>"
+  },
+  "icon": "build",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

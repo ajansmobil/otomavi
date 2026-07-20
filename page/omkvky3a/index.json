@@ -1,0 +1,32 @@
+{
+  "id": "omkvky3a",
+  "path": "v-kayisi",
+  "name": {
+    "tr": "V Kayışı"
+  },
+  "status": "play",
+  "category": "omkysi13",
+  "description": {
+    "tr": "Alternatör ve klima kasnağını döndüren poly-V drive belt çatlak sesinde oluk sayısı ile boy ölçüsü alınarak doğru seçilir."
+  },
+  "keyword": {
+    "tr": "poly-V drive belt, oluk sayılı aksesuar kayış, alternatör kasnak belt, klima drive kayış, kayış boy ölçümü"
+  },
+  "title": {
+    "tr": "V Kayışı | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">V Kayışı</h2><p style=\"font-size: 16px;\">V / kanallı kayış alternatör ve klima tahriğini taşır. Oto Mavi BMW kayışlarında nervür sayısı ve uzunluk kritiktir.</p><p style=\"font-size: 16px;\">Çatlak veya ses varsa gergi ile birlikte değerlendirin.</p><p style=\"font-size: 16px;\">Kayış: 0544 717 18 28</p>"
+  },
+  "icon": "sync",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

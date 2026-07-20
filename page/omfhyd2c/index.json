@@ -1,0 +1,32 @@
+{
+  "id": "omfhyd2c",
+  "path": "fren-hidroligi",
+  "name": {
+    "tr": "Fren Hidroliği"
+  },
+  "status": "play",
+  "category": "omfren02",
+  "description": {
+    "tr": "Ana merkez silindirinden kalipere basınç taşıyan hidrolik hat parçası DOT sınıfı hortum ve rezervuar uyumuyla doğrulanır."
+  },
+  "keyword": {
+    "tr": "ana merkez silindiri, kaliper basınç hortumu, ABS valf bağlantısı, DOT4 hat ekipmanı, hidrolik rezervuar parçası"
+  },
+  "title": {
+    "tr": "Fren Hidroliği | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Fren Hidroliği</h2><p style=\"font-size: 16px;\">Fren hidroliği nem aldıkça kaynama noktası düşer; bu da pedal hissini bozar. Oto Mavi DOT sınıfı BMW fren sıvılarını araç kılavuzuna göre önerir.</p><p style=\"font-size: 16px;\">Periyodik değişim ve sistem havası alma atölye prosedürüdür. Sınıfı karıştırmayın.</p><p style=\"font-size: 16px;\">Bilgi: 0544 717 18 28</p>"
+  },
+  "icon": "water_drop",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

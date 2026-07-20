@@ -1,0 +1,33 @@
+{
+  "name": {
+    "tr": "Gizlilik Politikası"
+  },
+  "status": "play",
+  "id": "gizlilikpolitikasi",
+  "path": "gizlilikpolitikasi",
+  "category": "",
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi Gizlilik Politikası</h2>\n    <p style=\"font-size: 16px;\">\n        Oto Mavi (otomavi.com) olarak Gaziantep BMW oto yedek parça hizmetlerimizi sunarken ziyaretçi ve müşteri gizliliğine önem veriyoruz. Web sitemizi ziyaret ettiğinizde, site kullanımını ve sunulan hizmetleri (gövde, fren, bakım kiti, sönümleme, elektrik, motor, filtre, iç mekan, sıvılar ve diğer ürün kategorileri) geliştirmek amacıyla çerezler (cookies) aracılığıyla bazı bilgiler toplanabilir. Bu bilgiler kimlik bilgileriniz hariç olmak üzere, alışveriş deneyimini iyileştirmek ve site performansını artırmak için kullanılır.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Sitemizde gerekli (zorunlu), işlevsel, analitik ve reklam amaçlı çerez grupları kullanılabilir. Gerekli çerezler güvenli oturum ve tercih ayarları gibi temel işlevler içindir; işlevsel çerezler paylaşım ve üçüncü taraf araçları destekler; analitik çerezler ziyaretçi sayısı ve trafik kaynakları gibi metrikleri anlamamıza yardımcı olur; reklam çerezleri ise kampanya etkinliğini ölçmeye katkı sağlar. Çerez tercihlerinizi tarayıcı ayarlarından veya sitedeki çerez paneli üzerinden yönetebilirsiniz; bazı çerezleri kapatmanız halinde site bölümlerinin düzgün çalışmayabileceğini unutmayın.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Toplanan bilgiler üçüncü taraflarla ticari amaçla paylaşılmaz; yalnızca Oto Mavi’nin hizmet kalitesini yükseltmek ve yasal yükümlülükleri yerine getirmek için işlenir. Kişisel verilerinizin güvenliği için gerekli teknik ve idari önlemleri alırız. Gizlilik Politikamız veya verilerinizle ilgili sorularınız için 0544 717 18 28 numaralı telefondan veya info@otomavi.com adresinden bizimle iletişime geçebilirsiniz.\n    </p>"
+  },
+  "desing": {
+    "header": [],
+    "body": [
+      "tp5jo4",
+      "t1ct01"
+    ],
+    "footer": []
+  },
+  "index": 4,
+  "icon": "home",
+  "title": {
+    "tr": "Gizlilik Politikası | Oto Mavi"
+  },
+  "description": {
+    "tr": "Oto Mavi gizlilik politikası: çerez kullanımı, veri koruma ve Gaziantep BMW oto yedek parça sitesinde şeffaf bilgilendirme."
+  },
+  "keyword": {
+    "tr": "Oto Mavi, gizlilik politikası, çerez, KVKK, BMW yedek parça, Gaziantep"
+  },
+  "update": "2026-07-20",
+  "date": "2026-05-19"
+}

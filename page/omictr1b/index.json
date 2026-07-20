@@ -1,0 +1,32 @@
+{
+  "id": "omictr1b",
+  "path": "ic-trim",
+  "name": {
+    "tr": "İç Trim"
+  },
+  "status": "play",
+  "category": "omicdn11",
+  "description": {
+    "tr": "Kapı ve gösterge çevresi interior trim clip kırılınca renk kodlu panel ve çerçeve gerekir; klips tipi stokta ayrı tutulur."
+  },
+  "keyword": {
+    "tr": "interior trim clip, kapı kaplama paneli, gösterge çerçeve trim, renk kodlu iç panel, klips tipi trim"
+  },
+  "title": {
+    "tr": "İç Trim | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">İç Trim</h2><p style=\"font-size: 16px;\">Kapı ve konsol trim parçaları renk ve doku koduna göre seçilir. Oto Mavi BMW iç trim stokunda çizik ve kırık onarımları için parçalar bulunur.</p><p style=\"font-size: 16px;\">Parça numarası veya net fotoğraf ile eşleştirme yapılır.</p><p style=\"font-size: 16px;\">0544 717 18 28 · info@otomavi.com</p>"
+  },
+  "icon": "dashboard",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

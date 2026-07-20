@@ -1,0 +1,84 @@
+﻿# Paket 19 — category.json / products.json ayrımı — RUN LOG
+
+**Tarih:** 2026-07-20  
+**Proje:** otomavi / Oto Mavi  
+**cwd:** D:\projeler\otomavi\Web\matrix  
+**webmodules:** D:\matrix\webmodules  
+
+---
+
+## Özet tablo
+
+| Metrik | Değer |
+|--------|-------|
+| category.data | **21** (hepsi `category: ""`) |
+| products.data | **89** (hepsi dolu `category: <üst-id>`) |
+| products içinde `category:""` | **0** |
+| category içinde dolu category | **0** |
+| Render | **status=ok** |
+| renderId | `1uo3vqnw` (tur 2; tur 1: `xj39ls1h`) |
+| dogrula | **hata=0 uyarı=0** |
+| webmodules test | **62 passing** |
+| eticaret / sepet | yok |
+| Commit / push | yok |
+
+---
+
+## A) Veri taşıma
+
+- `products.json` → üst 21 satır `category.json.data`
+- Kalan 89 ürün `products.json.data` (id değişmedi)
+- category kök: `path:category`, `desing.body:[t1pd01,t1pc03]`, modulestatus page/body/detail/img/icon
+- products kök: `desing.body:[t1pd01]` (hub kategori listesi yok)
+- Satır body: kategori `[t1pd01,t1pc03]` · ürün `[t1pd01]`
+
+## B) pagesetting.json
+
+Sıra: `page(0)` → `category(1)` → `products(2)` → `kurumsal(3)`  
+category modulestatus tamamlandı (page/body/detail/img/bgimg/icon).
+
+## C) modules.json
+
+| id | desing.page | desing.category |
+|----|-------------|-----------------|
+| t1ls01 | **category** | `""` |
+| t1plpr | **category** | `""` |
+| t1pc03 | **products** | — |
+
+## D) Webmodules
+
+1. `page-category-3/back.js` — kaynak: `json.desing.page` → fallback `page.categorypage`; klasik `for`+`var`
+2. `page-desing-otomavi/back.js` — parent: `category.data` önce; related: `products.data`; breadcrumb kök: categorypage===category ise `category.name`
+
+## E) .cursorrules
+
+Model B notu güncellendi: category.json + products.json ayrımı (tek dosyada nesting kaldırıldı).
+
+---
+
+## Simülasyon kanıtı (Filtreler / omfltr01)
+
+| Kontrol | Sonuç |
+|---------|--------|
+| Ana sayfa t1ls01 kategori kartı | **21** |
+| Filtreler t1pc03 ürün kartı | **4** (yakit/hava/yag/polen-filtresi) |
+| Eski (yalnız categorypage) kart | **0** (düzeltme zorunluydu) |
+| Ürün parent breadcrumb | **Filtreler** |
+| Benzer ürün (aynı kategori) | **3** |
+
+---
+
+## Manuel kontrol listesi
+
+1. Ana sayfa kategori kartları görünür (21) — t1ls01 → category  
+2. Kategori sayfası → alt ürün kartları (t1pc03 → products)  
+3. Ürün detay → breadcrumb parent + benzer ürünler (category.json parent)  
+4. products.json içinde `category:""` yok; category.json içinde dolu category yok  
+
+## DONE
+
+- [x] category.data.length === 21  
+- [x] products.data.length === 89; hepsinde category dolu  
+- [x] dogrula hata=0  
+- [x] render status=ok  
+- [x] kategori sayfasında ürün grid kaynağı dolu (simülasyon 4 kart)  

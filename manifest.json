@@ -1,0 +1,29 @@
+{
+  "name": "Oto Mavi",
+  "short_name": "Oto Mavi",
+  "description": "Oto Mavi — Gaziantep BMW oto yedek parçaları. Orijinal ve eşdeğer parçalar, uygun fiyat ve güvenilir tedarik.",
+  "start_url": "/tr/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2196f3",
+  "lang": "tr",
+  "icons": [
+    {
+      "src": "/img/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

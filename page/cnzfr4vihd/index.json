@@ -1,0 +1,32 @@
+{
+  "id": "cnzfr4vihd",
+  "path": "lastik",
+  "name": {
+    "tr": "Lastik"
+  },
+  "status": "play",
+  "category": "yut4w6lws1",
+  "description": {
+    "tr": "Yaz/kış ve dört mevsim lastik seçenekleri yük ve hız indeksine göre ayrılır; yanlış ebat gösterge ve ESP kalibrasyonunu bozabilir, DOT tarihi kontrol edilir."
+  },
+  "keyword": {
+    "tr": "oto lastik, yaz kış lastik, hız indeksi, yük indeksi, BMW lastik ebat"
+  },
+  "title": {
+    "tr": "Lastik | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Lastik</h2><p style=\"font-size: 16px;\">Doğru lastik ebatı hem konfor hem güvenlik demektir. Yanakta yazan ölçü ve DOT tarihi Oto Mavi danışmanlığıyla netleşir.</p><p style=\"font-size: 16px;\">Montaj ve balans için yerel iş ortaklarımızla yönlendirebiliriz.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "tire_repair",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

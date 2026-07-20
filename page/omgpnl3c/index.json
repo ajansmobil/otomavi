@@ -1,0 +1,32 @@
+{
+  "id": "omgpnl3c",
+  "path": "kaporta-paneli",
+  "name": {
+    "tr": "Kaporta Paneli"
+  },
+  "status": "play",
+  "category": "omgvde03",
+  "description": {
+    "tr": "Çamurluk ve kapı dışı sac panelde kaynak flanşı şasiye özgüdür; orijinal konturlu fender panel vida noktasıyla hizalanır."
+  },
+  "keyword": {
+    "tr": "çamurluk fender panel, kapı dışı sac, kaynak flanşlı panel, kontur uyumlu sac, vida noktalı kaporta"
+  },
+  "title": {
+    "tr": "Kaporta Paneli | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Kaporta Paneli</h2><p style=\"font-size: 16px;\">Çamurluk ve yan panel onarımında doğru sac kalınlığı ve vida noktaları önemlidir. Oto Mavi BMW kaporta panellerinde OEM / eşdeğer alternatifler bulunur.</p><p style=\"font-size: 16px;\">Hasar bölgesi fotoğrafı ile hızlı teklif alabilirsiniz.</p><p style=\"font-size: 16px;\">Gaziantep stok: 0544 717 18 28</p>"
+  },
+  "icon": "crop_square",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

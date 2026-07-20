@@ -1,0 +1,32 @@
+{
+  "id": "omktrg3b",
+  "path": "triger-seti",
+  "name": {
+    "tr": "Triger Seti"
+  },
+  "status": "play",
+  "category": "omkysi13",
+  "description": {
+    "tr": "Eksantrik zamanlamasını koruyan timing belt/chain set gergi ve makarayla kit halinde sunulur; atlama riskinde komple değişir."
+  },
+  "keyword": {
+    "tr": "timing belt set, zincir zamanlama kiti, eksantrik timing kit, gergi makaralı triger, atlama önleme seti"
+  },
+  "title": {
+    "tr": "Triger Seti | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Triger Seti</h2><p style=\"font-size: 16px;\">Triger seti zamanlama kayışı/zinciri ile gergi ve rulmanları kapsar. Oto Mavi BMW triger setlerinde km aralığına göre değişim önerilir.</p><p style=\"font-size: 16px;\">Yalnız kayış almak risklidir; set halinde alın. Motor kodunu yazın.</p><p style=\"font-size: 16px;\">0544 717 18 28 · info@otomavi.com</p>"
+  },
+  "icon": "schedule",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "omatbb8b",
+  "path": "atesleme-bobini",
+  "name": {
+    "tr": "Ateşleme Bobini"
+  },
+  "status": "play",
+  "category": "omatsg08",
+  "description": {
+    "tr": "Silindir başına yüksek voltaj üreten coil pack misfire kodunda konnektör şekline göre eşleşir; ignition coil stokta ayrılır."
+  },
+  "keyword": {
+    "tr": "silindir coil pack, misfire ignition coil, yüksek voltaj bobin, konnektör şekilli coil, ateşleme bobin OEM"
+  },
+  "title": {
+    "tr": "Ateşleme Bobini | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Ateşleme Bobini</h2><p style=\"font-size: 16px;\">Bobin arızası tek silindir misfire ve titreşim yaratır. Oto Mavi BMW ateşleme bobinlerinde konektör ve izolasyon kalitesi önemlidir.</p><p style=\"font-size: 16px;\">Buji ile birlikte kontrol edin; yağlı buji kuyusu bobini bozar.</p><p style=\"font-size: 16px;\">WhatsApp: 0544 717 18 28</p>"
+  },
+  "icon": "flash_on",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

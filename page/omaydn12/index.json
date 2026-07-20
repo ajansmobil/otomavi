@@ -1,0 +1,37 @@
+{
+    "id":  "omaydn12",
+    "path":  "aydinlatma",
+    "name":  {
+                 "tr":  "Aydınlatma"
+             },
+    "status":  "play",
+    "category":  "",
+    "description":  {
+                        "tr":  "Projektör far, LED stop ve tampon sis ünitesi gece görüşünü güçlendirir; sol/sağ optik kodları lamba reyonunda ayrı tutulur."
+                    },
+    "keyword":  {
+                    "tr":  "lamba reyonu optik, projektör far ünitesi, LED stop lambası, tampon sis ünitesi, sol sağ optik kod"
+                },
+    "title":  {
+                  "tr":  "Aydınlatma | Oto Mavi"
+              },
+    "text":  {
+                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eAydınlatma\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eFar, stop ve sis farı ile güvenli görünürlük. BMW aydınlatma parçaları Oto Mavi’de.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş: 0544 717 18 28\u003c/p\u003e"
+             },
+    "icon":  "lightbulb",
+    "update":  "2026-07-20",
+    "date":  "2026-07-20",
+    "img":  "index.webp",
+    "desing":  {
+                   "header":  [
+
+                              ],
+                   "body":  [
+                                "t1af01",
+                                "t1ulo01"
+                            ],
+                   "footer":  [
+
+                              ]
+               }
+}

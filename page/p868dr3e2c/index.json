@@ -1,0 +1,32 @@
+{
+  "id": "p868dr3e2c",
+  "path": "lambda-sensoru",
+  "name": {
+    "tr": "Lambda Sensörü"
+  },
+  "status": "play",
+  "category": "ommotr04",
+  "description": {
+    "tr": "Egzoz oksijen (lambda) sensörü karışım oranını ECU’ya bildirir; yaşlanan sensör yakıt sarfiyatı ve rölanti bozar, ön/arka bank konumları ayrıdır."
+  },
+  "keyword": {
+    "tr": "lambda sensörü, oksijen sensörü, O2 sensor, egzoz lambda, BMW sonda"
+  },
+  "title": {
+    "tr": "Lambda Sensörü | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Lambda Sensörü</h2><p style=\"font-size: 16px;\">Lambda sensörü zengin/fakir karışım uyarısının sık sebebidir. Konum (pre/post cat) karıştırılmamalıdır.</p><p style=\"font-size: 16px;\">Oto Mavi konnektör ve ısıtıcı tipine göre sonda verir.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "science",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}

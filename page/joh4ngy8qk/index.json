@@ -1,0 +1,37 @@
+{
+    "id":  "joh4ngy8qk",
+    "path":  "arac-ekipmanlari",
+    "name":  {
+                 "tr":  "Araç Ekipmanları"
+             },
+    "status":  "play",
+    "category":  "",
+    "description":  {
+                        "tr":  "Genel ekipman, aksesuar seti ve atölye sarf malzemeleriyle yol ve servis ihtiyacını tamamlayın; Oto Mavi araç ekipmanları reyonu katalog dışı pratik parçaları toplar."
+                    },
+    "keyword":  {
+                    "tr":  "araç ekipmanları, aksesuar seti, atölye sarf, taşıma destek, BMW aksesuar"
+                },
+    "title":  {
+                  "tr":  "Araç Ekipmanları | Oto Mavi"
+              },
+    "text":  {
+                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eAraç Ekipmanları\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eYedek parça dışında kalan pratik ekipman ve sarf malzemeleri bu reyon altında toplanır. Servis ve yol hazırlığı için hızlı erişim hedeflenir.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eStok ve uyumluluk için Oto Mavi ile iletişime geçin; sepet yok, teklif odaklıdır.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.\u003c/p\u003e"
+             },
+    "icon":  "home_repair_service",
+    "update":  "2026-07-20",
+    "date":  "2026-07-20",
+    "img":  "index.webp",
+    "desing":  {
+                   "header":  [
+
+                              ],
+                   "body":  [
+                                "t1af01",
+                                "t1ulo01"
+                            ],
+                   "footer":  [
+
+                              ]
+               }
+}

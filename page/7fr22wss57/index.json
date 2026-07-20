@@ -1,0 +1,32 @@
+{
+  "id": "7fr22wss57",
+  "path": "tekerlek-yatagi",
+  "name": {
+    "tr": "Tekerlek Yatağı"
+  },
+  "status": "play",
+  "category": "t3uqlrk7uh",
+  "description": {
+    "tr": "Konik veya bilyalı tekerlek yatağı göbek içinde döner; yağsız veya oynamış yatak metal sesi üretir, pres ölçüsü OEM değerde tutulmalıdır."
+  },
+  "keyword": {
+    "tr": "tekerlek yatağı, wheel bearing, poyra rulmanı, hub bearing, BMW rulman"
+  },
+  "title": {
+    "tr": "Tekerlek Yatağı | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Tekerlek Yatağı</h2><p style=\"font-size: 16px;\">Tekerlek yatağı uğultusu virajda değişen tonda duyulur. Yanlış pres göbeği ezer.</p><p style=\"font-size: 16px;\">Oto Mavi yatak ve gerektiğinde göbek setini birlikte önerir.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "radio_button_checked",
+  "update": "2026-07-20",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1udo01"
+    ],
+    "footer": []
+  }
+}
