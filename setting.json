@@ -26,5 +26,6 @@
   },
   "logo": "logo.png",
   "multi": false,
-  "eticaret": false
+  "eticaret": false,
+  "defaultLang": ""
 }
