@@ -14,7 +14,7 @@
       "modulestatus": {
         "page": true,
         "body": true,
-        "detail": false,
+        "detail": true,
         "img": false
       }
     },
