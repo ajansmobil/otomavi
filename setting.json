@@ -25,7 +25,11 @@
     "pt": false
   },
   "logo": "logo.png",
+  "phone": "+90 544 717 18 28",
+  "mobile": "+90 544 717 18 28",
+  "email": "info@otomavi.com",
+  "address": "Sanayi mah. 60081 nolu cadde no 43 Şehitkamil Gaziantep",
   "multi": false,
   "eticaret": false,
-  "defaultLang": ""
+  "defaultLang": "tr"
 }

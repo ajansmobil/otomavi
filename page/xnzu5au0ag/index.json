@@ -21,13 +21,17 @@
     "tr": "İletişim"
   },
   "description": {
-    "tr": "Oto Mavi iletişim: Sanayi mah. 60081 nolu cadde no 43 Şehitkamil Gaziantep. Telefon 0544 717 18 28, e-posta info@otomavi.com. Çalışma Sabah 08:00 – 22:00."
+    "tr": "Oto Mavi iletişim: hızlı destek, sipariş ve bilgilendirme. Gaziantep BMW oto yedek parça talepleriniz için bize ulaşın."
   },
   "status": "play",
-  "update": "2026-07-20",
+  "update": "2026-07-21",
   "url": "",
   "path": "iletisim",
   "icon": "home",
   "date": "2026-05-19",
-  "pathnext": ""
+  "pathnext": "",
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi İletişim</h2>\n    <p style=\"font-size: 16px;\">\n        Adres: Sanayi mah. 60081 nolu cadde no 43 Şehitkamil Gaziantep<br>\n        Telefon: 0544 717 18 28<br>\n        E-posta: info@otomavi.com<br>\n        Çalışma saatleri: Sabah 08:00 – 22:00\n    </p>\n    <p style=\"font-size: 16px;\">\n        Sipariş ve stok sorgusu için WhatsApp üzerinden Oto Mavi’ye yazın — sepet yok; uzman ekibimiz size uygun parçayı hızlıca iletir. Sahibinden’de Oto Mavi notu için de bizi arayabilirsiniz.\n    </p>"
+  },
+  "img": "index.webp"
 }

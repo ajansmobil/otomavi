@@ -24,7 +24,8 @@
         "tr": "Oto Mavi — Gaziantep BMW oto yedek parçaları. Uygun fiyat, 1. sınıf kalite; orijinal ve eşdeğer parça tedariki."
       },
       "index": 0,
-      "icon": "home"
+      "icon": "home",
+      "img": "index.webp"
     },
     {
       "name": {
@@ -46,7 +47,8 @@
         "tr": "Oto Mavi misyonu: BMW yedek parça sektöründe güvenilir, yenilikçi ve çözüm odaklı bir marka olmak."
       },
       "index": 1,
-      "icon": "home"
+      "icon": "home",
+      "img": "index.webp"
     },
     {
       "name": {
@@ -68,7 +70,8 @@
         "tr": "Oto Mavi vizyonu: Türkiye’nin en çok tercih edilen BMW yedek parça tedarikçisi haline gelmek."
       },
       "index": 2,
-      "icon": "home"
+      "icon": "home",
+      "img": "index.webp"
     },
     {
       "name": {
@@ -90,7 +93,8 @@
         "tr": "Oto Mavi kalite politikası: her alışverişte doğru ürün, doğru zaman ve 1. sınıf parça kalitesi."
       },
       "index": 3,
-      "icon": "home"
+      "icon": "home",
+      "img": "index.webp"
     },
     {
       "name": {
@@ -112,7 +116,8 @@
         "tr": "Oto Mavi kariyer: Gaziantep BMW yedek parça ekibine katılın. Başvurular info@otomavi.com adresine."
       },
       "index": 4,
-      "icon": "work"
+      "icon": "work",
+      "img": "index.webp"
     },
     {
       "name": {
@@ -134,7 +139,8 @@
         "tr": "Oto Mavi gizlilik politikası: ziyaretçi ve müşteri verilerinin korunması ve şeffaf bilgilendirme."
       },
       "index": 5,
-      "icon": "home"
+      "icon": "home",
+      "img": "index.webp"
     },
     {
       "name": {
@@ -156,7 +162,8 @@
         "tr": "Oto Mavi KVKK bilgilendirmesi: kişisel verilerin işlenmesi, saklanması ve haklarınız."
       },
       "index": 6,
-      "icon": "home"
+      "icon": "home",
+      "img": "index.webp"
     },
     {
       "name": {
@@ -178,7 +185,8 @@
         "tr": "Oto Mavi kullanıcı hakları: site kullanımı, sipariş ve hesap süreçlerinde müşteri hakları."
       },
       "index": 7,
-      "icon": "home"
+      "icon": "home",
+      "img": "index.webp"
     },
     {
       "name": {
@@ -200,7 +208,8 @@
         "tr": "Oto Mavi yasal uyarı: site içeriği, marka ve ürün bilgilerine ilişkin yasal sorumluluk sınırları."
       },
       "index": 8,
-      "icon": "home"
+      "icon": "home",
+      "img": "index.webp"
     }
   ],
   "index": 2,

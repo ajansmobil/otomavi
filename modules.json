@@ -155,11 +155,18 @@
       "category": "page",
       "id": "tp5jo4",
       "desing": {
-        "height": "200",
-        "opacity": "0.5",
+        "height": "220",
+        "opacity": "0.55",
         "font-size": "32",
-        "backgroundcolor": "#000",
-        "menu-active": "#000"
+        "backgroundcolor": "#0B3A6E",
+        "menu-active": "#02427A",
+        "textcolor": "#E9F3FB",
+        "bgcolor": "#F5F8FC",
+        "color": "#0B3A6E",
+        "colortitle": "#0B3A6E",
+        "coloractive": "#02427A",
+        "border_radius": "8px",
+        "card_shadow": "0 10px 28px rgba(11, 58, 110, 0.10)"
       },
       "version": "1.0.0",
       "icon": "web"
