@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Gergi</h2><p style=\"font-size: 16px;\">Kayış gergisi doğru gerilimi korur; arızalı gergi kayışın atlamasına yol açar. Oto Mavi otomatik ve mekanik BMW gergi üniteleri sunar.</p><p style=\"font-size: 16px;\">Kayış değişiminde gergiyi de yenilemek yaygındır.</p><p style=\"font-size: 16px;\">Sipariş: 0544 717 18 28</p>"
   },
   "icon": "tune",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:11.427Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 53,
+  "url": "",
+  "desc": {
+    "parca_kodu": "gergi",
+    "tur": "Kayışlar ve Zincirler",
+    "uyumlu": "tensioner bearing gergi · rulmanlı otomatik gergi · idler pulley makara · kayış gergi rulmanı · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

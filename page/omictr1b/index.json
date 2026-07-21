@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">İç Trim</h2><p style=\"font-size: 16px;\">Kapı ve konsol trim parçaları renk ve doku koduna göre seçilir. Oto Mavi BMW iç trim stokunda çizik ve kırık onarımları için parçalar bulunur.</p><p style=\"font-size: 16px;\">Parça numarası veya net fotoğraf ile eşleştirme yapılır.</p><p style=\"font-size: 16px;\">0544 717 18 28 · info@otomavi.com</p>"
   },
   "icon": "dashboard",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:10.734Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 46,
+  "url": "",
+  "desc": {
+    "parca_kodu": "ic-trim",
+    "tur": "İç Donanım",
+    "uyumlu": "interior trim clip · kapı kaplama paneli · gösterge çerçeve trim · renk kodlu iç panel · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

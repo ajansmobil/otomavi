@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Jant Kapağı</h2><p style=\"font-size: 16px;\">Jant kapağı görünümü tamamlar ve çelik jantı korur. Yanlış göbek çapı yolda uçmasına yol açar.</p><p style=\"font-size: 16px;\">Oto Mavi stokunda inç ve logo tipine göre kapak bulunur.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "circle",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:13.131Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 77,
+  "url": "",
+  "desc": {
+    "parca_kodu": "jant-kapagi",
+    "tur": "Lastik ve Jant",
+    "uyumlu": "jant kapağı · hubcap · çelik jant örtü · klipsli kapak · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

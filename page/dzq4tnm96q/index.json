@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Bağlantı Çubuğu</h2><p style=\"font-size: 16px;\">İç bağlantı çubuğu (inner tie rod) kremayer dişlisinden tekerleğe kuvvet iletir. Körük yırtığı yağsız kalıp erken aşınma yapar.</p><p style=\"font-size: 16px;\">Körük ve somun ile birlikte Oto Mavi’den temin edin.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "linear_scale",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:12.337Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 69,
+  "url": "",
+  "desc": {
+    "parca_kodu": "baglanti-cubugu",
+    "tur": "Direksiyon",
+    "uyumlu": "bağlantı çubuğu · inner tie rod · direksiyon mili · toe ayarı · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

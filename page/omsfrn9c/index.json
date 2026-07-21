@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Fren Hidroliği (Sıvı)</h2><p style=\"font-size: 16px;\">DOT 4 ve DOT 5.1 sınıfları farklı kaynama noktalarına sahiptir. Oto Mavi yağlar kategorisinde fren sıvısı bakımı için stok tutar.</p><p style=\"font-size: 16px;\">Açık şişeyi uzun süre saklamayın; nem alır. Değişimde sistem havası alınmalıdır.</p><p style=\"font-size: 16px;\">0544 717 18 28</p>"
   },
   "icon": "science",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:10.254Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 41,
+  "url": "",
+  "desc": {
+    "parca_kodu": "fren-hidroligi-sivi",
+    "tur": "Yağlar ve Sıvılar",
+    "uyumlu": "DOT4 brake fluid · DOT5.1 kaynama sıvısı · fren flush litre · nem arındırma sıvısı · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

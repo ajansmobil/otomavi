@@ -1,37 +1,35 @@
 {
-    "id":  "dnhgnxo0hg",
-    "path":  "turbo-zorlamali-emme",
-    "name":  {
-                 "tr":  "Turbo / Zorlamalı Emme"
-             },
-    "status":  "play",
-    "category":  "",
-    "description":  {
-                        "tr":  "Turboşarj, ara soğutucu, conta ve basınç dönüştürücü ile zorlamalı emme hattını Oto Mavi deposundan şasi koduna göre tamamlayın; boost kaçaklarında doğru ünite seçilir."
-                    },
-    "keyword":  {
-                    "tr":  "turboşarj BMW, ara soğutucu intercooler, turbo conta, basınç dönüştürücü, zorlamalı emme"
-                },
-    "title":  {
-                  "tr":  "Turbo / Zorlamalı Emme | Oto Mavi"
-              },
-    "text":  {
-                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eTurbo / Zorlamalı Emme\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eBMW motorlarında turbo ünitesi, intercooler ve sızdırmazlık contaları performans ve yakıt dengesi için kritiktir. Oto Mavi Gaziantep deposunda zorlamalı emme parçaları şasi ve motor koduna göre ayrılır.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eYağ kaçakı, ıslık sesi veya düşük basınç şikayetinde turboyu tek başına değil conta ve basınç hattıyla birlikte değerlendirin. Teklif için WhatsApp veya telefon hattımızı kullanın.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.\u003c/p\u003e"
-             },
-    "icon":  "air",
-    "update":  "2026-07-20",
-    "date":  "2026-07-20",
-    "img":  "index.webp",
-    "desing":  {
-                   "header":  [
-
-                              ],
-                   "body":  [
-                                "t1af01",
-                                "t1ulo01"
-                            ],
-                   "footer":  [
-
-                              ]
-               }
+  "id": "dnhgnxo0hg",
+  "path": "turbo-zorlamali-emme",
+  "name": {
+    "tr": "Turbo / Zorlamalı Emme"
+  },
+  "status": "play",
+  "category": "",
+  "description": {
+    "tr": "Turboşarj, ara soğutucu, conta ve basınç dönüştürücü ile zorlamalı emme hattını Oto Mavi deposundan şasi koduna göre tamamlayın; boost kaçaklarında doğru ünite seçilir."
+  },
+  "keyword": {
+    "tr": "turboşarj BMW, ara soğutucu intercooler, turbo conta, basınç dönüştürücü, zorlamalı emme"
+  },
+  "title": {
+    "tr": "Turbo / Zorlamalı Emme | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Turbo / Zorlamalı Emme</h2><p style=\"font-size: 16px;\">BMW motorlarında turbo ünitesi, intercooler ve sızdırmazlık contaları performans ve yakıt dengesi için kritiktir. Oto Mavi Gaziantep deposunda zorlamalı emme parçaları şasi ve motor koduna göre ayrılır.</p><p style=\"font-size: 16px;\">Yağ kaçakı, ıslık sesi veya düşük basınç şikayetinde turboyu tek başına değil conta ve basınç hattıyla birlikte değerlendirin. Teklif için WhatsApp veya telefon hattımızı kullanın.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "air",
+  "update": "2026-07-21T10:04:07.038Z",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1af01",
+      "t1ulo01"
+    ],
+    "footer": []
+  },
+  "index": 57,
+  "url": ""
 }

@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Conta Kiti</h2><p style=\"font-size: 16px;\">Conta kiti belirli bir motor işi (kapak, emme manifoldu vb.) için gerekli contaları paketler. Oto Mavi atölye siparişlerinde set halinde teslim eder.</p><p style=\"font-size: 16px;\">İş kapsamını yazın; eksik conta kalmasın.</p><p style=\"font-size: 16px;\">0544 717 18 28</p>"
   },
   "icon": "category",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:10.542Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 44,
+  "url": "",
+  "desc": {
+    "parca_kodu": "conta-kiti",
+    "tur": "Bakım Kiti",
+    "uyumlu": "valve cover kit · yağ yuvası gasket · sızıntı tadilat contası · cıvatalı conta seti · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

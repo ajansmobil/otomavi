@@ -1,37 +1,35 @@
 {
-    "id":  "omslck14",
-    "path":  "silecekler",
-    "name":  {
-                 "tr":  "Silecekler"
-             },
-    "status":  "play",
-    "category":  "",
-    "description":  {
-                        "tr":  "Cam süpürme lastiği, metal kol ve yıkama pompası görüşü netleştirir; beam tipi ve hortum çapı silecek reyonunda eşleşir."
-                    },
-    "keyword":  {
-                    "tr":  "silecek reyonu lastik, metal wiper kol, yıkama pompası, beam tip lastik, hortum çap eşlemesi"
-                },
-    "title":  {
-                  "tr":  "Silecekler | Oto Mavi"
-              },
-    "text":  {
-                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eSilecekler\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eSilecek lastiği, kol ve fıskiye pompası ile net görüş. BMW silecek ürünleri Oto Mavi stoklarında.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş: 0544 717 18 28 · info@otomavi.com\u003c/p\u003e"
-             },
-    "icon":  "water",
-    "update":  "2026-07-20",
-    "date":  "2026-07-20",
-    "img":  "index.webp",
-    "desing":  {
-                   "header":  [
-
-                              ],
-                   "body":  [
-                                "t1af01",
-                                "t1ulo01"
-                            ],
-                   "footer":  [
-
-                              ]
-               }
+  "id": "omslck14",
+  "path": "silecekler",
+  "name": {
+    "tr": "Silecekler"
+  },
+  "status": "play",
+  "category": "",
+  "description": {
+    "tr": "Cam süpürme lastiği, metal kol ve yıkama pompası görüşü netleştirir; beam tipi ve hortum çapı silecek reyonunda eşleşir."
+  },
+  "keyword": {
+    "tr": "silecek reyonu lastik, metal wiper kol, yıkama pompası, beam tip lastik, hortum çap eşlemesi"
+  },
+  "title": {
+    "tr": "Silecekler | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Silecekler</h2><p style=\"font-size: 16px;\">Silecek lastiği, kol ve fıskiye pompası ile net görüş. BMW silecek ürünleri Oto Mavi stoklarında.</p><p style=\"font-size: 16px;\">Sipariş: 0544 717 18 28 · info@otomavi.com</p>"
+  },
+  "icon": "water",
+  "update": "2026-07-21T10:04:07.016Z",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1af01",
+      "t1ulo01"
+    ],
+    "footer": []
+  },
+  "index": 13,
+  "url": ""
 }

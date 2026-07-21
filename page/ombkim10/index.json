@@ -1,37 +1,35 @@
 {
-    "id":  "ombkim10",
-    "path":  "bakim-kiti",
-    "name":  {
-                 "tr":  "Bakım Kiti"
-             },
-    "status":  "play",
-    "category":  "",
-    "description":  {
-                        "tr":  "Kilometre servisinde yağ+süzgeç paketi veya conta tadilat kiti tek siparişte toplanır; şasi listesine göre bakım kiti reyonu hazırlanır."
-                    },
-    "keyword":  {
-                    "tr":  "bakım kiti reyonu, kilometre servis paketi, süzgeç yağ kutusu, conta tadilat kiti, şasi servis listesi"
-                },
-    "title":  {
-                  "tr":  "Bakım Kiti | Oto Mavi"
-              },
-    "text":  {
-                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eBakım Kiti\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003ePeriyodik bakım setleri, filtre setleri ve conta kitleri ile tek seferde doğru kombinasyon. Oto Mavi bakım çözümleri.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eDestek: 0544 717 18 28\u003c/p\u003e"
-             },
-    "icon":  "build",
-    "update":  "2026-07-20",
-    "date":  "2026-07-20",
-    "img":  "index.webp",
-    "desing":  {
-                   "header":  [
-
-                              ],
-                   "body":  [
-                                "t1af01",
-                                "t1ulo01"
-                            ],
-                   "footer":  [
-
-                              ]
-               }
+  "id": "ombkim10",
+  "path": "bakim-kiti",
+  "name": {
+    "tr": "Bakım Kiti"
+  },
+  "status": "play",
+  "category": "",
+  "description": {
+    "tr": "Kilometre servisinde yağ+süzgeç paketi veya conta tadilat kiti tek siparişte toplanır; şasi listesine göre bakım kiti reyonu hazırlanır."
+  },
+  "keyword": {
+    "tr": "bakım kiti reyonu, kilometre servis paketi, süzgeç yağ kutusu, conta tadilat kiti, şasi servis listesi"
+  },
+  "title": {
+    "tr": "Bakım Kiti | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Bakım Kiti</h2><p style=\"font-size: 16px;\">Periyodik bakım setleri, filtre setleri ve conta kitleri ile tek seferde doğru kombinasyon. Oto Mavi bakım çözümleri.</p><p style=\"font-size: 16px;\">Destek: 0544 717 18 28</p>"
+  },
+  "icon": "build",
+  "update": "2026-07-21T10:04:06.932Z",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1af01",
+      "t1ulo01"
+    ],
+    "footer": []
+  },
+  "index": 9,
+  "url": ""
 }

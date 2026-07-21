@@ -1,37 +1,35 @@
 {
-    "id":  "ry99uefxh8",
-    "path":  "direksiyon",
-    "name":  {
-                 "tr":  "Direksiyon"
-             },
-    "status":  "play",
-    "category":  "",
-    "description":  {
-                        "tr":  "Rot başı, bağlantı çubuğu, onarım kiti ve kremayer kapağı ile direksiyon hassasiyetini toparlayın; boşluk ve vuruntu şikayetinde Oto Mavi direksiyon reyonu."
-                    },
-    "keyword":  {
-                    "tr":  "direksiyon rot başı, bağlantı çubuğu, kremayer, direksiyon onarım kiti, BMW direksiyon"
-                },
-    "title":  {
-                  "tr":  "Direksiyon | Oto Mavi"
-              },
-    "text":  {
-                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eDireksiyon\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eDireksiyon sistemi yol tutuşu ve lastik aşınmasını doğrudan etkiler. Rot ucu, ara çubuk ve kremayer contaları aşındığında direksiyonda boşluk ve düzensiz lastik izi oluşur.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eOto Mavi Gaziantep stokunda BMW direksiyon parçaları şasi ölçüsüyle eşleştirilir; teklif için arayın.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.\u003c/p\u003e"
-             },
-    "icon":  "sync_alt",
-    "update":  "2026-07-20",
-    "date":  "2026-07-20",
-    "img":  "index.webp",
-    "desing":  {
-                   "header":  [
-
-                              ],
-                   "body":  [
-                                "t1af01",
-                                "t1ulo01"
-                            ],
-                   "footer":  [
-
-                              ]
-               }
+  "id": "ry99uefxh8",
+  "path": "direksiyon",
+  "name": {
+    "tr": "Direksiyon"
+  },
+  "status": "play",
+  "category": "",
+  "description": {
+    "tr": "Rot başı, bağlantı çubuğu, onarım kiti ve kremayer kapağı ile direksiyon hassasiyetini toparlayın; boşluk ve vuruntu şikayetinde Oto Mavi direksiyon reyonu."
+  },
+  "keyword": {
+    "tr": "direksiyon rot başı, bağlantı çubuğu, kremayer, direksiyon onarım kiti, BMW direksiyon"
+  },
+  "title": {
+    "tr": "Direksiyon | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Direksiyon</h2><p style=\"font-size: 16px;\">Direksiyon sistemi yol tutuşu ve lastik aşınmasını doğrudan etkiler. Rot ucu, ara çubuk ve kremayer contaları aşındığında direksiyonda boşluk ve düzensiz lastik izi oluşur.</p><p style=\"font-size: 16px;\">Oto Mavi Gaziantep stokunda BMW direksiyon parçaları şasi ölçüsüyle eşleştirilir; teklif için arayın.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "sync_alt",
+  "update": "2026-07-21T10:04:07.058Z",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1af01",
+      "t1ulo01"
+    ],
+    "footer": []
+  },
+  "index": 58,
+  "url": ""
 }

@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Tekerlek Göbeği</h2><p style=\"font-size: 16px;\">Tekerlek göbeği rulmanla entegre veya ayrı olabilir. Entegre tipte komple göbek değişimi gerekir.</p><p style=\"font-size: 16px;\">Oto Mavi ön/arka göbekleri şasi ve ABS tipine göre listeler.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "trip_origin",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:13.429Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 80,
+  "url": "",
+  "desc": {
+    "parca_kodu": "tekerlek-gobegi",
+    "tur": "Süspansiyon / Poyra",
+    "uyumlu": "tekerlek göbeği · wheel hub · ABS ring göbek · poyra flanş · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

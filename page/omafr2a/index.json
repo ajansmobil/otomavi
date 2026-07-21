@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Far</h2><p style=\"font-size: 16px;\">Far ünitesi halojen, xenon veya LED olabilir; adaptif sistemlerde kodlama gerekir. Oto Mavi sol/sağ BMW far gövdelerini homologasyonlu seçeneklerle sunar.</p><p style=\"font-size: 16px;\">Cam çatlağı ile iç reflektör hasarı farklıdır; fotoğraf gönderin.</p><p style=\"font-size: 16px;\">Aydınlatma: 0544 717 18 28</p>"
   },
   "icon": "lightbulb",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:10.933Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 48,
+  "url": "",
+  "desc": {
+    "parca_kodu": "far",
+    "tur": "Aydınlatma",
+    "uyumlu": "LED matris headlight · projektör far ünitesi · Xenon balast far · sol sağ far kodu · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

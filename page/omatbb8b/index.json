@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Ateşleme Bobini</h2><p style=\"font-size: 16px;\">Bobin arızası tek silindir misfire ve titreşim yaratır. Oto Mavi BMW ateşleme bobinlerinde konektör ve izolasyon kalitesi önemlidir.</p><p style=\"font-size: 16px;\">Buji ile birlikte kontrol edin; yağlı buji kuyusu bobini bozar.</p><p style=\"font-size: 16px;\">WhatsApp: 0544 717 18 28</p>"
   },
   "icon": "flash_on",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:09.850Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 37,
+  "url": "",
+  "desc": {
+    "parca_kodu": "atesleme-bobini",
+    "tur": "Ateşleme ve Ön Isıtma",
+    "uyumlu": "silindir coil pack · misfire ignition coil · yüksek voltaj bobin · konnektör şekilli coil · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

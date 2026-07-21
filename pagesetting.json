@@ -44,7 +44,36 @@
     {
       "name": "Ürünler",
       "path": "products",
-      "desc": [],
+      "desc": [
+        {
+          "path": "parca_kodu",
+          "name": {
+            "tr": "Parça kodu",
+            "en": "Part code"
+          }
+        },
+        {
+          "path": "tur",
+          "name": {
+            "tr": "Tür",
+            "en": "Type"
+          }
+        },
+        {
+          "path": "uyumlu",
+          "name": {
+            "tr": "Uyum",
+            "en": "Fitment"
+          }
+        },
+        {
+          "path": "kalite",
+          "name": {
+            "tr": "Kalite",
+            "en": "Quality"
+          }
+        }
+      ],
       "data": [],
       "index": 2,
       "desing": {
@@ -57,9 +86,9 @@
       "modulestatus": {
         "page": true,
         "body": true,
+        "detail": true,
         "img": true,
         "bgimg": false,
-        "detail": true,
         "icon": true
       }
     },

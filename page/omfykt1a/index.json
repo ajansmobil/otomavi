@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Yakıt Filtresi</h2><p style=\"font-size: 16px;\">Enjektör ve yüksek basınç pompasını koruyan yakıt filtresi, BMW dizel ve benzin hatlarında kir tutma kapasitesiyle öne çıkar. Oto Mavi stokunda OEM ve eşdeğer seçenekler bulunur.</p><p style=\"font-size: 16px;\">Değişim aralığı yakıt kalitesine göre kısalabilir; tıkanma belirtisinde motor çekiş kaybı yaşanır. Şasi numaranızı iletin, doğru kodu birlikte seçelim.</p><p style=\"font-size: 16px;\">Sipariş: 0544 717 18 28 · info@otomavi.com — sepet yok, telefon/WhatsApp ile.</p>"
   },
   "icon": "filter_alt",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:07.185Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,14 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 14,
+  "url": "",
+  "pathnext": "",
+  "desc": {
+    "parca_kodu": "yakit-filtresi",
+    "tur": "Filtreler",
+    "uyumlu": "yakıt süzgeci OEM · enjektör koruma elemanı · yüksek basınç hat filtresi · dizel fuel filter · E90 · Mercedes-Benz · BMW · Audi",
+    "kalite": "OEM ve eşdeğer"
   }
 }

@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Conta Seti</h2><p style=\"font-size: 16px;\">Üst/alt conta setleri yağ ve soğutma kaçaklarını önler. Oto Mavi BMW conta setlerinde motor kodu eşleşmesi zorunludur.</p><p style=\"font-size: 16px;\">Tek conta yerine set kullanmak işçilik tekrarını azaltır. İş tipinizi (kapak, karter, emme) belirtin.</p><p style=\"font-size: 16px;\">Atölye siparişi: 0544 717 18 28</p>"
   },
   "icon": "layers",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:08.306Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 24,
+  "url": "",
+  "desc": {
+    "parca_kodu": "conta-seti",
+    "tur": "Motor",
+    "uyumlu": "silindir kapağı gasket · manifold conta seti · karter yağ seal · üst kapak sızdırmazlık · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Fren Hidroliği</h2><p style=\"font-size: 16px;\">Fren hidroliği nem aldıkça kaynama noktası düşer; bu da pedal hissini bozar. Oto Mavi DOT sınıfı BMW fren sıvılarını araç kılavuzuna göre önerir.</p><p style=\"font-size: 16px;\">Periyodik değişim ve sistem havası alma atölye prosedürüdür. Sınıfı karıştırmayın.</p><p style=\"font-size: 16px;\">Bilgi: 0544 717 18 28</p>"
   },
   "icon": "water_drop",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:07.879Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 20,
+  "url": "",
+  "desc": {
+    "parca_kodu": "fren-hidroligi",
+    "tur": "Frenler",
+    "uyumlu": "ana merkez silindiri · kaliper basınç hortumu · ABS valf bağlantısı · DOT4 hat ekipmanı · Mercedes-Benz · BMW · 3 Series · 5 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

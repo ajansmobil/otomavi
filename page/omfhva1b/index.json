@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Hava Filtresi</h2><p style=\"font-size: 16px;\">Motor emiş yolunu toz ve polenden koruyan hava filtresi, yanma verimini doğrudan etkiler. Oto Mavi BMW hava filtrelerinde kağıt medya ve çerçeve kalitesi kontrol edilir.</p><p style=\"font-size: 16px;\">Tozlu bölgelerde daha sık değişim önerilir. Model yılı ve motor koduyla stok sorgulayın.</p><p style=\"font-size: 16px;\">Gaziantep Oto Mavi: 0544 717 18 28</p>"
   },
   "icon": "air",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:07.295Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 15,
+  "url": "",
+  "desc": {
+    "parca_kodu": "hava-filtresi",
+    "tur": "Filtreler",
+    "uyumlu": "panel emiş elemanı · kuru tip hava süzgeci · motor intake filter · N47 hava elemanı · N47 · Mercedes-Benz · BMW · Audi",
+    "kalite": "OEM ve eşdeğer"
   }
 }

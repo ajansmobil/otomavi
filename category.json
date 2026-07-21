@@ -1,624 +1,534 @@
 {
-    "name":  "Kategori",
-    "path":  "category",
-    "description":  {
-                        "tr":  "Oto Mavi ürün kataloğu — Gaziantep BMW oto yedek parçaları: filtre, fren, gövde, motor, elektrik, sönümleme, klima, turbo, direksiyon, şanzıman, lastik, poyra, park elektroniği ve araç ekipmanları."
-                    },
-    "keyword":  {
-                    "tr":  "BMW yedek parça, Oto Mavi, Gaziantep, ürün kategorileri, turbo, direksiyon, şanzıman, lastik, orijinal parça"
-                },
-    "desc":  [
-
-             ],
-    "data":  [
-                 {
-                     "id":  "omfltr01",
-                     "path":  "filtreler",
-                     "name":  {
-                                  "tr":  "Filtreler"
-                              },
-                     "status":  "play",
-                     "index":  0,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "filter_alt",
-                     "description":  {
-                                         "tr":  "Yakıt süzgeci, emiş paneli, yağ kartuşu ve kabin elemanını aynı reyon altında toplayın; Gaziantep deposunda filtre kodları şasiye göre ayrılır."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "omfren02",
-                     "path":  "frenler",
-                     "name":  {
-                                  "tr":  "Frenler"
-                              },
-                     "status":  "play",
-                     "index":  1,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "disc_full",
-                     "description":  {
-                                         "tr":  "Durma mesafesini kısaltan rotor, pad ve hidrolik hat parçaları burada; pedal hissi ve ABS uyumu için doğru fren kodunu birlikte seçin."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "omgvde03",
-                     "path":  "govde",
-                     "name":  {
-                                  "tr":  "Gövde"
-                              },
-                     "status":  "play",
-                     "index":  2,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "directions_car",
-                     "description":  {
-                                         "tr":  "Çarpışma sonrası tampon kapağı, ayna gövdesi ve sac panel onarımında kontur uyumu kritik; boyasız gövde stoku şasi ölçüsüyle doğrulanır."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "ommotr04",
-                     "path":  "motor",
-                     "name":  {
-                                  "tr":  "Motor"
-                              },
-                     "status":  "play",
-                     "index":  3,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "settings",
-                     "description":  {
-                                         "tr":  "Sızdırmazlık conta grubu, soğutma elemanı ve algılayıcı sensörlerle motor sağlığını toparlayın; hararet ve kaçak şikayetlerinde teknik parça reyonu."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "omelek05",
-                     "path":  "elektrik",
-                     "name":  {
-                                  "tr":  "Elektrik"
-                              },
-                     "status":  "play",
-                     "index":  4,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "bolt",
-                     "description":  {
-                                         "tr":  "Start-stop batarya, şarj ünitesi ve çalıştırma motoru voltaj sürekliliği sağlar; kutup ve amper etiketine göre elektrik reyonundan seçin."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "omsusp06",
-                     "path":  "sonumleme",
-                     "name":  {
-                                  "tr":  "Sönümleme / Süspansiyon"
-                              },
-                     "status":  "play",
-                     "index":  5,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "tire_repair",
-                     "description":  {
-                                         "tr":  "Damper gövdesi, helezon teli ve pivot burcu ile yol tutuşu toparlanır; vuruntu ve çökme şikayetinde sönümleme reyonu doğru sertliği verir."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "omklma07",
-                     "path":  "klima",
-                     "name":  {
-                                  "tr":  "Klima"
-                              },
-                     "status":  "play",
-                     "index":  6,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "ac_unit",
-                     "description":  {
-                                         "tr":  "Gaz sıkıştırma ünitesi, ısı atım çekirdeği ve nem tutucu ile kabin soğutması yenilenir; R134a hattına göre klima çevrim reyonu kurulur."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "omatsg08",
-                     "path":  "atesleme",
-                     "name":  {
-                                  "tr":  "Ateşleme ve Ön Isıtma"
-                              },
-                     "status":  "play",
-                     "index":  7,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "local_fire_department",
-                     "description":  {
-                                         "tr":  "Kıvılcım ucu, yüksek voltaj bobini ve dizel ısıtıcı soğuk çalıştırmayı düzeltir; misfire ve glow arızasında ateşleme reyonundan ilerleyin."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "omsivi09",
-                     "path":  "yaglar",
-                     "name":  {
-                                  "tr":  "Yağlar ve Sıvılar"
-                              },
-                     "status":  "play",
-                     "index":  8,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "water_drop",
-                     "description":  {
-                                         "tr":  "Longlife yağ, alüminyum korumalı soğutucu ve yüksek kaynama fren sıvısı litre litre ayrılır; onay kodu ve DOT sınıfı etiketle netleşir."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "ombkim10",
-                     "path":  "bakim-kiti",
-                     "name":  {
-                                  "tr":  "Bakım Kiti"
-                              },
-                     "status":  "play",
-                     "index":  9,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "build",
-                     "description":  {
-                                         "tr":  "Kilometre servisinde yağ+süzgeç paketi veya conta tadilat kiti tek siparişte toplanır; şasi listesine göre bakım kiti reyonu hazırlanır."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "omicdn11",
-                     "path":  "ic-donanim",
-                     "name":  {
-                                  "tr":  "İç Donanım"
-                              },
-                     "status":  "play",
-                     "index":  10,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "airline_seat_recline_extra",
-                     "description":  {
-                                         "tr":  "Kabin zemin örtüsü, kapı kaplama çerçevesi ve konsol dayaması konforu yeniler; renk kodlu iç mekân parçaları klips tipine göre seçilir."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "omaydn12",
-                     "path":  "aydinlatma",
-                     "name":  {
-                                  "tr":  "Aydınlatma"
-                              },
-                     "status":  "play",
-                     "index":  11,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "lightbulb",
-                     "description":  {
-                                         "tr":  "Projektör far, LED stop ve tampon sis ünitesi gece görüşünü güçlendirir; sol/sağ optik kodları lamba reyonunda ayrı tutulur."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "omkysi13",
-                     "path":  "kayislar",
-                     "name":  {
-                                  "tr":  "Kayışlar ve Zincirler"
-                              },
-                     "status":  "play",
-                     "index":  12,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "sync",
-                     "description":  {
-                                         "tr":  "Aksesuar poly-V, eksantrik zamanlama kiti ve otomatik tensioner tahrik hattını korur; çatlak sesinde kayış reyonundan ölçü alın."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "omslck14",
-                     "path":  "silecekler",
-                     "name":  {
-                                  "tr":  "Silecekler"
-                              },
-                     "status":  "play",
-                     "index":  13,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "water",
-                     "description":  {
-                                         "tr":  "Cam süpürme lastiği, metal kol ve yıkama pompası görüşü netleştirir; beam tipi ve hortum çapı silecek reyonunda eşleşir."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "dnhgnxo0hg",
-                     "path":  "turbo-zorlamali-emme",
-                     "name":  {
-                                  "tr":  "Turbo / Zorlamalı Emme"
-                              },
-                     "status":  "play",
-                     "index":  57,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "air",
-                     "description":  {
-                                         "tr":  "Turboşarj, ara soğutucu, conta ve basınç dönüştürücü ile zorlamalı emme hattını Oto Mavi deposundan şasi koduna göre tamamlayın; boost kaçaklarında doğru ünite seçilir."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "ry99uefxh8",
-                     "path":  "direksiyon",
-                     "name":  {
-                                  "tr":  "Direksiyon"
-                              },
-                     "status":  "play",
-                     "index":  58,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "sync_alt",
-                     "description":  {
-                                         "tr":  "Rot başı, bağlantı çubuğu, onarım kiti ve kremayer kapağı ile direksiyon hassasiyetini toparlayın; boşluk ve vuruntu şikayetinde Oto Mavi direksiyon reyonu."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "knzebtecct",
-                     "path":  "sanizman",
-                     "name":  {
-                                  "tr":  "Şanzıman"
-                              },
-                     "status":  "play",
-                     "index":  59,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "settings_input_component",
-                     "description":  {
-                                         "tr":  "Şanzıman montaj takozu, hız sensörü, ters ışık anahtarı ve dişli/çark grubuyla vites aktarımını destekleyin; sarsıntı ve sinyal arızasında Oto Mavi şanzıman reyonu."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "yut4w6lws1",
-                     "path":  "lastik-jant",
-                     "name":  {
-                                  "tr":  "Lastik ve Jant"
-                              },
-                     "status":  "play",
-                     "index":  60,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "tire_repair",
-                     "description":  {
-                                         "tr":  "Lastik, jant kapağı, tamir kiti ve ara parça ile tekerlek çevresini tamamlayın; ebat ve PCD bilgisini Oto Mavi’ye ileterek doğru lastik-jant uyumunu sağlayın."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "t3uqlrk7uh",
-                     "path":  "suspansiyon-poyra",
-                     "name":  {
-                                  "tr":  "Süspansiyon / Poyra"
-                              },
-                     "status":  "play",
-                     "index":  61,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "settings_suggest",
-                     "description":  {
-                                         "tr":  "Tekerlek göbeği, yatak, bijon/saplama ve mil contası ile poyra grubunu yenileyin; uğultu ve titreşimde Oto Mavi süspansiyon-poyra reyonundan şasiye uygun seçim yapın."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "upq7zjks3k",
-                     "path":  "park-elektronik",
-                     "name":  {
-                                  "tr":  "Park ve Elektronik"
-                              },
-                     "status":  "play",
-                     "index":  62,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "sensors",
-                     "description":  {
-                                         "tr":  "Park sensörü, motor beyni (ECU) ve röle/kontrol üniteleriyle elektronik yardımcılar burada; hata kodu ve konnektör tipine göre Oto Mavi elektronik reyonundan ilerleyin."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 },
-                 {
-                     "id":  "joh4ngy8qk",
-                     "path":  "arac-ekipmanlari",
-                     "name":  {
-                                  "tr":  "Araç Ekipmanları"
-                              },
-                     "status":  "play",
-                     "index":  63,
-                     "category":  "",
-                     "url":  "",
-                     "icon":  "home_repair_service",
-                     "description":  {
-                                         "tr":  "Genel ekipman, aksesuar seti ve atölye sarf malzemeleriyle yol ve servis ihtiyacını tamamlayın; Oto Mavi araç ekipmanları reyonu katalog dışı pratik parçaları toplar."
-                                     },
-                     "img":  "index.webp",
-                     "desing":  {
-                                    "header":  [
-
-                                               ],
-                                    "body":  [
-                                                 "t1af01",
-                                                 "t1ulo01"
-                                             ],
-                                    "footer":  [
-
-                                               ]
-                                }
-                 }
-             ],
-    "index":  0,
-    "desing":  {
-                   "header":  [
-
-                              ],
-                   "body":  [
-                                "t1af01",
-                                "t1ulo01"
-                            ],
-                   "footer":  [
-
-                              ]
-               },
-    "modulestatus":  {
-                         "page":  true,
-                         "body":  true,
-                         "detail":  true,
-                         "img":  true,
-                         "bgimg":  false,
-                         "icon":  true
-                     }
+  "name": "Kategori",
+  "path": "category",
+  "description": {
+    "tr": "Oto Mavi ürün kataloğu — Gaziantep BMW oto yedek parçaları: filtre, fren, gövde, motor, elektrik, sönümleme, klima, turbo, direksiyon, şanzıman, lastik, poyra, park elektroniği ve araç ekipmanları."
+  },
+  "keyword": {
+    "tr": "BMW yedek parça, Oto Mavi, Gaziantep, ürün kategorileri, turbo, direksiyon, şanzıman, lastik, orijinal parça"
+  },
+  "desc": [],
+  "data": [
+    {
+      "name": {
+        "tr": "Filtreler"
+      },
+      "id": "omfltr01",
+      "index": 0,
+      "path": "filtreler",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "filter_alt",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Yakıt süzgeci, emiş paneli, yağ kartuşu ve kabin elemanını aynı reyon altında toplayın; Gaziantep deposunda filtre kodları şasiye göre ayrılır."
+      }
+    },
+    {
+      "name": {
+        "tr": "Frenler"
+      },
+      "id": "omfren02",
+      "index": 1,
+      "path": "frenler",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "disc_full",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Durma mesafesini kısaltan rotor, pad ve hidrolik hat parçaları burada; pedal hissi ve ABS uyumu için doğru fren kodunu birlikte seçin."
+      }
+    },
+    {
+      "name": {
+        "tr": "Gövde"
+      },
+      "id": "omgvde03",
+      "index": 2,
+      "path": "govde",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "directions_car",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Çarpışma sonrası tampon kapağı, ayna gövdesi ve sac panel onarımında kontur uyumu kritik; boyasız gövde stoku şasi ölçüsüyle doğrulanır."
+      }
+    },
+    {
+      "name": {
+        "tr": "Motor"
+      },
+      "id": "ommotr04",
+      "index": 3,
+      "path": "motor",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "settings",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Sızdırmazlık conta grubu, soğutma elemanı ve algılayıcı sensörlerle motor sağlığını toparlayın; hararet ve kaçak şikayetlerinde teknik parça reyonu."
+      }
+    },
+    {
+      "name": {
+        "tr": "Elektrik"
+      },
+      "id": "omelek05",
+      "index": 4,
+      "path": "elektrik",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "bolt",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Start-stop batarya, şarj ünitesi ve çalıştırma motoru voltaj sürekliliği sağlar; kutup ve amper etiketine göre elektrik reyonundan seçin."
+      }
+    },
+    {
+      "name": {
+        "tr": "Sönümleme / Süspansiyon"
+      },
+      "id": "omsusp06",
+      "index": 5,
+      "path": "sonumleme",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "tire_repair",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Damper gövdesi, helezon teli ve pivot burcu ile yol tutuşu toparlanır; vuruntu ve çökme şikayetinde sönümleme reyonu doğru sertliği verir."
+      }
+    },
+    {
+      "name": {
+        "tr": "Klima"
+      },
+      "id": "omklma07",
+      "index": 6,
+      "path": "klima",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "ac_unit",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Gaz sıkıştırma ünitesi, ısı atım çekirdeği ve nem tutucu ile kabin soğutması yenilenir; R134a hattına göre klima çevrim reyonu kurulur."
+      }
+    },
+    {
+      "name": {
+        "tr": "Ateşleme ve Ön Isıtma"
+      },
+      "id": "omatsg08",
+      "index": 7,
+      "path": "atesleme",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "local_fire_department",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Kıvılcım ucu, yüksek voltaj bobini ve dizel ısıtıcı soğuk çalıştırmayı düzeltir; misfire ve glow arızasında ateşleme reyonundan ilerleyin."
+      }
+    },
+    {
+      "name": {
+        "tr": "Yağlar ve Sıvılar"
+      },
+      "id": "omsivi09",
+      "index": 8,
+      "path": "yaglar",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "water_drop",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Longlife yağ, alüminyum korumalı soğutucu ve yüksek kaynama fren sıvısı litre litre ayrılır; onay kodu ve DOT sınıfı etiketle netleşir."
+      }
+    },
+    {
+      "name": {
+        "tr": "Bakım Kiti"
+      },
+      "id": "ombkim10",
+      "index": 9,
+      "path": "bakim-kiti",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "build",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Kilometre servisinde yağ+süzgeç paketi veya conta tadilat kiti tek siparişte toplanır; şasi listesine göre bakım kiti reyonu hazırlanır."
+      }
+    },
+    {
+      "name": {
+        "tr": "İç Donanım"
+      },
+      "id": "omicdn11",
+      "index": 10,
+      "path": "ic-donanim",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "airline_seat_recline_extra",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Kabin zemin örtüsü, kapı kaplama çerçevesi ve konsol dayaması konforu yeniler; renk kodlu iç mekân parçaları klips tipine göre seçilir."
+      }
+    },
+    {
+      "name": {
+        "tr": "Aydınlatma"
+      },
+      "id": "omaydn12",
+      "index": 11,
+      "path": "aydinlatma",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "lightbulb",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Projektör far, LED stop ve tampon sis ünitesi gece görüşünü güçlendirir; sol/sağ optik kodları lamba reyonunda ayrı tutulur."
+      }
+    },
+    {
+      "name": {
+        "tr": "Kayışlar ve Zincirler"
+      },
+      "id": "omkysi13",
+      "index": 12,
+      "path": "kayislar",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "sync",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Aksesuar poly-V, eksantrik zamanlama kiti ve otomatik tensioner tahrik hattını korur; çatlak sesinde kayış reyonundan ölçü alın."
+      }
+    },
+    {
+      "name": {
+        "tr": "Silecekler"
+      },
+      "id": "omslck14",
+      "index": 13,
+      "path": "silecekler",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "water",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Cam süpürme lastiği, metal kol ve yıkama pompası görüşü netleştirir; beam tipi ve hortum çapı silecek reyonunda eşleşir."
+      }
+    },
+    {
+      "name": {
+        "tr": "Turbo / Zorlamalı Emme"
+      },
+      "id": "dnhgnxo0hg",
+      "index": 57,
+      "path": "turbo-zorlamali-emme",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "air",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Turboşarj, ara soğutucu, conta ve basınç dönüştürücü ile zorlamalı emme hattını Oto Mavi deposundan şasi koduna göre tamamlayın; boost kaçaklarında doğru ünite seçilir."
+      }
+    },
+    {
+      "name": {
+        "tr": "Direksiyon"
+      },
+      "id": "ry99uefxh8",
+      "index": 58,
+      "path": "direksiyon",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "sync_alt",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Rot başı, bağlantı çubuğu, onarım kiti ve kremayer kapağı ile direksiyon hassasiyetini toparlayın; boşluk ve vuruntu şikayetinde Oto Mavi direksiyon reyonu."
+      }
+    },
+    {
+      "name": {
+        "tr": "Şanzıman"
+      },
+      "id": "knzebtecct",
+      "index": 59,
+      "path": "sanizman",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "settings_input_component",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Şanzıman montaj takozu, hız sensörü, ters ışık anahtarı ve dişli/çark grubuyla vites aktarımını destekleyin; sarsıntı ve sinyal arızasında Oto Mavi şanzıman reyonu."
+      }
+    },
+    {
+      "name": {
+        "tr": "Lastik ve Jant"
+      },
+      "id": "yut4w6lws1",
+      "index": 60,
+      "path": "lastik-jant",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "tire_repair",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Lastik, jant kapağı, tamir kiti ve ara parça ile tekerlek çevresini tamamlayın; ebat ve PCD bilgisini Oto Mavi’ye ileterek doğru lastik-jant uyumunu sağlayın."
+      }
+    },
+    {
+      "name": {
+        "tr": "Süspansiyon / Poyra"
+      },
+      "id": "t3uqlrk7uh",
+      "index": 61,
+      "path": "suspansiyon-poyra",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "settings_suggest",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Tekerlek göbeği, yatak, bijon/saplama ve mil contası ile poyra grubunu yenileyin; uğultu ve titreşimde Oto Mavi süspansiyon-poyra reyonundan şasiye uygun seçim yapın."
+      }
+    },
+    {
+      "name": {
+        "tr": "Park ve Elektronik"
+      },
+      "id": "upq7zjks3k",
+      "index": 62,
+      "path": "park-elektronik",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "sensors",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Park sensörü, motor beyni (ECU) ve röle/kontrol üniteleriyle elektronik yardımcılar burada; hata kodu ve konnektör tipine göre Oto Mavi elektronik reyonundan ilerleyin."
+      }
+    },
+    {
+      "name": {
+        "tr": "Araç Ekipmanları"
+      },
+      "id": "joh4ngy8qk",
+      "index": 63,
+      "path": "arac-ekipmanlari",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "home_repair_service",
+      "desing": {
+        "header": [],
+        "body": [
+          "t1af01",
+          "t1ulo01"
+        ],
+        "footer": []
+      },
+      "description": {
+        "tr": "Genel ekipman, aksesuar seti ve atölye sarf malzemeleriyle yol ve servis ihtiyacını tamamlayın; Oto Mavi araç ekipmanları reyonu katalog dışı pratik parçaları toplar."
+      }
+    }
+  ],
+  "index": 0,
+  "desing": {
+    "header": [],
+    "body": [
+      "t1af01",
+      "t1ulo01"
+    ],
+    "footer": []
+  },
+  "modulestatus": {
+    "page": true,
+    "body": true,
+    "detail": true,
+    "img": true,
+    "bgimg": false,
+    "icon": true
+  }
 }

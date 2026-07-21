@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Yağ Katkısı</h2><p style=\"font-size: 16px;\">Katkı ürünleri bakımın yerini tutmaz; bilinçli ve dozunda kullanılmalıdır.</p><p style=\"font-size: 16px;\">Oto Mavi katkı seçiminde yağ tipi ve şikayeti birlikte değerlendirir.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "science",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:16.051Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 105,
+  "url": "",
+  "desc": {
+    "parca_kodu": "yag-katkisi",
+    "tur": "Yağlar ve Sıvılar",
+    "uyumlu": "yağ katkısı · oil additive · sızdırmazlık katkısı · motor katkı · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

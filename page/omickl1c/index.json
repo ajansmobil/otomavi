@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Kol Dayama</h2><p style=\"font-size: 16px;\">Orta konsol kol dayama konfor ve küçük eşya deposu sağlar. Oto Mavi BMW kol dayama ünitelerinde menteşe ve kilit mekanizması kontrol edilir.</p><p style=\"font-size: 16px;\">Deri / kumaş kaplama model paketine göredir.</p><p style=\"font-size: 16px;\">Sipariş: 0544 717 18 28</p>"
   },
   "icon": "airline_seat_recline_extra",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:10.833Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 47,
+  "url": "",
+  "desc": {
+    "parca_kodu": "kol-dayama",
+    "tur": "İç Donanım",
+    "uyumlu": "armrest storage unit · orta konsol dayama · menteşeli dayama kapağı · deri konsol armrest · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Tampon</h2><p style=\"font-size: 16px;\">Ön veya arka tampon, park manevrası ve küçük darbelerde ilk koruma katmanıdır. Oto Mavi BMW tamponlarında boyasız gövde veya boyalı seçenekler sunulur.</p><p style=\"font-size: 16px;\">Park sensörü ve sis farı yuvası modele göre değişir; fotoğraf veya şasi ile eşleştirme yapıyoruz.</p><p style=\"font-size: 16px;\">Kaporta siparişi: 0544 717 18 28</p>"
   },
   "icon": "directions_car",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:07.989Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 21,
+  "url": "",
+  "desc": {
+    "parca_kodu": "tampon",
+    "tur": "Gövde",
+    "uyumlu": "park sensörlü tampon · sis yuvası bumper · boyasız tampon kapağı · ön arka bumper cover · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

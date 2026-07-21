@@ -1,37 +1,35 @@
 {
-    "id":  "omatsg08",
-    "path":  "atesleme",
-    "name":  {
-                 "tr":  "Ateşleme ve Ön Isıtma"
-             },
-    "status":  "play",
-    "category":  "",
-    "description":  {
-                        "tr":  "Kıvılcım ucu, yüksek voltaj bobini ve dizel ısıtıcı soğuk çalıştırmayı düzeltir; misfire ve glow arızasında ateşleme reyonundan ilerleyin."
-                    },
-    "keyword":  {
-                    "tr":  "ateşleme reyonu kıvılcım, yüksek voltaj bobin, dizel glow ısıtıcı, misfire çözüm parçası, soğuk start seti"
-                },
-    "title":  {
-                  "tr":  "Ateşleme ve Ön Isıtma | Oto Mavi"
-              },
-    "text":  {
-                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eAteşleme ve Ön Isıtma\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eBuji, bobin ve kızdırma bujisi ile sağlıklı ateşleme. Soğuk çalıştırma sorunlarında Oto Mavi stoklarına bakın.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eİletişim: 0544 717 18 28\u003c/p\u003e"
-             },
-    "icon":  "local_fire_department",
-    "update":  "2026-07-20",
-    "date":  "2026-07-20",
-    "img":  "index.webp",
-    "desing":  {
-                   "header":  [
-
-                              ],
-                   "body":  [
-                                "t1af01",
-                                "t1ulo01"
-                            ],
-                   "footer":  [
-
-                              ]
-               }
+  "id": "omatsg08",
+  "path": "atesleme",
+  "name": {
+    "tr": "Ateşleme ve Ön Isıtma"
+  },
+  "status": "play",
+  "category": "",
+  "description": {
+    "tr": "Kıvılcım ucu, yüksek voltaj bobini ve dizel ısıtıcı soğuk çalıştırmayı düzeltir; misfire ve glow arızasında ateşleme reyonundan ilerleyin."
+  },
+  "keyword": {
+    "tr": "ateşleme reyonu kıvılcım, yüksek voltaj bobin, dizel glow ısıtıcı, misfire çözüm parçası, soğuk start seti"
+  },
+  "title": {
+    "tr": "Ateşleme ve Ön Isıtma | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Ateşleme ve Ön Isıtma</h2><p style=\"font-size: 16px;\">Buji, bobin ve kızdırma bujisi ile sağlıklı ateşleme. Soğuk çalıştırma sorunlarında Oto Mavi stoklarına bakın.</p><p style=\"font-size: 16px;\">İletişim: 0544 717 18 28</p>"
+  },
+  "icon": "local_fire_department",
+  "update": "2026-07-21T10:04:06.887Z",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1af01",
+      "t1ulo01"
+    ],
+    "footer": []
+  },
+  "index": 7,
+  "url": ""
 }

@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Kondanser</h2><p style=\"font-size: 16px;\">Kondanser ön panelde ısıyı dışarı atar; taş darbesi sızıntıya yol açabilir. Oto Mavi BMW kondanserlerinde alüminyum gövde ve fan uyumu kontrol edilir.</p><p style=\"font-size: 16px;\">Radyatör ve intercooler ile birlikte montaj sırası önemlidir.</p><p style=\"font-size: 16px;\">0544 717 18 28 · info@otomavi.com</p>"
   },
   "icon": "device_thermostat",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:09.544Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 34,
+  "url": "",
+  "desc": {
+    "parca_kodu": "kondanser",
+    "tur": "Klima",
+    "uyumlu": "alüminyum kondanser çekirdek · ön panel heat exchanger · A/C condenser core · taş delik kondanser · Mercedes-Benz · BMW · 3 Series · 5 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

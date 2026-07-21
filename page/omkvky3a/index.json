@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">V Kayışı</h2><p style=\"font-size: 16px;\">V / kanallı kayış alternatör ve klima tahriğini taşır. Oto Mavi BMW kayışlarında nervür sayısı ve uzunluk kritiktir.</p><p style=\"font-size: 16px;\">Çatlak veya ses varsa gergi ile birlikte değerlendirin.</p><p style=\"font-size: 16px;\">Kayış: 0544 717 18 28</p>"
   },
   "icon": "sync",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:11.227Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 51,
+  "url": "",
+  "desc": {
+    "parca_kodu": "v-kayisi",
+    "tur": "Kayışlar ve Zincirler",
+    "uyumlu": "poly-V drive belt · oluk sayılı aksesuar kayış · alternatör kasnak belt · klima drive kayış · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

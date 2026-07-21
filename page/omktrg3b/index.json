@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Triger Seti</h2><p style=\"font-size: 16px;\">Triger seti zamanlama kayışı/zinciri ile gergi ve rulmanları kapsar. Oto Mavi BMW triger setlerinde km aralığına göre değişim önerilir.</p><p style=\"font-size: 16px;\">Yalnız kayış almak risklidir; set halinde alın. Motor kodunu yazın.</p><p style=\"font-size: 16px;\">0544 717 18 28 · info@otomavi.com</p>"
   },
   "icon": "schedule",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:11.334Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 52,
+  "url": "",
+  "desc": {
+    "parca_kodu": "triger-seti",
+    "tur": "Kayışlar ve Zincirler",
+    "uyumlu": "timing belt set · zincir zamanlama kiti · eksantrik timing kit · gergi makaralı triger · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

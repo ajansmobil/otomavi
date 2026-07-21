@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">ATF</h2><p style=\"font-size: 16px;\">ATF tipi kutu koduna göre değişir. Renk ve koku yağ durumu hakkında fikir verir ama tek başına yeterli değildir.</p><p style=\"font-size: 16px;\">Oto Mavi doğru spesifikasyonu şasiyle doğrular.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "opacity",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:15.949Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 104,
+  "url": "",
+  "desc": {
+    "parca_kodu": "atf",
+    "tur": "Yağlar ve Sıvılar",
+    "uyumlu": "otomatik şanzıman yağı · transmission fluid · Dexron · Audi <h2 style=\"font-size: 24px;\">ATF</h2><p style=\"font-size: 16px;\">ATF tipi kutu koduna göre değişir. Renk ve koku yağ durumu hakkında fikir verir ama tek başına yeterli değildir.</p><p style=\"font-size: 16px;\">Oto Mavi doğru spesifikasyonu şasiyle doğrular.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p> · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

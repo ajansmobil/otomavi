@@ -7,12 +7,13 @@
       "name": {
         "tr": "Ürünler"
       },
-      "status": "play",
-      "category": "",
       "id": "hs54qzyeyo",
-      "url": "",
-      "path": "urunler",
       "index": 0,
+      "path": "urunler",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
       "icon": "home",
       "desing": {
         "header": [],
@@ -24,19 +25,20 @@
       "pathnext": "",
       "description": {
         "tr": "Oto Mavi BMW yedek parça kataloğu: filtre, fren, motor, elektrik, turbo, direksiyon, şanzıman, süspansiyon, lastik ve araç ekipmanları."
-      },
-      "img": "index.webp"
+      }
     },
     {
       "name": {
         "tr": "Hakkımızda"
       },
-      "status": "play",
-      "category": "",
       "id": "yvi9dlb59o",
-      "url": "",
-      "path": "kurumsal",
       "index": 1,
+      "path": "kurumsal",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "home",
       "desing": {
         "header": [],
         "body": [
@@ -48,19 +50,19 @@
       "pathnext": "hakkimizda",
       "description": {
         "tr": "Oto Mavi kurumsal sayfaları: hakkımızda, misyon, vizyon, kalite, kariyer ve yasal metinler. Gaziantep BMW oto yedek parçaları."
-      },
-      "img": "index.webp"
+      }
     },
     {
       "name": {
         "tr": "İletişim"
       },
-      "status": "play",
-      "category": "",
       "id": "xnzu5au0ag",
-      "url": "",
-      "path": "iletisim",
       "index": 2,
+      "path": "iletisim",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
       "icon": "home",
       "desing": {
         "header": [],
@@ -74,8 +76,7 @@
       "pathnext": "",
       "description": {
         "tr": "Oto Mavi iletişim: hızlı destek, sipariş ve bilgilendirme. Gaziantep BMW oto yedek parça talepleriniz için bize ulaşın."
-      },
-      "img": "index.webp"
+      }
     }
   ],
   "index": 0,

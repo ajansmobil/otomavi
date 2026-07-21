@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Röle Başlatıcı</h2><p style=\"font-size: 16px;\">Marş rölesi arızası akü ve marş motoru sağlamken bile start engeller. Soket ısısı ipucudur.</p><p style=\"font-size: 16px;\">Oto Mavi amper ve ayak düzenine göre röle seçer.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "power",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:15.447Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 99,
+  "url": "",
+  "desc": {
+    "parca_kodu": "role-baslatici",
+    "tur": "Elektrik",
+    "uyumlu": "başlatıcı röle · starter relay · marş rölesi · ana kontak röle · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

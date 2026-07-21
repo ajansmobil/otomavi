@@ -1,37 +1,35 @@
 {
-    "id":  "t3uqlrk7uh",
-    "path":  "suspansiyon-poyra",
-    "name":  {
-                 "tr":  "Süspansiyon / Poyra"
-             },
-    "status":  "play",
-    "category":  "",
-    "description":  {
-                        "tr":  "Tekerlek göbeği, yatak, bijon/saplama ve mil contası ile poyra grubunu yenileyin; uğultu ve titreşimde Oto Mavi süspansiyon-poyra reyonundan şasiye uygun seçim yapın."
-                    },
-    "keyword":  {
-                    "tr":  "tekerlek göbeği, tekerlek yatağı, bijon saplama, mil contası, poyra BMW"
-                },
-    "title":  {
-                  "tr":  "Süspansiyon / Poyra | Oto Mavi"
-              },
-    "text":  {
-                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eSüspansiyon / Poyra\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003ePoyra ve tekerlek yatağı uğultusu hızla artan bir arızadır; gecikirse ABS halkası da zarar görür. Oto Mavi göbek, yatak ve conta setlerini aks tipine göre ayırır.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSönümleme (amortisör/yay) reyonundan ayrı tutulan bu kategori hub ve rulman odaklıdır.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.\u003c/p\u003e"
-             },
-    "icon":  "settings_suggest",
-    "update":  "2026-07-20",
-    "date":  "2026-07-20",
-    "img":  "index.webp",
-    "desing":  {
-                   "header":  [
-
-                              ],
-                   "body":  [
-                                "t1af01",
-                                "t1ulo01"
-                            ],
-                   "footer":  [
-
-                              ]
-               }
+  "id": "t3uqlrk7uh",
+  "path": "suspansiyon-poyra",
+  "name": {
+    "tr": "Süspansiyon / Poyra"
+  },
+  "status": "play",
+  "category": "",
+  "description": {
+    "tr": "Tekerlek göbeği, yatak, bijon/saplama ve mil contası ile poyra grubunu yenileyin; uğultu ve titreşimde Oto Mavi süspansiyon-poyra reyonundan şasiye uygun seçim yapın."
+  },
+  "keyword": {
+    "tr": "tekerlek göbeği, tekerlek yatağı, bijon saplama, mil contası, poyra BMW"
+  },
+  "title": {
+    "tr": "Süspansiyon / Poyra | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Süspansiyon / Poyra</h2><p style=\"font-size: 16px;\">Poyra ve tekerlek yatağı uğultusu hızla artan bir arızadır; gecikirse ABS halkası da zarar görür. Oto Mavi göbek, yatak ve conta setlerini aks tipine göre ayırır.</p><p style=\"font-size: 16px;\">Sönümleme (amortisör/yay) reyonundan ayrı tutulan bu kategori hub ve rulman odaklıdır.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "settings_suggest",
+  "update": "2026-07-21T10:04:07.123Z",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1af01",
+      "t1ulo01"
+    ],
+    "footer": []
+  },
+  "index": 61,
+  "url": ""
 }

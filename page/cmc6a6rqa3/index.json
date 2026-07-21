@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Taşıma / Destek</h2><p style=\"font-size: 16px;\">Yük taşırken sabitleme kayışı kaymayı önler. Araç üretici ağırlık limitine uyun.</p><p style=\"font-size: 16px;\">Oto Mavi ekipman reyonundan pratik taşıma aparatları talep edin.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "luggage",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:14.596Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 91,
+  "url": "",
+  "desc": {
+    "parca_kodu": "tasima-destek",
+    "tur": "Araç Ekipmanları",
+    "uyumlu": "taşıma kayışı · bagaj sabitleme · yük destek · araç taşıma aparatı · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

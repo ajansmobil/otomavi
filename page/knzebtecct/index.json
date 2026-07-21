@@ -1,37 +1,35 @@
 {
-    "id":  "knzebtecct",
-    "path":  "sanizman",
-    "name":  {
-                 "tr":  "Şanzıman"
-             },
-    "status":  "play",
-    "category":  "",
-    "description":  {
-                        "tr":  "Şanzıman montaj takozu, hız sensörü, ters ışık anahtarı ve dişli/çark grubuyla vites aktarımını destekleyin; sarsıntı ve sinyal arızasında Oto Mavi şanzıman reyonu."
-                    },
-    "keyword":  {
-                    "tr":  "şanzıman montajı, hız sensörü, ters ışık anahtarı, dişli çark, BMW şanzıman"
-                },
-    "title":  {
-                  "tr":  "Şanzıman | Oto Mavi"
-              },
-    "text":  {
-                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eŞanzıman\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eManuel ve otomatik şanzımanlarda montaj takozu, sensör ve dişli elemanları vites konforunu belirler. Ters vites lambası veya hız sinyali arızası çoğu zaman küçük bir anahtar/sensör kaynaklıdır.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eOto Mavi şanzıman yan ürünlerini kutu koduna göre listeler; ATF ve conta ile birlikte planlayın.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.\u003c/p\u003e"
-             },
-    "icon":  "settings_input_component",
-    "update":  "2026-07-20",
-    "date":  "2026-07-20",
-    "img":  "index.webp",
-    "desing":  {
-                   "header":  [
-
-                              ],
-                   "body":  [
-                                "t1af01",
-                                "t1ulo01"
-                            ],
-                   "footer":  [
-
-                              ]
-               }
+  "id": "knzebtecct",
+  "path": "sanizman",
+  "name": {
+    "tr": "Şanzıman"
+  },
+  "status": "play",
+  "category": "",
+  "description": {
+    "tr": "Şanzıman montaj takozu, hız sensörü, ters ışık anahtarı ve dişli/çark grubuyla vites aktarımını destekleyin; sarsıntı ve sinyal arızasında Oto Mavi şanzıman reyonu."
+  },
+  "keyword": {
+    "tr": "şanzıman montajı, hız sensörü, ters ışık anahtarı, dişli çark, BMW şanzıman"
+  },
+  "title": {
+    "tr": "Şanzıman | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Şanzıman</h2><p style=\"font-size: 16px;\">Manuel ve otomatik şanzımanlarda montaj takozu, sensör ve dişli elemanları vites konforunu belirler. Ters vites lambası veya hız sinyali arızası çoğu zaman küçük bir anahtar/sensör kaynaklıdır.</p><p style=\"font-size: 16px;\">Oto Mavi şanzıman yan ürünlerini kutu koduna göre listeler; ATF ve conta ile birlikte planlayın.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
+  "icon": "settings_input_component",
+  "update": "2026-07-21T10:04:07.079Z",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1af01",
+      "t1ulo01"
+    ],
+    "footer": []
+  },
+  "index": 59,
+  "url": ""
 }

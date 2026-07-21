@@ -1,37 +1,35 @@
 {
-    "id":  "omklma07",
-    "path":  "klima",
-    "name":  {
-                 "tr":  "Klima"
-             },
-    "status":  "play",
-    "category":  "",
-    "description":  {
-                        "tr":  "Gaz sıkıştırma ünitesi, ısı atım çekirdeği ve nem tutucu ile kabin soğutması yenilenir; R134a hattına göre klima çevrim reyonu kurulur."
-                    },
-    "keyword":  {
-                    "tr":  "klima çevrim reyonu, gaz sıkıştırma ünitesi, ısı atım çekirdeği, nem tutucu drier, R134a hat ekipmanı"
-                },
-    "title":  {
-                  "tr":  "Klima | Oto Mavi"
-              },
-    "text":  {
-                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eKlima\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eKompresör, kondanser ve kurutucu ile BMW klima sistemi parçaları. Yaz konforu için doğru ürün, hızlı tedarik.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş: 0544 717 18 28\u003c/p\u003e"
-             },
-    "icon":  "ac_unit",
-    "update":  "2026-07-20",
-    "date":  "2026-07-20",
-    "img":  "index.webp",
-    "desing":  {
-                   "header":  [
-
-                              ],
-                   "body":  [
-                                "t1af01",
-                                "t1ulo01"
-                            ],
-                   "footer":  [
-
-                              ]
-               }
+  "id": "omklma07",
+  "path": "klima",
+  "name": {
+    "tr": "Klima"
+  },
+  "status": "play",
+  "category": "",
+  "description": {
+    "tr": "Gaz sıkıştırma ünitesi, ısı atım çekirdeği ve nem tutucu ile kabin soğutması yenilenir; R134a hattına göre klima çevrim reyonu kurulur."
+  },
+  "keyword": {
+    "tr": "klima çevrim reyonu, gaz sıkıştırma ünitesi, ısı atım çekirdeği, nem tutucu drier, R134a hat ekipmanı"
+  },
+  "title": {
+    "tr": "Klima | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Klima</h2><p style=\"font-size: 16px;\">Kompresör, kondanser ve kurutucu ile BMW klima sistemi parçaları. Yaz konforu için doğru ürün, hızlı tedarik.</p><p style=\"font-size: 16px;\">Sipariş: 0544 717 18 28</p>"
+  },
+  "icon": "ac_unit",
+  "update": "2026-07-21T10:04:06.860Z",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1af01",
+      "t1ulo01"
+    ],
+    "footer": []
+  },
+  "index": 6,
+  "url": ""
 }

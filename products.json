@@ -7,2053 +7,2083 @@
   "keyword": {
     "tr": "BMW yedek parça, Oto Mavi, Gaziantep, ürün kategorileri, turbo, direksiyon, şanzıman, lastik, orijinal parça"
   },
-  "desc": [],
+  "desc": [
+    {
+      "path": "parca_kodu",
+      "name": {
+        "tr": "Parça kodu",
+        "en": "Part code"
+      }
+    },
+    {
+      "path": "tur",
+      "name": {
+        "tr": "Tür",
+        "en": "Type"
+      }
+    },
+    {
+      "path": "uyumlu",
+      "name": {
+        "tr": "Uyum",
+        "en": "Fitment"
+      }
+    },
+    {
+      "path": "kalite",
+      "name": {
+        "tr": "Kalite",
+        "en": "Quality"
+      }
+    }
+  ],
   "data": [
     {
-      "id": "omfykt1a",
-      "path": "yakit-filtresi",
       "name": {
         "tr": "Yakıt Filtresi"
       },
-      "status": "play",
+      "id": "omfykt1a",
       "index": 14,
+      "path": "yakit-filtresi",
       "category": "omfltr01",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "filter_alt",
-      "description": {
-        "tr": "Yüksek basınç hattını koruyan yakıt süzgeci enjektör tıkanmasını azaltır; şasi numarasıyla OEM veya eşdeğer kod Oto Mavi deposunda seçilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "pathnext": "",
+      "description": {
+        "tr": "Yüksek basınç hattını koruyan yakıt süzgeci enjektör tıkanmasını azaltır; şasi numarasıyla OEM veya eşdeğer kod Oto Mavi deposunda seçilir."
       }
     },
     {
-      "id": "omfhva1b",
-      "path": "hava-filtresi",
       "name": {
         "tr": "Hava Filtresi"
       },
-      "status": "play",
+      "id": "omfhva1b",
       "index": 15,
+      "path": "hava-filtresi",
       "category": "omfltr01",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "air",
-      "description": {
-        "tr": "Emiş kutusundaki panel hava elemanı toz partikülünü tutarak yanmayı dengeler; N serisi motorlarda kuru tip süzgeç stokta ayrılır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Emiş kutusundaki panel hava elemanı toz partikülünü tutarak yanmayı dengeler; N serisi motorlarda kuru tip süzgeç stokta ayrılır."
       }
     },
     {
-      "id": "omfyag1c",
-      "path": "yag-filtresi",
       "name": {
         "tr": "Yağ Filtresi"
       },
-      "status": "play",
+      "id": "omfyag1c",
       "index": 16,
+      "path": "yag-filtresi",
       "category": "omfltr01",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "opacity",
-      "description": {
-        "tr": "Karter dolaşımındaki metal talaşı tutan yağ kartuşu yağ değişiminde yenilenir; vida ve conta tipine göre spin-on veya kartuş ayrılır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Karter dolaşımındaki metal talaşı tutan yağ kartuşu yağ değişiminde yenilenir; vida ve conta tipine göre spin-on veya kartuş ayrılır."
       }
     },
     {
-      "id": "omfpln1d",
-      "path": "polen-filtresi",
       "name": {
         "tr": "Polen Filtresi"
       },
-      "status": "play",
+      "id": "omfpln1d",
       "index": 17,
+      "path": "polen-filtresi",
       "category": "omfltr01",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "spa",
-      "description": {
-        "tr": "Menfezden gelen tozu kesen aktif karbonlu kabin filtresi alerjen ve egzoz kokusunu azaltır; pollen cabin elemanı stokta bulunur."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Menfezden gelen tozu kesen aktif karbonlu kabin filtresi alerjen ve egzoz kokusunu azaltır; pollen cabin elemanı stokta bulunur."
       }
     },
     {
-      "id": "omfdsk2a",
-      "path": "fren-diski",
       "name": {
         "tr": "Fren Diski"
       },
-      "status": "play",
+      "id": "omfdsk2a",
       "index": 18,
+      "path": "fren-diski",
       "category": "omfren02",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "disc_full",
-      "description": {
-        "tr": "Isıyı dağıtan havalandırmalı fren rotorunda kalınlık ve run-out ölçümü şarttır; ön/arka disk delik deseni şasiye göre ayrılır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Isıyı dağıtan havalandırmalı fren rotorunda kalınlık ve run-out ölçümü şarttır; ön/arka disk delik deseni şasiye göre ayrılır."
       }
     },
     {
-      "id": "omfblt2b",
-      "path": "fren-balatasi",
       "name": {
         "tr": "Fren Balatası"
       },
-      "status": "play",
+      "id": "omfblt2b",
       "index": 19,
+      "path": "fren-balatasi",
       "category": "omfren02",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "horizontal_rule",
-      "description": {
-        "tr": "Sessiz sürtünmeli seramik pad seti aşınma kablolu veya kablosuz gelir; aks tarafına göre paketlenir, rotor yüzeyiyle birlikte değerlendirilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Sessiz sürtünmeli seramik pad seti aşınma kablolu veya kablosuz gelir; aks tarafına göre paketlenir, rotor yüzeyiyle birlikte değerlendirilir."
       }
     },
     {
-      "id": "omfhyd2c",
-      "path": "fren-hidroligi",
       "name": {
         "tr": "Fren Hidroliği"
       },
-      "status": "play",
+      "id": "omfhyd2c",
       "index": 20,
+      "path": "fren-hidroligi",
       "category": "omfren02",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "water_drop",
-      "description": {
-        "tr": "Ana merkez silindirinden kalipere basınç taşıyan hidrolik hat parçası DOT sınıfı hortum ve rezervuar uyumuyla doğrulanır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Ana merkez silindirinden kalipere basınç taşıyan hidrolik hat parçası DOT sınıfı hortum ve rezervuar uyumuyla doğrulanır."
       }
     },
     {
-      "id": "omgtmp3a",
-      "path": "tampon",
       "name": {
         "tr": "Tampon"
       },
-      "status": "play",
+      "id": "omgtmp3a",
       "index": 21,
+      "path": "tampon",
       "category": "omgvde03",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "directions_car",
-      "description": {
-        "tr": "Park sensörü ve sis yuvası delikli tampon kapağı darbede ezilir; boyasız veya astarlı bumper cover modele özel konturla gelir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Park sensörü ve sis yuvası delikli tampon kapağı darbede ezilir; boyasız veya astarlı bumper cover modele özel konturla gelir."
       }
     },
     {
-      "id": "omgayn3b",
-      "path": "yan-ayna",
       "name": {
         "tr": "Yan Ayna"
       },
-      "status": "play",
+      "id": "omgayn3b",
       "index": 22,
+      "path": "yan-ayna",
       "category": "omgvde03",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "flip",
-      "description": {
-        "tr": "Katlanır motorlu ısıtmalı yan ayna ünitesinde cam, gövde ve sinyalli kapak ayrı satılabilir; sol/sağ ayna kodu net ayrılır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Katlanır motorlu ısıtmalı yan ayna ünitesinde cam, gövde ve sinyalli kapak ayrı satılabilir; sol/sağ ayna kodu net ayrılır."
       }
     },
     {
-      "id": "omgpnl3c",
-      "path": "kaporta-paneli",
       "name": {
         "tr": "Kaporta Paneli"
       },
-      "status": "play",
+      "id": "omgpnl3c",
       "index": 23,
+      "path": "kaporta-paneli",
       "category": "omgvde03",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "crop_square",
-      "description": {
-        "tr": "Çamurluk ve kapı dışı sac panelde kaynak flanşı şasiye özgüdür; orijinal konturlu fender panel vida noktasıyla hizalanır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Çamurluk ve kapı dışı sac panelde kaynak flanşı şasiye özgüdür; orijinal konturlu fender panel vida noktasıyla hizalanır."
       }
     },
     {
-      "id": "ommcta4a",
-      "path": "conta-seti",
       "name": {
         "tr": "Conta Seti"
       },
-      "status": "play",
+      "id": "ommcta4a",
       "index": 24,
+      "path": "conta-seti",
       "category": "ommotr04",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "layers",
-      "description": {
-        "tr": "Üst kapak ve manifold sızdırmazlığını sağlayan gasket seti yağ kaçaklarını keser; silindir kapağı ile karter contası ayrı kitlenir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Üst kapak ve manifold sızdırmazlığını sağlayan gasket seti yağ kaçaklarını keser; silindir kapağı ile karter contası ayrı kitlenir."
       }
     },
     {
-      "id": "ommsgt4b",
-      "path": "sogutma-parcasi",
       "name": {
         "tr": "Soğutma Parçası"
       },
-      "status": "play",
+      "id": "ommsgt4b",
       "index": 25,
+      "path": "sogutma-parcasi",
       "category": "ommotr04",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "thermostat",
-      "description": {
-        "tr": "Termostat gövdesi, radyatör hortumu ve soğutma ağzı harareti düşürür; debimetre uyumlu cooling part Oto Mavi stokundan seçilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Termostat gövdesi, radyatör hortumu ve soğutma ağzı harareti düşürür; debimetre uyumlu cooling part Oto Mavi stokundan seçilir."
       }
     },
     {
-      "id": "ommsns4c",
-      "path": "motor-sensoru",
       "name": {
         "tr": "Motor Sensörü"
       },
-      "status": "play",
+      "id": "ommsns4c",
       "index": 26,
+      "path": "motor-sensoru",
       "category": "ommotr04",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "sensors",
-      "description": {
-        "tr": "Lambda, krank pozisyon ve ECT algılayıcı OBD kodunda pin sayısına göre eşleşir; konnektör şekilli sensör stokta ayrılır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Lambda, krank pozisyon ve ECT algılayıcı OBD kodunda pin sayısına göre eşleşir; konnektör şekilli sensör stokta ayrılır."
       }
     },
     {
-      "id": "omeaku5a",
-      "path": "aku",
       "name": {
         "tr": "Akü"
       },
-      "status": "play",
+      "id": "omeaku5a",
       "index": 27,
+      "path": "aku",
       "category": "omelek05",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "battery_full",
-      "description": {
-        "tr": "AGM veya EFB tip start-stop bataryada soğuk crank amperi ve kutup yerleşimi ah etiketine göre seçilir; kutup polaritesi kontrol edilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "AGM veya EFB tip start-stop bataryada soğuk crank amperi ve kutup yerleşimi ah etiketine göre seçilir; kutup polaritesi kontrol edilir."
       }
     },
     {
-      "id": "omealt5b",
-      "path": "alternator",
       "name": {
         "tr": "Alternatör"
       },
-      "status": "play",
+      "id": "omealt5b",
       "index": 28,
+      "path": "alternator",
       "category": "omelek05",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "bolt",
-      "description": {
-        "tr": "Şarj voltajını sabitleyen alternatörde kasnak oluğu ve regülatör tipi modele göredir; reman veya yeni ampere rating ayrılır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Şarj voltajını sabitleyen alternatörde kasnak oluğu ve regülatör tipi modele göredir; reman veya yeni ampere rating ayrılır."
       }
     },
     {
-      "id": "omemrs5c",
-      "path": "mars-motoru",
       "name": {
         "tr": "Marş Motoru"
       },
-      "status": "play",
+      "id": "omemrs5c",
       "index": 29,
+      "path": "mars-motoru",
       "category": "omelek05",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "power",
-      "description": {
-        "tr": "Volana diş geçen marş ünitesinde bendix ve solenoid kW gücüne göre değişir; yavaş çevirme şikayetinde starter motor seçilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Volana diş geçen marş ünitesinde bendix ve solenoid kW gücüne göre değişir; yavaş çevirme şikayetinde starter motor seçilir."
       }
     },
     {
-      "id": "omsamr6a",
-      "path": "amortisor",
       "name": {
         "tr": "Amortisör"
       },
-      "status": "play",
+      "id": "omsamr6a",
       "index": 30,
+      "path": "amortisor",
       "category": "omsusp06",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "height",
-      "description": {
-        "tr": "Yağlı veya gazlı MacPherson damper gövdesi ön/arka aks tipine göre ayrılır; kaçak varsa çift değişim önerilir, sürüş yüksekliği korunur."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Yağlı veya gazlı MacPherson damper gövdesi ön/arka aks tipine göre ayrılır; kaçak varsa çift değişim önerilir, sürüş yüksekliği korunur."
       }
     },
     {
-      "id": "omsyay6b",
-      "path": "helezon-yay",
       "name": {
         "tr": "Helezon Yay"
       },
-      "status": "play",
+      "id": "omsyay6b",
       "index": 31,
+      "path": "helezon-yay",
       "category": "omsusp06",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "compress",
-      "description": {
-        "tr": "Oturma yüksekliğini belirleyen helezon telinde kırık tur ve çökme kontrol edilir; sol/sağ coil spring sertlik koduyla seçilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Oturma yüksekliğini belirleyen helezon telinde kırık tur ve çökme kontrol edilir; sol/sağ coil spring sertlik koduyla seçilir."
       }
     },
     {
-      "id": "omsbrc6c",
-      "path": "salincak-burcu",
       "name": {
         "tr": "Salıncak Burcu"
       },
-      "status": "play",
+      "id": "omsbrc6c",
       "index": 32,
+      "path": "salincak-burcu",
       "category": "omsusp06",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "settings_input_component",
-      "description": {
-        "tr": "Salıncak pivotundaki kauçuk burç vuruntu ve lastik aşınmasını azaltır; hidrolik veya katı control arm bush seçenekleri vardır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Salıncak pivotundaki kauçuk burç vuruntu ve lastik aşınmasını azaltır; hidrolik veya katı control arm bush seçenekleri vardır."
       }
     },
     {
-      "id": "omkkmp7a",
-      "path": "klima-kompresoru",
       "name": {
         "tr": "Klima Kompresörü"
       },
-      "status": "play",
+      "id": "omkkmp7a",
       "index": 33,
+      "path": "klima-kompresoru",
       "category": "omklma07",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "ac_unit",
-      "description": {
-        "tr": "Soğutucu gazı sıkan kompresör debriyajlı veya debriyajsız gelir; R134a hattı ve kasnak oluğuna göre A/C compressor seçilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Soğutucu gazı sıkan kompresör debriyajlı veya debriyajsız gelir; R134a hattı ve kasnak oluğuna göre A/C compressor seçilir."
       }
     },
     {
-      "id": "omkknd7b",
-      "path": "kondanser",
       "name": {
         "tr": "Kondanser"
       },
-      "status": "play",
+      "id": "omkknd7b",
       "index": 34,
+      "path": "kondanser",
       "category": "omklma07",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "device_thermostat",
-      "description": {
-        "tr": "Ön panelde ısı atan alüminyum kondanser çekirdeği taş çarpmasında delinir; kurutucuyla birlikte condenser core değişimi önerilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Ön panelde ısı atan alüminyum kondanser çekirdeği taş çarpmasında delinir; kurutucuyla birlikte condenser core değişimi önerilir."
       }
     },
     {
-      "id": "omkkrt7c",
-      "path": "kurutucu",
       "name": {
         "tr": "Kurutucu"
       },
-      "status": "play",
+      "id": "omkkrt7c",
       "index": 35,
+      "path": "kurutucu",
       "category": "omklma07",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "invert_colors",
-      "description": {
-        "tr": "Sistem nemini tutan receiver-drier kompresör değişiminde mutlaka yenilenir; o-ring setli desiccant bag ile birlikte teslim edilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Sistem nemini tutan receiver-drier kompresör değişiminde mutlaka yenilenir; o-ring setli desiccant bag ile birlikte teslim edilir."
       }
     },
     {
-      "id": "omatbj8a",
-      "path": "buji",
       "name": {
         "tr": "Buji"
       },
-      "status": "play",
+      "id": "omatbj8a",
       "index": 36,
+      "path": "buji",
       "category": "omatsg08",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "local_fire_department",
-      "description": {
-        "tr": "Iridyum veya platin kıvılcım ucu rölanti titremesini keser; ısı değeri ve diş boyu katalogdan spark plug koduyla seçilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Iridyum veya platin kıvılcım ucu rölanti titremesini keser; ısı değeri ve diş boyu katalogdan spark plug koduyla seçilir."
       }
     },
     {
-      "id": "omatbb8b",
-      "path": "atesleme-bobini",
       "name": {
         "tr": "Ateşleme Bobini"
       },
-      "status": "play",
+      "id": "omatbb8b",
       "index": 37,
+      "path": "atesleme-bobini",
       "category": "omatsg08",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "flash_on",
-      "description": {
-        "tr": "Silindir başına yüksek voltaj üreten coil pack misfire kodunda konnektör şekline göre eşleşir; ignition coil stokta ayrılır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Silindir başına yüksek voltaj üreten coil pack misfire kodunda konnektör şekline göre eşleşir; ignition coil stokta ayrılır."
       }
     },
     {
-      "id": "omatkz8c",
-      "path": "kizdirma-bujisi",
       "name": {
         "tr": "Kızdırma Bujisi"
       },
-      "status": "play",
+      "id": "omatkz8c",
       "index": 38,
+      "path": "kizdirma-bujisi",
       "category": "omatsg08",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "whatshot",
-      "description": {
-        "tr": "Dizel yanma odasını ısıtan glow plug soğuk sabah çalıştırmayı kolaylaştırır; voltaj ve ısınma süresi motor koduna göredir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Dizel yanma odasını ısıtan glow plug soğuk sabah çalıştırmayı kolaylaştırır; voltaj ve ısınma süresi motor koduna göredir."
       }
     },
     {
-      "id": "omsyag9a",
-      "path": "motor-yagi",
       "name": {
         "tr": "Motor Yağı"
       },
-      "status": "play",
+      "id": "omsyag9a",
       "index": 39,
+      "path": "motor-yagi",
       "category": "omsivi09",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "water_drop",
-      "description": {
-        "tr": "Longlife onaylı sentetik 5W-30 / 5W-40 litre litre satılır; yağ onay kodu etiketle netleşir, süzgeçle birlikte önerilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Longlife onaylı sentetik 5W-30 / 5W-40 litre litre satılır; yağ onay kodu etiketle netleşir, süzgeçle birlikte önerilir."
       }
     },
     {
-      "id": "omsant9b",
-      "path": "antifriz",
       "name": {
         "tr": "Antifriz"
       },
-      "status": "play",
+      "id": "omsant9b",
       "index": 40,
+      "path": "antifriz",
       "category": "omsivi09",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "ac_unit",
-      "description": {
-        "tr": "Alüminyum radyatore uyumlu G12/G13 konsantre soğutucu korozyonu önler; renk ve karışım oranı antifreeze şişesinde yazar."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Alüminyum radyatore uyumlu G12/G13 konsantre soğutucu korozyonu önler; renk ve karışım oranı antifreeze şişesinde yazar."
       }
     },
     {
-      "id": "omsfrn9c",
-      "path": "fren-hidroligi-sivi",
       "name": {
         "tr": "Fren Hidroliği (Sıvı)"
       },
-      "status": "play",
+      "id": "omsfrn9c",
       "index": 41,
+      "path": "fren-hidroligi-sivi",
       "category": "omsivi09",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "science",
-      "description": {
-        "tr": "Yüksek kaynama noktalı DOT4 / DOT5.1 brake fluid periyodik flush ile nemden arındırılır; litre şişe yağlar reyonundadır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Yüksek kaynama noktalı DOT4 / DOT5.1 brake fluid periyodik flush ile nemden arındırılır; litre şişe yağlar reyonundadır."
       }
     },
     {
-      "id": "ombper0a",
-      "path": "periyodik-bakim-seti",
       "name": {
         "tr": "Periyodik Bakım Seti"
       },
-      "status": "play",
+      "id": "ombper0a",
       "index": 42,
+      "path": "periyodik-bakim-seti",
       "category": "ombkim10",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "build",
-      "description": {
-        "tr": "Servis kilometresine göre yağ ve seçili süzgeçleri tek kutuda toplayan inspection package şasi listesiyle hazırlanıp sunulur."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Servis kilometresine göre yağ ve seçili süzgeçleri tek kutuda toplayan inspection package şasi listesiyle hazırlanıp sunulur."
       }
     },
     {
-      "id": "ombflt0b",
-      "path": "filtre-seti",
       "name": {
         "tr": "Filtre Seti"
       },
-      "status": "play",
+      "id": "ombflt0b",
       "index": 43,
+      "path": "filtre-seti",
       "category": "ombkim10",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "filter_list",
-      "description": {
-        "tr": "Yağ kartuşu, emiş paneli ve kabin elemanını bir arada sunan filter service kit yağsız sadece süzgeç değişiminde kullanılır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Yağ kartuşu, emiş paneli ve kabin elemanını bir arada sunan filter service kit yağsız sadece süzgeç değişiminde kullanılır."
       }
     },
     {
-      "id": "ombcnt0c",
-      "path": "conta-kiti",
       "name": {
         "tr": "Conta Kiti"
       },
-      "status": "play",
+      "id": "ombcnt0c",
       "index": 44,
+      "path": "conta-kiti",
       "category": "ombkim10",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "category",
-      "description": {
-        "tr": "Üst kapak ve yağ yuvası gasket grubunu içeren valve cover kit sızıntı tadilatında cıvata setiyle birlikte eksiksiz tamamlanır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Üst kapak ve yağ yuvası gasket grubunu içeren valve cover kit sızıntı tadilatında cıvata setiyle birlikte eksiksiz tamamlanır."
       }
     },
     {
-      "id": "omicps1a",
-      "path": "paspas-seti",
       "name": {
         "tr": "Paspas Seti"
       },
-      "status": "play",
+      "id": "omicps1a",
       "index": 45,
+      "path": "paspas-seti",
       "category": "omicdn11",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "grid_on",
-      "description": {
-        "tr": "Kauçuk veya halı floor mat seti tünel ve pedalı örter; 4 parça zemin + bagaj örtüsü ayrı satılır, klips delikleri modele göredir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Kauçuk veya halı floor mat seti tünel ve pedalı örter; 4 parça zemin + bagaj örtüsü ayrı satılır, klips delikleri modele göredir."
       }
     },
     {
-      "id": "omictr1b",
-      "path": "ic-trim",
       "name": {
         "tr": "İç Trim"
       },
-      "status": "play",
+      "id": "omictr1b",
       "index": 46,
+      "path": "ic-trim",
       "category": "omicdn11",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "dashboard",
-      "description": {
-        "tr": "Kapı ve gösterge çevresi interior trim clip kırılınca renk kodlu panel ve çerçeve gerekir; klips tipi stokta ayrı tutulur."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Kapı ve gösterge çevresi interior trim clip kırılınca renk kodlu panel ve çerçeve gerekir; klips tipi stokta ayrı tutulur."
       }
     },
     {
-      "id": "omickl1c",
-      "path": "kol-dayama",
       "name": {
         "tr": "Kol Dayama"
       },
-      "status": "play",
+      "id": "omickl1c",
       "index": 47,
+      "path": "kol-dayama",
       "category": "omicdn11",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "airline_seat_recline_extra",
-      "description": {
-        "tr": "Orta konsolda depolama sunan armrest storage unit menteşe ve kapak derisiyle gelir; konsol tipine göre stoktan seçim yapılır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Orta konsolda depolama sunan armrest storage unit menteşe ve kapak derisiyle gelir; konsol tipine göre stoktan seçim yapılır."
       }
     },
     {
-      "id": "omafr2a",
-      "path": "far",
       "name": {
         "tr": "Far"
       },
-      "status": "play",
+      "id": "omafr2a",
       "index": 48,
+      "path": "far",
       "category": "omaydn12",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "lightbulb",
-      "description": {
-        "tr": "Projektör veya LED matris headlight ünitesinde mercek ve Xenon balast sol/sağ koda göre ayrılır; çizik camda komple değişim gerekir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Projektör veya LED matris headlight ünitesinde mercek ve Xenon balast sol/sağ koda göre ayrılır; çizik camda komple değişim gerekir."
       }
     },
     {
-      "id": "omastp2b",
-      "path": "stop-lambasi",
       "name": {
         "tr": "Stop Lambası"
       },
-      "status": "play",
+      "id": "omastp2b",
       "index": 49,
+      "path": "stop-lambasi",
       "category": "omaydn12",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "traffic",
-      "description": {
-        "tr": "Fren ve sinyal LED’li tail light bagaj kapağı veya çamurluk tipinde gelir; su girişi olan stop ünitesinde conta yenilenir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Fren ve sinyal LED’li tail light bagaj kapağı veya çamurluk tipinde gelir; su girişi olan stop ünitesinde conta yenilenir."
       }
     },
     {
-      "id": "omasis2c",
-      "path": "sis-fari",
       "name": {
         "tr": "Sis Farı"
       },
-      "status": "play",
+      "id": "omasis2c",
       "index": 50,
+      "path": "sis-fari",
       "category": "omaydn12",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "foggy",
-      "description": {
-        "tr": "Düşük görüşte yolu aydınlatan fog lamp tampon yuvasına oturur; yuvarlak veya köşeli tip ampul soketiyle birlikte teslim edilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Düşük görüşte yolu aydınlatan fog lamp tampon yuvasına oturur; yuvarlak veya köşeli tip ampul soketiyle birlikte teslim edilir."
       }
     },
     {
-      "id": "omkvky3a",
-      "path": "v-kayisi",
       "name": {
         "tr": "V Kayışı"
       },
-      "status": "play",
+      "id": "omkvky3a",
       "index": 51,
+      "path": "v-kayisi",
       "category": "omkysi13",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "sync",
-      "description": {
-        "tr": "Alternatör ve klima kasnağını döndüren poly-V drive belt çatlak sesinde oluk sayısı ile boy ölçüsü alınarak doğru seçilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Alternatör ve klima kasnağını döndüren poly-V drive belt çatlak sesinde oluk sayısı ile boy ölçüsü alınarak doğru seçilir."
       }
     },
     {
-      "id": "omktrg3b",
-      "path": "triger-seti",
       "name": {
         "tr": "Triger Seti"
       },
-      "status": "play",
+      "id": "omktrg3b",
       "index": 52,
+      "path": "triger-seti",
       "category": "omkysi13",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "schedule",
-      "description": {
-        "tr": "Eksantrik zamanlamasını koruyan timing belt/chain set gergi ve makarayla kit halinde sunulur; atlama riskinde komple değişir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Eksantrik zamanlamasını koruyan timing belt/chain set gergi ve makarayla kit halinde sunulur; atlama riskinde komple değişir."
       }
     },
     {
-      "id": "omkgrg3c",
-      "path": "gergi",
       "name": {
         "tr": "Gergi"
       },
-      "status": "play",
+      "id": "omkgrg3c",
       "index": 53,
+      "path": "gergi",
       "category": "omkysi13",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "tune",
-      "description": {
-        "tr": "Kayış gerginliğini ayarlayan tensioner bearing rulman sesinde kayışla aynı anda değişir; idler pulley ayrıca satılabilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Kayış gerginliğini ayarlayan tensioner bearing rulman sesinde kayışla aynı anda değişir; idler pulley ayrıca satılabilir."
       }
     },
     {
-      "id": "omslst4a",
-      "path": "silecek-lastigi",
       "name": {
         "tr": "Silecek Lastiği"
       },
-      "status": "play",
+      "id": "omslst4a",
       "index": 54,
+      "path": "silecek-lastigi",
       "category": "omslck14",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "water",
-      "description": {
-        "tr": "Camı çizmeden süpüren beam wiper blade sürücü ve yolcu uzunluğuna göre çift satılır; rubber uç tipi stokta ayrı tutulur."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Camı çizmeden süpüren beam wiper blade sürücü ve yolcu uzunluğuna göre çift satılır; rubber uç tipi stokta ayrı tutulur."
       }
     },
     {
-      "id": "omslkl4b",
-      "path": "silecek-kolu",
       "name": {
         "tr": "Silecek Kolu"
       },
-      "status": "play",
+      "id": "omslkl4b",
       "index": 55,
+      "path": "silecek-kolu",
       "category": "omslck14",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "swipe",
-      "description": {
-        "tr": "Lastiği taşıyan metal wiper arm yay zayıflayınca ön veya arka somun ölçüsüne göre değişir; zayıf baskı camda iz bırakır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Lastiği taşıyan metal wiper arm yay zayıflayınca ön veya arka somun ölçüsüne göre değişir; zayıf baskı camda iz bırakır."
       }
     },
     {
-      "id": "omslfs4c",
-      "path": "fiskiye-pompasi",
       "name": {
         "tr": "Fıskiye Pompası"
       },
-      "status": "play",
+      "id": "omslfs4c",
       "index": 56,
+      "path": "fiskiye-pompasi",
       "category": "omslck14",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "water_drop",
-      "description": {
-        "tr": "Depodaki suyu memelere basan washer pump tek veya çift çıkışlıdır; hortum çapına göre meme besleme motoru stoktan seçilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Depodaki suyu memelere basan washer pump tek veya çift çıkışlıdır; hortum çapına göre meme besleme motoru stoktan seçilir."
       }
     },
     {
-      "id": "9s2gesnrvb",
-      "path": "turbosarj",
       "name": {
         "tr": "Turboşarj"
       },
-      "status": "play",
+      "id": "9s2gesnrvb",
       "index": 64,
+      "path": "turbosarj",
       "category": "dnhgnxo0hg",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "air",
-      "description": {
-        "tr": "Kompresör çarkı ve turbine gövdesiyle egzoz enerjisini emiş basıncına çeviren turboşarj ünitesi; şaft yatak ve VNT tipine göre BMW motor kodunda seçilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Kompresör çarkı ve turbine gövdesiyle egzoz enerjisini emiş basıncına çeviren turboşarj ünitesi; şaft yatak ve VNT tipine göre BMW motor kodunda seçilir."
       }
     },
     {
-      "id": "lo65qlydcr",
-      "path": "ara-sogutucu",
       "name": {
         "tr": "Ara Soğutucu"
       },
-      "status": "play",
+      "id": "lo65qlydcr",
       "index": 65,
+      "path": "ara-sogutucu",
       "category": "dnhgnxo0hg",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "ac_unit",
-      "description": {
-        "tr": "Sıkıştırılmış havayı soğutan intercooler çekirdeği yanmayı stabilize eder; tıkanmış veya delik ara soğutucu boost kaybı üretir, hortum flanşıyla birlikte kontrol edilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Sıkıştırılmış havayı soğutan intercooler çekirdeği yanmayı stabilize eder; tıkanmış veya delik ara soğutucu boost kaybı üretir, hortum flanşıyla birlikte kontrol edilir."
       }
     },
     {
-      "id": "s3nk6qkyzy",
-      "path": "turbo-contasi",
       "name": {
         "tr": "Turbo Contası"
       },
-      "status": "play",
+      "id": "s3nk6qkyzy",
       "index": 66,
+      "path": "turbo-contasi",
       "category": "dnhgnxo0hg",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "hexagon",
-      "description": {
-        "tr": "Turbo flanş ve yağ dönüş contası egzoz ile yağ sızıntısını keser; yeniden kullanım çoğu zaman kaçak yaratır, her demontajda yeni conta seti önerilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Turbo flanş ve yağ dönüş contası egzoz ile yağ sızıntısını keser; yeniden kullanım çoğu zaman kaçak yaratır, her demontajda yeni conta seti önerilir."
       }
     },
     {
-      "id": "pmbqcljbet",
-      "path": "basinc-donusturucu",
       "name": {
         "tr": "Basınç Dönüştürücü"
       },
-      "status": "play",
+      "id": "pmbqcljbet",
       "index": 67,
+      "path": "basinc-donusturucu",
       "category": "dnhgnxo0hg",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "speed",
-      "description": {
-        "tr": "Wastegate veya VNT aktüatörünü yöneten basınç dönüştürücü solenoidi boost haritasını korur; arızada aşırı veya düşük basınç ve hata kodu görülür."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Wastegate veya VNT aktüatörünü yöneten basınç dönüştürücü solenoidi boost haritasını korur; arızada aşırı veya düşük basınç ve hata kodu görülür."
       }
     },
     {
-      "id": "7bvaq99dkp",
-      "path": "rot-basi",
       "name": {
         "tr": "Rot Başı / Çubuk Ucu"
       },
-      "status": "play",
+      "id": "7bvaq99dkp",
       "index": 68,
+      "path": "rot-basi",
       "category": "ry99uefxh8",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "build",
-      "description": {
-        "tr": "Direksiyon çubuğu ucundaki rot başı tekerlek kamberini korur; aşınmış mafsal titreşim ve düzensiz lastik aşınması yaratır, sol/sağ uç ayrı kodlanır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Direksiyon çubuğu ucundaki rot başı tekerlek kamberini korur; aşınmış mafsal titreşim ve düzensiz lastik aşınması yaratır, sol/sağ uç ayrı kodlanır."
       }
     },
     {
-      "id": "dzq4tnm96q",
-      "path": "baglanti-cubugu",
       "name": {
         "tr": "Bağlantı Çubuğu"
       },
-      "status": "play",
+      "id": "dzq4tnm96q",
       "index": 69,
+      "path": "baglanti-cubugu",
       "category": "ry99uefxh8",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "linear_scale",
-      "description": {
-        "tr": "Kremayer ile rot başı arasını bağlayan bağlantı çubuğu boy ayarıyla toe değerini taşır; eğilmiş çubuk lastik iç kenar aşınması üretir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Kremayer ile rot başı arasını bağlayan bağlantı çubuğu boy ayarıyla toe değerini taşır; eğilmiş çubuk lastik iç kenar aşınması üretir."
       }
     },
     {
-      "id": "pky10wfvei",
-      "path": "direksiyon-onarim-kiti",
       "name": {
         "tr": "Direksiyon Onarım Kiti"
       },
-      "status": "play",
+      "id": "pky10wfvei",
       "index": 70,
+      "path": "direksiyon-onarim-kiti",
       "category": "ry99uefxh8",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "handyman",
-      "description": {
-        "tr": "Kremayer conta, rulman ve körükleri içeren onarım kiti hidrolik kaçak ve dişli gürültüsünü gidermeye yardım eder; komple ünite yerine ekonomik tadilat yoludur."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Kremayer conta, rulman ve körükleri içeren onarım kiti hidrolik kaçak ve dişli gürültüsünü gidermeye yardım eder; komple ünite yerine ekonomik tadilat yoludur."
       }
     },
     {
-      "id": "3ifpnx1zn2",
-      "path": "kremayer-kapagi",
       "name": {
         "tr": "Kremayer Kapağı"
       },
-      "status": "play",
+      "id": "3ifpnx1zn2",
       "index": 71,
+      "path": "kremayer-kapagi",
       "category": "ry99uefxh8",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "crop_square",
-      "description": {
-        "tr": "Kremayer uç ve gövde kapağı dişli yağının kaçmasını önler; çatlak kapak toz girişi ve erken diş aşınması yaratır, conta ile birlikte değiştirilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Kremayer uç ve gövde kapağı dişli yağının kaçmasını önler; çatlak kapak toz girişi ve erken diş aşınması yaratır, conta ile birlikte değiştirilir."
       }
     },
     {
-      "id": "dn9pzwbacw",
-      "path": "sanizman-montaji",
       "name": {
         "tr": "Şanzıman Montajı"
       },
-      "status": "play",
+      "id": "dn9pzwbacw",
       "index": 72,
+      "path": "sanizman-montaji",
       "category": "knzebtecct",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "foundation",
-      "description": {
-        "tr": "Şanzıman-motor arası lastik takoz montajı titreşimi emer; çatlamış takoz vites kolunda sarsıntı ve metal teması sesi üretir, tork koluyla birlikte kontrol edilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Şanzıman-motor arası lastik takoz montajı titreşimi emer; çatlamış takoz vites kolunda sarsıntı ve metal teması sesi üretir, tork koluyla birlikte kontrol edilir."
       }
     },
     {
-      "id": "a831pe03ct",
-      "path": "hiz-sensoru",
       "name": {
         "tr": "Hız Sensörü"
       },
-      "status": "play",
+      "id": "a831pe03ct",
       "index": 73,
+      "path": "hiz-sensoru",
       "category": "knzebtecct",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "speed",
-      "description": {
-        "tr": "Şanzıman çıkış veya tekerlek hız sensörü ABS ve gösterge hızını besler; arızada hız göstergesi sıfırlanır veya vites adaptasyonu bozulur."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Şanzıman çıkış veya tekerlek hız sensörü ABS ve gösterge hızını besler; arızada hız göstergesi sıfırlanır veya vites adaptasyonu bozulur."
       }
     },
     {
-      "id": "8yf87dw95o",
-      "path": "ters-isik-anahtari",
       "name": {
         "tr": "Ters Işık Anahtarı"
       },
-      "status": "play",
+      "id": "8yf87dw95o",
       "index": 74,
+      "path": "ters-isik-anahtari",
       "category": "knzebtecct",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "light_mode",
-      "description": {
-        "tr": "Geri vites konumunda stop lambasını yakan ters ışık anahtarı şanzıman gövdesine vidalanır; arızada geri lamba yanmaz veya sürekli yanar."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Geri vites konumunda stop lambasını yakan ters ışık anahtarı şanzıman gövdesine vidalanır; arızada geri lamba yanmaz veya sürekli yanar."
       }
     },
     {
-      "id": "rkhqhabbns",
-      "path": "disli-cark",
       "name": {
         "tr": "Dişli / Çark"
       },
-      "status": "play",
+      "id": "rkhqhabbns",
       "index": 75,
+      "path": "disli-cark",
       "category": "knzebtecct",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "settings",
-      "description": {
-        "tr": "Senkronize dişli ve ara çark grubu vites geçişini sessizleştirir; kırık diş metal sesi ve vites atlaması yaratır, kutu açılımıyla OEM ölçü doğrulanır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Senkronize dişli ve ara çark grubu vites geçişini sessizleştirir; kırık diş metal sesi ve vites atlaması yaratır, kutu açılımıyla OEM ölçü doğrulanır."
       }
     },
     {
-      "id": "cnzfr4vihd",
-      "path": "lastik",
       "name": {
         "tr": "Lastik"
       },
-      "status": "play",
+      "id": "cnzfr4vihd",
       "index": 76,
+      "path": "lastik",
       "category": "yut4w6lws1",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "tire_repair",
-      "description": {
-        "tr": "Yaz/kış ve dört mevsim lastik seçenekleri yük ve hız indeksine göre ayrılır; yanlış ebat gösterge ve ESP kalibrasyonunu bozabilir, DOT tarihi kontrol edilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Yaz/kış ve dört mevsim lastik seçenekleri yük ve hız indeksine göre ayrılır; yanlış ebat gösterge ve ESP kalibrasyonunu bozabilir, DOT tarihi kontrol edilir."
       }
     },
     {
-      "id": "c0ne7aa17j",
-      "path": "jant-kapagi",
       "name": {
         "tr": "Jant Kapağı"
       },
-      "status": "play",
+      "id": "c0ne7aa17j",
       "index": 77,
+      "path": "jant-kapagi",
       "category": "yut4w6lws1",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "circle",
-      "description": {
-        "tr": "Çelik jantı örten plastik jant kapağı vida veya klips tutuculu gelir; kırık kapak balans ağırlığını düşürebilir, göbek çapı modele özeldir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Çelik jantı örten plastik jant kapağı vida veya klips tutuculu gelir; kırık kapak balans ağırlığını düşürebilir, göbek çapı modele özeldir."
       }
     },
     {
-      "id": "c4zezz86gb",
-      "path": "lastik-tamir-kiti",
       "name": {
         "tr": "Lastik Tamir Kiti"
       },
-      "status": "play",
+      "id": "c4zezz86gb",
       "index": 78,
+      "path": "lastik-tamir-kiti",
       "category": "yut4w6lws1",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "healing",
-      "description": {
-        "tr": "Acil yol kenarı için fitil, macun veya sprey tip lastik tamir kiti kısa süreli sızdırmazlık sağlar; yanak yırtığında kullanılmaz, kalıcı tamir lastikçi işidir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Acil yol kenarı için fitil, macun veya sprey tip lastik tamir kiti kısa süreli sızdırmazlık sağlar; yanak yırtığında kullanılmaz, kalıcı tamir lastikçi işidir."
       }
     },
     {
-      "id": "7j56u803i4",
-      "path": "lastik-ara-parca",
       "name": {
         "tr": "Ara Parça"
       },
-      "status": "play",
+      "id": "7j56u803i4",
       "index": 79,
+      "path": "lastik-ara-parca",
       "category": "yut4w6lws1",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "extension",
-      "description": {
-        "tr": "Sibop, balans ağırlığı ve jant cıvata ara parçaları tekerlek montajını tamamlar; yanlış sibop basınç kaybı, yanlış cıvata göbek hasarı üretir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Sibop, balans ağırlığı ve jant cıvata ara parçaları tekerlek montajını tamamlar; yanlış sibop basınç kaybı, yanlış cıvata göbek hasarı üretir."
       }
     },
     {
-      "id": "q99uza8w5v",
-      "path": "tekerlek-gobegi",
       "name": {
         "tr": "Tekerlek Göbeği"
       },
-      "status": "play",
+      "id": "q99uza8w5v",
       "index": 80,
+      "path": "tekerlek-gobegi",
       "category": "t3uqlrk7uh",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "trip_origin",
-      "description": {
-        "tr": "ABS ringli tekerlek göbeği poyrayı taşıır; aşınmış göbek uğultu ve direksiyon titreşimi yapar, flanş delik sayısı modele özeldir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "ABS ringli tekerlek göbeği poyrayı taşıır; aşınmış göbek uğultu ve direksiyon titreşimi yapar, flanş delik sayısı modele özeldir."
       }
     },
     {
-      "id": "7fr22wss57",
-      "path": "tekerlek-yatagi",
       "name": {
         "tr": "Tekerlek Yatağı"
       },
-      "status": "play",
+      "id": "7fr22wss57",
       "index": 81,
+      "path": "tekerlek-yatagi",
       "category": "t3uqlrk7uh",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "radio_button_checked",
-      "description": {
-        "tr": "Konik veya bilyalı tekerlek yatağı göbek içinde döner; yağsız veya oynamış yatak metal sesi üretir, pres ölçüsü OEM değerde tutulmalıdır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Konik veya bilyalı tekerlek yatağı göbek içinde döner; yağsız veya oynamış yatak metal sesi üretir, pres ölçüsü OEM değerde tutulmalıdır."
       }
     },
     {
-      "id": "7512zyrusk",
-      "path": "bijon-saplama",
       "name": {
         "tr": "Bijon / Saplama"
       },
-      "status": "play",
+      "id": "7512zyrusk",
       "index": 82,
+      "path": "bijon-saplama",
       "category": "t3uqlrk7uh",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "push_pin",
-      "description": {
-        "tr": "Jantı göbeğe bağlayan bijon veya saplama doğru tork ve diş boyu ister; uzatılmış saplama spacer ile gelir, çapraz sıkım şarttır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Jantı göbeğe bağlayan bijon veya saplama doğru tork ve diş boyu ister; uzatılmış saplama spacer ile gelir, çapraz sıkım şarttır."
       }
     },
     {
-      "id": "l9iga15ped",
-      "path": "mil-contasi",
       "name": {
         "tr": "Mil Contası"
       },
-      "status": "play",
+      "id": "l9iga15ped",
       "index": 83,
+      "path": "mil-contasi",
       "category": "t3uqlrk7uh",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "contrast",
-      "description": {
-        "tr": "Aks mil contası diferansiyel veya şanzıman yağının dışarı sızmasını keser; yırtık conta lastik yanaklarında yağ lekesi ve kavrama kaybı bırakır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Aks mil contası diferansiyel veya şanzıman yağının dışarı sızmasını keser; yırtık conta lastik yanaklarında yağ lekesi ve kavrama kaybı bırakır."
       }
     },
     {
-      "id": "vz22y35tfi",
-      "path": "park-sensoru",
       "name": {
         "tr": "Park Sensörü"
       },
-      "status": "play",
+      "id": "vz22y35tfi",
       "index": 84,
+      "path": "park-sensoru",
       "category": "upq7zjks3k",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "sensors",
-      "description": {
-        "tr": "Tampona gömülen ultrasonik park sensörü mesafe bipini üretir; boya kalınlığı ve frekans uyumu kritiktir, sol/sağ/merkez konumları ayrıdır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Tampona gömülen ultrasonik park sensörü mesafe bipini üretir; boya kalınlığı ve frekans uyumu kritiktir, sol/sağ/merkez konumları ayrıdır."
       }
     },
     {
-      "id": "y6l04cyvsg",
-      "path": "motor-beyni-ecu",
       "name": {
         "tr": "Motor Beyni (ECU)"
       },
-      "status": "play",
+      "id": "y6l04cyvsg",
       "index": 85,
+      "path": "motor-beyni-ecu",
       "category": "upq7zjks3k",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "memory",
-      "description": {
-        "tr": "Motor kontrol ünitesi enjektör ve ateşleme haritasını yönetir; su hasarlı veya hatalı ECU rölanti ve çekiş bozar, kodlama/immobilizer notu şarttır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Motor kontrol ünitesi enjektör ve ateşleme haritasını yönetir; su hasarlı veya hatalı ECU rölanti ve çekiş bozar, kodlama/immobilizer notu şarttır."
       }
     },
     {
-      "id": "blaw0o0nq9",
-      "path": "role-kontrol-unitesi",
       "name": {
         "tr": "Röle / Kontrol Ünitesi"
       },
-      "status": "play",
+      "id": "blaw0o0nq9",
       "index": 86,
+      "path": "role-kontrol-unitesi",
       "category": "upq7zjks3k",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "electrical_services",
-      "description": {
-        "tr": "Fan, yakıt pompası veya far rölesi ile küçük kontrol kutuları akım anahtarlar; yanık kontak aralıklı arıza üretir, amper ve pin haritası etiketle doğrulanır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Fan, yakıt pompası veya far rölesi ile küçük kontrol kutuları akım anahtarlar; yanık kontak aralıklı arıza üretir, amper ve pin haritası etiketle doğrulanır."
       }
     },
     {
-      "id": "d6eksr83a6",
-      "path": "elektronik-kablo-demeti",
       "name": {
         "tr": "Elektronik Kablo Demeti"
       },
-      "status": "play",
+      "id": "d6eksr83a6",
       "index": 87,
+      "path": "elektronik-kablo-demeti",
       "category": "upq7zjks3k",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "cable",
-      "description": {
-        "tr": "Sensör ve ünite arası onarım demeti kopuk pinleri giderir; su giren konnektörlerde korozyon yaygındır, kesit ve fiş kilidi OEM uyumlu seçilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Sensör ve ünite arası onarım demeti kopuk pinleri giderir; su giren konnektörlerde korozyon yaygındır, kesit ve fiş kilidi OEM uyumlu seçilir."
       }
     },
     {
-      "id": "rz336w09cr",
-      "path": "genel-ekipman",
       "name": {
         "tr": "Genel Ekipman"
       },
-      "status": "play",
+      "id": "rz336w09cr",
       "index": 88,
+      "path": "genel-ekipman",
       "category": "joh4ngy8qk",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "handyman",
-      "description": {
-        "tr": "Kriko adaptörü, akü kutup başı ve temel yol ekipmanı acil durumda işe yarar; araç tipine göre kaldırma noktası uyarısıyla birlikte değerlendirilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Kriko adaptörü, akü kutup başı ve temel yol ekipmanı acil durumda işe yarar; araç tipine göre kaldırma noktası uyarısıyla birlikte değerlendirilir."
       }
     },
     {
-      "id": "k01d2cqsgr",
-      "path": "aksesuar-seti",
       "name": {
         "tr": "Aksesuar Seti"
       },
-      "status": "play",
+      "id": "k01d2cqsgr",
       "index": 89,
+      "path": "aksesuar-seti",
       "category": "joh4ngy8qk",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "widgets",
-      "description": {
-        "tr": "Bagaj file, telefon tutucu ve kabin düzen aksesuarları günlük kullanımı kolaylaştırır; yapışkanlı ürünlerde torpido yüzeyi uyumu kontrol edilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Bagaj file, telefon tutucu ve kabin düzen aksesuarları günlük kullanımı kolaylaştırır; yapışkanlı ürünlerde torpido yüzeyi uyumu kontrol edilir."
       }
     },
     {
-      "id": "l3pah7xqy4",
-      "path": "atolye-sarf",
       "name": {
         "tr": "Atölye Sarf"
       },
-      "status": "play",
+      "id": "l3pah7xqy4",
       "index": 90,
+      "path": "atolye-sarf",
       "category": "joh4ngy8qk",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "science",
-      "description": {
-        "tr": "Conta macunu, temizleyici sprey ve eldiven gibi atölye sarfı montaj kalitesini etkiler; yanlış kimyasal plastik ve boyaya zarar verebilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Conta macunu, temizleyici sprey ve eldiven gibi atölye sarfı montaj kalitesini etkiler; yanlış kimyasal plastik ve boyaya zarar verebilir."
       }
     },
     {
-      "id": "cmc6a6rqa3",
-      "path": "tasima-destek",
       "name": {
         "tr": "Taşıma / Destek"
       },
-      "status": "play",
+      "id": "cmc6a6rqa3",
       "index": 91,
+      "path": "tasima-destek",
       "category": "joh4ngy8qk",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "luggage",
-      "description": {
-        "tr": "Bagaj sabitleme kayışı ve taşıma destek aparatları yük güvenliğini artırır; aşırı yük şasi ve lastik limitini aşmamalıdır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Bagaj sabitleme kayışı ve taşıma destek aparatları yük güvenliğini artırır; aşırı yük şasi ve lastik limitini aşmamalıdır."
       }
     },
     {
-      "id": "vflv4907nw",
-      "path": "asinma-sensoru",
       "name": {
         "tr": "Aşınma Sensörü"
       },
-      "status": "play",
+      "id": "vflv4907nw",
       "index": 92,
+      "path": "asinma-sensoru",
       "category": "omfren02",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "sensors",
-      "description": {
-        "tr": "Balata kalınlığını izleyen aşınma sensörü uyarı lambasını yakar; kablolu pad setlerinde sensör ayrı satılır, sol/sağ uzunluk aksa göre değişir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Balata kalınlığını izleyen aşınma sensörü uyarı lambasını yakar; kablolu pad setlerinde sensör ayrı satılır, sol/sağ uzunluk aksa göre değişir."
       }
     },
     {
-      "id": "z61o8tyuub",
-      "path": "tambur-fren",
       "name": {
         "tr": "Tambur Fren"
       },
-      "status": "play",
+      "id": "z61o8tyuub",
       "index": 93,
+      "path": "tambur-fren",
       "category": "omfren02",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "album",
-      "description": {
-        "tr": "Arka tambur, pabuç ve yay seti kampana fren sistemini yeniler; el freni teliyle birlikte ayarlanır, çatlak tambur titreşim üretir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Arka tambur, pabuç ve yay seti kampana fren sistemini yeniler; el freni teliyle birlikte ayarlanır, çatlak tambur titreşim üretir."
       }
     },
     {
-      "id": "iopprqo3wr",
-      "path": "kapilar",
       "name": {
         "tr": "Kapılar"
       },
-      "status": "play",
+      "id": "iopprqo3wr",
       "index": 94,
+      "path": "kapilar",
       "category": "omgvde03",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "door_front",
-      "description": {
-        "tr": "Kapı sacı, menteşe ve kilit karşılığı çarpışma sonrası değişir; boyasız kapıda cam rayı ve fitil kanalları kontrol edilir, sol/sağ net ayrılır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Kapı sacı, menteşe ve kilit karşılığı çarpışma sonrası değişir; boyasız kapıda cam rayı ve fitil kanalları kontrol edilir, sol/sağ net ayrılır."
       }
     },
     {
-      "id": "57w8jl01ph",
-      "path": "yakit-deposu",
       "name": {
         "tr": "Yakıt Deposu"
       },
-      "status": "play",
+      "id": "57w8jl01ph",
       "index": 95,
+      "path": "yakit-deposu",
       "category": "omgvde03",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "local_gas_station",
-      "description": {
-        "tr": "Plastik veya sac yakıt deposu çatlak ve paslanma durumunda değişir; pompa flanşı ve şamandıra contası birlikte değerlendirilir, emniyet kurallarına uyulur."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Plastik veya sac yakıt deposu çatlak ve paslanma durumunda değişir; pompa flanşı ve şamandıra contası birlikte değerlendirilir, emniyet kurallarına uyulur."
       }
     },
     {
-      "id": "7ghzidgxaz",
-      "path": "isi-esanjoru",
       "name": {
         "tr": "Isı Eşanjörü"
       },
-      "status": "play",
+      "id": "7ghzidgxaz",
       "index": 96,
+      "path": "isi-esanjoru",
       "category": "omklma07",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "device_thermostat",
-      "description": {
-        "tr": "Kabin ısıtma radyatörü (ısı eşanjörü) sıcak suyu havaya aktarır; tıkanmış çekirdek üşüyen kabin ve ıslak halı bırakır, kutu içinde değişir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Kabin ısıtma radyatörü (ısı eşanjörü) sıcak suyu havaya aktarır; tıkanmış çekirdek üşüyen kabin ve ıslak halı bırakır, kutu içinde değişir."
       }
     },
     {
-      "id": "9rwa82diyh",
-      "path": "titresim-sonumleyici",
       "name": {
         "tr": "Titreşim Sönümleyici"
       },
-      "status": "play",
+      "id": "9rwa82diyh",
       "index": 97,
+      "path": "titresim-sonumleyici",
       "category": "omkysi13",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "vibration",
-      "description": {
-        "tr": "Krank kasnağı damper (titreşim sönümleyici) kayış hattındaki titreşimi emer; çatlamış elastomer squeal ve krank hasarı riski yaratır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Krank kasnağı damper (titreşim sönümleyici) kayış hattındaki titreşimi emer; çatlamış elastomer squeal ve krank hasarı riski yaratır."
       }
     },
     {
-      "id": "iv3mwgh27w",
-      "path": "yaprak-yay",
       "name": {
         "tr": "Yaprak Yay"
       },
-      "status": "play",
+      "id": "iv3mwgh27w",
       "index": 98,
+      "path": "yaprak-yay",
       "category": "omsusp06",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "view_agenda",
-      "description": {
-        "tr": "Çok katmanlı yaprak yay arka yük taşımasını dengeler; kırık katman çökme ve yanal savrulma yapar, burç ve kelepçeyle birlikte kontrol edilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Çok katmanlı yaprak yay arka yük taşımasını dengeler; kırık katman çökme ve yanal savrulma yapar, burç ve kelepçeyle birlikte kontrol edilir."
       }
     },
     {
-      "id": "3flq48i5oy",
-      "path": "role-baslatici",
       "name": {
         "tr": "Röle Başlatıcı"
       },
-      "status": "play",
+      "id": "3flq48i5oy",
       "index": 99,
+      "path": "role-baslatici",
       "category": "omelek05",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "power",
-      "description": {
-        "tr": "Marş devresini anahtarlayan başlatıcı röle yüksek akımı yönetir; yapışkan kontak sürekli çalıştırma veya hiç çalışmama üretir, soket amperi etiketle eşleşir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Marş devresini anahtarlayan başlatıcı röle yüksek akımı yönetir; yapışkan kontak sürekli çalıştırma veya hiç çalışmama üretir, soket amperi etiketle eşleşir."
       }
     },
     {
-      "id": "p868dr3e2c",
-      "path": "lambda-sensoru",
       "name": {
         "tr": "Lambda Sensörü"
       },
-      "status": "play",
+      "id": "p868dr3e2c",
       "index": 100,
+      "path": "lambda-sensoru",
       "category": "ommotr04",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "science",
-      "description": {
-        "tr": "Egzoz oksijen (lambda) sensörü karışım oranını ECU’ya bildirir; yaşlanan sensör yakıt sarfiyatı ve rölanti bozar, ön/arka bank konumları ayrıdır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Egzoz oksijen (lambda) sensörü karışım oranını ECU’ya bildirir; yaşlanan sensör yakıt sarfiyatı ve rölanti bozar, ön/arka bank konumları ayrıdır."
       }
     },
     {
-      "id": "o6y7tc63zi",
-      "path": "oil-cooler",
       "name": {
         "tr": "Oil Cooler / Yağ Soğutucu"
       },
-      "status": "play",
+      "id": "o6y7tc63zi",
       "index": 101,
+      "path": "oil-cooler",
       "category": "ommotr04",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "water_drop",
-      "description": {
-        "tr": "Motor yağ soğutucusu (oil cooler) yüksek sıcaklıkta viskoziteyi korur; tıkanmış veya delik soğutucu hararet ve yağ-su karışımı riski taşır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Motor yağ soğutucusu (oil cooler) yüksek sıcaklıkta viskoziteyi korur; tıkanmış veya delik soğutucu hararet ve yağ-su karışımı riski taşır."
       }
     },
     {
-      "id": "2pal25nyga",
-      "path": "atesleme-kablosu",
       "name": {
         "tr": "Ateşleme Kablosu"
       },
-      "status": "play",
+      "id": "2pal25nyga",
       "index": 102,
+      "path": "atesleme-kablosu",
       "category": "omatsg08",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "cable",
-      "description": {
-        "tr": "Bobin ile buji arasını bağlayan ateşleme kablosu yüksek voltaj taşır; çatlamış izolasyon misfire ve radyo paraziti üretir, ohm değeri kontrol edilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Bobin ile buji arasını bağlayan ateşleme kablosu yüksek voltaj taşır; çatlamış izolasyon misfire ve radyo paraziti üretir, ohm değeri kontrol edilir."
       }
     },
     {
-      "id": "fd8zen2pom",
-      "path": "hidrolik-yagi",
       "name": {
         "tr": "Hidrolik Yağı"
       },
-      "status": "play",
+      "id": "fd8zen2pom",
       "index": 103,
+      "path": "hidrolik-yagi",
       "category": "omsivi09",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "water_drop",
-      "description": {
-        "tr": "Direksiyon veya üst yapı hidroliği için CHF/ATF sınıfı yağlar ayrılır; yanlış spesifikasyon pompa uğultusu ve conta şişmesi yaratır, litre litre satılır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Direksiyon veya üst yapı hidroliği için CHF/ATF sınıfı yağlar ayrılır; yanlış spesifikasyon pompa uğultusu ve conta şişmesi yaratır, litre litre satılır."
       }
     },
     {
-      "id": "pir7d4kref",
-      "path": "atf",
       "name": {
         "tr": "ATF"
       },
-      "status": "play",
+      "id": "pir7d4kref",
       "index": 104,
+      "path": "atf",
       "category": "omsivi09",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "opacity",
-      "description": {
-        "tr": "Otomatik şanzıman ATF yağı sürtünme ve soğutma sağlar; yanlış ATF vites savrulması yapar, değişimde filtre ve conta ile birlikte planlanır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Otomatik şanzıman ATF yağı sürtünme ve soğutma sağlar; yanlış ATF vites savrulması yapar, değişimde filtre ve conta ile birlikte planlanır."
       }
     },
     {
-      "id": "o870xzst25",
-      "path": "yag-katkisi",
       "name": {
         "tr": "Yağ Katkısı"
       },
-      "status": "play",
+      "id": "o870xzst25",
       "index": 105,
+      "path": "yag-katkisi",
       "category": "omsivi09",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "science",
-      "description": {
-        "tr": "Motor veya şanzıman katkıları sızdırmazlık ve sürtünme düzenlemesi için kullanılır; aşırı doz filtre tıkanması riski taşır, üretici uyarısına uyulur."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Motor veya şanzıman katkıları sızdırmazlık ve sürtünme düzenlemesi için kullanılır; aşırı doz filtre tıkanması riski taşır, üretici uyarısına uyulur."
       }
     },
     {
-      "id": "ucfe2ni7ya",
-      "path": "vites-topuzu",
       "name": {
         "tr": "Vites Topuzu"
       },
-      "status": "play",
+      "id": "ucfe2ni7ya",
       "index": 106,
+      "path": "vites-topuzu",
       "category": "omicdn11",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "sports_esports",
-      "description": {
-        "tr": "Vites kolu topuzu vida veya klips tutuculu gelir; aşınmış deri/plastik tutuşu bozar, geri vites körüğüyle birlikte değişim sık tercih edilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Vites kolu topuzu vida veya klips tutuculu gelir; aşınmış deri/plastik tutuşu bozar, geri vites körüğüyle birlikte değişim sık tercih edilir."
       }
     },
     {
-      "id": "gpsprl0aax",
-      "path": "cam-kolu",
       "name": {
         "tr": "Cam Kolu"
       },
-      "status": "play",
+      "id": "gpsprl0aax",
       "index": 107,
+      "path": "cam-kolu",
       "category": "omicdn11",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "window",
-      "description": {
-        "tr": "Manuel cam çevirme kolu veya elektrikli cam düğme paneli kapı kartına oturur; kırık klips boşluk yapar, sol/sağ ve ön/arka ayrı kodlanır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Manuel cam çevirme kolu veya elektrikli cam düğme paneli kapı kartına oturur; kırık klips boşluk yapar, sol/sağ ve ön/arka ayrı kodlanır."
       }
     },
     {
-      "id": "rapa1jpfm8",
-      "path": "sinyal-lambasi",
       "name": {
         "tr": "Sinyal Lambası"
       },
-      "status": "play",
+      "id": "rapa1jpfm8",
       "index": 108,
+      "path": "sinyal-lambasi",
       "category": "omaydn12",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "swipe_right_alt",
-      "description": {
-        "tr": "Ön/arka sinyal lambası veya ampül/LED ünitesi dönüş uyarısını verir; su alan duyda buhar oluşur, sol/sağ cam ve far tipi uyumu kontrol edilir."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Ön/arka sinyal lambası veya ampül/LED ünitesi dönüş uyarısını verir; su alan duyda buhar oluşur, sol/sağ cam ve far tipi uyumu kontrol edilir."
       }
     },
     {
-      "id": "1zvs97tk5x",
-      "path": "silecek-motoru",
       "name": {
         "tr": "Silecek Motoru"
       },
-      "status": "play",
+      "id": "1zvs97tk5x",
       "index": 109,
+      "path": "silecek-motoru",
       "category": "omslck14",
+      "img": "index.webp",
+      "status": "play",
       "url": "",
       "icon": "settings",
-      "description": {
-        "tr": "Cam silecek motoru ve redüktör kolu park konumuna getirir; yavaş çalışan motor fırça aşınması veya dişli kırığı işaretidir, bağlantı koluyla birlikte bakılır."
-      },
-      "img": "index.webp",
       "desing": {
         "header": [],
         "body": [
           "t1udo01"
         ],
         "footer": []
+      },
+      "description": {
+        "tr": "Cam silecek motoru ve redüktör kolu park konumuna getirir; yavaş çalışan motor fırça aşınması veya dişli kırığı işaretidir, bağlantı koluyla birlikte bakılır."
       }
     }
   ],

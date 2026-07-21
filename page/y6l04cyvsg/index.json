@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Motor Beyni (ECU)</h2><p style=\"font-size: 16px;\">ECU değişiminde immobilizer ve kodlama adımları atlanmamalıdır. Su girişi en sık fiziksel hasardır.</p><p style=\"font-size: 16px;\">Oto Mavi tedarik ve teknik yönlendirme ile doğru beyin numarasını bulur.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "memory",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:13.960Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 85,
+  "url": "",
+  "desc": {
+    "parca_kodu": "motor-beyni-ecu",
+    "tur": "Park ve Elektronik",
+    "uyumlu": "motor beyni · ECU DME · motor kontrol ünitesi · immobilizer kodlama · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

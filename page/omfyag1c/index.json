@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Yağ Filtresi</h2><p style=\"font-size: 16px;\">Yağ filtresi, motor yağındaki metalik partikülleri tutarak yatak ve turbo ömrünü uzatır. Oto Mavi’de vida tipi ve kartuş tipi BMW yağ filtreleri bulunur.</p><p style=\"font-size: 16px;\">Yağ değişiminde filtreyi birlikte yenilemek standart bakımdır. Spec’e uygun yağ ile kombinasyon önerilir.</p><p style=\"font-size: 16px;\">Destek: 0544 717 18 28 · WhatsApp</p>"
   },
   "icon": "opacity",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:07.409Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 16,
+  "url": "",
+  "desc": {
+    "parca_kodu": "yag-filtresi",
+    "tur": "Filtreler",
+    "uyumlu": "yağ kartuşu süzgeci · spin-on oil filter · karter talaş tutucu · LL01 yağ elemanı · LL01 · Mercedes-Benz · BMW · Audi",
+    "kalite": "OEM ve eşdeğer"
   }
 }

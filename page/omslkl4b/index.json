@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Silecek Kolu</h2><p style=\"font-size: 16px;\">Silecek kolu menteşe ve yay gerilimiyle lastiği cama bastırır. Oto Mavi ön/arka BMW silecek kollarında bağlantı tipi modele göredir.</p><p style=\"font-size: 16px;\">Kırık kol lastiği doğru açıda tutamaz; sol/sağ belirtin.</p><p style=\"font-size: 16px;\">info@otomavi.com · 0544 717 18 28</p>"
   },
   "icon": "swipe",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:11.628Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 55,
+  "url": "",
+  "desc": {
+    "parca_kodu": "silecek-kolu",
+    "tur": "Silecekler",
+    "uyumlu": "metal wiper arm · yaylı silecek kolu · ön arka arm · somun ölçülü kol · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

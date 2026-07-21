@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Aksesuar Seti</h2><p style=\"font-size: 16px;\">Aksesuar setleri konfor odaklıdır; güvenlik ekipmanının yerini tutmaz. Montaj yüzeyi temiz olmalıdır.</p><p style=\"font-size: 16px;\">Oto Mavi stokundan modele uygun seçenek isteyin.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "widgets",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:14.381Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 89,
+  "url": "",
+  "desc": {
+    "parca_kodu": "aksesuar-seti",
+    "tur": "Araç Ekipmanları",
+    "uyumlu": "araç aksesuar seti · bagaj file · kabin düzen · telefon tutucu · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Salıncak Burcu</h2><p style=\"font-size: 16px;\">Salıncak burcu aşınınca direksiyon boşluğu ve lastik iç kenar aşınması görülür. Oto Mavi BMW burçlarında kauçuk sertliği OEM’e yakın tutulur.</p><p style=\"font-size: 16px;\">Rot başı ve salıncak kolu ile birlikte muayene önerilir.</p><p style=\"font-size: 16px;\">Sipariş: 0544 717 18 28</p>"
   },
   "icon": "settings_input_component",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:09.166Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 32,
+  "url": "",
+  "desc": {
+    "parca_kodu": "salincak-burcu",
+    "tur": "Sönümleme / Süspansiyon",
+    "uyumlu": "salıncak pivot burcu · control arm bush · hidrolik kauçuk burç · sessiz pivot yatak · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

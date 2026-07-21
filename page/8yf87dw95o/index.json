@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Ters Işık Anahtarı</h2><p style=\"font-size: 16px;\">Ters ışık anahtarı küçük bir müşürdür ama güvenlik için şarttır. Yağ sızıntılı şanzımanda anahtar da etkilenebilir.</p><p style=\"font-size: 16px;\">Diş adımı ve pin tipini Oto Mavi katalogundan seçin.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "light_mode",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:12.835Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 74,
+  "url": "",
+  "desc": {
+    "parca_kodu": "ters-isik-anahtari",
+    "tur": "Şanzıman",
+    "uyumlu": "ters ışık anahtarı · reverse switch · geri vites müşürü · şanzıman anahtarı · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Park Sensörü</h2><p style=\"font-size: 16px;\">Park sensörü sürekli öter veya hiç çalışmazsa konnektör nemi veya membran delinmesi sık sebeptir.</p><p style=\"font-size: 16px;\">Oto Mavi frekans ve renk halkasına göre sensör seçer.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "sensors",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:13.848Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 84,
+  "url": "",
+  "desc": {
+    "parca_kodu": "park-sensoru",
+    "tur": "Park ve Elektronik",
+    "uyumlu": "park sensörü · PDC sensör · ultrasonik park · tampon sensörü · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

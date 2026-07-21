@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Kurutucu</h2><p style=\"font-size: 16px;\">Klima kurutucusu (receiver/drier) nemi tutarak kompresörü korur. Açık sistemde veya kompresör değişiminde kurutucu da yenilenmelidir.</p><p style=\"font-size: 16px;\">Oto Mavi stokunda gaz tipine uygun kurutucular vardır.</p><p style=\"font-size: 16px;\">Sipariş: 0544 717 18 28</p>"
   },
   "icon": "invert_colors",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:09.647Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 35,
+  "url": "",
+  "desc": {
+    "parca_kodu": "kurutucu",
+    "tur": "Klima",
+    "uyumlu": "receiver drier nem · desiccant bag kurutucu · klima o-ring seti · A/C accumulator drier · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

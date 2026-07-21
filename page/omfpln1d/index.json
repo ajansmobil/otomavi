@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Polen Filtresi</h2><p style=\"font-size: 16px;\">Kabin / polen filtresi, klima ve ısıtma hattından gelen toz, polen ve kokuyu azaltır. Aktif karbonlu varyantlar Oto Mavi stokunda mevcuttur.</p><p style=\"font-size: 16px;\">Koku veya üfleme gücünde düşüş varsa filtreyi kontrol ettirin. BMW modelinize göre kesim farklıdır.</p><p style=\"font-size: 16px;\">İletişim: info@otomavi.com · 0544 717 18 28</p>"
   },
   "icon": "spa",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:07.535Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 17,
+  "url": "",
+  "desc": {
+    "parca_kodu": "polen-filtresi",
+    "tur": "Filtreler",
+    "uyumlu": "aktif karbon kabin · pollen cabin elemanı · menfez hava filtresi · alerjen kesici filtre · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

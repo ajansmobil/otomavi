@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Hız Sensörü</h2><p style=\"font-size: 16px;\">Hız sensörü manyetik halka üzerinden sinyal üretir. Kirli uç veya kopuk kablo hata kodu bırakır.</p><p style=\"font-size: 16px;\">Pin sayısı ve konnektör yönü Oto Mavi’de şasiyle doğrulanır.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "speed",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:12.736Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 73,
+  "url": "",
+  "desc": {
+    "parca_kodu": "hiz-sensoru",
+    "tur": "Şanzıman",
+    "uyumlu": "hız sensörü · şanzıman hız algılayıcı · ABS tekerlek sensörü · BMW speed sensor · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

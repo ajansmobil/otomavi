@@ -4,15 +4,15 @@
   "title": {
     "tr": "İletişim | Oto Mavi"
   },
-  "index": 3,
+  "index": 2,
   "desing": {
-    "footer": [],
+    "header": [],
     "body": [
       "tp5jo4",
       "fhxr98",
       "bi4hta"
     ],
-    "header": []
+    "footer": []
   },
   "keyword": {
     "tr": "Oto Mavi, iletişim, Gaziantep, BMW yedek parça, telefon, adres, WhatsApp"
@@ -24,7 +24,7 @@
     "tr": "Oto Mavi iletişim: hızlı destek, sipariş ve bilgilendirme. Gaziantep BMW oto yedek parça talepleriniz için bize ulaşın."
   },
   "status": "play",
-  "update": "2026-07-21",
+  "update": "2026-07-21T10:04:06.688Z",
   "url": "",
   "path": "iletisim",
   "icon": "home",

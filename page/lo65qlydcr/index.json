@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Ara Soğutucu</h2><p style=\"font-size: 16px;\">Ara soğutucu (intercooler) turbo çıkışındaki sıcak havayı düşürerek dolum verimini artırır. Çatlak çekirdek veya gevşek kelepçe basınç kaçırır.</p><p style=\"font-size: 16px;\">Oto Mavi stokunda model bazlı intercooler ve bağlantı hortumları bulunur; şasi ile doğrulayın.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "ac_unit",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:11.927Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 65,
+  "url": "",
+  "desc": {
+    "parca_kodu": "ara-sogutucu",
+    "tur": "Turbo / Zorlamalı Emme",
+    "uyumlu": "intercooler ara soğutucu · boost hortumu · emiş soğutma · charge air cooler · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

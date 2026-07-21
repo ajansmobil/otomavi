@@ -4,7 +4,7 @@
   },
   "status": "play",
   "id": "kullanicahaklari",
-  "path": "kullanicahaklari",
+  "path": "kullanici-haklari",
   "category": "",
   "text": {
     "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi Kullanıcı Hakları</h2>\n    <p style=\"font-size: 16px;\">\n        Oto Mavi (otomavi.com) olarak Gaziantep BMW oto yedek parça hizmetlerimizde herkesin kişisel verilerinin korunmasını isteme hakkına saygı duyarız. 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve ilgili mevzuat çerçevesinde hareket ederiz. Kullanıcılar, verilerinin hangi amaçlarla toplandığı, nasıl saklandığı ve kimlerle paylaşıldığı konusunda bilgilendirilme hakkına sahiptir.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Kişisel verilerinizi güncelleme, düzeltme, silme ve anonimleştirme taleplerinde bulunabilirsiniz. Toplanan verilerin hangi amaçla kullanıldığı ve işleme süreciyle ilgili ayrıntılı bilgi talep edebilir; bu süreçlerde yer alan üçüncü taraflar hakkında bilgi alabilirsiniz. Haklarınızı kullanmak için 0544 717 18 28 veya info@otomavi.com üzerinden bizimle iletişime geçebilirsiniz.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Kişisel verilerinizin korunması ve haklarınızla ilgili detaylı bilgi için sitemizde yer alan Gizlilik Politikası’nı inceleyebilirsiniz. Kullanıcı olarak verilerinizin güvenliği Oto Mavi’nin önceliğidir; gerekli teknik ve idari önlemleri almış bulunmaktayız.\n    </p>"
@@ -17,18 +17,18 @@
     ],
     "footer": []
   },
-  "index": 6,
+  "index": 7,
   "icon": "home",
   "title": {
     "tr": "Kullanıcı Hakları | Oto Mavi"
   },
   "description": {
-    "tr": "Oto Mavi kullanıcı hakları: Gaziantep BMW oto yedek parça sitesinde KVKK kapsamında bilgilendirme, düzeltme, silme ve iletişim."
+    "tr": "Oto Mavi kullanıcı hakları: site kullanımı, sipariş ve hesap süreçlerinde müşteri hakları."
   },
   "keyword": {
     "tr": "Oto Mavi, kullanıcı hakları, KVKK, veri koruma, BMW yedek parça, Gaziantep"
   },
-  "update": "2026-07-21",
+  "update": "2026-07-21T10:04:16.883Z",
   "date": "2026-05-19",
   "img": "index.webp"
 }

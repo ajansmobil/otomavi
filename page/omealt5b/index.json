@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Alternatör</h2><p style=\"font-size: 16px;\">Alternatör şarj voltajını stabil tutar; düşük şarj far ve elektronik arızalarına yol açar. Oto Mavi BMW alternatörlerinde amper değeri modele göredir.</p><p style=\"font-size: 16px;\">Kayış ve gergi ile birlikte kontrol edin. Şarj lambası yanıyorsa stok sorgulayın.</p><p style=\"font-size: 16px;\">0544 717 18 28 · WhatsApp</p>"
   },
   "icon": "bolt",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:08.740Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 28,
+  "url": "",
+  "desc": {
+    "parca_kodu": "alternator",
+    "tur": "Elektrik",
+    "uyumlu": "şarj alternatör kasnak · regülatör tipi ünitesi · ampere rating reman · voltaj sabitleyici · Mercedes-Benz · BMW · 3 Series · 5 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

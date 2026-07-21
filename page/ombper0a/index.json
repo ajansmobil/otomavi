@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Periyodik Bakım Seti</h2><p style=\"font-size: 16px;\">Periyodik bakım seti yağ + filtre kombinasyonunu tek siparişte toplar. Oto Mavi BMW bakım setleri km / yıl aralığına göre paketler.</p><p style=\"font-size: 16px;\">Model ve motor koduyla set içeriğini netleştiriyoruz; eksik parça kalmaz.</p><p style=\"font-size: 16px;\">Set siparişi: 0544 717 18 28</p>"
   },
   "icon": "build",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:10.350Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 42,
+  "url": "",
+  "desc": {
+    "parca_kodu": "periyodik-bakim-seti",
+    "tur": "Bakım Kiti",
+    "uyumlu": "inspection package kutu · kilometre servis seti · yağ süzgeç bakımı · şasi servis listesi · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

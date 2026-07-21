@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Marş Motoru</h2><p style=\"font-size: 16px;\">Marş motoru soğukta yüksek tork ister; tıkırtı veya yavaş çevirme aşınma belirtisidir. Oto Mavi BMW marş motorlarında bendiks ve solenoit kalitesi önemlidir.</p><p style=\"font-size: 16px;\">Akü sağlıklı değilse önce şarj/akü kontrolü yapın.</p><p style=\"font-size: 16px;\">İletişim: 0544 717 18 28</p>"
   },
   "icon": "power",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:08.855Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 29,
+  "url": "",
+  "desc": {
+    "parca_kodu": "mars-motoru",
+    "tur": "Elektrik",
+    "uyumlu": "marş bendix solenoid · starter motor kW · volan dişli marş · yavaş çevirme starter · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

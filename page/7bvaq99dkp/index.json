@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Rot Başı / Çubuk Ucu</h2><p style=\"font-size: 16px;\">Rot başı aşınması direksiyonda tıkırtı ve savrulma hissi verir. Değişimden sonra rot ayarı (alignment) şarttır.</p><p style=\"font-size: 16px;\">Oto Mavi sol/sağ rot başlarını aks tipine göre stoklar.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "build",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:12.236Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 68,
+  "url": "",
+  "desc": {
+    "parca_kodu": "rot-basi",
+    "tur": "Direksiyon",
+    "uyumlu": "rot başı · çubuk ucu · tie rod end · direksiyon mafsalı · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

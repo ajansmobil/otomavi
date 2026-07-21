@@ -1,37 +1,35 @@
 {
-    "id":  "omkysi13",
-    "path":  "kayislar",
-    "name":  {
-                 "tr":  "Kayışlar ve Zincirler"
-             },
-    "status":  "play",
-    "category":  "",
-    "description":  {
-                        "tr":  "Aksesuar poly-V, eksantrik zamanlama kiti ve otomatik tensioner tahrik hattını korur; çatlak sesinde kayış reyonundan ölçü alın."
-                    },
-    "keyword":  {
-                    "tr":  "tahrik reyonu kayış, poly-V aksesuar, eksantrik zamanlama kiti, otomatik tensioner, oluk boy ölçümü"
-                },
-    "title":  {
-                  "tr":  "Kayışlar ve Zincirler | Oto Mavi"
-              },
-    "text":  {
-                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eKayışlar ve Zincirler\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eV kayışı, triger seti ve gergi ile motor zamanlaması. BMW kayış/zincir bakımı için Oto Mavi.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eDestek: 0544 717 18 28\u003c/p\u003e"
-             },
-    "icon":  "sync",
-    "update":  "2026-07-20",
-    "date":  "2026-07-20",
-    "img":  "index.webp",
-    "desing":  {
-                   "header":  [
-
-                              ],
-                   "body":  [
-                                "t1af01",
-                                "t1ulo01"
-                            ],
-                   "footer":  [
-
-                              ]
-               }
+  "id": "omkysi13",
+  "path": "kayislar",
+  "name": {
+    "tr": "Kayışlar ve Zincirler"
+  },
+  "status": "play",
+  "category": "",
+  "description": {
+    "tr": "Aksesuar poly-V, eksantrik zamanlama kiti ve otomatik tensioner tahrik hattını korur; çatlak sesinde kayış reyonundan ölçü alın."
+  },
+  "keyword": {
+    "tr": "tahrik reyonu kayış, poly-V aksesuar, eksantrik zamanlama kiti, otomatik tensioner, oluk boy ölçümü"
+  },
+  "title": {
+    "tr": "Kayışlar ve Zincirler | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Kayışlar ve Zincirler</h2><p style=\"font-size: 16px;\">V kayışı, triger seti ve gergi ile motor zamanlaması. BMW kayış/zincir bakımı için Oto Mavi.</p><p style=\"font-size: 16px;\">Destek: 0544 717 18 28</p>"
+  },
+  "icon": "sync",
+  "update": "2026-07-21T10:04:06.994Z",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1af01",
+      "t1ulo01"
+    ],
+    "footer": []
+  },
+  "index": 12,
+  "url": ""
 }

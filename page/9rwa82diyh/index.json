@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Titreşim Sönümleyici</h2><p style=\"font-size: 16px;\">Harmonic balancer aşınması kayış ömrünü kısaltır. Görsel çatlak ve salgı kontrolü yapılmalıdır.</p><p style=\"font-size: 16px;\">Oto Mavi damper kasnaklarını triger/aksesuar setiyle birlikte önerir.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "vibration",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:15.234Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 97,
+  "url": "",
+  "desc": {
+    "parca_kodu": "titresim-sonumleyici",
+    "tur": "Kayışlar ve Zincirler",
+    "uyumlu": "titreşim sönümleyici · krank damper · harmonic balancer · kasnak damper · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

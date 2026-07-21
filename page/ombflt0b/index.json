@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Filtre Seti</h2><p style=\"font-size: 16px;\">Yağ, hava ve polen filtresini bir arada alan filtre seti bakım maliyetini düşürür. Oto Mavi üçlü/dörtlü BMW filtre paketleri sunar.</p><p style=\"font-size: 16px;\">Yakıt filtresi dahil varyantlar için stok sorun.</p><p style=\"font-size: 16px;\">info@otomavi.com · 0544 717 18 28</p>"
   },
   "icon": "filter_list",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:10.447Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 43,
+  "url": "",
+  "desc": {
+    "parca_kodu": "filtre-seti",
+    "tur": "Bakım Kiti",
+    "uyumlu": "filter service kit · üçlü süzgeç paketi · yağ hava kabin seti · yağsız filtre grubu · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

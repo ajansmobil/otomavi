@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Paspas Seti</h2><p style=\"font-size: 16px;\">Model kesimli paspas seti kabin halısını korur. Oto Mavi havuzlu ve tekstil BMW paspas seçenekleri sunar.</p><p style=\"font-size: 16px;\">Kaymaz taban ve klips uyumu kontrol edilir. Şasi / model yılı ile sipariş verin.</p><p style=\"font-size: 16px;\">İç donanım: 0544 717 18 28</p>"
   },
   "icon": "grid_on",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:10.634Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 45,
+  "url": "",
+  "desc": {
+    "parca_kodu": "paspas-seti",
+    "tur": "İç Donanım",
+    "uyumlu": "kauçuk floor mat · halı paspas seti · 4 parça zemin örtü · bagaj örtü paspas · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

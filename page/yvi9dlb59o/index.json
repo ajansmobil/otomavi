@@ -6,12 +6,12 @@
   },
   "index": 1,
   "desing": {
-    "footer": [],
+    "header": [],
     "body": [
       "t1in01",
       "tp5jo4"
     ],
-    "header": []
+    "footer": []
   },
   "keyword": {
     "tr": "Oto Mavi kurumsal menü, firma bilgileri, politikalar, kariyer, yasal metinler"
@@ -23,7 +23,7 @@
     "tr": "Oto Mavi kurumsal sayfaları: hakkımızda, misyon, vizyon, kalite, kariyer ve yasal metinler. Gaziantep BMW oto yedek parçaları."
   },
   "status": "play",
-  "update": "2026-07-21",
+  "update": "2026-07-21T10:04:06.681Z",
   "url": "",
   "path": "kurumsal",
   "date": "2026-05-19",
@@ -31,5 +31,6 @@
   "text": {
     "tr": "<p style=\"font-size: 16px;\">Oto Mavi — Gaziantep BMW oto yedek parçaları. Kurumsal bilgiler, kariyer ve politikalar için alt sayfalarımızı inceleyebilirsiniz.</p>"
   },
-  "img": "index.webp"
+  "img": "index.webp",
+  "icon": "home"
 }

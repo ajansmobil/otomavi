@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Cam Kolu</h2><p style=\"font-size: 16px;\">Manuel kol veya elektrik düğme paneli araç donanımına göre değişir. Klips kırığı sık görülür.</p><p style=\"font-size: 16px;\">Oto Mavi kapı tarafına göre doğru parçayı ayırır.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "window",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:16.256Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 107,
+  "url": "",
+  "desc": {
+    "parca_kodu": "cam-kolu",
+    "tur": "İç Donanım",
+    "uyumlu": "cam kolu · window crank · cam düğmesi · kapı cam kolu · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

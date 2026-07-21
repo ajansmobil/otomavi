@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Oil Cooler / Yağ Soğutucu</h2><p style=\"font-size: 16px;\">Yağ soğutucu kaçaklarında hem yağ hem antifriz kaybı görülebilir. Conta seti şarttır.</p><p style=\"font-size: 16px;\">Oto Mavi cooler ve hortum bağlantılarını motor koduna göre listeler.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "water_drop",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:15.649Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 101,
+  "url": "",
+  "desc": {
+    "parca_kodu": "oil-cooler",
+    "tur": "Motor",
+    "uyumlu": "oil cooler · yağ soğutucu · motor yağ radyatörü · oil heat exchanger · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

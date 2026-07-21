@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Yakıt Deposu</h2><p style=\"font-size: 16px;\">Yakıt deposu çalışması uzmanlık ve güvenlik gerektirir. Çatlak koku ve sızıntıyla anlaşılır.</p><p style=\"font-size: 16px;\">Oto Mavi depo ve flanş conta setlerini model yılına göre listeler.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "local_gas_station",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:15.030Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 95,
+  "url": "",
+  "desc": {
+    "parca_kodu": "yakit-deposu",
+    "tur": "Gövde",
+    "uyumlu": "yakıt deposu · fuel tank · şamandıra flanş · depo conta · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

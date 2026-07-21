@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Kaporta Paneli</h2><p style=\"font-size: 16px;\">Çamurluk ve yan panel onarımında doğru sac kalınlığı ve vida noktaları önemlidir. Oto Mavi BMW kaporta panellerinde OEM / eşdeğer alternatifler bulunur.</p><p style=\"font-size: 16px;\">Hasar bölgesi fotoğrafı ile hızlı teklif alabilirsiniz.</p><p style=\"font-size: 16px;\">Gaziantep stok: 0544 717 18 28</p>"
   },
   "icon": "crop_square",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:08.199Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 23,
+  "url": "",
+  "desc": {
+    "parca_kodu": "kaporta-paneli",
+    "tur": "Gövde",
+    "uyumlu": "çamurluk fender panel · kapı dışı sac · kaynak flanşlı panel · kontur uyumlu sac · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

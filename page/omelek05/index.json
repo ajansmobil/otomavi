@@ -1,37 +1,35 @@
 {
-    "id":  "omelek05",
-    "path":  "elektrik",
-    "name":  {
-                 "tr":  "Elektrik"
-             },
-    "status":  "play",
-    "category":  "",
-    "description":  {
-                        "tr":  "Start-stop batarya, şarj ünitesi ve çalıştırma motoru voltaj sürekliliği sağlar; kutup ve amper etiketine göre elektrik reyonundan seçin."
-                    },
-    "keyword":  {
-                    "tr":  "elektrik reyonu batarya, şarj ünitesi marş, voltaj süreklilik parçası, kutup amper seçimi, start devresi ekipmanı"
-                },
-    "title":  {
-                  "tr":  "Elektrik | Oto Mavi"
-              },
-    "text":  {
-                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eElektrik\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eAkü, alternatör ve marş motoru başta olmak üzere BMW elektrik sistemi parçaları Oto Mavi’de.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eİletişim: 0544 717 18 28 · info@otomavi.com\u003c/p\u003e"
-             },
-    "icon":  "bolt",
-    "update":  "2026-07-20",
-    "date":  "2026-07-20",
-    "img":  "index.webp",
-    "desing":  {
-                   "header":  [
-
-                              ],
-                   "body":  [
-                                "t1af01",
-                                "t1ulo01"
-                            ],
-                   "footer":  [
-
-                              ]
-               }
+  "id": "omelek05",
+  "path": "elektrik",
+  "name": {
+    "tr": "Elektrik"
+  },
+  "status": "play",
+  "category": "",
+  "description": {
+    "tr": "Start-stop batarya, şarj ünitesi ve çalıştırma motoru voltaj sürekliliği sağlar; kutup ve amper etiketine göre elektrik reyonundan seçin."
+  },
+  "keyword": {
+    "tr": "elektrik reyonu batarya, şarj ünitesi marş, voltaj süreklilik parçası, kutup amper seçimi, start devresi ekipmanı"
+  },
+  "title": {
+    "tr": "Elektrik | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Elektrik</h2><p style=\"font-size: 16px;\">Akü, alternatör ve marş motoru başta olmak üzere BMW elektrik sistemi parçaları Oto Mavi’de.</p><p style=\"font-size: 16px;\">İletişim: 0544 717 18 28 · info@otomavi.com</p>"
+  },
+  "icon": "bolt",
+  "update": "2026-07-21T10:04:06.813Z",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1af01",
+      "t1ulo01"
+    ],
+    "footer": []
+  },
+  "index": 4,
+  "url": ""
 }

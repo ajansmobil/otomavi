@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Yan Ayna</h2><p style=\"font-size: 16px;\">Yan ayna elektrikli katlama, ısıtma ve sinyal entegreli olabilir. Oto Mavi sol/sağ BMW ayna gövdelerini renk koduna göre temin eder.</p><p style=\"font-size: 16px;\">Cam kırığı ile gövde hasarı farklı parçalardır; ihtiyacı netleştirin.</p><p style=\"font-size: 16px;\">info@otomavi.com · 0544 717 18 28</p>"
   },
   "icon": "flip",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:08.095Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 22,
+  "url": "",
+  "desc": {
+    "parca_kodu": "yan-ayna",
+    "tur": "Gövde",
+    "uyumlu": "katlanır ayna ünitesi · ısıtmalı ayna camı · sinyalli ayna kapağı · mirror assembly sol · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

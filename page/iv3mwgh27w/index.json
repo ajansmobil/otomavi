@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Yaprak Yay</h2><p style=\"font-size: 16px;\">Bazı ticari/üstyapı uygulamalarında yaprak yay kullanılır. Katman sayısı yük kapasitesini belirler.</p><p style=\"font-size: 16px;\">Oto Mavi yaprak ve burç setlerini aks tipine göre tedarik eder.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "view_agenda",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:15.339Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 98,
+  "url": "",
+  "desc": {
+    "parca_kodu": "yaprak-yay",
+    "tur": "Sönümleme / Süspansiyon",
+    "uyumlu": "yaprak yay · leaf spring · arka yay paketi · yay kelepçe · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

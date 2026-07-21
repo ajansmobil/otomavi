@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Motor Yağı</h2><p style=\"font-size: 16px;\">BMW Longlife ve ACEA sınıfları motor tipine göre değişir. Oto Mavi spec’e uygun motor yağlarını litre seçenekleriyle sunar.</p><p style=\"font-size: 16px;\">Yanlış viskozite yakıt ve turbo ömrünü etkiler. Kılavuzdaki onay kodunu paylaşın.</p><p style=\"font-size: 16px;\">Yağ siparişi: 0544 717 18 28 · info@otomavi.com</p>"
   },
   "icon": "water_drop",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:10.052Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 39,
+  "url": "",
+  "desc": {
+    "parca_kodu": "motor-yagi",
+    "tur": "Yağlar ve Sıvılar",
+    "uyumlu": "Longlife 5W30 yağ · sentetik 5W40 litre · BMW LL onay kodu · viskozite etiket yağ · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

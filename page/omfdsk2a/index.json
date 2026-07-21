@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Fren Diski</h2><p style=\"font-size: 16px;\">Fren diski ısı dağıtımı ve denge için kritiktir; çarpık disk titreşim ve pedal titreşimi yaratır. Oto Mavi ön/arka BMW disklerinde kalınlık ve delik deseni modele göre seçilir.</p><p style=\"font-size: 16px;\">Balata ile birlikte değişim çoğu zaman daha sağlıklıdır. Aks ve şasi ile stok doğrulayın.</p><p style=\"font-size: 16px;\">Sipariş hattı: 0544 717 18 28</p>"
   },
   "icon": "disc_full",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:07.655Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 18,
+  "url": "",
+  "desc": {
+    "parca_kodu": "fren-diski",
+    "tur": "Frenler",
+    "uyumlu": "havalandırmalı fren rotoru · disk kalınlık ölçümü · run-out brake disc · ön arka rotor · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

@@ -1,37 +1,35 @@
 {
-    "id":  "omfren02",
-    "path":  "frenler",
-    "name":  {
-                 "tr":  "Frenler"
-             },
-    "status":  "play",
-    "category":  "",
-    "description":  {
-                        "tr":  "Durma mesafesini kısaltan rotor, pad ve hidrolik hat parçaları burada; pedal hissi ve ABS uyumu için doğru fren kodunu birlikte seçin."
-                    },
-    "keyword":  {
-                    "tr":  "durma sistemi reyonu, rotor pad hidrolik, pedal güvenlik parçası, ABS hat ekipmanı, fren kod seçimi"
-                },
-    "title":  {
-                  "tr":  "Frenler | Oto Mavi"
-              },
-    "text":  {
-                 "tr":  "\u003ch2 style=\"font-size: 24px;\"\u003eFrenler\u003c/h2\u003e\u003cp style=\"font-size: 16px;\"\u003eOto Mavi fren parçaları: disk, balata ve hidrolik bileşenlerle BMW araçlarınızda güvenli duruş. Orijinal ve eşdeğer seçeneklerle stoktan hızlı tedarik.\u003c/p\u003e\u003cp style=\"font-size: 16px;\"\u003eSipariş ve uyumluluk için 0544 717 18 28 veya WhatsApp üzerinden bize yazın.\u003c/p\u003e"
-             },
-    "icon":  "disc_full",
-    "update":  "2026-07-20",
-    "date":  "2026-07-20",
-    "img":  "index.webp",
-    "desing":  {
-                   "header":  [
-
-                              ],
-                   "body":  [
-                                "t1af01",
-                                "t1ulo01"
-                            ],
-                   "footer":  [
-
-                              ]
-               }
+  "id": "omfren02",
+  "path": "frenler",
+  "name": {
+    "tr": "Frenler"
+  },
+  "status": "play",
+  "category": "",
+  "description": {
+    "tr": "Durma mesafesini kısaltan rotor, pad ve hidrolik hat parçaları burada; pedal hissi ve ABS uyumu için doğru fren kodunu birlikte seçin."
+  },
+  "keyword": {
+    "tr": "durma sistemi reyonu, rotor pad hidrolik, pedal güvenlik parçası, ABS hat ekipmanı, fren kod seçimi"
+  },
+  "title": {
+    "tr": "Frenler | Oto Mavi"
+  },
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Frenler</h2><p style=\"font-size: 16px;\">Oto Mavi fren parçaları: disk, balata ve hidrolik bileşenlerle BMW araçlarınızda güvenli duruş. Orijinal ve eşdeğer seçeneklerle stoktan hızlı tedarik.</p><p style=\"font-size: 16px;\">Sipariş ve uyumluluk için 0544 717 18 28 veya WhatsApp üzerinden bize yazın.</p>"
+  },
+  "icon": "disc_full",
+  "update": "2026-07-21T10:04:06.739Z",
+  "date": "2026-07-20",
+  "img": "index.webp",
+  "desing": {
+    "header": [],
+    "body": [
+      "t1af01",
+      "t1ulo01"
+    ],
+    "footer": []
+  },
+  "index": 1,
+  "url": ""
 }

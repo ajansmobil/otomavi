@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Lastik Tamir Kiti</h2><p style=\"font-size: 16px;\">Lastik tamir kiti geçici çözümdür; özellikle yanak hasarında güvenli değildir. Kompresörlü setler yol kenarında işe yarar.</p><p style=\"font-size: 16px;\">Oto Mavi araç ekipmanları reyonunda kit seçenekleri sunar.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "healing",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:13.233Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 78,
+  "url": "",
+  "desc": {
+    "parca_kodu": "lastik-tamir-kiti",
+    "tur": "Lastik ve Jant",
+    "uyumlu": "lastik tamir kiti · fitil seti · lastik spreyi · acil tamir · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

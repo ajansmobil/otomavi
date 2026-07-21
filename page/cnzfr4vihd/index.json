@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Lastik</h2><p style=\"font-size: 16px;\">Doğru lastik ebatı hem konfor hem güvenlik demektir. Yanakta yazan ölçü ve DOT tarihi Oto Mavi danışmanlığıyla netleşir.</p><p style=\"font-size: 16px;\">Montaj ve balans için yerel iş ortaklarımızla yönlendirebiliriz.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "tire_repair",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:13.030Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 76,
+  "url": "",
+  "desc": {
+    "parca_kodu": "lastik",
+    "tur": "Lastik ve Jant",
+    "uyumlu": "oto lastik · yaz kış lastik · hız indeksi · yük indeksi · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }

@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Bijon / Saplama</h2><p style=\"font-size: 16px;\">Bijon ve saplama diş formu M12/M14 gibi modellere göre değişir. Yanlış boy fren diski temasına yol açabilir.</p><p style=\"font-size: 16px;\">Oto Mavi orijinal diş ve anahtar ağzı ölçüsünde stok tutar.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "push_pin",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:13.633Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 82,
+  "url": "",
+  "desc": {
+    "parca_kodu": "bijon-saplama",
+    "tur": "Süspansiyon / Poyra",
+    "uyumlu": "bijon · jant saplama · wheel stud · lug bolt · M12 · M14 · Mercedes-Benz · BMW",
+    "kalite": "OEM ve eşdeğer"
   }
 }

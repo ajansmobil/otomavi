@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Klima Kompresörü</h2><p style=\"font-size: 16px;\">Klima kompresörü soğutma çevriminin kalbidir; gürültü veya yağ kaçığı arıza işaretidir. Oto Mavi BMW kompresörlerinde kavrama ve yağ tipi modele göredir.</p><p style=\"font-size: 16px;\">Sistem vakum ve gaz dolumu atölye işidir. Eski kompresör kodunu iletin.</p><p style=\"font-size: 16px;\">Klima hattı: 0544 717 18 28</p>"
   },
   "icon": "ac_unit",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:09.335Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 33,
+  "url": "",
+  "desc": {
+    "parca_kodu": "klima-kompresoru",
+    "tur": "Klima",
+    "uyumlu": "debriyajlı klima kompresör · R134a A/C compressor · kasnak oluk kompresör · gaz sıkıştırma ünitesi · BMW · 3 Series · 5 Series · X5",
+    "kalite": "OEM ve eşdeğer"
   }
 }

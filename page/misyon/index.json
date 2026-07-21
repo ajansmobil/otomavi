@@ -1,10 +1,10 @@
 {
   "name": {
-    "tr": "Misyon"
+    "tr": "Misyonumuz"
   },
   "status": "play",
   "id": "misyon",
-  "path": "misyon",
+  "path": "misyonumuz",
   "category": "",
   "text": {
     "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi Misyonumuz</h2>\n    <p style=\"font-size: 16px;\">\n        Oto Mavi olarak misyonumuz, BMW yedek parça sektöründe güvenilir, yenilikçi ve çözüm odaklı bir marka olmaktır. Gaziantep merkezli hizmetimizle araç sahiplerine ve servislere orijinal ile eşdeğer parçaları uygun fiyat ve 1. sınıf kaliteyle ulaştırırız.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Doğru ürünü doğru zamanda teslim etmeyi ilke ediniriz: uzman destek (7 gün), hızlı tedarik (1–3 gün) ve geniş parça seçimi. Sipariş modeli WhatsApp / telefon üzerindendir; sepet yoktur.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Sorularınız için 0544 717 18 28 veya info@otomavi.com — Sanayi mah. 60081 nolu cadde no 43 Şehitkamil Gaziantep.\n    </p>"
@@ -23,12 +23,12 @@
     "tr": "Misyon | Oto Mavi"
   },
   "description": {
-    "tr": "Oto Mavi misyonu: Gaziantep BMW oto yedek parçalarında güvenilir, yenilikçi ve çözüm odaklı hizmet."
+    "tr": "Oto Mavi misyonu: BMW yedek parça sektöründe güvenilir, yenilikçi ve çözüm odaklı bir marka olmak."
   },
   "keyword": {
     "tr": "Oto Mavi misyon, çözüm odaklı tedarik, servis desteği, hızlı teslimat, BMW parça"
   },
-  "update": "2026-07-21",
+  "update": "2026-07-21T10:04:16.735Z",
   "date": "2026-05-19",
   "img": "index.webp"
 }

@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Mil Contası</h2><p style=\"font-size: 16px;\">Mil contası (keçe) sızdırmazlık elemanıdır. Montajda mil yüzeyinin çiziksiz olması gerekir.</p><p style=\"font-size: 16px;\">Oto Mavi iç/dış çap ölçülü keçeleri aks tipine göre verir.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "contrast",
-  "update": "2026-07-20",
+  "update": "2026-07-21T10:04:13.752Z",
   "date": "2026-07-20",
   "img": "index.webp",
   "desing": {
@@ -28,5 +28,13 @@
       "t1udo01"
     ],
     "footer": []
+  },
+  "index": 83,
+  "url": "",
+  "desc": {
+    "parca_kodu": "mil-contasi",
+    "tur": "Süspansiyon / Poyra",
+    "uyumlu": "mil contası · aks keçe · drive shaft seal · yağ keçe · Mercedes-Benz · BMW · Audi · 3 Series",
+    "kalite": "OEM ve eşdeğer"
   }
 }
