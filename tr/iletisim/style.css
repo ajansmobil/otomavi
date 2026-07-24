@@ -1544,13 +1544,15 @@
     border-bottom: solid 1px #ddd;
     gap: 20px;
     transition: background-color 0.3s ease;
+    text-decoration: none;
+    color: #1B3A6B;
   }
 
   .b0001containerlist>div {
     display: flex;
     align-items: center;
     font-size: 20px;
-    color: #444;
+    color: #1B3A6B;
   }
 
   .b0001containerlist:hover {
@@ -1586,6 +1588,11 @@
   .b0001containerlist>span {
     font-size: 24px;
     color: #0B3A6E;
+  }
+
+  .b0001containerlist:hover {
+    background-color: rgba(46, 107, 255, 0.08);
+    border-bottom-color: #0B3A6E;
   }
 
   @media screen and (max-width: 1024px) {
@@ -1686,7 +1693,7 @@
     fill: #ffffff;
   }
   .b0002-bg {
-    background-image: url("/img/bi4hta/map.png?v=nipw7") !important;
+    background-image: url("/img/bi4hta/map.png?v=rm0x7") !important;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;

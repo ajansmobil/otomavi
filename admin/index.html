@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Site Yönetimi</title>
+
+  <link rel="preload" href="../src/fonts/rubik/rubik-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../src/rubik.css" />
+  <link rel="preload" href="../src/material-symbols-outlined.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="../src/material-symbols-outlined.css" />
+  </noscript>
+  <link rel="shortcut icon" href="../img/icon.png" type="image/png" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+
+<body>
+  <div class="mxadmin-app" id="mxadminApp">
+
+    <header class="mxadmin-topbar hidden" id="mxadminTopbar">
+      <div class="mxadmin-topbar-brand">
+        <span class="material-symbols-outlined">admin_panel_settings</span>
+        <span data-mxadmin-i18n="appTitle">Site Yönetimi</span>
+      </div>
+      <nav class="mxadmin-nav" id="mxadminNav">
+        <button type="button" class="mxadmin-nav-btn is-active" data-mxadmin-screen="dashboard"
+          id="mxadminNavDashboard">
+          <span class="material-symbols-outlined">space_dashboard</span>
+          <span data-mxadmin-i18n="navDashboard">Dashboard</span>
+        </button>
+        <button type="button" class="mxadmin-nav-btn" data-mxadmin-screen="pages" id="mxadminNavPages">
+          <span class="material-symbols-outlined">description</span>
+          <span data-mxadmin-i18n="navPages">Sayfalar</span>
+        </button>
+        <button type="button" class="mxadmin-nav-btn" data-mxadmin-screen="settings" id="mxadminNavSettings">
+          <span class="material-symbols-outlined">settings</span>
+          <span data-mxadmin-i18n="navSettings">Ayarlar</span>
+        </button>
+        <button type="button" class="mxadmin-nav-btn" data-mxadmin-screen="design" id="mxadminNavDesign">
+          <span class="material-symbols-outlined">palette</span>
+          <span data-mxadmin-i18n="navDesign">Tasarım</span>
+        </button>
+      </nav>
+      <div class="mxadmin-topbar-actions">
+        <button type="button" class="mxadmin-lang-btn" id="mxadminLangToggle">EN</button>
+        <button type="button" class="mxadmin-logout-btn" id="mxadminLogoutBtn" title="Çıkış">
+          <span class="material-symbols-outlined">logout</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="mxadmin-main" id="mxadminMain">
+
+      
+      <section class="mxadmin-screen" id="mxadminScreenLogin">
+        <div class="mxadmin-login-card">
+          <div class="mxadmin-login-logo">
+            <span class="material-symbols-outlined">shield_person</span>
+          </div>
+          <h1 class="mxadmin-login-title" data-mxadmin-i18n="loginTitle">Site Yönetimi</h1>
+          <p class="mxadmin-login-sub" data-mxadmin-i18n="loginSub">Devam etmek için giriş yapın</p>
+
+          <div class="mxadmin-alert mxadmin-alert-warn hidden" id="mxadminConfigWarning"></div>
+          <div class="mxadmin-alert mxadmin-alert-error hidden" id="mxadminLoginError"></div>
+
+          <form class="mxadmin-login-form" id="mxadminLoginForm">
+            <div class="mxadmin-form-group">
+              <label data-mxadmin-i18n="labelUsername" for="mxadminUsername">Kullanıcı adı</label>
+              <input type="text" id="mxadminUsername" name="username" autocomplete="username" required />
+            </div>
+            <div class="mxadmin-form-group">
+              <label data-mxadmin-i18n="labelPassword" for="mxadminPassword">Parola</label>
+              <input type="password" id="mxadminPassword" name="password" autocomplete="current-password"
+                required />
+            </div>
+            <button type="submit" class="mxadmin-btn-primary" id="mxadminLoginSubmit">
+              <span data-mxadmin-i18n="loginSubmit">Giriş Yap</span>
+              <span class="mxadmin-spinner hidden" id="mxadminLoginSpinner"></span>
+            </button>
+          </form>
+          <p class="mxadmin-login-hint" data-mxadmin-i18n="loginHint">Bu panelden yeni kullanıcı oluşturulamaz.</p>
+        </div>
+      </section>
+
+      
+      <section class="mxadmin-screen hidden" id="mxadminScreenDashboard">
+        <div class="mxadmin-screen-head">
+          <h2 data-mxadmin-i18n="dashboardTitle">Dashboard</h2>
+        </div>
+        <div class="mxadmin-alert mxadmin-alert-warn hidden" id="mxadminMustResetWarning"
+          data-mxadmin-i18n="mustResetWarning"></div>
+        <div class="mxadmin-cards" id="mxadminDashboardCards">
+          <div class="mxadmin-card">
+            <span class="material-symbols-outlined">language</span>
+            <div>
+              <div class="mxadmin-card-label" data-mxadmin-i18n="cardDomain">Alan adı</div>
+              <div class="mxadmin-card-value" id="mxadminCardDomainValue">—</div>
+            </div>
+          </div>
+          <div class="mxadmin-card">
+            <span class="material-symbols-outlined">person</span>
+            <div>
+              <div class="mxadmin-card-label" data-mxadmin-i18n="cardUsername">Kullanıcı adı</div>
+              <div class="mxadmin-card-value" id="mxadminCardUsernameValue">—</div>
+            </div>
+          </div>
+          <div class="mxadmin-card">
+            <span class="material-symbols-outlined">dns</span>
+            <div>
+              <div class="mxadmin-card-label" data-mxadmin-i18n="cardProject">Proje</div>
+              <div class="mxadmin-card-value" id="mxadminCardProjectValue">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mxadmin-panel">
+          <div class="mxadmin-panel-head">
+            <span class="material-symbols-outlined">history</span>
+            <span data-mxadmin-i18n="loginHistoryTitle">Giriş geçmişiniz</span>
+          </div>
+          <div class="mxadmin-panel-body">
+            <div class="mxadmin-loading hidden" id="mxadminHistoryLoading" data-mxadmin-i18n="loading">Yükleniyor…
+            </div>
+            <div class="mxadmin-alert mxadmin-alert-error hidden" id="mxadminHistoryError"></div>
+            <div class="mxadmin-empty hidden" id="mxadminHistoryEmpty" data-mxadmin-i18n="loginHistoryEmpty">Kayıt
+              bulunamadı</div>
+            <div class="mxadmin-table-wrap">
+              <table class="mxadmin-table hidden" id="mxadminHistoryTable">
+                <thead>
+                  <tr>
+                    <th data-mxadmin-i18n="colDate">Tarih</th>
+                    <th data-mxadmin-i18n="colIp">IP</th>
+                    <th data-mxadmin-i18n="colDevice">Cihaz</th>
+                    <th data-mxadmin-i18n="colResult">Sonuç</th>
+                  </tr>
+                </thead>
+                <tbody id="mxadminHistoryBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="mxadmin-screen hidden" id="mxadminScreenPages">
+        <div class="mxadmin-screen-head">
+          <h2 data-mxadmin-i18n="pagesTitle">Sayfalar</h2>
+        </div>
+        <div class="mxadmin-loading hidden" id="mxadminPagesLoading" data-mxadmin-i18n="loading">Yükleniyor…</div>
+        <div class="mxadmin-alert mxadmin-alert-error hidden" id="mxadminPagesError"></div>
+        <div class="mxadmin-empty hidden" id="mxadminPagesEmpty" data-mxadmin-i18n="pagesEmpty">Sayfa bulunamadı
+        </div>
+        <div class="mxadmin-pages-layout">
+          <ul class="mxadmin-pages-list" id="mxadminPagesList"></ul>
+          <form class="mxadmin-panel mxadmin-page-form hidden" id="mxadminPageForm">
+            <div class="mxadmin-form-group">
+              <label data-mxadmin-i18n="fieldStatus">Durum</label>
+              <select id="mxadminPageStatus">
+                <option value="play" data-mxadmin-i18n="statusPlay">Yayında</option>
+                <option value="pause" data-mxadmin-i18n="statusPause">Pasif</option>
+              </select>
+            </div>
+            <div id="mxadminPageNameFields"></div>
+            <div id="mxadminPageDescriptionFields"></div>
+            <div class="mxadmin-form-actions">
+              <button type="button" class="mxadmin-btn-ghost" id="mxadminPageCancel" data-mxadmin-i18n="cancel">İptal</button>
+              <button type="submit" class="mxadmin-btn-primary" id="mxadminPageSave" data-mxadmin-i18n="save">Kaydet</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      
+      <section class="mxadmin-screen hidden" id="mxadminScreenSettings">
+        <div class="mxadmin-screen-head">
+          <h2 data-mxadmin-i18n="settingsTitle">Ayarlar</h2>
+        </div>
+        <div class="mxadmin-loading hidden" id="mxadminSettingsLoading" data-mxadmin-i18n="loading">Yükleniyor…
+        </div>
+        <div class="mxadmin-alert mxadmin-alert-error hidden" id="mxadminSettingsError"></div>
+        <form class="mxadmin-panel hidden" id="mxadminSettingsForm">
+          <div class="mxadmin-form-grid">
+            <div class="mxadmin-form-group">
+              <label data-mxadmin-i18n="fieldSiteName">Site adı</label>
+              <input type="text" id="mxadminSettingName" />
+            </div>
+            <div class="mxadmin-form-group">
+              <label data-mxadmin-i18n="fieldDomain">Alan adı</label>
+              <input type="text" id="mxadminSettingDomain" />
+            </div>
+            <div class="mxadmin-form-group">
+              <label data-mxadmin-i18n="fieldPhone">Telefon</label>
+              <input type="text" id="mxadminSettingPhone" />
+            </div>
+            <div class="mxadmin-form-group">
+              <label data-mxadmin-i18n="fieldMobile">Cep telefonu</label>
+              <input type="text" id="mxadminSettingMobile" />
+            </div>
+            <div class="mxadmin-form-group">
+              <label data-mxadmin-i18n="fieldEmail">E-posta</label>
+              <input type="text" id="mxadminSettingEmail" />
+            </div>
+            <div class="mxadmin-form-group">
+              <label data-mxadmin-i18n="fieldPerson">Yetkili</label>
+              <input type="text" id="mxadminSettingPerson" />
+            </div>
+            <div class="mxadmin-form-group">
+              <label data-mxadmin-i18n="fieldTitle">Ünvan</label>
+              <input type="text" id="mxadminSettingTitle" />
+            </div>
+            <div class="mxadmin-form-group mxadmin-form-group-full">
+              <label data-mxadmin-i18n="fieldAddress">Adres</label>
+              <input type="text" id="mxadminSettingAddress" />
+            </div>
+          </div>
+          <div id="mxadminSettingDescriptionFields"></div>
+          <div id="mxadminSettingKeywordFields"></div>
+          <div class="mxadmin-form-actions">
+            <button type="submit" class="mxadmin-btn-primary" id="mxadminSettingsSave"
+              data-mxadmin-i18n="save">Kaydet</button>
+          </div>
+        </form>
+      </section>
+
+      
+      <section class="mxadmin-screen hidden" id="mxadminScreenDesign">
+        <div class="mxadmin-screen-head">
+          <h2 data-mxadmin-i18n="designTitle">Tasarım</h2>
+        </div>
+        <div class="mxadmin-loading hidden" id="mxadminDesignLoading" data-mxadmin-i18n="loading">Yükleniyor…
+        </div>
+        <div class="mxadmin-alert mxadmin-alert-error hidden" id="mxadminDesignError"></div>
+        <form class="hidden" id="mxadminDesignForm">
+          <div class="mxadmin-panel">
+            <div class="mxadmin-panel-head">
+              <span class="material-symbols-outlined">light_mode</span>
+              <span data-mxadmin-i18n="designLiteTheme">Açık tema</span>
+            </div>
+            <div class="mxadmin-color-grid" id="mxadminDesignLite"></div>
+          </div>
+          <div class="mxadmin-panel">
+            <div class="mxadmin-panel-head">
+              <span class="material-symbols-outlined">dark_mode</span>
+              <span data-mxadmin-i18n="designDarkTheme">Koyu tema</span>
+            </div>
+            <div class="mxadmin-color-grid" id="mxadminDesignDark"></div>
+          </div>
+          <div class="mxadmin-form-actions">
+            <button type="submit" class="mxadmin-btn-primary" id="mxadminDesignSave"
+              data-mxadmin-i18n="save">Kaydet</button>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <div class="mxadmin-toast hidden" id="mxadminToast"></div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+
+</html>

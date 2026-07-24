@@ -1,0 +1,679 @@
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --mxadmin-bg: #16181c;
+  --mxadmin-panel: #1d2226;
+  --mxadmin-card: #1e3046;
+  --mxadmin-card-hover: #253850;
+  --mxadmin-border: rgba(255, 255, 255, 0.08);
+  --mxadmin-primary: #2196f3;
+  --mxadmin-primary-soft: rgba(33, 150, 243, 0.15);
+  --mxadmin-green: #35c46a;
+  --mxadmin-red: #e5484d;
+  --mxadmin-orange: #f0a83c;
+  --mxadmin-text: #fff;
+  --mxadmin-text-muted: #a9b0b8;
+  --mxadmin-text-dim: #7b828a;
+  --mxadmin-radius-sm: 4px;
+  --mxadmin-radius-md: 8px;
+  --mxadmin-radius-lg: 14px;
+  --mxadmin-transition: 0.2s ease;
+  --mxadmin-max: 1080px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--mxadmin-bg);
+  color: var(--mxadmin-text);
+  font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hidden {
+  display: none !important;
+}
+
+a {
+  color: var(--mxadmin-primary);
+}
+
+button {
+  font-family: inherit;
+}
+
+.mxadmin-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.mxadmin-topbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 12px 24px;
+  background: var(--mxadmin-panel);
+  border-bottom: 2px solid var(--mxadmin-primary);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  flex-wrap: wrap;
+}
+
+.mxadmin-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.mxadmin-nav {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.mxadmin-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  min-height: 44px;
+  border: none;
+  background: transparent;
+  color: var(--mxadmin-text-muted);
+  border-radius: var(--mxadmin-radius-md);
+  cursor: pointer;
+  font-size: 14px;
+  transition: background var(--mxadmin-transition), color var(--mxadmin-transition);
+}
+
+.mxadmin-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--mxadmin-text);
+}
+
+.mxadmin-nav-btn.is-active {
+  background: var(--mxadmin-primary-soft);
+  color: var(--mxadmin-primary);
+}
+
+.mxadmin-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mxadmin-lang-btn,
+.mxadmin-logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  border: 1px solid var(--mxadmin-border);
+  background: transparent;
+  color: var(--mxadmin-text-muted);
+  border-radius: var(--mxadmin-radius-md);
+  cursor: pointer;
+  transition: background var(--mxadmin-transition), color var(--mxadmin-transition), border-color var(--mxadmin-transition);
+}
+
+.mxadmin-lang-btn:hover,
+.mxadmin-logout-btn:hover {
+  color: var(--mxadmin-text);
+  border-color: var(--mxadmin-primary);
+}
+
+
+
+.mxadmin-main {
+  flex: 1;
+  width: 100%;
+  max-width: var(--mxadmin-max);
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+.mxadmin-screen {
+  animation: mxadminFadeIn 0.28s ease;
+}
+
+@keyframes mxadminFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mxadmin-screen-head {
+  margin-bottom: 18px;
+}
+
+.mxadmin-screen-head h2 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+
+
+.mxadmin-screen#mxadminScreenLogin {
+  min-height: calc(100vh - 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mxadmin-login-card {
+  width: 100%;
+  max-width: 380px;
+  background: var(--mxadmin-panel);
+  border: 1px solid var(--mxadmin-border);
+  border-radius: var(--mxadmin-radius-lg);
+  padding: 32px 28px;
+  text-align: center;
+  animation: mxadminFadeIn 0.35s ease;
+}
+
+.mxadmin-login-logo {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: var(--mxadmin-primary-soft);
+  color: var(--mxadmin-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.mxadmin-login-title {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.mxadmin-login-sub {
+  margin: 0 0 18px;
+  color: var(--mxadmin-text-muted);
+  font-size: 14px;
+}
+
+.mxadmin-login-form {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mxadmin-login-hint {
+  margin: 16px 0 0;
+  font-size: 12px;
+  color: var(--mxadmin-text-dim);
+}
+
+
+
+.mxadmin-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.mxadmin-form-group-full {
+  grid-column: 1 / -1;
+}
+
+.mxadmin-form-group label {
+  font-size: 13px;
+  color: var(--mxadmin-text-muted);
+}
+
+.mxadmin-form-group input,
+.mxadmin-form-group select,
+.mxadmin-form-group textarea {
+  background: var(--mxadmin-bg);
+  border: 1px solid var(--mxadmin-border);
+  border-radius: var(--mxadmin-radius-sm);
+  color: var(--mxadmin-text);
+  padding: 10px 12px;
+  font-size: 14px;
+  min-height: 44px;
+  transition: border-color var(--mxadmin-transition), background var(--mxadmin-transition);
+}
+
+.mxadmin-form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.mxadmin-form-group input:focus,
+.mxadmin-form-group select:focus,
+.mxadmin-form-group textarea:focus {
+  outline: none;
+  border-color: var(--mxadmin-primary);
+  background: rgba(33, 150, 243, 0.06);
+}
+
+.mxadmin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 16px;
+}
+
+.mxadmin-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.mxadmin-btn-primary,
+.mxadmin-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: var(--mxadmin-radius-md);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background var(--mxadmin-transition), transform var(--mxadmin-transition), opacity var(--mxadmin-transition);
+}
+
+.mxadmin-btn-primary {
+  width: 100%;
+  background: var(--mxadmin-primary);
+  color: #fff;
+}
+
+.mxadmin-btn-primary:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.mxadmin-btn-primary:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+.mxadmin-btn-ghost {
+  width: auto;
+  background: transparent;
+  border-color: var(--mxadmin-border);
+  color: var(--mxadmin-text-muted);
+}
+
+.mxadmin-btn-ghost:hover {
+  color: var(--mxadmin-text);
+  border-color: var(--mxadmin-text-muted);
+}
+
+
+#mxadminLoginForm .mxadmin-btn-primary {
+  position: relative;
+}
+
+.mxadmin-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: mxadminSpin 0.7s linear infinite;
+}
+
+@keyframes mxadminSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.mxadmin-alert {
+  padding: 10px 14px;
+  border-radius: var(--mxadmin-radius-md);
+  font-size: 13px;
+  margin-bottom: 14px;
+  animation: mxadminFadeIn 0.2s ease;
+}
+
+.mxadmin-alert-error {
+  background: rgba(229, 72, 77, 0.12);
+  color: #ff8a8d;
+  border: 1px solid rgba(229, 72, 77, 0.3);
+}
+
+.mxadmin-alert-warn {
+  background: rgba(240, 168, 60, 0.12);
+  color: var(--mxadmin-orange);
+  border: 1px solid rgba(240, 168, 60, 0.3);
+}
+
+.mxadmin-loading,
+.mxadmin-empty {
+  padding: 20px;
+  text-align: center;
+  color: var(--mxadmin-text-muted);
+  font-size: 13px;
+}
+
+.mxadmin-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  background: var(--mxadmin-panel);
+  border: 1px solid var(--mxadmin-border);
+  color: var(--mxadmin-text);
+  padding: 12px 20px;
+  border-radius: var(--mxadmin-radius-md);
+  font-size: 13px;
+  z-index: 50;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  animation: mxadminToastIn 0.25s ease;
+}
+
+.mxadmin-toast.mxadmin-toast-error {
+  border-color: rgba(229, 72, 77, 0.5);
+  color: #ff8a8d;
+}
+
+@keyframes mxadminToastIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+
+
+.mxadmin-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.mxadmin-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--mxadmin-card);
+  border-radius: var(--mxadmin-radius-lg);
+  padding: 16px;
+  transition: background var(--mxadmin-transition), transform var(--mxadmin-transition);
+}
+
+.mxadmin-card:hover {
+  background: var(--mxadmin-card-hover);
+  transform: translateY(-2px);
+}
+
+.mxadmin-card .material-symbols-outlined {
+  color: var(--mxadmin-primary);
+  font-size: 26px;
+}
+
+.mxadmin-card-label {
+  font-size: 12px;
+  color: var(--mxadmin-text-muted);
+}
+
+.mxadmin-card-value {
+  font-size: 15px;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+
+
+.mxadmin-panel {
+  background: var(--mxadmin-panel);
+  border: 1px solid var(--mxadmin-border);
+  border-radius: var(--mxadmin-radius-lg);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.mxadmin-panel-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--mxadmin-text);
+}
+
+.mxadmin-panel-head .material-symbols-outlined {
+  color: var(--mxadmin-primary);
+  font-size: 20px;
+}
+
+
+
+.mxadmin-table-wrap {
+  overflow-x: auto;
+}
+
+.mxadmin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.mxadmin-table th,
+.mxadmin-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--mxadmin-border);
+  white-space: nowrap;
+}
+
+.mxadmin-table th {
+  color: var(--mxadmin-text-muted);
+  font-weight: 500;
+}
+
+.mxadmin-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.mxadmin-badge-success {
+  background: rgba(53, 196, 106, 0.15);
+  color: var(--mxadmin-green);
+}
+
+.mxadmin-badge-fail {
+  background: rgba(229, 72, 77, 0.15);
+  color: var(--mxadmin-red);
+}
+
+
+
+.mxadmin-pages-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.mxadmin-pages-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--mxadmin-panel);
+  border: 1px solid var(--mxadmin-border);
+  border-radius: var(--mxadmin-radius-lg);
+  overflow: hidden;
+}
+
+.mxadmin-pages-list li {
+  padding: 12px 14px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--mxadmin-border);
+  transition: background var(--mxadmin-transition);
+}
+
+.mxadmin-pages-list li:last-child {
+  border-bottom: none;
+}
+
+.mxadmin-pages-list li:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.mxadmin-pages-list li.is-active {
+  background: var(--mxadmin-primary-soft);
+  color: var(--mxadmin-primary);
+}
+
+.mxadmin-pages-list li .mxadmin-page-path {
+  font-size: 11px;
+  color: var(--mxadmin-text-dim);
+}
+
+
+
+.mxadmin-color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.mxadmin-color-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--mxadmin-bg);
+  border: 1px solid var(--mxadmin-border);
+  border-radius: var(--mxadmin-radius-sm);
+  padding: 8px 10px;
+}
+
+.mxadmin-color-row input[type="color"] {
+  width: 32px;
+  height: 32px;
+  min-height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: var(--mxadmin-radius-sm);
+  background: transparent;
+  cursor: pointer;
+}
+
+.mxadmin-color-row input[type="text"] {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  color: var(--mxadmin-text);
+  font-size: 12px;
+  min-height: auto;
+  padding: 4px 0;
+}
+
+.mxadmin-color-row input[type="text"]:focus {
+  outline: none;
+}
+
+.mxadmin-color-row-name {
+  font-size: 11px;
+  color: var(--mxadmin-text-dim);
+  min-width: 74px;
+}
+
+
+
+@media (max-width: 768px) {
+  .mxadmin-topbar {
+    padding: 10px 12px;
+    gap: 12px;
+  }
+
+  .mxadmin-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .mxadmin-nav-btn span:last-child {
+    display: none;
+  }
+
+  .mxadmin-main {
+    padding: 16px 12px 48px;
+  }
+
+  .mxadmin-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .mxadmin-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mxadmin-pages-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  .mxadmin-screen,
+  .mxadmin-login-card,
+  .mxadmin-alert,
+  .mxadmin-toast,
+  .mxadmin-card,
+  .mxadmin-btn-primary,
+  .mxadmin-spinner {
+    animation: none !important;
+    transition: none !important;
+  }
+}
