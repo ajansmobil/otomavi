@@ -26,8 +26,10 @@
       <div class="mxadmin-login-bg" aria-hidden="true"></div>
       <div class="mxadmin-login-card">
         <div class="mxadmin-login-logo" id="mxadminLoginLogo">
-          <img class="mxadmin-site-logo-img hidden" id="mxadminLoginLogoImg" src="" alt="" />
-          <span class="material-symbols-outlined mxadmin-site-logo-fallback" id="mxadminLoginLogoFallback">shield_person</span>
+          <div class="mxadmin-site-logo-frame mxadmin-site-logo-frame-lg">
+            <img class="mxadmin-site-logo-img hidden" id="mxadminLoginLogoImg" src="" alt="" />
+            <span class="material-symbols-outlined mxadmin-site-logo-fallback" id="mxadminLoginLogoFallback">shield_person</span>
+          </div>
         </div>
         <h1 class="mxadmin-login-title" data-mxadmin-i18n="loginTitle">Site Yönetimi</h1>
         <p class="mxadmin-login-sub" data-mxadmin-i18n="loginSub">Devam etmek için giriş yapın</p>
@@ -65,9 +67,11 @@
       <div class="mxadmin-sidebar-overlay hidden" id="mxadminSidebarOverlay"></div>
       <aside class="mxadmin-sidebar" id="mxadminSidebar">
         <div class="mxadmin-sidebar-brand" id="mxadminSidebarBrand">
-          <img class="mxadmin-site-logo-img mxadmin-sidebar-brand-logo hidden" id="mxadminSidebarLogoImg" src="" alt="" />
-          <span class="material-symbols-outlined mxadmin-site-logo-fallback" id="mxadminSidebarLogoFallback">admin_panel_settings</span>
-          <span data-mxadmin-i18n="appTitle">Site Yönetimi</span>
+          <div class="mxadmin-site-logo-frame mxadmin-site-logo-frame-sm">
+            <img class="mxadmin-site-logo-img hidden" id="mxadminSidebarLogoImg" src="" alt="" />
+            <span class="material-symbols-outlined mxadmin-site-logo-fallback" id="mxadminSidebarLogoFallback">admin_panel_settings</span>
+          </div>
+          <span class="mxadmin-sidebar-brand-title" data-mxadmin-i18n="appTitle">Site Yönetimi</span>
         </div>
         <nav class="mxadmin-sidebar-nav">
           <button type="button" class="mxadmin-nav-btn is-active" data-mxadmin-screen="dashboard">
@@ -98,8 +102,10 @@
           </button>
         </nav>
         <div class="mxadmin-user-chip" id="mxadminUserChip">
-          <img class="mxadmin-site-logo-img mxadmin-user-chip-logo hidden" id="mxadminUserChipLogoImg" src="" alt="" />
-          <span class="material-symbols-outlined mxadmin-user-chip-icon mxadmin-site-logo-fallback" id="mxadminUserChipLogoFallback">account_circle</span>
+          <div class="mxadmin-site-logo-frame mxadmin-site-logo-frame-md">
+            <img class="mxadmin-site-logo-img hidden" id="mxadminUserChipLogoImg" src="" alt="" />
+            <span class="material-symbols-outlined mxadmin-user-chip-icon mxadmin-site-logo-fallback" id="mxadminUserChipLogoFallback">account_circle</span>
+          </div>
           <div class="mxadmin-user-chip-text">
             <span class="mxadmin-user-chip-domain" id="mxadminUserChipDomain">—</span>
             <span class="mxadmin-user-chip-name" id="mxadminUserChipName">—</span>
@@ -487,7 +493,9 @@
                   id="mxadminSettingLogoPreview">
                   <label data-mxadmin-i18n="fieldLogo">Logo</label>
                   <div class="mxadmin-logo-preview-box">
-                    <img class="mxadmin-logo-preview-img" id="mxadminSettingLogoImg" src="" alt="" />
+                    <div class="mxadmin-logo-preview-frame">
+                      <img class="mxadmin-logo-preview-img" id="mxadminSettingLogoImg" src="" alt="" />
+                    </div>
                     <div class="mxadmin-logo-preview-meta">
                       <code class="mxadmin-logo-preview-name" id="mxadminSettingLogoName"></code>
                       <span class="mxadmin-panel-meta" data-mxadmin-i18n="logoReadonly">Salt okunur</span>
