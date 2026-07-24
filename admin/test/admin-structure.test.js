@@ -51,6 +51,14 @@ describe("webmodules/admin dosya yapisi", function() {
     assert.ok(css.indexOf(".mxadmin-sidebar-nav") !== -1 && css.indexOf("overflow: hidden") !== -1, "sidebar nav scrollbar kaldirildi");
   });
 
+  it("Paket 133: mxadmin-select CSS standardi", function() {
+    var css = helpers.readAdminFile("admin.css");
+    assert.ok(css.indexOf(".mxadmin-select") !== -1, "mxadmin-select sinifi tanimli");
+    assert.ok(css.indexOf("appearance: none") !== -1, "native select kaldirildi");
+    assert.ok(css.indexOf("background-image: url") !== -1, "chevron svg tanimli");
+    assert.ok(css.indexOf(".mxadmin-select-sm") !== -1, "kucuk select varyanti");
+  });
+
   it("Paket 117: css.css global sizinti korumasi", function() {
     var css = helpers.readAdminFile("admin.css");
     assert.ok(css.indexOf(".mxadmin-app div") !== -1 && css.indexOf("float: none") !== -1, "div float reset");
@@ -114,6 +122,11 @@ describe("webmodules/admin index.html ekran iskeleti", function() {
     assert.ok(html.indexOf('id="mxadminQuickPages"') !== -1, "mxadminQuickPages eksik");
     assert.ok(html.indexOf('id="mxadminSidebarToggle"') !== -1, "mxadminSidebarToggle eksik");
     assert.ok(html.indexOf('id="mxadminSidebarOverlay"') !== -1, "mxadminSidebarOverlay eksik");
+  });
+
+  it("Paket 133: statik select mxadmin-select sinifi", function() {
+    assert.ok(html.indexOf('id="mxadminPageStatus" class="mxadmin-select"') !== -1, "mxadminPageStatus mxadmin-select eksik");
+    assert.ok(html.indexOf('id="mxadminModuleActive" class="mxadmin-select"') !== -1, "mxadminModuleActive mxadmin-select eksik");
   });
 
   it("admin.css ve admin.js mutlak /admin/ yolu", function() {
@@ -347,6 +360,9 @@ describe("webmodules/admin admin.js placeholder ve API", function() {
     assert.ok(js.indexOf("pageDeleteConfirmTitle") !== -1, "Paket 127: pageDeleteConfirmTitle i18n");
     assert.ok(js.indexOf("Global_confirmDelete") !== -1, "Paket 127: Global_confirmDelete");
     assert.ok(js.indexOf("pageHtmlTabPreview") !== -1, "Paket 122: onizleme sekmesi");
+    assert.ok(js.indexOf('class="mxadmin-select mxadmin-select-sm mxadmin-page-category-select"') !== -1, "Paket 133: kategori filtresi mxadmin-select");
+    assert.ok(js.indexOf('class="mxadmin-select mxadmin-select-sm mxadmin-page-desc-filter-select"') !== -1, "Paket 133: desc filtresi mxadmin-select");
+    assert.ok(js.indexOf('class="mxadmin-select mxadmin-module-field-select"') !== -1, "Paket 133: modul alan select mxadmin-select");
     assert.ok(js.indexOf("statsOverview") !== -1);
     assert.ok(js.indexOf("categoriesBack") !== -1);
   });

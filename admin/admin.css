@@ -360,7 +360,6 @@ button {
 }
 
 .mxadmin-form-group input,
-.mxadmin-form-group select,
 .mxadmin-form-group textarea {
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid var(--mxadmin-border);
@@ -376,6 +375,59 @@ button {
   min-height: 80px;
   resize: vertical;
   font-family: inherit;
+}
+
+
+.mxadmin-select,
+.mxadmin-form-group select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 40px 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--mxadmin-text);
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--mxadmin-border);
+  border-radius: var(--mxadmin-radius-md);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a9b0b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 18px;
+  transition: border-color var(--mxadmin-transition), box-shadow var(--mxadmin-transition), background var(--mxadmin-transition);
+}
+
+.mxadmin-select:focus,
+.mxadmin-form-group select:focus {
+  outline: none;
+  border-color: var(--mxadmin-primary);
+  box-shadow: 0 0 0 3px var(--mxadmin-primary-soft);
+  background-color: rgba(33, 150, 243, 0.06);
+}
+
+.mxadmin-select:disabled,
+.mxadmin-form-group select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.mxadmin-select option,
+.mxadmin-form-group select option {
+  background: var(--mxadmin-panel);
+  color: var(--mxadmin-text);
+}
+
+
+.mxadmin-select.mxadmin-select-sm,
+.mxadmin-page-category-select,
+.mxadmin-page-desc-filter-select {
+  min-height: 40px;
+  padding: 8px 36px 8px 10px;
+  border-radius: var(--mxadmin-radius-sm);
 }
 
 
@@ -454,7 +506,6 @@ button {
 }
 
 .mxadmin-form-group input:focus,
-.mxadmin-form-group select:focus,
 .mxadmin-form-group textarea:focus {
   outline: none;
   border-color: var(--mxadmin-primary);
@@ -995,28 +1046,43 @@ button {
 
 .mxadmin-pages-list-panel-head {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   padding: 14px 16px 10px;
   border-bottom: 1px solid var(--mxadmin-border);
 }
 
+.mxadmin-pages-list-panel-title-wrap {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
 .mxadmin-pages-list-panel-head-actions {
   margin-left: auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   flex-shrink: 0;
-}
-
-.mxadmin-pages-list-panel-head-actions .mxadmin-panel-meta {
-  margin-left: 0;
 }
 
 .mxadmin-pages-list-panel-title {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.02em;
+}
+
+.mxadmin-pages-list-panel-sub {
+  font-size: 11px;
+  color: var(--mxadmin-text-dim);
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: min(100%, 320px);
 }
 
 .mxadmin-pages-list-search {
@@ -1086,15 +1152,7 @@ button {
 }
 
 .mxadmin-page-category-select {
-  width: 100%;
   min-width: 0;
-  padding: 8px 10px;
-  border-radius: var(--mxadmin-radius-sm);
-  border: 1px solid var(--mxadmin-border);
-  background: var(--mxadmin-panel);
-  color: var(--mxadmin-text);
-  font: inherit;
-  cursor: pointer;
 }
 
 .mxadmin-page-desc-filters {
@@ -1130,9 +1188,7 @@ button {
 }
 
 .mxadmin-page-desc-filter-select {
-  width: 100%;
   min-width: 0;
-  cursor: pointer;
 }
 
 .mxadmin-pages-list-body {
@@ -2459,10 +2515,6 @@ button {
 .mxadmin-module-media-upload-card:hover {
   border-color: var(--mxadmin-primary);
   color: var(--mxadmin-primary);
-}
-
-.mxadmin-module-field-select {
-  width: 100%;
 }
 
 

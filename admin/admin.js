@@ -1,6 +1,6 @@
 
 
-var MX_ADMIN_API_BASE = 'https://otomavi.com';
+var MX_ADMIN_API_BASE = 'https://webmaker.yunusevgane.workers.dev';
 
 (function mxAdminResolveLocalApiBase() {
     if (typeof window === 'undefined' || !window.location) {
@@ -707,10 +707,31 @@ function mxAdminUpdateCategoriesMeta(count) {
     }
 }
 
+function mxAdminGetPageDisplayName(pageRow, fallbackIndex) {
+    var lang = mxAdminState.lang;
+    var page = pageRow || {};
+    var name = mxAdminPickLocalized(page.name, lang);
+    if (name) {
+        return name;
+    }
+    if (page.path) {
+        return page.path;
+    }
+    if (fallbackIndex !== undefined && fallbackIndex !== null) {
+        return '#' + fallbackIndex;
+    }
+    return '';
+}
+
 function mxAdminUpdatePagesListMeta(count) {
     var countEl = mxAdminEl('mxadminPagesListCount');
     if (countEl) {
-        countEl.textContent = String(count || 0) + ' ' + mxAdminT('metaPages');
+        var info = String(count || 0) + ' ' + mxAdminT('metaPages');
+        var activeName = mxAdminGetPageDisplayName(mxAdminState.activePageRow, null);
+        if (activeName) {
+            info += ' · ' + activeName;
+        }
+        countEl.textContent = info;
     }
 }
 
@@ -928,6 +949,16 @@ function mxAdminApiRequest(method, pathSuffix, body) {
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' }
         };
+        var apiHost = '';
+        var pageHost = (window.location.hostname || '').toLowerCase();
+        try {
+            apiHost = new URL(MX_ADMIN_API_BASE).hostname.toLowerCase();
+        } catch (apiHostErr) {
+            apiHost = '';
+        }
+        if (apiHost && pageHost && apiHost !== pageHost) {
+            opts.headers['X-Matrix-Preview-Domain'] = pageHost;
+        }
         if (body !== undefined) {
             opts.body = JSON.stringify(body);
         }
@@ -2047,8 +2078,7 @@ function mxAdminRenderPagesList() {
         if (activeId && String(page.id) === activeId) {
             li.classList.add('is-active');
         }
-        var name = mxAdminPickLocalized(page.name, lang);
-        var displayName = name || page.path || ('#' + i);
+        var displayName = mxAdminGetPageDisplayName(page, i);
         var isLive = page.status !== 'pause';
         var badgeClass = isLive ? 'mxadmin-badge-success' : 'mxadmin-badge-fail';
         var badgeText = isLive ? mxAdminT('statusPlay') : mxAdminT('statusPause');
@@ -2440,7 +2470,7 @@ function mxAdminBuildPageCategoryFilterHtml() {
     html += '<span class="mxadmin-page-category-summary-value">0</span></div>';
     html += '<div class="mxadmin-page-category-summary-item mxadmin-page-category-summary-item-select">';
     html += '<span class="mxadmin-page-category-summary-label">' + mxAdminEscapeHtml(mxAdminT('pagesFilterCategory')) + '</span>';
-    html += '<select id="mxadminPageCategorySelect" class="mxadmin-page-category-select">';
+    html += '<select id="mxadminPageCategorySelect" class="mxadmin-select mxadmin-select-sm mxadmin-page-category-select">';
     html += '<option value="all"' + (filterVal === 'all' ? ' selected' : '') + '>' +
         mxAdminEscapeHtml(mxAdminT('pagesFilterAll') + ' (' + totalCount + ')') + '</option>';
     for (i = 0; i < categories.length; i++) {
@@ -2497,7 +2527,7 @@ function mxAdminBuildPageDescFiltersHtml() {
         }
         html += '<div class="mxadmin-page-desc-filter-item">';
         html += '<span class="mxadmin-page-desc-filter-label">' + mxAdminEscapeHtml(label) + '</span>';
-        html += '<select class="mxadmin-select mxadmin-page-desc-filter-select" data-mxadmin-desc-filter="' + mxAdminEscapeHtml(pathKey) + '">';
+        html += '<select class="mxadmin-select mxadmin-select-sm mxadmin-page-desc-filter-select" data-mxadmin-desc-filter="' + mxAdminEscapeHtml(pathKey) + '">';
         html += '<option value="all"' + (currentFilter === 'all' ? ' selected' : '') + '>' +
             mxAdminEscapeHtml(mxAdminT('pagesFilterAll')) + '</option>';
         var oj;
@@ -3832,7 +3862,7 @@ function mxAdminBuildModuleFieldInput(key, value, rowIndex, files) {
             opts += '<option value="' + mxAdminEscapeHtml(fname) + '"' + selected + '>' + mxAdminEscapeHtml(fname) + '</option>';
         }
         return '<div class="mxadmin-form-group"><label>' + mxAdminEscapeHtml(key) + '</label>' +
-            '<select class="mxadmin-module-field-select" data-mxadmin-module-data-index="' + rowIndex + '" data-mxadmin-module-data-key="' + mxAdminEscapeHtml(key) + '">' + opts + '</select>' +
+            '<select class="mxadmin-select mxadmin-module-field-select" data-mxadmin-module-data-index="' + rowIndex + '" data-mxadmin-module-data-key="' + mxAdminEscapeHtml(key) + '">' + opts + '</select>' +
             '<input type="text" data-mxadmin-module-data-index="' + rowIndex + '" data-mxadmin-module-data-key="' + mxAdminEscapeHtml(key) + '-text" value="' + mxAdminEscapeHtml(value || '') + '" placeholder="' + mxAdminEscapeHtml(key) + '" /></div>';
     }
     if (mxAdminIsI18nObject(value)) {

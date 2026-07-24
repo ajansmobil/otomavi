@@ -231,10 +231,12 @@
           <div class="mxadmin-pages-workspace" id="mxadminPagesWorkspace">
             <aside class="mxadmin-pages-list-panel" id="mxadminPagesListPanel">
               <div class="mxadmin-pages-list-panel-head" id="mxadminPagesListHead">
-                <span class="mxadmin-pages-list-panel-title" data-mxadmin-i18n="pagesListHead">Sayfa listesi</span>
+                <div class="mxadmin-pages-list-panel-title-wrap">
+                  <span class="mxadmin-pages-list-panel-title" data-mxadmin-i18n="pagesListHead">Sayfa listesi</span>
+                  <span class="mxadmin-pages-list-panel-sub" id="mxadminPagesListCount">0</span>
+                </div>
                 <span class="mxadmin-pages-list-panel-head-actions">
                   <button type="button" class="mxadmin-btn-primary mxadmin-btn-sm" id="mxadminPageAddBtn" data-mxadmin-i18n="pageAdd">Sayfa ekle</button>
-                  <span class="mxadmin-panel-meta" id="mxadminPagesListCount">0</span>
                 </span>
               </div>
               <div class="mxadmin-pages-list-search">
@@ -281,7 +283,7 @@
                   <div class="mxadmin-tab-panel" id="mxadminPageTabGeneral">
                     <div class="mxadmin-form-group">
                       <label data-mxadmin-i18n="fieldStatus">Durum</label>
-                      <select id="mxadminPageStatus">
+                      <select id="mxadminPageStatus" class="mxadmin-select">
                         <option value="play" data-mxadmin-i18n="statusPlay">Yayında</option>
                         <option value="pause" data-mxadmin-i18n="statusPause">Pasif</option>
                       </select>
@@ -388,7 +390,7 @@
                     </div>
                     <div class="mxadmin-form-group hidden" id="mxadminModuleActiveWrap">
                       <label data-mxadmin-i18n="fieldStatus">Durum</label>
-                      <select id="mxadminModuleActive">
+                      <select id="mxadminModuleActive" class="mxadmin-select">
                         <option value="play" data-mxadmin-i18n="statusPlay">Yayında</option>
                         <option value="pause" data-mxadmin-i18n="statusPause">Pasif</option>
                       </select>
