@@ -289,6 +289,10 @@ describe('webmodules/admin index.html ekran iskeleti', function () {
         );
         assert.ok(html.indexOf('id="mxadminPagesList"') !== -1);
         assert.ok(
+            html.indexOf('id="mxadminPagesListLoading"') !== -1,
+            'mxadminPagesListLoading eksik',
+        );
+        assert.ok(
             html.indexOf('id="mxadminPagesFilters"') !== -1,
             'Paket 125: mxadminPagesFilters eksik',
         );
@@ -600,6 +604,12 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
         assert.ok(js.indexOf('function mxAdminShowPageDetailEmpty') !== -1);
         assert.ok(js.indexOf('function mxAdminUpdatePageDetailHeader') !== -1);
         assert.ok(js.indexOf('mxadminPagesWorkspace') !== -1);
+        assert.ok(js.indexOf('function mxAdminShowPagesListLoading') !== -1);
+        assert.ok(js.indexOf('function mxAdminHidePagesListLoading') !== -1);
+        assert.ok(
+            js.indexOf('mxAdminShowPagesListLoading();') !== -1,
+            'kategori degisiminde liste loading',
+        );
     });
 
     it('Paket 108: moduller master/detail JS', function () {

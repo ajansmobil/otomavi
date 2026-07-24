@@ -2111,10 +2111,36 @@ function mxAdminHandleCategoriesFormSubmit(evt) {
 
 
 
+function mxAdminShowPagesListLoading() {
+    var ul = mxAdminEl('mxadminPagesList');
+    var empty = mxAdminEl('mxadminPagesEmpty');
+    var listLoading = mxAdminEl('mxadminPagesListLoading');
+    if (ul) {
+        ul.innerHTML = '';
+    }
+    if (empty) {
+        empty.classList.add('hidden');
+    }
+    if (listLoading) {
+        listLoading.classList.remove('hidden');
+    }
+    mxAdminState.categoryPages = [];
+    mxAdminState.categoryDoc = null;
+    mxAdminUpdatePagesListMeta(0);
+}
+
+function mxAdminHidePagesListLoading() {
+    var listLoading = mxAdminEl('mxadminPagesListLoading');
+    if (listLoading) {
+        listLoading.classList.add('hidden');
+    }
+}
+
 function mxAdminLoadPagesScreen() {
     mxAdminState.loaded.pages = true;
     var loading = mxAdminEl('mxadminPagesLoading');
     loading.classList.remove('hidden');
+    mxAdminShowPagesListLoading();
     mxAdminShowAlert('mxadminPagesError', '');
     mxAdminShowPageDetailEmpty();
 
@@ -2194,6 +2220,8 @@ function mxAdminSelectCategory(path) {
     loading.classList.remove('hidden');
     mxAdminShowAlert('mxadminPagesError', '');
 
+    mxAdminShowPagesListLoading();
+
     mxAdminApiRequest('GET', '/api/admin/data/' + encodeURIComponent(path))
         .then(function (resp) {
             loading.classList.add('hidden');
@@ -2217,6 +2245,10 @@ function mxAdminSelectCategory(path) {
         })
         .catch(function (err) {
             loading.classList.add('hidden');
+            mxAdminState.categoryPages = [];
+            mxAdminState.categoryDoc = null;
+            mxAdminHidePagesListLoading();
+            mxAdminRenderPagesList();
             if (mxAdminHandleUnauthorized(err)) {
                 return;
             }
@@ -2525,6 +2557,7 @@ function mxAdminDeletePage() {
 }
 
 function mxAdminRenderPagesList() {
+    mxAdminHidePagesListLoading();
     var ul = mxAdminEl('mxadminPagesList');
     ul.innerHTML = '';
     var list = mxAdminGetFilteredPages();
