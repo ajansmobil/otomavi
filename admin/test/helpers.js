@@ -177,8 +177,89 @@ function readAdminFile(name) {
   return fs.readFileSync(path.join(ADMIN_ROOT, name), "utf8");
 }
 
+
+var http = require("http");
+
+var API_BASE = process.env.WEBTEST_API_BASE || "http://127.0.0.1:8080/api/admin";
+
+function httpRequest(method, urlPath, bodyObj, timeoutMs) {
+  var ms = typeof timeoutMs === "number" ? timeoutMs : 30000;
+  return new Promise(function(resolve, reject) {
+    var base = API_BASE.replace(/\/$/, "");
+    var pathPart = urlPath.charAt(0) === "/" ? urlPath : "/" + urlPath;
+    var full = base + pathPart;
+    var u = new URL(full);
+    var bodyStr = "";
+    var headers = {};
+    if (bodyObj && (method === "POST" || method === "PUT" || method === "PATCH")) {
+      bodyStr = JSON.stringify(bodyObj);
+      headers["Content-Type"] = "application/json";
+      headers["Content-Length"] = Buffer.byteLength(bodyStr);
+    }
+    var req = http.request(
+      {
+        hostname: u.hostname,
+        port: u.port || 80,
+        path: u.pathname + u.search,
+        method: method,
+        headers: headers
+      },
+      function(res) {
+        var chunks = [];
+        res.on("data", function(c) {
+          chunks.push(c);
+        });
+        res.on("end", function() {
+          resolve({ status: res.statusCode, body: Buffer.concat(chunks).toString("utf8") });
+        });
+      }
+    );
+    req.on("error", reject);
+    req.setTimeout(ms, function() {
+      req.destroy(new Error(method + " timeout: " + urlPath));
+    });
+    if (bodyStr) {
+      req.write(bodyStr);
+    }
+    req.end();
+  });
+}
+
+function httpGet(urlPath, timeoutMs) {
+  return httpRequest("GET", urlPath, null, timeoutMs);
+}
+
+function httpPost(urlPath, bodyObj, timeoutMs) {
+  return httpRequest("POST", urlPath, bodyObj, timeoutMs);
+}
+
+function httpPut(urlPath, bodyObj, timeoutMs) {
+  return httpRequest("PUT", urlPath, bodyObj, timeoutMs);
+}
+
+function httpDelete(urlPath, timeoutMs) {
+  return httpRequest("DELETE", urlPath, null, timeoutMs);
+}
+
+function parseJsonBody(res) {
+  var b = String(res.body || "").trim();
+  if (!b || b.indexOf("<!DOCTYPE") === 0 || b.indexOf("<html") === 0) {
+    return null;
+  }
+  try {
+    return JSON.parse(b);
+  } catch (_e) {
+    return null;
+  }
+}
+
+function isServerUnreachable(err) {
+  return err && (err.code === "ECONNREFUSED" || err.code === "ENOTFOUND");
+}
+
 module.exports = {
   ADMIN_ROOT: ADMIN_ROOT,
+  API_BASE: API_BASE,
   mxAdminUnwrapApiData: mxAdminUnwrapApiData,
   mxAdminParsePagesetting: mxAdminParsePagesetting,
   mxAdminCountPagesInDoc: mxAdminCountPagesInDoc,
@@ -189,5 +270,12 @@ module.exports = {
   mxAdminEscapeHtml: mxAdminEscapeHtml,
   mxAdminFormatDevice: mxAdminFormatDevice,
   mxAdminFilterPages: mxAdminFilterPages,
-  readAdminFile: readAdminFile
+  readAdminFile: readAdminFile,
+  httpGet: httpGet,
+  httpPost: httpPost,
+  httpPut: httpPut,
+  httpDelete: httpDelete,
+  httpRequest: httpRequest,
+  parseJsonBody: parseJsonBody,
+  isServerUnreachable: isServerUnreachable
 };

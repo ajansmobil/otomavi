@@ -27,6 +27,11 @@ var DASHBOARD_IDS = [
   "mxadminHistoryTable"
 ];
 
+var PAGE_CRUD_IDS = [
+  "mxadminPageAddBtn",
+  "mxadminPageDeleteBtn"
+];
+
 describe("webmodules/admin dosya yapisi", function() {
   it("index.html, admin.css, admin.js mevcut", function() {
     ["index.html", "admin.css", "admin.js"].forEach(function(name) {
@@ -50,6 +55,8 @@ describe("webmodules/admin dosya yapisi", function() {
     var css = helpers.readAdminFile("admin.css");
     assert.ok(css.indexOf(".mxadmin-app div") !== -1 && css.indexOf("float: none") !== -1, "div float reset");
     assert.ok(css.indexOf(".mxadmin-page-move-btn") !== -1, "Paket 120: sayfa sira butonlari");
+    assert.ok(css.indexOf(".mxadmin-btn-danger") !== -1, "Paket 127: sil buton stili");
+    assert.ok(css.indexOf(".mxadmin-pages-list-panel-head-actions") !== -1, "Paket 127: liste baslik aksiyonlari");
     assert.ok(css.indexOf(".mxadmin-pages-workspace.is-detail-open .mxadmin-pages-list-panel") !== -1, "Paket 121: stack navigasyon");
     assert.ok(css.indexOf(".mxadmin-html-editor") !== -1, "Paket 122: HTML editor CSS");
     assert.ok(css.indexOf("#mxadminLoginForm .mxadmin-btn-primary") !== -1, "login buton genisligi");
@@ -80,6 +87,12 @@ describe("webmodules/admin index.html ekran iskeleti", function() {
 
   DASHBOARD_IDS.forEach(function(id) {
     it("dashboard id=" + id, function() {
+      assert.ok(html.indexOf('id="' + id + '"') !== -1, id + " eksik");
+    });
+  });
+
+  PAGE_CRUD_IDS.forEach(function(id) {
+    it("Paket 128: sayfa CRUD id=" + id, function() {
       assert.ok(html.indexOf('id="' + id + '"') !== -1, id + " eksik");
     });
   });
@@ -176,6 +189,15 @@ describe("webmodules/admin index.html ekran iskeleti", function() {
     assert.ok(html.indexOf("mxadmin-color-grid") === -1, "mxadmin-color-grid kaldirilmali");
     assert.ok(html.indexOf('class="mxadmin-color-list" id="mxadminDesignLite"') !== -1, "DesignLite list sinifi eksik");
     assert.ok(html.indexOf('class="mxadmin-color-list" id="mxadminDesignDark"') !== -1, "DesignDark list sinifi eksik");
+  });
+
+  it("Paket 127: sayfa ekle / sil UI", function() {
+    assert.ok(html.indexOf('id="mxadminPageAddBtn"') !== -1, "mxadminPageAddBtn eksik");
+    assert.ok(html.indexOf('id="mxadminPageDeleteBtn"') !== -1, "mxadminPageDeleteBtn eksik");
+    assert.ok(html.indexOf('data-mxadmin-i18n="pageAdd"') !== -1, "pageAdd i18n eksik");
+    assert.ok(html.indexOf('data-mxadmin-i18n="pageDelete"') !== -1, "pageDelete i18n eksik");
+    assert.ok(html.indexOf("mxadmin-btn-primary mxadmin-btn-sm") !== -1, "sayfa ekle buton sinifi eksik");
+    assert.ok(html.indexOf("mxadmin-btn-danger") !== -1, "sil buton danger sinifi eksik");
   });
 
   it("Paket 110: dashboard stats list ve kategori geri butonu", function() {
@@ -314,9 +336,16 @@ describe("webmodules/admin admin.js placeholder ve API", function() {
         js.split("function mxAdminRenderPageListThumb")[1].indexOf("mxAdminIsPageImgActive()") !== -1,
         "Paket 124: liste thumb modulestatus.img ile"
     );
-    assert.ok(js.indexOf("function mxAdminRenderPageFilters") !== -1, "Paket 125: sayfa filtre panel");
+    assert.ok(js.indexOf("function mxAdminRenderPageFilters") !== -1, "Paket 125: filtre panel");
     assert.ok(js.indexOf("function mxAdminPageFiltersVisible") !== -1, "Paket 125: filtre gorunurluk");
     assert.ok(js.indexOf("MX_ADMIN_PAGE_CATEGORY_NONE") !== -1, "Paket 125: kategori filtresi");
+    assert.ok(js.indexOf("function mxAdminAddPage") !== -1, "Paket 127: sayfa ekle");
+    assert.ok(js.indexOf("function mxAdminDeletePage") !== -1, "Paket 127: sayfa sil");
+    assert.ok(js.indexOf("/api/admin/data/page-add/") !== -1, "Paket 127: page-add ucu");
+    assert.ok(js.indexOf("/api/admin/data/page-delete/") !== -1, "Paket 127: page-delete ucu");
+    assert.ok(js.indexOf("pageAddSuccess") !== -1, "Paket 127: pageAddSuccess i18n");
+    assert.ok(js.indexOf("pageDeleteConfirmTitle") !== -1, "Paket 127: pageDeleteConfirmTitle i18n");
+    assert.ok(js.indexOf("Global_confirmDelete") !== -1, "Paket 127: Global_confirmDelete");
     assert.ok(js.indexOf("pageHtmlTabPreview") !== -1, "Paket 122: onizleme sekmesi");
     assert.ok(js.indexOf("statsOverview") !== -1);
     assert.ok(js.indexOf("categoriesBack") !== -1);

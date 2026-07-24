@@ -997,6 +997,18 @@ button {
   border-bottom: 1px solid var(--mxadmin-border);
 }
 
+.mxadmin-pages-list-panel-head-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.mxadmin-pages-list-panel-head-actions .mxadmin-panel-meta {
+  margin-left: 0;
+}
+
 .mxadmin-pages-list-panel-title {
   font-size: 13px;
   font-weight: 600;
@@ -2325,6 +2337,21 @@ button {
   min-height: 34px;
   padding: 6px 12px;
   font-size: 13px;
+}
+
+.mxadmin-btn-danger {
+  color: var(--mxadmin-red);
+  border-color: rgba(229, 72, 77, 0.35);
+}
+
+.mxadmin-btn-danger:hover {
+  color: #fff;
+  background: rgba(229, 72, 77, 0.85);
+  border-color: var(--mxadmin-red);
+}
+
+.mxadmin-page-detail-foot #mxadminPageDeleteBtn {
+  margin-right: auto;
 }
 
 .mxadmin-module-data-card {

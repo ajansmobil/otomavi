@@ -8,7 +8,7 @@
         "tr": "Hakkımızda"
       },
       "id": "hakkimizda",
-      "index": 0,
+      "index": 1,
       "path": "hakkimizda",
       "category": "",
       "img": "index.webp",
@@ -32,7 +32,7 @@
         "tr": "Misyonumuz"
       },
       "id": "misyon",
-      "index": 1,
+      "index": 2,
       "path": "misyonumuz",
       "category": "",
       "img": "index.webp",
@@ -55,7 +55,7 @@
         "tr": "Vizyonumuz"
       },
       "id": "vizyon",
-      "index": 2,
+      "index": 3,
       "path": "vizyonumuz",
       "category": "",
       "img": "index.webp",
@@ -78,7 +78,7 @@
         "tr": "Kalite Politikamız"
       },
       "id": "kalitepolitikamiz",
-      "index": 3,
+      "index": 4,
       "path": "kalite-politikamiz",
       "category": "",
       "img": "index.webp",
@@ -101,7 +101,7 @@
         "tr": "Kariyer"
       },
       "id": "kariyer",
-      "index": 4,
+      "index": 5,
       "path": "kariyer",
       "category": "",
       "img": "index.webp",
@@ -124,7 +124,7 @@
         "tr": "Gizlilik Politikası"
       },
       "id": "gizlilikpolitikasi",
-      "index": 5,
+      "index": 6,
       "path": "gizlilik-politikasi",
       "category": "",
       "img": "index.webp",
@@ -147,7 +147,7 @@
         "tr": "Kişisel Veriler"
       },
       "id": "kisiselveriler",
-      "index": 6,
+      "index": 7,
       "path": "kisisel-veriler",
       "category": "",
       "img": "index.webp",
@@ -170,7 +170,7 @@
         "tr": "Kullanıcı Hakları"
       },
       "id": "kullanicahaklari",
-      "index": 7,
+      "index": 8,
       "path": "kullanici-haklari",
       "category": "",
       "img": "index.webp",
@@ -193,7 +193,7 @@
         "tr": "Yasal Uyarı"
       },
       "id": "yasaluyari",
-      "index": 8,
+      "index": 9,
       "path": "yasal-uyari",
       "category": "",
       "img": "index.webp",
