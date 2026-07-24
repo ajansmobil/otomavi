@@ -1052,4 +1052,14 @@ describe('webmodules/admin canli public asset URL', function () {
         assert.ok(css.indexOf('.mxadmin-publish-card') !== -1, 'publish CSS');
         assert.ok(css.indexOf('.mxadmin-publish-card.is-live') !== -1, 'yesil tamamlama');
     });
+
+    it('Paket 148: admin dosyalarinda altyapi adi (github) yasak', function () {
+        ['index.html', 'admin.css', 'admin.js'].forEach(function (name) {
+            var content = helpers.readAdminFile(name);
+            assert.ok(
+                content.toLowerCase().indexOf('github') === -1,
+                name + ' icinde github gecmemeli',
+            );
+        });
+    });
 });

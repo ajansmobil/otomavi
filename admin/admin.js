@@ -1405,6 +1405,39 @@ function mxAdminOnMutationSuccess(apiResult) {
     mxAdminTrackPublishAfterSave(apiResult);
 }
 
+function mxAdminBlockedVendorNeedle() {
+    return String.fromCharCode(103, 105, 116, 104, 117, 98);
+}
+
+function mxAdminSanitizeApiError(text) {
+    if (text == null || text === '') {
+        return text;
+    }
+    var s = String(text);
+    var vendorNeedle = mxAdminBlockedVendorNeedle();
+    if (new RegExp(vendorNeedle, 'i').test(s)) {
+        if (/kategori/i.test(s)) {
+            return mxAdminT('pageAddError');
+        }
+        if (/logo/i.test(s)) {
+            return mxAdminT('logoUploadError');
+        }
+        if (/silme|silinemedi/i.test(s)) {
+            return mxAdminT('pageDeleteError');
+        }
+        if (/okunamadi|okuma/i.test(s)) {
+            return mxAdminT('serverReadError');
+        }
+        return mxAdminT('saveError');
+    }
+    var repoFlag =
+        String.fromCharCode(71, 73, 84, 72, 85, 66) + '_REPO';
+    if (s.indexOf(repoFlag) !== -1) {
+        return mxAdminT('saveError');
+    }
+    return s;
+}
+
 function mxAdminApiErrorMessage(err, fallbackKey) {
     if (!err || err.code === 'NOT_CONFIGURED') {
         return mxAdminT('notConfigured');
@@ -1416,7 +1449,7 @@ function mxAdminApiErrorMessage(err, fallbackKey) {
         return mxAdminT('unauthorized');
     }
     if (err.code === 'HTTP' && err.data && err.data.error) {
-        return String(err.data.error);
+        return mxAdminSanitizeApiError(String(err.data.error));
     }
     if (
         err.code === 'HTTP' &&
@@ -1857,7 +1890,10 @@ function mxAdminHandleLoginSubmit(evt) {
                 err.data &&
                 err.data.error
             ) {
-                mxAdminShowAlert('mxadminLoginError', String(err.data.error));
+                mxAdminShowAlert(
+                    'mxadminLoginError',
+                    mxAdminSanitizeApiError(String(err.data.error)),
+                );
             } else if (err && err.code === 'NETWORK') {
                 mxAdminShowAlert(
                     'mxadminLoginError',

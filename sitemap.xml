@@ -210,14 +210,6 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://otomavi.com/tr/yeni-sayfa-s9zu/</loc>
-        <xhtml:link rel="alternate" hreflang="tr" href="https://otomavi.com/tr/yeni-sayfa-s9zu/" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://otomavi.com/tr/yeni-sayfa-s9zu/" />
-        <lastmod>2026-07-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://otomavi.com/tr/yakit-filtresi/</loc>
         <xhtml:link rel="alternate" hreflang="tr" href="https://otomavi.com/tr/yakit-filtresi/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://otomavi.com/tr/yakit-filtresi/" />
@@ -925,6 +917,78 @@
         <loc>https://otomavi.com/tr/silecek-motoru/</loc>
         <xhtml:link rel="alternate" hreflang="tr" href="https://otomavi.com/tr/silecek-motoru/" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://otomavi.com/tr/silecek-motoru/" />
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://otomavi.com/tr/hakkimizda/</loc>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://otomavi.com/tr/hakkimizda/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://otomavi.com/tr/hakkimizda/" />
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://otomavi.com/tr/misyonumuz/</loc>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://otomavi.com/tr/misyonumuz/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://otomavi.com/tr/misyonumuz/" />
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://otomavi.com/tr/vizyonumuz/</loc>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://otomavi.com/tr/vizyonumuz/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://otomavi.com/tr/vizyonumuz/" />
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://otomavi.com/tr/kalite-politikamiz/</loc>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://otomavi.com/tr/kalite-politikamiz/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://otomavi.com/tr/kalite-politikamiz/" />
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://otomavi.com/tr/kariyer/</loc>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://otomavi.com/tr/kariyer/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://otomavi.com/tr/kariyer/" />
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://otomavi.com/tr/gizlilik-politikasi/</loc>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://otomavi.com/tr/gizlilik-politikasi/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://otomavi.com/tr/gizlilik-politikasi/" />
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://otomavi.com/tr/kisisel-veriler/</loc>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://otomavi.com/tr/kisisel-veriler/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://otomavi.com/tr/kisisel-veriler/" />
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://otomavi.com/tr/kullanici-haklari/</loc>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://otomavi.com/tr/kullanici-haklari/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://otomavi.com/tr/kullanici-haklari/" />
+        <lastmod>2026-07-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://otomavi.com/tr/yasal-uyari/</loc>
+        <xhtml:link rel="alternate" hreflang="tr" href="https://otomavi.com/tr/yasal-uyari/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://otomavi.com/tr/yasal-uyari/" />
         <lastmod>2026-07-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>

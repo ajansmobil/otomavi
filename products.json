@@ -39,30 +39,11 @@
   ],
   "data": [
     {
-      "id": "3k5c383232",
-      "name": {
-        "tr": "yeni sayfa"
-      },
-      "description": {
-        "tr": ""
-      },
-      "path": "yeni-sayfa-s9zu",
-      "icon": "article",
-      "category": "",
-      "status": "play",
-      "desing": {
-        "header": [],
-        "body": [],
-        "footer": []
-      },
-      "index": 0
-    },
-    {
       "name": {
         "tr": "Yakıt Filtresi"
       },
       "id": "omfykt1a",
-      "index": 1,
+      "index": 14,
       "path": "yakit-filtresi",
       "category": "omfltr01",
       "img": "index.webp",
@@ -86,7 +67,7 @@
         "tr": "Hava Filtresi"
       },
       "id": "omfhva1b",
-      "index": 2,
+      "index": 15,
       "path": "hava-filtresi",
       "category": "omfltr01",
       "img": "index.webp",
@@ -109,7 +90,7 @@
         "tr": "Yağ Filtresi"
       },
       "id": "omfyag1c",
-      "index": 3,
+      "index": 16,
       "path": "yag-filtresi",
       "category": "omfltr01",
       "img": "index.webp",
@@ -132,7 +113,7 @@
         "tr": "Polen Filtresi"
       },
       "id": "omfpln1d",
-      "index": 4,
+      "index": 17,
       "path": "polen-filtresi",
       "category": "omfltr01",
       "img": "index.webp",
@@ -155,7 +136,7 @@
         "tr": "Fren Diski"
       },
       "id": "omfdsk2a",
-      "index": 5,
+      "index": 18,
       "path": "fren-diski",
       "category": "omfren02",
       "img": "index.webp",
@@ -178,7 +159,7 @@
         "tr": "Fren Balatası"
       },
       "id": "omfblt2b",
-      "index": 6,
+      "index": 19,
       "path": "fren-balatasi",
       "category": "omfren02",
       "img": "index.webp",
@@ -201,7 +182,7 @@
         "tr": "Fren Hidroliği"
       },
       "id": "omfhyd2c",
-      "index": 7,
+      "index": 20,
       "path": "fren-hidroligi",
       "category": "omfren02",
       "img": "index.webp",
@@ -224,7 +205,7 @@
         "tr": "Tampon"
       },
       "id": "omgtmp3a",
-      "index": 8,
+      "index": 21,
       "path": "tampon",
       "category": "omgvde03",
       "img": "index.webp",
@@ -247,7 +228,7 @@
         "tr": "Yan Ayna"
       },
       "id": "omgayn3b",
-      "index": 9,
+      "index": 22,
       "path": "yan-ayna",
       "category": "omgvde03",
       "img": "index.webp",
@@ -270,7 +251,7 @@
         "tr": "Kaporta Paneli"
       },
       "id": "omgpnl3c",
-      "index": 10,
+      "index": 23,
       "path": "kaporta-paneli",
       "category": "omgvde03",
       "img": "index.webp",
@@ -293,7 +274,7 @@
         "tr": "Conta Seti"
       },
       "id": "ommcta4a",
-      "index": 11,
+      "index": 24,
       "path": "conta-seti",
       "category": "ommotr04",
       "img": "index.webp",
@@ -316,7 +297,7 @@
         "tr": "Soğutma Parçası"
       },
       "id": "ommsgt4b",
-      "index": 12,
+      "index": 25,
       "path": "sogutma-parcasi",
       "category": "ommotr04",
       "img": "index.webp",
@@ -339,7 +320,7 @@
         "tr": "Motor Sensörü"
       },
       "id": "ommsns4c",
-      "index": 13,
+      "index": 26,
       "path": "motor-sensoru",
       "category": "ommotr04",
       "img": "index.webp",
@@ -362,7 +343,7 @@
         "tr": "Akü"
       },
       "id": "omeaku5a",
-      "index": 14,
+      "index": 27,
       "path": "aku",
       "category": "omelek05",
       "img": "index.webp",
@@ -385,7 +366,7 @@
         "tr": "Alternatör"
       },
       "id": "omealt5b",
-      "index": 15,
+      "index": 28,
       "path": "alternator",
       "category": "omelek05",
       "img": "index.webp",
@@ -408,7 +389,7 @@
         "tr": "Marş Motoru"
       },
       "id": "omemrs5c",
-      "index": 16,
+      "index": 29,
       "path": "mars-motoru",
       "category": "omelek05",
       "img": "index.webp",
@@ -431,7 +412,7 @@
         "tr": "Amortisör"
       },
       "id": "omsamr6a",
-      "index": 17,
+      "index": 30,
       "path": "amortisor",
       "category": "omsusp06",
       "img": "index.webp",
@@ -454,7 +435,7 @@
         "tr": "Helezon Yay"
       },
       "id": "omsyay6b",
-      "index": 18,
+      "index": 31,
       "path": "helezon-yay",
       "category": "omsusp06",
       "img": "index.webp",
@@ -477,7 +458,7 @@
         "tr": "Salıncak Burcu"
       },
       "id": "omsbrc6c",
-      "index": 19,
+      "index": 32,
       "path": "salincak-burcu",
       "category": "omsusp06",
       "img": "index.webp",
@@ -500,7 +481,7 @@
         "tr": "Klima Kompresörü"
       },
       "id": "omkkmp7a",
-      "index": 20,
+      "index": 33,
       "path": "klima-kompresoru",
       "category": "omklma07",
       "img": "index.webp",
@@ -523,7 +504,7 @@
         "tr": "Kondanser"
       },
       "id": "omkknd7b",
-      "index": 21,
+      "index": 34,
       "path": "kondanser",
       "category": "omklma07",
       "img": "index.webp",
@@ -546,7 +527,7 @@
         "tr": "Kurutucu"
       },
       "id": "omkkrt7c",
-      "index": 22,
+      "index": 35,
       "path": "kurutucu",
       "category": "omklma07",
       "img": "index.webp",
@@ -569,7 +550,7 @@
         "tr": "Buji"
       },
       "id": "omatbj8a",
-      "index": 23,
+      "index": 36,
       "path": "buji",
       "category": "omatsg08",
       "img": "index.webp",
@@ -592,7 +573,7 @@
         "tr": "Ateşleme Bobini"
       },
       "id": "omatbb8b",
-      "index": 24,
+      "index": 37,
       "path": "atesleme-bobini",
       "category": "omatsg08",
       "img": "index.webp",
@@ -615,7 +596,7 @@
         "tr": "Kızdırma Bujisi"
       },
       "id": "omatkz8c",
-      "index": 25,
+      "index": 38,
       "path": "kizdirma-bujisi",
       "category": "omatsg08",
       "img": "index.webp",
@@ -638,7 +619,7 @@
         "tr": "Motor Yağı"
       },
       "id": "omsyag9a",
-      "index": 26,
+      "index": 39,
       "path": "motor-yagi",
       "category": "omsivi09",
       "img": "index.webp",
@@ -661,7 +642,7 @@
         "tr": "Antifriz"
       },
       "id": "omsant9b",
-      "index": 27,
+      "index": 40,
       "path": "antifriz",
       "category": "omsivi09",
       "img": "index.webp",
@@ -684,7 +665,7 @@
         "tr": "Fren Hidroliği (Sıvı)"
       },
       "id": "omsfrn9c",
-      "index": 28,
+      "index": 41,
       "path": "fren-hidroligi-sivi",
       "category": "omsivi09",
       "img": "index.webp",
@@ -707,7 +688,7 @@
         "tr": "Periyodik Bakım Seti"
       },
       "id": "ombper0a",
-      "index": 29,
+      "index": 42,
       "path": "periyodik-bakim-seti",
       "category": "ombkim10",
       "img": "index.webp",
@@ -730,7 +711,7 @@
         "tr": "Filtre Seti"
       },
       "id": "ombflt0b",
-      "index": 30,
+      "index": 43,
       "path": "filtre-seti",
       "category": "ombkim10",
       "img": "index.webp",
@@ -753,7 +734,7 @@
         "tr": "Conta Kiti"
       },
       "id": "ombcnt0c",
-      "index": 31,
+      "index": 44,
       "path": "conta-kiti",
       "category": "ombkim10",
       "img": "index.webp",
@@ -776,7 +757,7 @@
         "tr": "Paspas Seti"
       },
       "id": "omicps1a",
-      "index": 32,
+      "index": 45,
       "path": "paspas-seti",
       "category": "omicdn11",
       "img": "index.webp",
@@ -799,7 +780,7 @@
         "tr": "İç Trim"
       },
       "id": "omictr1b",
-      "index": 33,
+      "index": 46,
       "path": "ic-trim",
       "category": "omicdn11",
       "img": "index.webp",
@@ -822,7 +803,7 @@
         "tr": "Kol Dayama"
       },
       "id": "omickl1c",
-      "index": 34,
+      "index": 47,
       "path": "kol-dayama",
       "category": "omicdn11",
       "img": "index.webp",
@@ -845,7 +826,7 @@
         "tr": "Far"
       },
       "id": "omafr2a",
-      "index": 35,
+      "index": 48,
       "path": "far",
       "category": "omaydn12",
       "img": "index.webp",
@@ -868,7 +849,7 @@
         "tr": "Stop Lambası"
       },
       "id": "omastp2b",
-      "index": 36,
+      "index": 49,
       "path": "stop-lambasi",
       "category": "omaydn12",
       "img": "index.webp",
@@ -891,7 +872,7 @@
         "tr": "Sis Farı"
       },
       "id": "omasis2c",
-      "index": 37,
+      "index": 50,
       "path": "sis-fari",
       "category": "omaydn12",
       "img": "index.webp",
@@ -914,7 +895,7 @@
         "tr": "V Kayışı"
       },
       "id": "omkvky3a",
-      "index": 38,
+      "index": 51,
       "path": "v-kayisi",
       "category": "omkysi13",
       "img": "index.webp",
@@ -937,7 +918,7 @@
         "tr": "Triger Seti"
       },
       "id": "omktrg3b",
-      "index": 39,
+      "index": 52,
       "path": "triger-seti",
       "category": "omkysi13",
       "img": "index.webp",
@@ -960,7 +941,7 @@
         "tr": "Gergi"
       },
       "id": "omkgrg3c",
-      "index": 40,
+      "index": 53,
       "path": "gergi",
       "category": "omkysi13",
       "img": "index.webp",
@@ -983,7 +964,7 @@
         "tr": "Silecek Lastiği"
       },
       "id": "omslst4a",
-      "index": 41,
+      "index": 54,
       "path": "silecek-lastigi",
       "category": "omslck14",
       "img": "index.webp",
@@ -1006,7 +987,7 @@
         "tr": "Silecek Kolu"
       },
       "id": "omslkl4b",
-      "index": 42,
+      "index": 55,
       "path": "silecek-kolu",
       "category": "omslck14",
       "img": "index.webp",
@@ -1029,7 +1010,7 @@
         "tr": "Fıskiye Pompası"
       },
       "id": "omslfs4c",
-      "index": 43,
+      "index": 56,
       "path": "fiskiye-pompasi",
       "category": "omslck14",
       "img": "index.webp",
@@ -1052,7 +1033,7 @@
         "tr": "Turboşarj"
       },
       "id": "9s2gesnrvb",
-      "index": 44,
+      "index": 64,
       "path": "turbosarj",
       "category": "dnhgnxo0hg",
       "img": "index.webp",
@@ -1075,7 +1056,7 @@
         "tr": "Ara Soğutucu"
       },
       "id": "lo65qlydcr",
-      "index": 45,
+      "index": 65,
       "path": "ara-sogutucu",
       "category": "dnhgnxo0hg",
       "img": "index.webp",
@@ -1098,7 +1079,7 @@
         "tr": "Turbo Contası"
       },
       "id": "s3nk6qkyzy",
-      "index": 46,
+      "index": 66,
       "path": "turbo-contasi",
       "category": "dnhgnxo0hg",
       "img": "index.webp",
@@ -1121,7 +1102,7 @@
         "tr": "Basınç Dönüştürücü"
       },
       "id": "pmbqcljbet",
-      "index": 47,
+      "index": 67,
       "path": "basinc-donusturucu",
       "category": "dnhgnxo0hg",
       "img": "index.webp",
@@ -1144,7 +1125,7 @@
         "tr": "Rot Başı / Çubuk Ucu"
       },
       "id": "7bvaq99dkp",
-      "index": 48,
+      "index": 68,
       "path": "rot-basi",
       "category": "ry99uefxh8",
       "img": "index.webp",
@@ -1167,7 +1148,7 @@
         "tr": "Bağlantı Çubuğu"
       },
       "id": "dzq4tnm96q",
-      "index": 49,
+      "index": 69,
       "path": "baglanti-cubugu",
       "category": "ry99uefxh8",
       "img": "index.webp",
@@ -1190,7 +1171,7 @@
         "tr": "Direksiyon Onarım Kiti"
       },
       "id": "pky10wfvei",
-      "index": 50,
+      "index": 70,
       "path": "direksiyon-onarim-kiti",
       "category": "ry99uefxh8",
       "img": "index.webp",
@@ -1213,7 +1194,7 @@
         "tr": "Kremayer Kapağı"
       },
       "id": "3ifpnx1zn2",
-      "index": 51,
+      "index": 71,
       "path": "kremayer-kapagi",
       "category": "ry99uefxh8",
       "img": "index.webp",
@@ -1236,7 +1217,7 @@
         "tr": "Şanzıman Montajı"
       },
       "id": "dn9pzwbacw",
-      "index": 52,
+      "index": 72,
       "path": "sanizman-montaji",
       "category": "knzebtecct",
       "img": "index.webp",
@@ -1259,7 +1240,7 @@
         "tr": "Hız Sensörü"
       },
       "id": "a831pe03ct",
-      "index": 53,
+      "index": 73,
       "path": "hiz-sensoru",
       "category": "knzebtecct",
       "img": "index.webp",
@@ -1282,7 +1263,7 @@
         "tr": "Ters Işık Anahtarı"
       },
       "id": "8yf87dw95o",
-      "index": 54,
+      "index": 74,
       "path": "ters-isik-anahtari",
       "category": "knzebtecct",
       "img": "index.webp",
@@ -1305,7 +1286,7 @@
         "tr": "Dişli / Çark"
       },
       "id": "rkhqhabbns",
-      "index": 55,
+      "index": 75,
       "path": "disli-cark",
       "category": "knzebtecct",
       "img": "index.webp",
@@ -1328,7 +1309,7 @@
         "tr": "Lastik"
       },
       "id": "cnzfr4vihd",
-      "index": 56,
+      "index": 76,
       "path": "lastik",
       "category": "yut4w6lws1",
       "img": "index.webp",
@@ -1351,7 +1332,7 @@
         "tr": "Jant Kapağı"
       },
       "id": "c0ne7aa17j",
-      "index": 57,
+      "index": 77,
       "path": "jant-kapagi",
       "category": "yut4w6lws1",
       "img": "index.webp",
@@ -1374,7 +1355,7 @@
         "tr": "Lastik Tamir Kiti"
       },
       "id": "c4zezz86gb",
-      "index": 58,
+      "index": 78,
       "path": "lastik-tamir-kiti",
       "category": "yut4w6lws1",
       "img": "index.webp",
@@ -1397,7 +1378,7 @@
         "tr": "Ara Parça"
       },
       "id": "7j56u803i4",
-      "index": 59,
+      "index": 79,
       "path": "lastik-ara-parca",
       "category": "yut4w6lws1",
       "img": "index.webp",
@@ -1420,7 +1401,7 @@
         "tr": "Tekerlek Göbeği"
       },
       "id": "q99uza8w5v",
-      "index": 60,
+      "index": 80,
       "path": "tekerlek-gobegi",
       "category": "t3uqlrk7uh",
       "img": "index.webp",
@@ -1443,7 +1424,7 @@
         "tr": "Tekerlek Yatağı"
       },
       "id": "7fr22wss57",
-      "index": 61,
+      "index": 81,
       "path": "tekerlek-yatagi",
       "category": "t3uqlrk7uh",
       "img": "index.webp",
@@ -1466,7 +1447,7 @@
         "tr": "Bijon / Saplama"
       },
       "id": "7512zyrusk",
-      "index": 62,
+      "index": 82,
       "path": "bijon-saplama",
       "category": "t3uqlrk7uh",
       "img": "index.webp",
@@ -1489,7 +1470,7 @@
         "tr": "Mil Contası"
       },
       "id": "l9iga15ped",
-      "index": 63,
+      "index": 83,
       "path": "mil-contasi",
       "category": "t3uqlrk7uh",
       "img": "index.webp",
@@ -1512,7 +1493,7 @@
         "tr": "Park Sensörü"
       },
       "id": "vz22y35tfi",
-      "index": 64,
+      "index": 84,
       "path": "park-sensoru",
       "category": "upq7zjks3k",
       "img": "index.webp",
@@ -1535,7 +1516,7 @@
         "tr": "Motor Beyni (ECU)"
       },
       "id": "y6l04cyvsg",
-      "index": 65,
+      "index": 85,
       "path": "motor-beyni-ecu",
       "category": "upq7zjks3k",
       "img": "index.webp",
@@ -1558,7 +1539,7 @@
         "tr": "Röle / Kontrol Ünitesi"
       },
       "id": "blaw0o0nq9",
-      "index": 66,
+      "index": 86,
       "path": "role-kontrol-unitesi",
       "category": "upq7zjks3k",
       "img": "index.webp",
@@ -1581,7 +1562,7 @@
         "tr": "Elektronik Kablo Demeti"
       },
       "id": "d6eksr83a6",
-      "index": 67,
+      "index": 87,
       "path": "elektronik-kablo-demeti",
       "category": "upq7zjks3k",
       "img": "index.webp",
@@ -1604,7 +1585,7 @@
         "tr": "Genel Ekipman"
       },
       "id": "rz336w09cr",
-      "index": 68,
+      "index": 88,
       "path": "genel-ekipman",
       "category": "joh4ngy8qk",
       "img": "index.webp",
@@ -1627,7 +1608,7 @@
         "tr": "Aksesuar Seti"
       },
       "id": "k01d2cqsgr",
-      "index": 69,
+      "index": 89,
       "path": "aksesuar-seti",
       "category": "joh4ngy8qk",
       "img": "index.webp",
@@ -1650,7 +1631,7 @@
         "tr": "Atölye Sarf"
       },
       "id": "l3pah7xqy4",
-      "index": 70,
+      "index": 90,
       "path": "atolye-sarf",
       "category": "joh4ngy8qk",
       "img": "index.webp",
@@ -1673,7 +1654,7 @@
         "tr": "Taşıma / Destek"
       },
       "id": "cmc6a6rqa3",
-      "index": 71,
+      "index": 91,
       "path": "tasima-destek",
       "category": "joh4ngy8qk",
       "img": "index.webp",
@@ -1696,7 +1677,7 @@
         "tr": "Aşınma Sensörü"
       },
       "id": "vflv4907nw",
-      "index": 72,
+      "index": 92,
       "path": "asinma-sensoru",
       "category": "omfren02",
       "img": "index.webp",
@@ -1719,7 +1700,7 @@
         "tr": "Tambur Fren"
       },
       "id": "z61o8tyuub",
-      "index": 73,
+      "index": 93,
       "path": "tambur-fren",
       "category": "omfren02",
       "img": "index.webp",
@@ -1742,7 +1723,7 @@
         "tr": "Kapılar"
       },
       "id": "iopprqo3wr",
-      "index": 74,
+      "index": 94,
       "path": "kapilar",
       "category": "omgvde03",
       "img": "index.webp",
@@ -1765,7 +1746,7 @@
         "tr": "Yakıt Deposu"
       },
       "id": "57w8jl01ph",
-      "index": 75,
+      "index": 95,
       "path": "yakit-deposu",
       "category": "omgvde03",
       "img": "index.webp",
@@ -1788,7 +1769,7 @@
         "tr": "Isı Eşanjörü"
       },
       "id": "7ghzidgxaz",
-      "index": 76,
+      "index": 96,
       "path": "isi-esanjoru",
       "category": "omklma07",
       "img": "index.webp",
@@ -1811,7 +1792,7 @@
         "tr": "Titreşim Sönümleyici"
       },
       "id": "9rwa82diyh",
-      "index": 77,
+      "index": 97,
       "path": "titresim-sonumleyici",
       "category": "omkysi13",
       "img": "index.webp",
@@ -1834,7 +1815,7 @@
         "tr": "Yaprak Yay"
       },
       "id": "iv3mwgh27w",
-      "index": 78,
+      "index": 98,
       "path": "yaprak-yay",
       "category": "omsusp06",
       "img": "index.webp",
@@ -1857,7 +1838,7 @@
         "tr": "Röle Başlatıcı"
       },
       "id": "3flq48i5oy",
-      "index": 79,
+      "index": 99,
       "path": "role-baslatici",
       "category": "omelek05",
       "img": "index.webp",
@@ -1880,7 +1861,7 @@
         "tr": "Lambda Sensörü"
       },
       "id": "p868dr3e2c",
-      "index": 80,
+      "index": 100,
       "path": "lambda-sensoru",
       "category": "ommotr04",
       "img": "index.webp",
@@ -1903,7 +1884,7 @@
         "tr": "Oil Cooler / Yağ Soğutucu"
       },
       "id": "o6y7tc63zi",
-      "index": 81,
+      "index": 101,
       "path": "oil-cooler",
       "category": "ommotr04",
       "img": "index.webp",
@@ -1926,7 +1907,7 @@
         "tr": "Ateşleme Kablosu"
       },
       "id": "2pal25nyga",
-      "index": 82,
+      "index": 102,
       "path": "atesleme-kablosu",
       "category": "omatsg08",
       "img": "index.webp",
@@ -1949,7 +1930,7 @@
         "tr": "Hidrolik Yağı"
       },
       "id": "fd8zen2pom",
-      "index": 83,
+      "index": 103,
       "path": "hidrolik-yagi",
       "category": "omsivi09",
       "img": "index.webp",
@@ -1972,7 +1953,7 @@
         "tr": "ATF"
       },
       "id": "pir7d4kref",
-      "index": 84,
+      "index": 104,
       "path": "atf",
       "category": "omsivi09",
       "img": "index.webp",
@@ -1995,7 +1976,7 @@
         "tr": "Yağ Katkısı"
       },
       "id": "o870xzst25",
-      "index": 85,
+      "index": 105,
       "path": "yag-katkisi",
       "category": "omsivi09",
       "img": "index.webp",
@@ -2018,7 +1999,7 @@
         "tr": "Vites Topuzu"
       },
       "id": "ucfe2ni7ya",
-      "index": 86,
+      "index": 106,
       "path": "vites-topuzu",
       "category": "omicdn11",
       "img": "index.webp",
@@ -2041,7 +2022,7 @@
         "tr": "Cam Kolu"
       },
       "id": "gpsprl0aax",
-      "index": 87,
+      "index": 107,
       "path": "cam-kolu",
       "category": "omicdn11",
       "img": "index.webp",
@@ -2064,7 +2045,7 @@
         "tr": "Sinyal Lambası"
       },
       "id": "rapa1jpfm8",
-      "index": 88,
+      "index": 108,
       "path": "sinyal-lambasi",
       "category": "omaydn12",
       "img": "index.webp",
@@ -2087,7 +2068,7 @@
         "tr": "Silecek Motoru"
       },
       "id": "1zvs97tk5x",
-      "index": 89,
+      "index": 109,
       "path": "silecek-motoru",
       "category": "omslck14",
       "img": "index.webp",
@@ -2120,6 +2101,6 @@
     "detail": true,
     "img": true,
     "bgimg": false,
-    "icon": false
+    "icon": true
   }
 }

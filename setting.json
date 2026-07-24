@@ -10,7 +10,6 @@
   "category": "Kurumsal",
   "name": "Oto Mavi",
   "domain": "otomavi.com",
-  "adminApiUrl": "https://webmaker.yunusevgane.workers.dev",
   "langs": {
     "tr": true,
     "en": false,
@@ -32,7 +31,5 @@
   "address": "Sanayi mah. 60081 nolu cadde no 43 Şehitkamil Gaziantep",
   "multi": false,
   "eticaret": false,
-  "defaultLang": "tr",
-  "person": "",
-  "title": ""
+  "defaultLang": "tr"
 }
