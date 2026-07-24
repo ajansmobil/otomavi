@@ -246,6 +246,89 @@ function mxAdminFilterPages(list, searchQuery, lang) {
   return out;
 }
 
+
+function mxAdminFindDesingColorToken(colorsArr, tokenName) {
+  if (!Array.isArray(colorsArr)) {
+    return null;
+  }
+  var i;
+  for (i = 0; i < colorsArr.length; i++) {
+    var row = colorsArr[i];
+    if (row && row.name === tokenName && row.value) {
+      return String(row.value);
+    }
+  }
+  return null;
+}
+
+function mxAdminHexToRgb(hex) {
+  var h = String(hex || "").replace(/^#/, "").trim();
+  if (h.length === 3) {
+    h = h.charAt(0) + h.charAt(0) + h.charAt(1) + h.charAt(1) + h.charAt(2) + h.charAt(2);
+  }
+  if (h.length !== 6 || !/^[0-9a-fA-F]+$/.test(h)) {
+    return null;
+  }
+  return {
+    r: parseInt(h.slice(0, 2), 16),
+    g: parseInt(h.slice(2, 4), 16),
+    b: parseInt(h.slice(4, 6), 16)
+  };
+}
+
+function mxAdminColorWithAlpha(hex, alpha) {
+  var rgb = mxAdminHexToRgb(hex);
+  if (!rgb) {
+    return hex;
+  }
+  return "rgba(" + rgb.r + ", " + rgb.g + ", " + rgb.b + ", " + alpha + ")";
+}
+
+
+function mxAdminBuildSiteThemeVars(desingDoc) {
+  var out = {};
+  if (!desingDoc || typeof desingDoc !== "object") {
+    return out;
+  }
+  var colors = desingDoc.colors || {};
+  var palette = colors.dark && colors.dark.length ? colors.dark : colors.lite;
+  if (!palette || !palette.length) {
+    return out;
+  }
+  var primary = mxAdminFindDesingColorToken(palette, "--button--");
+  var bg = mxAdminFindDesingColorToken(palette, "--bg--");
+  var text = mxAdminFindDesingColorToken(palette, "--text--");
+  var color1 = mxAdminFindDesingColorToken(palette, "--color1--");
+  var color2 = mxAdminFindDesingColorToken(palette, "--color2--");
+  if (primary) {
+    out["--mxadmin-primary"] = primary;
+    out["--mxadmin-primary-soft"] = mxAdminColorWithAlpha(primary, 0.15);
+    out["--mxadmin-primary-glow"] = mxAdminColorWithAlpha(primary, 0.35);
+  }
+  if (bg) {
+    out["--mxadmin-bg"] = bg;
+    out["--mxadmin-panel"] = color1 || bg;
+    out["--mxadmin-card"] = color2 || bg;
+  }
+  if (text) {
+    out["--mxadmin-text"] = text;
+  }
+  if (color2) {
+    out["--mxadmin-card-hover"] = color2;
+  }
+  return out;
+}
+
+
+function mxAdminBuildSelectChevronDataUri(mutedHex) {
+  var stroke = String(mutedHex || "a9b0b8").replace(/^#/, "");
+  return (
+    "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23" +
+    stroke +
+    "' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E\")"
+  );
+}
+
 function readAdminFile(name) {
   return fs.readFileSync(path.join(ADMIN_ROOT, name), "utf8");
 }
@@ -349,6 +432,9 @@ module.exports = {
   mxAdminEscapeHtml: mxAdminEscapeHtml,
   mxAdminFormatDevice: mxAdminFormatDevice,
   mxAdminFilterPages: mxAdminFilterPages,
+  mxAdminFindDesingColorToken: mxAdminFindDesingColorToken,
+  mxAdminBuildSiteThemeVars: mxAdminBuildSiteThemeVars,
+  mxAdminBuildSelectChevronDataUri: mxAdminBuildSelectChevronDataUri,
   readAdminFile: readAdminFile,
   httpGet: httpGet,
   httpPost: httpPost,

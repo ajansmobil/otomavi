@@ -1658,10 +1658,145 @@ function mxAdminAfterLogout() {
 
 
 
+function mxAdminFindDesingColorToken(colorsArr, tokenName) {
+    if (!Array.isArray(colorsArr)) {
+        return null;
+    }
+    var i;
+    for (i = 0; i < colorsArr.length; i++) {
+        var row = colorsArr[i];
+        if (row && row.name === tokenName && row.value) {
+            return String(row.value);
+        }
+    }
+    return null;
+}
+
+function mxAdminHexToRgb(hex) {
+    var h = String(hex || '')
+        .replace(/^#/, '')
+        .trim();
+    if (h.length === 3) {
+        h = h.charAt(0) + h.charAt(0) + h.charAt(1) + h.charAt(1) + h.charAt(2) + h.charAt(2);
+    }
+    if (h.length !== 6 || !/^[0-9a-fA-F]+$/.test(h)) {
+        return null;
+    }
+    return {
+        r: parseInt(h.slice(0, 2), 16),
+        g: parseInt(h.slice(2, 4), 16),
+        b: parseInt(h.slice(4, 6), 16),
+    };
+}
+
+function mxAdminColorWithAlpha(hex, alpha) {
+    var rgb = mxAdminHexToRgb(hex);
+    if (!rgb) {
+        return hex;
+    }
+    return (
+        'rgba(' +
+        rgb.r +
+        ', ' +
+        rgb.g +
+        ', ' +
+        rgb.b +
+        ', ' +
+        alpha +
+        ')'
+    );
+}
+
+function mxAdminGetCssVarHex(varName, fallback) {
+    var style = getComputedStyle(document.documentElement);
+    var raw = style.getPropertyValue(varName).trim();
+    if (raw && raw.indexOf('#') === 0) {
+        return raw.replace(/^#/, '');
+    }
+    return fallback || 'a9b0b8';
+}
+
+function mxAdminBuildSelectChevronDataUri(mutedHex) {
+    var stroke = String(mutedHex || 'a9b0b8').replace(/^#/, '');
+    return (
+        "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23" +
+        stroke +
+        "' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E\")"
+    );
+}
+
+function mxAdminInjectSelectChevronStyle() {
+    var mutedHex = mxAdminGetCssVarHex('--mxadmin-text-muted', 'a9b0b8');
+    var chevronUri = mxAdminBuildSelectChevronDataUri(mutedHex);
+    var styleId = 'mxadmin-select-chevron-style';
+    var el = document.getElementById(styleId);
+    if (!el) {
+        el = document.createElement('style');
+        el.id = styleId;
+        document.head.appendChild(el);
+    }
+    el.textContent =
+        '.mxadmin-select,.mxadmin-form-group select{background-image:' +
+        chevronUri +
+        ';}';
+}
+
+function mxAdminApplySiteTheme(desingDoc) {
+    if (!desingDoc || typeof desingDoc !== 'object') {
+        return;
+    }
+    var colors = desingDoc.colors || {};
+    var palette =
+        colors.dark && colors.dark.length ? colors.dark : colors.lite;
+    if (!palette || !palette.length) {
+        return;
+    }
+    var root = document.documentElement;
+    var primary = mxAdminFindDesingColorToken(palette, '--button--');
+    var bg = mxAdminFindDesingColorToken(palette, '--bg--');
+    var text = mxAdminFindDesingColorToken(palette, '--text--');
+    var color1 = mxAdminFindDesingColorToken(palette, '--color1--');
+    var color2 = mxAdminFindDesingColorToken(palette, '--color2--');
+    if (primary) {
+        root.style.setProperty('--mxadmin-primary', primary);
+        root.style.setProperty(
+            '--mxadmin-primary-soft',
+            mxAdminColorWithAlpha(primary, 0.15),
+        );
+        root.style.setProperty(
+            '--mxadmin-primary-glow',
+            mxAdminColorWithAlpha(primary, 0.35),
+        );
+    }
+    if (bg) {
+        root.style.setProperty('--mxadmin-bg', bg);
+        root.style.setProperty('--mxadmin-panel', color1 || bg);
+        root.style.setProperty('--mxadmin-card', color2 || bg);
+    }
+    if (text) {
+        root.style.setProperty('--mxadmin-text', text);
+    }
+    if (color2) {
+        root.style.setProperty('--mxadmin-card-hover', color2);
+    }
+    mxAdminInjectSelectChevronStyle();
+}
+
+
+
 function mxAdminLoadDashboard() {
     mxAdminState.loaded.dashboard = true;
     var me = mxAdminState.me || {};
     mxAdminUpdateUserChip();
+
+    mxAdminApiRequest('GET', '/api/admin/data/desing')
+        .then(function (resp) {
+            mxAdminApplySiteTheme(mxAdminUnwrapApiData(resp));
+        })
+        .catch(function () {
+            
+        });
+
     mxAdminEl('mxadminCardDomainValue').textContent =
         me.domain || window.location.hostname || '—';
     mxAdminEl('mxadminCardUsernameValue').textContent = me.username || '—';
@@ -4438,9 +4573,6 @@ function mxAdminRenderModulesList() {
         li.onclick = mxAdminMakeModuleSelectHandler(mod);
         li.innerHTML =
             '<div class="mxadmin-pages-list-item">' +
-            '<span class="mxadmin-pages-list-icon material-symbols-outlined">' +
-            mxAdminEscapeHtml(mod.icon || 'widgets') +
-            '</span>' +
             '<div class="mxadmin-pages-list-text">' +
             '<div class="mxadmin-pages-list-title-row">' +
             '<span class="mxadmin-pages-list-title">' +
@@ -5918,6 +6050,7 @@ function mxAdminInit() {
     mxAdminState.lang = browserLang.indexOf('en') === 0 ? 'en' : 'tr';
     mxAdminApplyPanelVersion();
     mxAdminApplyI18n();
+    mxAdminInjectSelectChevronStyle();
     mxAdminBindEvents();
     mxAdminCheckSession();
 }

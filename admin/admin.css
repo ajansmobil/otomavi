@@ -21,8 +21,26 @@
     --mxadmin-border: rgba(255, 255, 255, 0.08);
     --mxadmin-border-strong: rgba(255, 255, 255, 0.12);
     --mxadmin-primary: var(--mx-matrix-primary);
-    --mxadmin-primary-soft: rgba(33, 150, 243, 0.15);
-    --mxadmin-primary-glow: rgba(33, 150, 243, 0.35);
+    --mxadmin-primary-soft: color-mix(
+        in srgb,
+        var(--mxadmin-primary) 15%,
+        transparent
+    );
+    --mxadmin-primary-glow: color-mix(
+        in srgb,
+        var(--mxadmin-primary) 35%,
+        transparent
+    );
+    --mxadmin-field-bg: rgba(0, 0, 0, 0.25);
+    --mxadmin-field-border: var(--mxadmin-border);
+    --mxadmin-field-focus-bg: color-mix(
+        in srgb,
+        var(--mxadmin-primary) 6%,
+        transparent
+    );
+    --mxadmin-field-min-height: 44px;
+    --mxadmin-field-padding-x: 12px;
+    --mxadmin-field-chevron-size: 18px;
     --mxadmin-green: #35c46a;
     --mxadmin-red: #e5484d;
     --mxadmin-orange: #f0a83c;
@@ -168,7 +186,7 @@ button {
     background:
         radial-gradient(
             ellipse 80% 60% at 50% 0%,
-            rgba(33, 150, 243, 0.12) 0%,
+            color-mix(in srgb, var(--mxadmin-primary) 12%, transparent) 0%,
             transparent 55%
         ),
         radial-gradient(
@@ -218,7 +236,8 @@ button {
     align-items: center;
     justify-content: center;
     font-size: 36px;
-    box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.08);
+    box-shadow: 0 0 0 4px
+        color-mix(in srgb, var(--mxadmin-primary) 8%, transparent);
     transition: transform var(--mxadmin-transition);
 }
 
@@ -380,15 +399,21 @@ button {
     color: var(--mxadmin-text-muted);
 }
 
+
 .mxadmin-form-group input,
-.mxadmin-form-group textarea {
-    background: rgba(0, 0, 0, 0.25);
-    border: 1px solid var(--mxadmin-border);
+.mxadmin-form-group textarea,
+.mxadmin-select,
+.mxadmin-form-group select {
+    box-sizing: border-box;
+    width: 100%;
+    background: var(--mxadmin-field-bg);
+    border: 1px solid var(--mxadmin-field-border);
     border-radius: var(--mxadmin-radius-md);
     color: var(--mxadmin-text);
-    padding: 10px 12px;
+    padding: 10px var(--mxadmin-field-padding-x);
     font-size: 14px;
-    min-height: 44px;
+    font-family: inherit;
+    min-height: var(--mxadmin-field-min-height);
     transition:
         border-color var(--mxadmin-transition),
         box-shadow var(--mxadmin-transition),
@@ -398,42 +423,31 @@ button {
 .mxadmin-form-group textarea {
     min-height: 80px;
     resize: vertical;
-    font-family: inherit;
 }
-
 
 .mxadmin-select,
 .mxadmin-form-group select {
-    box-sizing: border-box;
-    width: 100%;
-    min-height: 44px;
-    padding: 10px 40px 10px 12px;
-    font-size: 14px;
-    font-family: inherit;
-    color: var(--mxadmin-text);
-    background-color: rgba(0, 0, 0, 0.25);
-    border: 1px solid var(--mxadmin-border);
-    border-radius: var(--mxadmin-radius-md);
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23a9b0b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    padding-right: calc(
+        var(--mxadmin-field-padding-x) + var(--mxadmin-field-chevron-size) + 10px
+    );
     background-repeat: no-repeat;
     background-position: right 10px center;
-    background-size: 18px;
-    transition:
-        border-color var(--mxadmin-transition),
-        box-shadow var(--mxadmin-transition),
-        background var(--mxadmin-transition);
+    background-size: var(--mxadmin-field-chevron-size);
+    
 }
 
+.mxadmin-form-group input:focus,
+.mxadmin-form-group textarea:focus,
 .mxadmin-select:focus,
 .mxadmin-form-group select:focus {
     outline: none;
     border-color: var(--mxadmin-primary);
     box-shadow: 0 0 0 3px var(--mxadmin-primary-soft);
-    background-color: rgba(33, 150, 243, 0.06);
+    background: var(--mxadmin-field-focus-bg);
 }
 
 .mxadmin-select:disabled,
@@ -453,8 +467,20 @@ button {
 .mxadmin-page-category-select,
 .mxadmin-page-desc-filter-select {
     min-height: 40px;
-    padding: 8px 36px 8px 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: calc(
+        10px + var(--mxadmin-field-chevron-size) + 8px
+    );
+    font-size: 13px;
     border-radius: var(--mxadmin-radius-sm);
+}
+
+.mxadmin-page-category-select,
+.mxadmin-page-desc-filter-select,
+.mxadmin-module-field-select {
+    min-width: 0;
 }
 
 
@@ -531,14 +557,6 @@ button {
     color: var(--mxadmin-bg);
     background: var(--mxadmin-primary);
     pointer-events: none;
-}
-
-.mxadmin-form-group input:focus,
-.mxadmin-form-group textarea:focus {
-    outline: none;
-    border-color: var(--mxadmin-primary);
-    box-shadow: 0 0 0 3px var(--mxadmin-primary-soft);
-    background: rgba(33, 150, 243, 0.06);
 }
 
 .mxadmin-password-field {
@@ -1308,8 +1326,8 @@ button {
 }
 
 .mxadmin-page-move-btn:hover {
-    background: rgba(33, 150, 243, 0.12);
-    border-color: rgba(33, 150, 243, 0.35);
+    background: color-mix(in srgb, var(--mxadmin-primary) 12%, transparent);
+    border-color: color-mix(in srgb, var(--mxadmin-primary) 35%, transparent);
     color: var(--mxadmin-primary);
 }
 
@@ -1326,8 +1344,9 @@ button {
 
 .mxadmin-pages-list li.is-active .mxadmin-pages-list-item {
     background: var(--mxadmin-primary-soft);
-    border-color: rgba(33, 150, 243, 0.35);
-    box-shadow: 0 0 0 1px rgba(33, 150, 243, 0.12);
+    border-color: color-mix(in srgb, var(--mxadmin-primary) 35%, transparent);
+    box-shadow: 0 0 0 1px
+        color-mix(in srgb, var(--mxadmin-primary) 12%, transparent);
 }
 
 .mxadmin-pages-list li.is-active {
@@ -1375,11 +1394,12 @@ button {
 }
 
 .mxadmin-pages-list li.is-active .mxadmin-pages-list-thumb-wrap {
-    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.45);
+    box-shadow: 0 0 0 2px
+        color-mix(in srgb, var(--mxadmin-primary) 45%, transparent);
 }
 
 .mxadmin-pages-list li.is-active .mxadmin-pages-list-icon {
-    background: rgba(33, 150, 243, 0.2);
+    background: color-mix(in srgb, var(--mxadmin-primary) 20%, transparent);
     color: var(--mxadmin-primary);
 }
 
@@ -1647,7 +1667,7 @@ button {
 
 .mxadmin-html-editor-tab.is-active {
     color: var(--mxadmin-primary);
-    border-color: rgba(33, 150, 243, 0.35);
+    border-color: color-mix(in srgb, var(--mxadmin-primary) 35%, transparent);
     background: var(--mxadmin-primary-soft);
 }
 
@@ -1681,7 +1701,7 @@ button {
 
 .mxadmin-html-editor-tool:hover {
     color: var(--mxadmin-primary);
-    border-color: rgba(33, 150, 243, 0.35);
+    border-color: color-mix(in srgb, var(--mxadmin-primary) 35%, transparent);
     background: var(--mxadmin-primary-soft);
 }
 
@@ -1707,7 +1727,7 @@ button {
 
 .mxadmin-html-editor-source:focus {
     outline: none;
-    box-shadow: inset 0 0 0 2px rgba(33, 150, 243, 0.35);
+    box-shadow: inset 0 0 0 2px var(--mxadmin-primary-glow);
 }
 
 .mxadmin-html-editor-preview {
@@ -2341,7 +2361,7 @@ button {
 
 .mxadmin-layout-item-link:hover {
     border-color: var(--mxadmin-primary);
-    background: rgba(33, 150, 243, 0.08);
+    background: color-mix(in srgb, var(--mxadmin-primary) 8%, transparent);
 }
 
 .mxadmin-layout-item-text {
@@ -2464,7 +2484,7 @@ button {
 }
 
 .mxadmin-module-badge-header {
-    background: rgba(33, 150, 243, 0.15);
+    background: var(--mxadmin-primary-soft);
     color: var(--mxadmin-primary);
 }
 

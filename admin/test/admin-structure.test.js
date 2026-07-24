@@ -75,12 +75,52 @@ describe('webmodules/admin dosya yapisi', function () {
             'native select kaldirildi',
         );
         assert.ok(
-            css.indexOf('background-image: url') !== -1,
-            'chevron svg tanimli',
+            css.indexOf('mxAdminInjectSelectChevronStyle') !== -1 ||
+                css.indexOf('mxadmin-select-chevron-style') !== -1 ||
+                css.indexOf('chevron SVG') !== -1,
+            'chevron JS enjeksiyonu referansi',
         );
         assert.ok(
             css.indexOf('.mxadmin-select-sm') !== -1,
             'kucuk select varyanti',
+        );
+    });
+
+    it('Paket 142: ortak form token ve birlesik input/select blogu', function () {
+        var css = helpers.readAdminFile('admin.css');
+        assert.ok(
+            css.indexOf('--mxadmin-field-bg') !== -1,
+            'field bg token',
+        );
+        assert.ok(
+            css.indexOf('--mxadmin-field-focus-bg') !== -1,
+            'field focus bg token',
+        );
+        assert.ok(
+            css.indexOf('.mxadmin-form-group input,\n.mxadmin-form-group textarea,\n.mxadmin-select,\n.mxadmin-form-group select') !==
+                -1,
+            'ortak form selector blogu',
+        );
+        var focusBlock =
+            '.mxadmin-form-group input:focus,\n.mxadmin-form-group textarea:focus,\n.mxadmin-select:focus,\n.mxadmin-form-group select:focus';
+        assert.ok(css.indexOf(focusBlock) !== -1, 'birlesik focus blogu');
+        var focusStart = css.indexOf(focusBlock);
+        var focusEnd = css.indexOf('.mxadmin-select:disabled', focusStart);
+        if (focusEnd === -1) {
+            focusEnd = css.indexOf('.mxadmin-password-field', focusStart);
+        }
+        var focusCss = css.slice(focusStart, focusEnd > focusStart ? focusEnd : focusStart + 400);
+        assert.ok(
+            focusCss.indexOf('#2196f3') === -1,
+            'form focus hardcoded #2196f3 yasak',
+        );
+        assert.ok(
+            focusCss.indexOf('rgba(33, 150, 243') === -1,
+            'form focus hardcoded rgba mavi yasak',
+        );
+        assert.ok(
+            focusCss.indexOf('var(--mxadmin-field-focus-bg)') !== -1,
+            'focus bg token kullanimi',
         );
     });
 
@@ -754,6 +794,31 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
         );
         assert.ok(js.indexOf('statsOverview') !== -1);
         assert.ok(js.indexOf('categoriesBack') !== -1);
+    });
+
+    it('Paket 142: site tema desing.json uygulama JS', function () {
+        assert.ok(
+            js.indexOf('function mxAdminApplySiteTheme') !== -1,
+            'mxAdminApplySiteTheme tanimli',
+        );
+        assert.ok(
+            js.indexOf('function mxAdminInjectSelectChevronStyle') !== -1,
+            'mxAdminInjectSelectChevronStyle tanimli',
+        );
+        assert.ok(
+            js.indexOf("mxAdminApiRequest('GET', '/api/admin/data/desing')") !==
+                -1,
+            'dashboard desing fetch',
+        );
+        assert.ok(
+            js.indexOf('mxAdminApplySiteTheme(mxAdminUnwrapApiData(resp))') !==
+                -1,
+            'dashboard tema uygulama',
+        );
+        assert.ok(
+            js.indexOf("'--button--'") !== -1,
+            'button token eslemesi',
+        );
     });
 });
 

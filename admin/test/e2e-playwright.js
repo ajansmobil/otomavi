@@ -153,6 +153,31 @@ async function runLocalGoldenPath() {
   }
   log("OK /api/admin/data/pagesetting → 200");
 
+  var formStyleOk = await page.evaluate(function() {
+    var username = document.getElementById("mxadminUsername");
+    var chevronStyle = document.getElementById("mxadmin-select-chevron-style");
+    if (!username) {
+      return { ok: false, reason: "mxadminUsername yok" };
+    }
+    var cs = window.getComputedStyle(username);
+    var minH = parseFloat(cs.minHeight);
+    if (isNaN(minH) || minH < 40) {
+      return { ok: false, reason: "input min-height beklenen degil: " + cs.minHeight };
+    }
+    if (!chevronStyle || !chevronStyle.textContent) {
+      return { ok: false, reason: "mxadmin-select-chevron-style enjekte edilmedi" };
+    }
+    if (chevronStyle.textContent.indexOf("background-image") === -1) {
+      return { ok: false, reason: "chevron style icerigi eksik" };
+    }
+    return { ok: true, minHeight: cs.minHeight };
+  });
+  if (!formStyleOk.ok) {
+    await browser.close();
+    throw new Error("Paket 142 form stili: " + formStyleOk.reason);
+  }
+  log("OK form alani min-height + select chevron style (" + formStyleOk.minHeight + ")");
+
   if (typeof apiResponses.authMe === "number") {
     log("auth/me → " + apiResponses.authMe + " (oturum yok — beklenen)");
   }

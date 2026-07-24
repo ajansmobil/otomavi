@@ -201,4 +201,43 @@ describe("webmodules/admin API yardimcilari", function() {
       assert.ok(out.indexOf("…") !== -1);
     });
   });
+
+  describe("mxAdminBuildSiteThemeVars (Paket 142)", function() {
+    var mockDesing = {
+      colors: {
+        dark: [
+          { name: "--bg--", value: "#0B1120" },
+          { name: "--color1--", value: "#0F172A" },
+          { name: "--color2--", value: "#1E293B" },
+          { name: "--text--", value: "#E2E8F0" },
+          { name: "--button--", value: "#1094DB" }
+        ]
+      }
+    };
+
+    it("dark palette button token primary olur", function() {
+      var vars = helpers.mxAdminBuildSiteThemeVars(mockDesing);
+      assert.strictEqual(vars["--mxadmin-primary"], "#1094DB");
+      assert.strictEqual(vars["--mxadmin-bg"], "#0B1120");
+      assert.strictEqual(vars["--mxadmin-text"], "#E2E8F0");
+      assert.strictEqual(vars["--mxadmin-panel"], "#0F172A");
+      assert.strictEqual(vars["--mxadmin-card"], "#1E293B");
+    });
+
+    it("primary soft rgba hesaplanir", function() {
+      var vars = helpers.mxAdminBuildSiteThemeVars(mockDesing);
+      assert.strictEqual(vars["--mxadmin-primary-soft"], "rgba(16, 148, 219, 0.15)");
+    });
+
+    it("gecersiz desing bos map", function() {
+      assert.deepStrictEqual(helpers.mxAdminBuildSiteThemeVars(null), {});
+      assert.deepStrictEqual(helpers.mxAdminBuildSiteThemeVars({}), {});
+    });
+
+    it("select chevron data-uri muted hex kullanir", function() {
+      var uri = helpers.mxAdminBuildSelectChevronDataUri("a9b0b8");
+      assert.ok(uri.indexOf("%23a9b0b8") !== -1, "stroke hex encoded");
+      assert.ok(uri.indexOf("data:image/svg+xml") !== -1);
+    });
+  });
 });
