@@ -1141,9 +1141,32 @@ button {
 .mxadmin-pages-list-panel-head-actions {
     margin-left: auto;
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
+    align-items: center;
+    gap: 8px;
     flex-shrink: 0;
+}
+
+.mxadmin-list-refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    padding: 6px 8px;
+    cursor: pointer;
+}
+
+.mxadmin-list-refresh-btn .material-symbols-outlined {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.mxadmin-list-refresh-btn.is-busy .material-symbols-outlined {
+    animation: mxadminSpin 0.7s linear infinite;
+}
+
+.mxadmin-list-refresh-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
 }
 
 .mxadmin-pages-list-panel-title {
@@ -2755,8 +2778,26 @@ button {
 .mxadmin-logo-preview-meta {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
     min-width: 0;
+    flex: 1;
+}
+
+.mxadmin-logo-preview-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.mxadmin-logo-preview-empty {
+    font-size: 36px;
+    color: var(--mxadmin-text-dim);
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 24;
 }
 
 .mxadmin-logo-preview-name {

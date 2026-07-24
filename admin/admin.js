@@ -6,7 +6,7 @@ var MX_ADMIN_API_BASE = 'https://webmaker.yunusevgane.workers.dev';
 var MX_ADMIN_SITE_LOGO = 'logo.png';
 
 
-var MXADMIN_PANEL_VERSION = '1.0.1';
+var MXADMIN_PANEL_VERSION = '1.5.1';
 
 (function mxAdminResolveLocalApiBase() {
     if (typeof window === 'undefined' || !window.location) {
@@ -210,6 +210,7 @@ var MX_ADMIN_I18N = {
         pagesTitle: 'Sayfalar',
         pagesSub: 'Kategori bazlı içerik yönetimi',
         pagesListHead: 'Sayfa listesi',
+        listRefresh: 'Listeyi yenile',
         pagesEmpty: 'Sayfa bulunamadı.',
         pagesEmptyFiltered: 'Filtreye uygun sayfa bulunamadı.',
         pagesLoadError: 'Sayfalar yüklenemedi.',
@@ -294,7 +295,12 @@ var MX_ADMIN_I18N = {
         fieldSiteName: 'Site adı',
         fieldDomain: 'Alan adı',
         fieldLogo: 'Logo',
-        logoReadonly: 'Salt okunur',
+        logoUpdate: 'Logo güncelle',
+        logoUploadSuccess: 'Logo güncellendi.',
+        logoUploadError: 'Logo yüklenemedi.',
+        logoUploadInvalid:
+            'Geçerli bir görsel dosyası seçin (png, jpg, webp, svg, gif).',
+        logoEmpty: 'Logo yok',
         fieldPhone: 'Telefon',
         fieldMobile: 'Cep',
         fieldEmail: 'E-posta',
@@ -382,6 +388,7 @@ var MX_ADMIN_I18N = {
         pagesTitle: 'Pages',
         pagesSub: 'Category-based content management',
         pagesListHead: 'Page list',
+        listRefresh: 'Refresh list',
         pagesEmpty: 'No pages found.',
         pagesEmptyFiltered: 'No pages match the filter.',
         pagesLoadError: 'Could not load pages.',
@@ -466,7 +473,12 @@ var MX_ADMIN_I18N = {
         fieldSiteName: 'Site name',
         fieldDomain: 'Domain',
         fieldLogo: 'Logo',
-        logoReadonly: 'Read only',
+        logoUpdate: 'Update logo',
+        logoUploadSuccess: 'Logo updated.',
+        logoUploadError: 'Could not upload logo.',
+        logoUploadInvalid:
+            'Choose a valid image file (png, jpg, webp, svg, gif).',
+        logoEmpty: 'No logo',
         fieldPhone: 'Phone',
         fieldMobile: 'Mobile',
         fieldEmail: 'Email',
@@ -2204,6 +2216,147 @@ function mxAdminRenderCategoryTabs() {
     
 }
 
+function mxAdminSetListRefreshBusy(btn, busy) {
+    if (!btn) {
+        return;
+    }
+    btn.disabled = !!busy;
+    if (busy) {
+        btn.classList.add('is-busy');
+    } else {
+        btn.classList.remove('is-busy');
+    }
+}
+
+function mxAdminFindPageRowById(pageId) {
+    var list = mxAdminState.categoryPages || [];
+    var i;
+    for (i = 0; i < list.length; i++) {
+        if (list[i] && pageId && String(list[i].id) === String(pageId)) {
+            return list[i];
+        }
+    }
+    return null;
+}
+
+function mxAdminFinishCategoryPagesLoad(keepPageId) {
+    mxAdminRenderPageFilters();
+    var finishRender = function () {
+        mxAdminRenderPagesList();
+        if (keepPageId) {
+            var row = mxAdminFindPageRowById(keepPageId);
+            if (row) {
+                mxAdminOpenPageEditor(row);
+            } else {
+                mxAdminState.activePageRow = null;
+                mxAdminState.pageRecord = null;
+                mxAdminShowPageDetailEmpty();
+            }
+        }
+    };
+    if (mxAdminGetActivePageDescSchema().length) {
+        mxAdminLoadPageDescCache(function () {
+            mxAdminRenderPageFilters();
+            finishRender();
+        });
+    } else {
+        finishRender();
+    }
+}
+
+function mxAdminRefreshPagesList() {
+    var path = mxAdminState.activeCategoryPath;
+    if (!path) {
+        return;
+    }
+    var keepPageId =
+        mxAdminState.activePageRow && mxAdminState.activePageRow.id
+            ? String(mxAdminState.activePageRow.id)
+            : '';
+    var btn = mxAdminEl('mxadminPagesListRefreshBtn');
+    mxAdminSetListRefreshBusy(btn, true);
+    mxAdminShowPagesListLoading();
+    mxAdminShowAlert('mxadminPagesError', '');
+
+    mxAdminApiRequest('GET', '/api/admin/data/' + encodeURIComponent(path))
+        .then(function (resp) {
+            mxAdminState.categoryDoc = mxAdminUnwrapApiData(resp) || {};
+            mxAdminState.categoryPages = Array.isArray(
+                mxAdminState.categoryDoc.data,
+            )
+                ? mxAdminState.categoryDoc.data
+                : [];
+            mxAdminSortPagesInPlace(mxAdminState.categoryPages);
+            mxAdminState.categoryDoc.data = mxAdminState.categoryPages;
+            mxAdminFinishCategoryPagesLoad(keepPageId);
+        })
+        .catch(function (err) {
+            mxAdminState.categoryPages = [];
+            mxAdminState.categoryDoc = null;
+            mxAdminHidePagesListLoading();
+            mxAdminRenderPagesList();
+            if (mxAdminHandleUnauthorized(err)) {
+                return;
+            }
+            mxAdminShowAlert(
+                'mxadminPagesError',
+                mxAdminApiErrorMessage(err, 'pagesLoadError'),
+            );
+        })
+        .then(function () {
+            mxAdminSetListRefreshBusy(btn, false);
+        });
+}
+
+function mxAdminRefreshModulesList() {
+    var btn = mxAdminEl('mxadminModulesListRefreshBtn');
+    var keepModuleId =
+        mxAdminState.activeModuleRow && mxAdminState.activeModuleRow.id
+            ? mxAdminState.activeModuleRow.id
+            : '';
+    var listEl = mxAdminEl('mxadminModulesList');
+    var empty = mxAdminEl('mxadminModulesEmpty');
+    mxAdminSetListRefreshBusy(btn, true);
+    mxAdminShowAlert('mxadminModulesError', '');
+    if (listEl) {
+        listEl.innerHTML = '';
+    }
+    if (empty) {
+        empty.classList.add('hidden');
+    }
+
+    mxAdminApiRequest('GET', '/api/admin/data/modules')
+        .then(function (resp) {
+            var doc = mxAdminUnwrapApiData(resp) || {};
+            mxAdminState.modulesDoc = doc;
+            mxAdminState.modulesList = Array.isArray(doc.data) ? doc.data : [];
+            mxAdminRenderModulesList();
+            if (keepModuleId) {
+                var mod = mxAdminFindModuleById(keepModuleId);
+                if (mod) {
+                    mxAdminSelectModule(mod);
+                } else {
+                    mxAdminShowModuleDetailEmpty();
+                    mxAdminState.activeModuleRow = null;
+                }
+            }
+        })
+        .catch(function (err) {
+            mxAdminState.modulesList = [];
+            mxAdminRenderModulesList();
+            if (mxAdminHandleUnauthorized(err)) {
+                return;
+            }
+            mxAdminShowAlert(
+                'mxadminModulesError',
+                mxAdminApiErrorMessage(err, 'modulesLoadError'),
+            );
+        })
+        .then(function () {
+            mxAdminSetListRefreshBusy(btn, false);
+        });
+}
+
 function mxAdminSelectCategory(path) {
     if (!path) {
         return;
@@ -2233,15 +2386,7 @@ function mxAdminSelectCategory(path) {
                 : [];
             mxAdminSortPagesInPlace(mxAdminState.categoryPages);
             mxAdminState.categoryDoc.data = mxAdminState.categoryPages;
-            mxAdminRenderPageFilters();
-            if (mxAdminGetActivePageDescSchema().length) {
-                mxAdminLoadPageDescCache(function () {
-                    mxAdminRenderPageFilters();
-                    mxAdminRenderPagesList();
-                });
-            } else {
-                mxAdminRenderPagesList();
-            }
+            mxAdminFinishCategoryPagesLoad('');
         })
         .catch(function (err) {
             loading.classList.add('hidden');
@@ -5621,6 +5766,141 @@ function mxAdminLoadSettings() {
         });
 }
 
+function mxAdminIsAllowedLogoFilename(name) {
+    return /\.(png|jpe?g|webp|svg|gif)$/i.test(String(name || ''));
+}
+
+function mxAdminResolveSettingLogoFilename(file) {
+    var setting = mxAdminState.settingData || {};
+    var existing = mxAdminSiteLogoFile(setting);
+    if (existing) {
+        return existing;
+    }
+    var name = String((file && file.name) || 'logo.png').replace(/^.*[\\/]/, '');
+    name = name.replace(/[^a-zA-Z0-9._\-]/g, '_');
+    if (!name || name === '.' || name === '..') {
+        name = 'logo.png';
+    }
+    if (!mxAdminIsAllowedLogoFilename(name)) {
+        name = 'logo.png';
+    }
+    return name;
+}
+
+function mxAdminUploadSettingLogo(file) {
+    var targetName = mxAdminResolveSettingLogoFilename(file);
+    if (!mxAdminIsAllowedLogoFilename(targetName)) {
+        return Promise.reject({ code: 'VALIDATION' });
+    }
+    if (mxAdminIsLocalPreview()) {
+        var fd = new FormData();
+        fd.append('file', file);
+        return mxAdminApiUpload('/api/admin/data/setting-logo-upload', fd);
+    }
+    return new Promise(function (resolve, reject) {
+        var reader = new FileReader();
+        reader.onload = function () {
+            var result = String(reader.result || '');
+            var base64 =
+                result.indexOf(',') !== -1 ? result.split(',')[1] : result;
+            mxAdminApiRequest('POST', '/api/admin/data/setting-logo-upload', {
+                filename: targetName,
+                contentBase64: base64,
+            })
+                .then(resolve)
+                .catch(reject);
+        };
+        reader.onerror = function () {
+            reject({ code: 'NETWORK' });
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
+function mxAdminUpdateSettingLogoPreview(setting) {
+    var logoWrap = mxAdminEl('mxadminSettingLogoPreview');
+    var logoImg = mxAdminEl('mxadminSettingLogoImg');
+    var logoEmpty = mxAdminEl('mxadminSettingLogoEmptyIcon');
+    var logoNameEl = mxAdminEl('mxadminSettingLogoName');
+    var logoFile = mxAdminSiteLogoFile(setting);
+    var logoUrl = mxAdminSiteLogoUrl(logoFile);
+    if (!logoWrap || !logoImg) {
+        return;
+    }
+    logoWrap.classList.remove('hidden');
+    if (logoFile && logoUrl) {
+        logoImg.src = logoUrl + '?t=' + String(Date.now());
+        logoImg.alt = mxAdminT('fieldLogo');
+        logoImg.classList.remove('hidden');
+        if (logoEmpty) {
+            logoEmpty.classList.add('hidden');
+        }
+        if (logoNameEl) {
+            logoNameEl.textContent = logoFile;
+        }
+        logoImg.onerror = function () {
+            logoImg.classList.add('hidden');
+            logoImg.src = '';
+            logoImg.onerror = null;
+            if (logoEmpty) {
+                logoEmpty.classList.remove('hidden');
+            }
+        };
+        return;
+    }
+    logoImg.classList.add('hidden');
+    logoImg.src = '';
+    logoImg.onerror = null;
+    if (logoEmpty) {
+        logoEmpty.classList.remove('hidden');
+    }
+    if (logoNameEl) {
+        logoNameEl.textContent = mxAdminT('logoEmpty');
+    }
+}
+
+function mxAdminHandleSettingLogoUploadInput(evt) {
+    var files = evt.target.files;
+    var file = files && files.length ? files[0] : null;
+    if (!file) {
+        return;
+    }
+    var targetName = mxAdminResolveSettingLogoFilename(file);
+    if (!mxAdminIsAllowedLogoFilename(targetName)) {
+        mxAdminToast(mxAdminT('logoUploadInvalid'), true);
+        evt.target.value = '';
+        return;
+    }
+    var btn = mxAdminEl('mxadminSettingLogoUploadBtn');
+    mxAdminSetListRefreshBusy(btn, true);
+    mxAdminUploadSettingLogo(file)
+        .then(function (data) {
+            var logoName =
+                (data && (data.logo || data.filename)) || targetName;
+            if (!mxAdminState.settingData) {
+                mxAdminState.settingData = {};
+            }
+            mxAdminState.settingData.logo = logoName;
+            mxAdminUpdateSettingLogoPreview(mxAdminState.settingData);
+            mxAdminApplySiteLogo(mxAdminState.settingData);
+            mxAdminToast(mxAdminT('logoUploadSuccess'), false);
+        })
+        .catch(function (err) {
+            if (mxAdminHandleUnauthorized(err)) {
+                return;
+            }
+            if (err && err.code === 'VALIDATION') {
+                mxAdminToast(mxAdminT('logoUploadInvalid'), true);
+                return;
+            }
+            mxAdminToast(mxAdminApiErrorMessage(err, 'logoUploadError'), true);
+        })
+        .then(function () {
+            evt.target.value = '';
+            mxAdminSetListRefreshBusy(btn, false);
+        });
+}
+
 function mxAdminRenderSettingsForm(setting) {
     mxAdminEl('mxadminSettingName').value = mxAdminSettingScalarToInput(setting.name);
     mxAdminEl('mxadminSettingDomain').value = mxAdminSettingScalarToInput(
@@ -5633,28 +5913,7 @@ function mxAdminRenderSettingsForm(setting) {
     mxAdminEl('mxadminSettingTitle').value = setting.title || '';
     mxAdminEl('mxadminSettingAddress').value = setting.address || '';
 
-    var logoWrap = mxAdminEl('mxadminSettingLogoPreview');
-    var logoImg = mxAdminEl('mxadminSettingLogoImg');
-    var logoNameEl = mxAdminEl('mxadminSettingLogoName');
-    var logoFile = mxAdminSiteLogoFile(setting);
-    var logoUrl = mxAdminSiteLogoUrl(logoFile);
-    if (logoWrap && logoImg) {
-        if (logoFile && logoUrl) {
-            logoImg.src = logoUrl;
-            logoImg.alt = mxAdminT('fieldLogo');
-            logoWrap.classList.remove('hidden');
-            if (logoNameEl) {
-                logoNameEl.textContent = logoFile;
-            }
-        } else {
-            logoImg.src = '';
-            logoImg.alt = '';
-            logoWrap.classList.add('hidden');
-            if (logoNameEl) {
-                logoNameEl.textContent = '';
-            }
-        }
-    }
+    mxAdminUpdateSettingLogoPreview(setting);
     mxAdminApplySiteLogo(setting);
 
     var langs = mxAdminActiveLangs();
@@ -6076,6 +6335,22 @@ function mxAdminBindEvents() {
     var pageAddBtn = mxAdminEl('mxadminPageAddBtn');
     if (pageAddBtn) {
         pageAddBtn.onclick = mxAdminAddPage;
+    }
+    var settingLogoInput = mxAdminEl('mxadminSettingLogoInput');
+    var settingLogoUploadBtn = mxAdminEl('mxadminSettingLogoUploadBtn');
+    if (settingLogoUploadBtn && settingLogoInput) {
+        settingLogoUploadBtn.onclick = function () {
+            settingLogoInput.click();
+        };
+        settingLogoInput.onchange = mxAdminHandleSettingLogoUploadInput;
+    }
+    var pagesListRefreshBtn = mxAdminEl('mxadminPagesListRefreshBtn');
+    if (pagesListRefreshBtn) {
+        pagesListRefreshBtn.onclick = mxAdminRefreshPagesList;
+    }
+    var modulesListRefreshBtn = mxAdminEl('mxadminModulesListRefreshBtn');
+    if (modulesListRefreshBtn) {
+        modulesListRefreshBtn.onclick = mxAdminRefreshModulesList;
     }
     var pageDeleteBtn = mxAdminEl('mxadminPageDeleteBtn');
     if (pageDeleteBtn) {

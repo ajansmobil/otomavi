@@ -301,6 +301,11 @@ describe('webmodules/admin index.html ekran iskeleti', function () {
     it('ayarlar ve tasarim formlari', function () {
         assert.ok(html.indexOf('id="mxadminSettingsForm"') !== -1);
         assert.ok(html.indexOf('id="mxadminSettingLogoPreview"') !== -1);
+        assert.ok(
+            html.indexOf('id="mxadminSettingLogoUploadBtn"') !== -1,
+            'mxadminSettingLogoUploadBtn eksik',
+        );
+        assert.ok(html.indexOf('id="mxadminSettingLogoInput"') !== -1);
         assert.ok(html.indexOf('id="mxadminDesignForm"') !== -1);
         assert.ok(html.indexOf('id="mxadminDesignLite"') !== -1);
         assert.ok(html.indexOf('id="mxadminDesignDark"') !== -1);
@@ -339,6 +344,10 @@ describe('webmodules/admin index.html ekran iskeleti', function () {
         assert.ok(
             html.indexOf('id="mxadminModulesMeta"') !== -1,
             'mxadminModulesMeta eksik',
+        );
+        assert.ok(
+            html.indexOf('id="mxadminModulesListRefreshBtn"') !== -1,
+            'mxadminModulesListRefreshBtn eksik',
         );
         assert.ok(html.indexOf('data-mxadmin-screen="modules"') !== -1);
     });
@@ -452,6 +461,10 @@ describe('webmodules/admin index.html ekran iskeleti', function () {
         assert.ok(
             html.indexOf('id="mxadminPageAddBtn"') !== -1,
             'mxadminPageAddBtn eksik',
+        );
+        assert.ok(
+            html.indexOf('id="mxadminPagesListRefreshBtn"') !== -1,
+            'mxadminPagesListRefreshBtn eksik',
         );
         assert.ok(
             html.indexOf('id="mxadminPageDeleteBtn"') !== -1,
@@ -609,6 +622,13 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
         assert.ok(
             js.indexOf('mxAdminShowPagesListLoading();') !== -1,
             'kategori degisiminde liste loading',
+        );
+        assert.ok(js.indexOf('function mxAdminRefreshPagesList') !== -1);
+        assert.ok(js.indexOf('function mxAdminRefreshModulesList') !== -1);
+        assert.ok(js.indexOf('function mxAdminUploadSettingLogo') !== -1);
+        assert.ok(
+            js.indexOf('setting-logo-upload') !== -1,
+            'logo upload API',
         );
     });
 

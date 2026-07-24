@@ -8,7 +8,8 @@ var PAGE_DIR = path.resolve(__dirname, "..");
 var OPERATIONS = [
   { id: "admin-sayfa-ekle", file: "admin.js", fn: "mxAdminAddPage" },
   { id: "admin-sayfa-kaydet", file: "admin.js", fn: "mxAdminHandlePageFormSubmit" },
-  { id: "admin-sayfa-sil", file: "admin.js", fn: "mxAdminDeletePage", deleteOp: true }
+  { id: "admin-sayfa-sil", file: "admin.js", fn: "mxAdminDeletePage", deleteOp: true },
+  { id: "admin-logo-guncelle", file: "admin.js", fn: "mxAdminHandleSettingLogoUploadInput" }
 ];
 
 describe("webmodules/admin operations registry", function() {
