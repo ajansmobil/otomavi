@@ -89,7 +89,7 @@
         "detail": true,
         "img": true,
         "bgimg": false,
-        "icon": true
+        "icon": false
       }
     },
     {
