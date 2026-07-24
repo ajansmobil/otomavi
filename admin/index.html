@@ -10,7 +10,9 @@
   <link rel="stylesheet" href="/src/rubik.css" />
   <link rel="preload" href="/src/material-symbols-outlined.css" as="style"
     onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="/src/material-symbols-outlined.css" /></noscript>
+  <noscript>
+    <link rel="stylesheet" href="/src/material-symbols-outlined.css" />
+  </noscript>
   <link rel="shortcut icon" href="/img/icon.png" type="image/png" />
   <link rel="stylesheet" href="/src/css.css" />
   <link rel="stylesheet" href="/admin/admin.css" />
@@ -37,7 +39,8 @@
             <label data-mxadmin-i18n="labelPassword" for="mxadminPassword">Parola</label>
             <div class="mxadmin-password-field">
               <input type="password" id="mxadminPassword" autocomplete="current-password" required />
-              <button type="button" class="mxadmin-password-toggle" id="mxadminPasswordToggle" aria-pressed="false" data-mxadmin-i18n-aria="passwordShow">
+              <button type="button" class="mxadmin-password-toggle" id="mxadminPasswordToggle" aria-pressed="false"
+                data-mxadmin-i18n-aria="passwordShow">
                 <span class="material-symbols-outlined" id="mxadminPasswordToggleIcon">visibility</span>
               </button>
             </div>
@@ -70,7 +73,8 @@
           <div class="mxadmin-sidebar-section">
             <div class="mxadmin-sidebar-section-head">
               <span data-mxadmin-i18n="sidebarPages">Sayfalar</span>
-              <button type="button" class="mxadmin-sidebar-edit-btn" id="mxadminCategoriesEditBtn" data-mxadmin-i18n-title="categoriesEdit">
+              <button type="button" class="mxadmin-sidebar-edit-btn" id="mxadminCategoriesEditBtn"
+                data-mxadmin-i18n-title="categoriesEdit">
                 <span class="material-symbols-outlined">tune</span>
               </button>
             </div>
@@ -182,7 +186,8 @@
         
         <section class="mxadmin-screen hidden" id="mxadminScreenCategories">
           <div class="mxadmin-screen-head mxadmin-screen-head-with-back">
-            <button type="button" class="mxadmin-screen-back-btn" id="mxadminCategoriesBackBtn" data-mxadmin-i18n-title="categoriesBack">
+            <button type="button" class="mxadmin-screen-back-btn" id="mxadminCategoriesBackBtn"
+              data-mxadmin-i18n-title="categoriesBack">
               <span class="material-symbols-outlined">arrow_back</span>
             </button>
             <div class="mxadmin-screen-head-text">
@@ -199,21 +204,22 @@
               <span class="mxadmin-panel-meta" id="mxadminCategoriesMeta">0</span>
             </div>
             <div class="mxadmin-panel-body">
-            <div class="mxadmin-table-wrap">
-              <table class="mxadmin-table mxadmin-table-categories" id="mxadminCategoriesTable">
-                <thead>
-                  <tr>
-                    <th data-mxadmin-i18n="fieldName">Ad</th>
-                    <th data-mxadmin-i18n="fieldPath">Path</th>
-                    <th data-mxadmin-i18n="fieldStatus">Durum</th>
-                  </tr>
-                </thead>
-                <tbody id="mxadminCategoriesBody"></tbody>
-              </table>
-            </div>
+              <div class="mxadmin-table-wrap">
+                <table class="mxadmin-table mxadmin-table-categories" id="mxadminCategoriesTable">
+                  <thead>
+                    <tr>
+                      <th data-mxadmin-i18n="fieldName">Ad</th>
+                      <th data-mxadmin-i18n="fieldPath">Path</th>
+                      <th data-mxadmin-i18n="fieldStatus">Durum</th>
+                    </tr>
+                  </thead>
+                  <tbody id="mxadminCategoriesBody"></tbody>
+                </table>
+              </div>
             </div>
             <div class="mxadmin-form-actions">
-              <button type="submit" class="mxadmin-btn-primary" id="mxadminCategoriesSave"><span data-mxadmin-i18n="save">Kaydet</span></button>
+              <button type="submit" class="mxadmin-btn-primary" id="mxadminCategoriesSave"><span
+                  data-mxadmin-i18n="save">Kaydet</span></button>
             </div>
           </form>
         </section>
@@ -236,13 +242,15 @@
                   <span class="mxadmin-pages-list-panel-sub" id="mxadminPagesListCount">0</span>
                 </div>
                 <span class="mxadmin-pages-list-panel-head-actions">
-                  <button type="button" class="mxadmin-btn-primary mxadmin-btn-sm" id="mxadminPageAddBtn" data-mxadmin-i18n="pageAdd">Sayfa ekle</button>
+                  <button type="button" class="mxadmin-btn-primary mxadmin-btn-sm" id="mxadminPageAddBtn"
+                    data-mxadmin-i18n="pageAdd">Sayfa ekle</button>
                 </span>
               </div>
               <div class="mxadmin-pages-list-search">
                 <div class="mxadmin-search-box mxadmin-search-box-full">
                   <span class="material-symbols-outlined">search</span>
-                  <input type="text" id="mxadminPagesSearch" placeholder="Ara…" data-mxadmin-i18n-placeholder="pagesSearchPlaceholder" />
+                  <input type="text" id="mxadminPagesSearch" placeholder="Ara…"
+                    data-mxadmin-i18n-placeholder="pagesSearchPlaceholder" />
                 </div>
               </div>
               <div class="mxadmin-pages-filters hidden" id="mxadminPagesFilters"></div>
@@ -255,7 +263,8 @@
               <div class="mxadmin-page-detail-empty" id="mxadminPageDetailEmpty">
                 <span class="material-symbols-outlined mxadmin-page-detail-empty-icon">touch_app</span>
                 <p class="mxadmin-page-detail-empty-title" data-mxadmin-i18n="pageDetailEmptyTitle">Sayfa seçin</p>
-                <p class="mxadmin-page-detail-empty-sub" data-mxadmin-i18n="pageDetailEmptySub">Soldaki listeden düzenlemek istediğiniz sayfayı seçin.</p>
+                <p class="mxadmin-page-detail-empty-sub" data-mxadmin-i18n="pageDetailEmptySub">Soldaki listeden
+                  düzenlemek istediğiniz sayfayı seçin.</p>
               </div>
               <div class="mxadmin-page-detail-loading hidden" id="mxadminPageDetailLoading">
                 <span class="mxadmin-spinner"></span>
@@ -263,7 +272,8 @@
               </div>
               <form class="mxadmin-page-detail-form hidden" id="mxadminPageForm">
                 <div class="mxadmin-page-detail-head">
-                  <button type="button" class="mxadmin-page-detail-back" id="mxadminPageDetailBack" data-mxadmin-i18n-title="pageDetailBack">
+                  <button type="button" class="mxadmin-page-detail-back" id="mxadminPageDetailBack"
+                    data-mxadmin-i18n-title="pageDetailBack">
                     <span class="material-symbols-outlined">arrow_back</span>
                   </button>
                   <div class="mxadmin-page-detail-head-main">
@@ -275,8 +285,10 @@
                     <code class="mxadmin-page-detail-path" id="mxadminPageDetailPath">/</code>
                   </div>
                   <div class="mxadmin-form-tabs mxadmin-page-detail-tabs">
-                    <button type="button" class="mxadmin-form-tab is-active" data-mxadmin-tab="general" data-mxadmin-i18n="tabGeneral">Genel</button>
-                    <button type="button" class="mxadmin-form-tab" data-mxadmin-tab="content" data-mxadmin-i18n="tabContent">İçerik</button>
+                    <button type="button" class="mxadmin-form-tab is-active" data-mxadmin-tab="general"
+                      data-mxadmin-i18n="tabGeneral">Genel</button>
+                    <button type="button" class="mxadmin-form-tab" data-mxadmin-tab="content"
+                      data-mxadmin-i18n="tabContent">İçerik</button>
                   </div>
                 </div>
                 <div class="mxadmin-page-detail-body">
@@ -308,10 +320,13 @@
                         <span class="material-symbols-outlined">image</span>
                         <span data-mxadmin-i18n="pageMediaTitle">Sayfa görselleri</span>
                         <span class="mxadmin-panel-meta" id="mxadminPageMediaMeta">0</span>
-                        <button type="button" class="mxadmin-btn-ghost mxadmin-btn-sm" id="mxadminPageMediaUploadBtn" data-mxadmin-i18n="moduleMediaUpload">Dosya yükle</button>
-                        <input type="file" class="hidden" id="mxadminPageMediaInput" accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml" multiple />
+                        <button type="button" class="mxadmin-btn-ghost mxadmin-btn-sm" id="mxadminPageMediaUploadBtn"
+                          data-mxadmin-i18n="moduleMediaUpload">Dosya yükle</button>
+                        <input type="file" class="hidden" id="mxadminPageMediaInput"
+                          accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml" multiple />
                       </div>
-                      <p class="mxadmin-page-media-hint" id="mxadminPageMediaCoverHint" data-mxadmin-i18n="pageMediaCoverHint">Kapak görseli için küçük resme tıklayın.</p>
+                      <p class="mxadmin-page-media-hint" id="mxadminPageMediaCoverHint"
+                        data-mxadmin-i18n="pageMediaCoverHint">Kapak görseli için küçük resme tıklayın.</p>
                       <div class="mxadmin-module-media-grid" id="mxadminPageMediaGrid"></div>
                     </div>
                   </div>
@@ -320,9 +335,12 @@
                   </div>
                 </div>
                 <div class="mxadmin-page-detail-foot">
-                  <button type="button" class="mxadmin-btn-ghost mxadmin-btn-danger" id="mxadminPageDeleteBtn" data-mxadmin-i18n="pageDelete">Sil</button>
-                  <button type="button" class="mxadmin-btn-ghost" id="mxadminPageCancel" data-mxadmin-i18n="cancel">İptal</button>
-                  <button type="submit" class="mxadmin-btn-primary" id="mxadminPageSave"><span data-mxadmin-i18n="save">Kaydet</span></button>
+                  <button type="button" class="mxadmin-btn-ghost mxadmin-btn-danger" id="mxadminPageDeleteBtn"
+                    data-mxadmin-i18n="pageDelete">Sil</button>
+                  <button type="button" class="mxadmin-btn-ghost" id="mxadminPageCancel"
+                    data-mxadmin-i18n="cancel">İptal</button>
+                  <button type="submit" class="mxadmin-btn-primary" id="mxadminPageSave"><span
+                      data-mxadmin-i18n="save">Kaydet</span></button>
                 </div>
               </form>
             </div>
@@ -346,7 +364,8 @@
               <div class="mxadmin-pages-list-search">
                 <div class="mxadmin-search-box mxadmin-search-box-full">
                   <span class="material-symbols-outlined">search</span>
-                  <input type="text" id="mxadminModulesSearch" placeholder="Ara…" data-mxadmin-i18n-placeholder="modulesSearchPlaceholder" />
+                  <input type="text" id="mxadminModulesSearch" placeholder="Ara…"
+                    data-mxadmin-i18n-placeholder="modulesSearchPlaceholder" />
                 </div>
               </div>
               <div class="mxadmin-pages-list-body">
@@ -358,7 +377,8 @@
               <div class="mxadmin-page-detail-empty" id="mxadminModuleDetailEmpty">
                 <span class="material-symbols-outlined mxadmin-page-detail-empty-icon">widgets</span>
                 <p class="mxadmin-page-detail-empty-title" data-mxadmin-i18n="moduleDetailEmptyTitle">Modül seçin</p>
-                <p class="mxadmin-page-detail-empty-sub" data-mxadmin-i18n="moduleDetailEmptySub">Soldaki listeden düzenlemek istediğiniz modülü seçin.</p>
+                <p class="mxadmin-page-detail-empty-sub" data-mxadmin-i18n="moduleDetailEmptySub">Soldaki listeden
+                  düzenlemek istediğiniz modülü seçin.</p>
               </div>
               <div class="mxadmin-page-detail-loading hidden" id="mxadminModuleDetailLoading">
                 <span class="mxadmin-spinner"></span>
@@ -366,20 +386,25 @@
               </div>
               <form class="mxadmin-page-detail-form hidden" id="mxadminModuleForm">
                 <div class="mxadmin-page-detail-head">
-                  <button type="button" class="mxadmin-page-detail-back hidden" id="mxadminModuleDetailBack" data-mxadmin-i18n-title="pageDetailBack">
+                  <button type="button" class="mxadmin-page-detail-back hidden" id="mxadminModuleDetailBack"
+                    data-mxadmin-i18n-title="pageDetailBack">
                     <span class="material-symbols-outlined">arrow_back</span>
                   </button>
                   <div class="mxadmin-page-detail-head-main">
                     <div class="mxadmin-page-detail-head-row">
                       <h3 class="mxadmin-page-detail-title" id="mxadminModuleDetailTitle">—</h3>
-                      <span class="mxadmin-module-badge mxadmin-module-badge-default" id="mxadminModuleDetailCategory">—</span>
+                      <span class="mxadmin-module-badge mxadmin-module-badge-default"
+                        id="mxadminModuleDetailCategory">—</span>
                     </div>
                     <code class="mxadmin-page-detail-path" id="mxadminModuleDetailMeta">—</code>
                   </div>
                   <div class="mxadmin-form-tabs mxadmin-page-detail-tabs">
-                    <button type="button" class="mxadmin-form-tab is-active" data-mxadmin-module-tab="general" data-mxadmin-i18n="tabGeneral">Genel</button>
-                    <button type="button" class="mxadmin-form-tab" data-mxadmin-module-tab="content" data-mxadmin-i18n="tabContent">İçerik</button>
-                    <button type="button" class="mxadmin-form-tab hidden" data-mxadmin-module-tab="media" data-mxadmin-i18n="tabMedia">Dosyalar</button>
+                    <button type="button" class="mxadmin-form-tab is-active" data-mxadmin-module-tab="general"
+                      data-mxadmin-i18n="tabGeneral">Genel</button>
+                    <button type="button" class="mxadmin-form-tab" data-mxadmin-module-tab="content"
+                      data-mxadmin-i18n="tabContent">İçerik</button>
+                    <button type="button" class="mxadmin-form-tab hidden" data-mxadmin-module-tab="media"
+                      data-mxadmin-i18n="tabMedia">Dosyalar</button>
                   </div>
                 </div>
                 <div class="mxadmin-page-detail-body">
@@ -400,7 +425,8 @@
                   <div class="mxadmin-tab-panel hidden" id="mxadminModuleTabContent">
                     <div class="mxadmin-module-data-toolbar">
                       <span class="mxadmin-panel-meta" id="mxadminModuleDataMeta">0</span>
-                      <button type="button" class="mxadmin-btn-ghost mxadmin-btn-sm hidden" id="mxadminModuleDataAdd" data-mxadmin-i18n="moduleDataAdd">Satır ekle</button>
+                      <button type="button" class="mxadmin-btn-ghost mxadmin-btn-sm hidden" id="mxadminModuleDataAdd"
+                        data-mxadmin-i18n="moduleDataAdd">Satır ekle</button>
                     </div>
                     <div class="mxadmin-empty hidden" id="mxadminModuleDataEmpty"></div>
                     <div id="mxadminModuleDataFields"></div>
@@ -408,15 +434,19 @@
                   <div class="mxadmin-tab-panel hidden" id="mxadminModuleTabMedia">
                     <div class="mxadmin-module-media-toolbar">
                       <span class="mxadmin-panel-meta" id="mxadminModuleMediaMeta">0</span>
-                      <button type="button" class="mxadmin-btn-ghost mxadmin-btn-sm" id="mxadminModuleMediaUploadBtn" data-mxadmin-i18n="moduleMediaUpload">Dosya yükle</button>
-                      <input type="file" class="hidden" id="mxadminModuleMediaInput" accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml" multiple />
+                      <button type="button" class="mxadmin-btn-ghost mxadmin-btn-sm" id="mxadminModuleMediaUploadBtn"
+                        data-mxadmin-i18n="moduleMediaUpload">Dosya yükle</button>
+                      <input type="file" class="hidden" id="mxadminModuleMediaInput"
+                        accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml" multiple />
                     </div>
                     <div class="mxadmin-module-media-grid" id="mxadminModuleMediaGrid"></div>
                   </div>
                 </div>
                 <div class="mxadmin-page-detail-foot">
-                  <button type="button" class="mxadmin-btn-ghost" id="mxadminModuleCancel" data-mxadmin-i18n="cancel">İptal</button>
-                  <button type="submit" class="mxadmin-btn-primary" id="mxadminModuleSave"><span data-mxadmin-i18n="save">Kaydet</span></button>
+                  <button type="button" class="mxadmin-btn-ghost" id="mxadminModuleCancel"
+                    data-mxadmin-i18n="cancel">İptal</button>
+                  <button type="submit" class="mxadmin-btn-primary" id="mxadminModuleSave"><span
+                      data-mxadmin-i18n="save">Kaydet</span></button>
                 </div>
               </form>
             </div>
@@ -446,7 +476,8 @@
                   <label data-mxadmin-i18n="fieldDomain">Alan adı</label>
                   <input type="text" id="mxadminSettingDomain" />
                 </div>
-                <div class="mxadmin-form-group mxadmin-form-group-full mxadmin-logo-preview-wrap hidden" id="mxadminSettingLogoPreview">
+                <div class="mxadmin-form-group mxadmin-form-group-full mxadmin-logo-preview-wrap hidden"
+                  id="mxadminSettingLogoPreview">
                   <label data-mxadmin-i18n="fieldLogo">Logo</label>
                   <div class="mxadmin-logo-preview-box">
                     <img class="mxadmin-logo-preview-img" id="mxadminSettingLogoImg" src="" alt="" />
@@ -461,12 +492,18 @@
                 <span data-mxadmin-i18n="settingsContact">İletişim</span>
               </div>
               <div class="mxadmin-panel-body mxadmin-form-grid">
-                <div class="mxadmin-form-group"><label data-mxadmin-i18n="fieldPhone">Telefon</label><input type="text" id="mxadminSettingPhone" /></div>
-                <div class="mxadmin-form-group"><label data-mxadmin-i18n="fieldMobile">Cep</label><input type="text" id="mxadminSettingMobile" /></div>
-                <div class="mxadmin-form-group"><label data-mxadmin-i18n="fieldEmail">E-posta</label><input type="text" id="mxadminSettingEmail" /></div>
-                <div class="mxadmin-form-group"><label data-mxadmin-i18n="fieldPerson">Yetkili</label><input type="text" id="mxadminSettingPerson" /></div>
-                <div class="mxadmin-form-group"><label data-mxadmin-i18n="fieldTitle">Ünvan</label><input type="text" id="mxadminSettingTitle" /></div>
-                <div class="mxadmin-form-group mxadmin-form-group-full"><label data-mxadmin-i18n="fieldAddress">Adres</label><input type="text" id="mxadminSettingAddress" /></div>
+                <div class="mxadmin-form-group"><label data-mxadmin-i18n="fieldPhone">Telefon</label><input type="text"
+                    id="mxadminSettingPhone" /></div>
+                <div class="mxadmin-form-group"><label data-mxadmin-i18n="fieldMobile">Cep</label><input type="text"
+                    id="mxadminSettingMobile" /></div>
+                <div class="mxadmin-form-group"><label data-mxadmin-i18n="fieldEmail">E-posta</label><input type="text"
+                    id="mxadminSettingEmail" /></div>
+                <div class="mxadmin-form-group"><label data-mxadmin-i18n="fieldPerson">Yetkili</label><input type="text"
+                    id="mxadminSettingPerson" /></div>
+                <div class="mxadmin-form-group"><label data-mxadmin-i18n="fieldTitle">Ünvan</label><input type="text"
+                    id="mxadminSettingTitle" /></div>
+                <div class="mxadmin-form-group mxadmin-form-group-full"><label
+                    data-mxadmin-i18n="fieldAddress">Adres</label><input type="text" id="mxadminSettingAddress" /></div>
               </div>
             </div>
             <div class="mxadmin-panel">
@@ -480,7 +517,8 @@
               </div>
             </div>
             <div class="mxadmin-form-actions">
-              <button type="submit" class="mxadmin-btn-primary" id="mxadminSettingsSave"><span data-mxadmin-i18n="save">Kaydet</span></button>
+              <button type="submit" class="mxadmin-btn-primary" id="mxadminSettingsSave"><span
+                  data-mxadmin-i18n="save">Kaydet</span></button>
             </div>
           </form>
         </section>
@@ -498,7 +536,8 @@
               <div class="mxadmin-panel-head">
                 <span class="material-symbols-outlined">view_quilt</span>
                 <span data-mxadmin-i18n="layoutTitle">Anasayfa yerleşimi</span>
-                <span class="mxadmin-panel-meta" data-mxadmin-i18n="layoutModuleHint">Düzenlemek için modüle tıklayın</span>
+                <span class="mxadmin-panel-meta" data-mxadmin-i18n="layoutModuleHint">Düzenlemek için modüle
+                  tıklayın</span>
               </div>
               <div class="mxadmin-panel-body" id="mxadminLayoutSummary"></div>
             </div>
@@ -523,7 +562,8 @@
               </div>
             </div>
             <div class="mxadmin-form-actions">
-              <button type="submit" class="mxadmin-btn-primary" id="mxadminDesignSave"><span data-mxadmin-i18n="save">Kaydet</span></button>
+              <button type="submit" class="mxadmin-btn-primary" id="mxadminDesignSave"><span
+                  data-mxadmin-i18n="save">Kaydet</span></button>
             </div>
           </form>
         </section>

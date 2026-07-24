@@ -51,7 +51,8 @@ function mxAdminConfirmDelete(message, opts) {
         var icon = opts.icon || 'delete_forever';
         var confirmText = opts.confirmText || 'Evet, sil';
         var cancelText = opts.cancelText || 'İptal';
-        var hasExtra = typeof opts.extraText === 'string' && opts.extraText.length > 0;
+        var hasExtra =
+            typeof opts.extraText === 'string' && opts.extraText.length > 0;
         var extraValue = 'extraValue' in opts ? opts.extraValue : true;
 
         mxAdminConfirmOverlayRemove();
@@ -61,7 +62,9 @@ function mxAdminConfirmDelete(message, opts) {
         var safeIcon = mxAdminConfirmDeleteEscape(icon);
         var safeConfirm = mxAdminConfirmDeleteEscape(confirmText);
         var safeCancel = mxAdminConfirmDeleteEscape(cancelText);
-        var safeExtra = hasExtra ? mxAdminConfirmDeleteEscape(opts.extraText) : '';
+        var safeExtra = hasExtra
+            ? mxAdminConfirmDeleteEscape(opts.extraText)
+            : '';
 
         var html =
             '<div class="mxadmin-confirm" role="alertdialog" aria-modal="true" aria-labelledby="mxadmin-confirm-title" onclick="event.stopPropagation()">' +
@@ -71,7 +74,9 @@ function mxAdminConfirmDelete(message, opts) {
             '<h3 class="mxadmin-confirm-title" id="mxadmin-confirm-title">' +
             safeTitle +
             '</h3>' +
-            (safeMsg ? '<p class="mxadmin-confirm-message">' + safeMsg + '</p>' : '') +
+            (safeMsg
+                ? '<p class="mxadmin-confirm-message">' + safeMsg + '</p>'
+                : '') +
             '<div class="mxadmin-confirm-actions">' +
             '<div class="mxadmin-confirm-btn mxadmin-confirm-btn-cancel" role="button" tabindex="0">' +
             safeCancel +
@@ -153,15 +158,18 @@ var MX_ADMIN_I18N = {
         labelUsername: 'Kullanıcı adı',
         labelPassword: 'Parola',
         loginSubmit: 'Giriş Yap',
-        loginHint: 'Bu panelden yeni kullanıcı oluşturulamaz — kullanıcı ekleme yalnızca site yöneticiniz tarafından yapılır.',
+        loginHint:
+            'Bu panelden yeni kullanıcı oluşturulamaz — kullanıcı ekleme yalnızca site yöneticiniz tarafından yapılır.',
         loginErrorInvalid: 'Kullanıcı adı veya parola hatalı.',
-        loginErrorNetwork: 'Yönetim sunucusuna bağlanılamadı. Lütfen daha sonra tekrar deneyin.',
+        loginErrorNetwork:
+            'Yönetim sunucusuna bağlanılamadı. Lütfen daha sonra tekrar deneyin.',
         passwordShow: 'Parolayı göster',
         passwordHide: 'Parolayı gizle',
         navMenu: 'Menü',
         categoriesEdit: 'Kategori düzenle',
         logout: 'Çıkış',
-        configWarning: 'Yönetim API adresi henüz yapılandırılmamış. Lütfen site yöneticinizle iletişime geçin.',
+        configWarning:
+            'Yönetim API adresi henüz yapılandırılmamış. Lütfen site yöneticinizle iletişime geçin.',
         loading: 'Yükleniyor…',
         save: 'Kaydet',
         cancel: 'İptal',
@@ -174,7 +182,8 @@ var MX_ADMIN_I18N = {
         cardUsername: 'Kullanıcı',
         cardCategories: 'Kategori',
         cardPages: 'Sayfa',
-        mustResetWarning: 'Parolanızın sıfırlanması gerekiyor. Lütfen site yöneticinizle iletişime geçin.',
+        mustResetWarning:
+            'Parolanızın sıfırlanması gerekiyor. Lütfen site yöneticinizle iletişime geçin.',
         loginHistoryTitle: 'Giriş geçmişiniz',
         loginHistoryEmpty: 'Kayıt bulunamadı.',
         loginHistoryError: 'Giriş geçmişi yüklenemedi.',
@@ -251,7 +260,8 @@ var MX_ADMIN_I18N = {
         modulesEmpty: 'Modül bulunamadı.',
         modulesSaveError: 'Modül kaydedilemedi.',
         moduleDetailEmptyTitle: 'Modül seçin',
-        moduleDetailEmptySub: 'Soldaki listeden düzenlemek istediğiniz modülü seçin.',
+        moduleDetailEmptySub:
+            'Soldaki listeden düzenlemek istediğiniz modülü seçin.',
         moduleDataAdd: 'Satır ekle',
         moduleDataRemove: 'Sil',
         moduleDataEmpty: 'Bu modülde düzenlenebilir veri satırı yok.',
@@ -285,7 +295,7 @@ var MX_ADMIN_I18N = {
         fieldPerson: 'Yetkili',
         fieldTitle: 'Ünvan',
         designTitle: 'Tasarım',
-        designSub: 'Renk token\'ları ve yerleşim özeti',
+        designSub: "Renk token'ları ve yerleşim özeti",
         designLiteTheme: 'Açık tema',
         designDarkTheme: 'Koyu tema',
         designLoadError: 'Tasarım renkleri yüklenemedi.',
@@ -303,7 +313,7 @@ var MX_ADMIN_I18N = {
         metaTokens: 'token',
         notConfigured: 'Yönetim API adresi yapılandırılmamış.',
         networkError: 'Sunucuya ulaşılamadı.',
-        unauthorized: 'Oturum sona ermiş, lütfen tekrar giriş yapın.'
+        unauthorized: 'Oturum sona ermiş, lütfen tekrar giriş yapın.',
     },
     en: {
         appTitle: 'Site Admin',
@@ -318,15 +328,18 @@ var MX_ADMIN_I18N = {
         labelUsername: 'Username',
         labelPassword: 'Password',
         loginSubmit: 'Sign In',
-        loginHint: 'New users cannot be created from this panel — user accounts are managed by your site administrator.',
+        loginHint:
+            'New users cannot be created from this panel — user accounts are managed by your site administrator.',
         loginErrorInvalid: 'Invalid username or password.',
-        loginErrorNetwork: 'Could not reach the admin server. Please try again later.',
+        loginErrorNetwork:
+            'Could not reach the admin server. Please try again later.',
         passwordShow: 'Show password',
         passwordHide: 'Hide password',
         navMenu: 'Menu',
         categoriesEdit: 'Edit categories',
         logout: 'Sign out',
-        configWarning: 'The admin API address is not configured yet. Please contact your site administrator.',
+        configWarning:
+            'The admin API address is not configured yet. Please contact your site administrator.',
         loading: 'Loading…',
         save: 'Save',
         cancel: 'Cancel',
@@ -339,7 +352,8 @@ var MX_ADMIN_I18N = {
         cardUsername: 'User',
         cardCategories: 'Categories',
         cardPages: 'Pages',
-        mustResetWarning: 'Your password must be reset. Please contact your site administrator.',
+        mustResetWarning:
+            'Your password must be reset. Please contact your site administrator.',
         loginHistoryTitle: 'Your login history',
         loginHistoryEmpty: 'No records found.',
         loginHistoryError: 'Could not load login history.',
@@ -416,7 +430,8 @@ var MX_ADMIN_I18N = {
         modulesEmpty: 'No modules found.',
         modulesSaveError: 'Could not save module.',
         moduleDetailEmptyTitle: 'Select a module',
-        moduleDetailEmptySub: 'Choose a module from the list on the left to edit it.',
+        moduleDetailEmptySub:
+            'Choose a module from the list on the left to edit it.',
         moduleDataAdd: 'Add row',
         moduleDataRemove: 'Remove',
         moduleDataEmpty: 'No editable data rows for this module.',
@@ -468,8 +483,8 @@ var MX_ADMIN_I18N = {
         metaTokens: 'tokens',
         notConfigured: 'Admin API address is not configured.',
         networkError: 'Could not reach the server.',
-        unauthorized: 'Your session has expired, please sign in again.'
-    }
+        unauthorized: 'Your session has expired, please sign in again.',
+    },
 };
 
 var mxAdminState = {
@@ -502,7 +517,14 @@ var mxAdminState = {
     pageDescFilters: {},
     pageDescById: {},
     pageDescCacheLoading: false,
-    loaded: { dashboard: false, categories: false, pages: false, modules: false, settings: false, design: false }
+    loaded: {
+        dashboard: false,
+        categories: false,
+        pages: false,
+        modules: false,
+        settings: false,
+        design: false,
+    },
 };
 
 
@@ -537,11 +559,17 @@ function mxAdminApplyI18n() {
     }
     var titleNodes = document.querySelectorAll('[data-mxadmin-i18n-title]');
     for (i = 0; i < titleNodes.length; i++) {
-        titleNodes[i].setAttribute('title', mxAdminT(titleNodes[i].getAttribute('data-mxadmin-i18n-title')));
+        titleNodes[i].setAttribute(
+            'title',
+            mxAdminT(titleNodes[i].getAttribute('data-mxadmin-i18n-title')),
+        );
     }
     var ariaNodes = document.querySelectorAll('[data-mxadmin-i18n-aria]');
     for (i = 0; i < ariaNodes.length; i++) {
-        ariaNodes[i].setAttribute('aria-label', mxAdminT(ariaNodes[i].getAttribute('data-mxadmin-i18n-aria')));
+        ariaNodes[i].setAttribute(
+            'aria-label',
+            mxAdminT(ariaNodes[i].getAttribute('data-mxadmin-i18n-aria')),
+        );
     }
     document.documentElement.setAttribute('lang', mxAdminState.lang);
     var toggleBtn = mxAdminEl('mxadminLangToggle');
@@ -651,7 +679,11 @@ function mxAdminFormatDevice(ua) {
     }
     var s = String(ua);
     var lower = s.toLowerCase();
-    if (lower.indexOf('curl/') !== -1 || lower.indexOf('curl ') === 0 || lower === 'curl') {
+    if (
+        lower.indexOf('curl/') !== -1 ||
+        lower.indexOf('curl ') === 0 ||
+        lower === 'curl'
+    ) {
         return 'curl';
     }
     if (lower.indexOf('cursor') !== -1) {
@@ -668,15 +700,24 @@ function mxAdminFormatDevice(ua) {
         browser = 'Edge';
     } else if (lower.indexOf('firefox/') !== -1) {
         browser = 'Firefox';
-    } else if (lower.indexOf('chrome/') !== -1 || lower.indexOf('crios/') !== -1) {
+    } else if (
+        lower.indexOf('chrome/') !== -1 ||
+        lower.indexOf('crios/') !== -1
+    ) {
         browser = 'Chrome';
-    } else if (lower.indexOf('safari/') !== -1 && lower.indexOf('chrome') === -1) {
+    } else if (
+        lower.indexOf('safari/') !== -1 &&
+        lower.indexOf('chrome') === -1
+    ) {
         browser = 'Safari';
     }
     var os = '';
     if (lower.indexOf('windows') !== -1) {
         os = 'Windows';
-    } else if (lower.indexOf('mac os') !== -1 || lower.indexOf('macintosh') !== -1) {
+    } else if (
+        lower.indexOf('mac os') !== -1 ||
+        lower.indexOf('macintosh') !== -1
+    ) {
         os = 'macOS';
     } else if (lower.indexOf('android') !== -1) {
         os = 'Android';
@@ -727,7 +768,10 @@ function mxAdminUpdatePagesListMeta(count) {
     var countEl = mxAdminEl('mxadminPagesListCount');
     if (countEl) {
         var info = String(count || 0) + ' ' + mxAdminT('metaPages');
-        var activeName = mxAdminGetPageDisplayName(mxAdminState.activePageRow, null);
+        var activeName = mxAdminGetPageDisplayName(
+            mxAdminState.activePageRow,
+            null,
+        );
         if (activeName) {
             info += ' · ' + activeName;
         }
@@ -743,7 +787,8 @@ function mxAdminUpdateModulesMeta(count) {
 }
 
 function mxAdminUpdateDesignColorMeta(themeKey, count) {
-    var metaId = themeKey === 'dark' ? 'mxadminDesignDarkMeta' : 'mxadminDesignLiteMeta';
+    var metaId =
+        themeKey === 'dark' ? 'mxadminDesignDarkMeta' : 'mxadminDesignLiteMeta';
     var meta = mxAdminEl(metaId);
     if (meta) {
         meta.textContent = String(count || 0) + ' ' + mxAdminT('metaTokens');
@@ -854,7 +899,11 @@ function mxAdminUnwrapApiData(resp) {
     if (!resp) {
         return resp;
     }
-    if (resp.data && typeof resp.data === 'object' && !Array.isArray(resp.data)) {
+    if (
+        resp.data &&
+        typeof resp.data === 'object' &&
+        !Array.isArray(resp.data)
+    ) {
         return resp.data;
     }
     return resp;
@@ -898,7 +947,10 @@ function mxAdminActiveLangs() {
         var langs = [];
         var key;
         for (key in setting.langs) {
-            if (Object.prototype.hasOwnProperty.call(setting.langs, key) && setting.langs[key]) {
+            if (
+                Object.prototype.hasOwnProperty.call(setting.langs, key) &&
+                setting.langs[key]
+            ) {
                 langs.push(key);
             }
         }
@@ -947,7 +999,7 @@ function mxAdminApiRequest(method, pathSuffix, body) {
         var opts = {
             method: method,
             credentials: 'include',
-            headers: { 'Content-Type': 'application/json' }
+            headers: { 'Content-Type': 'application/json' },
         };
         var apiHost = '';
         var pageHost = (window.location.hostname || '').toLowerCase();
@@ -969,23 +1021,40 @@ function mxAdminApiRequest(method, pathSuffix, body) {
             reject({ code: 'NETWORK' });
             return;
         }
-        request.then(function (res) {
-            res.json().then(function (data) {
-                if (!res.ok) {
-                    reject({ code: res.status === 401 ? 'UNAUTHORIZED' : 'HTTP', status: res.status, data: data });
-                    return;
-                }
-                resolve(data);
-            }).catch(function () {
-                if (!res.ok) {
-                    reject({ code: res.status === 401 ? 'UNAUTHORIZED' : 'HTTP', status: res.status });
-                    return;
-                }
-                resolve({});
+        request
+            .then(function (res) {
+                res.json()
+                    .then(function (data) {
+                        if (!res.ok) {
+                            reject({
+                                code:
+                                    res.status === 401
+                                        ? 'UNAUTHORIZED'
+                                        : 'HTTP',
+                                status: res.status,
+                                data: data,
+                            });
+                            return;
+                        }
+                        resolve(data);
+                    })
+                    .catch(function () {
+                        if (!res.ok) {
+                            reject({
+                                code:
+                                    res.status === 401
+                                        ? 'UNAUTHORIZED'
+                                        : 'HTTP',
+                                status: res.status,
+                            });
+                            return;
+                        }
+                        resolve({});
+                    });
+            })
+            .catch(function () {
+                reject({ code: 'NETWORK' });
             });
-        }).catch(function () {
-            reject({ code: 'NETWORK' });
-        });
     });
 }
 
@@ -1055,9 +1124,11 @@ function mxAdminClearSidebarCategoryActive() {
 }
 
 function mxAdminFindCategoryRow(path) {
-    var cats = mxAdminState.pagesettingData && Array.isArray(mxAdminState.pagesettingData.data)
-        ? mxAdminState.pagesettingData.data
-        : [];
+    var cats =
+        mxAdminState.pagesettingData &&
+        Array.isArray(mxAdminState.pagesettingData.data)
+            ? mxAdminState.pagesettingData.data
+            : [];
     var i;
     for (i = 0; i < cats.length; i++) {
         if (cats[i] && cats[i].path === path) {
@@ -1086,13 +1157,18 @@ function mxAdminUpdatePagesScreenHead(path) {
 }
 
 function mxAdminEnsurePagesetting(done) {
-    if (mxAdminState.pagesettingData && Array.isArray(mxAdminState.pagesettingData.data)) {
+    if (
+        mxAdminState.pagesettingData &&
+        Array.isArray(mxAdminState.pagesettingData.data)
+    ) {
         done(null);
         return;
     }
     mxAdminApiRequest('GET', '/api/admin/data/pagesetting')
         .then(function (resp) {
-            mxAdminState.pagesettingData = mxAdminUnwrapApiData(resp) || { data: [] };
+            mxAdminState.pagesettingData = mxAdminUnwrapApiData(resp) || {
+                data: [],
+            };
             if (!Array.isArray(mxAdminState.pagesettingData.data)) {
                 mxAdminState.pagesettingData.data = [];
             }
@@ -1110,9 +1186,11 @@ function mxAdminRenderSidebarCategories() {
         return;
     }
     wrap.innerHTML = '';
-    var cats = mxAdminState.pagesettingData && Array.isArray(mxAdminState.pagesettingData.data)
-        ? mxAdminState.pagesettingData.data
-        : [];
+    var cats =
+        mxAdminState.pagesettingData &&
+        Array.isArray(mxAdminState.pagesettingData.data)
+            ? mxAdminState.pagesettingData.data
+            : [];
     var lang = mxAdminState.lang;
     var hasActive = false;
     var i;
@@ -1124,7 +1202,10 @@ function mxAdminRenderSidebarCategories() {
         var btn = document.createElement('button');
         btn.type = 'button';
         btn.className = 'mxadmin-sidebar-cat-btn';
-        if (cat.path === mxAdminState.activeCategoryPath && mxAdminState.screen === 'pages') {
+        if (
+            cat.path === mxAdminState.activeCategoryPath &&
+            mxAdminState.screen === 'pages'
+        ) {
             btn.classList.add('is-active');
             hasActive = true;
         }
@@ -1133,13 +1214,18 @@ function mxAdminRenderSidebarCategories() {
         icon.className = 'material-symbols-outlined';
         icon.textContent = 'description';
         var label = document.createElement('span');
-        label.textContent = mxAdminPickLocalized(cat.name, lang) || cat.path || ('#' + i);
+        label.textContent =
+            mxAdminPickLocalized(cat.name, lang) || cat.path || '#' + i;
         btn.appendChild(icon);
         btn.appendChild(label);
         btn.onclick = mxAdminMakeSidebarCategoryHandler(cat.path);
         wrap.appendChild(btn);
     }
-    if (!hasActive && mxAdminState.screen === 'pages' && mxAdminState.activeCategoryPath) {
+    if (
+        !hasActive &&
+        mxAdminState.screen === 'pages' &&
+        mxAdminState.activeCategoryPath
+    ) {
         mxAdminSetSidebarCategoryActive(mxAdminState.activeCategoryPath);
     }
     if (!cats.length) {
@@ -1171,7 +1257,10 @@ function mxAdminOpenFirstCategoryPages() {
     mxAdminEnsurePagesetting(function (err) {
         if (err) {
             if (!mxAdminHandleUnauthorized(err)) {
-                mxAdminToast(mxAdminApiErrorMessage(err, 'pagesLoadError'), true);
+                mxAdminToast(
+                    mxAdminApiErrorMessage(err, 'pagesLoadError'),
+                    true,
+                );
             }
             return;
         }
@@ -1214,7 +1303,7 @@ function mxAdminShowScreen(name) {
         pages: 'mxadminScreenPages',
         modules: 'mxadminScreenModules',
         settings: 'mxadminScreenSettings',
-        design: 'mxadminScreenDesign'
+        design: 'mxadminScreenDesign',
     };
     var key;
     for (key in screens) {
@@ -1275,7 +1364,8 @@ function mxAdminUpdateUserChip() {
         siteLabel = setting.name;
     }
     if (!siteLabel) {
-        siteLabel = setting.domain || me.domain || window.location.hostname || '—';
+        siteLabel =
+            setting.domain || me.domain || window.location.hostname || '—';
     }
     if (domainEl) {
         domainEl.textContent = siteLabel;
@@ -1343,7 +1433,10 @@ function mxAdminSyncPasswordToggleA11y() {
     }
     var showing = input.type === 'text';
     btn.setAttribute('aria-pressed', showing ? 'true' : 'false');
-    btn.setAttribute('aria-label', mxAdminT(showing ? 'passwordHide' : 'passwordShow'));
+    btn.setAttribute(
+        'aria-label',
+        mxAdminT(showing ? 'passwordHide' : 'passwordShow'),
+    );
     if (icon) {
         icon.textContent = showing ? 'visibility_off' : 'visibility';
     }
@@ -1380,7 +1473,10 @@ function mxAdminHandleLoginSubmit(evt) {
     submitBtn.disabled = true;
     spinner.classList.remove('hidden');
 
-    mxAdminApiRequest('POST', '/api/admin/auth/login', { username: username, password: password })
+    mxAdminApiRequest('POST', '/api/admin/auth/login', {
+        username: username,
+        password: password,
+    })
         .then(function (data) {
             submitBtn.disabled = false;
             spinner.classList.add('hidden');
@@ -1390,15 +1486,32 @@ function mxAdminHandleLoginSubmit(evt) {
             submitBtn.disabled = false;
             spinner.classList.add('hidden');
             if (err && err.code === 'UNAUTHORIZED') {
-                mxAdminShowAlert('mxadminLoginError', mxAdminT('loginErrorInvalid'));
+                mxAdminShowAlert(
+                    'mxadminLoginError',
+                    mxAdminT('loginErrorInvalid'),
+                );
             } else if (err && err.code === 'NOT_CONFIGURED') {
-                mxAdminShowAlert('mxadminConfigWarning', mxAdminT('configWarning'));
-            } else if (err && err.code === 'HTTP' && err.data && err.data.error) {
+                mxAdminShowAlert(
+                    'mxadminConfigWarning',
+                    mxAdminT('configWarning'),
+                );
+            } else if (
+                err &&
+                err.code === 'HTTP' &&
+                err.data &&
+                err.data.error
+            ) {
                 mxAdminShowAlert('mxadminLoginError', String(err.data.error));
             } else if (err && err.code === 'NETWORK') {
-                mxAdminShowAlert('mxadminLoginError', mxAdminT('loginErrorNetwork'));
+                mxAdminShowAlert(
+                    'mxadminLoginError',
+                    mxAdminT('loginErrorNetwork'),
+                );
             } else {
-                mxAdminShowAlert('mxadminLoginError', mxAdminT('loginErrorNetwork'));
+                mxAdminShowAlert(
+                    'mxadminLoginError',
+                    mxAdminT('loginErrorNetwork'),
+                );
             }
         });
 }
@@ -1418,11 +1531,13 @@ function mxAdminCheckSession() {
 }
 
 function mxAdminLogout() {
-    mxAdminApiRequest('POST', '/api/admin/auth/logout').then(function () {
-        mxAdminAfterLogout();
-    }).catch(function () {
-        mxAdminAfterLogout();
-    });
+    mxAdminApiRequest('POST', '/api/admin/auth/logout')
+        .then(function () {
+            mxAdminAfterLogout();
+        })
+        .catch(function () {
+            mxAdminAfterLogout();
+        });
 }
 
 function mxAdminAfterLogout() {
@@ -1441,7 +1556,14 @@ function mxAdminAfterLogout() {
     mxAdminState.activeModuleIndex = -1;
     mxAdminState.moduleRecord = null;
     mxAdminState.moduleFiles = [];
-    mxAdminState.loaded = { dashboard: false, categories: false, pages: false, modules: false, settings: false, design: false };
+    mxAdminState.loaded = {
+        dashboard: false,
+        categories: false,
+        pages: false,
+        modules: false,
+        settings: false,
+        design: false,
+    };
     mxAdminEl('mxadminUsername').value = '';
     mxAdminEl('mxadminPassword').value = '';
     mxAdminResetPasswordVisibility();
@@ -1454,7 +1576,8 @@ function mxAdminLoadDashboard() {
     mxAdminState.loaded.dashboard = true;
     var me = mxAdminState.me || {};
     mxAdminUpdateUserChip();
-    mxAdminEl('mxadminCardDomainValue').textContent = me.domain || window.location.hostname || '—';
+    mxAdminEl('mxadminCardDomainValue').textContent =
+        me.domain || window.location.hostname || '—';
     mxAdminEl('mxadminCardUsernameValue').textContent = me.username || '—';
     mxAdminEl('mxadminCardCategoriesValue').textContent = '—';
     mxAdminEl('mxadminCardPagesValue').textContent = '—';
@@ -1472,7 +1595,9 @@ function mxAdminLoadDashboard() {
             var ps = mxAdminUnwrapApiData(resp) || {};
             mxAdminState.pagesettingData = ps;
             var cats = Array.isArray(ps.data) ? ps.data : [];
-            mxAdminEl('mxadminCardCategoriesValue').textContent = String(cats.length);
+            mxAdminEl('mxadminCardCategoriesValue').textContent = String(
+                cats.length,
+            );
             mxAdminCountAllPages(cats);
         })
         .catch(function () {
@@ -1490,7 +1615,7 @@ function mxAdminLoadDashboard() {
     mxAdminApiRequest('GET', '/api/admin/auth/login-history')
         .then(function (resp) {
             loading.classList.add('hidden');
-            var list = (resp && Array.isArray(resp.data)) ? resp.data : [];
+            var list = resp && Array.isArray(resp.data) ? resp.data : [];
             mxAdminRenderLoginHistory(list);
         })
         .catch(function (err) {
@@ -1498,7 +1623,10 @@ function mxAdminLoadDashboard() {
             if (mxAdminHandleUnauthorized(err)) {
                 return;
             }
-            mxAdminShowAlert('mxadminHistoryError', mxAdminApiErrorMessage(err, 'loginHistoryError'));
+            mxAdminShowAlert(
+                'mxadminHistoryError',
+                mxAdminApiErrorMessage(err, 'loginHistoryError'),
+            );
         });
 }
 
@@ -1515,21 +1643,28 @@ function mxAdminCountAllPages(cats) {
             if (!catPath) {
                 pending -= 1;
                 if (pending === 0) {
-                    mxAdminEl('mxadminCardPagesValue').textContent = String(total);
+                    mxAdminEl('mxadminCardPagesValue').textContent =
+                        String(total);
                 }
                 return;
             }
-            mxAdminApiRequest('GET', '/api/admin/data/' + encodeURIComponent(catPath))
+            mxAdminApiRequest(
+                'GET',
+                '/api/admin/data/' + encodeURIComponent(catPath),
+            )
                 .then(function (resp) {
                     var doc = mxAdminUnwrapApiData(resp) || {};
                     var rows = Array.isArray(doc.data) ? doc.data : [];
                     total += rows.length;
                 })
-                .catch(function () {  })
+                .catch(function () {
+                    
+                })
                 .then(function () {
                     pending -= 1;
                     if (pending === 0) {
-                        mxAdminEl('mxadminCardPagesValue').textContent = String(total);
+                        mxAdminEl('mxadminCardPagesValue').textContent =
+                            String(total);
                     }
                 });
         })(cats[ci].path);
@@ -1559,7 +1694,9 @@ function mxAdminRenderLoginHistory(list) {
         var dateText = dateVal;
         try {
             if (dateVal) {
-                dateText = new Date(dateVal).toLocaleString(mxAdminState.lang === 'en' ? 'en-US' : 'tr-TR');
+                dateText = new Date(dateVal).toLocaleString(
+                    mxAdminState.lang === 'en' ? 'en-US' : 'tr-TR',
+                );
             }
         } catch (dateErr) {
             dateText = dateVal;
@@ -1568,12 +1705,24 @@ function mxAdminRenderLoginHistory(list) {
         var fullUa = row.user_agent || row.userAgent || '';
         var deviceLabel = mxAdminFormatDevice(fullUa);
         tr.innerHTML =
-            '<td>' + mxAdminEscapeHtml(dateText) + '</td>' +
-            '<td>' + mxAdminEscapeHtml(row.ip || '—') + '</td>' +
-            '<td class="mxadmin-col-device" title="' + mxAdminEscapeHtml(fullUa || deviceLabel) + '">' +
-            mxAdminEscapeHtml(deviceLabel) + '</td>' +
-            '<td><span class="mxadmin-badge ' + (success ? 'mxadmin-badge-success' : 'mxadmin-badge-fail') + '">' +
-            mxAdminEscapeHtml(success ? mxAdminT('resultSuccess') : mxAdminT('resultFail')) + '</span></td>';
+            '<td>' +
+            mxAdminEscapeHtml(dateText) +
+            '</td>' +
+            '<td>' +
+            mxAdminEscapeHtml(row.ip || '—') +
+            '</td>' +
+            '<td class="mxadmin-col-device" title="' +
+            mxAdminEscapeHtml(fullUa || deviceLabel) +
+            '">' +
+            mxAdminEscapeHtml(deviceLabel) +
+            '</td>' +
+            '<td><span class="mxadmin-badge ' +
+            (success ? 'mxadmin-badge-success' : 'mxadmin-badge-fail') +
+            '">' +
+            mxAdminEscapeHtml(
+                success ? mxAdminT('resultSuccess') : mxAdminT('resultFail'),
+            ) +
+            '</span></td>';
         body.appendChild(tr);
     }
 }
@@ -1591,7 +1740,9 @@ function mxAdminLoadCategories() {
     mxAdminApiRequest('GET', '/api/admin/data/pagesetting')
         .then(function (resp) {
             loading.classList.add('hidden');
-            mxAdminState.pagesettingData = mxAdminUnwrapApiData(resp) || { data: [] };
+            mxAdminState.pagesettingData = mxAdminUnwrapApiData(resp) || {
+                data: [],
+            };
             if (!Array.isArray(mxAdminState.pagesettingData.data)) {
                 mxAdminState.pagesettingData.data = [];
             }
@@ -1604,16 +1755,21 @@ function mxAdminLoadCategories() {
             if (mxAdminHandleUnauthorized(err)) {
                 return;
             }
-            mxAdminShowAlert('mxadminCategoriesError', mxAdminApiErrorMessage(err, 'categoriesLoadError'));
+            mxAdminShowAlert(
+                'mxadminCategoriesError',
+                mxAdminApiErrorMessage(err, 'categoriesLoadError'),
+            );
         });
 }
 
 function mxAdminRenderCategoriesTable() {
     var tbody = mxAdminEl('mxadminCategoriesBody');
     tbody.innerHTML = '';
-    var rows = mxAdminState.pagesettingData && Array.isArray(mxAdminState.pagesettingData.data)
-        ? mxAdminState.pagesettingData.data
-        : [];
+    var rows =
+        mxAdminState.pagesettingData &&
+        Array.isArray(mxAdminState.pagesettingData.data)
+            ? mxAdminState.pagesettingData.data
+            : [];
     var lang = mxAdminState.lang;
     var i;
     for (i = 0; i < rows.length; i++) {
@@ -1625,11 +1781,29 @@ function mxAdminRenderCategoriesTable() {
         }
         var tr = document.createElement('tr');
         tr.innerHTML =
-            '<td><input type="text" class="mxadmin-table-input" data-mxadmin-cat-name="' + i + '" value="' + mxAdminEscapeHtml(nameVal) + '" /></td>' +
-            '<td><span class="mxadmin-table-path">' + mxAdminEscapeHtml(row.path || '—') + '</span></td>' +
+            '<td><input type="text" class="mxadmin-table-input" data-mxadmin-cat-name="' +
+            i +
+            '" value="' +
+            mxAdminEscapeHtml(nameVal) +
+            '" /></td>' +
+            '<td><span class="mxadmin-table-path">' +
+            mxAdminEscapeHtml(row.path || '—') +
+            '</span></td>' +
             '<td><label class="mxadmin-check-label mxadmin-status-toggle">' +
-            '<input type="checkbox" data-mxadmin-cat-active="' + i + '"' + (active ? ' checked' : '') + ' /> ' +
-            '<span data-mxadmin-cat-active-label="' + i + '">' + mxAdminEscapeHtml(active ? mxAdminT('categoryActive') : mxAdminT('categoryPassive')) + '</span>' +
+            '<input type="checkbox" data-mxadmin-cat-active="' +
+            i +
+            '"' +
+            (active ? ' checked' : '') +
+            ' /> ' +
+            '<span data-mxadmin-cat-active-label="' +
+            i +
+            '">' +
+            mxAdminEscapeHtml(
+                active
+                    ? mxAdminT('categoryActive')
+                    : mxAdminT('categoryPassive'),
+            ) +
+            '</span>' +
             '</label></td>';
         tbody.appendChild(tr);
     }
@@ -1638,30 +1812,42 @@ function mxAdminRenderCategoriesTable() {
 
     var checkboxes = tbody.querySelectorAll('[data-mxadmin-cat-active]');
     for (i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].onchange = mxAdminMakeCategoryActiveToggleHandler(checkboxes[i]);
+        checkboxes[i].onchange = mxAdminMakeCategoryActiveToggleHandler(
+            checkboxes[i],
+        );
     }
 }
 
 function mxAdminMakeCategoryActiveToggleHandler(checkbox) {
     return function () {
         var idx = checkbox.getAttribute('data-mxadmin-cat-active');
-        var label = document.querySelector('[data-mxadmin-cat-active-label="' + idx + '"]');
+        var label = document.querySelector(
+            '[data-mxadmin-cat-active-label="' + idx + '"]',
+        );
         if (label) {
-            label.textContent = checkbox.checked ? mxAdminT('categoryActive') : mxAdminT('categoryPassive');
+            label.textContent = checkbox.checked
+                ? mxAdminT('categoryActive')
+                : mxAdminT('categoryPassive');
         }
     };
 }
 
 function mxAdminHandleCategoriesFormSubmit(evt) {
     evt.preventDefault();
-    var rows = mxAdminState.pagesettingData && Array.isArray(mxAdminState.pagesettingData.data)
-        ? mxAdminState.pagesettingData.data
-        : [];
+    var rows =
+        mxAdminState.pagesettingData &&
+        Array.isArray(mxAdminState.pagesettingData.data)
+            ? mxAdminState.pagesettingData.data
+            : [];
     var lang = mxAdminState.lang;
     var i;
     for (i = 0; i < rows.length; i++) {
-        var nameInput = document.querySelector('[data-mxadmin-cat-name="' + i + '"]');
-        var activeInput = document.querySelector('[data-mxadmin-cat-active="' + i + '"]');
+        var nameInput = document.querySelector(
+            '[data-mxadmin-cat-name="' + i + '"]',
+        );
+        var activeInput = document.querySelector(
+            '[data-mxadmin-cat-active="' + i + '"]',
+        );
         if (nameInput) {
             var newName = nameInput.value;
             if (typeof rows[i].name === 'object' && rows[i].name !== null) {
@@ -1679,7 +1865,11 @@ function mxAdminHandleCategoriesFormSubmit(evt) {
 
     var saveBtn = mxAdminEl('mxadminCategoriesSave');
     saveBtn.disabled = true;
-    mxAdminApiRequest('PUT', '/api/admin/data/pagesetting', mxAdminState.pagesettingData)
+    mxAdminApiRequest(
+        'PUT',
+        '/api/admin/data/pagesetting',
+        mxAdminState.pagesettingData,
+    )
         .then(function () {
             saveBtn.disabled = false;
             mxAdminRenderSidebarCategories();
@@ -1709,13 +1899,25 @@ function mxAdminLoadPagesScreen() {
             if (mxAdminState.activeCategoryPath) {
                 mxAdminUpdatePagesScreenHead(mxAdminState.activeCategoryPath);
                 mxAdminSelectCategory(mxAdminState.activeCategoryPath);
-            } else if (mxAdminState.pagesettingData && mxAdminState.pagesettingData.data && mxAdminState.pagesettingData.data.length) {
+            } else if (
+                mxAdminState.pagesettingData &&
+                mxAdminState.pagesettingData.data &&
+                mxAdminState.pagesettingData.data.length
+            ) {
                 var i;
                 for (i = 0; i < mxAdminState.pagesettingData.data.length; i++) {
-                    if (mxAdminState.pagesettingData.data[i].active !== false && mxAdminState.pagesettingData.data[i].path) {
-                        mxAdminState.activeCategoryPath = mxAdminState.pagesettingData.data[i].path;
-                        mxAdminUpdatePagesScreenHead(mxAdminState.activeCategoryPath);
-                        mxAdminSetSidebarCategoryActive(mxAdminState.activeCategoryPath);
+                    if (
+                        mxAdminState.pagesettingData.data[i].active !== false &&
+                        mxAdminState.pagesettingData.data[i].path
+                    ) {
+                        mxAdminState.activeCategoryPath =
+                            mxAdminState.pagesettingData.data[i].path;
+                        mxAdminUpdatePagesScreenHead(
+                            mxAdminState.activeCategoryPath,
+                        );
+                        mxAdminSetSidebarCategoryActive(
+                            mxAdminState.activeCategoryPath,
+                        );
                         mxAdminSelectCategory(mxAdminState.activeCategoryPath);
                         return;
                     }
@@ -1723,7 +1925,10 @@ function mxAdminLoadPagesScreen() {
             }
             mxAdminRenderPagesList();
         };
-        if (mxAdminState.pagesettingData && Array.isArray(mxAdminState.pagesettingData.data)) {
+        if (
+            mxAdminState.pagesettingData &&
+            Array.isArray(mxAdminState.pagesettingData.data)
+        ) {
             finish();
             return;
         }
@@ -1733,7 +1938,10 @@ function mxAdminLoadPagesScreen() {
                 if (mxAdminHandleUnauthorized(err)) {
                     return;
                 }
-                mxAdminShowAlert('mxadminPagesError', mxAdminApiErrorMessage(err, 'pagesLoadError'));
+                mxAdminShowAlert(
+                    'mxadminPagesError',
+                    mxAdminApiErrorMessage(err, 'pagesLoadError'),
+                );
                 return;
             }
             finish();
@@ -1765,7 +1973,11 @@ function mxAdminSelectCategory(path) {
         .then(function (resp) {
             loading.classList.add('hidden');
             mxAdminState.categoryDoc = mxAdminUnwrapApiData(resp) || {};
-            mxAdminState.categoryPages = Array.isArray(mxAdminState.categoryDoc.data) ? mxAdminState.categoryDoc.data : [];
+            mxAdminState.categoryPages = Array.isArray(
+                mxAdminState.categoryDoc.data,
+            )
+                ? mxAdminState.categoryDoc.data
+                : [];
             mxAdminSortPagesInPlace(mxAdminState.categoryPages);
             mxAdminState.categoryDoc.data = mxAdminState.categoryPages;
             mxAdminRenderPageFilters();
@@ -1783,7 +1995,10 @@ function mxAdminSelectCategory(path) {
             if (mxAdminHandleUnauthorized(err)) {
                 return;
             }
-            mxAdminShowAlert('mxadminPagesError', mxAdminApiErrorMessage(err, 'pagesLoadError'));
+            mxAdminShowAlert(
+                'mxadminPagesError',
+                mxAdminApiErrorMessage(err, 'pagesLoadError'),
+            );
         });
 }
 
@@ -1806,7 +2021,11 @@ function mxAdminGetFilteredPages() {
             var name = mxAdminPickLocalized(page.name, lang).toLowerCase();
             var ppath = (page.path || '').toLowerCase();
             var pid = (page.id || '').toLowerCase();
-            if (name.indexOf(q) === -1 && ppath.indexOf(q) === -1 && pid.indexOf(q) === -1) {
+            if (
+                name.indexOf(q) === -1 &&
+                ppath.indexOf(q) === -1 &&
+                pid.indexOf(q) === -1
+            ) {
                 continue;
             }
         }
@@ -1824,8 +2043,8 @@ function mxAdminSortPagesInPlace(list) {
         return;
     }
     list.sort(function (a, b) {
-        var ai = (a && typeof a.index === 'number') ? a.index : 999999;
-        var bi = (b && typeof b.index === 'number') ? b.index : 999999;
+        var ai = a && typeof a.index === 'number' ? a.index : 999999;
+        var bi = b && typeof b.index === 'number' ? b.index : 999999;
         return ai - bi;
     });
 }
@@ -1851,9 +2070,13 @@ function mxAdminPersistPageOrder() {
     if (!orderedIds.length) {
         return Promise.resolve(null);
     }
-    return mxAdminApiRequest('POST', '/api/admin/data/page-reorder/' + encodeURIComponent(catPath), {
-        orderedIds: orderedIds
-    });
+    return mxAdminApiRequest(
+        'POST',
+        '/api/admin/data/page-reorder/' + encodeURIComponent(catPath),
+        {
+            orderedIds: orderedIds,
+        },
+    );
 }
 
 function mxAdminMovePage(pageRow, delta) {
@@ -1864,9 +2087,10 @@ function mxAdminMovePage(pageRow, delta) {
     if (!pageRow || !delta) {
         return;
     }
-    var list = mxAdminState.categoryDoc && Array.isArray(mxAdminState.categoryDoc.data)
-        ? mxAdminState.categoryDoc.data
-        : mxAdminState.categoryPages;
+    var list =
+        mxAdminState.categoryDoc && Array.isArray(mxAdminState.categoryDoc.data)
+            ? mxAdminState.categoryDoc.data
+            : mxAdminState.categoryPages;
     if (!list || !list.length) {
         return;
     }
@@ -1886,7 +2110,11 @@ function mxAdminMovePage(pageRow, delta) {
     }
     mxAdminState.categoryPages = list;
     mxAdminState.categoryDoc.data = list;
-    if (mxAdminState.activePageRow && mxAdminState.activePageRow.id && pageRow.id === mxAdminState.activePageRow.id) {
+    if (
+        mxAdminState.activePageRow &&
+        mxAdminState.activePageRow.id &&
+        pageRow.id === mxAdminState.activePageRow.id
+    ) {
         mxAdminState.activePageRow = list[newIdx];
     }
     mxAdminRenderPagesList();
@@ -1898,7 +2126,10 @@ function mxAdminMovePage(pageRow, delta) {
             if (mxAdminHandleUnauthorized(err)) {
                 return;
             }
-            mxAdminToast(mxAdminApiErrorMessage(err, 'pagesReorderError'), true);
+            mxAdminToast(
+                mxAdminApiErrorMessage(err, 'pagesReorderError'),
+                true,
+            );
             if (mxAdminState.activeCategoryPath) {
                 mxAdminSelectCategory(mxAdminState.activeCategoryPath);
             }
@@ -1921,7 +2152,11 @@ function mxAdminMakePageMoveHandler(pageRow, delta) {
 function mxAdminBuildPageAddBody() {
     var body = { status: 'play' };
     var filterVal = mxAdminState.pageCategoryFilter || 'all';
-    if (filterVal && filterVal !== 'all' && filterVal !== MX_ADMIN_PAGE_CATEGORY_NONE) {
+    if (
+        filterVal &&
+        filterVal !== 'all' &&
+        filterVal !== MX_ADMIN_PAGE_CATEGORY_NONE
+    ) {
         body.category = filterVal;
     } else if (filterVal === MX_ADMIN_PAGE_CATEGORY_NONE) {
         body.category = '';
@@ -1940,36 +2175,49 @@ function mxAdminAddPage() {
     if (addBtn) {
         addBtn.disabled = true;
     }
-    mxAdminApiRequest('POST', '/api/admin/data/page-add/' + encodeURIComponent(catPath), mxAdminBuildPageAddBody())
+    mxAdminApiRequest(
+        'POST',
+        '/api/admin/data/page-add/' + encodeURIComponent(catPath),
+        mxAdminBuildPageAddBody(),
+    )
         .then(function (resp) {
             var pageId = resp && resp.pageId ? String(resp.pageId) : '';
             var newPageFromResp = resp && resp.page ? resp.page : null;
-            return mxAdminApiRequest('GET', '/api/admin/data/' + encodeURIComponent(catPath))
-                .then(function (catResp) {
-                    mxAdminState.categoryDoc = mxAdminUnwrapApiData(catResp) || {};
-                    mxAdminState.categoryPages = Array.isArray(mxAdminState.categoryDoc.data) ? mxAdminState.categoryDoc.data : [];
-                    mxAdminSortPagesInPlace(mxAdminState.categoryPages);
-                    mxAdminState.categoryDoc.data = mxAdminState.categoryPages;
-                    mxAdminRenderPageFilters();
-                    mxAdminRenderPagesList();
-                    var newPage = null;
-                    var i;
-                    if (pageId) {
-                        for (i = 0; i < mxAdminState.categoryPages.length; i++) {
-                            if (mxAdminState.categoryPages[i] && String(mxAdminState.categoryPages[i].id) === pageId) {
-                                newPage = mxAdminState.categoryPages[i];
-                                break;
-                            }
+            return mxAdminApiRequest(
+                'GET',
+                '/api/admin/data/' + encodeURIComponent(catPath),
+            ).then(function (catResp) {
+                mxAdminState.categoryDoc = mxAdminUnwrapApiData(catResp) || {};
+                mxAdminState.categoryPages = Array.isArray(
+                    mxAdminState.categoryDoc.data,
+                )
+                    ? mxAdminState.categoryDoc.data
+                    : [];
+                mxAdminSortPagesInPlace(mxAdminState.categoryPages);
+                mxAdminState.categoryDoc.data = mxAdminState.categoryPages;
+                mxAdminRenderPageFilters();
+                mxAdminRenderPagesList();
+                var newPage = null;
+                var i;
+                if (pageId) {
+                    for (i = 0; i < mxAdminState.categoryPages.length; i++) {
+                        if (
+                            mxAdminState.categoryPages[i] &&
+                            String(mxAdminState.categoryPages[i].id) === pageId
+                        ) {
+                            newPage = mxAdminState.categoryPages[i];
+                            break;
                         }
                     }
-                    if (!newPage && newPageFromResp) {
-                        newPage = newPageFromResp;
-                    }
-                    if (newPage) {
-                        mxAdminOpenPageEditor(newPage);
-                    }
-                    mxAdminToast(mxAdminT('pageAddSuccess'), false);
-                });
+                }
+                if (!newPage && newPageFromResp) {
+                    newPage = newPageFromResp;
+                }
+                if (newPage) {
+                    mxAdminOpenPageEditor(newPage);
+                }
+                mxAdminToast(mxAdminT('pageAddSuccess'), false);
+            });
         })
         .catch(function (err) {
             if (mxAdminHandleUnauthorized(err)) {
@@ -2002,7 +2250,7 @@ function mxAdminDeletePage() {
         confirmMsg = confirmMsg + ' (ID: ' + pageRow.id + ')';
     }
     Global_confirmDelete(confirmMsg, {
-        title: mxAdminT('pageDeleteConfirmTitle')
+        title: mxAdminT('pageDeleteConfirmTitle'),
     }).then(function (ok) {
         if (!ok) {
             return;
@@ -2013,14 +2261,18 @@ function mxAdminDeletePage() {
         }
         mxAdminApiRequest(
             'DELETE',
-            '/api/admin/data/page-delete/' + encodeURIComponent(catPath) + '/' + encodeURIComponent(String(pageRow.id))
+            '/api/admin/data/page-delete/' +
+                encodeURIComponent(catPath) +
+                '/' +
+                encodeURIComponent(String(pageRow.id)),
         )
             .then(function () {
                 var idx = mxAdminFindPageRowIndex(pageRow);
                 if (idx >= 0 && mxAdminState.categoryPages) {
                     mxAdminState.categoryPages.splice(idx, 1);
                     if (mxAdminState.categoryDoc) {
-                        mxAdminState.categoryDoc.data = mxAdminState.categoryPages;
+                        mxAdminState.categoryDoc.data =
+                            mxAdminState.categoryPages;
                     }
                 }
                 mxAdminState.activePageRow = null;
@@ -2034,7 +2286,10 @@ function mxAdminDeletePage() {
                 if (mxAdminHandleUnauthorized(err)) {
                     return;
                 }
-                mxAdminToast(mxAdminApiErrorMessage(err, 'pageDeleteError'), true);
+                mxAdminToast(
+                    mxAdminApiErrorMessage(err, 'pageDeleteError'),
+                    true,
+                );
             })
             .then(function () {
                 if (deleteBtn) {
@@ -2063,10 +2318,10 @@ function mxAdminRenderPagesList() {
     empty.classList.add('hidden');
     mxAdminUpdatePagesListMeta(list.length);
 
-    var lang = mxAdminState.lang;
-    var activeId = mxAdminState.activePageRow && mxAdminState.activePageRow.id
-        ? String(mxAdminState.activePageRow.id)
-        : '';
+    var activeId =
+        mxAdminState.activePageRow && mxAdminState.activePageRow.id
+            ? String(mxAdminState.activePageRow.id)
+            : '';
     var showOrder = !mxAdminIsPagesSearchActive();
     var fullLen = (mxAdminState.categoryPages || []).length;
     var i;
@@ -2080,16 +2335,28 @@ function mxAdminRenderPagesList() {
         }
         var displayName = mxAdminGetPageDisplayName(page, i);
         var isLive = page.status !== 'pause';
-        var badgeClass = isLive ? 'mxadmin-badge-success' : 'mxadmin-badge-fail';
-        var badgeText = isLive ? mxAdminT('statusPlay') : mxAdminT('statusPause');
+        var badgeClass = isLive
+            ? 'mxadmin-badge-success'
+            : 'mxadmin-badge-fail';
+        var badgeText = isLive
+            ? mxAdminT('statusPlay')
+            : mxAdminT('statusPause');
         var fullIdx = showOrder ? mxAdminFindPageRowIndex(page) : -1;
         var orderHtml = '';
         if (showOrder && fullIdx >= 0) {
             orderHtml =
                 '<div class="mxadmin-pages-list-order">' +
-                '<button type="button" class="mxadmin-page-move-btn' + (fullIdx <= 0 ? ' is-off' : '') + '" data-mxadmin-page-move="-1" title="' + mxAdminEscapeHtml(mxAdminT('pagesMoveUp')) + '">' +
+                '<button type="button" class="mxadmin-page-move-btn' +
+                (fullIdx <= 0 ? ' is-off' : '') +
+                '" data-mxadmin-page-move="-1" title="' +
+                mxAdminEscapeHtml(mxAdminT('pagesMoveUp')) +
+                '">' +
                 '<span class="material-symbols-outlined">arrow_upward</span></button>' +
-                '<button type="button" class="mxadmin-page-move-btn' + (fullIdx >= fullLen - 1 ? ' is-off' : '') + '" data-mxadmin-page-move="1" title="' + mxAdminEscapeHtml(mxAdminT('pagesMoveDown')) + '">' +
+                '<button type="button" class="mxadmin-page-move-btn' +
+                (fullIdx >= fullLen - 1 ? ' is-off' : '') +
+                '" data-mxadmin-page-move="1" title="' +
+                mxAdminEscapeHtml(mxAdminT('pagesMoveDown')) +
+                '">' +
                 '<span class="material-symbols-outlined">arrow_downward</span></button>' +
                 '</div>';
         }
@@ -2099,11 +2366,19 @@ function mxAdminRenderPagesList() {
             mxAdminRenderPageListThumb(page) +
             '<div class="mxadmin-pages-list-text">' +
             '<div class="mxadmin-pages-list-title-row">' +
-            '<span class="mxadmin-pages-list-title">' + mxAdminEscapeHtml(displayName) + '</span>' +
-            '<span class="mxadmin-badge mxadmin-pages-list-badge ' + badgeClass + '">' + mxAdminEscapeHtml(badgeText) + '</span>' +
+            '<span class="mxadmin-pages-list-title">' +
+            mxAdminEscapeHtml(displayName) +
+            '</span>' +
+            '<span class="mxadmin-badge mxadmin-pages-list-badge ' +
+            badgeClass +
+            '">' +
+            mxAdminEscapeHtml(badgeText) +
+            '</span>' +
             '</div>' +
             '<div class="mxadmin-pages-list-meta">' +
-            '<span class="mxadmin-page-path">/' + mxAdminEscapeHtml(page.path || '') + '</span>' +
+            '<span class="mxadmin-page-path">/' +
+            mxAdminEscapeHtml(page.path || '') +
+            '</span>' +
             '</div>' +
             '</div>' +
             '</div>';
@@ -2152,12 +2427,19 @@ function mxAdminGetPageDescSchema() {
         return doc.desc;
     }
     var catPath = mxAdminState.activeCategoryPath;
-    var cats = mxAdminState.pagesettingData && Array.isArray(mxAdminState.pagesettingData.data)
-        ? mxAdminState.pagesettingData.data
-        : [];
+    var cats =
+        mxAdminState.pagesettingData &&
+        Array.isArray(mxAdminState.pagesettingData.data)
+            ? mxAdminState.pagesettingData.data
+            : [];
     var i;
     for (i = 0; i < cats.length; i++) {
-        if (cats[i] && cats[i].path === catPath && Array.isArray(cats[i].desc) && cats[i].desc.length) {
+        if (
+            cats[i] &&
+            cats[i].path === catPath &&
+            Array.isArray(cats[i].desc) &&
+            cats[i].desc.length
+        ) {
             return cats[i].desc;
         }
     }
@@ -2192,7 +2474,8 @@ function mxAdminHasPageCategoryFeature() {
     var list = mxAdminState.categoryPages || [];
     var i;
     for (i = 0; i < list.length; i++) {
-        var cat = list[i] && list[i].category ? String(list[i].category).trim() : '';
+        var cat =
+            list[i] && list[i].category ? String(list[i].category).trim() : '';
         if (cat) {
             return true;
         }
@@ -2201,11 +2484,17 @@ function mxAdminHasPageCategoryFeature() {
 }
 
 function mxAdminPageFiltersVisible() {
-    return mxAdminHasPageCategoryFeature() || mxAdminGetActivePageDescSchema().length > 0;
+    return (
+        mxAdminHasPageCategoryFeature() ||
+        mxAdminGetActivePageDescSchema().length > 0
+    );
 }
 
 function mxAdminHasActivePageFilters() {
-    if (mxAdminState.pageCategoryFilter && mxAdminState.pageCategoryFilter !== 'all') {
+    if (
+        mxAdminState.pageCategoryFilter &&
+        mxAdminState.pageCategoryFilter !== 'all'
+    ) {
         return true;
     }
     var filters = mxAdminState.pageDescFilters || {};
@@ -2285,7 +2574,8 @@ function mxAdminPageItemMatchesCategoryFilter(page) {
     if (filterVal === 'all') {
         return true;
     }
-    var itemCategory = page && page.category ? String(page.category).trim() : '';
+    var itemCategory =
+        page && page.category ? String(page.category).trim() : '';
     var itemKey = itemCategory ? itemCategory : MX_ADMIN_PAGE_CATEGORY_NONE;
     return filterVal === itemKey;
 }
@@ -2302,7 +2592,12 @@ function mxAdminPageItemMatchesDescFilters(item) {
             continue;
         }
         var itemVal = '';
-        if (item && item.desc && item.desc[pathKey] !== undefined && item.desc[pathKey] !== null) {
+        if (
+            item &&
+            item.desc &&
+            item.desc[pathKey] !== undefined &&
+            item.desc[pathKey] !== null
+        ) {
             itemVal = String(item.desc[pathKey]).trim();
         }
         if (filterVal === '__empty__') {
@@ -2333,7 +2628,12 @@ function mxAdminCollectDescFilterOptions(dataList, pathKey) {
     for (di = 0; di < dataList.length; di++) {
         var row = dataList[di];
         var raw = '';
-        if (row && row.desc && row.desc[pathKey] !== undefined && row.desc[pathKey] !== null) {
+        if (
+            row &&
+            row.desc &&
+            row.desc[pathKey] !== undefined &&
+            row.desc[pathKey] !== null
+        ) {
             raw = String(row.desc[pathKey]).trim();
         }
         var candidates = [raw];
@@ -2358,7 +2658,9 @@ function mxAdminCollectDescFilterOptions(dataList, pathKey) {
         if (b === '' && a !== '') {
             return -1;
         }
-        return a.localeCompare(b, mxAdminState.lang || 'tr', { sensitivity: 'base' });
+        return a.localeCompare(b, mxAdminState.lang || 'tr', {
+            sensitivity: 'base',
+        });
     });
     return options;
 }
@@ -2404,14 +2706,17 @@ function mxAdminLoadPageDescCache(done) {
         var j;
         for (j = idx; j < end; j++) {
             (function (pageId) {
-                mxAdminApiRequest('GET', '/api/admin/data/page-record/' + encodeURIComponent(pageId))
+                mxAdminApiRequest(
+                    'GET',
+                    '/api/admin/data/page-record/' + encodeURIComponent(pageId),
+                )
                     .then(function (resp) {
                         var data = mxAdminUnwrapApiData(resp) || {};
                         if (data.desc && typeof data.desc === 'object') {
                             mxAdminState.pageDescById[pageId] = data.desc;
                         }
                     })
-                    .catch(function () { })
+                    .catch(function () {})
                     .then(function () {
                         pending -= 1;
                         if (pending <= 0) {
@@ -2431,18 +2736,26 @@ function mxAdminBuildPageCategoryFilterHtml() {
     var noneCount = 0;
     var i;
     for (i = 0; i < list.length; i++) {
-        var rawCategory = list[i] && list[i].category ? String(list[i].category).trim() : '';
+        var rawCategory =
+            list[i] && list[i].category ? String(list[i].category).trim() : '';
         if (rawCategory) {
-            categoryCounts[rawCategory] = (categoryCounts[rawCategory] || 0) + 1;
+            categoryCounts[rawCategory] =
+                (categoryCounts[rawCategory] || 0) + 1;
         } else {
             noneCount += 1;
         }
     }
     var categories = Object.keys(categoryCounts).sort(function (a, b) {
-        return a.localeCompare(b, mxAdminState.lang || 'tr', { sensitivity: 'base' });
+        return a.localeCompare(b, mxAdminState.lang || 'tr', {
+            sensitivity: 'base',
+        });
     });
     var filterVal = mxAdminState.pageCategoryFilter || 'all';
-    if (filterVal !== 'all' && filterVal !== MX_ADMIN_PAGE_CATEGORY_NONE && !Object.prototype.hasOwnProperty.call(categoryCounts, filterVal)) {
+    if (
+        filterVal !== 'all' &&
+        filterVal !== MX_ADMIN_PAGE_CATEGORY_NONE &&
+        !Object.prototype.hasOwnProperty.call(categoryCounts, filterVal)
+    ) {
         filterVal = 'all';
         mxAdminState.pageCategoryFilter = 'all';
     }
@@ -2460,30 +2773,71 @@ function mxAdminBuildPageCategoryFilterHtml() {
     }
     var html = '<div class="mxadmin-page-category-summary">';
     html += '<div class="mxadmin-page-category-summary-item">';
-    html += '<span class="mxadmin-page-category-summary-label">' + mxAdminEscapeHtml(mxAdminT('pagesFilterCategorized')) + ':</span>';
-    html += '<span class="mxadmin-page-category-summary-value">' + categorizedCount + '</span></div>';
+    html +=
+        '<span class="mxadmin-page-category-summary-label">' +
+        mxAdminEscapeHtml(mxAdminT('pagesFilterCategorized')) +
+        ':</span>';
+    html +=
+        '<span class="mxadmin-page-category-summary-value">' +
+        categorizedCount +
+        '</span></div>';
     html += '<div class="mxadmin-page-category-summary-item">';
-    html += '<span class="mxadmin-page-category-summary-label">' + mxAdminEscapeHtml(mxAdminT('pagesFilterUncategorized')) + ':</span>';
-    html += '<span class="mxadmin-page-category-summary-value">' + noneCount + '</span></div>';
+    html +=
+        '<span class="mxadmin-page-category-summary-label">' +
+        mxAdminEscapeHtml(mxAdminT('pagesFilterUncategorized')) +
+        ':</span>';
+    html +=
+        '<span class="mxadmin-page-category-summary-value">' +
+        noneCount +
+        '</span></div>';
     html += '<div class="mxadmin-page-category-summary-item">';
-    html += '<span class="mxadmin-page-category-summary-label">' + mxAdminEscapeHtml(mxAdminT('pagesFilterMismatch')) + ':</span>';
+    html +=
+        '<span class="mxadmin-page-category-summary-label">' +
+        mxAdminEscapeHtml(mxAdminT('pagesFilterMismatch')) +
+        ':</span>';
     html += '<span class="mxadmin-page-category-summary-value">0</span></div>';
-    html += '<div class="mxadmin-page-category-summary-item mxadmin-page-category-summary-item-select">';
-    html += '<span class="mxadmin-page-category-summary-label">' + mxAdminEscapeHtml(mxAdminT('pagesFilterCategory')) + '</span>';
-    html += '<select id="mxadminPageCategorySelect" class="mxadmin-select mxadmin-select-sm mxadmin-page-category-select">';
-    html += '<option value="all"' + (filterVal === 'all' ? ' selected' : '') + '>' +
-        mxAdminEscapeHtml(mxAdminT('pagesFilterAll') + ' (' + totalCount + ')') + '</option>';
+    html +=
+        '<div class="mxadmin-page-category-summary-item mxadmin-page-category-summary-item-select">';
+    html +=
+        '<span class="mxadmin-page-category-summary-label">' +
+        mxAdminEscapeHtml(mxAdminT('pagesFilterCategory')) +
+        '</span>';
+    html +=
+        '<select id="mxadminPageCategorySelect" class="mxadmin-select mxadmin-select-sm mxadmin-page-category-select">';
+    html +=
+        '<option value="all"' +
+        (filterVal === 'all' ? ' selected' : '') +
+        '>' +
+        mxAdminEscapeHtml(
+            mxAdminT('pagesFilterAll') + ' (' + totalCount + ')',
+        ) +
+        '</option>';
     for (i = 0; i < categories.length; i++) {
         var category = categories[i];
         var count = categoryCounts[category] || 0;
-        html += '<option value="' + mxAdminEscapeHtml(category) + '"' +
-            (filterVal === category ? ' selected' : '') + '>' +
-            mxAdminEscapeHtml(category + ' (' + count + ')') + '</option>';
+        html +=
+            '<option value="' +
+            mxAdminEscapeHtml(category) +
+            '"' +
+            (filterVal === category ? ' selected' : '') +
+            '>' +
+            mxAdminEscapeHtml(category + ' (' + count + ')') +
+            '</option>';
     }
     if (noneCount > 0) {
-        html += '<option value="' + MX_ADMIN_PAGE_CATEGORY_NONE + '"' +
-            (filterVal === MX_ADMIN_PAGE_CATEGORY_NONE ? ' selected' : '') + '>' +
-            mxAdminEscapeHtml(mxAdminT('pagesFilterUncategorizedOption') + ' (' + noneCount + ')') + '</option>';
+        html +=
+            '<option value="' +
+            MX_ADMIN_PAGE_CATEGORY_NONE +
+            '"' +
+            (filterVal === MX_ADMIN_PAGE_CATEGORY_NONE ? ' selected' : '') +
+            '>' +
+            mxAdminEscapeHtml(
+                mxAdminT('pagesFilterUncategorizedOption') +
+                    ' (' +
+                    noneCount +
+                    ')',
+            ) +
+            '</option>';
     }
     html += '</select></div></div>';
     return html;
@@ -2508,7 +2862,11 @@ function mxAdminBuildPageDescFiltersHtml() {
         var label = mxAdminGetPageDescDefLabel(descDef, mxAdminState.lang);
         var options = mxAdminCollectDescFilterOptions(dataList, pathKey);
         var currentFilter = mxAdminState.pageDescFilters[pathKey];
-        if (currentFilter === undefined || currentFilter === null || currentFilter === '') {
+        if (
+            currentFilter === undefined ||
+            currentFilter === null ||
+            currentFilter === ''
+        ) {
             currentFilter = 'all';
         }
         if (currentFilter !== 'all' && currentFilter !== '__empty__') {
@@ -2526,24 +2884,46 @@ function mxAdminBuildPageDescFiltersHtml() {
             }
         }
         html += '<div class="mxadmin-page-desc-filter-item">';
-        html += '<span class="mxadmin-page-desc-filter-label">' + mxAdminEscapeHtml(label) + '</span>';
-        html += '<select class="mxadmin-select mxadmin-select-sm mxadmin-page-desc-filter-select" data-mxadmin-desc-filter="' + mxAdminEscapeHtml(pathKey) + '">';
-        html += '<option value="all"' + (currentFilter === 'all' ? ' selected' : '') + '>' +
-            mxAdminEscapeHtml(mxAdminT('pagesFilterAll')) + '</option>';
+        html +=
+            '<span class="mxadmin-page-desc-filter-label">' +
+            mxAdminEscapeHtml(label) +
+            '</span>';
+        html +=
+            '<select class="mxadmin-select mxadmin-select-sm mxadmin-page-desc-filter-select" data-mxadmin-desc-filter="' +
+            mxAdminEscapeHtml(pathKey) +
+            '">';
+        html +=
+            '<option value="all"' +
+            (currentFilter === 'all' ? ' selected' : '') +
+            '>' +
+            mxAdminEscapeHtml(mxAdminT('pagesFilterAll')) +
+            '</option>';
         var oj;
         for (oj = 0; oj < options.length; oj++) {
             var optVal = options[oj];
             var optAttr = optVal === '' ? '__empty__' : optVal;
-            var optLabel = optVal === '' ? mxAdminT('pagesFilterEmpty') : optVal;
-            html += '<option value="' + mxAdminEscapeHtml(optAttr) + '"' +
-                (currentFilter === optAttr ? ' selected' : '') + '>' +
-                mxAdminEscapeHtml(optLabel) + '</option>';
+            var optLabel =
+                optVal === '' ? mxAdminT('pagesFilterEmpty') : optVal;
+            html +=
+                '<option value="' +
+                mxAdminEscapeHtml(optAttr) +
+                '"' +
+                (currentFilter === optAttr ? ' selected' : '') +
+                '>' +
+                mxAdminEscapeHtml(optLabel) +
+                '</option>';
         }
         html += '</select></div>';
     }
     html += '</div>';
     for (var staleKey in mxAdminState.pageDescFilters) {
-        if (Object.prototype.hasOwnProperty.call(mxAdminState.pageDescFilters, staleKey) && !validPaths[staleKey]) {
+        if (
+            Object.prototype.hasOwnProperty.call(
+                mxAdminState.pageDescFilters,
+                staleKey,
+            ) &&
+            !validPaths[staleKey]
+        ) {
             delete mxAdminState.pageDescFilters[staleKey];
         }
     }
@@ -2560,7 +2940,9 @@ function mxAdminBindPageFilterEvents() {
     var descSels = document.querySelectorAll('[data-mxadmin-desc-filter]');
     var i;
     for (i = 0; i < descSels.length; i++) {
-        descSels[i].onchange = mxAdminMakePageDescFilterChangeHandler(descSels[i].getAttribute('data-mxadmin-desc-filter'));
+        descSels[i].onchange = mxAdminMakePageDescFilterChangeHandler(
+            descSels[i].getAttribute('data-mxadmin-desc-filter'),
+        );
     }
 }
 
@@ -2641,7 +3023,11 @@ function mxAdminCollectPageDescSuggestions(pathKey) {
     for (ri = 0; ri < rows.length; ri++) {
         var row = rows[ri] || {};
         var raw = '';
-        if (row.desc && row.desc[pathKey] !== undefined && row.desc[pathKey] !== null) {
+        if (
+            row.desc &&
+            row.desc[pathKey] !== undefined &&
+            row.desc[pathKey] !== null
+        ) {
             raw = String(row.desc[pathKey]).trim();
         }
         if (raw && !seen[raw]) {
@@ -2650,7 +3036,9 @@ function mxAdminCollectPageDescSuggestions(pathKey) {
         }
     }
     list.sort(function (a, b) {
-        return a.localeCompare(b, mxAdminState.lang || 'tr', { sensitivity: 'base' });
+        return a.localeCompare(b, mxAdminState.lang || 'tr', {
+            sensitivity: 'base',
+        });
     });
     return list;
 }
@@ -2699,17 +3087,34 @@ function mxAdminRenderPageDescFields(pageRow, record) {
         var descDef = activeSchema[si];
         var pathKey = String(descDef.path);
         var label = mxAdminGetPageDescDefLabel(descDef, lang);
-        var val = descObj[pathKey] !== undefined && descObj[pathKey] !== null ? String(descObj[pathKey]) : '';
+        var val =
+            descObj[pathKey] !== undefined && descObj[pathKey] !== null
+                ? String(descObj[pathKey])
+                : '';
         var listId = 'mxadmin-page-desc-dl-' + pathKey;
         var inputId = 'mxadmin-page-desc-' + pathKey;
 
         var group = document.createElement('div');
         group.className = 'mxadmin-form-group';
         group.innerHTML =
-            '<label for="' + mxAdminEscapeHtml(inputId) + '">' + mxAdminEscapeHtml(label) + '</label>' +
-            '<input type="text" id="' + mxAdminEscapeHtml(inputId) + '" list="' + mxAdminEscapeHtml(listId) + '" ' +
-            'data-mxadmin-page-desc-key="' + mxAdminEscapeHtml(pathKey) + '" value="' + mxAdminEscapeHtml(val) + '" />' +
-            '<span class="mxadmin-page-desc-code">desc.' + mxAdminEscapeHtml(pathKey) + '</span>';
+            '<label for="' +
+            mxAdminEscapeHtml(inputId) +
+            '">' +
+            mxAdminEscapeHtml(label) +
+            '</label>' +
+            '<input type="text" id="' +
+            mxAdminEscapeHtml(inputId) +
+            '" list="' +
+            mxAdminEscapeHtml(listId) +
+            '" ' +
+            'data-mxadmin-page-desc-key="' +
+            mxAdminEscapeHtml(pathKey) +
+            '" value="' +
+            mxAdminEscapeHtml(val) +
+            '" />' +
+            '<span class="mxadmin-page-desc-code">desc.' +
+            mxAdminEscapeHtml(pathKey) +
+            '</span>';
 
         var datalist = document.createElement('datalist');
         datalist.id = listId;
@@ -2746,12 +3151,19 @@ function mxAdminGetPageModuleStatus() {
         return doc.modulestatus;
     }
     var catPath = mxAdminState.activeCategoryPath;
-    var cats = mxAdminState.pagesettingData && Array.isArray(mxAdminState.pagesettingData.data)
-        ? mxAdminState.pagesettingData.data
-        : [];
+    var cats =
+        mxAdminState.pagesettingData &&
+        Array.isArray(mxAdminState.pagesettingData.data)
+            ? mxAdminState.pagesettingData.data
+            : [];
     var i;
     for (i = 0; i < cats.length; i++) {
-        if (cats[i] && cats[i].path === catPath && cats[i].modulestatus && typeof cats[i].modulestatus === 'object') {
+        if (
+            cats[i] &&
+            cats[i].path === catPath &&
+            cats[i].modulestatus &&
+            typeof cats[i].modulestatus === 'object'
+        ) {
             return cats[i].modulestatus;
         }
     }
@@ -2764,7 +3176,12 @@ function mxAdminIsPageImgActive() {
 }
 
 function mxAdminPageMediaUrl(pageId, filename) {
-    return mxAdminApiUrl('/api/admin/data/page-media/' + encodeURIComponent(pageId) + '/' + encodeURIComponent(filename));
+    return mxAdminApiUrl(
+        '/api/admin/data/page-media/' +
+            encodeURIComponent(pageId) +
+            '/' +
+            encodeURIComponent(filename),
+    );
 }
 
 
@@ -2774,33 +3191,57 @@ function mxAdminRenderPageListThumb(page) {
         iconName = 'description';
     }
     if (!mxAdminIsPageImgActive()) {
-        return '<span class="material-symbols-outlined mxadmin-pages-list-icon">' + mxAdminEscapeHtml(iconName) + '</span>';
+        return (
+            '<span class="material-symbols-outlined mxadmin-pages-list-icon">' +
+            mxAdminEscapeHtml(iconName) +
+            '</span>'
+        );
     }
     var imgFile = page && page.img ? String(page.img).trim() : '';
     if (page && page.id && imgFile) {
-        return '<div class="mxadmin-pages-list-thumb-wrap">' +
-            '<img class="mxadmin-pages-list-thumb" src="' + mxAdminEscapeHtml(mxAdminPageMediaUrl(page.id, imgFile)) + '" alt="" loading="lazy" onerror="this.style.display=\'none\';var n=this.nextElementSibling;if(n){n.classList.remove(\'hidden\');}" />' +
-            '<span class="material-symbols-outlined mxadmin-pages-list-icon mxadmin-pages-list-thumb-fallback hidden">' + mxAdminEscapeHtml(iconName) + '</span>' +
-            '</div>';
+        return (
+            '<div class="mxadmin-pages-list-thumb-wrap">' +
+            '<img class="mxadmin-pages-list-thumb" src="' +
+            mxAdminEscapeHtml(mxAdminPageMediaUrl(page.id, imgFile)) +
+            '" alt="" loading="lazy" onerror="this.style.display=\'none\';var n=this.nextElementSibling;if(n){n.classList.remove(\'hidden\');}" />' +
+            '<span class="material-symbols-outlined mxadmin-pages-list-icon mxadmin-pages-list-thumb-fallback hidden">' +
+            mxAdminEscapeHtml(iconName) +
+            '</span>' +
+            '</div>'
+        );
     }
-    return '<span class="material-symbols-outlined mxadmin-pages-list-icon">' + mxAdminEscapeHtml(iconName) + '</span>';
+    return (
+        '<span class="material-symbols-outlined mxadmin-pages-list-icon">' +
+        mxAdminEscapeHtml(iconName) +
+        '</span>'
+    );
 }
 
 function mxAdminUploadPageFile(pageId, file) {
     if (mxAdminIsLocalPreview()) {
         var fd = new FormData();
         fd.append('file', file);
-        return mxAdminApiUpload('/api/admin/data/page-upload/' + encodeURIComponent(pageId), fd);
+        return mxAdminApiUpload(
+            '/api/admin/data/page-upload/' + encodeURIComponent(pageId),
+            fd,
+        );
     }
     return new Promise(function (resolve, reject) {
         var reader = new FileReader();
         reader.onload = function () {
             var result = String(reader.result || '');
-            var base64 = result.indexOf(',') !== -1 ? result.split(',')[1] : result;
-            mxAdminApiRequest('POST', '/api/admin/data/page-upload/' + encodeURIComponent(pageId), {
-                filename: file.name,
-                contentBase64: base64
-            }).then(resolve).catch(reject);
+            var base64 =
+                result.indexOf(',') !== -1 ? result.split(',')[1] : result;
+            mxAdminApiRequest(
+                'POST',
+                '/api/admin/data/page-upload/' + encodeURIComponent(pageId),
+                {
+                    filename: file.name,
+                    contentBase64: base64,
+                },
+            )
+                .then(resolve)
+                .catch(reject);
         };
         reader.onerror = function () {
             reject({ code: 'NETWORK' });
@@ -2816,9 +3257,13 @@ function mxAdminLoadPageFiles() {
         mxAdminRenderPageMediaGrid();
         return;
     }
-    mxAdminApiRequest('GET', '/api/admin/data/page-files/' + encodeURIComponent(pageRow.id))
+    mxAdminApiRequest(
+        'GET',
+        '/api/admin/data/page-files/' + encodeURIComponent(pageRow.id),
+    )
         .then(function (resp) {
-            mxAdminState.pageFiles = (resp && Array.isArray(resp.files)) ? resp.files : [];
+            mxAdminState.pageFiles =
+                resp && Array.isArray(resp.files) ? resp.files : [];
             mxAdminRenderPageMediaGrid();
         })
         .catch(function () {
@@ -2875,11 +3320,23 @@ function mxAdminRenderPageMediaGrid() {
         }
         card.setAttribute('data-mxadmin-page-media-file', fname);
         card.innerHTML =
-            '<img class="mxadmin-module-media-thumb" src="' + mxAdminEscapeHtml(mxAdminPageMediaUrl(pageRow.id, fname)) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'" />' +
-            '<button type="button" class="mxadmin-module-media-delete" data-mxadmin-page-media-delete="' + mxAdminEscapeHtml(fname) + '" title="' + mxAdminEscapeHtml(mxAdminT('moduleDataRemove')) + '">' +
+            '<img class="mxadmin-module-media-thumb" src="' +
+            mxAdminEscapeHtml(mxAdminPageMediaUrl(pageRow.id, fname)) +
+            '" alt="" loading="lazy" onerror="this.style.display=\'none\'" />' +
+            '<button type="button" class="mxadmin-module-media-delete" data-mxadmin-page-media-delete="' +
+            mxAdminEscapeHtml(fname) +
+            '" title="' +
+            mxAdminEscapeHtml(mxAdminT('moduleDataRemove')) +
+            '">' +
             '<span class="material-symbols-outlined" style="font-size:16px;">delete</span></button>' +
-            (cover && cover === fname ? '<span class="mxadmin-page-media-cover-badge">' + mxAdminEscapeHtml(mxAdminT('pageMediaCoverBadge')) + '</span>' : '') +
-            '<div class="mxadmin-module-media-name">' + mxAdminEscapeHtml(fname) + '</div>';
+            (cover && cover === fname
+                ? '<span class="mxadmin-page-media-cover-badge">' +
+                  mxAdminEscapeHtml(mxAdminT('pageMediaCoverBadge')) +
+                  '</span>'
+                : '') +
+            '<div class="mxadmin-module-media-name">' +
+            mxAdminEscapeHtml(fname) +
+            '</div>';
         card.onclick = mxAdminMakePageMediaCoverHandler(fname);
         grid.appendChild(card);
     }
@@ -2887,7 +3344,9 @@ function mxAdminRenderPageMediaGrid() {
     uploadCard.className = 'mxadmin-module-media-upload-card';
     uploadCard.innerHTML =
         '<span class="material-symbols-outlined">add_photo_alternate</span>' +
-        '<span>' + mxAdminEscapeHtml(mxAdminT('moduleMediaUpload')) + '</span>';
+        '<span>' +
+        mxAdminEscapeHtml(mxAdminT('moduleMediaUpload')) +
+        '</span>';
     uploadCard.onclick = function (evt) {
         if (evt && evt.stopPropagation) {
             evt.stopPropagation();
@@ -2899,13 +3358,20 @@ function mxAdminRenderPageMediaGrid() {
     var delBtns = grid.querySelectorAll('[data-mxadmin-page-media-delete]');
     var di;
     for (di = 0; di < delBtns.length; di++) {
-        delBtns[di].onclick = mxAdminMakePageMediaDeleteHandler(delBtns[di].getAttribute('data-mxadmin-page-media-delete'));
+        delBtns[di].onclick = mxAdminMakePageMediaDeleteHandler(
+            delBtns[di].getAttribute('data-mxadmin-page-media-delete'),
+        );
     }
 }
 
 function mxAdminMakePageMediaCoverHandler(filename) {
     return function (evt) {
-        if (evt && evt.target && evt.target.closest && evt.target.closest('[data-mxadmin-page-media-delete]')) {
+        if (
+            evt &&
+            evt.target &&
+            evt.target.closest &&
+            evt.target.closest('[data-mxadmin-page-media-delete]')
+        ) {
             return;
         }
         var pageRow = mxAdminState.activePageRow;
@@ -2931,9 +3397,18 @@ function mxAdminMakePageMediaDeleteHandler(filename) {
             if (!ok) {
                 return;
             }
-            mxAdminApiRequest('DELETE', '/api/admin/data/page-file/' + encodeURIComponent(pageRow.id) + '/' + encodeURIComponent(filename))
+            mxAdminApiRequest(
+                'DELETE',
+                '/api/admin/data/page-file/' +
+                    encodeURIComponent(pageRow.id) +
+                    '/' +
+                    encodeURIComponent(filename),
+            )
                 .then(function () {
-                    if (pageRow.img && String(pageRow.img) === String(filename)) {
+                    if (
+                        pageRow.img &&
+                        String(pageRow.img) === String(filename)
+                    ) {
                         pageRow.img = '';
                     }
                     mxAdminToast(mxAdminT('moduleMediaDeleteSuccess'), false);
@@ -2941,7 +3416,10 @@ function mxAdminMakePageMediaDeleteHandler(filename) {
                     mxAdminRenderPagesList();
                 })
                 .catch(function (err) {
-                    mxAdminToast(mxAdminApiErrorMessage(err, 'moduleMediaUploadError'), true);
+                    mxAdminToast(
+                        mxAdminApiErrorMessage(err, 'moduleMediaUploadError'),
+                        true,
+                    );
                 });
         });
     };
@@ -2970,12 +3448,14 @@ function mxAdminHandlePageMediaUploadInput(evt) {
         }
     }
     for (fi = 0; fi < files.length; fi++) {
-        mxAdminUploadPageFile(pageRow.id, files[fi]).then(function () {
-            okCount += 1;
-            onDone();
-        }).catch(function () {
-            onDone();
-        });
+        mxAdminUploadPageFile(pageRow.id, files[fi])
+            .then(function () {
+                okCount += 1;
+                onDone();
+            })
+            .catch(function () {
+                onDone();
+            });
     }
 }
 
@@ -2997,7 +3477,8 @@ function mxAdminOpenPageEditor(pageRow) {
         }
     }
 
-    mxAdminEl('mxadminPageStatus').value = pageRow.status === 'pause' ? 'pause' : 'play';
+    mxAdminEl('mxadminPageStatus').value =
+        pageRow.status === 'pause' ? 'pause' : 'play';
     mxAdminEl('mxadminPagePath').value = pageRow.path || '';
     mxAdminUpdatePageDetailHeader(pageRow);
     mxAdminShowPageDetailLoading(true);
@@ -3008,7 +3489,10 @@ function mxAdminOpenPageEditor(pageRow) {
     };
 
     if (pageRow.id) {
-        mxAdminApiRequest('GET', '/api/admin/data/page-record/' + encodeURIComponent(pageRow.id))
+        mxAdminApiRequest(
+            'GET',
+            '/api/admin/data/page-record/' + encodeURIComponent(pageRow.id),
+        )
             .then(function (resp) {
                 mxAdminState.pageRecord = mxAdminUnwrapApiData(resp) || {};
                 finishRender();
@@ -3038,8 +3522,11 @@ function mxAdminHtmlEditorInsertWrap(textarea, before, after) {
 }
 
 function mxAdminHtmlEditorPreviewDoc(html) {
-    return '<!DOCTYPE html><html><head><meta charset="utf-8"><style>body{font-family:system-ui,sans-serif;padding:16px;line-height:1.65;color:#1c1917;background:#fafaf9;}h2,h3,h4{color:#0f766e;}ul{padding-left:1.25em;}a{color:#0d9488;}</style></head><body>' +
-        (html || '') + '</body></html>';
+    return (
+        '<!DOCTYPE html><html><head><meta charset="utf-8"><style>body{font-family:system-ui,sans-serif;padding:16px;line-height:1.65;color:#1c1917;background:#fafaf9;}h2,h3,h4{color:#0f766e;}ul{padding-left:1.25em;}a{color:#0d9488;}</style></head><body>' +
+        (html || '') +
+        '</body></html>'
+    );
 }
 
 function mxAdminSyncPageHtmlEditorPreview(editorWrap) {
@@ -3059,10 +3546,18 @@ function mxAdminSetPageHtmlEditorTab(editorWrap, tabName) {
         return;
     }
     var isPreview = tabName === 'preview';
-    var tabSource = editorWrap.querySelector('[data-mxadmin-html-tab="source"]');
-    var tabPreview = editorWrap.querySelector('[data-mxadmin-html-tab="preview"]');
-    var panelSource = editorWrap.querySelector('.mxadmin-html-editor-panel-source');
-    var panelPreview = editorWrap.querySelector('.mxadmin-html-editor-panel-preview');
+    var tabSource = editorWrap.querySelector(
+        '[data-mxadmin-html-tab="source"]',
+    );
+    var tabPreview = editorWrap.querySelector(
+        '[data-mxadmin-html-tab="preview"]',
+    );
+    var panelSource = editorWrap.querySelector(
+        '.mxadmin-html-editor-panel-source',
+    );
+    var panelPreview = editorWrap.querySelector(
+        '.mxadmin-html-editor-panel-preview',
+    );
     if (tabSource) {
         if (isPreview) {
             tabSource.classList.remove('is-active');
@@ -3143,13 +3638,38 @@ function mxAdminCreatePageHtmlEditor(lang, htmlValue) {
     var tools = document.createElement('div');
     tools.className = 'mxadmin-html-editor-tools';
     var toolDefs = [
-        { key: 'pageHtmlBold', before: '<strong>', after: '</strong>', icon: 'format_bold' },
-        { key: 'pageHtmlItalic', before: '<em>', after: '</em>', icon: 'format_italic' },
-        { key: 'pageHtmlLink', before: '<a href="">', after: '</a>', icon: 'link' },
+        {
+            key: 'pageHtmlBold',
+            before: '<strong>',
+            after: '</strong>',
+            icon: 'format_bold',
+        },
+        {
+            key: 'pageHtmlItalic',
+            before: '<em>',
+            after: '</em>',
+            icon: 'format_italic',
+        },
+        {
+            key: 'pageHtmlLink',
+            before: '<a href="">',
+            after: '</a>',
+            icon: 'link',
+        },
         { key: 'pageHtmlH2', before: '<h2>', after: '</h2>', icon: 'title' },
-        { key: 'pageHtmlH3', before: '<h3>', after: '</h3>', icon: 'view_headline' },
+        {
+            key: 'pageHtmlH3',
+            before: '<h3>',
+            after: '</h3>',
+            icon: 'view_headline',
+        },
         { key: 'pageHtmlP', before: '<p>', after: '</p>', icon: 'notes' },
-        { key: 'pageHtmlUl', before: '<ul><li>', after: '</li></ul>', icon: 'format_list_bulleted' }
+        {
+            key: 'pageHtmlUl',
+            before: '<ul><li>',
+            after: '</li></ul>',
+            icon: 'format_list_bulleted',
+        },
     ];
     var ti;
     for (ti = 0; ti < toolDefs.length; ti++) {
@@ -3157,7 +3677,10 @@ function mxAdminCreatePageHtmlEditor(lang, htmlValue) {
         toolBtn.type = 'button';
         toolBtn.className = 'mxadmin-html-editor-tool';
         toolBtn.setAttribute('title', mxAdminT(toolDefs[ti].key));
-        toolBtn.innerHTML = '<span class="material-symbols-outlined">' + toolDefs[ti].icon + '</span>';
+        toolBtn.innerHTML =
+            '<span class="material-symbols-outlined">' +
+            toolDefs[ti].icon +
+            '</span>';
         tools.appendChild(toolBtn);
     }
 
@@ -3165,7 +3688,8 @@ function mxAdminCreatePageHtmlEditor(lang, htmlValue) {
     toolbar.appendChild(tools);
 
     var panelSource = document.createElement('div');
-    panelSource.className = 'mxadmin-html-editor-panel mxadmin-html-editor-panel-source';
+    panelSource.className =
+        'mxadmin-html-editor-panel mxadmin-html-editor-panel-source';
     var source = document.createElement('textarea');
     source.className = 'mxadmin-html-editor-source';
     source.setAttribute('data-mxadmin-page-text-lang', lang);
@@ -3174,7 +3698,8 @@ function mxAdminCreatePageHtmlEditor(lang, htmlValue) {
     panelSource.appendChild(source);
 
     var panelPreview = document.createElement('div');
-    panelPreview.className = 'mxadmin-html-editor-panel mxadmin-html-editor-panel-preview hidden';
+    panelPreview.className =
+        'mxadmin-html-editor-panel mxadmin-html-editor-panel-preview hidden';
     var preview = document.createElement('iframe');
     preview.className = 'mxadmin-html-editor-preview';
     preview.setAttribute('title', mxAdminT('pageHtmlTabPreview'));
@@ -3186,11 +3711,18 @@ function mxAdminCreatePageHtmlEditor(lang, htmlValue) {
     wrap.appendChild(panelPreview);
 
     tabSourceBtn.onclick = mxAdminMakePageHtmlEditorTabHandler(wrap, 'source');
-    tabPreviewBtn.onclick = mxAdminMakePageHtmlEditorTabHandler(wrap, 'preview');
+    tabPreviewBtn.onclick = mxAdminMakePageHtmlEditorTabHandler(
+        wrap,
+        'preview',
+    );
 
     var toolBtns = tools.querySelectorAll('.mxadmin-html-editor-tool');
     for (ti = 0; ti < toolBtns.length && ti < toolDefs.length; ti++) {
-        toolBtns[ti].onclick = mxAdminMakePageHtmlEditorToolHandler(source, toolDefs[ti].before, toolDefs[ti].after);
+        toolBtns[ti].onclick = mxAdminMakePageHtmlEditorToolHandler(
+            source,
+            toolDefs[ti].before,
+            toolDefs[ti].after,
+        );
     }
 
     return wrap;
@@ -3198,7 +3730,9 @@ function mxAdminCreatePageHtmlEditor(lang, htmlValue) {
 
 function mxAdminCollectPageTextFromForm() {
     var out = {};
-    var inputs = document.querySelectorAll('.mxadmin-html-editor-source[data-mxadmin-page-text-lang]');
+    var inputs = document.querySelectorAll(
+        '.mxadmin-html-editor-source[data-mxadmin-page-text-lang]',
+    );
     var i;
     for (i = 0; i < inputs.length; i++) {
         var langKey = inputs[i].getAttribute('data-mxadmin-page-text-lang');
@@ -3224,36 +3758,97 @@ function mxAdminRenderPageFormFields(pageRow, record) {
     var li;
     for (li = 0; li < langs.length; li++) {
         var lang = langs[li];
-        var nameVal = pageRow.name && typeof pageRow.name === 'object' ? (pageRow.name[lang] || '') : (li === 0 ? (pageRow.name || '') : '');
-        var descVal = pageRow.description && typeof pageRow.description === 'object' ? (pageRow.description[lang] || '') : (li === 0 ? (pageRow.description || '') : '');
-        var kwFromRow = pageRow.keyword && typeof pageRow.keyword === 'object' ? (pageRow.keyword[lang] || '') : '';
-        var kwFromRec = record.keyword && typeof record.keyword === 'object' ? (record.keyword[lang] || '') : '';
-        var keywordVal = kwFromRec || kwFromRow || (li === 0 && typeof pageRow.keyword === 'string' ? pageRow.keyword : '');
-        var textFromRec = record.text && typeof record.text === 'object' ? (record.text[lang] || '') : '';
-        var textFromRow = pageRow.text && typeof pageRow.text === 'object' ? (pageRow.text[lang] || '') : (li === 0 ? (pageRow.text || '') : '');
+        var nameVal =
+            pageRow.name && typeof pageRow.name === 'object'
+                ? pageRow.name[lang] || ''
+                : li === 0
+                  ? pageRow.name || ''
+                  : '';
+        var descVal =
+            pageRow.description && typeof pageRow.description === 'object'
+                ? pageRow.description[lang] || ''
+                : li === 0
+                  ? pageRow.description || ''
+                  : '';
+        var kwFromRow =
+            pageRow.keyword && typeof pageRow.keyword === 'object'
+                ? pageRow.keyword[lang] || ''
+                : '';
+        var kwFromRec =
+            record.keyword && typeof record.keyword === 'object'
+                ? record.keyword[lang] || ''
+                : '';
+        var keywordVal =
+            kwFromRec ||
+            kwFromRow ||
+            (li === 0 && typeof pageRow.keyword === 'string'
+                ? pageRow.keyword
+                : '');
+        var textFromRec =
+            record.text && typeof record.text === 'object'
+                ? record.text[lang] || ''
+                : '';
+        var textFromRow =
+            pageRow.text && typeof pageRow.text === 'object'
+                ? pageRow.text[lang] || ''
+                : li === 0
+                  ? pageRow.text || ''
+                  : '';
         var textVal = textFromRec || textFromRow;
 
         var nameGroup = document.createElement('div');
         nameGroup.className = 'mxadmin-form-group';
-        nameGroup.innerHTML = '<label>' + mxAdminEscapeHtml(mxAdminT('fieldName')) + ' (' + lang.toUpperCase() + ')</label>' +
-            '<input type="text" data-mxadmin-page-name-lang="' + lang + '" value="' + mxAdminEscapeHtml(nameVal) + '" />';
+        nameGroup.innerHTML =
+            '<label>' +
+            mxAdminEscapeHtml(mxAdminT('fieldName')) +
+            ' (' +
+            lang.toUpperCase() +
+            ')</label>' +
+            '<input type="text" data-mxadmin-page-name-lang="' +
+            lang +
+            '" value="' +
+            mxAdminEscapeHtml(nameVal) +
+            '" />';
         nameWrap.appendChild(nameGroup);
 
         var descGroup = document.createElement('div');
         descGroup.className = 'mxadmin-form-group';
-        descGroup.innerHTML = '<label>' + mxAdminEscapeHtml(mxAdminT('fieldDescription')) + ' (' + lang.toUpperCase() + ')</label>' +
-            '<textarea data-mxadmin-page-desc-lang="' + lang + '">' + mxAdminEscapeHtml(descVal) + '</textarea>';
+        descGroup.innerHTML =
+            '<label>' +
+            mxAdminEscapeHtml(mxAdminT('fieldDescription')) +
+            ' (' +
+            lang.toUpperCase() +
+            ')</label>' +
+            '<textarea data-mxadmin-page-desc-lang="' +
+            lang +
+            '">' +
+            mxAdminEscapeHtml(descVal) +
+            '</textarea>';
         descWrap.appendChild(descGroup);
 
         var kwGroup = document.createElement('div');
         kwGroup.className = 'mxadmin-form-group';
-        kwGroup.innerHTML = '<label>' + mxAdminEscapeHtml(mxAdminT('fieldKeyword')) + ' (' + lang.toUpperCase() + ')</label>' +
-            '<input type="text" data-mxadmin-page-keyword-lang="' + lang + '" value="' + mxAdminEscapeHtml(keywordVal) + '" />';
+        kwGroup.innerHTML =
+            '<label>' +
+            mxAdminEscapeHtml(mxAdminT('fieldKeyword')) +
+            ' (' +
+            lang.toUpperCase() +
+            ')</label>' +
+            '<input type="text" data-mxadmin-page-keyword-lang="' +
+            lang +
+            '" value="' +
+            mxAdminEscapeHtml(keywordVal) +
+            '" />';
         keywordWrap.appendChild(kwGroup);
 
         var textGroup = document.createElement('div');
         textGroup.className = 'mxadmin-form-group mxadmin-form-group-full';
-        textGroup.innerHTML = '<label>' + mxAdminEscapeHtml(mxAdminT('fieldText')) + ' (' + lang.toUpperCase() + ')</label>';
+        textGroup.innerHTML =
+            '<label>' +
+            mxAdminEscapeHtml(mxAdminT('fieldText')) +
+            ' (' +
+            lang.toUpperCase() +
+            ')</label>';
         textGroup.appendChild(mxAdminCreatePageHtmlEditor(lang, textVal));
         textWrap.appendChild(textGroup);
     }
@@ -3267,7 +3862,10 @@ function mxAdminShowPageTab(tabName) {
     var tabs = document.querySelectorAll('.mxadmin-form-tab');
     var i;
     for (i = 0; i < tabs.length; i++) {
-        if (tabs[i].getAttribute('data-mxadmin-tab') === mxAdminState.activePageTab) {
+        if (
+            tabs[i].getAttribute('data-mxadmin-tab') ===
+            mxAdminState.activePageTab
+        ) {
             tabs[i].classList.add('is-active');
         } else {
             tabs[i].classList.remove('is-active');
@@ -3293,25 +3891,35 @@ function mxAdminHandlePageFormSubmit(evt) {
     if (typeof pageRow.name !== 'object' || pageRow.name === null) {
         pageRow.name = {};
     }
-    if (typeof pageRow.description !== 'object' || pageRow.description === null) {
+    if (
+        typeof pageRow.description !== 'object' ||
+        pageRow.description === null
+    ) {
         pageRow.description = {};
     }
 
     var nameInputs = document.querySelectorAll('[data-mxadmin-page-name-lang]');
     var i;
     for (i = 0; i < nameInputs.length; i++) {
-        pageRow.name[nameInputs[i].getAttribute('data-mxadmin-page-name-lang')] = nameInputs[i].value;
+        pageRow.name[
+            nameInputs[i].getAttribute('data-mxadmin-page-name-lang')
+        ] = nameInputs[i].value;
     }
     var descInputs = document.querySelectorAll('[data-mxadmin-page-desc-lang]');
     for (i = 0; i < descInputs.length; i++) {
-        pageRow.description[descInputs[i].getAttribute('data-mxadmin-page-desc-lang')] = descInputs[i].value;
+        pageRow.description[
+            descInputs[i].getAttribute('data-mxadmin-page-desc-lang')
+        ] = descInputs[i].value;
     }
 
     var keywordObj = {};
     var textObj = mxAdminCollectPageTextFromForm();
-    var kwInputs = document.querySelectorAll('[data-mxadmin-page-keyword-lang]');
+    var kwInputs = document.querySelectorAll(
+        '[data-mxadmin-page-keyword-lang]',
+    );
     for (i = 0; i < kwInputs.length; i++) {
-        keywordObj[kwInputs[i].getAttribute('data-mxadmin-page-keyword-lang')] = kwInputs[i].value;
+        keywordObj[kwInputs[i].getAttribute('data-mxadmin-page-keyword-lang')] =
+            kwInputs[i].value;
     }
 
     var descObj = mxAdminCollectPageDescFromForm();
@@ -3321,7 +3929,11 @@ function mxAdminHandlePageFormSubmit(evt) {
     }
 
     var idx = mxAdminFindPageRowIndex(pageRow);
-    if (idx >= 0 && mxAdminState.categoryDoc && Array.isArray(mxAdminState.categoryDoc.data)) {
+    if (
+        idx >= 0 &&
+        mxAdminState.categoryDoc &&
+        Array.isArray(mxAdminState.categoryDoc.data)
+    ) {
         mxAdminState.categoryDoc.data[idx] = pageRow;
         mxAdminState.categoryPages = mxAdminState.categoryDoc.data;
     }
@@ -3330,7 +3942,11 @@ function mxAdminHandlePageFormSubmit(evt) {
     saveBtn.disabled = true;
     var catPath = mxAdminState.activeCategoryPath;
 
-    mxAdminApiRequest('PUT', '/api/admin/data/' + encodeURIComponent(catPath), mxAdminState.categoryDoc)
+    mxAdminApiRequest(
+        'PUT',
+        '/api/admin/data/' + encodeURIComponent(catPath),
+        mxAdminState.categoryDoc,
+    )
         .then(function () {
             if (!pageRow.id) {
                 saveBtn.disabled = false;
@@ -3338,9 +3954,11 @@ function mxAdminHandlePageFormSubmit(evt) {
                 mxAdminRenderPagesList();
                 return null;
             }
-            var record = mxAdminState.pageRecord && typeof mxAdminState.pageRecord === 'object'
-                ? mxAdminState.pageRecord
-                : {};
+            var record =
+                mxAdminState.pageRecord &&
+                typeof mxAdminState.pageRecord === 'object'
+                    ? mxAdminState.pageRecord
+                    : {};
             record.id = pageRow.id;
             record.path = pageRow.path;
             if (typeof record.name !== 'object' || record.name === null) {
@@ -3366,14 +3984,19 @@ function mxAdminHandlePageFormSubmit(evt) {
                     record.text[lk] = textObj[lk];
                 }
             }
-            return mxAdminApiRequest('PUT', '/api/admin/data/page-record/' + encodeURIComponent(pageRow.id), record);
+            return mxAdminApiRequest(
+                'PUT',
+                '/api/admin/data/page-record/' + encodeURIComponent(pageRow.id),
+                record,
+            );
         })
         .then(function (result) {
             if (result === null) {
                 return;
             }
             saveBtn.disabled = false;
-            mxAdminState.pageRecord = mxAdminUnwrapApiData(result) || mxAdminState.pageRecord;
+            mxAdminState.pageRecord =
+                mxAdminUnwrapApiData(result) || mxAdminState.pageRecord;
             mxAdminUpdatePageDetailHeader(pageRow);
             mxAdminToast(mxAdminT('saveSuccess'), false);
             mxAdminRenderPagesList();
@@ -3406,7 +4029,14 @@ function mxAdminHandlePagesSearchInput(evt) {
 
 
 
-var MX_ADMIN_MODULE_MEDIA_KEYS = ['img', 'bg', 'img2', 'image', 'logo', 'photo'];
+var MX_ADMIN_MODULE_MEDIA_KEYS = [
+    'img',
+    'bg',
+    'img2',
+    'image',
+    'logo',
+    'photo',
+];
 
 function mxAdminIsLocalPreview() {
     if (typeof window === 'undefined' || !window.location) {
@@ -3465,7 +4095,12 @@ function mxAdminModuleHasMediaSupport(record) {
             continue;
         }
         for (j = 0; j < MX_ADMIN_MODULE_MEDIA_KEYS.length; j++) {
-            if (Object.prototype.hasOwnProperty.call(item, MX_ADMIN_MODULE_MEDIA_KEYS[j])) {
+            if (
+                Object.prototype.hasOwnProperty.call(
+                    item,
+                    MX_ADMIN_MODULE_MEDIA_KEYS[j],
+                )
+            ) {
                 return true;
             }
         }
@@ -3474,7 +4109,12 @@ function mxAdminModuleHasMediaSupport(record) {
 }
 
 function mxAdminModuleMediaUrl(moduleId, filename) {
-    return mxAdminApiUrl('/api/admin/data/module-media/' + encodeURIComponent(moduleId) + '/' + encodeURIComponent(filename));
+    return mxAdminApiUrl(
+        '/api/admin/data/module-media/' +
+            encodeURIComponent(moduleId) +
+            '/' +
+            encodeURIComponent(filename),
+    );
 }
 
 function mxAdminApiUpload(pathSuffix, formData) {
@@ -3486,28 +4126,40 @@ function mxAdminApiUpload(pathSuffix, formData) {
         var url = mxAdminApiUrl(pathSuffix);
         var request;
         try {
-            request = fetch(url, { method: 'POST', credentials: 'include', body: formData });
+            request = fetch(url, {
+                method: 'POST',
+                credentials: 'include',
+                body: formData,
+            });
         } catch (syncErr) {
             reject({ code: 'NETWORK' });
             return;
         }
-        request.then(function (res) {
-            res.json().then(function (data) {
-                if (!res.ok) {
-                    reject({ code: 'HTTP', status: res.status, data: data });
-                    return;
-                }
-                resolve(data);
-            }).catch(function () {
-                if (!res.ok) {
-                    reject({ code: 'HTTP', status: res.status });
-                    return;
-                }
-                resolve({});
+        request
+            .then(function (res) {
+                res.json()
+                    .then(function (data) {
+                        if (!res.ok) {
+                            reject({
+                                code: 'HTTP',
+                                status: res.status,
+                                data: data,
+                            });
+                            return;
+                        }
+                        resolve(data);
+                    })
+                    .catch(function () {
+                        if (!res.ok) {
+                            reject({ code: 'HTTP', status: res.status });
+                            return;
+                        }
+                        resolve({});
+                    });
+            })
+            .catch(function () {
+                reject({ code: 'NETWORK' });
             });
-        }).catch(function () {
-            reject({ code: 'NETWORK' });
-        });
     });
 }
 
@@ -3515,17 +4167,27 @@ function mxAdminUploadModuleFile(moduleId, file) {
     if (mxAdminIsLocalPreview()) {
         var fd = new FormData();
         fd.append('file', file);
-        return mxAdminApiUpload('/api/admin/data/module-upload/' + encodeURIComponent(moduleId), fd);
+        return mxAdminApiUpload(
+            '/api/admin/data/module-upload/' + encodeURIComponent(moduleId),
+            fd,
+        );
     }
     return new Promise(function (resolve, reject) {
         var reader = new FileReader();
         reader.onload = function () {
             var result = String(reader.result || '');
-            var base64 = result.indexOf(',') !== -1 ? result.split(',')[1] : result;
-            mxAdminApiRequest('POST', '/api/admin/data/module-upload/' + encodeURIComponent(moduleId), {
-                filename: file.name,
-                contentBase64: base64
-            }).then(resolve).catch(reject);
+            var base64 =
+                result.indexOf(',') !== -1 ? result.split(',')[1] : result;
+            mxAdminApiRequest(
+                'POST',
+                '/api/admin/data/module-upload/' + encodeURIComponent(moduleId),
+                {
+                    filename: file.name,
+                    contentBase64: base64,
+                },
+            )
+                .then(resolve)
+                .catch(reject);
         };
         reader.onerror = function () {
             reject({ code: 'NETWORK' });
@@ -3560,7 +4222,10 @@ function mxAdminLoadModules() {
             if (mxAdminHandleUnauthorized(err)) {
                 return;
             }
-            mxAdminShowAlert('mxadminModulesError', mxAdminApiErrorMessage(err, 'modulesLoadError'));
+            mxAdminShowAlert(
+                'mxadminModulesError',
+                mxAdminApiErrorMessage(err, 'modulesLoadError'),
+            );
         });
 }
 
@@ -3583,8 +4248,13 @@ function mxAdminGetFilteredModules() {
         var category = (mod.category || '').toLowerCase();
         var local = (mod.local || '').toLowerCase();
         var pathVal = (mod.path || '').toLowerCase();
-        if (name.indexOf(q) !== -1 || mid.indexOf(q) !== -1 || category.indexOf(q) !== -1 ||
-            local.indexOf(q) !== -1 || pathVal.indexOf(q) !== -1) {
+        if (
+            name.indexOf(q) !== -1 ||
+            mid.indexOf(q) !== -1 ||
+            category.indexOf(q) !== -1 ||
+            local.indexOf(q) !== -1 ||
+            pathVal.indexOf(q) !== -1
+        ) {
             out.push(mod);
         }
     }
@@ -3629,7 +4299,9 @@ function mxAdminRenderModulesList() {
     mxAdminUpdateModulesMeta(list.length);
 
     var lang = mxAdminState.lang;
-    var activeId = mxAdminState.activeModuleRow ? mxAdminState.activeModuleRow.id : '';
+    var activeId = mxAdminState.activeModuleRow
+        ? mxAdminState.activeModuleRow.id
+        : '';
     var i;
     for (i = 0; i < list.length; i++) {
         var mod = list[i] || {};
@@ -3647,14 +4319,24 @@ function mxAdminRenderModulesList() {
         li.onclick = mxAdminMakeModuleSelectHandler(mod);
         li.innerHTML =
             '<div class="mxadmin-pages-list-item">' +
-            '<span class="mxadmin-pages-list-icon material-symbols-outlined">' + mxAdminEscapeHtml(mod.icon || 'widgets') + '</span>' +
+            '<span class="mxadmin-pages-list-icon material-symbols-outlined">' +
+            mxAdminEscapeHtml(mod.icon || 'widgets') +
+            '</span>' +
             '<div class="mxadmin-pages-list-text">' +
             '<div class="mxadmin-pages-list-title-row">' +
-            '<span class="mxadmin-pages-list-title">' + mxAdminEscapeHtml(nameVal) + '</span>' +
+            '<span class="mxadmin-pages-list-title">' +
+            mxAdminEscapeHtml(nameVal) +
+            '</span>' +
             '</div>' +
             '<div class="mxadmin-pages-list-meta">' +
-            '<code class="mxadmin-module-id-pill">' + mxAdminEscapeHtml(mod.id || '—') + '</code>' +
-            '<span> · ' + mxAdminEscapeHtml(mod.local || '—') + ' / ' + mxAdminEscapeHtml(mod.path || '—') + '</span>' +
+            '<code class="mxadmin-module-id-pill">' +
+            mxAdminEscapeHtml(mod.id || '—') +
+            '</code>' +
+            '<span> · ' +
+            mxAdminEscapeHtml(mod.local || '—') +
+            ' / ' +
+            mxAdminEscapeHtml(mod.path || '—') +
+            '</span>' +
             '</div></div>' +
             '<span class="material-symbols-outlined mxadmin-pages-list-chevron">chevron_right</span>' +
             '</div>';
@@ -3680,7 +4362,12 @@ function mxAdminSelectModule(mod) {
         nameVal = mod.name;
     }
     titleEl.textContent = nameVal || mod.path || '—';
-    metaEl.textContent = (mod.local || '—') + ' / ' + (mod.path || '—') + ' · ' + (mod.id || '—');
+    metaEl.textContent =
+        (mod.local || '—') +
+        ' / ' +
+        (mod.path || '—') +
+        ' · ' +
+        (mod.id || '—');
     catEl.textContent = mod.category || '—';
 
     var activeWrap = mxAdminEl('mxadminModuleActiveWrap');
@@ -3692,9 +4379,15 @@ function mxAdminSelectModule(mod) {
         activeWrap.classList.add('hidden');
     }
 
-    mxAdminEl('mxadminModuleName').value = typeof mod.name === 'string' ? mod.name : mxAdminPickLocalized(mod.name, lang);
+    mxAdminEl('mxadminModuleName').value =
+        typeof mod.name === 'string'
+            ? mod.name
+            : mxAdminPickLocalized(mod.name, lang);
 
-    mxAdminApiRequest('GET', '/api/admin/data/module-record/' + encodeURIComponent(mod.id))
+    mxAdminApiRequest(
+        'GET',
+        '/api/admin/data/module-record/' + encodeURIComponent(mod.id),
+    )
         .then(function (resp) {
             var record = mxAdminUnwrapApiData(resp) || {};
             if (!record.data && mod.data) {
@@ -3710,7 +4403,8 @@ function mxAdminSelectModule(mod) {
                 record.category = mod.category;
             }
             mxAdminState.moduleRecord = record;
-            mxAdminState.moduleSupportsMedia = mxAdminModuleHasMediaSupport(record);
+            mxAdminState.moduleSupportsMedia =
+                mxAdminModuleHasMediaSupport(record);
             mxAdminRenderModuleEditor();
             mxAdminLoadModuleFiles();
             mxAdminShowModuleDetailForm();
@@ -3723,9 +4417,11 @@ function mxAdminSelectModule(mod) {
                 desing: mod.desing || {},
                 category: mod.category,
                 version: mod.version,
-                icon: mod.icon
+                icon: mod.icon,
             };
-            mxAdminState.moduleSupportsMedia = mxAdminModuleHasMediaSupport(mxAdminState.moduleRecord);
+            mxAdminState.moduleSupportsMedia = mxAdminModuleHasMediaSupport(
+                mxAdminState.moduleRecord,
+            );
             mxAdminRenderModuleEditor();
             mxAdminLoadModuleFiles();
             mxAdminShowModuleDetailForm();
@@ -3734,7 +4430,12 @@ function mxAdminSelectModule(mod) {
 }
 
 function mxAdminShowModuleTab(tabName) {
-    var tab = tabName === 'content' ? 'content' : (tabName === 'media' ? 'media' : 'general');
+    var tab =
+        tabName === 'content'
+            ? 'content'
+            : tabName === 'media'
+              ? 'media'
+              : 'general';
     if (tab === 'media' && !mxAdminState.moduleSupportsMedia) {
         tab = 'general';
     }
@@ -3748,10 +4449,21 @@ function mxAdminShowModuleTab(tabName) {
             tabs[i].classList.remove('is-active');
         }
     }
-    mxAdminEl('mxadminModuleTabGeneral').classList.toggle('hidden', tab !== 'general');
-    mxAdminEl('mxadminModuleTabContent').classList.toggle('hidden', tab !== 'content');
-    mxAdminEl('mxadminModuleTabMedia').classList.toggle('hidden', tab !== 'media');
-    var mediaTabBtn = document.querySelector('[data-mxadmin-module-tab="media"]');
+    mxAdminEl('mxadminModuleTabGeneral').classList.toggle(
+        'hidden',
+        tab !== 'general',
+    );
+    mxAdminEl('mxadminModuleTabContent').classList.toggle(
+        'hidden',
+        tab !== 'content',
+    );
+    mxAdminEl('mxadminModuleTabMedia').classList.toggle(
+        'hidden',
+        tab !== 'media',
+    );
+    var mediaTabBtn = document.querySelector(
+        '[data-mxadmin-module-tab="media"]',
+    );
     if (mediaTabBtn) {
         if (mxAdminState.moduleSupportsMedia) {
             mediaTabBtn.classList.remove('hidden');
@@ -3769,7 +4481,10 @@ function mxAdminIsI18nObject(value) {
     if (!value || typeof value !== 'object' || Array.isArray(value)) {
         return false;
     }
-    return Object.prototype.hasOwnProperty.call(value, 'tr') || Object.prototype.hasOwnProperty.call(value, 'en');
+    return (
+        Object.prototype.hasOwnProperty.call(value, 'tr') ||
+        Object.prototype.hasOwnProperty.call(value, 'en')
+    );
 }
 
 function mxAdminRenderModuleDesingFields() {
@@ -3792,30 +4507,66 @@ function mxAdminRenderModuleDesingFields() {
                 var lang = langs[li];
                 var group = document.createElement('div');
                 group.className = 'mxadmin-form-group';
-                group.innerHTML = '<label>' + mxAdminEscapeHtml(key) + ' (' + lang.toUpperCase() + ')</label>' +
-                    '<input type="text" data-mxadmin-module-desing-key="' + mxAdminEscapeHtml(key) + '" data-mxadmin-module-desing-lang="' + lang + '" value="' + mxAdminEscapeHtml(val[lang] || '') + '" />';
+                group.innerHTML =
+                    '<label>' +
+                    mxAdminEscapeHtml(key) +
+                    ' (' +
+                    lang.toUpperCase() +
+                    ')</label>' +
+                    '<input type="text" data-mxadmin-module-desing-key="' +
+                    mxAdminEscapeHtml(key) +
+                    '" data-mxadmin-module-desing-lang="' +
+                    lang +
+                    '" value="' +
+                    mxAdminEscapeHtml(val[lang] || '') +
+                    '" />';
                 wrap.appendChild(group);
             }
         } else if (mxAdminIsHexColor(val)) {
             var colorGroup = document.createElement('div');
             colorGroup.className = 'mxadmin-form-group';
-            colorGroup.innerHTML = '<label>' + mxAdminEscapeHtml(key) + '</label>' +
+            colorGroup.innerHTML =
+                '<label>' +
+                mxAdminEscapeHtml(key) +
+                '</label>' +
                 '<div class="mxadmin-color-row">' +
-                '<input type="color" value="' + mxAdminEscapeHtml(val) + '" data-mxadmin-module-desing-color="' + mxAdminEscapeHtml(key) + '" />' +
-                '<input type="text" class="mxadmin-color-hex" value="' + mxAdminEscapeHtml(val) + '" data-mxadmin-module-desing-key="' + mxAdminEscapeHtml(key) + '" />' +
+                '<input type="color" value="' +
+                mxAdminEscapeHtml(val) +
+                '" data-mxadmin-module-desing-color="' +
+                mxAdminEscapeHtml(key) +
+                '" />' +
+                '<input type="text" class="mxadmin-color-hex" value="' +
+                mxAdminEscapeHtml(val) +
+                '" data-mxadmin-module-desing-key="' +
+                mxAdminEscapeHtml(key) +
+                '" />' +
                 '</div>';
             wrap.appendChild(colorGroup);
         } else if (typeof val === 'number') {
             var numGroup = document.createElement('div');
             numGroup.className = 'mxadmin-form-group';
-            numGroup.innerHTML = '<label>' + mxAdminEscapeHtml(key) + '</label>' +
-                '<input type="number" data-mxadmin-module-desing-key="' + mxAdminEscapeHtml(key) + '" value="' + mxAdminEscapeHtml(String(val)) + '" />';
+            numGroup.innerHTML =
+                '<label>' +
+                mxAdminEscapeHtml(key) +
+                '</label>' +
+                '<input type="number" data-mxadmin-module-desing-key="' +
+                mxAdminEscapeHtml(key) +
+                '" value="' +
+                mxAdminEscapeHtml(String(val)) +
+                '" />';
             wrap.appendChild(numGroup);
         } else if (typeof val === 'string' || typeof val === 'boolean') {
             var textGroup = document.createElement('div');
             textGroup.className = 'mxadmin-form-group';
-            textGroup.innerHTML = '<label>' + mxAdminEscapeHtml(key) + '</label>' +
-                '<input type="text" data-mxadmin-module-desing-key="' + mxAdminEscapeHtml(key) + '" value="' + mxAdminEscapeHtml(String(val)) + '" />';
+            textGroup.innerHTML =
+                '<label>' +
+                mxAdminEscapeHtml(key) +
+                '</label>' +
+                '<input type="text" data-mxadmin-module-desing-key="' +
+                mxAdminEscapeHtml(key) +
+                '" value="' +
+                mxAdminEscapeHtml(String(val)) +
+                '" />';
             wrap.appendChild(textGroup);
         }
     }
@@ -3859,11 +4610,36 @@ function mxAdminBuildModuleFieldInput(key, value, rowIndex, files) {
         for (fi = 0; fi < files.length; fi++) {
             var fname = files[fi];
             var selected = fname === value ? ' selected="selected"' : '';
-            opts += '<option value="' + mxAdminEscapeHtml(fname) + '"' + selected + '>' + mxAdminEscapeHtml(fname) + '</option>';
+            opts +=
+                '<option value="' +
+                mxAdminEscapeHtml(fname) +
+                '"' +
+                selected +
+                '>' +
+                mxAdminEscapeHtml(fname) +
+                '</option>';
         }
-        return '<div class="mxadmin-form-group"><label>' + mxAdminEscapeHtml(key) + '</label>' +
-            '<select class="mxadmin-select mxadmin-module-field-select" data-mxadmin-module-data-index="' + rowIndex + '" data-mxadmin-module-data-key="' + mxAdminEscapeHtml(key) + '">' + opts + '</select>' +
-            '<input type="text" data-mxadmin-module-data-index="' + rowIndex + '" data-mxadmin-module-data-key="' + mxAdminEscapeHtml(key) + '-text" value="' + mxAdminEscapeHtml(value || '') + '" placeholder="' + mxAdminEscapeHtml(key) + '" /></div>';
+        return (
+            '<div class="mxadmin-form-group"><label>' +
+            mxAdminEscapeHtml(key) +
+            '</label>' +
+            '<select class="mxadmin-select mxadmin-module-field-select" data-mxadmin-module-data-index="' +
+            rowIndex +
+            '" data-mxadmin-module-data-key="' +
+            mxAdminEscapeHtml(key) +
+            '">' +
+            opts +
+            '</select>' +
+            '<input type="text" data-mxadmin-module-data-index="' +
+            rowIndex +
+            '" data-mxadmin-module-data-key="' +
+            mxAdminEscapeHtml(key) +
+            '-text" value="' +
+            mxAdminEscapeHtml(value || '') +
+            '" placeholder="' +
+            mxAdminEscapeHtml(key) +
+            '" /></div>'
+        );
     }
     if (mxAdminIsI18nObject(value)) {
         var langs = mxAdminActiveLangs();
@@ -3871,17 +4647,50 @@ function mxAdminBuildModuleFieldInput(key, value, rowIndex, files) {
         var li;
         for (li = 0; li < langs.length; li++) {
             var lang = langs[li];
-            html += '<div class="mxadmin-form-group"><label>' + mxAdminEscapeHtml(key) + ' (' + lang.toUpperCase() + ')</label>' +
-                '<input type="text" data-mxadmin-module-data-index="' + rowIndex + '" data-mxadmin-module-data-key="' + mxAdminEscapeHtml(key) + '" data-mxadmin-module-data-lang="' + lang + '" value="' + mxAdminEscapeHtml(value[lang] || '') + '" /></div>';
+            html +=
+                '<div class="mxadmin-form-group"><label>' +
+                mxAdminEscapeHtml(key) +
+                ' (' +
+                lang.toUpperCase() +
+                ')</label>' +
+                '<input type="text" data-mxadmin-module-data-index="' +
+                rowIndex +
+                '" data-mxadmin-module-data-key="' +
+                mxAdminEscapeHtml(key) +
+                '" data-mxadmin-module-data-lang="' +
+                lang +
+                '" value="' +
+                mxAdminEscapeHtml(value[lang] || '') +
+                '" /></div>';
         }
         return html;
     }
     if (typeof value === 'number') {
-        return '<div class="mxadmin-form-group"><label>' + mxAdminEscapeHtml(key) + '</label>' +
-            '<input type="number" data-mxadmin-module-data-index="' + rowIndex + '" data-mxadmin-module-data-key="' + mxAdminEscapeHtml(key) + '" value="' + mxAdminEscapeHtml(String(value)) + '" /></div>';
+        return (
+            '<div class="mxadmin-form-group"><label>' +
+            mxAdminEscapeHtml(key) +
+            '</label>' +
+            '<input type="number" data-mxadmin-module-data-index="' +
+            rowIndex +
+            '" data-mxadmin-module-data-key="' +
+            mxAdminEscapeHtml(key) +
+            '" value="' +
+            mxAdminEscapeHtml(String(value)) +
+            '" /></div>'
+        );
     }
-    return '<div class="mxadmin-form-group"><label>' + mxAdminEscapeHtml(key) + '</label>' +
-        '<input type="text" data-mxadmin-module-data-index="' + rowIndex + '" data-mxadmin-module-data-key="' + mxAdminEscapeHtml(key) + '" value="' + mxAdminEscapeHtml(value == null ? '' : String(value)) + '" /></div>';
+    return (
+        '<div class="mxadmin-form-group"><label>' +
+        mxAdminEscapeHtml(key) +
+        '</label>' +
+        '<input type="text" data-mxadmin-module-data-index="' +
+        rowIndex +
+        '" data-mxadmin-module-data-key="' +
+        mxAdminEscapeHtml(key) +
+        '" value="' +
+        mxAdminEscapeHtml(value == null ? '' : String(value)) +
+        '" /></div>'
+    );
 }
 
 function mxAdminRenderModuleDataFields() {
@@ -3903,7 +4712,8 @@ function mxAdminRenderModuleDataFields() {
 
     emptyEl.classList.add('hidden');
     addBtn.classList.remove('hidden');
-    metaEl.textContent = String(dataArr.length) + ' ' + mxAdminT('moduleDataRow');
+    metaEl.textContent =
+        String(dataArr.length) + ' ' + mxAdminT('moduleDataRow');
     mxAdminState.moduleDataTemplate = mxAdminCollectModuleDataTemplate(dataArr);
 
     var files = mxAdminState.moduleFiles || [];
@@ -3917,36 +4727,58 @@ function mxAdminRenderModuleDataFields() {
         var bodyHtml = '';
         var ki;
         for (ki = 0; ki < keys.length; ki++) {
-            bodyHtml += mxAdminBuildModuleFieldInput(keys[ki], item[keys[ki]], i, files);
+            bodyHtml += mxAdminBuildModuleFieldInput(
+                keys[ki],
+                item[keys[ki]],
+                i,
+                files,
+            );
         }
         card.innerHTML =
             '<div class="mxadmin-module-data-card-head">' +
-            '<span class="mxadmin-module-data-card-title">' + mxAdminEscapeHtml(mxAdminT('moduleDataRow')) + ' ' + String(i + 1) + '</span>' +
-            '<button type="button" class="mxadmin-btn-ghost mxadmin-btn-sm" data-mxadmin-module-data-remove="' + i + '">' + mxAdminEscapeHtml(mxAdminT('moduleDataRemove')) + '</button>' +
-            '</div><div class="mxadmin-module-data-card-body">' + bodyHtml + '</div>';
+            '<span class="mxadmin-module-data-card-title">' +
+            mxAdminEscapeHtml(mxAdminT('moduleDataRow')) +
+            ' ' +
+            String(i + 1) +
+            '</span>' +
+            '<button type="button" class="mxadmin-btn-ghost mxadmin-btn-sm" data-mxadmin-module-data-remove="' +
+            i +
+            '">' +
+            mxAdminEscapeHtml(mxAdminT('moduleDataRemove')) +
+            '</button>' +
+            '</div><div class="mxadmin-module-data-card-body">' +
+            bodyHtml +
+            '</div>';
         wrap.appendChild(card);
     }
 
     var removeBtns = wrap.querySelectorAll('[data-mxadmin-module-data-remove]');
     var ri;
     for (ri = 0; ri < removeBtns.length; ri++) {
-        removeBtns[ri].onclick = mxAdminMakeModuleDataRemoveHandler(parseInt(removeBtns[ri].getAttribute('data-mxadmin-module-data-remove'), 10));
+        removeBtns[ri].onclick = mxAdminMakeModuleDataRemoveHandler(
+            parseInt(
+                removeBtns[ri].getAttribute('data-mxadmin-module-data-remove'),
+                10,
+            ),
+        );
     }
 }
 
 function mxAdminMakeModuleDataRemoveHandler(index) {
     return function () {
-        Global_confirmDelete(mxAdminT('moduleDataRemove') + '?').then(function (ok) {
-            if (!ok) {
-                return;
-            }
-            var record = mxAdminState.moduleRecord || {};
-            if (!Array.isArray(record.data)) {
-                return;
-            }
-            record.data.splice(index, 1);
-            mxAdminRenderModuleDataFields();
-        });
+        Global_confirmDelete(mxAdminT('moduleDataRemove') + '?').then(
+            function (ok) {
+                if (!ok) {
+                    return;
+                }
+                var record = mxAdminState.moduleRecord || {};
+                if (!Array.isArray(record.data)) {
+                    return;
+                }
+                record.data.splice(index, 1);
+                mxAdminRenderModuleDataFields();
+            },
+        );
     };
 }
 
@@ -3982,9 +4814,13 @@ function mxAdminLoadModuleFiles() {
         mxAdminRenderModuleMediaGrid();
         return;
     }
-    mxAdminApiRequest('GET', '/api/admin/data/module-files/' + encodeURIComponent(mod.id))
+    mxAdminApiRequest(
+        'GET',
+        '/api/admin/data/module-files/' + encodeURIComponent(mod.id),
+    )
         .then(function (resp) {
-            mxAdminState.moduleFiles = (resp && Array.isArray(resp.files)) ? resp.files : [];
+            mxAdminState.moduleFiles =
+                resp && Array.isArray(resp.files) ? resp.files : [];
             mxAdminRenderModuleMediaGrid();
             mxAdminRenderModuleDataFields();
         })
@@ -4012,17 +4848,27 @@ function mxAdminRenderModuleMediaGrid() {
         card.className = 'mxadmin-module-media-card';
         card.setAttribute('data-mxadmin-module-media-file', fname);
         card.innerHTML =
-            '<img class="mxadmin-module-media-thumb" src="' + mxAdminEscapeHtml(mxAdminModuleMediaUrl(mod.id, fname)) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'" />' +
-            '<button type="button" class="mxadmin-module-media-delete" data-mxadmin-module-media-delete="' + mxAdminEscapeHtml(fname) + '" title="' + mxAdminEscapeHtml(mxAdminT('moduleDataRemove')) + '">' +
+            '<img class="mxadmin-module-media-thumb" src="' +
+            mxAdminEscapeHtml(mxAdminModuleMediaUrl(mod.id, fname)) +
+            '" alt="" loading="lazy" onerror="this.style.display=\'none\'" />' +
+            '<button type="button" class="mxadmin-module-media-delete" data-mxadmin-module-media-delete="' +
+            mxAdminEscapeHtml(fname) +
+            '" title="' +
+            mxAdminEscapeHtml(mxAdminT('moduleDataRemove')) +
+            '">' +
             '<span class="material-symbols-outlined" style="font-size:16px;">delete</span></button>' +
-            '<div class="mxadmin-module-media-name">' + mxAdminEscapeHtml(fname) + '</div>';
+            '<div class="mxadmin-module-media-name">' +
+            mxAdminEscapeHtml(fname) +
+            '</div>';
         grid.appendChild(card);
     }
     var uploadCard = document.createElement('div');
     uploadCard.className = 'mxadmin-module-media-upload-card';
     uploadCard.innerHTML =
         '<span class="material-symbols-outlined">add_photo_alternate</span>' +
-        '<span>' + mxAdminEscapeHtml(mxAdminT('moduleMediaUpload')) + '</span>';
+        '<span>' +
+        mxAdminEscapeHtml(mxAdminT('moduleMediaUpload')) +
+        '</span>';
     uploadCard.onclick = function () {
         mxAdminEl('mxadminModuleMediaInput').click();
     };
@@ -4031,7 +4877,9 @@ function mxAdminRenderModuleMediaGrid() {
     var delBtns = grid.querySelectorAll('[data-mxadmin-module-media-delete]');
     var di;
     for (di = 0; di < delBtns.length; di++) {
-        delBtns[di].onclick = mxAdminMakeModuleMediaDeleteHandler(delBtns[di].getAttribute('data-mxadmin-module-media-delete'));
+        delBtns[di].onclick = mxAdminMakeModuleMediaDeleteHandler(
+            delBtns[di].getAttribute('data-mxadmin-module-media-delete'),
+        );
     }
 }
 
@@ -4045,13 +4893,22 @@ function mxAdminMakeModuleMediaDeleteHandler(filename) {
             if (!ok) {
                 return;
             }
-            mxAdminApiRequest('DELETE', '/api/admin/data/module-file/' + encodeURIComponent(mod.id) + '/' + encodeURIComponent(filename))
+            mxAdminApiRequest(
+                'DELETE',
+                '/api/admin/data/module-file/' +
+                    encodeURIComponent(mod.id) +
+                    '/' +
+                    encodeURIComponent(filename),
+            )
                 .then(function () {
                     mxAdminToast(mxAdminT('moduleMediaDeleteSuccess'), false);
                     mxAdminLoadModuleFiles();
                 })
                 .catch(function (err) {
-                    mxAdminToast(mxAdminApiErrorMessage(err, 'moduleMediaUploadError'), true);
+                    mxAdminToast(
+                        mxAdminApiErrorMessage(err, 'moduleMediaUploadError'),
+                        true,
+                    );
                 });
         });
     };
@@ -4080,12 +4937,14 @@ function mxAdminHandleModuleMediaUploadInput(evt) {
         }
     }
     for (fi = 0; fi < files.length; fi++) {
-        mxAdminUploadModuleFile(mod.id, files[fi]).then(function () {
-            okCount += 1;
-            onDone();
-        }).catch(function () {
-            onDone();
-        });
+        mxAdminUploadModuleFile(mod.id, files[fi])
+            .then(function () {
+                okCount += 1;
+                onDone();
+            })
+            .catch(function () {
+                onDone();
+            });
     }
 }
 
@@ -4105,7 +4964,9 @@ function mxAdminCollectModuleFormValues() {
     if (!record.desing || typeof record.desing !== 'object') {
         record.desing = {};
     }
-    var desingInputs = document.querySelectorAll('[data-mxadmin-module-desing-key]');
+    var desingInputs = document.querySelectorAll(
+        '[data-mxadmin-module-desing-key]',
+    );
     var i;
     for (i = 0; i < desingInputs.length; i++) {
         var inp = desingInputs[i];
@@ -4121,7 +4982,10 @@ function mxAdminCollectModuleFormValues() {
             record.desing[dKey][dLang] = inp.value;
         } else {
             var raw = inp.value;
-            if (/^-?\d+(\.\d+)?$/.test(String(raw).trim()) && inp.type === 'number') {
+            if (
+                /^-?\d+(\.\d+)?$/.test(String(raw).trim()) &&
+                inp.type === 'number'
+            ) {
                 record.desing[dKey] = parseFloat(raw);
             } else {
                 record.desing[dKey] = raw;
@@ -4131,14 +4995,19 @@ function mxAdminCollectModuleFormValues() {
     mod.desing = record.desing;
 
     if (Array.isArray(record.data)) {
-        var dataInputs = document.querySelectorAll('[data-mxadmin-module-data-key]');
+        var dataInputs = document.querySelectorAll(
+            '[data-mxadmin-module-data-key]',
+        );
         for (i = 0; i < dataInputs.length; i++) {
             var dInp = dataInputs[i];
             var keyAttr = dInp.getAttribute('data-mxadmin-module-data-key');
             if (!keyAttr || keyAttr.indexOf('-text') !== -1) {
                 continue;
             }
-            var rowIndex = parseInt(dInp.getAttribute('data-mxadmin-module-data-index'), 10);
+            var rowIndex = parseInt(
+                dInp.getAttribute('data-mxadmin-module-data-index'),
+                10,
+            );
             var dataKey = keyAttr;
             var dataLang = dInp.getAttribute('data-mxadmin-module-data-lang');
             if (isNaN(rowIndex) || !record.data[rowIndex]) {
@@ -4150,19 +5019,32 @@ function mxAdminCollectModuleFormValues() {
                     record.data[rowIndex][dataKey] = {};
                 }
                 record.data[rowIndex][dataKey][dataLang] = val;
-            } else if (dInp.tagName && String(dInp.tagName).toLowerCase() === 'select') {
+            } else if (
+                dInp.tagName &&
+                String(dInp.tagName).toLowerCase() === 'select'
+            ) {
                 record.data[rowIndex][dataKey] = val;
-            } else if (dInp.type === 'number' && /^-?\d+(\.\d+)?$/.test(String(val).trim())) {
+            } else if (
+                dInp.type === 'number' &&
+                /^-?\d+(\.\d+)?$/.test(String(val).trim())
+            ) {
                 record.data[rowIndex][dataKey] = parseFloat(val);
             } else {
                 record.data[rowIndex][dataKey] = val;
             }
         }
-        var textOverrides = document.querySelectorAll('[data-mxadmin-module-data-key$="-text"]');
+        var textOverrides = document.querySelectorAll(
+            '[data-mxadmin-module-data-key$="-text"]',
+        );
         for (i = 0; i < textOverrides.length; i++) {
             var tInp = textOverrides[i];
-            var tKey = String(tInp.getAttribute('data-mxadmin-module-data-key')).replace(/-text$/, '');
-            var tIndex = parseInt(tInp.getAttribute('data-mxadmin-module-data-index'), 10);
+            var tKey = String(
+                tInp.getAttribute('data-mxadmin-module-data-key'),
+            ).replace(/-text$/, '');
+            var tIndex = parseInt(
+                tInp.getAttribute('data-mxadmin-module-data-index'),
+                10,
+            );
             if (tInp.value && !isNaN(tIndex) && record.data[tIndex]) {
                 record.data[tIndex][tKey] = tInp.value;
             }
@@ -4184,7 +5066,9 @@ function mxAdminHandleModuleFormSubmit(evt) {
     var saveBtn = mxAdminEl('mxadminModuleSave');
     saveBtn.disabled = true;
 
-    var modulesDoc = mxAdminState.modulesDoc || { data: mxAdminState.modulesList || [] };
+    var modulesDoc = mxAdminState.modulesDoc || {
+        data: mxAdminState.modulesList || [],
+    };
     if (!Array.isArray(modulesDoc.data)) {
         modulesDoc.data = mxAdminState.modulesList || [];
     }
@@ -4192,9 +5076,17 @@ function mxAdminHandleModuleFormSubmit(evt) {
         modulesDoc.data[mxAdminState.activeModuleIndex] = mod;
     }
 
-    mxAdminApiRequest('PUT', '/api/admin/data/module-record/' + encodeURIComponent(mod.id), record)
+    mxAdminApiRequest(
+        'PUT',
+        '/api/admin/data/module-record/' + encodeURIComponent(mod.id),
+        record,
+    )
         .then(function () {
-            return mxAdminApiRequest('PUT', '/api/admin/data/modules', modulesDoc);
+            return mxAdminApiRequest(
+                'PUT',
+                '/api/admin/data/modules',
+                modulesDoc,
+            );
         })
         .then(function () {
             saveBtn.disabled = false;
@@ -4270,7 +5162,11 @@ function mxAdminOpenModuleEditor(moduleId) {
         return;
     }
     mxAdminState.pendingModuleId = moduleId;
-    if (mxAdminState.loaded.modules && mxAdminState.modulesList && mxAdminState.modulesList.length) {
+    if (
+        mxAdminState.loaded.modules &&
+        mxAdminState.modulesList &&
+        mxAdminState.modulesList.length
+    ) {
         var mod = mxAdminFindModuleById(moduleId);
         if (!mod) {
             mxAdminToast(mxAdminT('moduleNotFound'), true);
@@ -4297,7 +5193,9 @@ function mxAdminEnsureModulesListForDesign() {
             .then(function (resp) {
                 var doc = mxAdminUnwrapApiData(resp) || {};
                 mxAdminState.modulesDoc = doc;
-                mxAdminState.modulesList = Array.isArray(doc.data) ? doc.data : [];
+                mxAdminState.modulesList = Array.isArray(doc.data)
+                    ? doc.data
+                    : [];
                 resolve(mxAdminState.modulesList);
             })
             .catch(function () {
@@ -4328,13 +5226,20 @@ function mxAdminLoadSettings() {
             if (mxAdminHandleUnauthorized(err)) {
                 return;
             }
-            mxAdminShowAlert('mxadminSettingsError', mxAdminApiErrorMessage(err, 'settingsLoadError'));
+            mxAdminShowAlert(
+                'mxadminSettingsError',
+                mxAdminApiErrorMessage(err, 'settingsLoadError'),
+            );
         });
 }
 
 function mxAdminRenderSettingsForm(setting) {
-    mxAdminEl('mxadminSettingName').value = mxAdminSettingScalarToInput(setting.name);
-    mxAdminEl('mxadminSettingDomain').value = mxAdminSettingScalarToInput(setting.domain);
+    mxAdminEl('mxadminSettingName').value = mxAdminSettingScalarToInput(
+        setting.name,
+    );
+    mxAdminEl('mxadminSettingDomain').value = mxAdminSettingScalarToInput(
+        setting.domain,
+    );
     mxAdminEl('mxadminSettingPhone').value = setting.phone || '';
     mxAdminEl('mxadminSettingMobile').value = setting.mobile || '';
     mxAdminEl('mxadminSettingEmail').value = setting.email || '';
@@ -4366,19 +5271,43 @@ function mxAdminRenderSettingsForm(setting) {
     var i;
     for (i = 0; i < langs.length; i++) {
         var lang = langs[i];
-        var descVal = setting.description && typeof setting.description === 'object' ? (setting.description[lang] || '') : '';
-        var keywordVal = setting.keyword && typeof setting.keyword === 'object' ? (setting.keyword[lang] || '') : '';
+        var descVal =
+            setting.description && typeof setting.description === 'object'
+                ? setting.description[lang] || ''
+                : '';
+        var keywordVal =
+            setting.keyword && typeof setting.keyword === 'object'
+                ? setting.keyword[lang] || ''
+                : '';
 
         var descGroup = document.createElement('div');
         descGroup.className = 'mxadmin-form-group';
-        descGroup.innerHTML = '<label>' + mxAdminEscapeHtml(mxAdminT('fieldDescription')) + ' (' + lang.toUpperCase() + ')</label>' +
-            '<textarea data-mxadmin-setting-desc-lang="' + lang + '">' + mxAdminEscapeHtml(descVal) + '</textarea>';
+        descGroup.innerHTML =
+            '<label>' +
+            mxAdminEscapeHtml(mxAdminT('fieldDescription')) +
+            ' (' +
+            lang.toUpperCase() +
+            ')</label>' +
+            '<textarea data-mxadmin-setting-desc-lang="' +
+            lang +
+            '">' +
+            mxAdminEscapeHtml(descVal) +
+            '</textarea>';
         descWrap.appendChild(descGroup);
 
         var keywordGroup = document.createElement('div');
         keywordGroup.className = 'mxadmin-form-group';
-        keywordGroup.innerHTML = '<label>' + mxAdminEscapeHtml(mxAdminT('fieldKeyword')) + ' (' + lang.toUpperCase() + ')</label>' +
-            '<input type="text" data-mxadmin-setting-keyword-lang="' + lang + '" value="' + mxAdminEscapeHtml(keywordVal) + '" />';
+        keywordGroup.innerHTML =
+            '<label>' +
+            mxAdminEscapeHtml(mxAdminT('fieldKeyword')) +
+            ' (' +
+            lang.toUpperCase() +
+            ')</label>' +
+            '<input type="text" data-mxadmin-setting-keyword-lang="' +
+            lang +
+            '" value="' +
+            mxAdminEscapeHtml(keywordVal) +
+            '" />';
         keywordWrap.appendChild(keywordGroup);
     }
 }
@@ -4388,7 +5317,11 @@ function mxAdminHandleSettingsFormSubmit(evt) {
     var setting = mxAdminState.settingData || {};
     var nameInput = mxAdminEl('mxadminSettingName').value;
     var domainInput = mxAdminEl('mxadminSettingDomain').value;
-    if (setting.name != null && typeof setting.name === 'object' && !Array.isArray(setting.name)) {
+    if (
+        setting.name != null &&
+        typeof setting.name === 'object' &&
+        !Array.isArray(setting.name)
+    ) {
         var nameLangs = mxAdminActiveLangs();
         var nameOut = {};
         var ni;
@@ -4399,7 +5332,11 @@ function mxAdminHandleSettingsFormSubmit(evt) {
     } else {
         setting.name = nameInput;
     }
-    if (setting.domain != null && typeof setting.domain === 'object' && !Array.isArray(setting.domain)) {
+    if (
+        setting.domain != null &&
+        typeof setting.domain === 'object' &&
+        !Array.isArray(setting.domain)
+    ) {
         var domainLangs = mxAdminActiveLangs();
         var domainOut = {};
         var di;
@@ -4417,20 +5354,31 @@ function mxAdminHandleSettingsFormSubmit(evt) {
     setting.title = mxAdminEl('mxadminSettingTitle').value;
     setting.address = mxAdminEl('mxadminSettingAddress').value;
 
-    if (typeof setting.description !== 'object' || setting.description === null) {
+    if (
+        typeof setting.description !== 'object' ||
+        setting.description === null
+    ) {
         setting.description = {};
     }
     if (typeof setting.keyword !== 'object' || setting.keyword === null) {
         setting.keyword = {};
     }
-    var descInputs = document.querySelectorAll('[data-mxadmin-setting-desc-lang]');
+    var descInputs = document.querySelectorAll(
+        '[data-mxadmin-setting-desc-lang]',
+    );
     var i;
     for (i = 0; i < descInputs.length; i++) {
-        setting.description[descInputs[i].getAttribute('data-mxadmin-setting-desc-lang')] = descInputs[i].value;
+        setting.description[
+            descInputs[i].getAttribute('data-mxadmin-setting-desc-lang')
+        ] = descInputs[i].value;
     }
-    var keywordInputs = document.querySelectorAll('[data-mxadmin-setting-keyword-lang]');
+    var keywordInputs = document.querySelectorAll(
+        '[data-mxadmin-setting-keyword-lang]',
+    );
     for (i = 0; i < keywordInputs.length; i++) {
-        setting.keyword[keywordInputs[i].getAttribute('data-mxadmin-setting-keyword-lang')] = keywordInputs[i].value;
+        setting.keyword[
+            keywordInputs[i].getAttribute('data-mxadmin-setting-keyword-lang')
+        ] = keywordInputs[i].value;
     }
 
     var saveBtn = mxAdminEl('mxadminSettingsSave');
@@ -4475,16 +5423,27 @@ function mxAdminLoadDesign() {
             if (mxAdminHandleUnauthorized(err)) {
                 return;
             }
-            mxAdminShowAlert('mxadminDesignError', mxAdminApiErrorMessage(err, 'designLoadError'));
+            mxAdminShowAlert(
+                'mxadminDesignError',
+                mxAdminApiErrorMessage(err, 'designLoadError'),
+            );
         });
 }
 
 function mxAdminRenderDesignForm(desing) {
     var summary = mxAdminEl('mxadminLayoutSummary');
     summary.innerHTML = '';
-    mxAdminRenderLayoutSection(summary, mxAdminT('layoutHeader'), desing.header);
+    mxAdminRenderLayoutSection(
+        summary,
+        mxAdminT('layoutHeader'),
+        desing.header,
+    );
     mxAdminRenderLayoutSection(summary, mxAdminT('layoutBody'), desing.body);
-    mxAdminRenderLayoutSection(summary, mxAdminT('layoutFooter'), desing.footer);
+    mxAdminRenderLayoutSection(
+        summary,
+        mxAdminT('layoutFooter'),
+        desing.footer,
+    );
 
     var colors = desing.colors || {};
     mxAdminRenderColorList('mxadminDesignLite', colors.lite || [], 'lite');
@@ -4494,7 +5453,10 @@ function mxAdminRenderDesignForm(desing) {
 function mxAdminRenderLayoutSection(container, title, ids) {
     var section = document.createElement('div');
     section.className = 'mxadmin-layout-section';
-    section.innerHTML = '<div class="mxadmin-layout-section-title">' + mxAdminEscapeHtml(title) + '</div>';
+    section.innerHTML =
+        '<div class="mxadmin-layout-section-title">' +
+        mxAdminEscapeHtml(title) +
+        '</div>';
     var list = document.createElement('ul');
     list.className = 'mxadmin-layout-list';
     if (!ids || !ids.length) {
@@ -4518,12 +5480,20 @@ function mxAdminRenderLayoutSection(container, title, ids) {
                 item.setAttribute('title', mxAdminT('layoutModuleHint'));
             }
             item.innerHTML =
-                '<span class="material-symbols-outlined">' + mxAdminEscapeHtml(mod && mod.icon ? mod.icon : 'widgets') + '</span>' +
-                '<span class="mxadmin-layout-item-text">' +
-                '<span class="mxadmin-layout-item-name">' + mxAdminEscapeHtml(nameVal) + '</span>' +
-                '<span class="mxadmin-layout-item-id">' + mxAdminEscapeHtml(moduleId) + '</span>' +
+                '<span class="material-symbols-outlined">' +
+                mxAdminEscapeHtml(mod && mod.icon ? mod.icon : 'widgets') +
                 '</span>' +
-                (mod ? '<span class="material-symbols-outlined mxadmin-layout-item-chevron">chevron_right</span>' : '');
+                '<span class="mxadmin-layout-item-text">' +
+                '<span class="mxadmin-layout-item-name">' +
+                mxAdminEscapeHtml(nameVal) +
+                '</span>' +
+                '<span class="mxadmin-layout-item-id">' +
+                mxAdminEscapeHtml(moduleId) +
+                '</span>' +
+                '</span>' +
+                (mod
+                    ? '<span class="material-symbols-outlined mxadmin-layout-item-chevron">chevron_right</span>'
+                    : '');
             list.appendChild(item);
         }
     }
@@ -4546,20 +5516,42 @@ function mxAdminRenderColorList(containerId, tokens, themeKey) {
         var row = document.createElement('div');
         row.className = 'mxadmin-color-row';
         row.innerHTML =
-            '<span class="mxadmin-color-swatch" style="background:' + mxAdminEscapeHtml(isHex ? value : '#000000') + '"></span>' +
-            '<span class="mxadmin-color-row-name">' + mxAdminEscapeHtml(token.name || '') + '</span>' +
-            '<input type="color" value="' + mxAdminEscapeHtml(isHex ? value : '#000000') + '" data-mxadmin-color-index="' + i + '" data-mxadmin-color-theme="' + themeKey + '" />' +
-            '<input type="text" class="mxadmin-color-hex" value="' + mxAdminEscapeHtml(value) + '" data-mxadmin-color-text-index="' + i + '" data-mxadmin-color-theme="' + themeKey + '" />';
+            '<span class="mxadmin-color-swatch" style="background:' +
+            mxAdminEscapeHtml(isHex ? value : '#000000') +
+            '"></span>' +
+            '<span class="mxadmin-color-row-name">' +
+            mxAdminEscapeHtml(token.name || '') +
+            '</span>' +
+            '<input type="color" value="' +
+            mxAdminEscapeHtml(isHex ? value : '#000000') +
+            '" data-mxadmin-color-index="' +
+            i +
+            '" data-mxadmin-color-theme="' +
+            themeKey +
+            '" />' +
+            '<input type="text" class="mxadmin-color-hex" value="' +
+            mxAdminEscapeHtml(value) +
+            '" data-mxadmin-color-text-index="' +
+            i +
+            '" data-mxadmin-color-theme="' +
+            themeKey +
+            '" />';
         container.appendChild(row);
     }
 
     var colorInputs = container.querySelectorAll('input[type="color"]');
     for (i = 0; i < colorInputs.length; i++) {
-        colorInputs[i].oninput = mxAdminMakeColorSyncHandler(colorInputs[i], true);
+        colorInputs[i].oninput = mxAdminMakeColorSyncHandler(
+            colorInputs[i],
+            true,
+        );
     }
     var textInputs = container.querySelectorAll('input[type="text"]');
     for (i = 0; i < textInputs.length; i++) {
-        textInputs[i].oninput = mxAdminMakeColorSyncHandler(textInputs[i], false);
+        textInputs[i].oninput = mxAdminMakeColorSyncHandler(
+            textInputs[i],
+            false,
+        );
     }
 }
 
@@ -4589,7 +5581,9 @@ function mxAdminCollectColorList(containerId) {
     var values = [];
     var i;
     for (i = 0; i < textInputs.length; i++) {
-        values[Number(textInputs[i].getAttribute('data-mxadmin-color-text-index'))] = textInputs[i].value;
+        values[
+            Number(textInputs[i].getAttribute('data-mxadmin-color-text-index'))
+        ] = textInputs[i].value;
     }
     return values;
 }
@@ -4652,12 +5646,16 @@ function mxAdminBindEvents() {
     var navBtns = document.querySelectorAll('.mxadmin-nav-btn');
     var i;
     for (i = 0; i < navBtns.length; i++) {
-        navBtns[i].onclick = mxAdminMakeNavHandler(navBtns[i].getAttribute('data-mxadmin-screen'));
+        navBtns[i].onclick = mxAdminMakeNavHandler(
+            navBtns[i].getAttribute('data-mxadmin-screen'),
+        );
     }
 
     var pageTabs = document.querySelectorAll('.mxadmin-form-tab');
     for (i = 0; i < pageTabs.length; i++) {
-        pageTabs[i].onclick = mxAdminMakePageTabHandler(pageTabs[i].getAttribute('data-mxadmin-tab'));
+        pageTabs[i].onclick = mxAdminMakePageTabHandler(
+            pageTabs[i].getAttribute('data-mxadmin-tab'),
+        );
     }
 
     mxAdminEl('mxadminLoginForm').onsubmit = mxAdminHandleLoginSubmit;
@@ -4671,7 +5669,8 @@ function mxAdminBindEvents() {
         mxAdminSetLang(mxAdminState.lang === 'tr' ? 'en' : 'tr');
     };
 
-    mxAdminEl('mxadminCategoriesForm').onsubmit = mxAdminHandleCategoriesFormSubmit;
+    mxAdminEl('mxadminCategoriesForm').onsubmit =
+        mxAdminHandleCategoriesFormSubmit;
     mxAdminEl('mxadminPageForm').onsubmit = mxAdminHandlePageFormSubmit;
     mxAdminEl('mxadminPageCancel').onclick = mxAdminHandlePageCancel;
     var pageDetailBack = mxAdminEl('mxadminPageDetailBack');
@@ -4742,7 +5741,9 @@ function mxAdminBindEvents() {
     }
     var moduleTabs = document.querySelectorAll('[data-mxadmin-module-tab]');
     for (i = 0; i < moduleTabs.length; i++) {
-        moduleTabs[i].onclick = mxAdminMakeModuleTabHandler(moduleTabs[i].getAttribute('data-mxadmin-module-tab'));
+        moduleTabs[i].onclick = mxAdminMakeModuleTabHandler(
+            moduleTabs[i].getAttribute('data-mxadmin-module-tab'),
+        );
     }
 
     var quickPages = mxAdminEl('mxadminQuickPages');
@@ -4753,7 +5754,9 @@ function mxAdminBindEvents() {
     if (quickWrap) {
         var quickBtns = quickWrap.querySelectorAll('[data-mxadmin-quick]');
         for (i = 0; i < quickBtns.length; i++) {
-            quickBtns[i].onclick = mxAdminMakeNavHandler(quickBtns[i].getAttribute('data-mxadmin-quick'));
+            quickBtns[i].onclick = mxAdminMakeNavHandler(
+                quickBtns[i].getAttribute('data-mxadmin-quick'),
+            );
         }
     }
 
@@ -4781,7 +5784,11 @@ function mxAdminBindEvents() {
 }
 
 function mxAdminInit() {
-    var browserLang = (navigator.language || navigator.userLanguage || 'tr').toLowerCase();
+    var browserLang = (
+        navigator.language ||
+        navigator.userLanguage ||
+        'tr'
+    ).toLowerCase();
     mxAdminState.lang = browserLang.indexOf('en') === 0 ? 'en' : 'tr';
     mxAdminApplyI18n();
     mxAdminBindEvents();
