@@ -12,6 +12,133 @@ var MX_ADMIN_API_BASE = 'https://otomavi.com';
     }
 })();
 
+
+var mxAdminExternalConfirmDelete =
+    typeof Global_confirmDelete === 'function' ? Global_confirmDelete : null;
+
+
+function mxAdminConfirmOverlayRemove() {
+    var root = document.getElementById('mxadminConfirmRoot');
+    if (root) {
+        root.remove();
+    }
+}
+
+
+function mxAdminConfirmDeleteEscape(str) {
+    if (str == null) {
+        return '';
+    }
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/\n/g, '<br>');
+}
+
+
+function mxAdminConfirmDelete(message, opts) {
+    if (
+        mxAdminExternalConfirmDelete &&
+        mxAdminExternalConfirmDelete !== mxAdminConfirmDelete
+    ) {
+        return mxAdminExternalConfirmDelete(message, opts);
+    }
+    return new Promise(function (resolve) {
+        opts = opts || {};
+        var title = opts.title || 'Emin misiniz?';
+        var icon = opts.icon || 'delete_forever';
+        var confirmText = opts.confirmText || 'Evet, sil';
+        var cancelText = opts.cancelText || 'İptal';
+        var hasExtra = typeof opts.extraText === 'string' && opts.extraText.length > 0;
+        var extraValue = 'extraValue' in opts ? opts.extraValue : true;
+
+        mxAdminConfirmOverlayRemove();
+
+        var safeTitle = mxAdminConfirmDeleteEscape(title);
+        var safeMsg = message ? mxAdminConfirmDeleteEscape(message) : '';
+        var safeIcon = mxAdminConfirmDeleteEscape(icon);
+        var safeConfirm = mxAdminConfirmDeleteEscape(confirmText);
+        var safeCancel = mxAdminConfirmDeleteEscape(cancelText);
+        var safeExtra = hasExtra ? mxAdminConfirmDeleteEscape(opts.extraText) : '';
+
+        var html =
+            '<div class="mxadmin-confirm" role="alertdialog" aria-modal="true" aria-labelledby="mxadmin-confirm-title" onclick="event.stopPropagation()">' +
+            '<span class="material-symbols-outlined mxadmin-confirm-icon" aria-hidden="true">' +
+            safeIcon +
+            '</span>' +
+            '<h3 class="mxadmin-confirm-title" id="mxadmin-confirm-title">' +
+            safeTitle +
+            '</h3>' +
+            (safeMsg ? '<p class="mxadmin-confirm-message">' + safeMsg + '</p>' : '') +
+            '<div class="mxadmin-confirm-actions">' +
+            '<div class="mxadmin-confirm-btn mxadmin-confirm-btn-cancel" role="button" tabindex="0">' +
+            safeCancel +
+            '</div>' +
+            (hasExtra
+                ? '<div class="mxadmin-confirm-btn mxadmin-confirm-btn-extra" role="button" tabindex="0">' +
+                  safeExtra +
+                  '</div>'
+                : '') +
+            '<div class="mxadmin-confirm-btn mxadmin-confirm-btn-danger mxadmin-confirm-enter-hint" role="button" tabindex="0" title="Enter ile onayla">' +
+            safeConfirm +
+            '</div>' +
+            '</div>' +
+            '</div>' +
+            '<div class="mxadmin-confirm-backdrop"></div>';
+
+        var modal = document.createElement('div');
+        modal.id = 'mxadminConfirmRoot';
+        modal.className = 'mxadmin-confirm-root';
+        modal.innerHTML = html;
+        document.body.appendChild(modal);
+
+        function finish(value) {
+            mxAdminConfirmOverlayRemove();
+            resolve(value);
+        }
+
+        var dangerBtn = modal.querySelector('.mxadmin-confirm-btn-danger');
+        var cancelBtn = modal.querySelector('.mxadmin-confirm-btn-cancel');
+        var extraBtn = modal.querySelector('.mxadmin-confirm-btn-extra');
+        var backdrop = modal.querySelector('.mxadmin-confirm-backdrop');
+
+        dangerBtn.addEventListener('click', function () {
+            finish(true);
+        });
+        cancelBtn.addEventListener('click', function () {
+            finish(false);
+        });
+        if (extraBtn) {
+            extraBtn.addEventListener('click', function () {
+                finish(extraValue);
+            });
+        }
+        backdrop.addEventListener('click', function () {
+            finish(false);
+        });
+
+        modal.addEventListener('keydown', function (ev) {
+            if (ev.key === 'Escape') {
+                finish(false);
+            }
+            if (ev.key === 'Enter') {
+                if (ev.preventDefault) {
+                    ev.preventDefault();
+                }
+                finish(true);
+            }
+        });
+
+        setTimeout(function () {
+            if (dangerBtn && dangerBtn.focus) {
+                dangerBtn.focus();
+            }
+        }, 50);
+    });
+}
+
 var MX_ADMIN_I18N = {
     tr: {
         appTitle: 'Site Yönetimi',
@@ -31,6 +158,9 @@ var MX_ADMIN_I18N = {
         loginErrorNetwork: 'Yönetim sunucusuna bağlanılamadı. Lütfen daha sonra tekrar deneyin.',
         passwordShow: 'Parolayı göster',
         passwordHide: 'Parolayı gizle',
+        navMenu: 'Menü',
+        categoriesEdit: 'Kategori düzenle',
+        logout: 'Çıkış',
         configWarning: 'Yönetim API adresi henüz yapılandırılmamış. Lütfen site yöneticinizle iletişime geçin.',
         loading: 'Yükleniyor…',
         save: 'Kaydet',
@@ -193,6 +323,9 @@ var MX_ADMIN_I18N = {
         loginErrorNetwork: 'Could not reach the admin server. Please try again later.',
         passwordShow: 'Show password',
         passwordHide: 'Hide password',
+        navMenu: 'Menu',
+        categoriesEdit: 'Edit categories',
+        logout: 'Sign out',
         configWarning: 'The admin API address is not configured yet. Please contact your site administrator.',
         loading: 'Loading…',
         save: 'Save',
@@ -401,6 +534,14 @@ function mxAdminApplyI18n() {
     for (i = 0; i < phNodes.length; i++) {
         var phKey = phNodes[i].getAttribute('data-mxadmin-i18n-placeholder');
         phNodes[i].setAttribute('placeholder', mxAdminT(phKey));
+    }
+    var titleNodes = document.querySelectorAll('[data-mxadmin-i18n-title]');
+    for (i = 0; i < titleNodes.length; i++) {
+        titleNodes[i].setAttribute('title', mxAdminT(titleNodes[i].getAttribute('data-mxadmin-i18n-title')));
+    }
+    var ariaNodes = document.querySelectorAll('[data-mxadmin-i18n-aria]');
+    for (i = 0; i < ariaNodes.length; i++) {
+        ariaNodes[i].setAttribute('aria-label', mxAdminT(ariaNodes[i].getAttribute('data-mxadmin-i18n-aria')));
     }
     document.documentElement.setAttribute('lang', mxAdminState.lang);
     var toggleBtn = mxAdminEl('mxadminLangToggle');
@@ -1828,10 +1969,6 @@ function mxAdminDeletePage() {
     var confirmMsg = mxAdminT('pageDeleteConfirmBody') + '\n\n' + label;
     if (pageRow.id) {
         confirmMsg = confirmMsg + ' (ID: ' + pageRow.id + ')';
-    }
-    if (typeof Global_confirmDelete !== 'function') {
-        mxAdminToast(mxAdminT('pageDeleteError'), true);
-        return;
     }
     Global_confirmDelete(confirmMsg, {
         title: mxAdminT('pageDeleteConfirmTitle')
@@ -4622,3 +4759,6 @@ function mxAdminInit() {
 }
 
 window.onload = mxAdminInit;
+
+
+var Global_confirmDelete = mxAdminConfirmDelete;

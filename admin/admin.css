@@ -37,6 +37,10 @@
   --mxadmin-max: 1200px;
   --mxadmin-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
   --mxadmin-shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.22);
+  --mxadmin-bg-gradient-mid: #222428;
+  --mxadmin-bg-gradient-end: #1a1c1f;
+  --mxadmin-red-text: #ff8a8d;
+  --mxadmin-preview-bg: #fafaf9;
 }
 
 html,
@@ -47,7 +51,7 @@ body {
 
 body {
   background: var(--mxadmin-bg);
-  background-image: linear-gradient(165deg, var(--mxadmin-bg) 0%, #222428 48%, #1a1c1f 100%);
+  background-image: linear-gradient(165deg, var(--mxadmin-bg) 0%, var(--mxadmin-bg-gradient-mid) 48%, var(--mxadmin-bg-gradient-end) 100%);
   color: var(--mxadmin-text);
   font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   min-height: 100vh;
@@ -543,7 +547,7 @@ button {
 .mxadmin-btn-primary {
   width: 100%;
   background: var(--mxadmin-primary);
-  color: #fff;
+  color: var(--mxadmin-text);
 }
 
 .mxadmin-btn-primary:hover {
@@ -583,7 +587,7 @@ button {
   width: 14px;
   height: 14px;
   border: 2px solid rgba(255, 255, 255, 0.4);
-  border-top-color: #fff;
+  border-top-color: var(--mxadmin-text);
   border-radius: 50%;
   animation: mxadminSpin 0.7s linear infinite;
 }
@@ -606,7 +610,7 @@ button {
 
 .mxadmin-alert-error {
   background: rgba(229, 72, 77, 0.12);
-  color: #ff8a8d;
+  color: var(--mxadmin-red-text);
   border: 1px solid rgba(229, 72, 77, 0.3);
 }
 
@@ -662,7 +666,7 @@ button {
 
 .mxadmin-toast.mxadmin-toast-error {
   border-left-color: var(--mxadmin-red);
-  color: #ff8a8d;
+  color: var(--mxadmin-red-text);
 }
 
 @keyframes mxadminToastIn {
@@ -1598,7 +1602,7 @@ button {
   min-height: 280px;
   height: 360px;
   border: none;
-  background: #fafaf9;
+  background: var(--mxadmin-preview-bg);
 }
 
 
@@ -2345,7 +2349,7 @@ button {
 }
 
 .mxadmin-btn-danger:hover {
-  color: #fff;
+  color: var(--mxadmin-text);
   background: rgba(229, 72, 77, 0.85);
   border-color: var(--mxadmin-red);
 }
@@ -2674,5 +2678,158 @@ button {
   .mxadmin-sidebar-overlay {
     animation: none !important;
     transition: none !important;
+  }
+
+  .mxadmin-confirm-enter-hint {
+    animation: none;
+    outline: 2px solid color-mix(in srgb, var(--mxadmin-primary) 55%, transparent);
+    outline-offset: 2px;
+  }
+}
+
+
+
+.mxadmin-confirm-root {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.mxadmin-confirm {
+  position: relative;
+  z-index: 1;
+  max-width: 400px;
+  width: calc(100% - 32px);
+  text-align: center;
+  padding: 24px 20px 20px;
+  background: var(--mxadmin-panel);
+  border-radius: var(--mxadmin-radius-lg);
+  box-shadow: var(--mxadmin-shadow);
+  border: 1px solid var(--mxadmin-border);
+}
+
+.mxadmin-confirm-icon {
+  display: block;
+  font-size: 44px;
+  color: var(--mxadmin-red);
+  margin: 0 auto 12px;
+  line-height: 1;
+  user-select: none;
+}
+
+.mxadmin-confirm-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--mxadmin-text);
+  letter-spacing: 0.2px;
+}
+
+.mxadmin-confirm-message {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--mxadmin-text-muted);
+  word-break: break-word;
+}
+
+.mxadmin-confirm-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.mxadmin-confirm-btn {
+  flex: 1;
+  min-width: 0;
+  padding: 11px 14px;
+  border-radius: var(--mxadmin-radius-md);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: opacity var(--mxadmin-transition), transform 0.1s ease;
+}
+
+.mxadmin-confirm-btn:active {
+  transform: scale(0.98);
+}
+
+.mxadmin-confirm-btn-cancel {
+  background-color: var(--mxadmin-panel);
+  color: var(--mxadmin-text);
+  border: 1px solid var(--mxadmin-border-strong);
+}
+
+.mxadmin-confirm-btn-cancel:hover {
+  background-color: var(--mxadmin-card);
+}
+
+.mxadmin-confirm-btn-danger {
+  background-color: var(--mxadmin-red);
+  color: var(--mxadmin-text);
+  border: 1px solid var(--mxadmin-red);
+}
+
+.mxadmin-confirm-btn-danger:hover {
+  filter: brightness(1.08);
+}
+
+.mxadmin-confirm-btn-extra {
+  background-color: var(--mxadmin-card);
+  color: var(--mxadmin-primary);
+  border: 1px solid var(--mxadmin-primary-soft);
+}
+
+.mxadmin-confirm-btn-extra:hover {
+  background-color: var(--mxadmin-card-hover);
+}
+
+.mxadmin-confirm-backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  cursor: pointer;
+}
+
+@keyframes mxadmin-confirm-enter-hint-blink {
+  0%,
+  100% {
+    filter: brightness(1);
+    box-shadow: 0 0 0 0 transparent;
+    outline: 2px solid transparent;
+    outline-offset: 0;
+  }
+  50% {
+    filter: brightness(1.28);
+    box-shadow: 0 0 14px 2px var(--mxadmin-primary-glow);
+    outline: 2px solid color-mix(in srgb, var(--mxadmin-primary) 70%, transparent);
+    outline-offset: 2px;
+  }
+}
+
+.mxadmin-confirm-enter-hint {
+  animation: mxadmin-confirm-enter-hint-blink 1.2s ease-in-out infinite;
+  cursor: pointer;
+}
+
+@media (max-width: 420px) {
+  .mxadmin-confirm-actions {
+    flex-direction: column;
   }
 }

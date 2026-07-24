@@ -37,7 +37,7 @@
             <label data-mxadmin-i18n="labelPassword" for="mxadminPassword">Parola</label>
             <div class="mxadmin-password-field">
               <input type="password" id="mxadminPassword" autocomplete="current-password" required />
-              <button type="button" class="mxadmin-password-toggle" id="mxadminPasswordToggle" aria-pressed="false" aria-label="Parolayı göster">
+              <button type="button" class="mxadmin-password-toggle" id="mxadminPasswordToggle" aria-pressed="false" data-mxadmin-i18n-aria="passwordShow">
                 <span class="material-symbols-outlined" id="mxadminPasswordToggleIcon">visibility</span>
               </button>
             </div>
@@ -53,7 +53,7 @@
 
     
     <div class="mxadmin-shell hidden" id="mxadminShell">
-      <button type="button" class="mxadmin-sidebar-toggle" id="mxadminSidebarToggle" aria-label="Menü">
+      <button type="button" class="mxadmin-sidebar-toggle" id="mxadminSidebarToggle" data-mxadmin-i18n-aria="navMenu">
         <span class="material-symbols-outlined">menu</span>
       </button>
       <div class="mxadmin-sidebar-overlay hidden" id="mxadminSidebarOverlay"></div>
@@ -70,7 +70,7 @@
           <div class="mxadmin-sidebar-section">
             <div class="mxadmin-sidebar-section-head">
               <span data-mxadmin-i18n="sidebarPages">Sayfalar</span>
-              <button type="button" class="mxadmin-sidebar-edit-btn" id="mxadminCategoriesEditBtn" title="Kategori düzenle">
+              <button type="button" class="mxadmin-sidebar-edit-btn" id="mxadminCategoriesEditBtn" data-mxadmin-i18n-title="categoriesEdit">
                 <span class="material-symbols-outlined">tune</span>
               </button>
             </div>
@@ -98,7 +98,7 @@
         </div>
         <div class="mxadmin-sidebar-foot">
           <button type="button" class="mxadmin-lang-btn" id="mxadminLangToggle">EN</button>
-          <button type="button" class="mxadmin-logout-btn" id="mxadminLogoutBtn" title="Çıkış">
+          <button type="button" class="mxadmin-logout-btn" id="mxadminLogoutBtn" data-mxadmin-i18n-title="logout">
             <span class="material-symbols-outlined">logout</span>
           </button>
         </div>
@@ -182,7 +182,7 @@
         
         <section class="mxadmin-screen hidden" id="mxadminScreenCategories">
           <div class="mxadmin-screen-head mxadmin-screen-head-with-back">
-            <button type="button" class="mxadmin-screen-back-btn" id="mxadminCategoriesBackBtn" title="Sayfalara dön">
+            <button type="button" class="mxadmin-screen-back-btn" id="mxadminCategoriesBackBtn" data-mxadmin-i18n-title="categoriesBack">
               <span class="material-symbols-outlined">arrow_back</span>
             </button>
             <div class="mxadmin-screen-head-text">
@@ -261,7 +261,7 @@
               </div>
               <form class="mxadmin-page-detail-form hidden" id="mxadminPageForm">
                 <div class="mxadmin-page-detail-head">
-                  <button type="button" class="mxadmin-page-detail-back" id="mxadminPageDetailBack" title="Listeye dön">
+                  <button type="button" class="mxadmin-page-detail-back" id="mxadminPageDetailBack" data-mxadmin-i18n-title="pageDetailBack">
                     <span class="material-symbols-outlined">arrow_back</span>
                   </button>
                   <div class="mxadmin-page-detail-head-main">
@@ -364,7 +364,7 @@
               </div>
               <form class="mxadmin-page-detail-form hidden" id="mxadminModuleForm">
                 <div class="mxadmin-page-detail-head">
-                  <button type="button" class="mxadmin-page-detail-back hidden" id="mxadminModuleDetailBack" title="Listeye dön">
+                  <button type="button" class="mxadmin-page-detail-back hidden" id="mxadminModuleDetailBack" data-mxadmin-i18n-title="pageDetailBack">
                     <span class="material-symbols-outlined">arrow_back</span>
                   </button>
                   <div class="mxadmin-page-detail-head-main">
@@ -531,8 +531,6 @@
 
     <div class="mxadmin-toast hidden" id="mxadminToast"></div>
   </div>
-  <script src="/src/modules/poputfullremove.js"></script>
-  <script src="/src/modules/confirmDelete.js"></script>
   <script src="/admin/admin.js"></script>
 </body>
 

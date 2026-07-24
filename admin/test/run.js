@@ -8,6 +8,7 @@ mocha.addFile(path.join(dir, "admin-api.test.js"));
 mocha.addFile(path.join(dir, "admin-structure.test.js"));
 mocha.addFile(path.join(dir, "operations.test.js"));
 mocha.addFile(path.join(dir, "backend.test.js"));
+mocha.addFile(path.join(dir, "rust-compliance.test.js"));
 
 mocha.run(function(failures) {
   process.exit(failures ? 1 : 0);
