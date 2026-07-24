@@ -59,6 +59,9 @@
     --mxadmin-bg-gradient-end: #1a1c1f;
     --mxadmin-red-text: #ff8a8d;
     --mxadmin-preview-bg: #fafaf9;
+    --mxadmin-zebra-bg: rgba(255, 255, 255, 0.035);
+    --mxadmin-zebra-bg-alt: rgba(0, 0, 0, 0.26);
+    --mxadmin-zebra-bg-base: rgba(0, 0, 0, 0.14);
 }
 
 html,
@@ -838,6 +841,11 @@ button {
     padding-top: 0;
 }
 
+.mxadmin-stats-row:nth-child(even) {
+    background: var(--mxadmin-zebra-bg);
+    border-radius: var(--mxadmin-radius-sm);
+}
+
 .mxadmin-stats-icon {
     width: 36px;
     height: 36px;
@@ -1027,8 +1035,12 @@ button {
     transition: background var(--mxadmin-transition);
 }
 
+.mxadmin-table tbody tr:nth-child(even) {
+    background: var(--mxadmin-zebra-bg);
+}
+
 .mxadmin-table tbody tr:hover {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .mxadmin-table tbody tr:last-child td:first-child {
@@ -1292,6 +1304,10 @@ button {
     padding: 12px 12px 12px 14px;
     border: 1px solid transparent;
     border-radius: var(--mxadmin-radius-md);
+}
+
+.mxadmin-pages-list li:nth-child(even) .mxadmin-pages-list-item {
+    background: var(--mxadmin-zebra-bg);
 }
 
 .mxadmin-pages-list-order {
@@ -1754,13 +1770,17 @@ button {
     gap: 10px;
     width: 100%;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.22);
+    background: var(--mxadmin-zebra-bg-base);
     border: 1px solid var(--mxadmin-border);
     border-radius: var(--mxadmin-radius-md);
     padding: 10px 12px;
     transition:
         border-color var(--mxadmin-transition),
         background var(--mxadmin-transition);
+}
+
+.mxadmin-color-row:nth-child(even) {
+    background: var(--mxadmin-zebra-bg-alt);
 }
 
 .mxadmin-color-row:hover {
@@ -2034,6 +2054,10 @@ button {
         background var(--mxadmin-transition),
         color var(--mxadmin-transition),
         border-color var(--mxadmin-transition);
+}
+
+.mxadmin-sidebar-cat-btn:nth-child(even) {
+    background: var(--mxadmin-zebra-bg);
 }
 
 .mxadmin-sidebar-cat-btn .material-symbols-outlined {
@@ -2336,12 +2360,16 @@ button {
     border-radius: var(--mxadmin-radius-md);
     font-size: 12px;
     font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
-    background: rgba(0, 0, 0, 0.22);
+    background: var(--mxadmin-zebra-bg-base);
     border: 1px solid var(--mxadmin-border);
     color: var(--mxadmin-text);
     transition:
         border-color var(--mxadmin-transition),
         background var(--mxadmin-transition);
+}
+
+.mxadmin-layout-item:nth-child(even) {
+    background: var(--mxadmin-zebra-bg-alt);
 }
 
 .mxadmin-layout-item:hover {
@@ -2535,9 +2563,13 @@ button {
 .mxadmin-module-data-card {
     border: 1px solid var(--mxadmin-border);
     border-radius: var(--mxadmin-radius-md);
-    background: rgba(0, 0, 0, 0.18);
+    background: var(--mxadmin-zebra-bg-base);
     margin-bottom: 12px;
     overflow: hidden;
+}
+
+.mxadmin-module-data-card:nth-child(even) {
+    background: var(--mxadmin-zebra-bg-alt);
 }
 
 .mxadmin-module-data-card-head {
