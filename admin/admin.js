@@ -5234,9 +5234,7 @@ function mxAdminLoadSettings() {
 }
 
 function mxAdminRenderSettingsForm(setting) {
-    mxAdminEl('mxadminSettingName').value = mxAdminSettingScalarToInput(
-        setting.name,
-    );
+    mxAdminEl('mxadminSettingName').value = mxAdminSettingScalarToInput(setting.name);
     mxAdminEl('mxadminSettingDomain').value = mxAdminSettingScalarToInput(
         setting.domain,
     );
