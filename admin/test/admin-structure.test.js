@@ -620,6 +620,41 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
         );
     });
 
+    it('Paket 144: moduller listesinde bas ikon yok', function () {
+        var fnStart = js.indexOf('function mxAdminRenderModulesList');
+        assert.ok(fnStart !== -1, 'mxAdminRenderModulesList tanimli');
+        var fnEnd = js.indexOf('\nfunction ', fnStart + 1);
+        var fnBody =
+            fnEnd !== -1
+                ? js.slice(fnStart, fnEnd)
+                : js.slice(fnStart, fnStart + 2500);
+        assert.ok(
+            fnBody.indexOf('mxadmin-pages-list-icon') === -1,
+            'moduller listesinde mxadmin-pages-list-icon olmamali',
+        );
+        assert.ok(
+            fnBody.indexOf('mod.icon') === -1,
+            'moduller listesinde mod.icon olmamali',
+        );
+        assert.ok(
+            js.indexOf('modulesListTitle') !== -1,
+            'modulesListTitle i18n anahtari',
+        );
+        assert.ok(
+            js.indexOf('mxadminModulesList') !== -1,
+            'mxadminModulesList id kullanimi',
+        );
+        var css = helpers.readAdminFile('admin.css');
+        assert.ok(
+            css.indexOf('mxadmin-table-modules') === -1,
+            'dead mxadmin-table-modules CSS kaldirilmali',
+        );
+        assert.ok(
+            css.indexOf('mxadmin-module-icon-cell') === -1,
+            'dead mxadmin-module-icon-cell CSS kaldirilmali',
+        );
+    });
+
     it('Paket 109: tasarim renk list column JS', function () {
         assert.ok(js.indexOf('function mxAdminRenderColorList') !== -1);
         assert.ok(js.indexOf('function mxAdminCollectColorList') !== -1);

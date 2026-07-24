@@ -3,6 +3,9 @@
 var MX_ADMIN_API_BASE = 'https://webmaker.yunusevgane.workers.dev';
 
 
+var MX_ADMIN_SITE_LOGO = 'logo.png';
+
+
 var MXADMIN_PANEL_VERSION = '1.0.1';
 
 (function mxAdminResolveLocalApiBase() {
@@ -158,12 +161,12 @@ var MX_ADMIN_I18N = {
         navDesign: 'Tasarım',
         loginTitle: 'Site Yönetimi',
         loginSub: 'Devam etmek için giriş yapın',
-        labelUsername: 'Kullanıcı adı',
+        labelUsername: 'Kullanıcı adı veya e-posta',
         labelPassword: 'Parola',
         loginSubmit: 'Giriş Yap',
         loginHint:
             'Bu panelden yeni kullanıcı oluşturulamaz — kullanıcı ekleme yalnızca site yöneticiniz tarafından yapılır.',
-        loginErrorInvalid: 'Kullanıcı adı veya parola hatalı.',
+        loginErrorInvalid: 'Kullanıcı adı/e-posta veya parola hatalı.',
         loginErrorNetwork:
             'Yönetim sunucusuna bağlanılamadı. Lütfen daha sonra tekrar deneyin.',
         passwordShow: 'Parolayı göster',
@@ -330,12 +333,12 @@ var MX_ADMIN_I18N = {
         navDesign: 'Design',
         loginTitle: 'Site Admin',
         loginSub: 'Sign in to continue',
-        labelUsername: 'Username',
+        labelUsername: 'Username or email',
         labelPassword: 'Password',
         loginSubmit: 'Sign In',
         loginHint:
             'New users cannot be created from this panel — user accounts are managed by your site administrator.',
-        loginErrorInvalid: 'Invalid username or password.',
+        loginErrorInvalid: 'Invalid username/email or password.',
         loginErrorNetwork:
             'Could not reach the admin server. Please try again later.',
         passwordShow: 'Show password',
@@ -976,6 +979,7 @@ function mxAdminEnsureSettingForLangs(done) {
     mxAdminApiRequest('GET', '/api/admin/data/setting')
         .then(function (resp) {
             mxAdminState.settingData = mxAdminUnwrapApiData(resp) || {};
+            mxAdminApplySiteLogo(mxAdminState.settingData);
             done();
         })
         .catch(function () {
@@ -3437,6 +3441,106 @@ function mxAdminPublicSiteAssetUrl(relPath) {
     return origin ? origin + '/' + path : '/' + path;
 }
 
+
+function mxAdminSiteLogoFile(setting) {
+    var fromSetting =
+        setting && setting.logo ? String(setting.logo).trim() : '';
+    if (fromSetting) {
+        return fromSetting.replace(/^\/+/, '');
+    }
+    if (
+        typeof MX_ADMIN_SITE_LOGO === 'string' &&
+        MX_ADMIN_SITE_LOGO &&
+        MX_ADMIN_SITE_LOGO.indexOf('{{') !== 0
+    ) {
+        return String(MX_ADMIN_SITE_LOGO).replace(/^\/+/, '').trim();
+    }
+    return '';
+}
+
+
+function mxAdminSiteLogoUrl(logoFile) {
+    var file = String(logoFile || '').replace(/^\/+/, '').trim();
+    if (!file) {
+        return '';
+    }
+    return mxAdminPublicSiteAssetUrl('img/' + file);
+}
+
+
+function mxAdminApplySiteLogoPair(img, fallback, logoUrl, altText) {
+    if (!img || !fallback) {
+        return;
+    }
+    if (logoUrl) {
+        img.src = logoUrl;
+        img.alt = altText || '';
+        img.classList.remove('hidden');
+        fallback.classList.add('hidden');
+        img.onerror = function () {
+            img.classList.add('hidden');
+            img.src = '';
+            img.onerror = null;
+            fallback.classList.remove('hidden');
+        };
+        return;
+    }
+    img.classList.add('hidden');
+    img.src = '';
+    img.onerror = null;
+    fallback.classList.remove('hidden');
+}
+
+function mxAdminApplySiteLogo(setting) {
+    var data = setting || mxAdminState.settingData || {};
+    var logoFile = mxAdminSiteLogoFile(data);
+    var logoUrl = mxAdminSiteLogoUrl(logoFile);
+    var alt =
+        mxAdminPickLocalized(data.name, mxAdminState.lang) ||
+        (typeof data.name === 'string' ? data.name : '') ||
+        mxAdminT('fieldLogo');
+    mxAdminApplySiteLogoPair(
+        mxAdminEl('mxadminLoginLogoImg'),
+        mxAdminEl('mxadminLoginLogoFallback'),
+        logoUrl,
+        alt,
+    );
+    mxAdminApplySiteLogoPair(
+        mxAdminEl('mxadminSidebarLogoImg'),
+        mxAdminEl('mxadminSidebarLogoFallback'),
+        logoUrl,
+        alt,
+    );
+    mxAdminApplySiteLogoPair(
+        mxAdminEl('mxadminUserChipLogoImg'),
+        mxAdminEl('mxadminUserChipLogoFallback'),
+        logoUrl,
+        alt,
+    );
+}
+
+
+function mxAdminPrefetchSiteLogo() {
+    if (mxAdminSiteLogoFile(null)) {
+        mxAdminApplySiteLogo(null);
+        return;
+    }
+    if (!mxAdminApiConfigured()) {
+        return;
+    }
+    mxAdminApiRequest('GET', '/api/admin/data/setting')
+        .then(function (resp) {
+            var data = mxAdminUnwrapApiData(resp) || {};
+            if (!mxAdminState.settingData) {
+                mxAdminState.settingData = data;
+            }
+            mxAdminApplySiteLogo(data);
+        })
+        .catch(function () {
+            
+        });
+}
+
 function mxAdminPageMediaUrl(pageId, filename) {
     return mxAdminPublicSiteAssetUrl(
         'page/' +
@@ -5498,18 +5602,27 @@ function mxAdminRenderSettingsForm(setting) {
 
     var logoWrap = mxAdminEl('mxadminSettingLogoPreview');
     var logoImg = mxAdminEl('mxadminSettingLogoImg');
+    var logoNameEl = mxAdminEl('mxadminSettingLogoName');
+    var logoFile = mxAdminSiteLogoFile(setting);
+    var logoUrl = mxAdminSiteLogoUrl(logoFile);
     if (logoWrap && logoImg) {
-        if (setting.logo) {
-            var logoPath = String(setting.logo).replace(/^\/+/, '');
-            logoImg.src = '/img/' + logoPath;
+        if (logoFile && logoUrl) {
+            logoImg.src = logoUrl;
             logoImg.alt = mxAdminT('fieldLogo');
             logoWrap.classList.remove('hidden');
+            if (logoNameEl) {
+                logoNameEl.textContent = logoFile;
+            }
         } else {
             logoImg.src = '';
             logoImg.alt = '';
             logoWrap.classList.add('hidden');
+            if (logoNameEl) {
+                logoNameEl.textContent = '';
+            }
         }
     }
+    mxAdminApplySiteLogo(setting);
 
     var langs = mxAdminActiveLangs();
     var descWrap = mxAdminEl('mxadminSettingDescriptionFields');
@@ -6052,6 +6165,7 @@ function mxAdminInit() {
     mxAdminApplyI18n();
     mxAdminInjectSelectChevronStyle();
     mxAdminBindEvents();
+    mxAdminPrefetchSiteLogo();
     mxAdminCheckSession();
 }
 
