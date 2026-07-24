@@ -5,6 +5,35 @@ var path = require("path");
 var ADMIN_ROOT = path.resolve(__dirname, "..");
 
 
+function resolveWebmodulesAdminRoot() {
+  var normalized = ADMIN_ROOT.replace(/\\/g, "/");
+  if (normalized.indexOf("/webmodules/admin") !== -1) {
+    return ADMIN_ROOT;
+  }
+  return path.resolve(__dirname, "../../../webmodules/admin");
+}
+
+function resolveWebtestAdminRoot() {
+  var normalized = ADMIN_ROOT.replace(/\\/g, "/");
+  if (normalized.indexOf("/webtest/admin") !== -1) {
+    return ADMIN_ROOT;
+  }
+  return path.resolve(__dirname, "../../../webtest/admin");
+}
+
+function readWebmodulesAdminFile(name) {
+  return fs.readFileSync(path.join(resolveWebmodulesAdminRoot(), name), "utf8");
+}
+
+function readWebtestAdminJsIfExists() {
+  var jsPath = path.join(resolveWebtestAdminRoot(), "admin.js");
+  if (!fs.existsSync(jsPath)) {
+    return null;
+  }
+  return fs.readFileSync(jsPath, "utf8");
+}
+
+
 function mxAdminUnwrapApiData(resp) {
   if (!resp) {
     return resp;
@@ -259,6 +288,10 @@ function isServerUnreachable(err) {
 
 module.exports = {
   ADMIN_ROOT: ADMIN_ROOT,
+  resolveWebmodulesAdminRoot: resolveWebmodulesAdminRoot,
+  resolveWebtestAdminRoot: resolveWebtestAdminRoot,
+  readWebmodulesAdminFile: readWebmodulesAdminFile,
+  readWebtestAdminJsIfExists: readWebtestAdminJsIfExists,
   API_BASE: API_BASE,
   mxAdminUnwrapApiData: mxAdminUnwrapApiData,
   mxAdminParsePagesetting: mxAdminParsePagesetting,

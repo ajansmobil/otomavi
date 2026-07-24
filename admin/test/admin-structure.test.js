@@ -471,7 +471,7 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
     var js;
 
     before(function () {
-        js = helpers.readAdminFile('admin.js');
+        js = helpers.readWebmodulesAdminFile('admin.js');
     });
 
     it('{{adminApiUrl}} placeholder render oncesi korunur', function () {
@@ -731,6 +731,57 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
         );
         assert.ok(js.indexOf('statsOverview') !== -1);
         assert.ok(js.indexOf('categoriesBack') !== -1);
+    });
+});
+
+
+var FORBIDDEN_SITE_DOMAIN_API_RE =
+    /MX_ADMIN_API_BASE\s*=\s*['"]https?:\/\/otomavi\.com\b/i;
+
+describe('webmodules/admin MX_ADMIN_API_BASE domain fallback yasak', function () {
+    it('template admin.js otomavi.com API host icermez', function () {
+        var js = helpers.readWebmodulesAdminFile('admin.js');
+        assert.ok(
+            !FORBIDDEN_SITE_DOMAIN_API_RE.test(js),
+            'MX_ADMIN_API_BASE otomavi.com olmamali (domain fallback yasak)',
+        );
+    });
+
+    it('webtest render admin.js otomavi.com API host icermez', function () {
+        var rendered = helpers.readWebtestAdminJsIfExists();
+        if (!rendered) {
+            console.log(
+                '[skip] webtest/admin/admin.js yok — Webmaker Render sonrasi tekrar deneyin',
+            );
+            return this.skip();
+        }
+        assert.ok(
+            !FORBIDDEN_SITE_DOMAIN_API_RE.test(rendered),
+            'render ciktisi otomavi.com API base olmamali',
+        );
+    });
+
+    it('webtest render cozulmus taban varsa Worker veya placeholder kalir', function () {
+        var rendered = helpers.readWebtestAdminJsIfExists();
+        if (!rendered) {
+            return this.skip();
+        }
+        var assignRe =
+            /MX_ADMIN_API_BASE\s*=\s*['"]([^'"]+)['"]/;
+        var m = assignRe.exec(rendered);
+        if (!m || !m[1]) {
+            return;
+        }
+        var base = m[1];
+        if (base.indexOf('{{') === 0) {
+            return;
+        }
+        assert.ok(
+            base.indexOf('workers.dev') !== -1 ||
+                base.indexOf('localhost') !== -1 ||
+                base.indexOf('127.0.0.1') !== -1,
+            'cozulmus API taban Worker veya localhost olmali, alindi: ' + base,
+        );
     });
 });
 
