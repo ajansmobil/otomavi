@@ -2092,10 +2092,25 @@ button {
     overflow: hidden;
 }
 
+.mxadmin-version {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--mxadmin-text-muted);
+    opacity: 0.85;
+    user-select: none;
+    white-space: nowrap;
+}
+
 .mxadmin-sidebar-foot .mxadmin-lang-btn,
 .mxadmin-sidebar-foot .mxadmin-logout-btn {
     width: auto;
     flex-shrink: 0;
+}
+
+.mxadmin-sidebar-foot .mxadmin-logout-btn {
+    margin-left: auto;
 }
 
 .mxadmin-lang-btn,

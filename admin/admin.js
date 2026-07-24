@@ -2,6 +2,9 @@
 
 var MX_ADMIN_API_BASE = 'https://webmaker.yunusevgane.workers.dev';
 
+
+var MXADMIN_PANEL_VERSION = '1.0.1';
+
 (function mxAdminResolveLocalApiBase() {
     if (typeof window === 'undefined' || !window.location) {
         return;
@@ -168,6 +171,7 @@ var MX_ADMIN_I18N = {
         navMenu: 'Menü',
         categoriesEdit: 'Kategori düzenle',
         logout: 'Çıkış',
+        panelVersionTitle: 'Panel sürümü',
         configWarning:
             'Yönetim API adresi henüz yapılandırılmamış. Lütfen site yöneticinizle iletişime geçin.',
         loading: 'Yükleniyor…',
@@ -312,7 +316,8 @@ var MX_ADMIN_I18N = {
         metaModules: 'modül',
         metaTokens: 'token',
         notConfigured: 'Yönetim API adresi yapılandırılmamış.',
-        networkError: 'Sunucuya ulaşılamadı.',
+        networkError: 'Bağlantı kesildi — tekrar deneyin.',
+        serverReadError: 'Canlı site okunamadı.',
         unauthorized: 'Oturum sona ermiş, lütfen tekrar giriş yapın.',
     },
     en: {
@@ -338,6 +343,7 @@ var MX_ADMIN_I18N = {
         navMenu: 'Menu',
         categoriesEdit: 'Edit categories',
         logout: 'Sign out',
+        panelVersionTitle: 'Panel version',
         configWarning:
             'The admin API address is not configured yet. Please contact your site administrator.',
         loading: 'Loading…',
@@ -482,7 +488,8 @@ var MX_ADMIN_I18N = {
         metaModules: 'modules',
         metaTokens: 'tokens',
         notConfigured: 'Admin API address is not configured.',
-        networkError: 'Could not reach the server.',
+        networkError: 'Connection lost — please try again.',
+        serverReadError: 'Could not read the live site.',
         unauthorized: 'Your session has expired, please sign in again.',
     },
 };
@@ -989,7 +996,31 @@ function mxAdminApiUrl(pathSuffix) {
     return MX_ADMIN_API_BASE.replace(/\/+$/, '') + pathSuffix;
 }
 
-function mxAdminApiRequest(method, pathSuffix, body) {
+
+function mxAdminCreateFetchAbortSignal(timeoutMs) {
+    var ms = typeof timeoutMs === 'number' ? timeoutMs : 30000;
+    if (typeof AbortSignal !== 'undefined' && AbortSignal.timeout) {
+        try {
+            return AbortSignal.timeout(ms);
+        } catch (signalErr) {
+            
+        }
+    }
+    if (typeof AbortController !== 'undefined') {
+        var controller = new AbortController();
+        setTimeout(function () {
+            try {
+                controller.abort();
+            } catch (abortErr) {
+                
+            }
+        }, ms);
+        return controller.signal;
+    }
+    return undefined;
+}
+
+function mxAdminApiRequestOnce(method, pathSuffix, body) {
     return new Promise(function (resolve, reject) {
         if (!mxAdminApiConfigured()) {
             reject({ code: 'NOT_CONFIGURED' });
@@ -1001,6 +1032,10 @@ function mxAdminApiRequest(method, pathSuffix, body) {
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
         };
+        var fetchSignal = mxAdminCreateFetchAbortSignal(30000);
+        if (fetchSignal) {
+            opts.signal = fetchSignal;
+        }
         var apiHost = '';
         var pageHost = (window.location.hostname || '').toLowerCase();
         try {
@@ -1023,8 +1058,27 @@ function mxAdminApiRequest(method, pathSuffix, body) {
         }
         request
             .then(function (res) {
-                res.json()
-                    .then(function (data) {
+                res.text()
+                    .then(function (text) {
+                        var data = {};
+                        if (text) {
+                            try {
+                                data = JSON.parse(text);
+                            } catch (parseErr) {
+                                if (!res.ok) {
+                                    reject({
+                                        code:
+                                            res.status === 401
+                                                ? 'UNAUTHORIZED'
+                                                : 'HTTP',
+                                        status: res.status,
+                                    });
+                                    return;
+                                }
+                                resolve({});
+                                return;
+                            }
+                        }
                         if (!res.ok) {
                             reject({
                                 code:
@@ -1052,9 +1106,32 @@ function mxAdminApiRequest(method, pathSuffix, body) {
                         resolve({});
                     });
             })
-            .catch(function () {
+            .catch(function (fetchErr) {
+                if (fetchErr && fetchErr.name === 'AbortError') {
+                    reject({ code: 'NETWORK' });
+                    return;
+                }
                 reject({ code: 'NETWORK' });
             });
+    });
+}
+
+function mxAdminApiRequestIsRetryable(err) {
+    if (!err) {
+        return false;
+    }
+    if (err.code === 'NETWORK') {
+        return true;
+    }
+    return err.status === 502 || err.status === 503 || err.status === 504;
+}
+
+function mxAdminApiRequest(method, pathSuffix, body) {
+    return mxAdminApiRequestOnce(method, pathSuffix, body).catch(function (err) {
+        if (method === 'GET' && mxAdminApiRequestIsRetryable(err)) {
+            return mxAdminApiRequestOnce(method, pathSuffix, body);
+        }
+        return Promise.reject(err);
     });
 }
 
@@ -1067,6 +1144,15 @@ function mxAdminApiErrorMessage(err, fallbackKey) {
     }
     if (err.code === 'UNAUTHORIZED') {
         return mxAdminT('unauthorized');
+    }
+    if (err.code === 'HTTP' && err.data && err.data.error) {
+        return String(err.data.error);
+    }
+    if (
+        err.code === 'HTTP' &&
+        (err.status === 502 || err.status === 503 || err.status === 504)
+    ) {
+        return mxAdminT('serverReadError');
     }
     return mxAdminT(fallbackKey || 'saveError');
 }
@@ -3175,12 +3261,53 @@ function mxAdminIsPageImgActive() {
     return !!(ms && ms.img === true);
 }
 
+function mxAdminIsLocalPreview() {
+    if (typeof window === 'undefined' || !window.location) {
+        return false;
+    }
+    var host = (window.location.hostname || '').toLowerCase();
+    return host === 'localhost' || host === '127.0.0.1';
+}
+
+
+function mxAdminPublicSiteAssetUrl(relPath) {
+    var path = String(relPath || '').replace(/^\/+/, '');
+    if (mxAdminIsLocalPreview()) {
+        var segments = path.split('/');
+        if (segments[0] === 'page' && segments.length >= 3) {
+            var pageId = segments[1];
+            var pageFile = segments.slice(2).join('/');
+            return mxAdminApiUrl(
+                '/api/admin/data/page-media/' +
+                    encodeURIComponent(pageId) +
+                    '/' +
+                    encodeURIComponent(pageFile),
+            );
+        }
+        if (segments[0] === 'img' && segments.length >= 3) {
+            var moduleId = segments[1];
+            var moduleFile = segments.slice(2).join('/');
+            return mxAdminApiUrl(
+                '/api/admin/data/module-media/' +
+                    encodeURIComponent(moduleId) +
+                    '/' +
+                    encodeURIComponent(moduleFile),
+            );
+        }
+    }
+    var origin =
+        typeof window !== 'undefined' && window.location
+            ? window.location.origin.replace(/\/+$/, '')
+            : '';
+    return origin ? origin + '/' + path : '/' + path;
+}
+
 function mxAdminPageMediaUrl(pageId, filename) {
-    return mxAdminApiUrl(
-        '/api/admin/data/page-media/' +
-            encodeURIComponent(pageId) +
+    return mxAdminPublicSiteAssetUrl(
+        'page/' +
+            encodeURIComponent(String(pageId)) +
             '/' +
-            encodeURIComponent(filename),
+            encodeURIComponent(String(filename)),
     );
 }
 
@@ -4038,14 +4165,6 @@ var MX_ADMIN_MODULE_MEDIA_KEYS = [
     'photo',
 ];
 
-function mxAdminIsLocalPreview() {
-    if (typeof window === 'undefined' || !window.location) {
-        return false;
-    }
-    var host = (window.location.hostname || '').toLowerCase();
-    return host === 'localhost' || host === '127.0.0.1';
-}
-
 function mxAdminSetModulesDetailOpen(isOpen) {
     var ws = mxAdminEl('mxadminModulesWorkspace');
     if (!ws) {
@@ -4109,11 +4228,11 @@ function mxAdminModuleHasMediaSupport(record) {
 }
 
 function mxAdminModuleMediaUrl(moduleId, filename) {
-    return mxAdminApiUrl(
-        '/api/admin/data/module-media/' +
-            encodeURIComponent(moduleId) +
+    return mxAdminPublicSiteAssetUrl(
+        'img/' +
+            encodeURIComponent(String(moduleId)) +
             '/' +
-            encodeURIComponent(filename),
+            encodeURIComponent(String(filename)),
     );
 }
 
@@ -5781,6 +5900,15 @@ function mxAdminBindEvents() {
     }
 }
 
+
+function mxAdminApplyPanelVersion() {
+    var el = mxAdminEl('mxadminVersion');
+    if (!el) {
+        return;
+    }
+    el.textContent = 'v' + MXADMIN_PANEL_VERSION;
+}
+
 function mxAdminInit() {
     var browserLang = (
         navigator.language ||
@@ -5788,6 +5916,7 @@ function mxAdminInit() {
         'tr'
     ).toLowerCase();
     mxAdminState.lang = browserLang.indexOf('en') === 0 ? 'en' : 'tr';
+    mxAdminApplyPanelVersion();
     mxAdminApplyI18n();
     mxAdminBindEvents();
     mxAdminCheckSession();

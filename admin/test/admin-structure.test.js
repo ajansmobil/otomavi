@@ -521,6 +521,29 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
         assert.ok(js.indexOf('mxadminQuickActions') !== -1);
     });
 
+    it('sidebar foot: surum dil ve cikis sirasi + cikis saga yasli', function () {
+        var html = helpers.readAdminFile('index.html');
+        var css = helpers.readAdminFile('admin.css');
+        var footStart = html.indexOf('class="mxadmin-sidebar-foot"');
+        assert.ok(footStart !== -1, 'mxadmin-sidebar-foot eksik');
+        var footBlock = html.slice(footStart, footStart + 600);
+        var versionPos = footBlock.indexOf('id="mxadminVersion"');
+        var langPos = footBlock.indexOf('id="mxadminLangToggle"');
+        var logoutPos = footBlock.indexOf('id="mxadminLogoutBtn"');
+        assert.ok(versionPos !== -1, 'mxadminVersion eksik');
+        assert.ok(langPos !== -1, 'mxadminLangToggle eksik');
+        assert.ok(logoutPos !== -1, 'mxadminLogoutBtn eksik');
+        assert.ok(versionPos < langPos, 'surum dil dugmesinden once olmali');
+        assert.ok(langPos < logoutPos, 'dil cikistan once olmali');
+        assert.ok(js.indexOf('var MXADMIN_PANEL_VERSION') !== -1);
+        assert.ok(js.indexOf('function mxAdminApplyPanelVersion') !== -1);
+        assert.ok(
+            css.indexOf('.mxadmin-sidebar-foot .mxadmin-logout-btn') !== -1 &&
+                css.indexOf('margin-left: auto') !== -1,
+            'cikis saga yasli olmali',
+        );
+    });
+
     it('Paket 106: cihaz format ve liste meta JS', function () {
         assert.ok(js.indexOf('function mxAdminFormatDevice') !== -1);
         assert.ok(js.indexOf('function mxAdminUpdateCategoriesMeta') !== -1);
@@ -809,5 +832,59 @@ describe('webmodules/admin {{adminApiUrl}} htmlUtils uyumu', function () {
         var src = fs.readFileSync(fsCopyPath, 'utf8');
         assert.ok(src.indexOf('copyAdminPanel') !== -1);
         assert.ok(src.indexOf('{{adminApiUrl}}') !== -1);
+    });
+});
+
+
+describe('webmodules/admin canli public asset URL', function () {
+    it('admin.js mxAdminPublicSiteAssetUrl ve mxAdminPageMediaUrl kullanir', function () {
+        var js = helpers.readWebmodulesAdminFile('admin.js');
+        assert.ok(
+            js.indexOf('function mxAdminPublicSiteAssetUrl') !== -1,
+            'mxAdminPublicSiteAssetUrl tanimli olmali',
+        );
+        assert.ok(
+            js.indexOf('function mxAdminPageMediaUrl') !== -1,
+            'mxAdminPageMediaUrl tanimli olmali',
+        );
+        assert.ok(
+            js.indexOf("mxAdminPublicSiteAssetUrl(") !== -1 &&
+                js.indexOf("'page/'") !== -1,
+            'mxAdminPageMediaUrl canli page/ relPath kullanmali',
+        );
+        assert.ok(
+            js.indexOf("'img/'") !== -1,
+            'mxAdminModuleMediaUrl canli img/ relPath kullanmali',
+        );
+    });
+
+    it('canli modda public asset URL Worker page-media icermez', function () {
+        var url = helpers.mxAdminPublicSiteAssetUrl('page/abc123/logo.webp', {
+            origin: 'https://otomavi.com',
+            hostname: 'otomavi.com',
+        });
+        assert.strictEqual(url, 'https://otomavi.com/page/abc123/logo.webp');
+        assert.ok(url.indexOf('/api/admin/data/page-media') === -1);
+    });
+
+    it('mxAdminApiRequest GET retry ve timeout dayanikliligi kaynakta', function () {
+        var js = helpers.readWebmodulesAdminFile('admin.js');
+        assert.ok(
+            js.indexOf('function mxAdminApiRequestOnce') !== -1,
+            'mxAdminApiRequestOnce ayri fonksiyon olmali',
+        );
+        assert.ok(
+            js.indexOf('mxAdminCreateFetchAbortSignal') !== -1,
+            'fetch timeout sinyali olmali',
+        );
+        assert.ok(
+            js.indexOf('mxAdminApiRequestIsRetryable') !== -1,
+            'GET retry kosulu olmali',
+        );
+        assert.ok(js.indexOf('serverReadError') !== -1, 'serverReadError i18n');
+        assert.ok(
+            js.indexOf('Bağlantı kesildi') !== -1,
+            'networkError TR metni guncellenmeli',
+        );
     });
 });

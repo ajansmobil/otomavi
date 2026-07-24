@@ -89,6 +89,50 @@ function mxAdminApiUrl(apiBase, pathSuffix) {
 }
 
 
+function mxAdminIsLocalPreviewHost(hostname) {
+  var host = (hostname || "").toLowerCase();
+  return host === "localhost" || host === "127.0.0.1";
+}
+
+
+function mxAdminPublicSiteAssetUrl(relPath, opts) {
+  opts = opts || {};
+  var path = String(relPath || "").replace(/^\/+/, "");
+  var hostname = opts.hostname != null ? String(opts.hostname) : "otomavi.com";
+  var origin =
+    opts.origin != null
+      ? String(opts.origin).replace(/\/+$/, "")
+      : "https://otomavi.com";
+  var apiBase =
+    opts.apiBase != null
+      ? String(opts.apiBase)
+      : "https://webmaker.yunusevgane.workers.dev";
+
+  if (mxAdminIsLocalPreviewHost(hostname)) {
+    var segments = path.split("/");
+    if (segments[0] === "page" && segments.length >= 3) {
+      return mxAdminApiUrl(
+        apiBase,
+        "/api/admin/data/page-media/" +
+          encodeURIComponent(segments[1]) +
+          "/" +
+          encodeURIComponent(segments.slice(2).join("/"))
+      );
+    }
+    if (segments[0] === "img" && segments.length >= 3) {
+      return mxAdminApiUrl(
+        apiBase,
+        "/api/admin/data/module-media/" +
+          encodeURIComponent(segments[1]) +
+          "/" +
+          encodeURIComponent(segments.slice(2).join("/"))
+      );
+    }
+  }
+  return origin + "/" + path;
+}
+
+
 function mxAdminPickLocalized(obj, lang) {
   if (obj == null) {
     return "";
@@ -299,6 +343,8 @@ module.exports = {
   mxAdminCountPages: mxAdminCountPages,
   mxAdminApiConfigured: mxAdminApiConfigured,
   mxAdminApiUrl: mxAdminApiUrl,
+  mxAdminIsLocalPreviewHost: mxAdminIsLocalPreviewHost,
+  mxAdminPublicSiteAssetUrl: mxAdminPublicSiteAssetUrl,
   mxAdminPickLocalized: mxAdminPickLocalized,
   mxAdminEscapeHtml: mxAdminEscapeHtml,
   mxAdminFormatDevice: mxAdminFormatDevice,

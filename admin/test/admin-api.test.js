@@ -92,6 +92,45 @@ describe("webmodules/admin API yardimcilari", function() {
     });
   });
 
+  describe("mxAdminPublicSiteAssetUrl", function() {
+    it("canli modda origin + page/ relPath doner (Worker proxy degil)", function() {
+      var url = helpers.mxAdminPublicSiteAssetUrl("page/p1/kapak.webp", {
+        origin: "https://otomavi.com",
+        hostname: "otomavi.com"
+      });
+      assert.strictEqual(url, "https://otomavi.com/page/p1/kapak.webp");
+      assert.ok(url.indexOf("page-media") === -1);
+      assert.ok(url.indexOf("workers.dev") === -1);
+    });
+
+    it("canli modda img/ modul gorseli origin uzerinden", function() {
+      var url = helpers.mxAdminPublicSiteAssetUrl("img/slider1/banner.webp", {
+        origin: "https://otomavi.com",
+        hostname: "otomavi.com"
+      });
+      assert.strictEqual(url, "https://otomavi.com/img/slider1/banner.webp");
+    });
+
+    it("localhost onizlemede page-media proxy kullanir", function() {
+      var url = helpers.mxAdminPublicSiteAssetUrl("page/p1/kapak.webp", {
+        hostname: "localhost",
+        apiBase: "https://webmaker.yunusevgane.workers.dev"
+      });
+      assert.strictEqual(
+        url,
+        "https://webmaker.yunusevgane.workers.dev/api/admin/data/page-media/p1/kapak.webp"
+      );
+    });
+
+    it("leading slash normalize edilir", function() {
+      var url = helpers.mxAdminPublicSiteAssetUrl("/page/p1/a.webp", {
+        origin: "https://otomavi.com",
+        hostname: "otomavi.com"
+      });
+      assert.strictEqual(url, "https://otomavi.com/page/p1/a.webp");
+    });
+  });
+
   describe("mxAdminPickLocalized", function() {
     it("string/number dogrudan doner", function() {
       assert.strictEqual(helpers.mxAdminPickLocalized("Metin", "tr"), "Metin");
