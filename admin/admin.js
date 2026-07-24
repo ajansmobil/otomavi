@@ -3867,6 +3867,95 @@ function mxAdminGetPageModuleStatus() {
     return {};
 }
 
+
+function mxAdminIsPageDetailClosed() {
+    var ms = mxAdminGetPageModuleStatus();
+    return !!(ms && ms.detail === false);
+}
+
+var MXADMIN_PAGE_LIST_BASE_KEYS = [
+    'name',
+    'id',
+    'index',
+    'path',
+    'category',
+    'img',
+    'bg',
+    'bgimg',
+    'status',
+    'url',
+    'icon',
+    'desing',
+    'pathnext',
+    'description',
+    'modulestatus',
+];
+
+function mxAdminListRowIncludesText(modulestatus) {
+    return !!(modulestatus && modulestatus.detail === false);
+}
+
+function mxAdminGetPageListRowKeys(modulestatus) {
+    var keys = MXADMIN_PAGE_LIST_BASE_KEYS.slice();
+    if (mxAdminListRowIncludesText(modulestatus)) {
+        keys.push('text');
+    }
+    return keys;
+}
+
+function mxAdminExtractPageListRow(fullPage, modulestatus) {
+    var row = {};
+    var keys = mxAdminGetPageListRowKeys(modulestatus);
+    var i;
+    for (i = 0; i < keys.length; i++) {
+        var k = keys[i];
+        if (fullPage && fullPage[k] !== undefined) {
+            row[k] = fullPage[k];
+        }
+    }
+    return row;
+}
+
+
+function mxAdminPrunePageListRowInPlace(row, modulestatus) {
+    if (!row || typeof row !== 'object') {
+        return;
+    }
+    var allowed = mxAdminExtractPageListRow(row, modulestatus);
+    var key;
+    for (key in row) {
+        if (
+            Object.prototype.hasOwnProperty.call(row, key) &&
+            allowed[key] === undefined
+        ) {
+            delete row[key];
+        }
+    }
+    for (key in allowed) {
+        if (Object.prototype.hasOwnProperty.call(allowed, key)) {
+            row[key] = allowed[key];
+        }
+    }
+}
+
+
+function mxAdminApplyPageTextPlacement(pageRow, record, textObj, modulestatus) {
+    var detailClosed = mxAdminListRowIncludesText(modulestatus);
+    if (detailClosed) {
+        pageRow.text = textObj;
+        if (record && record.text !== undefined) {
+            delete record.text;
+        }
+    } else {
+        if (pageRow.text !== undefined) {
+            delete pageRow.text;
+        }
+        if (record) {
+            record.text = textObj;
+        }
+    }
+}
+
 function mxAdminIsPageImgActive() {
     var ms = mxAdminGetPageModuleStatus();
     return !!(ms && ms.img === true);
@@ -4632,7 +4721,10 @@ function mxAdminRenderPageFormFields(pageRow, record) {
                 : li === 0
                   ? pageRow.text || ''
                   : '';
-        var textVal = textFromRec || textFromRow;
+        var detailClosed = mxAdminIsPageDetailClosed();
+        var textVal = detailClosed
+            ? textFromRow || textFromRec
+            : textFromRec || textFromRow;
 
         var nameGroup = document.createElement('div');
         nameGroup.className = 'mxadmin-form-group';
@@ -4762,9 +4854,15 @@ function mxAdminHandlePageFormSubmit(evt) {
 
     var descObj = mxAdminCollectPageDescFromForm();
     var hasDescSchema = mxAdminGetPageDescSchema().length > 0;
-    if (hasDescSchema) {
-        pageRow.desc = descObj;
-    }
+    var pageModulestatus = mxAdminGetPageModuleStatus();
+
+    mxAdminApplyPageTextPlacement(
+        pageRow,
+        null,
+        textObj,
+        pageModulestatus,
+    );
+    mxAdminPrunePageListRowInPlace(pageRow, pageModulestatus);
 
     var idx = mxAdminFindPageRowIndex(pageRow);
     if (
@@ -4812,15 +4910,23 @@ function mxAdminHandlePageFormSubmit(evt) {
             if (hasDescSchema) {
                 record.desc = descObj;
             }
+            mxAdminApplyPageTextPlacement(
+                pageRow,
+                record,
+                textObj,
+                pageModulestatus,
+            );
             var lk;
             for (lk in keywordObj) {
                 if (Object.prototype.hasOwnProperty.call(keywordObj, lk)) {
                     record.keyword[lk] = keywordObj[lk];
                 }
             }
-            for (lk in textObj) {
-                if (Object.prototype.hasOwnProperty.call(textObj, lk)) {
-                    record.text[lk] = textObj[lk];
+            if (pageModulestatus && pageModulestatus.detail !== false) {
+                for (lk in textObj) {
+                    if (Object.prototype.hasOwnProperty.call(textObj, lk)) {
+                        record.text[lk] = textObj[lk];
+                    }
                 }
             }
             return mxAdminApiRequest(

@@ -1062,4 +1062,20 @@ describe('webmodules/admin canli public asset URL', function () {
             );
         });
     });
+
+    it('Paket 149: sayfa ELO listRow kurallari (R11/R15)', function () {
+        var js = helpers.readWebmodulesAdminFile('admin.js');
+        assert.ok(
+            js.indexOf('function mxAdminPrunePageListRowInPlace') !== -1,
+            'liste beyaz listesi budama',
+        );
+        assert.ok(
+            js.indexOf('function mxAdminApplyPageTextPlacement') !== -1,
+            'text konumu detail ile',
+        );
+        assert.ok(
+            js.indexOf('pageRow.desc = descObj') === -1,
+            'desc liste satirina yazilmamali',
+        );
+    });
 });
