@@ -876,7 +876,7 @@
 
   .b0000-title {
     width: 100%;
-    height: 220px;
+    height: 120px;
     min-height: 120px;
     background-color: #0B3A6E;
     display: flex;
@@ -1693,7 +1693,7 @@
     fill: #ffffff;
   }
   .b0002-bg {
-    background-image: url("/img/bi4hta/map.png?v=l6yqq") !important;
+    background-image: url("/img/bi4hta/map.png?v=sz7tc") !important;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
