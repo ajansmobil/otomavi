@@ -110,9 +110,64 @@ describe("webmodules/admin backend adminApiUrl placeholder", function() {
 
   it("cozulmus taban ile API yolu birlestirilir", function() {
     assert.strictEqual(
-      h.mxAdminApiUrl("https://webmaker.yunusevgane.workers.dev", "/api/admin/data/setting"),
-      "https://webmaker.yunusevgane.workers.dev/api/admin/data/setting"
+      h.mxAdminApiUrl("https://admin-api.example.workers.dev", "/api/admin/data/setting"),
+      "https://admin-api.example.workers.dev/api/admin/data/setting"
     );
+  });
+});
+
+describe("webmodules/admin backend publish-status (local)", function() {
+  this.timeout(30000);
+
+  it("GET publish-status JSON pipeline doner", async function() {
+    try {
+      var res = await h.httpGet(buildPath("/data/publish-status"), 8000);
+      if (res.status === 502) {
+        return this.skip();
+      }
+      if (res.status === 404) {
+        console.log("[skip] publish-status henuz yok veya sunucu eski");
+        return this.skip();
+      }
+      var body = h.parseJsonBody(res);
+      assert.strictEqual(res.status, 200, res.body);
+      assert.ok(body && body.success === true, JSON.stringify(body));
+      assert.ok(body.pipeline && typeof body.pipeline === "object", "pipeline olmali");
+    } catch (err) {
+      if (h.isServerUnreachable(err)) {
+        return this.skip();
+      }
+      throw err;
+    }
+  });
+});
+
+describe("webmodules/admin backend settings PUT (local)", function() {
+  this.timeout(60000);
+
+  it("GET setting → PUT ayni veri → success + local/dispatched", async function() {
+    var serverUp = false;
+    try {
+      var probe = await h.httpGet(buildPath("/data/setting"), 8000);
+      serverUp = probe.status === 200;
+    } catch (err) {
+      if (h.isServerUnreachable(err)) {
+        return this.skip();
+      }
+      throw err;
+    }
+    if (!serverUp) {
+      return this.skip();
+    }
+    var getBody = h.parseJsonBody(probe);
+    var payload = getBody && getBody.data ? getBody.data : getBody;
+    var putRes = await h.httpPut(buildPath("/data/setting"), payload);
+    var putBody = h.parseJsonBody(putRes);
+    assert.strictEqual(putRes.status, 200, putRes.body);
+    assert.ok(putBody && putBody.success === true, JSON.stringify(putBody));
+    if (putBody.local) {
+      assert.strictEqual(putBody.dispatched, false);
+    }
   });
 });
 

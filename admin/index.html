@@ -101,6 +101,30 @@
             <span data-mxadmin-i18n="navDesign">Tasarım</span>
           </button>
         </nav>
+        <div class="mxadmin-publish-card hidden" id="mxadminPublishCard" aria-live="polite">
+          <div class="mxadmin-publish-card-head">
+            <span class="material-symbols-outlined mxadmin-publish-card-icon" id="mxadminPublishCardIcon">cloud_sync</span>
+            <span class="mxadmin-publish-card-title" data-mxadmin-i18n="publishCardTitle">Site güncelleniyor</span>
+          </div>
+          <ol class="mxadmin-publish-steps" id="mxadminPublishSteps">
+            <li class="mxadmin-publish-step" id="mxadminPublishStepSaved" data-step="saved">
+              <span class="mxadmin-publish-step-dot"></span>
+              <span class="mxadmin-publish-step-label" data-mxadmin-i18n="publishStepSaved">Veri kaydedildi</span>
+            </li>
+            <li class="mxadmin-publish-step" id="mxadminPublishStepTriggered" data-step="triggered">
+              <span class="mxadmin-publish-step-dot"></span>
+              <span class="mxadmin-publish-step-label" data-mxadmin-i18n="publishStepTriggered">Yayın tetiklendi</span>
+            </li>
+            <li class="mxadmin-publish-step" id="mxadminPublishStepBuilding" data-step="building">
+              <span class="mxadmin-publish-step-dot"></span>
+              <span class="mxadmin-publish-step-label" data-mxadmin-i18n="publishStepBuilding">Site güncelleniyor</span>
+            </li>
+            <li class="mxadmin-publish-step" id="mxadminPublishStepLive" data-step="live">
+              <span class="mxadmin-publish-step-dot"></span>
+              <span class="mxadmin-publish-step-label" data-mxadmin-i18n="publishStepLive">Yayında</span>
+            </li>
+          </ol>
+        </div>
         <div class="mxadmin-user-chip" id="mxadminUserChip">
           <div class="mxadmin-site-logo-frame mxadmin-site-logo-frame-md">
             <img class="mxadmin-site-logo-img hidden" id="mxadminUserChipLogoImg" src="" alt="" />
@@ -612,7 +636,7 @@
 
     <div class="mxadmin-toast hidden" id="mxadminToast"></div>
   </div>
-  <script src="/admin/admin.js?v=6e688ccd2474"></script>
+  <script src="/admin/admin.js?v=d7dca9f00891"></script>
 </body>
 
 </html>

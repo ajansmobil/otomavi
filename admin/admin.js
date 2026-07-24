@@ -6,7 +6,7 @@ var MX_ADMIN_API_BASE = 'https://webmaker.yunusevgane.workers.dev';
 var MX_ADMIN_SITE_LOGO = 'logo.png';
 
 
-var MXADMIN_PANEL_VERSION = '1.5.1';
+var MXADMIN_PANEL_VERSION = '1.5.2';
 
 (function mxAdminResolveLocalApiBase() {
     if (typeof window === 'undefined' || !window.location) {
@@ -182,6 +182,14 @@ var MX_ADMIN_I18N = {
         cancel: 'İptal',
         saveSuccess: 'Kaydedildi.',
         saveError: 'Kaydedilemedi. Lütfen tekrar deneyin.',
+        publishCardTitle: 'Site güncelleniyor',
+        publishCardTitleLive: 'Site güncel',
+        publishCardTitleError: 'Yayın hatası',
+        publishCardTitleLocal: 'Yerel kayıt',
+        publishStepSaved: 'Veri kaydedildi',
+        publishStepTriggered: 'Yayın tetiklendi',
+        publishStepBuilding: 'Site güncelleniyor',
+        publishStepLive: 'Yayında',
         dashboardTitle: 'Dashboard',
         dashboardSub: 'Site özeti ve hızlı erişim',
         statsOverview: 'Site özeti',
@@ -360,6 +368,14 @@ var MX_ADMIN_I18N = {
         cancel: 'Cancel',
         saveSuccess: 'Saved.',
         saveError: 'Could not save. Please try again.',
+        publishCardTitle: 'Updating site',
+        publishCardTitleLive: 'Site is live',
+        publishCardTitleError: 'Publish error',
+        publishCardTitleLocal: 'Local save',
+        publishStepSaved: 'Data saved',
+        publishStepTriggered: 'Publish triggered',
+        publishStepBuilding: 'Updating site',
+        publishStepLive: 'Live',
         dashboardTitle: 'Dashboard',
         dashboardSub: 'Site overview and quick access',
         statsOverview: 'Site overview',
@@ -1149,6 +1165,244 @@ function mxAdminApiRequest(method, pathSuffix, body) {
         }
         return Promise.reject(err);
     });
+}
+
+
+var mxAdminPublishPollTimer = null;
+var mxAdminPublishPollAttempts = 0;
+var mxAdminPublishSinceMs = 0;
+var mxAdminPublishPollingActive = false;
+var MXADMIN_PUBLISH_POLL_MS = 3000;
+var MXADMIN_PUBLISH_POLL_MAX = 120;
+
+function mxAdminIsLocalPreviewHost() {
+    if (typeof window === 'undefined' || !window.location) {
+        return false;
+    }
+    var host = (window.location.hostname || '').toLowerCase();
+    return host === 'localhost' || host === '127.0.0.1';
+}
+
+function mxAdminPublishStopPoll() {
+    mxAdminPublishPollingActive = false;
+    if (mxAdminPublishPollTimer) {
+        clearTimeout(mxAdminPublishPollTimer);
+        mxAdminPublishPollTimer = null;
+    }
+    mxAdminPublishPollAttempts = 0;
+}
+
+function mxAdminPublishEl(stepId) {
+    if (stepId === 'card') {
+        return mxAdminEl('mxadminPublishCard');
+    }
+    if (stepId === 'icon') {
+        return mxAdminEl('mxadminPublishCardIcon');
+    }
+    if (stepId === 'title') {
+        var card = mxAdminEl('mxadminPublishCard');
+        if (!card) {
+            return null;
+        }
+        return card.querySelector('.mxadmin-publish-card-title');
+    }
+    return mxAdminEl('mxadminPublishStep' + stepId.charAt(0).toUpperCase() + stepId.slice(1));
+}
+
+function mxAdminPublishResetSteps() {
+    var steps = ['saved', 'triggered', 'building', 'live'];
+    var i;
+    for (i = 0; i < steps.length; i++) {
+        var el = mxAdminPublishEl(steps[i]);
+        if (el) {
+            el.classList.remove('is-active', 'is-done', 'is-error', 'is-skipped');
+        }
+    }
+    var card = mxAdminPublishEl('card');
+    if (card) {
+        card.classList.remove('is-live', 'is-error');
+    }
+}
+
+function mxAdminPublishSetStepState(stepId, state) {
+    var el = mxAdminPublishEl(stepId);
+    if (!el) {
+        return;
+    }
+    el.classList.remove('is-active', 'is-done', 'is-error', 'is-skipped');
+    if (state === 'active') {
+        el.classList.add('is-active');
+    } else if (state === 'done') {
+        el.classList.add('is-done');
+    } else if (state === 'error') {
+        el.classList.add('is-error');
+    } else if (state === 'skipped') {
+        el.classList.add('is-skipped');
+    }
+}
+
+function mxAdminPublishSetCardTitle(mode) {
+    var titleEl = mxAdminPublishEl('title');
+    if (!titleEl) {
+        return;
+    }
+    if (mode === 'live') {
+        titleEl.textContent = mxAdminT('publishCardTitleLive');
+    } else if (mode === 'error') {
+        titleEl.textContent = mxAdminT('publishCardTitleError');
+    } else if (mode === 'local') {
+        titleEl.textContent = mxAdminT('publishCardTitleLocal');
+    } else {
+        titleEl.textContent = mxAdminT('publishCardTitle');
+    }
+}
+
+function mxAdminPublishShowCard() {
+    var card = mxAdminPublishEl('card');
+    if (card) {
+        card.classList.remove('hidden');
+    }
+    mxAdminPublishSetCardTitle('progress');
+}
+
+function mxAdminPublishApplyPipeline(pipeline) {
+    pipeline = pipeline && typeof pipeline === 'object' ? pipeline : {};
+    if (pipeline.triggered) {
+        mxAdminPublishSetStepState('triggered', 'done');
+    } else if (!pipeline.unknown) {
+        mxAdminPublishSetStepState('triggered', 'active');
+    }
+    if (pipeline.failed) {
+        mxAdminPublishSetStepState('building', 'error');
+        mxAdminPublishSetStepState('live', 'error');
+        var cardErr = mxAdminPublishEl('card');
+        if (cardErr) {
+            cardErr.classList.add('is-error');
+            cardErr.classList.remove('is-live');
+        }
+        mxAdminPublishSetCardTitle('error');
+        mxAdminPublishStopPoll();
+        return;
+    }
+    if (pipeline.live) {
+        mxAdminPublishSetStepState('building', 'done');
+        mxAdminPublishSetStepState('live', 'done');
+        var cardLive = mxAdminPublishEl('card');
+        if (cardLive) {
+            cardLive.classList.add('is-live');
+            cardLive.classList.remove('is-error');
+        }
+        var iconLive = mxAdminPublishEl('icon');
+        if (iconLive) {
+            iconLive.textContent = 'check_circle';
+        }
+        mxAdminPublishSetCardTitle('live');
+        mxAdminPublishStopPoll();
+        return;
+    }
+    if (pipeline.building) {
+        mxAdminPublishSetStepState('triggered', 'done');
+        mxAdminPublishSetStepState('building', 'active');
+        mxAdminPublishSetStepState('live', 'pending');
+    } else if (pipeline.triggered) {
+        mxAdminPublishSetStepState('building', 'active');
+    }
+}
+
+function mxAdminPublishPollOnce() {
+    if (!mxAdminPublishPollingActive) {
+        return;
+    }
+    mxAdminPublishPollAttempts += 1;
+    if (mxAdminPublishPollAttempts > MXADMIN_PUBLISH_POLL_MAX) {
+        mxAdminPublishStopPoll();
+        return;
+    }
+    var sinceQ =
+        mxAdminPublishSinceMs > 0
+            ? '?since=' + encodeURIComponent(String(mxAdminPublishSinceMs))
+            : '';
+    mxAdminApiRequest('GET', '/api/admin/data/publish-status' + sinceQ)
+        .then(function (data) {
+            if (!mxAdminPublishPollingActive) {
+                return;
+            }
+            if (data && data.pipeline) {
+                mxAdminPublishApplyPipeline(data.pipeline);
+            }
+            if (mxAdminPublishPollingActive) {
+                mxAdminPublishPollTimer = setTimeout(
+                    mxAdminPublishPollOnce,
+                    MXADMIN_PUBLISH_POLL_MS,
+                );
+            }
+        })
+        .catch(function () {
+            if (mxAdminPublishPollingActive) {
+                mxAdminPublishPollTimer = setTimeout(
+                    mxAdminPublishPollOnce,
+                    MXADMIN_PUBLISH_POLL_MS,
+                );
+            }
+        });
+}
+
+function mxAdminPublishStartPoll() {
+    mxAdminPublishStopPoll();
+    mxAdminPublishPollingActive = true;
+    mxAdminPublishPollTimer = setTimeout(
+        mxAdminPublishPollOnce,
+        MXADMIN_PUBLISH_POLL_MS,
+    );
+}
+
+
+function mxAdminTrackPublishAfterSave(apiResult) {
+    apiResult = apiResult && typeof apiResult === 'object' ? apiResult : {};
+    mxAdminPublishStopPoll();
+    mxAdminPublishSinceMs = Date.now();
+    mxAdminPublishResetSteps();
+    mxAdminPublishShowCard();
+    mxAdminPublishSetStepState('saved', 'done');
+
+    var iconEl = mxAdminPublishEl('icon');
+    if (iconEl) {
+        iconEl.textContent = 'cloud_sync';
+    }
+
+    if (mxAdminIsLocalPreviewHost() && apiResult.local) {
+        mxAdminPublishSetStepState('triggered', 'skipped');
+        mxAdminPublishSetStepState('building', 'active');
+        mxAdminPublishSetStepState('live', 'pending');
+        mxAdminPublishStartPoll();
+        return;
+    }
+
+    if (apiResult.dispatched === true) {
+        mxAdminPublishSetStepState('triggered', 'done');
+        mxAdminPublishSetStepState('building', 'active');
+        mxAdminPublishStartPoll();
+        return;
+    }
+
+    if (apiResult.dispatched === false) {
+        mxAdminPublishSetStepState('triggered', 'error');
+        mxAdminPublishSetStepState('building', 'pending');
+        var cardFail = mxAdminPublishEl('card');
+        if (cardFail) {
+            cardFail.classList.add('is-error');
+        }
+        mxAdminPublishSetCardTitle('error');
+        return;
+    }
+
+    mxAdminPublishSetStepState('triggered', 'active');
+    mxAdminPublishSetStepState('building', 'pending');
+    mxAdminPublishStartPoll();
+}
+
+function mxAdminOnMutationSuccess(apiResult) {
+    mxAdminTrackPublishAfterSave(apiResult);
 }
 
 function mxAdminApiErrorMessage(err, fallbackKey) {
@@ -2107,9 +2361,10 @@ function mxAdminHandleCategoriesFormSubmit(evt) {
         '/api/admin/data/pagesetting',
         mxAdminState.pagesettingData,
     )
-        .then(function () {
+        .then(function (result) {
             saveBtn.disabled = false;
             mxAdminRenderSidebarCategories();
+            mxAdminOnMutationSuccess(result);
             mxAdminToast(mxAdminT('saveSuccess'), false);
         })
         .catch(function (err) {
@@ -2521,7 +2776,8 @@ function mxAdminMovePage(pageRow, delta) {
     }
     mxAdminRenderPagesList();
     mxAdminPersistPageOrder()
-        .then(function () {
+        .then(function (result) {
+            mxAdminOnMutationSuccess(result);
             mxAdminToast(mxAdminT('pagesReorderSuccess'), false);
         })
         .catch(function (err) {
@@ -2618,6 +2874,7 @@ function mxAdminAddPage() {
                 if (newPage) {
                     mxAdminOpenPageEditor(newPage);
                 }
+                mxAdminOnMutationSuccess(resp);
                 mxAdminToast(mxAdminT('pageAddSuccess'), false);
             });
         })
@@ -2668,7 +2925,7 @@ function mxAdminDeletePage() {
                 '/' +
                 encodeURIComponent(String(pageRow.id)),
         )
-            .then(function () {
+            .then(function (result) {
                 var idx = mxAdminFindPageRowIndex(pageRow);
                 if (idx >= 0 && mxAdminState.categoryPages) {
                     mxAdminState.categoryPages.splice(idx, 1);
@@ -2682,6 +2939,7 @@ function mxAdminDeletePage() {
                 mxAdminState.pageFiles = [];
                 mxAdminShowPageDetailEmpty();
                 mxAdminRenderPagesList();
+                mxAdminOnMutationSuccess(result);
                 mxAdminToast(mxAdminT('pageDeleteSuccess'), false);
             })
             .catch(function (err) {
@@ -4491,9 +4749,10 @@ function mxAdminHandlePageFormSubmit(evt) {
         '/api/admin/data/' + encodeURIComponent(catPath),
         mxAdminState.categoryDoc,
     )
-        .then(function () {
+        .then(function (catResult) {
             if (!pageRow.id) {
                 saveBtn.disabled = false;
+                mxAdminOnMutationSuccess(catResult);
                 mxAdminToast(mxAdminT('saveSuccess'), false);
                 mxAdminRenderPagesList();
                 return null;
@@ -4542,6 +4801,7 @@ function mxAdminHandlePageFormSubmit(evt) {
             mxAdminState.pageRecord =
                 mxAdminUnwrapApiData(result) || mxAdminState.pageRecord;
             mxAdminUpdatePageDetailHeader(pageRow);
+            mxAdminOnMutationSuccess(result);
             mxAdminToast(mxAdminT('saveSuccess'), false);
             mxAdminRenderPagesList();
         })
@@ -5621,11 +5881,12 @@ function mxAdminHandleModuleFormSubmit(evt) {
                 modulesDoc,
             );
         })
-        .then(function () {
+        .then(function (result) {
             saveBtn.disabled = false;
             mxAdminState.modulesList = modulesDoc.data;
             mxAdminState.modulesDoc = modulesDoc;
             mxAdminRenderModulesList();
+            mxAdminOnMutationSuccess(result);
             mxAdminToast(mxAdminT('saveSuccess'), false);
         })
         .catch(function (err) {
@@ -5883,6 +6144,7 @@ function mxAdminHandleSettingLogoUploadInput(evt) {
             mxAdminState.settingData.logo = logoName;
             mxAdminUpdateSettingLogoPreview(mxAdminState.settingData);
             mxAdminApplySiteLogo(mxAdminState.settingData);
+            mxAdminOnMutationSuccess(data);
             mxAdminToast(mxAdminT('logoUploadSuccess'), false);
         })
         .catch(function (err) {
@@ -6038,9 +6300,10 @@ function mxAdminHandleSettingsFormSubmit(evt) {
     var saveBtn = mxAdminEl('mxadminSettingsSave');
     saveBtn.disabled = true;
     mxAdminApiRequest('PUT', '/api/admin/data/setting', setting)
-        .then(function () {
+        .then(function (result) {
             saveBtn.disabled = false;
             mxAdminUpdateUserChip();
+            mxAdminOnMutationSuccess(result);
             mxAdminToast(mxAdminT('saveSuccess'), false);
         })
         .catch(function (err) {
@@ -6269,8 +6532,9 @@ function mxAdminHandleDesignFormSubmit(evt) {
     var saveBtn = mxAdminEl('mxadminDesignSave');
     saveBtn.disabled = true;
     mxAdminApiRequest('PUT', '/api/admin/data/desing', desing)
-        .then(function () {
+        .then(function (result) {
             saveBtn.disabled = false;
+            mxAdminOnMutationSuccess(result);
             mxAdminToast(mxAdminT('saveSuccess'), false);
         })
         .catch(function (err) {

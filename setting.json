@@ -32,5 +32,7 @@
   "address": "Sanayi mah. 60081 nolu cadde no 43 Şehitkamil Gaziantep",
   "multi": false,
   "eticaret": false,
-  "defaultLang": "tr"
+  "defaultLang": "tr",
+  "person": "",
+  "title": ""
 }

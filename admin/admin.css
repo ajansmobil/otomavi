@@ -62,6 +62,12 @@
     --mxadmin-zebra-bg: rgba(255, 255, 255, 0.035);
     --mxadmin-zebra-bg-alt: rgba(0, 0, 0, 0.26);
     --mxadmin-zebra-bg-base: rgba(0, 0, 0, 0.14);
+    
+    --mxadmin-logo-sidebar-px: 28px;
+    --mxadmin-logo-chip-px: 32px;
+    --mxadmin-logo-login-px: 44px;
+    --mxadmin-logo-preview-max-w-px: 200px;
+    --mxadmin-logo-preview-max-h-px: 56px;
 }
 
 html,
@@ -157,6 +163,12 @@ button {
     float: none;
 }
 
+
+.mxadmin-app img {
+    float: none;
+    max-width: 100%;
+}
+
 .mxadmin-app button {
     width: auto;
     max-width: 100%;
@@ -241,6 +253,9 @@ button {
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .mxadmin-login-logo .mxadmin-site-logo-frame-lg {
@@ -2137,6 +2152,121 @@ button {
     border-left-color: var(--mxadmin-primary);
 }
 
+
+.mxadmin-publish-card {
+    margin: 0 10px 10px;
+    padding: 12px 12px 10px;
+    background: rgba(0, 0, 0, 0.28);
+    border: 1px solid var(--mxadmin-border);
+    border-radius: var(--mxadmin-radius-md);
+    flex-shrink: 0;
+    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.mxadmin-publish-card.is-live {
+    border-color: var(--mxadmin-green);
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--mxadmin-green) 25%, transparent);
+}
+
+.mxadmin-publish-card.is-error {
+    border-color: var(--mxadmin-red);
+}
+
+.mxadmin-publish-card-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.mxadmin-publish-card-icon {
+    font-size: 20px;
+    color: var(--mxadmin-primary);
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.mxadmin-publish-card.is-live .mxadmin-publish-card-icon {
+    color: var(--mxadmin-green);
+}
+
+.mxadmin-publish-card-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--mxadmin-text);
+    line-height: 1.3;
+}
+
+.mxadmin-publish-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.mxadmin-publish-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--mxadmin-text-muted);
+    line-height: 1.3;
+}
+
+.mxadmin-publish-step-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-sizing: border-box;
+}
+
+.mxadmin-publish-step.is-active .mxadmin-publish-step-dot {
+    background: var(--mxadmin-primary);
+    border-color: var(--mxadmin-primary);
+    animation: mxadmin-publish-pulse 1.2s ease-in-out infinite;
+}
+
+.mxadmin-publish-step.is-done .mxadmin-publish-step-dot {
+    background: var(--mxadmin-green);
+    border-color: var(--mxadmin-green);
+}
+
+.mxadmin-publish-step.is-done .mxadmin-publish-step-label {
+    color: var(--mxadmin-text);
+}
+
+.mxadmin-publish-step.is-error .mxadmin-publish-step-dot {
+    background: var(--mxadmin-red);
+    border-color: var(--mxadmin-red);
+}
+
+.mxadmin-publish-step.is-skipped {
+    opacity: 0.45;
+}
+
+@keyframes mxadmin-publish-pulse {
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.25);
+        opacity: 0.75;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mxadmin-publish-step.is-active .mxadmin-publish-step-dot {
+        animation: none;
+    }
+}
+
 .mxadmin-user-chip {
     display: flex;
     align-items: center;
@@ -2164,45 +2294,72 @@ button {
     flex-shrink: 0;
     box-sizing: border-box;
     min-width: 0;
+    float: none;
 }
 
 .mxadmin-site-logo-frame-lg {
-    width: 100%;
-    height: 100%;
+    width: var(--mxadmin-logo-login-px);
+    height: var(--mxadmin-logo-login-px);
+    max-width: var(--mxadmin-logo-login-px);
+    max-height: var(--mxadmin-logo-login-px);
+    flex: 0 0 var(--mxadmin-logo-login-px);
 }
 
 .mxadmin-site-logo-frame-sm {
-    width: 28px;
-    height: 28px;
-    max-width: 28px;
-    max-height: 28px;
+    width: var(--mxadmin-logo-sidebar-px);
+    height: var(--mxadmin-logo-sidebar-px);
+    max-width: var(--mxadmin-logo-sidebar-px);
+    max-height: var(--mxadmin-logo-sidebar-px);
+    flex: 0 0 var(--mxadmin-logo-sidebar-px);
     border-radius: var(--mxadmin-radius-sm);
     background: rgba(255, 255, 255, 0.04);
 }
 
 .mxadmin-site-logo-frame-md {
-    width: 32px;
-    height: 32px;
-    max-width: 32px;
-    max-height: 32px;
+    width: var(--mxadmin-logo-chip-px);
+    height: var(--mxadmin-logo-chip-px);
+    max-width: var(--mxadmin-logo-chip-px);
+    max-height: var(--mxadmin-logo-chip-px);
+    flex: 0 0 var(--mxadmin-logo-chip-px);
     border-radius: var(--mxadmin-radius-sm);
     background: rgba(255, 255, 255, 0.04);
 }
 
 .mxadmin-site-logo-img {
     display: block;
-    width: 100%;
-    height: 100%;
-    max-width: 100%;
-    max-height: 100%;
     object-fit: contain;
     object-position: center;
-    padding: 3px;
     box-sizing: border-box;
+    float: none;
+    min-width: 0;
+    min-height: 0;
 }
 
+#mxadminSidebarLogoImg,
+.mxadmin-site-logo-frame-sm .mxadmin-site-logo-img {
+    width: var(--mxadmin-logo-sidebar-px);
+    height: var(--mxadmin-logo-sidebar-px);
+    max-width: var(--mxadmin-logo-sidebar-px);
+    max-height: var(--mxadmin-logo-sidebar-px);
+    padding: 2px;
+}
+
+#mxadminUserChipLogoImg,
+.mxadmin-site-logo-frame-md .mxadmin-site-logo-img {
+    width: var(--mxadmin-logo-chip-px);
+    height: var(--mxadmin-logo-chip-px);
+    max-width: var(--mxadmin-logo-chip-px);
+    max-height: var(--mxadmin-logo-chip-px);
+    padding: 2px;
+}
+
+#mxadminLoginLogoImg,
 .mxadmin-site-logo-frame-lg .mxadmin-site-logo-img {
-    padding: 14px;
+    width: var(--mxadmin-logo-login-px);
+    height: var(--mxadmin-logo-login-px);
+    max-width: var(--mxadmin-logo-login-px);
+    max-height: var(--mxadmin-logo-login-px);
+    padding: 0;
 }
 
 .mxadmin-site-logo-fallback {
@@ -2750,10 +2907,11 @@ button {
 }
 
 .mxadmin-logo-preview-frame {
-    flex: 0 1 auto;
+    flex: 0 0 auto;
     min-width: 0;
-    max-width: 100%;
-    max-height: 72px;
+    width: auto;
+    max-width: calc(var(--mxadmin-logo-preview-max-w-px) + 20px);
+    max-height: calc(var(--mxadmin-logo-preview-max-h-px) + 16px);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -2763,16 +2921,19 @@ button {
     border: 1px solid var(--mxadmin-border);
     border-radius: var(--mxadmin-radius-md);
     box-sizing: border-box;
+    float: none;
 }
 
-.mxadmin-logo-preview-img {
+.mxadmin-logo-preview-img,
+#mxadminSettingLogoImg {
     display: block;
-    max-height: 56px;
-    max-width: min(220px, 100%);
+    max-height: var(--mxadmin-logo-preview-max-h-px);
+    max-width: var(--mxadmin-logo-preview-max-w-px);
     width: auto;
     height: auto;
     object-fit: contain;
     object-position: center;
+    float: none;
 }
 
 .mxadmin-logo-preview-meta {

@@ -132,6 +132,14 @@ describe('webmodules/admin dosya yapisi', function () {
             'div float reset',
         );
         assert.ok(
+            css.indexOf('.mxadmin-app img') !== -1,
+            'img float reset (logo tasma)',
+        );
+        assert.ok(
+            css.indexOf('--mxadmin-logo-sidebar-px') !== -1,
+            'logo px token',
+        );
+        assert.ok(
             css.indexOf('.mxadmin-page-move-btn') !== -1,
             'Paket 120: sayfa sira butonlari',
         );
@@ -1016,5 +1024,32 @@ describe('webmodules/admin canli public asset URL', function () {
             js.indexOf('Bağlantı kesildi') !== -1,
             'networkError TR metni guncellenmeli',
         );
+    });
+
+    it('Paket 147: yayin hatti sidebar karti ve izleme fonksiyonlari', function () {
+        var html = helpers.readAdminFile('index.html');
+        var js = helpers.readWebmodulesAdminFile('admin.js');
+        var css = helpers.readAdminFile('admin.css');
+        assert.ok(html.indexOf('id="mxadminPublishCard"') !== -1, 'publish kart');
+        assert.ok(html.indexOf('id="mxadminPublishStepSaved"') !== -1, 'adim saved');
+        assert.ok(html.indexOf('id="mxadminPublishStepLive"') !== -1, 'adim live');
+        assert.ok(
+            js.indexOf('function mxAdminTrackPublishAfterSave') !== -1,
+            'mxAdminTrackPublishAfterSave',
+        );
+        assert.ok(
+            js.indexOf('function mxAdminOnMutationSuccess') !== -1,
+            'mxAdminOnMutationSuccess',
+        );
+        assert.ok(
+            js.indexOf('/api/admin/data/publish-status') !== -1,
+            'publish-status polling',
+        );
+        assert.ok(
+            js.indexOf('ajansmobil') === -1 && js.indexOf('yunusevgane') === -1,
+            'proje adi UI metninde olmamali',
+        );
+        assert.ok(css.indexOf('.mxadmin-publish-card') !== -1, 'publish CSS');
+        assert.ok(css.indexOf('.mxadmin-publish-card.is-live') !== -1, 'yesil tamamlama');
     });
 });
