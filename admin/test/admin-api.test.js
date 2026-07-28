@@ -26,6 +26,28 @@ describe("webmodules/admin API yardimcilari", function() {
     });
   });
 
+  describe("mxAdminNormalizeCategoryDoc", function() {
+    it("GET API zarfindan collection/sha cikarir", function() {
+      var api = {
+        collection: "products",
+        sha: "deadbeef",
+        data: [{ id: "p1", path: "urun-a", name: { tr: "Urun A" } }]
+      };
+      var out = helpers.mxAdminNormalizeCategoryDoc(api);
+      assert.strictEqual(out.collection, undefined);
+      assert.strictEqual(out.sha, undefined);
+      assert.strictEqual(out.data.length, 1);
+      assert.strictEqual(out.data[0].id, "p1");
+    });
+
+    it("legacy duz diziyi { data: [] } yapar", function() {
+      var legacy = [{ id: "x1", path: "a" }];
+      var out = helpers.mxAdminNormalizeCategoryDoc(legacy);
+      assert.strictEqual(out.data.length, 1);
+      assert.strictEqual(out.data[0].id, "x1");
+    });
+  });
+
   describe("mxAdminParsePagesetting", function() {
     it("data eksikse bos dizi ekler", function() {
       var out = helpers.mxAdminParsePagesetting({ collection: "pagesetting" });

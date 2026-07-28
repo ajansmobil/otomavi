@@ -1185,6 +1185,46 @@ function mxAdminUnwrapApiData(resp) {
     return resp;
 }
 
+
+function mxAdminNormalizeCategoryDoc(raw) {
+    if (!raw || typeof raw !== 'object') {
+        return { data: [] };
+    }
+    if (Array.isArray(raw)) {
+        return { data: raw.slice() };
+    }
+    if (Array.isArray(raw.data)) {
+        var first = raw.data.length ? raw.data[0] : null;
+        if (
+            raw.data.length === 0 ||
+            (first &&
+                typeof first === 'object' &&
+                (first.id || first.path || first.name))
+        ) {
+            var docFromRows = { data: raw.data.slice() };
+            if (Array.isArray(raw.desc)) {
+                docFromRows.desc = raw.desc;
+            }
+            if (raw.desing) {
+                docFromRows.desing = raw.desing;
+            }
+            if (raw.modulestatus) {
+                docFromRows.modulestatus = raw.modulestatus;
+            }
+            return docFromRows;
+        }
+    }
+    if (!Array.isArray(raw.data)) {
+        raw.data = [];
+    }
+    return raw;
+}
+
+
+function mxAdminCategoryDocPutPayload() {
+    return mxAdminNormalizeCategoryDoc(mxAdminState.categoryDoc || { data: [] });
+}
+
 function mxAdminPickLocalized(obj, lang) {
     if (obj == null) {
         return '';
@@ -1670,7 +1710,9 @@ function mxAdminApplyCategoryPagesResponse(catResp, reqId) {
         return false;
     }
     mxAdminState.categoryPagesLoading = false;
-    mxAdminState.categoryDoc = mxAdminUnwrapApiData(catResp) || {};
+    mxAdminState.categoryDoc = mxAdminNormalizeCategoryDoc(
+        mxAdminUnwrapApiData(catResp) || {},
+    );
     mxAdminState.categoryPages = Array.isArray(mxAdminState.categoryDoc.data)
         ? mxAdminState.categoryDoc.data
         : [];
@@ -3753,7 +3795,9 @@ function mxAdminRefreshPagesList() {
             if (categoryPagesReqId !== mxAdminState.categoryPagesRequestId) {
                 return;
             }
-            mxAdminState.categoryDoc = mxAdminUnwrapApiData(resp) || {};
+            mxAdminState.categoryDoc = mxAdminNormalizeCategoryDoc(
+                mxAdminUnwrapApiData(resp) || {},
+            );
             mxAdminState.categoryPages = Array.isArray(
                 mxAdminState.categoryDoc.data,
             )
@@ -3861,7 +3905,9 @@ function mxAdminSelectCategory(path) {
                 return;
             }
             loading.classList.add('hidden');
-            mxAdminState.categoryDoc = mxAdminUnwrapApiData(resp) || {};
+            mxAdminState.categoryDoc = mxAdminNormalizeCategoryDoc(
+                mxAdminUnwrapApiData(resp) || {},
+            );
             mxAdminState.categoryPages = Array.isArray(
                 mxAdminState.categoryDoc.data,
             )
@@ -4150,7 +4196,7 @@ function mxAdminBulkSetPageStatus(targetStatus) {
     mxAdminApiRequest(
         'PUT',
         '/api/admin/data/' + encodeURIComponent(catPath),
-        mxAdminState.categoryDoc,
+        mxAdminCategoryDocPutPayload(),
     )
         .then(function (result) {
             mxAdminOnMutationSuccess(result);
@@ -4392,7 +4438,7 @@ function mxAdminBulkMovePages() {
                 return mxAdminApiRequest(
                     'PUT',
                     '/api/admin/data/' + encodeURIComponent(sourcePath),
-                    mxAdminState.categoryDoc,
+                    mxAdminCategoryDocPutPayload(),
                 ).then(function (sourcePutResult) {
                     mxAdminOnMutationSuccess(targetPutResult);
                     mxAdminOnMutationSuccess(sourcePutResult);
@@ -6895,7 +6941,7 @@ function mxAdminHandlePageFormSubmit(evt) {
     mxAdminApiRequest(
         'PUT',
         '/api/admin/data/' + encodeURIComponent(catPath),
-        mxAdminState.categoryDoc,
+        mxAdminCategoryDocPutPayload(),
     )
         .then(function (catResult) {
             if (!pageRow.id) {
@@ -6914,7 +6960,35 @@ function mxAdminHandlePageFormSubmit(evt) {
             record.id = pageRow.id;
             record.path = pageRow.path;
             if (typeof record.name !== 'object' || record.name === null) {
-                record.name = pageRow.name;
+                record.name = {};
+            }
+            var nameLangKey;
+            for (nameLangKey in pageRow.name) {
+                if (
+                    Object.prototype.hasOwnProperty.call(
+                        pageRow.name,
+                        nameLangKey,
+                    )
+                ) {
+                    record.name[nameLangKey] = pageRow.name[nameLangKey];
+                }
+            }
+            if (
+                typeof record.description !== 'object' ||
+                record.description === null
+            ) {
+                record.description = {};
+            }
+            for (nameLangKey in pageRow.description) {
+                if (
+                    Object.prototype.hasOwnProperty.call(
+                        pageRow.description,
+                        nameLangKey,
+                    )
+                ) {
+                    record.description[nameLangKey] =
+                        pageRow.description[nameLangKey];
+                }
             }
             if (typeof record.keyword !== 'object' || record.keyword === null) {
                 record.keyword = {};

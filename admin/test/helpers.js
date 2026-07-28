@@ -44,6 +44,38 @@ function mxAdminUnwrapApiData(resp) {
   return resp;
 }
 
+function mxAdminNormalizeCategoryDoc(raw) {
+  if (!raw || typeof raw !== "object") {
+    return { data: [] };
+  }
+  if (Array.isArray(raw)) {
+    return { data: raw.slice() };
+  }
+  if (Array.isArray(raw.data)) {
+    var first = raw.data.length ? raw.data[0] : null;
+    if (
+      raw.data.length === 0 ||
+      (first && typeof first === "object" && (first.id || first.path || first.name))
+    ) {
+      var docFromRows = { data: raw.data.slice() };
+      if (Array.isArray(raw.desc)) {
+        docFromRows.desc = raw.desc;
+      }
+      if (raw.desing) {
+        docFromRows.desing = raw.desing;
+      }
+      if (raw.modulestatus) {
+        docFromRows.modulestatus = raw.modulestatus;
+      }
+      return docFromRows;
+    }
+  }
+  if (!Array.isArray(raw.data)) {
+    raw.data = [];
+  }
+  return raw;
+}
+
 
 function mxAdminParsePagesetting(resp) {
   var ps = mxAdminUnwrapApiData(resp) || {};
@@ -772,6 +804,7 @@ module.exports = {
   readWebtestAdminJsIfExists: readWebtestAdminJsIfExists,
   API_BASE: API_BASE,
   mxAdminUnwrapApiData: mxAdminUnwrapApiData,
+  mxAdminNormalizeCategoryDoc: mxAdminNormalizeCategoryDoc,
   mxAdminParsePagesetting: mxAdminParsePagesetting,
   mxAdminCountPagesInDoc: mxAdminCountPagesInDoc,
   mxAdminCountPages: mxAdminCountPages,
