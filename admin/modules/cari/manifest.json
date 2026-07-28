@@ -1,9 +1,0 @@
-{
-  "id": "cari",
-  "when": "setting.cari",
-  "assets": {
-    "js": "cari-admin.js",
-    "css": "cari-admin.css"
-  },
-  "screens": ["cari"]
-}

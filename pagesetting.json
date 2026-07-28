@@ -107,7 +107,7 @@
       },
       "modulestatus": {
         "page": true,
-        "bgimg": false,
+        "bgimg": true,
         "detail": true,
         "body": true
       }
