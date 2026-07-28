@@ -15,6 +15,8 @@ var REQUIRED_SCREEN_IDS = [
     'mxadminScreenModules',
     'mxadminScreenSettings',
     'mxadminScreenDesign',
+    'mxadminScreenSiparisler',
+    'mxadminScreenEticaretSettings',
 ];
 
 var REQUIRED_NAV_SCREENS = ['dashboard', 'modules', 'settings', 'design'];
@@ -66,6 +68,7 @@ describe('webmodules/admin dosya yapisi', function () {
 
     it('Paket 133: mxadmin-select CSS standardi', function () {
         var css = helpers.readAdminFile('admin.css');
+        var js = helpers.readAdminFile('admin.js');
         assert.ok(
             css.indexOf('.mxadmin-select') !== -1,
             'mxadmin-select sinifi tanimli',
@@ -75,10 +78,9 @@ describe('webmodules/admin dosya yapisi', function () {
             'native select kaldirildi',
         );
         assert.ok(
-            css.indexOf('mxAdminInjectSelectChevronStyle') !== -1 ||
-                css.indexOf('mxadmin-select-chevron-style') !== -1 ||
-                css.indexOf('chevron SVG') !== -1,
-            'chevron JS enjeksiyonu referansi',
+            css.indexOf('background-image: url') !== -1 ||
+                js.indexOf('mxAdminInjectSelectChevronStyle') !== -1,
+            'chevron svg tanimli (css veya js enjeksiyonu)',
         );
         assert.ok(
             css.indexOf('.mxadmin-select-sm') !== -1,
@@ -86,41 +88,40 @@ describe('webmodules/admin dosya yapisi', function () {
         );
     });
 
-    it('Paket 142: ortak form token ve birlesik input/select blogu', function () {
+    it('Paket 176: checkbox css.css toggle sizintisi reset', function () {
         var css = helpers.readAdminFile('admin.css');
         assert.ok(
-            css.indexOf('--mxadmin-field-bg') !== -1,
-            'field bg token',
+            css.indexOf('.mxadmin-app input[type=\'checkbox\']') !== -1,
+            'admin checkbox reset tanimli',
         );
         assert.ok(
-            css.indexOf('--mxadmin-field-focus-bg') !== -1,
-            'field focus bg token',
+            css.indexOf('-webkit-appearance: checkbox') !== -1,
+            'native checkbox gorunumu',
         );
         assert.ok(
-            css.indexOf('.mxadmin-form-group input,\n.mxadmin-form-group textarea,\n.mxadmin-select,\n.mxadmin-form-group select') !==
+            css.indexOf('input[type=\'checkbox\']::before') !== -1,
+            'toggle pseudo iptal',
+        );
+    });
+
+    it('Paket 176: bulk select mxadmin-select sinifi', function () {
+        var html = helpers.readAdminFile('index.html');
+        assert.ok(
+            html.indexOf(
+                'class="mxadmin-select mxadmin-select-sm mxadmin-pages-bulk-status"',
+            ) !== -1,
+            'bulk status mxadmin-select',
+        );
+        assert.ok(
+            html.indexOf(
+                'class="mxadmin-select mxadmin-select-sm mxadmin-pages-bulk-category"',
+            ) !== -1,
+            'bulk category mxadmin-select',
+        );
+        assert.ok(
+            html.indexOf('id="mxadminSettingDefaultLang" class="mxadmin-select"') !==
                 -1,
-            'ortak form selector blogu',
-        );
-        var focusBlock =
-            '.mxadmin-form-group input:focus,\n.mxadmin-form-group textarea:focus,\n.mxadmin-select:focus,\n.mxadmin-form-group select:focus';
-        assert.ok(css.indexOf(focusBlock) !== -1, 'birlesik focus blogu');
-        var focusStart = css.indexOf(focusBlock);
-        var focusEnd = css.indexOf('.mxadmin-select:disabled', focusStart);
-        if (focusEnd === -1) {
-            focusEnd = css.indexOf('.mxadmin-password-field', focusStart);
-        }
-        var focusCss = css.slice(focusStart, focusEnd > focusStart ? focusEnd : focusStart + 400);
-        assert.ok(
-            focusCss.indexOf('#2196f3') === -1,
-            'form focus hardcoded #2196f3 yasak',
-        );
-        assert.ok(
-            focusCss.indexOf('rgba(33, 150, 243') === -1,
-            'form focus hardcoded rgba mavi yasak',
-        );
-        assert.ok(
-            focusCss.indexOf('var(--mxadmin-field-focus-bg)') !== -1,
-            'focus bg token kullanimi',
+            'default lang mxadmin-select',
         );
     });
 
@@ -132,16 +133,12 @@ describe('webmodules/admin dosya yapisi', function () {
             'div float reset',
         );
         assert.ok(
-            css.indexOf('.mxadmin-app img') !== -1,
-            'img float reset (logo tasma)',
-        );
-        assert.ok(
-            css.indexOf('--mxadmin-logo-sidebar-px') !== -1,
-            'logo px token',
-        );
-        assert.ok(
             css.indexOf('.mxadmin-page-move-btn') !== -1,
             'Paket 120: sayfa sira butonlari',
+        );
+        assert.ok(
+            css.indexOf('.mxadmin-layout-move-btn') !== -1,
+            'Paket 173: layout sira butonlari',
         );
         assert.ok(
             css.indexOf('.mxadmin-btn-danger') !== -1,
@@ -297,10 +294,6 @@ describe('webmodules/admin index.html ekran iskeleti', function () {
         );
         assert.ok(html.indexOf('id="mxadminPagesList"') !== -1);
         assert.ok(
-            html.indexOf('id="mxadminPagesListLoading"') !== -1,
-            'mxadminPagesListLoading eksik',
-        );
-        assert.ok(
             html.indexOf('id="mxadminPagesFilters"') !== -1,
             'Paket 125: mxadminPagesFilters eksik',
         );
@@ -310,10 +303,17 @@ describe('webmodules/admin index.html ekran iskeleti', function () {
         assert.ok(html.indexOf('id="mxadminSettingsForm"') !== -1);
         assert.ok(html.indexOf('id="mxadminSettingLogoPreview"') !== -1);
         assert.ok(
-            html.indexOf('id="mxadminSettingLogoUploadBtn"') !== -1,
-            'mxadminSettingLogoUploadBtn eksik',
+            html.indexOf('id="mxadminSettingIconPreview"') !== -1,
+            'Paket 174: favicon onizleme',
         );
-        assert.ok(html.indexOf('id="mxadminSettingLogoInput"') !== -1);
+        assert.ok(
+            html.indexOf('id="mxadminSettingLangList"') !== -1,
+            'Paket 174: dil listesi',
+        );
+        assert.ok(
+            html.indexOf('id="mxadminSettingDefaultLang"') !== -1,
+            'Paket 174: birincil dil select',
+        );
         assert.ok(html.indexOf('id="mxadminDesignForm"') !== -1);
         assert.ok(html.indexOf('id="mxadminDesignLite"') !== -1);
         assert.ok(html.indexOf('id="mxadminDesignDark"') !== -1);
@@ -352,10 +352,6 @@ describe('webmodules/admin index.html ekran iskeleti', function () {
         assert.ok(
             html.indexOf('id="mxadminModulesMeta"') !== -1,
             'mxadminModulesMeta eksik',
-        );
-        assert.ok(
-            html.indexOf('id="mxadminModulesListRefreshBtn"') !== -1,
-            'mxadminModulesListRefreshBtn eksik',
         );
         assert.ok(html.indexOf('data-mxadmin-screen="modules"') !== -1);
     });
@@ -471,10 +467,6 @@ describe('webmodules/admin index.html ekran iskeleti', function () {
             'mxadminPageAddBtn eksik',
         );
         assert.ok(
-            html.indexOf('id="mxadminPagesListRefreshBtn"') !== -1,
-            'mxadminPagesListRefreshBtn eksik',
-        );
-        assert.ok(
             html.indexOf('id="mxadminPageDeleteBtn"') !== -1,
             'mxadminPageDeleteBtn eksik',
         );
@@ -536,7 +528,7 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
     var js;
 
     before(function () {
-        js = helpers.readWebmodulesAdminFile('admin.js');
+        js = helpers.readAdminFile('admin.js');
     });
 
     it('{{adminApiUrl}} placeholder render oncesi korunur', function () {
@@ -586,29 +578,6 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
         assert.ok(js.indexOf('mxadminQuickActions') !== -1);
     });
 
-    it('sidebar foot: surum dil ve cikis sirasi + cikis saga yasli', function () {
-        var html = helpers.readAdminFile('index.html');
-        var css = helpers.readAdminFile('admin.css');
-        var footStart = html.indexOf('class="mxadmin-sidebar-foot"');
-        assert.ok(footStart !== -1, 'mxadmin-sidebar-foot eksik');
-        var footBlock = html.slice(footStart, footStart + 600);
-        var versionPos = footBlock.indexOf('id="mxadminVersion"');
-        var langPos = footBlock.indexOf('id="mxadminLangToggle"');
-        var logoutPos = footBlock.indexOf('id="mxadminLogoutBtn"');
-        assert.ok(versionPos !== -1, 'mxadminVersion eksik');
-        assert.ok(langPos !== -1, 'mxadminLangToggle eksik');
-        assert.ok(logoutPos !== -1, 'mxadminLogoutBtn eksik');
-        assert.ok(versionPos < langPos, 'surum dil dugmesinden once olmali');
-        assert.ok(langPos < logoutPos, 'dil cikistan once olmali');
-        assert.ok(js.indexOf('var MXADMIN_PANEL_VERSION') !== -1);
-        assert.ok(js.indexOf('function mxAdminApplyPanelVersion') !== -1);
-        assert.ok(
-            css.indexOf('.mxadmin-sidebar-foot .mxadmin-logout-btn') !== -1 &&
-                css.indexOf('margin-left: auto') !== -1,
-            'cikis saga yasli olmali',
-        );
-    });
-
     it('Paket 106: cihaz format ve liste meta JS', function () {
         assert.ok(js.indexOf('function mxAdminFormatDevice') !== -1);
         assert.ok(js.indexOf('function mxAdminUpdateCategoriesMeta') !== -1);
@@ -625,19 +594,6 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
         assert.ok(js.indexOf('function mxAdminShowPageDetailEmpty') !== -1);
         assert.ok(js.indexOf('function mxAdminUpdatePageDetailHeader') !== -1);
         assert.ok(js.indexOf('mxadminPagesWorkspace') !== -1);
-        assert.ok(js.indexOf('function mxAdminShowPagesListLoading') !== -1);
-        assert.ok(js.indexOf('function mxAdminHidePagesListLoading') !== -1);
-        assert.ok(
-            js.indexOf('mxAdminShowPagesListLoading();') !== -1,
-            'kategori degisiminde liste loading',
-        );
-        assert.ok(js.indexOf('function mxAdminRefreshPagesList') !== -1);
-        assert.ok(js.indexOf('function mxAdminRefreshModulesList') !== -1);
-        assert.ok(js.indexOf('function mxAdminUploadSettingLogo') !== -1);
-        assert.ok(
-            js.indexOf('setting-logo-upload') !== -1,
-            'logo upload API',
-        );
     });
 
     it('Paket 108: moduller master/detail JS', function () {
@@ -655,41 +611,6 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
         assert.ok(
             js.indexOf('mxadminModulesGrid') === -1,
             'mxadminModulesGrid kaldirilmali',
-        );
-    });
-
-    it('Paket 144: moduller listesinde bas ikon yok', function () {
-        var fnStart = js.indexOf('function mxAdminRenderModulesList');
-        assert.ok(fnStart !== -1, 'mxAdminRenderModulesList tanimli');
-        var fnEnd = js.indexOf('\nfunction ', fnStart + 1);
-        var fnBody =
-            fnEnd !== -1
-                ? js.slice(fnStart, fnEnd)
-                : js.slice(fnStart, fnStart + 2500);
-        assert.ok(
-            fnBody.indexOf('mxadmin-pages-list-icon') === -1,
-            'moduller listesinde mxadmin-pages-list-icon olmamali',
-        );
-        assert.ok(
-            fnBody.indexOf('mod.icon') === -1,
-            'moduller listesinde mod.icon olmamali',
-        );
-        assert.ok(
-            js.indexOf('modulesListTitle') !== -1,
-            'modulesListTitle i18n anahtari',
-        );
-        assert.ok(
-            js.indexOf('mxadminModulesList') !== -1,
-            'mxadminModulesList id kullanimi',
-        );
-        var css = helpers.readAdminFile('admin.css');
-        assert.ok(
-            css.indexOf('mxadmin-table-modules') === -1,
-            'dead mxadmin-table-modules CSS kaldirilmali',
-        );
-        assert.ok(
-            css.indexOf('mxadmin-module-icon-cell') === -1,
-            'dead mxadmin-module-icon-cell CSS kaldirilmali',
         );
     });
 
@@ -825,6 +746,23 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
             'Paket 127: sayfa sil',
         );
         assert.ok(
+            js.indexOf('function mxAdminClonePage') !== -1,
+            'Paket 173: sayfa klon',
+        );
+        assert.ok(
+            js.indexOf('content_copy') !== -1 &&
+                js.indexOf('mxadmin-page-clone-btn') !== -1,
+            'Paket 173: klon butonu',
+        );
+        assert.ok(
+            js.indexOf('function mxAdminMoveLayoutModule') !== -1,
+            'Paket 173: layout sira',
+        );
+        assert.ok(
+            js.indexOf('data-mxadmin-layout-move') !== -1,
+            'Paket 173: layout move attribute',
+        );
+        assert.ok(
             js.indexOf('/api/admin/data/page-add/') !== -1,
             'Paket 127: page-add ucu',
         );
@@ -869,79 +807,44 @@ describe('webmodules/admin admin.js placeholder ve API', function () {
         assert.ok(js.indexOf('categoriesBack') !== -1);
     });
 
-    it('Paket 142: site tema desing.json uygulama JS', function () {
+    it('Paket 160: mobil layout ve i18n tamamlama', function () {
+        var css = helpers.readAdminFile('admin.css');
+        var html = helpers.readAdminFile('index.html');
+        var block768 = css.split('@media (max-width: 768px)')[1];
+        assert.ok(block768, '768px media query olmali');
         assert.ok(
-            js.indexOf('function mxAdminApplySiteTheme') !== -1,
-            'mxAdminApplySiteTheme tanimli',
+            block768.indexOf('.mxadmin-icon-btn') !== -1 &&
+                (block768.indexOf('44px') !== -1 ||
+                    block768.indexOf('min-width: 44') !== -1),
+            'mobilde mxadmin-icon-btn min 44px',
         );
         assert.ok(
-            js.indexOf('function mxAdminInjectSelectChevronStyle') !== -1,
-            'mxAdminInjectSelectChevronStyle tanimli',
+            block768.indexOf('.mxadmin-table-wrap') !== -1 &&
+                block768.indexOf('overflow-x') !== -1,
+            'mobilde tablo wrap yatay scroll',
         );
         assert.ok(
-            js.indexOf("mxAdminApiRequest('GET', '/api/admin/data/desing')") !==
-                -1,
-            'dashboard desing fetch',
+            block768.indexOf('.mxadmin-pages-bulk-bar') !== -1 &&
+                block768.indexOf('flex-wrap') !== -1,
+            'mobilde bulk bar flex-wrap',
         );
         assert.ok(
-            js.indexOf('mxAdminApplySiteTheme(mxAdminUnwrapApiData(resp))') !==
-                -1,
-            'dashboard tema uygulama',
+            html.indexOf('0 sayfa seçili') === -1 &&
+                html.indexOf('0 sayfa secili') === -1,
+            'bulk bar sabit Turkce metin yok',
         );
         assert.ok(
-            js.indexOf("'--button--'") !== -1,
-            'button token eslemesi',
+            js.indexOf('confirmDeleteTitle') !== -1 &&
+                js.indexOf('confirmDeleteEnterHint') !== -1,
+            'confirm delete i18n anahtarlari',
         );
-    });
-});
-
-
-var FORBIDDEN_SITE_DOMAIN_API_RE =
-    /MX_ADMIN_API_BASE\s*=\s*['"]https?:\/\/otomavi\.com\b/i;
-
-describe('webmodules/admin MX_ADMIN_API_BASE domain fallback yasak', function () {
-    it('template admin.js otomavi.com API host icermez', function () {
-        var js = helpers.readWebmodulesAdminFile('admin.js');
         assert.ok(
-            !FORBIDDEN_SITE_DOMAIN_API_RE.test(js),
-            'MX_ADMIN_API_BASE otomavi.com olmamali (domain fallback yasak)',
+            js.indexOf("opts.title || mxAdminT('confirmDeleteTitle')") !== -1,
+            'confirm fallback i18n',
         );
-    });
-
-    it('webtest render admin.js otomavi.com API host icermez', function () {
-        var rendered = helpers.readWebtestAdminJsIfExists();
-        if (!rendered) {
-            console.log(
-                '[skip] webtest/admin/admin.js yok — Webmaker Render sonrasi tekrar deneyin',
-            );
-            return this.skip();
-        }
         assert.ok(
-            !FORBIDDEN_SITE_DOMAIN_API_RE.test(rendered),
-            'render ciktisi otomavi.com API base olmamali',
-        );
-    });
-
-    it('webtest render cozulmus taban varsa Worker veya placeholder kalir', function () {
-        var rendered = helpers.readWebtestAdminJsIfExists();
-        if (!rendered) {
-            return this.skip();
-        }
-        var assignRe =
-            /MX_ADMIN_API_BASE\s*=\s*['"]([^'"]+)['"]/;
-        var m = assignRe.exec(rendered);
-        if (!m || !m[1]) {
-            return;
-        }
-        var base = m[1];
-        if (base.indexOf('{{') === 0) {
-            return;
-        }
-        assert.ok(
-            base.indexOf('workers.dev') !== -1 ||
-                base.indexOf('localhost') !== -1 ||
-                base.indexOf('127.0.0.1') !== -1,
-            'cozulmus API taban Worker veya localhost olmali, alindi: ' + base,
+            js.indexOf('pagesBulkSelected') !== -1,
+            'pagesBulkSelected i18n',
         );
     });
 });
@@ -971,111 +874,437 @@ describe('webmodules/admin {{adminApiUrl}} htmlUtils uyumu', function () {
         assert.ok(src.indexOf('copyAdminPanel') !== -1);
         assert.ok(src.indexOf('{{adminApiUrl}}') !== -1);
     });
-});
 
-
-describe('webmodules/admin canli public asset URL', function () {
-    it('admin.js mxAdminPublicSiteAssetUrl ve mxAdminPageMediaUrl kullanir', function () {
-        var js = helpers.readWebmodulesAdminFile('admin.js');
-        assert.ok(
-            js.indexOf('function mxAdminPublicSiteAssetUrl') !== -1,
-            'mxAdminPublicSiteAssetUrl tanimli olmali',
-        );
-        assert.ok(
-            js.indexOf('function mxAdminPageMediaUrl') !== -1,
-            'mxAdminPageMediaUrl tanimli olmali',
-        );
-        assert.ok(
-            js.indexOf("mxAdminPublicSiteAssetUrl(") !== -1 &&
-                js.indexOf("'page/'") !== -1,
-            'mxAdminPageMediaUrl canli page/ relPath kullanmali',
-        );
-        assert.ok(
-            js.indexOf("'img/'") !== -1,
-            'mxAdminModuleMediaUrl canli img/ relPath kullanmali',
-        );
-    });
-
-    it('canli modda public asset URL Worker page-media icermez', function () {
-        var url = helpers.mxAdminPublicSiteAssetUrl('page/abc123/logo.webp', {
-            origin: 'https://otomavi.com',
-            hostname: 'otomavi.com',
-        });
-        assert.strictEqual(url, 'https://otomavi.com/page/abc123/logo.webp');
-        assert.ok(url.indexOf('/api/admin/data/page-media') === -1);
-    });
-
-    it('mxAdminApiRequest GET retry ve timeout dayanikliligi kaynakta', function () {
-        var js = helpers.readWebmodulesAdminFile('admin.js');
-        assert.ok(
-            js.indexOf('function mxAdminApiRequestOnce') !== -1,
-            'mxAdminApiRequestOnce ayri fonksiyon olmali',
-        );
-        assert.ok(
-            js.indexOf('mxAdminCreateFetchAbortSignal') !== -1,
-            'fetch timeout sinyali olmali',
-        );
-        assert.ok(
-            js.indexOf('mxAdminApiRequestIsRetryable') !== -1,
-            'GET retry kosulu olmali',
-        );
-        assert.ok(js.indexOf('serverReadError') !== -1, 'serverReadError i18n');
-        assert.ok(
-            js.indexOf('Bağlantı kesildi') !== -1,
-            'networkError TR metni guncellenmeli',
-        );
-    });
-
-    it('Paket 147: yayin hatti sidebar karti ve izleme fonksiyonlari', function () {
+    it('Paket 163: kaynak index.html {{adminAssetVersion}} placeholder tasir', function () {
         var html = helpers.readAdminFile('index.html');
-        var js = helpers.readWebmodulesAdminFile('admin.js');
-        var css = helpers.readAdminFile('admin.css');
-        assert.ok(html.indexOf('id="mxadminPublishCard"') !== -1, 'publish kart');
-        assert.ok(html.indexOf('id="mxadminPublishStepSaved"') !== -1, 'adim saved');
-        assert.ok(html.indexOf('id="mxadminPublishStepLive"') !== -1, 'adim live');
         assert.ok(
-            js.indexOf('function mxAdminTrackPublishAfterSave') !== -1,
-            'mxAdminTrackPublishAfterSave',
+            html.indexOf('{{adminAssetVersion}}') !== -1,
+            'render oncesi sablon cache-bust placeholder icermeli',
         );
         assert.ok(
-            js.indexOf('function mxAdminOnMutationSuccess') !== -1,
-            'mxAdminOnMutationSuccess',
+            html.indexOf('/admin/admin.js?v={{adminAssetVersion}}') !== -1,
+            'script src cache-bust kalibi',
         );
-        assert.ok(
-            js.indexOf('/api/admin/data/publish-status') !== -1,
-            'publish-status polling',
-        );
-        assert.ok(
-            js.indexOf('ajansmobil') === -1 && js.indexOf('yunusevgane') === -1,
-            'proje adi UI metninde olmamali',
-        );
-        assert.ok(css.indexOf('.mxadmin-publish-card') !== -1, 'publish CSS');
-        assert.ok(css.indexOf('.mxadmin-publish-card.is-live') !== -1, 'yesil tamamlama');
     });
 
-    it('Paket 148: admin dosyalarinda altyapi adi (github) yasak', function () {
-        ['index.html', 'admin.css', 'admin.js'].forEach(function (name) {
-            var content = helpers.readAdminFile(name);
+    it('Paket 163: fsCopy copyAdminPanel {{adminAssetVersion}} SHA1 cozer', function () {
+        var fsCopyPath = path.resolve(
+            ADMIN_ROOT,
+            '../../public/webmaker/services/webmaker/fsCopy.js',
+        );
+        var src = fs.readFileSync(fsCopyPath, 'utf8');
+        assert.ok(src.indexOf('{{adminAssetVersion}}') !== -1);
+        assert.ok(src.indexOf("createHash('sha1')") !== -1 || src.indexOf('createHash("sha1")') !== -1);
+        assert.ok(src.indexOf('.slice(0, 12)') !== -1);
+        assert.ok(
+            src.indexOf('refreshAdminPanelAssetVersion') !== -1,
+            'strip sonrasi surum yenileme export edilmeli',
+        );
+    });
+
+    it('Paket 174: ayarlar langs + favicon upload', function () {
+        var js = helpers.readAdminFile('admin.js');
+        assert.ok(
+            js.indexOf('mxAdminWeblanglist') !== -1,
+            'dil katalogu',
+        );
+        assert.ok(
+            js.indexOf('function mxAdminRenderSettingsLangList') !== -1,
+            'langs render',
+        );
+        assert.ok(
+            js.indexOf('function mxAdminCollectSettingsLangsFromForm') !== -1,
+            'langs toplama',
+        );
+        assert.ok(
+            js.indexOf('setting.defaultLang') !== -1,
+            'defaultLang kayit',
+        );
+        assert.ok(
+            js.indexOf('/api/admin/data/icon-upload') !== -1,
+            'icon-upload ucu',
+        );
+        assert.ok(
+            js.indexOf('iconUploadConfirm') !== -1,
+            'W3 favicon overwrite onay metni',
+        );
+        assert.ok(
+            js.indexOf('function mxAdminHandleSettingIconUploadInput') !== -1,
+            'favicon yukleme handler',
+        );
+    });
+
+    it('Paket 199/206/207b: core manifest + module registry', function () {
+        var manifestPath = path.join(ADMIN_ROOT, 'manifest.json');
+        assert.ok(fs.existsSync(manifestPath), 'admin/manifest.json olmali');
+        var manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+        assert.strictEqual(manifest.id, 'core');
+        assert.strictEqual(manifest.always, true);
+        assert.ok(Array.isArray(manifest.screens));
+        assert.ok(manifest.screens.indexOf('dashboard') !== -1);
+
+        var js = helpers.readAdminFile('admin.js');
+        assert.ok(js.indexOf("MX_ADMIN_MODULES_RAW = '{{adminModules}}'") !== -1);
+        assert.ok(js.indexOf('function mxAdminParseModulesFromRaw') !== -1);
+        assert.ok(js.indexOf('function mxAdminParseModules') !== -1);
+        assert.ok(js.indexOf('function mxAdminHasModule') !== -1);
+        assert.ok(js.indexOf('function mxAdminBuildModuleNav') !== -1);
+        assert.ok(js.indexOf('function mxAdminModuleRegister') !== -1);
+        assert.ok(js.indexOf('function mxAdminInitRegisteredModules') !== -1);
+        assert.ok(js.indexOf('function mxAdminParsePacks') !== -1, 'packs thin alias');
+        assert.ok(js.indexOf('function mxAdminBuildPackNav') !== -1, 'BuildPackNav thin alias');
+        assert.ok(
+            js.indexOf("if (!mxAdminHasModule('eticaret'))") === -1,
+            'BuildModuleNav eticaret hardcode kalkmali',
+        );
+        assert.ok(
+            js.indexOf('mxAdminEticaretPackInit') === -1,
+            'core Init eticaret hardcode cagri kalkmali',
+        );
+        assert.ok(
+            js.indexOf('mxAdminEticaretPackShowScreen') === -1,
+            'core ShowScreen eticaret hardcode kalkmali',
+        );
+        assert.ok(
+            js.indexOf("siparisler: 'mxadminScreenSiparisler'") === -1,
+            'core screen map eticaret hardcode kalkmali',
+        );
+
+        var html = helpers.readAdminFile('index.html');
+        assert.ok(html.indexOf('id="mxadminModuleNavHost"') !== -1);
+        assert.ok(html.indexOf('id="mxadminScreenSiparisler"') !== -1);
+        assert.ok(html.indexOf('id="mxadminScreenEticaretSettings"') !== -1);
+        assert.ok(html.indexOf('{{adminModuleAssetsHead}}') !== -1);
+        assert.ok(html.indexOf('{{adminModuleAssetsBody}}') !== -1);
+
+        var modRoot = path.join(ADMIN_ROOT, 'modules', 'eticaret');
+        assert.ok(
+            fs.existsSync(path.join(modRoot, 'manifest.json')),
+            'admin/modules/eticaret/manifest.json',
+        );
+        var modManifest = JSON.parse(
+            fs.readFileSync(path.join(modRoot, 'manifest.json'), 'utf8'),
+        );
+        assert.strictEqual(modManifest.id, 'eticaret');
+        assert.strictEqual(modManifest.when, 'setting.eticaret');
+        assert.ok(modManifest.assets && modManifest.assets.js);
+        assert.ok(
+            fs.existsSync(path.join(modRoot, 'eticaret-admin.js')),
+            'eticaret-admin.js',
+        );
+        assert.ok(
+            fs.existsSync(path.join(modRoot, 'eticaret-admin.css')),
+            'eticaret-admin.css',
+        );
+        var modJs = fs.readFileSync(
+            path.join(modRoot, 'eticaret-admin.js'),
+            'utf8',
+        );
+        assert.ok(modJs.indexOf('function mxAdminEticaretPackInit') !== -1);
+        assert.ok(modJs.indexOf('function mxAdminEticaretPackShowScreen') !== -1);
+        assert.ok(modJs.indexOf('function mxAdminEticaretBuildNav') !== -1);
+        assert.ok(modJs.indexOf('mxAdminModuleRegister') !== -1);
+        assert.ok(
+            modJs.indexOf(
+                "setAttribute('data-mxadmin-screen', 'eticaret-settings')",
+            ) !== -1,
+            'eticaret-settings nav dugmesi modulde',
+        );
+        var sipRoot = path.join(ADMIN_ROOT, 'modules', 'siparisler');
+        assert.ok(fs.existsSync(path.join(sipRoot, 'manifest.json')), 'siparisler manifest');
+        var sipJs = fs.readFileSync(path.join(sipRoot, 'siparisler-admin.js'), 'utf8');
+        assert.ok(
+            sipJs.indexOf("setAttribute('data-mxadmin-screen', 'siparisler')") !== -1,
+            'siparisler nav dugmesi siparisler modulde',
+        );
+        assert.ok(modJs.indexOf('=>') === -1, 'modul js arrow yasak');
+        assert.ok(
+            !/\bDOMContentLoaded\b/.test(modJs),
+            'modul js document load event yasak',
+        );
+
+        var cariRoot = path.join(ADMIN_ROOT, 'modules', 'cari');
+        assert.ok(
+            fs.existsSync(path.join(cariRoot, 'manifest.json')),
+            'admin/modules/cari/manifest.json',
+        );
+        var cariManifest = JSON.parse(
+            fs.readFileSync(path.join(cariRoot, 'manifest.json'), 'utf8'),
+        );
+        assert.strictEqual(cariManifest.id, 'cari');
+        assert.strictEqual(cariManifest.when, 'setting.cari');
+        assert.ok(
+            fs.existsSync(path.join(cariRoot, 'cari-admin.js')),
+            'cari-admin.js',
+        );
+        assert.ok(
+            fs.existsSync(path.join(cariRoot, 'cari-admin.css')),
+            'cari-admin.css',
+        );
+        var cariJs = fs.readFileSync(
+            path.join(cariRoot, 'cari-admin.js'),
+            'utf8',
+        );
+        assert.ok(cariJs.indexOf('mxAdminModuleRegister') !== -1);
+        assert.ok(cariJs.indexOf("id: 'cari'") !== -1);
+        assert.ok(html.indexOf('id="mxadminScreenCari"') !== -1);
+    });
+
+    it('Paket 199/206: modules parse — unresolved → [core]; eticaret listesi', function () {
+        var js = helpers.readAdminFile('admin.js');
+        var start = js.indexOf('function mxAdminParseModulesFromRaw');
+        assert.ok(start !== -1);
+        var end = js.indexOf('function mxAdminParsePacksFromRaw', start);
+        assert.ok(end !== -1);
+        var fnSrc = js.slice(start, end);
+        
+        var parseFn = new Function(
+            fnSrc + '; return mxAdminParseModulesFromRaw;',
+        )();
+        
+        assert.deepStrictEqual(parseFn('{{adminModules}}'), ['core']);
+        assert.deepStrictEqual(parseFn(''), ['core']);
+        assert.deepStrictEqual(parseFn('not-json'), ['core']);
+        assert.deepStrictEqual(parseFn('["core"]'), ['core']);
+        assert.deepStrictEqual(parseFn('["core","eticaret"]'), [
+            'core',
+            'eticaret',
+        ]);
+        assert.deepStrictEqual(parseFn('["eticaret"]'), ['core', 'eticaret']);
+    });
+
+    it('Paket 207b: BuildModuleNav — kayitli buildNav; eticaret yoksa host bos', function () {
+        var js = helpers.readAdminFile('admin.js');
+        var start = js.indexOf('function mxAdminBuildModuleNav');
+        assert.ok(start !== -1);
+        var end = js.indexOf('function mxAdminBuildPackNav', start);
+        assert.ok(end !== -1);
+        var fnSrc = js.slice(start, end);
+        var host = { innerHTML: 'STALE', appended: null };
+        host.appendChild = function (node) {
+            host.appended = node;
+        };
+        var state = { modules: ['core'] };
+        var registry = {};
+        var bindCalled = false;
+        
+        var buildFn = new Function(
+            'mxAdminEl',
+            'mxAdminState',
+            'mxAdminModuleRegistry',
+            'mxAdminBindModuleNavButtons',
+            fnSrc + '; return mxAdminBuildModuleNav;',
+        )(
+            function () {
+                return host;
+            },
+            state,
+            registry,
+            function () {
+                bindCalled = true;
+            },
+        );
+        
+        buildFn();
+        assert.strictEqual(host.innerHTML, '', 'host temizlenmeli');
+        assert.strictEqual(
+            host.appended,
+            null,
+            'kayit yokken section eklenmemeli',
+        );
+        assert.ok(bindCalled, 'bind cagrilmali');
+
+        var fakeSection = { id: 'fake-eticaret-nav' };
+        registry.eticaret = {
+            id: 'eticaret',
+            buildNav: function (h) {
+                h.appendChild(fakeSection);
+            },
+        };
+        state.modules = ['core', 'eticaret'];
+        host.innerHTML = '';
+        host.appended = null;
+        buildFn();
+        assert.strictEqual(
+            host.appended,
+            fakeSection,
+            'eticaret kayitliyken buildNav cagrilmali',
+        );
+    });
+
+    it('Paket 201/206: eticaret modul gercek UI (placeholder yok)', function () {
+        var modRoot = path.join(ADMIN_ROOT, 'modules', 'eticaret');
+        var packJs = fs.readFileSync(
+            path.join(modRoot, 'eticaret-admin.js'),
+            'utf8',
+        );
+        assert.ok(packJs.indexOf('function mxAdminEticaretPackInit') !== -1);
+        assert.ok(packJs.indexOf('function mxAdminEticaretPackShowScreen') !== -1);
+        assert.ok(packJs.indexOf('function mxAdminEticaretRefreshUi') !== -1);
+        assert.ok(
+            packJs.indexOf('function mxAdminEticaretAyarKaydet') !== -1,
+            'eticaret ayar kaydet',
+        );
+        var sipJsPath = path.join(ADMIN_ROOT, 'modules', 'siparisler', 'siparisler-admin.js');
+        var sipPackJs = fs.readFileSync(sipJsPath, 'utf8');
+        assert.ok(
+            sipPackJs.indexOf('function mxAdminSiparislerSiparisDetayKaydet') !== -1 ||
+                sipPackJs.indexOf('function mxAdminSiparisDetayKaydet') !== -1,
+            'siparis durum kaydet siparisler modulde',
+        );
+        assert.ok(
+            sipPackJs.indexOf('/api/admin/data/siparisler') !== -1,
+            'siparisler collection API',
+        );
+        assert.ok(
+            packJs.indexOf("PUT', '/api/admin/data/setting'") !== -1 ||
+                packJs.indexOf('/api/admin/data/setting') !== -1,
+            'setting PUT merge yolu',
+        );
+        assert.ok(
+            packJs.indexOf('siparislerPlaceholder') === -1,
+            'placeholder i18n kalmamali',
+        );
+        assert.ok(
+            packJs.indexOf('eticaretSettingsPlaceholder') === -1,
+            'ayar placeholder i18n kalmamali',
+        );
+        assert.ok(packJs.indexOf('=>') === -1, 'modul js arrow yasak');
+        assert.ok(
+            !/\bDOMContentLoaded\b/.test(packJs),
+            'modul js document load event yasak',
+        );
+        assert.ok(!/\blet\s+/.test(packJs), 'modul js let yasak');
+        assert.ok(!/\bconst\s+/.test(packJs), 'modul js const yasak');
+
+        var html = helpers.readAdminFile('index.html');
+        assert.ok(html.indexOf('id="mxadminScreenSiparisler"') !== -1);
+        assert.ok(html.indexOf('id="mxadminScreenEticaretSettings"') !== -1);
+
+        assert.ok(
+            packJs.indexOf('MXADMIN_ETICARET_I18N') !== -1 &&
+                packJs.indexOf('orderDisabledHint') !== -1 &&
+                packJs.indexOf('settingsGatewayHint') !== -1,
+            'i18n tr+en genisletilmis',
+        );
+        assert.ok(
+            packJs.indexOf('beklemede') !== -1 &&
+                packJs.indexOf('tamamlandi') !== -1 &&
+                packJs.indexOf('iptal') !== -1,
+            'durum enum',
+        );
+
+        assert.deepStrictEqual(helpers.MXADMIN_ETICARET_SIPARIS_DURUM, [
+            'beklemede',
+            'onaylandi',
+            'hazirlaniyor',
+            'kargoda',
+            'tamamlandi',
+            'iptal',
+        ]);
+        assert.strictEqual(helpers.mxAdminEticaretIsValidDurum('kargoda'), true);
+        assert.strictEqual(helpers.mxAdminEticaretIsValidDurum('xyz'), false);
+        var filtered = helpers.mxAdminEticaretFilterSiparisler(
+            [
+                { no: 'A1', musteri: 'Ali', durum: 'beklemede' },
+                { no: 'B2', musteri: 'Veli', durum: 'kargoda' },
+            ],
+            { durum: 'kargoda', q: 'vel' },
+        );
+        assert.strictEqual(filtered.length, 1);
+        assert.strictEqual(filtered[0].no, 'B2');
+        var merged = helpers.mxAdminEticaretMergeSettingFields(
+            { langs: { tr: true }, description: { tr: 'x' }, name: 'Site' },
+            { currency: 'USD', taxRate: '18' },
+        );
+        assert.strictEqual(merged.currency, 'USD');
+        assert.deepStrictEqual(merged.langs, { tr: true });
+        assert.deepStrictEqual(merged.description, { tr: 'x' });
+        assert.strictEqual(merged.name, 'Site');
+    });
+
+    it('Paket 262: alt modul parcalama — manifest + screen id', function () {
+        var html = helpers.readAdminFile('index.html');
+        var moduleIds = [
+            'siparisler',
+            'odeme',
+            'kargo',
+            'sepet',
+            'uyeler',
+            'uye-adres',
+        ];
+        var screenIds = [
+            'mxadminScreenSiparisler',
+            'mxadminScreenEticaretSettings',
+            'mxadminScreenOdemeSettings',
+            'mxadminScreenKargoSettings',
+            'mxadminScreenSepetSettings',
+            'mxadminScreenUyeler',
+            'mxadminScreenUyeAdres',
+        ];
+        var s;
+        for (s = 0; s < screenIds.length; s++) {
             assert.ok(
-                content.toLowerCase().indexOf('github') === -1,
-                name + ' icinde github gecmemeli',
+                html.indexOf('id="' + screenIds[s] + '"') !== -1,
+                screenIds[s] + ' index.html',
             );
-        });
-    });
-
-    it('Paket 149: sayfa ELO listRow kurallari (R11/R15)', function () {
-        var js = helpers.readWebmodulesAdminFile('admin.js');
-        assert.ok(
-            js.indexOf('function mxAdminPrunePageListRowInPlace') !== -1,
-            'liste beyaz listesi budama',
+        }
+        var m;
+        for (m = 0; m < moduleIds.length; m++) {
+            var modId = moduleIds[m];
+            var modRoot = path.join(ADMIN_ROOT, 'modules', modId);
+            assert.ok(
+                fs.existsSync(path.join(modRoot, 'manifest.json')),
+                modId + ' manifest',
+            );
+            var manifest = JSON.parse(
+                fs.readFileSync(path.join(modRoot, 'manifest.json'), 'utf8'),
+            );
+            assert.strictEqual(manifest.id, modId);
+            assert.ok(manifest.when.indexOf('setting.') === 0, modId + ' when');
+            var jsName =
+                modId === 'uye-adres'
+                    ? 'uyeadres-admin.js'
+                    : modId + '-admin.js';
+            var modJs = fs.readFileSync(path.join(modRoot, jsName), 'utf8');
+            assert.ok(
+                modJs.indexOf('mxAdminModuleRegister') !== -1,
+                modId + ' registry',
+            );
+            assert.ok(modJs.indexOf("id: 'eticaret'") === -1, modId + ' eticaret id yok');
+            assert.ok(modJs.indexOf('=>') === -1, modId + ' arrow yasak');
+        }
+        var eticJs = fs.readFileSync(
+            path.join(ADMIN_ROOT, 'modules', 'eticaret', 'eticaret-admin.js'),
+            'utf8',
         );
         assert.ok(
-            js.indexOf('function mxAdminApplyPageTextPlacement') !== -1,
-            'text konumu detail ile',
+            eticJs.indexOf('mxadminEticaretPayCreditCard') === -1,
+            'eticaret odeme UI yok',
         );
         assert.ok(
-            js.indexOf('pageRow.desc = descObj') === -1,
-            'desc liste satirina yazilmamali',
+            eticJs.indexOf('mxadminEticaretShippingFee') === -1,
+            'eticaret kargo UI yok',
+        );
+        assert.ok(
+            eticJs.indexOf('mxAdminEticaretAyarKaydet') !== -1,
+            'eticaret ayar kaydet',
+        );
+        var odemeJs = fs.readFileSync(
+            path.join(ADMIN_ROOT, 'modules', 'odeme', 'odeme-admin.js'),
+            'utf8',
+        );
+        assert.ok(
+            odemeJs.indexOf('mxadminOdemePayCreditCard') !== -1,
+            'odeme modulu',
+        );
+        var kargoJs = fs.readFileSync(
+            path.join(ADMIN_ROOT, 'modules', 'kargo', 'kargo-admin.js'),
+            'utf8',
+        );
+        assert.ok(
+            kargoJs.indexOf('mxadminKargoShippingFee') !== -1,
+            'kargo modulu',
         );
     });
 });

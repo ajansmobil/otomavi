@@ -29,17 +29,17 @@
   <link rel="preload" href="/src/fonts/rubik/rubik-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
 
   <link rel="stylesheet" href="/src/rubik.css" />
-  <link rel="stylesheet" href="/src/css.css?v=brx84" />
-  <link rel="stylesheet" href="/src/mx-ui.css?v=brx84" />
-  <link rel="preload" href="/src/cookie.css?v=brx84" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="stylesheet" href="/src/css.css?v=feubn" />
+  <link rel="stylesheet" href="/src/mx-ui.css?v=feubn" />
+  <link rel="preload" href="/src/cookie.css?v=feubn" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <link rel="preload" href="/src/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <link rel="preload" href="/src/material-symbols-outlined.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript>
-    <link rel="stylesheet" href="/src/cookie.css?v=brx84" />
+    <link rel="stylesheet" href="/src/cookie.css?v=feubn" />
     <link rel="stylesheet" href="/src/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/src/material-symbols-outlined.css" />
   </noscript>
-  <link rel="shortcut icon" href="/img/icon.png?v=brx84" type="image/png" />
+  <link rel="shortcut icon" href="/img/icon.png?v=feubn" type="image/png" />
   <link rel="apple-touch-icon" href="/img/icon.png" />
   <script type="application/ld+json">
 {
@@ -64,7 +64,7 @@
   
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#2196f3">
-<link rel="stylesheet" href="style.css?v=brx84">
+<link rel="stylesheet" href="style.css?v=feubn">
 </head>
 
 <body>
@@ -81,7 +81,7 @@
   <div class="h0000body">
     <a href="/tr/">
       <img
-        src="/img/logo.png?v=znh2a"
+        src="/img/logo.png?v=in2or"
         alt="Oto Mavi Logo"
         class="h0000bodylogo"
         loading="lazy"
@@ -462,12 +462,12 @@
 
   function b0000ApaOmTrAscii(s) {
     var t = String(s || "");
-    t = t.replace(/İ/g, "i").replace(/I/g, "i").replace(/ı/g, "i");
-    t = t.replace(/Ş/g, "s").replace(/ş/g, "s");
-    t = t.replace(/Ğ/g, "g").replace(/ğ/g, "g");
-    t = t.replace(/Ü/g, "u").replace(/ü/g, "u");
-    t = t.replace(/Ö/g, "o").replace(/ö/g, "o");
-    t = t.replace(/Ç/g, "c").replace(/ç/g, "c");
+    t = t.replace(/\u0130/g, "i").replace(/I/g, "i").replace(/\u0131/g, "i");
+    t = t.replace(/\u015e/g, "s").replace(/\u015f/g, "s");
+    t = t.replace(/\u011e/g, "g").replace(/\u011f/g, "g");
+    t = t.replace(/\u00dc/g, "u").replace(/\u00fc/g, "u");
+    t = t.replace(/\u00d6/g, "o").replace(/\u00f6/g, "o");
+    t = t.replace(/\u00c7/g, "c").replace(/\u00e7/g, "c");
     return t;
   }
 
@@ -700,9 +700,7 @@
       if (extras && b0000ApaOmHasAnyExtra(extras)) {
         items = b0000ApaOmSortByExtraScore(items, extras);
       }
-      note =
-        b0000ApaOmMsg(root, "data-fallback-bmw-note") ||
-        "BMW uyumlu yedek parçalar — model netleştirmek için WhatsApp";
+      note = b0000ApaOmMsg(root, "data-fallback-bmw-note") || "";
     }
     return { items: items, note: note };
   }
@@ -1097,7 +1095,7 @@
     
     <div class="f0000-footer-5-col f0000-footer-5-brand">
       <img
-        src="/img/logo.png?v=yjm4j"
+        src="/img/logo.png?v=lwapq"
         alt="Oto Mavi Logo"
         class="f0000-footer-5-logo"
        loading="lazy"/>
@@ -1175,9 +1173,9 @@
   
 
   <script defer src="/src/swiper-bundle.min.js"></script>
-  <script defer src="/src/mx-ui.js?v=brx84"></script>
-  <script defer type="text/javascript" src="/src/js.js?v=brx84"></script>
-  <script defer src="/src/cookie.js?v=brx84"></script>
+  <script defer src="/src/mx-ui.js?v=feubn"></script>
+  <script defer type="text/javascript" src="/src/js.js?v=feubn"></script>
+  <script defer src="/src/cookie.js?v=feubn"></script>
 
   <script>
     setTimeout(function() {

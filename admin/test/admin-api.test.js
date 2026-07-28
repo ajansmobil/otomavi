@@ -240,4 +240,395 @@ describe("webmodules/admin API yardimcilari", function() {
       assert.ok(uri.indexOf("data:image/svg+xml") !== -1);
     });
   });
+
+  describe("mxAdminValidatePageFormFields (Paket 153)", function() {
+    it("bos path reddeder", function() {
+      var out = helpers.mxAdminValidatePageFormFields({ path: "  " }, { tr: "Ad" });
+      assert.strictEqual(out.ok, false);
+      assert.strictEqual(out.key, "pageValidationPathEmpty");
+    });
+
+    it("bos name reddeder", function() {
+      var out = helpers.mxAdminValidatePageFormFields(
+        { path: "hakkimizda" },
+        { tr: " ", en: "" }
+      );
+      assert.strictEqual(out.ok, false);
+      assert.strictEqual(out.key, "pageValidationNameEmpty");
+    });
+
+    it("gecerli name+path kabul eder", function() {
+      var out = helpers.mxAdminValidatePageFormFields(
+        { path: "iletisim" },
+        { tr: "İletişim" }
+      );
+      assert.strictEqual(out.ok, true);
+    });
+  });
+
+  describe("mxAdminBuildPageRecordPayload (Paket 153)", function() {
+    it("detail acik kategoride text page-record icine yazilir", function() {
+      var payload = helpers.mxAdminBuildPageRecordPayload({
+        pageRow: { id: "p1", path: "hakkimizda", name: { tr: "Hakkımızda" } },
+        record: { slider: [] },
+        textObj: { tr: "<p>Metin</p>" },
+        keywordObj: { tr: "anahtar" },
+        modulestatus: { detail: true }
+      });
+      assert.strictEqual(payload.id, "p1");
+      assert.deepStrictEqual(payload.text, { tr: "<p>Metin</p>" });
+      assert.strictEqual(payload.keyword.tr, "anahtar");
+    });
+
+    it("detail kapali kategoride text page-record disinda kalir", function() {
+      var payload = helpers.mxAdminBuildPageRecordPayload({
+        pageRow: { id: "p2", path: "blog", name: { tr: "Blog" } },
+        record: {},
+        textObj: { tr: "<p>Liste metni</p>" },
+        keywordObj: { tr: "kw" },
+        modulestatus: { detail: false }
+      });
+      assert.strictEqual(payload.text, undefined);
+      assert.strictEqual(payload.keyword.tr, "kw");
+    });
+
+    it("desc semasi varsa desc nesnesi eklenir", function() {
+      var payload = helpers.mxAdminBuildPageRecordPayload({
+        pageRow: { id: "p3", path: "urun", name: { tr: "Urun" } },
+        record: {},
+        descObj: { fiyat: "100" },
+        hasDescSchema: true,
+        modulestatus: {}
+      });
+      assert.deepStrictEqual(payload.desc, { fiyat: "100" });
+    });
+  });
+
+  describe("mxAdminSlugifyCategoryPath / validate (Paket 154)", function() {
+    it("turkce karakterleri slugify eder", function() {
+      assert.strictEqual(
+        helpers.mxAdminSlugifyCategoryPath("Kurumsal Hakkımızda"),
+        "kurumsal-hakkimizda"
+      );
+    });
+
+    it("sanitize gecersiz karakterleri temizler", function() {
+      assert.strictEqual(helpers.mxAdminSanitizeCategoryPath("kurumsal"), "kurumsal");
+      assert.strictEqual(helpers.mxAdminSanitizeCategoryPath("a/b"), "ab");
+      assert.strictEqual(helpers.mxAdminSanitizeCategoryPath(""), "");
+    });
+
+    it("bos name reddeder", function() {
+      var out = helpers.mxAdminValidateCategoryAddInput("  ", "", { data: [] });
+      assert.strictEqual(out.ok, false);
+      assert.strictEqual(out.key, "categoryNameRequired");
+    });
+
+    it("duplicate path reddeder", function() {
+      var ps = { data: [{ path: "blog", name: "Blog" }] };
+      var out = helpers.mxAdminValidateCategoryAddInput("Yeni", "blog", ps);
+      assert.strictEqual(out.ok, false);
+      assert.strictEqual(out.key, "categoryPathDuplicate");
+    });
+
+    it("bos path addan slug uretir", function() {
+      var out = helpers.mxAdminValidateCategoryAddInput("Urunler", "", { data: [] });
+      assert.strictEqual(out.ok, true);
+      assert.strictEqual(out.path, "urunler");
+      assert.strictEqual(out.name, "Urunler");
+    });
+
+    it("gecersiz path sanitize sonrasi bos ise reddeder", function() {
+      var out = helpers.mxAdminValidateCategoryAddInput("Ad", "!!!", { data: [] });
+      assert.strictEqual(out.ok, false);
+      assert.strictEqual(out.key, "categoryPathInvalid");
+    });
+
+    it("mxAdminReindexCategories index alanlarini gunceller", function() {
+      var rows = [{ path: "a" }, { path: "b" }];
+      helpers.mxAdminReindexCategories(rows);
+      assert.strictEqual(rows[0].index, 0);
+      assert.strictEqual(rows[1].index, 1);
+    });
+  });
+
+  describe("mxAdminApplyModuleNameFromInput (Paket 172)", function() {
+    it("i18n name aktif dilde guncellenir, diger dil korunur", function() {
+      var out = helpers.mxAdminApplyModuleNameFromInput(
+        { tr: "Slider", en: "Slider EN" },
+        { tr: "Slider", en: "Slider EN" },
+        "tr",
+        "Ana Slider"
+      );
+      assert.deepStrictEqual(out.recordName, {
+        tr: "Ana Slider",
+        en: "Slider EN"
+      });
+      assert.deepStrictEqual(out.modName, {
+        tr: "Ana Slider",
+        en: "Slider EN"
+      });
+    });
+
+    it("string name i18n nesnesine migrate edilir", function() {
+      var out = helpers.mxAdminApplyModuleNameFromInput(
+        "Eski Ad",
+        "Eski Ad",
+        "en",
+        "New Title"
+      );
+      assert.strictEqual(out.recordName.tr, "Eski Ad");
+      assert.strictEqual(out.recordName.en, "New Title");
+      assert.strictEqual(out.modName.en, "New Title");
+    });
+
+    it("bos name yeni i18n nesnesi olusturur", function() {
+      var out = helpers.mxAdminApplyModuleNameFromInput("", "", "tr", "Yeni");
+      assert.deepStrictEqual(out.recordName, { tr: "Yeni" });
+      assert.deepStrictEqual(out.modName, { tr: "Yeni" });
+    });
+  });
+
+  describe("workerSchemaValidate (Paket 161)", function() {
+    var workerSchema = null;
+
+    before(async function() {
+      workerSchema = await import(
+        "../../backend/cloudflare/src/schemaValidate.js"
+      );
+    });
+
+    it("pagesetting kok pages anahtarini 400 semasi ile reddeder", function() {
+      var errMsg = workerSchema.workerValidateByCollection("pagesetting", {
+        pages: []
+      });
+      assert.ok(errMsg && errMsg.indexOf("[VALIDATION]") === 0);
+      assert.ok(errMsg.indexOf("pages") !== -1);
+    });
+
+    it("gecerli pagesetting kabul edilir", function() {
+      var errMsg = workerSchema.workerValidateByCollection("pagesetting", {
+        data: [{ path: "kurumsal", name: { tr: "Kurumsal" } }]
+      });
+      assert.strictEqual(errMsg, null);
+    });
+
+    it("setting yasak alan (permissions) reddedilir", function() {
+      var body = {
+        langs: { tr: true },
+        description: { tr: "Aciklama" },
+        keyword: { tr: "anahtar" },
+        permissions: []
+      };
+      var errMsg = workerSchema.workerValidateByCollection("setting", body);
+      assert.ok(errMsg && errMsg.indexOf("permissions") !== -1);
+    });
+
+    it("modules satirinda id/local/path zorunludur", function() {
+      var errMsg = workerSchema.workerValidateByCollection("modules", {
+        data: [{ img: "slider.webp" }]
+      });
+      assert.ok(errMsg && errMsg.indexOf("modules.data[0].id") !== -1);
+    });
+
+    it("desing yasak features alani reddedilir", function() {
+      var errMsg = workerSchema.workerValidateByCollection("desing", {
+        colors: { dark: [] },
+        features: []
+      });
+      assert.ok(errMsg && errMsg.indexOf("features") !== -1);
+    });
+
+    it("page-record yasak api_endpoints reddedilir", function() {
+      var errMsg = workerSchema.workerValidatePageRecord({
+        id: "p1",
+        api_endpoints: []
+      });
+      assert.ok(errMsg && errMsg.indexOf("api_endpoints") !== -1);
+    });
+
+    it("gecerli page-record kabul edilir", function() {
+      var errMsg = workerSchema.workerValidatePageRecord({
+        id: "p1",
+        text: { tr: "<p>Metin</p>" }
+      });
+      assert.strictEqual(errMsg, null);
+    });
+
+    it("siparisler gecerli payload kabul edilir (Paket 200)", function() {
+      var errMsg = workerSchema.workerValidateByCollection("siparisler", {
+        data: [{ no: "ORD-1", durum: "beklemede" }]
+      });
+      assert.strictEqual(errMsg, null);
+    });
+
+    it("siparisler durum olmadan no ile kabul edilir (Paket 200)", function() {
+      var errMsg = workerSchema.workerValidateByCollection("siparisler", {
+        data: [{ no: "ORD-2", musteri: "Ali" }]
+      });
+      assert.strictEqual(errMsg, null);
+    });
+
+    it("siparisler bos data[] kabul edilir (Paket 200)", function() {
+      var errMsg = workerSchema.workerValidateByCollection("siparisler", {
+        data: []
+      });
+      assert.strictEqual(errMsg, null);
+    });
+
+    it("siparisler data yok / dizi degil reddedilir (Paket 200)", function() {
+      var missing = workerSchema.workerValidateByCollection("siparisler", {
+        items: []
+      });
+      assert.ok(missing && missing.indexOf("[VALIDATION]") === 0);
+      assert.ok(missing.indexOf("data") !== -1);
+      var notArr = workerSchema.workerValidateByCollection("siparisler", {
+        data: {}
+      });
+      assert.ok(notArr && notArr.indexOf("[VALIDATION]") === 0);
+      assert.ok(notArr.indexOf("data") !== -1);
+      var asArr = workerSchema.workerValidateByCollection("siparisler", []);
+      assert.ok(asArr && asArr.indexOf("[VALIDATION]") === 0);
+    });
+
+    it("siparisler bos no reddedilir (Paket 200)", function() {
+      var errMsg = workerSchema.workerValidateByCollection("siparisler", {
+        data: [{ no: "  ", durum: "beklemede" }]
+      });
+      assert.ok(errMsg && errMsg.indexOf("[VALIDATION]") === 0);
+      assert.ok(errMsg.indexOf("no") !== -1);
+    });
+
+    it("siparisler gecersiz durum reddedilir (Paket 200)", function() {
+      var errMsg = workerSchema.workerValidateByCollection("siparisler", {
+        data: [{ no: "ORD-1", durum: "xyz" }]
+      });
+      assert.ok(errMsg && errMsg.indexOf("[VALIDATION]") === 0);
+      assert.ok(errMsg.indexOf("durum") !== -1);
+    });
+
+    it("siparisler yasak kok alan reddedilir (Paket 200)", function() {
+      var errMsg = workerSchema.workerValidateByCollection("siparisler", {
+        data: [{ no: "ORD-1", durum: "iptal" }],
+        permissions: []
+      });
+      assert.ok(errMsg && errMsg.indexOf("permissions") !== -1);
+    });
+
+    it("orders collection adi reddedilir — siparisler kullanin (Paket 200)", function() {
+      var errMsg = workerSchema.workerValidateByCollection("orders", {
+        data: [{ no: "ORD-1", durum: "beklemede" }]
+      });
+      assert.ok(errMsg && errMsg.indexOf("[VALIDATION]") === 0);
+      assert.ok(errMsg.indexOf("orders kullanilmaz") !== -1);
+      assert.ok(errMsg.indexOf("siparisler") !== -1);
+    });
+
+    it("Worker public siparisler route kayitli (Paket 205 smoke)", function() {
+      var fs = require("fs");
+      var path = require("path");
+      var workerSrc = fs.readFileSync(
+        path.join(__dirname, "../../backend/cloudflare/src/index.js"),
+        "utf8"
+      );
+      assert.ok(
+        workerSrc.indexOf("/api/public/siparisler") !== -1,
+        "public siparisler path"
+      );
+      assert.ok(
+        workerSrc.indexOf("handlePublicPostSiparisler") !== -1,
+        "public handler"
+      );
+      assert.ok(
+        workerSrc.indexOf("resolvePublicSiparisSite") !== -1,
+        "Origin site gate"
+      );
+    });
+  });
+
+  describe("mxAdminBuildChangePasswordRequestBody (Paket 172/175)", function() {
+    it("mustReset modunda yalniz newPassword gonderilir", function() {
+      var body = helpers.mxAdminBuildChangePasswordRequestBody({
+        mustReset: true,
+        newPassword: "YeniSifre123"
+      });
+      assert.deepStrictEqual(body, { newPassword: "YeniSifre123" });
+      assert.strictEqual(body.currentPassword, undefined);
+    });
+
+    it("normal oturumda currentPassword + newPassword", function() {
+      var body = helpers.mxAdminBuildChangePasswordRequestBody({
+        mustReset: false,
+        currentPassword: "Eski123",
+        newPassword: "Yeni456"
+      });
+      assert.deepStrictEqual(body, {
+        currentPassword: "Eski123",
+        newPassword: "Yeni456"
+      });
+    });
+
+    it("mxAdminValidateMustResetPasswordInput kisa sifreyi reddeder", function() {
+      var out = helpers.mxAdminValidateMustResetPasswordInput("abc", "abc");
+      assert.strictEqual(out.ok, false);
+      assert.strictEqual(out.key, "changePasswordTooShort");
+    });
+
+    it("mxAdminValidateMustResetPasswordInput uyumsuz tekrari reddeder", function() {
+      var out = helpers.mxAdminValidateMustResetPasswordInput("abcdef", "abcdeg");
+      assert.strictEqual(out.ok, false);
+      assert.strictEqual(out.key, "changePasswordMismatch");
+    });
+
+    it("mxAdminValidateMustResetPasswordInput gecerli cifti kabul eder", function() {
+      var out = helpers.mxAdminValidateMustResetPasswordInput("abcdef", "abcdef");
+      assert.strictEqual(out.ok, true);
+    });
+  });
+
+  describe("mxAdmin page clone payload (Paket 173/175)", function() {
+    it("mxAdminClonePageName i18n adlara dil bazli kopya eki ekler", function() {
+      var out = helpers.mxAdminClonePageName({ tr: "Hakkımızda", en: "About" });
+      assert.strictEqual(out.tr, "Hakkımızda (kopya)");
+      assert.strictEqual(out.en, "About (copy)");
+    });
+
+    it("mxAdminClonePageName duz string ad icin TR suffix kullanir", function() {
+      assert.strictEqual(helpers.mxAdminClonePageName("Blog"), "Blog (kopya)");
+    });
+
+    it("mxAdminGenerateUniqueClonePath cakismada -kopya2 uretir", function() {
+      var pages = [{ path: "hakkimizda-kopya" }];
+      assert.strictEqual(
+        helpers.mxAdminGenerateUniqueClonePath("hakkimizda", pages),
+        "hakkimizda-kopya2"
+      );
+    });
+
+    it("mxAdminBuildMergedCloneRecord kaynak alanlari korur ve kimlik gunceller", function() {
+      var merged = helpers.mxAdminBuildMergedCloneRecord(
+        { id: "p1", path: "blog", text: { tr: "<p>A</p>" }, slider: [] },
+        "p2",
+        "blog-kopya",
+        { tr: "Blog (kopya)" }
+      );
+      assert.strictEqual(merged.id, "p2");
+      assert.strictEqual(merged.path, "blog-kopya");
+      assert.deepStrictEqual(merged.name, { tr: "Blog (kopya)" });
+      assert.deepStrictEqual(merged.text, { tr: "<p>A</p>" });
+      assert.ok(Array.isArray(merged.slider));
+    });
+
+    it("mxAdminBuildPageAddCloneBody status ve category tasir", function() {
+      var body = helpers.mxAdminBuildPageAddCloneBody({
+        status: "play",
+        category: "kurumsal"
+      });
+      assert.deepStrictEqual(body, { status: "play", category: "kurumsal" });
+    });
+
+    it("mxAdminBuildPageAddCloneBody varsayilan status pause", function() {
+      assert.deepStrictEqual(helpers.mxAdminBuildPageAddCloneBody({}), { status: "pause" });
+    });
+  });
 });

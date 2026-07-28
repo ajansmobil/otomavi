@@ -176,6 +176,120 @@ button {
 }
 
 
+.mxadmin-app input[type='checkbox'] {
+    appearance: auto;
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    min-height: 18px;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+    accent-color: var(--mxadmin-primary);
+    background: transparent;
+    background-color: transparent;
+    border: none;
+    border-radius: 2px;
+    position: static;
+    outline: none;
+    transition: none;
+    box-sizing: border-box;
+    float: none;
+}
+
+.mxadmin-app input[type='checkbox']::before,
+.mxadmin-app input[type='checkbox']::after {
+    content: none !important;
+    display: none !important;
+}
+
+.mxadmin-app input[type='checkbox']:checked {
+    background-color: transparent;
+}
+
+.mxadmin-app input[type='checkbox']:checked::before {
+    transform: none;
+}
+
+
+.mxadmin-app .mxadmin-form-group > label,
+.mxadmin-app .mxadmin-check-label,
+.mxadmin-app .mxadmin-pages-select-all-label,
+.mxadmin-app .mxadmin-lang-setting-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.mxadmin-app .mxadmin-form-group > label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+
+.mxadmin-pages-bulk-status,
+.mxadmin-pages-bulk-category,
+.mxadmin-app select:not([multiple]) {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    background: var(--mxadmin-field-bg);
+    border: 1px solid var(--mxadmin-field-border);
+    border-radius: var(--mxadmin-radius-md);
+    color: var(--mxadmin-text);
+    padding: 10px var(--mxadmin-field-padding-x);
+    font-size: 14px;
+    font-family: inherit;
+    min-height: var(--mxadmin-field-min-height);
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: calc(
+        var(--mxadmin-field-padding-x) + var(--mxadmin-field-chevron-size) + 10px
+    );
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: var(--mxadmin-field-chevron-size);
+    transition:
+        border-color var(--mxadmin-transition),
+        box-shadow var(--mxadmin-transition),
+        background var(--mxadmin-transition);
+}
+
+.mxadmin-pages-bulk-status,
+.mxadmin-pages-bulk-category {
+    width: auto;
+    min-width: 110px;
+    max-width: 160px;
+    min-height: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 13px;
+}
+
+.mxadmin-app select:not([multiple]):focus {
+    outline: none;
+    border-color: var(--mxadmin-primary);
+    box-shadow: 0 0 0 3px var(--mxadmin-primary-soft);
+    background-color: var(--mxadmin-field-focus-bg);
+}
+
+.mxadmin-app select:not([multiple]) option {
+    background: var(--mxadmin-panel);
+    color: var(--mxadmin-text);
+}
+
+.mxadmin-setting-default-lang-wrap select {
+    width: 100%;
+    max-width: 320px;
+}
+
 
 .mxadmin-screen-login {
     position: relative;
@@ -450,6 +564,18 @@ button {
     resize: vertical;
 }
 
+.mxadmin-char-count {
+    display: block;
+    font-size: 11px;
+    color: var(--mxadmin-text-muted);
+    text-align: right;
+    margin-top: 2px;
+}
+
+.mxadmin-char-count.is-over {
+    color: var(--mxadmin-red);
+}
+
 .mxadmin-select,
 .mxadmin-form-group select {
     cursor: pointer;
@@ -485,6 +611,213 @@ button {
 .mxadmin-form-group select option {
     background: var(--mxadmin-panel);
     color: var(--mxadmin-text);
+}
+
+
+.mxadmin-app .mx-form-group,
+.mxadmin-app .form-group {
+    position: relative;
+    display: block;
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+}
+
+.mxadmin-app .mx-form-group:has(> label),
+.mxadmin-app .mx-form-group:has(> .mx-form-label) {
+    margin-top: 10px;
+}
+
+.mxadmin-app .mx-form-group > label,
+.mxadmin-app .mx-form-group > .mx-form-label,
+.mxadmin-app .form-group > label {
+    display: inline-block;
+    position: absolute;
+    top: -8px;
+    left: 8px;
+    padding: 0 8px;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--mxadmin-text-muted);
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    max-width: calc(100% - 16px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: var(--mxadmin-panel);
+    float: none;
+    flex-direction: unset;
+    align-items: unset;
+    gap: unset;
+    cursor: default;
+}
+
+.mxadmin-app .mx-input,
+.mxadmin-app .mx-select,
+.mxadmin-app .mx-textarea,
+.mxadmin-app .mx-form-group input:not([type='checkbox']):not([type='radio']):not([type='color']),
+.mxadmin-app .mx-form-group select,
+.mxadmin-app .mx-form-group textarea {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    float: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: var(--mxadmin-field-bg);
+    border: 1px solid var(--mxadmin-field-border);
+    border-radius: var(--mxadmin-radius-md);
+    color: var(--mxadmin-text);
+    font-size: 14px;
+    font-family: inherit;
+    padding: 10px var(--mxadmin-field-padding-x);
+    min-height: var(--mxadmin-field-min-height);
+    outline: none;
+    transition:
+        border-color var(--mxadmin-transition),
+        box-shadow var(--mxadmin-transition),
+        background var(--mxadmin-transition);
+}
+
+.mxadmin-app .mx-input::placeholder,
+.mxadmin-app .mx-textarea::placeholder {
+    color: var(--mxadmin-text-dim);
+}
+
+.mxadmin-app .mx-input:focus,
+.mxadmin-app .mx-select:focus,
+.mxadmin-app .mx-textarea:focus,
+.mxadmin-app .mx-form-group input:not([type='checkbox']):not([type='radio']):focus,
+.mxadmin-app .mx-form-group select:focus,
+.mxadmin-app .mx-form-group textarea:focus {
+    border-color: var(--mxadmin-primary);
+    box-shadow: 0 0 0 3px var(--mxadmin-primary-soft);
+    background: var(--mxadmin-field-focus-bg);
+}
+
+.mxadmin-app .mx-select,
+.mxadmin-app .mx-form-group select {
+    cursor: pointer;
+    padding-right: calc(
+        var(--mxadmin-field-padding-x) + var(--mxadmin-field-chevron-size) + 10px
+    );
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: var(--mxadmin-field-chevron-size);
+}
+
+.mxadmin-app .mx-select option,
+.mxadmin-app .mx-form-group select option {
+    background: var(--mxadmin-panel);
+    color: var(--mxadmin-text);
+}
+
+.mxadmin-app input[type='date'],
+.mxadmin-app input[type='time'],
+.mxadmin-app input[type='datetime-local'],
+.mxadmin-app input[type='number'] {
+    color-scheme: dark;
+}
+
+.mxadmin-app .btn-add {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: color-mix(in srgb, var(--mxadmin-green) 16%, transparent);
+    color: var(--mxadmin-green);
+    border: 1px solid color-mix(in srgb, var(--mxadmin-green) 32%, transparent);
+    padding: 0 14px;
+    height: 36px;
+    min-height: 36px;
+    border-radius: var(--mxadmin-radius-md);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    float: none;
+    transition:
+        background var(--mxadmin-transition),
+        border-color var(--mxadmin-transition),
+        transform var(--mxadmin-transition);
+}
+
+.mxadmin-app .btn-add:hover {
+    background: color-mix(in srgb, var(--mxadmin-green) 24%, transparent);
+    border-color: color-mix(in srgb, var(--mxadmin-green) 45%, transparent);
+}
+
+.mxadmin-app .btn-add .material-symbols-outlined {
+    font-size: 20px;
+    float: none;
+}
+
+.mxadmin-app .btn-save {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--mxadmin-primary);
+    color: var(--mxadmin-text);
+    border: none;
+    padding: 0 22px;
+    min-height: 44px;
+    height: auto;
+    border-radius: var(--mxadmin-radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    float: none;
+    transition:
+        background var(--mxadmin-transition),
+        transform var(--mxadmin-transition),
+        box-shadow var(--mxadmin-transition);
+}
+
+.mxadmin-app .btn-save:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 18px var(--mxadmin-primary-glow);
+}
+
+.mxadmin-app .btn-save:disabled,
+.mxadmin-app .btn-add:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.mxadmin-app .btn-save .material-symbols-outlined {
+    font-size: 20px;
+    float: none;
+}
+
+.mxadmin-app .mx-form-actions-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+    margin-top: 8px;
+    float: none;
+}
+
+.mxadmin-app .mx-form-row,
+.mxadmin-app .form-row {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    float: none;
+}
+
+.mxadmin-app .mx-form-row > *,
+.mxadmin-app .form-row > * {
+    flex: 1;
+    min-width: 0;
 }
 
 
@@ -559,6 +892,39 @@ button {
     margin: 0 0 10px;
     font-size: 12px;
     color: var(--mxadmin-text-dim);
+}
+
+
+.mxadmin-modules-add-hint {
+    margin: 0 14px 12px;
+    padding: 10px 12px;
+    border-radius: var(--mxadmin-radius-sm, 8px);
+    border: 1px solid color-mix(in srgb, var(--mxadmin-primary) 28%, transparent);
+    background: color-mix(in srgb, var(--mxadmin-primary) 8%, var(--mxadmin-bg));
+}
+
+.mxadmin-modules-add-hint-title {
+    margin: 0 0 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--mxadmin-text);
+}
+
+.mxadmin-modules-add-hint-body {
+    margin: 0 0 8px;
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--mxadmin-text-dim);
+}
+
+.mxadmin-modules-add-hint-path {
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: 11px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    color: var(--mxadmin-text);
+    background: var(--mxadmin-field-bg);
+    border-radius: 4px;
 }
 
 .mxadmin-page-media-panel .mxadmin-module-media-card {
@@ -901,6 +1267,35 @@ button {
 }
 
 
+
+.mxadmin-dashboard-render-panel {
+    margin-bottom: 20px;
+}
+
+.mxadmin-dashboard-render-status {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--mxadmin-text-muted);
+}
+
+.mxadmin-dashboard-render-status.is-live {
+    color: var(--mxadmin-success, var(--color-green));
+}
+
+.mxadmin-dashboard-render-status.is-building {
+    color: var(--mxadmin-warn, var(--color-orange));
+}
+
+.mxadmin-dashboard-render-status.is-failed {
+    color: var(--mxadmin-danger, var(--color-red));
+}
+
+.mxadmin-dashboard-render-status.is-unknown {
+    color: var(--mxadmin-text-muted);
+}
+
+
 .mxadmin-cards {
     display: none;
 }
@@ -1003,6 +1398,20 @@ button {
     letter-spacing: 0.04em;
 }
 
+.mxadmin-panel-head-flex {
+    flex: 1;
+    min-width: 8px;
+}
+
+.mxadmin-panel-head .mxadmin-panel-meta {
+    margin-left: 0;
+}
+
+.mxadmin-panel-head .mxadmin-btn-sm {
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
 
 
 .mxadmin-table-wrap {
@@ -1027,17 +1436,133 @@ button {
 
 .mxadmin-table-categories th:nth-child(1),
 .mxadmin-table-categories td:nth-child(1) {
-    width: 42%;
+    width: 72px;
+    white-space: nowrap;
 }
 
 .mxadmin-table-categories th:nth-child(2),
 .mxadmin-table-categories td:nth-child(2) {
-    width: 28%;
+    width: 24%;
 }
 
 .mxadmin-table-categories th:nth-child(3),
 .mxadmin-table-categories td:nth-child(3) {
-    width: 30%;
+    width: 18%;
+}
+
+.mxadmin-table-categories th:nth-child(4),
+.mxadmin-table-categories td:nth-child(4) {
+    width: 88px;
+}
+
+.mxadmin-table-categories th:nth-child(5),
+.mxadmin-table-categories td:nth-child(5) {
+    width: 22%;
+}
+
+.mxadmin-table-categories th:nth-child(6),
+.mxadmin-table-categories td:nth-child(6) {
+    width: 56px;
+    text-align: center;
+}
+
+.mxadmin-category-order {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 2px;
+    vertical-align: middle;
+}
+
+.mxadmin-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 1px solid var(--mxadmin-border);
+    border-radius: var(--mxadmin-radius-sm);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--mxadmin-text-muted);
+    cursor: pointer;
+    transition: background var(--mxadmin-transition), color var(--mxadmin-transition),
+        border-color var(--mxadmin-transition);
+}
+
+.mxadmin-icon-btn .material-symbols-outlined {
+    font-size: 18px;
+}
+
+.mxadmin-icon-btn:hover:not(:disabled):not(.is-off) {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--mxadmin-text);
+    border-color: var(--mxadmin-primary);
+}
+
+.mxadmin-icon-btn.is-off,
+.mxadmin-icon-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.mxadmin-icon-btn-danger {
+    color: var(--mxadmin-red);
+    border-color: rgba(229, 72, 77, 0.35);
+}
+
+.mxadmin-icon-btn-danger:hover:not(:disabled):not(.is-off) {
+    background: rgba(229, 72, 77, 0.12);
+    color: var(--mxadmin-red);
+    border-color: var(--mxadmin-red);
+}
+
+.mxadmin-category-page-count {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.mxadmin-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.mxadmin-overlay-panel {
+    width: min(100%, 420px);
+    padding: 20px;
+    border-radius: var(--mxadmin-radius-md);
+    background: var(--mxadmin-panel);
+    border: 1px solid var(--mxadmin-border);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.mxadmin-overlay-title {
+    margin: 0 0 16px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--mxadmin-text);
+}
+
+.mxadmin-overlay-actions {
+    margin-top: 8px;
+    justify-content: flex-end;
+}
+
+.mxadmin-overlay-locked .mxadmin-overlay-panel {
+    pointer-events: auto;
+}
+
+.mxadmin-overlay-sub {
+    margin: 0 0 16px;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--mxadmin-text-muted);
 }
 
 .mxadmin-col-device {
@@ -1148,9 +1673,94 @@ button {
 .mxadmin-pages-list-panel-title-wrap {
     min-width: 0;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 8px;
+}
+
+.mxadmin-pages-select-all-label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    gap: 0;
+}
+
+.mxadmin-pages-select-all,
+.mxadmin-pages-select {
+    flex-shrink: 0;
+}
+
+.mxadmin-pages-bulk-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--mxadmin-border);
+    background: color-mix(in srgb, var(--mxadmin-primary) 8%, transparent);
+    flex-wrap: wrap;
+}
+
+.mxadmin-pages-bulk-bar.hidden {
+    display: none;
+}
+
+.mxadmin-pages-bulk-count {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--mxadmin-text);
+    white-space: nowrap;
+}
+
+.mxadmin-pages-bulk-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex: 1;
+    min-width: 0;
+}
+
+.mxadmin-pages-bulk-status,
+.mxadmin-pages-bulk-category {
+    width: auto;
+    min-width: 110px;
+    max-width: 160px;
+}
+
+.mxadmin-btn-danger-ghost {
+    color: var(--mxadmin-red);
+    border-color: color-mix(in srgb, var(--mxadmin-red) 35%, transparent);
+}
+
+.mxadmin-btn-danger-ghost:hover {
+    background: color-mix(in srgb, var(--mxadmin-red) 12%, transparent);
+}
+
+.mxadmin-pages-bulk-clear {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: var(--mxadmin-radius-sm);
+    background: transparent;
+    color: var(--mxadmin-text-muted);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background var(--mxadmin-transition), color var(--mxadmin-transition);
+}
+
+.mxadmin-pages-bulk-clear:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--mxadmin-text);
+}
+
+.mxadmin-pages-bulk-clear .material-symbols-outlined {
+    font-size: 20px;
 }
 
 .mxadmin-pages-list-panel-head-actions {
@@ -1184,13 +1794,9 @@ button {
     cursor: not-allowed;
 }
 
-.mxadmin-pages-list-panel-title {
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-}
-
 .mxadmin-pages-list-panel-sub {
+    flex-basis: 100%;
+    margin-left: 24px;
     font-size: 11px;
     color: var(--mxadmin-text-dim);
     letter-spacing: 0.02em;
@@ -1199,6 +1805,12 @@ button {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: min(100%, 320px);
+}
+
+.mxadmin-pages-list-panel-title {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
 .mxadmin-pages-list-search {
@@ -1412,6 +2024,10 @@ button {
     cursor: default;
 }
 
+.mxadmin-page-clone-btn .material-symbols-outlined {
+    font-size: 13px;
+}
+
 .mxadmin-pages-list li:hover .mxadmin-pages-list-item {
     background: rgba(255, 255, 255, 0.05);
     border-color: var(--mxadmin-border);
@@ -1422,6 +2038,16 @@ button {
     border-color: color-mix(in srgb, var(--mxadmin-primary) 35%, transparent);
     box-shadow: 0 0 0 1px
         color-mix(in srgb, var(--mxadmin-primary) 12%, transparent);
+}
+
+.mxadmin-pages-list li.is-selected .mxadmin-pages-list-item {
+    background: color-mix(in srgb, var(--mxadmin-primary) 10%, transparent);
+    border-color: color-mix(in srgb, var(--mxadmin-primary) 28%, transparent);
+}
+
+.mxadmin-pages-list li.is-selected.is-active .mxadmin-pages-list-item {
+    background: color-mix(in srgb, var(--mxadmin-primary) 18%, transparent);
+    border-color: color-mix(in srgb, var(--mxadmin-primary) 42%, transparent);
 }
 
 .mxadmin-pages-list li.is-active {
@@ -1899,6 +2525,13 @@ button {
     min-height: 0;
     overflow: hidden;
     position: relative;
+}
+
+.mxadmin-app .mxadmin-sidebar-toggle {
+    width: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    max-width: 44px;
 }
 
 .mxadmin-sidebar-toggle {
@@ -2688,6 +3321,49 @@ button {
     color: var(--mxadmin-text-muted);
 }
 
+.mxadmin-layout-order {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.mxadmin-layout-move-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: 1px solid var(--mxadmin-border);
+    border-radius: var(--mxadmin-radius-sm);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--mxadmin-text-muted);
+    cursor: pointer;
+    transition:
+        background var(--mxadmin-transition),
+        color var(--mxadmin-transition),
+        border-color var(--mxadmin-transition);
+}
+
+.mxadmin-layout-move-btn .material-symbols-outlined {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.mxadmin-layout-move-btn:hover {
+    background: color-mix(in srgb, var(--mxadmin-primary) 12%, transparent);
+    border-color: color-mix(in srgb, var(--mxadmin-primary) 35%, transparent);
+    color: var(--mxadmin-primary);
+}
+
+.mxadmin-layout-move-btn.is-off {
+    opacity: 0.35;
+    pointer-events: none;
+    cursor: default;
+}
+
 .mxadmin-layout-item-empty {
     color: var(--mxadmin-text-dim);
     font-family: inherit;
@@ -2810,6 +3486,21 @@ button {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.mxadmin-module-data-img-preview {
+    display: block;
+    max-width: 160px;
+    max-height: 100px;
+    margin-top: 6px;
+    object-fit: cover;
+    border: 1px solid var(--mxadmin-border);
+    border-radius: var(--mxadmin-radius-sm);
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.mxadmin-module-data-img-preview.hidden {
+    display: none;
 }
 
 .mxadmin-module-media-grid {
@@ -2973,6 +3664,75 @@ button {
 }
 
 
+.mxadmin-icon-preview-wrap {
+    margin-top: 4px;
+}
+
+.mxadmin-icon-preview-frame {
+    max-width: 52px;
+    max-height: 52px;
+}
+
+.mxadmin-icon-preview-img,
+#mxadminSettingIconImg {
+    width: 32px;
+    height: 32px;
+    max-width: 32px;
+    max-height: 32px;
+    object-fit: contain;
+}
+
+
+.mxadmin-lang-setting-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 8px 12px;
+    margin-bottom: 16px;
+}
+
+.mxadmin-lang-setting-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border: 1px solid var(--mxadmin-border);
+    border-radius: var(--mxadmin-radius-sm);
+    cursor: pointer;
+    transition: border-color var(--mxadmin-transition),
+        background var(--mxadmin-transition);
+}
+
+.mxadmin-lang-setting-row:hover {
+    border-color: var(--mxadmin-primary);
+    background: var(--mxadmin-primary-soft);
+}
+
+.mxadmin-lang-setting-row input {
+    cursor: pointer;
+}
+
+.mxadmin-lang-setting-name {
+    flex: 1;
+    font-size: 13px;
+}
+
+.mxadmin-lang-setting-code {
+    font-size: 11px;
+    color: var(--mxadmin-text-muted);
+}
+
+.mxadmin-setting-default-lang-wrap select {
+    width: 100%;
+    max-width: 320px;
+}
+
+.mxadmin-field-hint {
+    margin: 6px 0 0;
+    font-size: 12px;
+    color: var(--mxadmin-text-muted);
+}
+
+
 
 .mxadmin-table-input {
     width: 100%;
@@ -3020,17 +3780,13 @@ button {
 .mxadmin-check-label {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     cursor: pointer;
     font-size: 13px;
     color: var(--mxadmin-text-muted);
 }
 
-.mxadmin-check-label input[type='checkbox'] {
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-}
+
 
 
 
@@ -3135,12 +3891,107 @@ button {
         margin-left: -4px;
         margin-right: -4px;
     }
+
+    
+    .mxadmin-table-wrap {
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .mxadmin-table {
+        min-width: 640px;
+    }
+
+    .mxadmin-pages-bulk-bar {
+        flex-wrap: wrap;
+        gap: 10px;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .mxadmin-pages-bulk-actions {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .mxadmin-pages-bulk-status,
+    .mxadmin-pages-bulk-category {
+        flex: 1 1 calc(50% - 4px);
+        min-width: 0;
+        max-width: none;
+    }
+
+    .mxadmin-icon-btn {
+        min-width: 44px;
+        min-height: 44px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .mxadmin-pages-bulk-clear {
+        min-width: 44px;
+        min-height: 44px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .mxadmin-confirm-btn {
+        min-height: 44px;
+    }
+
+    .mxadmin-pages-list-panel {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .mxadmin-dashboard-render-panel {
+        margin-bottom: 16px;
+    }
+
+    .mxadmin-dashboard-render-panel .mxadmin-panel-body {
+        padding: 12px 14px;
+    }
 }
 
 @media (max-width: 480px) {
+    .mxadmin-stats-row {
+        padding: 9px 0;
+    }
+
     .mxadmin-stats-value {
         max-width: 52%;
         font-size: 14px;
+    }
+
+    .mxadmin-pages-bulk-bar {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+
+    .mxadmin-pages-bulk-count {
+        font-size: 12px;
+        flex: 1 1 100%;
+    }
+
+    .mxadmin-pages-bulk-actions {
+        gap: 6px;
+    }
+
+    .mxadmin-pages-bulk-status,
+    .mxadmin-pages-bulk-category {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .mxadmin-table th,
+    .mxadmin-table td {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+
+    .mxadmin-table {
+        min-width: 560px;
     }
 }
 

@@ -11,5 +11,22 @@ mocha.addFile(path.join(dir, "backend.test.js"));
 mocha.addFile(path.join(dir, "rust-compliance.test.js"));
 
 mocha.run(function(failures) {
-  process.exit(failures ? 1 : 0);
+  if (process.env.ADMIN_E2E !== "1") {
+    process.exit(failures ? 1 : 0);
+    return;
+  }
+  var cp = require("child_process");
+  var e2ePath = path.join(dir, "e2e-playwright.js");
+  var child = cp.spawn(process.execPath, [e2ePath], {
+    stdio: "inherit",
+    env: process.env,
+    cwd: path.resolve(dir, "../../..")
+  });
+  child.on("close", function(code) {
+    process.exit(failures || code ? 1 : 0);
+  });
+  child.on("error", function(err) {
+    console.error("ADMIN_E2E spawn hatasi:", err.message || err);
+    process.exit(1);
+  });
 });

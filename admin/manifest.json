@@ -1,0 +1,5 @@
+{
+  "id": "core",
+  "always": true,
+  "screens": ["dashboard", "pages", "modules", "settings", "design"]
+}

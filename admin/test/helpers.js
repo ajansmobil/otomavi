@@ -63,6 +63,75 @@ function mxAdminCountPagesInDoc(doc) {
 }
 
 
+function mxAdminSlugifyCategoryPath(str) {
+  return String(str || "")
+    .toLowerCase()
+    .replace(/ğ/g, "g")
+    .replace(/ü/g, "u")
+    .replace(/ş/g, "s")
+    .replace(/ı/g, "i")
+    .replace(/ö/g, "o")
+    .replace(/ç/g, "c")
+    .replace(/[^a-z0-9]/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+
+function mxAdminSanitizeCategoryPath(raw) {
+  var seg = String(raw || "").trim();
+  if (!seg) {
+    return "";
+  }
+  seg = seg.replace(/[^a-zA-Z0-9_-]/g, "");
+  return seg;
+}
+
+function mxAdminCategoryPathExists(pagesettingData, pathVal) {
+  var rows =
+    pagesettingData && Array.isArray(pagesettingData.data)
+      ? pagesettingData.data
+      : [];
+  var i;
+  for (i = 0; i < rows.length; i++) {
+    if (rows[i] && rows[i].path === pathVal) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+function mxAdminValidateCategoryAddInput(name, pathInput, pagesettingData) {
+  var trimmedName = String(name || "").trim();
+  if (!trimmedName) {
+    return { ok: false, key: "categoryNameRequired" };
+  }
+  var rawPath = pathInput ? String(pathInput).trim() : "";
+  if (!rawPath) {
+    rawPath = mxAdminSlugifyCategoryPath(trimmedName);
+  }
+  if (!rawPath) {
+    rawPath = "kategori-fallback";
+  }
+  var categoryPath = mxAdminSanitizeCategoryPath(rawPath);
+  if (!categoryPath) {
+    return { ok: false, key: "categoryPathInvalid" };
+  }
+  if (mxAdminCategoryPathExists(pagesettingData, categoryPath)) {
+    return { ok: false, key: "categoryPathDuplicate" };
+  }
+  return { ok: true, path: categoryPath, name: trimmedName };
+}
+
+function mxAdminReindexCategories(rows) {
+  var i;
+  for (i = 0; i < rows.length; i++) {
+    rows[i].index = i;
+  }
+}
+
+
 function mxAdminCountPages(categoryDocs) {
   var total = 0;
   var i;
@@ -130,6 +199,45 @@ function mxAdminPublicSiteAssetUrl(relPath, opts) {
     }
   }
   return origin + "/" + path;
+}
+
+
+function mxAdminIsI18nObject(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return false;
+  }
+  return (
+    Object.prototype.hasOwnProperty.call(value, "tr") ||
+    Object.prototype.hasOwnProperty.call(value, "en")
+  );
+}
+
+
+function mxAdminApplyModuleNameFromInput(recordName, modName, lang, inputValue) {
+  var safeLang = lang === "en" ? "en" : "tr";
+  var record = recordName;
+  var mod = modName;
+  if (!mxAdminIsI18nObject(record)) {
+    if (typeof record === "string" && record) {
+      record = { tr: record, en: record };
+    } else {
+      record = {};
+    }
+  } else {
+    record = Object.assign({}, record);
+  }
+  record[safeLang] = inputValue;
+  if (!mxAdminIsI18nObject(mod)) {
+    if (typeof mod === "string" && mod) {
+      mod = { tr: mod, en: mod };
+    } else {
+      mod = {};
+    }
+  } else {
+    mod = Object.assign({}, mod);
+  }
+  mod[safeLang] = inputValue;
+  return { recordName: record, modName: mod };
 }
 
 
@@ -329,8 +437,177 @@ function mxAdminBuildSelectChevronDataUri(mutedHex) {
   );
 }
 
+
+function mxAdminValidatePageFormFields(pageRow, nameByLang) {
+  var pathVal = pageRow && pageRow.path ? String(pageRow.path).trim() : "";
+  if (!pathVal) {
+    return { ok: false, key: "pageValidationPathEmpty" };
+  }
+  var hasName = false;
+  var lang;
+  if (nameByLang && typeof nameByLang === "object") {
+    for (lang in nameByLang) {
+      if (Object.prototype.hasOwnProperty.call(nameByLang, lang)) {
+        if (String(nameByLang[lang] || "").trim()) {
+          hasName = true;
+          break;
+        }
+      }
+    }
+  }
+  if (!hasName) {
+    return { ok: false, key: "pageValidationNameEmpty" };
+  }
+  return { ok: true };
+}
+
+function mxAdminListRowIncludesText(modulestatus) {
+  return !!(modulestatus && modulestatus.detail === false);
+}
+
+
+function mxAdminBuildPageRecordPayload(opts) {
+  opts = opts || {};
+  var pageRow = opts.pageRow || {};
+  var record = opts.record && typeof opts.record === "object" ? opts.record : {};
+  var textObj = opts.textObj && typeof opts.textObj === "object" ? opts.textObj : {};
+  var keywordObj =
+    opts.keywordObj && typeof opts.keywordObj === "object" ? opts.keywordObj : {};
+  var descObj = opts.descObj && typeof opts.descObj === "object" ? opts.descObj : {};
+  var modulestatus = opts.modulestatus || null;
+  var hasDescSchema = !!opts.hasDescSchema;
+  var out = record;
+  out.id = pageRow.id;
+  out.path = pageRow.path;
+  if (typeof out.name !== "object" || out.name === null) {
+    out.name = pageRow.name;
+  }
+  if (typeof out.keyword !== "object" || out.keyword === null) {
+    out.keyword = {};
+  }
+  if (typeof out.text !== "object" || out.text === null) {
+    out.text = {};
+  }
+  if (hasDescSchema) {
+    out.desc = descObj;
+  }
+  var detailClosed = mxAdminListRowIncludesText(modulestatus);
+  if (detailClosed) {
+    if (out.text !== undefined) {
+      delete out.text;
+    }
+  } else {
+    var lk;
+    for (lk in textObj) {
+      if (Object.prototype.hasOwnProperty.call(textObj, lk)) {
+        out.text[lk] = textObj[lk];
+      }
+    }
+  }
+  for (lk in keywordObj) {
+    if (Object.prototype.hasOwnProperty.call(keywordObj, lk)) {
+      out.keyword[lk] = keywordObj[lk];
+    }
+  }
+  return out;
+}
+
 function readAdminFile(name) {
   return fs.readFileSync(path.join(ADMIN_ROOT, name), "utf8");
+}
+
+
+function mxAdminCategoryPagePathTakenInList(pathVal, categoryPages) {
+  var list = Array.isArray(categoryPages) ? categoryPages : [];
+  var i;
+  for (i = 0; i < list.length; i++) {
+    if (list[i] && String(list[i].path || "") === pathVal) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
+function mxAdminGenerateUniqueClonePath(sourcePath, categoryPages) {
+  var base = String(sourcePath || "sayfa").trim() || "sayfa";
+  var candidate = base + "-kopya";
+  var n = 2;
+  while (mxAdminCategoryPagePathTakenInList(candidate, categoryPages)) {
+    candidate = base + "-kopya" + n;
+    n += 1;
+  }
+  return candidate;
+}
+
+
+function mxAdminClonePageName(name) {
+  var suffixTr = " (kopya)";
+  var suffixEn = " (copy)";
+  if (mxAdminIsI18nObject(name)) {
+    var out = {};
+    var lang;
+    for (lang in name) {
+      if (Object.prototype.hasOwnProperty.call(name, lang)) {
+        var suf = lang === "en" ? suffixEn : suffixTr;
+        out[lang] = String(name[lang] || "") + suf;
+      }
+    }
+    return out;
+  }
+  return String(name || "") + suffixTr;
+}
+
+
+function mxAdminBuildMergedCloneRecord(sourceRecord, newPageId, newPath, newName) {
+  var merged = {};
+  var key;
+  if (sourceRecord && typeof sourceRecord === "object") {
+    for (key in sourceRecord) {
+      if (Object.prototype.hasOwnProperty.call(sourceRecord, key)) {
+        merged[key] = sourceRecord[key];
+      }
+    }
+  }
+  merged.id = newPageId;
+  merged.path = newPath;
+  merged.name = newName;
+  return merged;
+}
+
+
+function mxAdminBuildPageAddCloneBody(pageRow) {
+  var row = pageRow || {};
+  var addBody = {
+    status: row.status || "pause"
+  };
+  if (row.category !== undefined) {
+    addBody.category = row.category;
+  }
+  return addBody;
+}
+
+
+function mxAdminBuildChangePasswordRequestBody(opts) {
+  opts = opts || {};
+  var body = {
+    newPassword: String(opts.newPassword || "")
+  };
+  if (!opts.mustReset) {
+    body.currentPassword = String(opts.currentPassword || "");
+  }
+  return body;
+}
+
+
+function mxAdminValidateMustResetPasswordInput(newPassword, confirmPassword) {
+  if (!newPassword || newPassword.length < 6) {
+    return { ok: false, key: "changePasswordTooShort" };
+  }
+  if (newPassword !== confirmPassword) {
+    return { ok: false, key: "changePasswordMismatch" };
+  }
+  return { ok: true };
 }
 
 
@@ -413,6 +690,80 @@ function isServerUnreachable(err) {
   return err && (err.code === "ECONNREFUSED" || err.code === "ENOTFOUND");
 }
 
+
+var MXADMIN_ETICARET_SIPARIS_DURUM = [
+  "beklemede",
+  "onaylandi",
+  "hazirlaniyor",
+  "kargoda",
+  "tamamlandi",
+  "iptal"
+];
+
+function mxAdminEticaretIsValidDurum(kod) {
+  if (!kod) {
+    return true;
+  }
+  return MXADMIN_ETICARET_SIPARIS_DURUM.indexOf(String(kod)) !== -1;
+}
+
+
+function mxAdminEticaretFilterSiparisler(data, opts) {
+  var list = Array.isArray(data) ? data : [];
+  var durum = opts && opts.durum ? String(opts.durum) : "";
+  var q = opts && opts.q ? String(opts.q).toLowerCase().trim() : "";
+  var out = [];
+  var i;
+  for (i = 0; i < list.length; i++) {
+    var item = list[i] || {};
+    if (durum && item.durum !== durum) {
+      continue;
+    }
+    if (q) {
+      var no = String(item.no || "").toLowerCase();
+      var musteri = String(item.musteri || "").toLowerCase();
+      if (no.indexOf(q) === -1 && musteri.indexOf(q) === -1) {
+        continue;
+      }
+    }
+    out.push(item);
+  }
+  return out;
+}
+
+
+function mxAdminEticaretMergeSettingFields(base, patch) {
+  var setting = {};
+  var key;
+  var src = base && typeof base === "object" ? base : {};
+  for (key in src) {
+    if (Object.prototype.hasOwnProperty.call(src, key)) {
+      setting[key] = src[key];
+    }
+  }
+  var fields = [
+    "currency",
+    "taxRate",
+    "freeShipping",
+    "shippingFee",
+    "freeShippingMin",
+    "payCreditCard",
+    "payBankTransfer",
+    "payCashOnDelivery",
+    "paymentGateway",
+    "shippingTiers",
+    "coupons"
+  ];
+  var p = patch && typeof patch === "object" ? patch : {};
+  var f;
+  for (f = 0; f < fields.length; f++) {
+    if (Object.prototype.hasOwnProperty.call(p, fields[f])) {
+      setting[fields[f]] = p[fields[f]];
+    }
+  }
+  return setting;
+}
+
 module.exports = {
   ADMIN_ROOT: ADMIN_ROOT,
   resolveWebmodulesAdminRoot: resolveWebmodulesAdminRoot,
@@ -424,17 +775,34 @@ module.exports = {
   mxAdminParsePagesetting: mxAdminParsePagesetting,
   mxAdminCountPagesInDoc: mxAdminCountPagesInDoc,
   mxAdminCountPages: mxAdminCountPages,
+  mxAdminSlugifyCategoryPath: mxAdminSlugifyCategoryPath,
+  mxAdminSanitizeCategoryPath: mxAdminSanitizeCategoryPath,
+  mxAdminCategoryPathExists: mxAdminCategoryPathExists,
+  mxAdminValidateCategoryAddInput: mxAdminValidateCategoryAddInput,
+  mxAdminReindexCategories: mxAdminReindexCategories,
   mxAdminApiConfigured: mxAdminApiConfigured,
   mxAdminApiUrl: mxAdminApiUrl,
   mxAdminIsLocalPreviewHost: mxAdminIsLocalPreviewHost,
   mxAdminPublicSiteAssetUrl: mxAdminPublicSiteAssetUrl,
   mxAdminPickLocalized: mxAdminPickLocalized,
+  mxAdminIsI18nObject: mxAdminIsI18nObject,
+  mxAdminApplyModuleNameFromInput: mxAdminApplyModuleNameFromInput,
   mxAdminEscapeHtml: mxAdminEscapeHtml,
   mxAdminFormatDevice: mxAdminFormatDevice,
   mxAdminFilterPages: mxAdminFilterPages,
   mxAdminFindDesingColorToken: mxAdminFindDesingColorToken,
   mxAdminBuildSiteThemeVars: mxAdminBuildSiteThemeVars,
   mxAdminBuildSelectChevronDataUri: mxAdminBuildSelectChevronDataUri,
+  mxAdminValidatePageFormFields: mxAdminValidatePageFormFields,
+  mxAdminBuildPageRecordPayload: mxAdminBuildPageRecordPayload,
+  mxAdminListRowIncludesText: mxAdminListRowIncludesText,
+  mxAdminCategoryPagePathTakenInList: mxAdminCategoryPagePathTakenInList,
+  mxAdminGenerateUniqueClonePath: mxAdminGenerateUniqueClonePath,
+  mxAdminClonePageName: mxAdminClonePageName,
+  mxAdminBuildMergedCloneRecord: mxAdminBuildMergedCloneRecord,
+  mxAdminBuildPageAddCloneBody: mxAdminBuildPageAddCloneBody,
+  mxAdminBuildChangePasswordRequestBody: mxAdminBuildChangePasswordRequestBody,
+  mxAdminValidateMustResetPasswordInput: mxAdminValidateMustResetPasswordInput,
   readAdminFile: readAdminFile,
   httpGet: httpGet,
   httpPost: httpPost,
@@ -442,5 +810,9 @@ module.exports = {
   httpDelete: httpDelete,
   httpRequest: httpRequest,
   parseJsonBody: parseJsonBody,
-  isServerUnreachable: isServerUnreachable
+  isServerUnreachable: isServerUnreachable,
+  MXADMIN_ETICARET_SIPARIS_DURUM: MXADMIN_ETICARET_SIPARIS_DURUM,
+  mxAdminEticaretIsValidDurum: mxAdminEticaretIsValidDurum,
+  mxAdminEticaretFilterSiparisler: mxAdminEticaretFilterSiparisler,
+  mxAdminEticaretMergeSettingFields: mxAdminEticaretMergeSettingFields
 };
