@@ -1221,8 +1221,12 @@ function mxAdminNormalizeCategoryDoc(raw) {
 }
 
 
-function mxAdminCategoryDocPutPayload() {
-    return mxAdminNormalizeCategoryDoc(mxAdminState.categoryDoc || { data: [] });
+function mxAdminCategoryDocPutPayload(doc) {
+    var source =
+        doc !== undefined && doc !== null
+            ? doc
+            : mxAdminState.categoryDoc || { data: [] };
+    return mxAdminNormalizeCategoryDoc(source);
 }
 
 function mxAdminPickLocalized(obj, lang) {
@@ -4351,7 +4355,9 @@ function mxAdminBulkMovePages() {
         '/api/admin/data/' + encodeURIComponent(targetPath),
     )
         .then(function (targetResp) {
-            var targetDoc = mxAdminUnwrapApiData(targetResp) || {};
+            var targetDoc = mxAdminNormalizeCategoryDoc(
+                mxAdminUnwrapApiData(targetResp) || {},
+            );
             if (!Array.isArray(targetDoc.data)) {
                 targetDoc.data = [];
             }
@@ -4406,7 +4412,7 @@ function mxAdminBulkMovePages() {
             return mxAdminApiRequest(
                 'PUT',
                 '/api/admin/data/' + encodeURIComponent(targetPath),
-                targetDoc,
+                mxAdminCategoryDocPutPayload(targetDoc),
             ).then(function (targetPutResult) {
                 var srcList = mxAdminState.categoryPages || [];
                 var filtered = [];
@@ -4868,7 +4874,9 @@ function mxAdminClonePage(pageRow) {
                             '/api/admin/data/' +
                                 encodeURIComponent(catPath),
                         ).then(function (catResp) {
-                            var catDoc = mxAdminUnwrapApiData(catResp) || {};
+                            var catDoc = mxAdminNormalizeCategoryDoc(
+                                mxAdminUnwrapApiData(catResp) || {},
+                            );
                             var pages = Array.isArray(catDoc.data)
                                 ? catDoc.data
                                 : [];
@@ -4884,7 +4892,7 @@ function mxAdminClonePage(pageRow) {
                                 'PUT',
                                 '/api/admin/data/' +
                                     encodeURIComponent(catPath),
-                                catDoc,
+                                mxAdminCategoryDocPutPayload(catDoc),
                             ).then(function (catPutResult) {
                                 return {
                                     publish: mxAdminMergePublishApiResult(
