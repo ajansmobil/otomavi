@@ -301,6 +301,7 @@ var MX_ADMIN_I18N = {
         listRefresh: 'Listeyi yenile',
         pagesEmpty: 'Sayfa bulunamadı.',
         pagesEmptyFiltered: 'Filtreye uygun sayfa bulunamadı.',
+        pageDeepLinkNotFound: 'Bağlantıdaki sayfa bulunamadı.',
         pagesLoadError: 'Sayfalar yüklenemedi.',
         pagesSearchPlaceholder: 'Ara…',
         pagesFilterAll: 'Tümü',
@@ -582,6 +583,7 @@ var MX_ADMIN_I18N = {
         listRefresh: 'Refresh list',
         pagesEmpty: 'No pages found.',
         pagesEmptyFiltered: 'No pages match the filter.',
+        pageDeepLinkNotFound: 'Linked page not found.',
         pagesLoadError: 'Could not load pages.',
         pagesSearchPlaceholder: 'Search…',
         pagesFilterAll: 'All',
@@ -1144,6 +1146,21 @@ function mxAdminShowPageDetailLoading(show) {
         mxAdminSetPagesDetailOpen(true);
     } else if (loadEl) {
         loadEl.classList.add('hidden');
+    }
+}
+
+function mxAdminIsPagesListBootstrapLoading() {
+    return !!(
+        mxAdminState.categoryPagesLoading || mxAdminState.pendingPageId
+    );
+}
+
+
+function mxAdminResetPageDetailForCategoryLoad() {
+    if (mxAdminState.pendingPageId) {
+        mxAdminShowPageDetailLoading(true);
+    } else {
+        mxAdminShowPageDetailEmpty();
     }
 }
 
@@ -3900,11 +3917,15 @@ function mxAdminShowPagesListLoading() {
     mxAdminUpdatePagesListMeta(0);
 }
 
-function mxAdminHidePagesListLoading() {
+function mxAdminHidePagesListLoadingUi() {
     var listLoading = mxAdminEl('mxadminPagesListLoading');
     if (listLoading) {
         listLoading.classList.add('hidden');
     }
+}
+
+function mxAdminHidePagesListLoading() {
+    mxAdminHidePagesListLoadingUi();
     mxAdminState.categoryPagesLoading = false;
 }
 
@@ -3912,7 +3933,7 @@ function mxAdminHidePagesListLoading() {
 function mxAdminSyncPagesListLoadingUi() {
     var empty = mxAdminEl('mxadminPagesEmpty');
     var listLoading = mxAdminEl('mxadminPagesListLoading');
-    if (mxAdminState.categoryPagesLoading) {
+    if (mxAdminIsPagesListBootstrapLoading()) {
         if (empty) {
             empty.classList.add('hidden');
         }
@@ -3933,7 +3954,7 @@ function mxAdminLoadPagesScreen() {
     loading.classList.remove('hidden');
     mxAdminShowPagesListLoading();
     mxAdminShowAlert('mxadminPagesError', '');
-    mxAdminShowPageDetailEmpty();
+    mxAdminResetPageDetailForCategoryLoad();
 
     mxAdminEnsureSettingForLangs(function () {
         var finish = function () {
@@ -4027,9 +4048,10 @@ function mxAdminFindPageRowById(pageId) {
 }
 
 function mxAdminFinishCategoryPagesLoad(keepPageId) {
-    mxAdminState.categoryPagesLoading = false;
     mxAdminRenderPageFilters();
     var finishRender = function () {
+        mxAdminState.categoryPagesLoading = false;
+        mxAdminHidePagesListLoadingUi();
         mxAdminRenderPagesList();
         if (keepPageId) {
             var row = mxAdminFindPageRowById(keepPageId);
@@ -4039,6 +4061,7 @@ function mxAdminFinishCategoryPagesLoad(keepPageId) {
                 mxAdminState.activePageRow = null;
                 mxAdminState.pageRecord = null;
                 mxAdminShowPageDetailEmpty();
+                mxAdminToast(mxAdminT('pageDeepLinkNotFound'), true);
             }
         }
     };
@@ -4167,7 +4190,7 @@ function mxAdminSelectCategory(path) {
     mxAdminState.activePageRow = null;
     mxAdminState.pageRecord = null;
     mxAdminState.pageSelection = {};
-    mxAdminShowPageDetailEmpty();
+    mxAdminResetPageDetailForCategoryLoad();
     mxAdminUpdatePagesScreenHead(path);
     mxAdminSetSidebarCategoryActive(path);
     mxAdminSyncUrl();
@@ -5238,28 +5261,40 @@ function mxAdminMakePageCloneHandler(pageRow) {
 
 function mxAdminRenderPagesList() {
     var pages = mxAdminState.categoryPages || [];
-    if (mxAdminState.categoryPagesLoading && !pages.length) {
+    var bootstrapLoading = mxAdminIsPagesListBootstrapLoading();
+    if (bootstrapLoading && !pages.length) {
         mxAdminSyncPagesListLoadingUi();
         return;
     }
-    mxAdminHidePagesListLoading();
     var ul = mxAdminEl('mxadminPagesList');
     ul.innerHTML = '';
     var list = mxAdminGetFilteredPages();
     var empty = mxAdminEl('mxadminPagesEmpty');
 
     if (!list.length) {
+        if (bootstrapLoading) {
+            mxAdminSyncPagesListLoadingUi();
+            mxAdminUpdatePagesListMeta(0);
+            mxAdminUpdatePageBulkBar();
+            return;
+        }
         if (mxAdminHasActivePageFilters() || mxAdminIsPagesSearchActive()) {
             empty.textContent = mxAdminT('pagesEmptyFiltered');
         } else {
             empty.textContent = mxAdminT('pagesEmpty');
         }
         empty.classList.remove('hidden');
+        mxAdminHidePagesListLoading();
         mxAdminUpdatePagesListMeta(0);
         mxAdminUpdatePageBulkBar();
         return;
     }
     empty.classList.add('hidden');
+    if (mxAdminState.categoryPagesLoading) {
+        mxAdminHidePagesListLoadingUi();
+    } else {
+        mxAdminHidePagesListLoading();
+    }
     mxAdminUpdatePagesListMeta(list.length);
 
     var activeId =
