@@ -401,6 +401,8 @@ var MX_ADMIN_I18N = {
         pageMediaTitle: 'Sayfa görselleri',
         pageMediaCoverHint: 'Kapak görseli için küçük resme tıklayın.',
         pageMediaCoverBadge: 'Kapak',
+        pageCoverRecordSyncError:
+            'Kapak kaydedildi ancak sayfa kaydı güncellenemedi. Tekrar deneyin.',
         tabMedia: 'Dosyalar',
         fieldModuleId: 'Modül ID',
         fieldCategory: 'Kategori',
@@ -684,6 +686,8 @@ var MX_ADMIN_I18N = {
         pageMediaTitle: 'Page images',
         pageMediaCoverHint: 'Click a thumbnail to set the cover image.',
         pageMediaCoverBadge: 'Cover',
+        pageCoverRecordSyncError:
+            'Cover saved but page record could not be updated. Please try again.',
         tabMedia: 'Files',
         fieldModuleId: 'Module ID',
         fieldCategory: 'Category',
@@ -7236,6 +7240,63 @@ function mxAdminRenderPageMediaGrid() {
     }
 }
 
+
+function mxAdminSyncPageRecordImg(pageRow, filename) {
+    if (!pageRow || !pageRow.id) {
+        return Promise.reject({ code: 'VALIDATION' });
+    }
+    var pageId = String(pageRow.id);
+    var imgValue = filename ? String(filename) : '';
+    var buildRecord = function (base) {
+        var record = base && typeof base === 'object' ? base : {};
+        record.id = pageId;
+        if (pageRow.path) {
+            record.path = pageRow.path;
+        }
+        record.img = imgValue;
+        record.update = new Date().toISOString();
+        return record;
+    };
+    return mxAdminApiRequest(
+        'GET',
+        '/api/admin/data/page-record/' + encodeURIComponent(pageId),
+    )
+        .then(function (getResp) {
+            var record = mxAdminUnwrapApiData(getResp);
+            return mxAdminApiRequest(
+                'PUT',
+                '/api/admin/data/page-record/' + encodeURIComponent(pageId),
+                buildRecord(record),
+            );
+        })
+        .catch(function (getErr) {
+            if (getErr && getErr.code === 'UNAUTHORIZED') {
+                return Promise.reject(getErr);
+            }
+            var fallback =
+                mxAdminState.pageRecord &&
+                String(mxAdminState.pageRecord.id) === pageId
+                    ? mxAdminState.pageRecord
+                    : {};
+            return mxAdminApiRequest(
+                'PUT',
+                '/api/admin/data/page-record/' + encodeURIComponent(pageId),
+                buildRecord(fallback),
+            );
+        })
+        .then(function (putResult) {
+            var data = mxAdminUnwrapApiData(putResult);
+            if (
+                mxAdminState.activePageRow &&
+                String(mxAdminState.activePageRow.id) === pageId
+            ) {
+                mxAdminState.pageRecord =
+                    data || buildRecord(mxAdminState.pageRecord || {});
+            }
+            return putResult;
+        });
+}
+
 function mxAdminPersistPageCoverImg(pageRow, filename) {
     if (!pageRow || !pageRow.id || !mxAdminState.activeCategoryPath) {
         return Promise.reject({ code: 'VALIDATION' });
@@ -7257,7 +7318,23 @@ function mxAdminPersistPageCoverImg(pageRow, filename) {
         mxAdminCategoryDocPutPayload(),
     ).then(function (result) {
         mxAdminOnMutationSuccess(result);
-        return result;
+        return mxAdminSyncPageRecordImg(pageRow, filename)
+            .then(function (recordResult) {
+                mxAdminOnMutationSuccess(
+                    mxAdminMergePublishApiResult(result, recordResult),
+                );
+                return recordResult;
+            })
+            .catch(function (recordErr) {
+                if (typeof console !== 'undefined' && console.error) {
+                    console.error(
+                        '[mxAdmin] page-record img sync failed',
+                        recordErr,
+                    );
+                }
+                mxAdminToast(mxAdminT('pageCoverRecordSyncError'), true);
+                return result;
+            });
     });
 }
 
@@ -7385,6 +7462,34 @@ function mxAdminMakePageMediaDeleteHandler(filename) {
                                 mxAdminOnMutationSuccess(
                                     mxAdminMergePublishApiResult(resp, putResp),
                                 );
+                                return mxAdminSyncPageRecordImg(pageRow, '')
+                                    .then(function (recordResult) {
+                                        mxAdminOnMutationSuccess(
+                                            mxAdminMergePublishApiResult(
+                                                putResp,
+                                                recordResult,
+                                            ),
+                                        );
+                                    })
+                                    .catch(function (recordErr) {
+                                        if (
+                                            typeof console !== 'undefined' &&
+                                            console.error
+                                        ) {
+                                            console.error(
+                                                '[mxAdmin] page-record img clear failed',
+                                                recordErr,
+                                            );
+                                        }
+                                        mxAdminToast(
+                                            mxAdminT(
+                                                'pageCoverRecordSyncError',
+                                            ),
+                                            true,
+                                        );
+                                    });
+                            })
+                            .then(function () {
                                 afterDelete();
                             })
                             .catch(function () {
