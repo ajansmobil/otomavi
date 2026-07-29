@@ -391,6 +391,7 @@ var MX_ADMIN_I18N = {
         moduleDataEmpty: 'Bu modülde düzenlenebilir veri satırı yok.',
         moduleDataRow: 'Satır',
         moduleMediaUpload: 'Dosya yükle',
+        moduleMediaUploading: 'Yükleniyor…',
         moduleMediaEmpty: 'Henüz dosya yok.',
         moduleMediaUploadSuccess: 'Dosya yüklendi.',
         moduleMediaUploadError: 'Dosya yüklenemedi.',
@@ -671,6 +672,7 @@ var MX_ADMIN_I18N = {
         moduleDataEmpty: 'No editable data rows for this module.',
         moduleDataRow: 'Row',
         moduleMediaUpload: 'Upload file',
+        moduleMediaUploading: 'Uploading…',
         moduleMediaEmpty: 'No files yet.',
         moduleMediaUploadSuccess: 'File uploaded.',
         moduleMediaUploadError: 'Could not upload file.',
@@ -780,6 +782,10 @@ var mxAdminState = {
     pendingModuleId: '',
     activePageTab: 'general',
     pageFiles: [],
+    pageMediaPending: [],
+    pageMediaUploadBusy: false,
+    moduleMediaPending: [],
+    moduleMediaUploadBusy: false,
     pageCategoryFilter: 'all',
     pageDescFilters: {},
     pageDescById: {},
@@ -6441,6 +6447,61 @@ function mxAdminRenderPageListThumb(page) {
     );
 }
 
+
+function mxAdminRevokeMediaPendingList(list) {
+    if (!list || !list.length) {
+        return;
+    }
+    var i;
+    for (i = 0; i < list.length; i++) {
+        if (list[i] && list[i].objectUrl) {
+            try {
+                URL.revokeObjectURL(list[i].objectUrl);
+            } catch (revokeErr) {
+                
+            }
+        }
+    }
+}
+
+function mxAdminRemoveMediaPendingById(pendingList, localId) {
+    if (!pendingList || !localId) {
+        return;
+    }
+    var i;
+    for (i = 0; i < pendingList.length; i++) {
+        if (pendingList[i] && pendingList[i].localId === localId) {
+            if (pendingList[i].objectUrl) {
+                URL.revokeObjectURL(pendingList[i].objectUrl);
+            }
+            pendingList.splice(i, 1);
+            return;
+        }
+    }
+}
+
+function mxAdminExtractUploadFilename(resp) {
+    var data = mxAdminUnwrapApiData(resp);
+    if (data && data.filename) {
+        return String(data.filename);
+    }
+    if (resp && resp.filename) {
+        return String(resp.filename);
+    }
+    return '';
+}
+
+function mxAdminAppendUniqueMediaFile(files, filename) {
+    if (!filename) {
+        return files || [];
+    }
+    var list = files || [];
+    if (list.indexOf(filename) === -1) {
+        list.push(filename);
+    }
+    return list;
+}
+
 function mxAdminUploadPageFile(pageId, file) {
     if (mxAdminIsLocalPreview()) {
         var fd = new FormData();
@@ -6530,9 +6591,10 @@ function mxAdminRenderPageMediaGrid() {
         return;
     }
     var files = mxAdminState.pageFiles || [];
+    var pending = mxAdminState.pageMediaPending || [];
     var cover = pageRow.img ? String(pageRow.img) : '';
     if (meta) {
-        meta.textContent = String(files.length);
+        meta.textContent = String(files.length + pending.length);
     }
     var i;
     for (i = 0; i < files.length; i++) {
@@ -6564,20 +6626,54 @@ function mxAdminRenderPageMediaGrid() {
         card.onclick = mxAdminMakePageMediaCoverHandler(fname);
         grid.appendChild(card);
     }
+    for (i = 0; i < pending.length; i++) {
+        var pend = pending[i];
+        if (!pend || !pend.objectUrl) {
+            continue;
+        }
+        var pendingCard = document.createElement('div');
+        pendingCard.className = 'mxadmin-module-media-card is-uploading';
+        pendingCard.setAttribute(
+            'data-mxadmin-page-media-pending',
+            pend.localId || '',
+        );
+        pendingCard.innerHTML =
+            '<img class="mxadmin-module-media-thumb" src="' +
+            mxAdminEscapeHtml(pend.objectUrl) +
+            '" alt="" />' +
+            '<div class="mxadmin-module-media-uploading">' +
+            '<span class="mxadmin-module-media-uploading-text">' +
+            mxAdminEscapeHtml(mxAdminT('moduleMediaUploading')) +
+            '</span></div>' +
+            '<div class="mxadmin-module-media-name">' +
+            mxAdminEscapeHtml(pend.name || '') +
+            '</div>';
+        grid.appendChild(pendingCard);
+    }
     var uploadCard = document.createElement('div');
     uploadCard.className = 'mxadmin-module-media-upload-card';
+    if (mxAdminState.pageMediaUploadBusy) {
+        uploadCard.className += ' is-disabled';
+    }
     uploadCard.innerHTML =
         '<span class="material-symbols-outlined">add_photo_alternate</span>' +
         '<span>' +
         mxAdminEscapeHtml(mxAdminT('moduleMediaUpload')) +
         '</span>';
-    uploadCard.onclick = function (evt) {
-        if (evt && evt.stopPropagation) {
-            evt.stopPropagation();
-        }
-        mxAdminEl('mxadminPageMediaInput').click();
-    };
+    if (!mxAdminState.pageMediaUploadBusy) {
+        uploadCard.onclick = function (evt) {
+            if (evt && evt.stopPropagation) {
+                evt.stopPropagation();
+            }
+            mxAdminEl('mxadminPageMediaInput').click();
+        };
+    }
     grid.appendChild(uploadCard);
+
+    var pageMediaInput = mxAdminEl('mxadminPageMediaInput');
+    if (pageMediaInput) {
+        pageMediaInput.disabled = !!mxAdminState.pageMediaUploadBusy;
+    }
 
     var delBtns = grid.querySelectorAll('[data-mxadmin-page-media-delete]');
     var di;
@@ -6725,45 +6821,87 @@ function mxAdminHandlePageMediaUploadInput(evt) {
     if (!pageRow || !pageRow.id || !files || !files.length) {
         return;
     }
+    if (mxAdminState.pageMediaUploadBusy) {
+        evt.target.value = '';
+        return;
+    }
+    mxAdminState.pageMediaUploadBusy = true;
+    var input = evt.target;
     var total = files.length;
     var done = 0;
     var okCount = 0;
     var mergedPublish = null;
+    var pendingIds = [];
+    var uploadBase = Date.now();
     var fi;
-    function onDone() {
+    if (!mxAdminState.pageMediaPending) {
+        mxAdminState.pageMediaPending = [];
+    }
+    for (fi = 0; fi < files.length; fi++) {
+        var pickFile = files[fi];
+        var localId = 'pm-' + String(uploadBase) + '-' + String(fi);
+        var objectUrl = URL.createObjectURL(pickFile);
+        mxAdminState.pageMediaPending.push({
+            localId: localId,
+            objectUrl: objectUrl,
+            name: pickFile.name,
+        });
+        pendingIds.push(localId);
+    }
+    mxAdminRenderPageMediaGrid();
+
+    function finishOne(localId, ok, resp, err) {
+        mxAdminRemoveMediaPendingById(mxAdminState.pageMediaPending, localId);
+        if (ok) {
+            okCount += 1;
+            var uploadedName = mxAdminExtractUploadFilename(resp);
+            mxAdminState.pageFiles = mxAdminAppendUniqueMediaFile(
+                mxAdminState.pageFiles,
+                uploadedName,
+            );
+            mergedPublish = mxAdminMergePublishApiResult(
+                mergedPublish,
+                resp,
+            );
+        } else if (err && !mxAdminHandleUnauthorized(err)) {
+            mxAdminToast(
+                mxAdminApiErrorMessage(err, 'moduleMediaUploadError'),
+                true,
+            );
+        }
         done += 1;
         if (done >= total) {
-            evt.target.value = '';
-            mxAdminLoadPageFiles();
+            input.value = '';
+            mxAdminState.pageMediaUploadBusy = false;
+            mxAdminRenderPageMediaGrid();
             if (okCount > 0) {
                 mxAdminOnMutationSuccess(mergedPublish);
                 mxAdminToast(mxAdminT('moduleMediaUploadSuccess'), false);
             } else {
                 mxAdminToast(mxAdminT('moduleMediaUploadError'), true);
             }
+        } else {
+            mxAdminRenderPageMediaGrid();
         }
     }
+
     for (fi = 0; fi < files.length; fi++) {
-        mxAdminUploadPageFile(pageRow.id, files[fi])
-            .then(function (resp) {
-                okCount += 1;
-                mergedPublish = mxAdminMergePublishApiResult(
-                    mergedPublish,
-                    resp,
-                );
-                onDone();
-            })
-            .catch(function (err) {
-                if (mxAdminHandleUnauthorized(err)) {
-                    onDone();
-                    return;
-                }
-                onDone();
-            });
+        (function (file, localId) {
+            mxAdminUploadPageFile(pageRow.id, file)
+                .then(function (resp) {
+                    finishOne(localId, true, resp, null);
+                })
+                .catch(function (err) {
+                    finishOne(localId, false, null, err);
+                });
+        })(files[fi], pendingIds[fi]);
     }
 }
 
 function mxAdminOpenPageEditor(pageRow) {
+    mxAdminRevokeMediaPendingList(mxAdminState.pageMediaPending);
+    mxAdminState.pageMediaPending = [];
+    mxAdminState.pageMediaUploadBusy = false;
     mxAdminState.activePageRow = pageRow;
     mxAdminState.pageRecord = null;
     mxAdminState.pageRecordRequestId += 1;
@@ -7790,6 +7928,9 @@ function mxAdminSelectModule(mod) {
     if (!mod || !mod.id) {
         return;
     }
+    mxAdminRevokeMediaPendingList(mxAdminState.moduleMediaPending);
+    mxAdminState.moduleMediaPending = [];
+    mxAdminState.moduleMediaUploadBusy = false;
     mxAdminState.activeModuleRow = mod;
     mxAdminState.activeModuleIndex = mxAdminFindModuleIndex(mod);
     mxAdminRenderModulesList();
@@ -8431,7 +8572,8 @@ function mxAdminRenderModuleMediaGrid() {
         return;
     }
     var files = mxAdminState.moduleFiles || [];
-    meta.textContent = String(files.length);
+    var pending = mxAdminState.moduleMediaPending || [];
+    meta.textContent = String(files.length + pending.length);
     var i;
     for (i = 0; i < files.length; i++) {
         var fname = files[i];
@@ -8453,17 +8595,51 @@ function mxAdminRenderModuleMediaGrid() {
             '</div>';
         grid.appendChild(card);
     }
+    for (i = 0; i < pending.length; i++) {
+        var modPend = pending[i];
+        if (!modPend || !modPend.objectUrl) {
+            continue;
+        }
+        var modPendingCard = document.createElement('div');
+        modPendingCard.className = 'mxadmin-module-media-card is-uploading';
+        modPendingCard.setAttribute(
+            'data-mxadmin-module-media-pending',
+            modPend.localId || '',
+        );
+        modPendingCard.innerHTML =
+            '<img class="mxadmin-module-media-thumb" src="' +
+            mxAdminEscapeHtml(modPend.objectUrl) +
+            '" alt="" />' +
+            '<div class="mxadmin-module-media-uploading">' +
+            '<span class="mxadmin-module-media-uploading-text">' +
+            mxAdminEscapeHtml(mxAdminT('moduleMediaUploading')) +
+            '</span></div>' +
+            '<div class="mxadmin-module-media-name">' +
+            mxAdminEscapeHtml(modPend.name || '') +
+            '</div>';
+        grid.appendChild(modPendingCard);
+    }
     var uploadCard = document.createElement('div');
     uploadCard.className = 'mxadmin-module-media-upload-card';
+    if (mxAdminState.moduleMediaUploadBusy) {
+        uploadCard.className += ' is-disabled';
+    }
     uploadCard.innerHTML =
         '<span class="material-symbols-outlined">add_photo_alternate</span>' +
         '<span>' +
         mxAdminEscapeHtml(mxAdminT('moduleMediaUpload')) +
         '</span>';
-    uploadCard.onclick = function () {
-        mxAdminEl('mxadminModuleMediaInput').click();
-    };
+    if (!mxAdminState.moduleMediaUploadBusy) {
+        uploadCard.onclick = function () {
+            mxAdminEl('mxadminModuleMediaInput').click();
+        };
+    }
     grid.appendChild(uploadCard);
+
+    var moduleMediaInput = mxAdminEl('mxadminModuleMediaInput');
+    if (moduleMediaInput) {
+        moduleMediaInput.disabled = !!mxAdminState.moduleMediaUploadBusy;
+    }
 
     var delBtns = grid.querySelectorAll('[data-mxadmin-module-media-delete]');
     var di;
@@ -8511,31 +8687,75 @@ function mxAdminHandleModuleMediaUploadInput(evt) {
     if (!mod || !mod.id || !files || !files.length) {
         return;
     }
+    if (mxAdminState.moduleMediaUploadBusy) {
+        evt.target.value = '';
+        return;
+    }
+    mxAdminState.moduleMediaUploadBusy = true;
+    var input = evt.target;
     var total = files.length;
     var done = 0;
     var okCount = 0;
+    var pendingIds = [];
+    var uploadBase = Date.now();
     var fi;
-    function onDone() {
+    if (!mxAdminState.moduleMediaPending) {
+        mxAdminState.moduleMediaPending = [];
+    }
+    for (fi = 0; fi < files.length; fi++) {
+        var pickFile = files[fi];
+        var localId = 'mm-' + String(uploadBase) + '-' + String(fi);
+        var objectUrl = URL.createObjectURL(pickFile);
+        mxAdminState.moduleMediaPending.push({
+            localId: localId,
+            objectUrl: objectUrl,
+            name: pickFile.name,
+        });
+        pendingIds.push(localId);
+    }
+    mxAdminRenderModuleMediaGrid();
+
+    function finishOne(localId, ok, resp, err) {
+        mxAdminRemoveMediaPendingById(mxAdminState.moduleMediaPending, localId);
+        if (ok) {
+            okCount += 1;
+            var uploadedName = mxAdminExtractUploadFilename(resp);
+            mxAdminState.moduleFiles = mxAdminAppendUniqueMediaFile(
+                mxAdminState.moduleFiles,
+                uploadedName,
+            );
+        } else if (err && !mxAdminHandleUnauthorized(err)) {
+            mxAdminToast(
+                mxAdminApiErrorMessage(err, 'moduleMediaUploadError'),
+                true,
+            );
+        }
         done += 1;
         if (done >= total) {
-            evt.target.value = '';
-            mxAdminLoadModuleFiles();
+            input.value = '';
+            mxAdminState.moduleMediaUploadBusy = false;
+            mxAdminRenderModuleMediaGrid();
+            mxAdminRenderModuleDataFields();
             if (okCount > 0) {
                 mxAdminToast(mxAdminT('moduleMediaUploadSuccess'), false);
             } else {
                 mxAdminToast(mxAdminT('moduleMediaUploadError'), true);
             }
+        } else {
+            mxAdminRenderModuleMediaGrid();
         }
     }
+
     for (fi = 0; fi < files.length; fi++) {
-        mxAdminUploadModuleFile(mod.id, files[fi])
-            .then(function () {
-                okCount += 1;
-                onDone();
-            })
-            .catch(function () {
-                onDone();
-            });
+        (function (file, localId) {
+            mxAdminUploadModuleFile(mod.id, file)
+                .then(function (resp) {
+                    finishOne(localId, true, resp, null);
+                })
+                .catch(function (err) {
+                    finishOne(localId, false, null, err);
+                });
+        })(files[fi], pendingIds[fi]);
     }
 }
 
