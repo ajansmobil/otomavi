@@ -784,8 +784,11 @@ var mxAdminState = {
     pageFiles: [],
     pageMediaPending: [],
     pageMediaUploadBusy: false,
+    pageMediaBlobByName: {},
+    pageMediaPendingCoverLocalId: null,
     moduleMediaPending: [],
     moduleMediaUploadBusy: false,
+    moduleMediaBlobByName: {},
     pageCategoryFilter: 'all',
     pageDescFilters: {},
     pageDescById: {},
@@ -6406,12 +6409,149 @@ function mxAdminPrefetchSiteLogo() {
 }
 
 function mxAdminPageMediaUrl(pageId, filename) {
-    return mxAdminPublicSiteAssetUrl(
-        'page/' +
+    return mxAdminApiUrl(
+        '/api/admin/data/page-media/' +
             encodeURIComponent(String(pageId)) +
             '/' +
             encodeURIComponent(String(filename)),
     );
+}
+
+function mxAdminPageMediaThumbSrc(pageId, filename) {
+    var blobMap = mxAdminState.pageMediaBlobByName || {};
+    if (blobMap[filename]) {
+        return blobMap[filename];
+    }
+    return mxAdminPageMediaUrl(pageId, filename);
+}
+
+function mxAdminRevokeMediaBlobMap(blobMap) {
+    if (!blobMap) {
+        return;
+    }
+    var key;
+    for (key in blobMap) {
+        if (Object.prototype.hasOwnProperty.call(blobMap, key) && blobMap[key]) {
+            try {
+                URL.revokeObjectURL(blobMap[key]);
+            } catch (revokeErr) {
+                
+            }
+        }
+    }
+}
+
+function mxAdminClearPageMediaBlobState() {
+    mxAdminRevokeMediaBlobMap(mxAdminState.pageMediaBlobByName);
+    mxAdminState.pageMediaBlobByName = {};
+}
+
+function mxAdminClearModuleMediaBlobState() {
+    mxAdminRevokeMediaBlobMap(mxAdminState.moduleMediaBlobByName);
+    mxAdminState.moduleMediaBlobByName = {};
+}
+
+function mxAdminMoveMediaPendingToBlobMap(
+    pendingList,
+    localId,
+    filename,
+    blobMap,
+) {
+    if (!pendingList || !localId || !filename) {
+        return blobMap || {};
+    }
+    var targetMap = blobMap || {};
+    var i;
+    for (i = 0; i < pendingList.length; i++) {
+        if (pendingList[i] && pendingList[i].localId === localId) {
+            if (pendingList[i].objectUrl) {
+                targetMap[filename] = pendingList[i].objectUrl;
+            }
+            pendingList.splice(i, 1);
+            return targetMap;
+        }
+    }
+    return targetMap;
+}
+
+function mxAdminAttachPageMediaThumbHandlers(imgEl, pageId, filename) {
+    if (!imgEl || !filename) {
+        return;
+    }
+    imgEl.onload = function () {
+        var map = mxAdminState.pageMediaBlobByName;
+        if (!map || !map[filename]) {
+            return;
+        }
+        if (imgEl.src && imgEl.src.indexOf('blob:') === -1) {
+            try {
+                URL.revokeObjectURL(map[filename]);
+            } catch (revokeErr) {
+                
+            }
+            delete map[filename];
+        }
+    };
+    imgEl.onerror = function () {
+        var map = mxAdminState.pageMediaBlobByName;
+        if (map && map[filename]) {
+            imgEl.onerror = null;
+            imgEl.classList.remove('mxadmin-module-media-thumb-broken');
+            imgEl.style.display = '';
+            var fb = imgEl.nextElementSibling;
+            if (fb && fb.classList) {
+                fb.classList.add('hidden');
+            }
+            imgEl.src = map[filename];
+            return;
+        }
+        imgEl.classList.add('mxadmin-module-media-thumb-broken');
+        imgEl.style.display = '';
+        var fallback = imgEl.nextElementSibling;
+        if (fallback && fallback.classList) {
+            fallback.classList.remove('hidden');
+        }
+    };
+}
+
+function mxAdminAttachModuleMediaThumbHandlers(imgEl, moduleId, filename) {
+    if (!imgEl || !filename) {
+        return;
+    }
+    imgEl.onload = function () {
+        var map = mxAdminState.moduleMediaBlobByName;
+        if (!map || !map[filename]) {
+            return;
+        }
+        if (imgEl.src && imgEl.src.indexOf('blob:') === -1) {
+            try {
+                URL.revokeObjectURL(map[filename]);
+            } catch (revokeErr) {
+                
+            }
+            delete map[filename];
+        }
+    };
+    imgEl.onerror = function () {
+        var map = mxAdminState.moduleMediaBlobByName;
+        if (map && map[filename]) {
+            imgEl.onerror = null;
+            imgEl.classList.add('mxadmin-module-media-thumb-broken');
+            imgEl.style.display = '';
+            var fb = imgEl.nextElementSibling;
+            if (fb && fb.classList) {
+                fb.classList.add('hidden');
+            }
+            imgEl.src = map[filename];
+            return;
+        }
+        imgEl.classList.add('mxadmin-module-media-thumb-broken');
+        imgEl.style.display = '';
+        var fallback = imgEl.nextElementSibling;
+        if (fallback && fallback.classList) {
+            fallback.classList.remove('hidden');
+        }
+    };
 }
 
 
@@ -6607,8 +6747,9 @@ function mxAdminRenderPageMediaGrid() {
         card.setAttribute('data-mxadmin-page-media-file', fname);
         card.innerHTML =
             '<img class="mxadmin-module-media-thumb" src="' +
-            mxAdminEscapeHtml(mxAdminPageMediaUrl(pageRow.id, fname)) +
-            '" alt="" loading="lazy" onerror="this.style.display=\'none\'" />' +
+            mxAdminEscapeHtml(mxAdminPageMediaThumbSrc(pageRow.id, fname)) +
+            '" alt="" loading="lazy" />' +
+            '<span class="material-symbols-outlined mxadmin-module-media-thumb-fallback hidden">broken_image</span>' +
             '<button type="button" class="mxadmin-module-media-delete" data-mxadmin-page-media-delete="' +
             mxAdminEscapeHtml(fname) +
             '" title="' +
@@ -6624,8 +6765,12 @@ function mxAdminRenderPageMediaGrid() {
             mxAdminEscapeHtml(fname) +
             '</div>';
         card.onclick = mxAdminMakePageMediaCoverHandler(fname);
+        var thumbEl = card.querySelector('.mxadmin-module-media-thumb');
+        mxAdminAttachPageMediaThumbHandlers(thumbEl, pageRow.id, fname);
         grid.appendChild(card);
     }
+    var pendingCoverLocalId =
+        mxAdminState.pageMediaPendingCoverLocalId || '';
     for (i = 0; i < pending.length; i++) {
         var pend = pending[i];
         if (!pend || !pend.objectUrl) {
@@ -6633,6 +6778,9 @@ function mxAdminRenderPageMediaGrid() {
         }
         var pendingCard = document.createElement('div');
         pendingCard.className = 'mxadmin-module-media-card is-uploading';
+        if (pendingCoverLocalId && pend.localId === pendingCoverLocalId) {
+            pendingCard.className += ' is-primary';
+        }
         pendingCard.setAttribute(
             'data-mxadmin-page-media-pending',
             pend.localId || '',
@@ -6645,9 +6793,17 @@ function mxAdminRenderPageMediaGrid() {
             '<span class="mxadmin-module-media-uploading-text">' +
             mxAdminEscapeHtml(mxAdminT('moduleMediaUploading')) +
             '</span></div>' +
+            (pendingCoverLocalId && pend.localId === pendingCoverLocalId
+                ? '<span class="mxadmin-page-media-cover-badge">' +
+                  mxAdminEscapeHtml(mxAdminT('pageMediaCoverBadge')) +
+                  '</span>'
+                : '') +
             '<div class="mxadmin-module-media-name">' +
             mxAdminEscapeHtml(pend.name || '') +
             '</div>';
+        pendingCard.onclick = mxAdminMakePageMediaPendingCoverHandler(
+            pend.localId,
+        );
         grid.appendChild(pendingCard);
     }
     var uploadCard = document.createElement('div');
@@ -6709,6 +6865,24 @@ function mxAdminPersistPageCoverImg(pageRow, filename) {
     });
 }
 
+function mxAdminMakePageMediaPendingCoverHandler(localId) {
+    return function (evt) {
+        if (
+            evt &&
+            evt.target &&
+            evt.target.closest &&
+            evt.target.closest('[data-mxadmin-page-media-delete]')
+        ) {
+            return;
+        }
+        if (!localId) {
+            return;
+        }
+        mxAdminState.pageMediaPendingCoverLocalId = localId;
+        mxAdminRenderPageMediaGrid();
+    };
+}
+
 function mxAdminMakePageMediaCoverHandler(filename) {
     return function (evt) {
         if (
@@ -6725,6 +6899,7 @@ function mxAdminMakePageMediaCoverHandler(filename) {
         }
         mxAdminPersistPageCoverImg(pageRow, filename)
             .then(function () {
+                mxAdminState.pageMediaPendingCoverLocalId = null;
                 mxAdminRenderPageMediaGrid();
                 mxAdminRenderPagesList();
             })
@@ -6761,6 +6936,19 @@ function mxAdminMakePageMediaDeleteHandler(filename) {
                     var hadCover =
                         pageRow.img &&
                         String(pageRow.img) === String(filename);
+                    if (
+                        mxAdminState.pageMediaBlobByName &&
+                        mxAdminState.pageMediaBlobByName[filename]
+                    ) {
+                        try {
+                            URL.revokeObjectURL(
+                                mxAdminState.pageMediaBlobByName[filename],
+                            );
+                        } catch (revokeErr) {
+                            
+                        }
+                        delete mxAdminState.pageMediaBlobByName[filename];
+                    }
                     if (hadCover) {
                         pageRow.img = '';
                         var idx = mxAdminFindPageRowIndex(pageRow);
@@ -6851,10 +7039,15 @@ function mxAdminHandlePageMediaUploadInput(evt) {
     mxAdminRenderPageMediaGrid();
 
     function finishOne(localId, ok, resp, err) {
-        mxAdminRemoveMediaPendingById(mxAdminState.pageMediaPending, localId);
         if (ok) {
             okCount += 1;
             var uploadedName = mxAdminExtractUploadFilename(resp);
+            mxAdminState.pageMediaBlobByName = mxAdminMoveMediaPendingToBlobMap(
+                mxAdminState.pageMediaPending,
+                localId,
+                uploadedName,
+                mxAdminState.pageMediaBlobByName,
+            );
             mxAdminState.pageFiles = mxAdminAppendUniqueMediaFile(
                 mxAdminState.pageFiles,
                 uploadedName,
@@ -6863,11 +7056,37 @@ function mxAdminHandlePageMediaUploadInput(evt) {
                 mergedPublish,
                 resp,
             );
-        } else if (err && !mxAdminHandleUnauthorized(err)) {
-            mxAdminToast(
-                mxAdminApiErrorMessage(err, 'moduleMediaUploadError'),
-                true,
+            if (
+                mxAdminState.pageMediaPendingCoverLocalId &&
+                mxAdminState.pageMediaPendingCoverLocalId === localId &&
+                uploadedName
+            ) {
+                mxAdminPersistPageCoverImg(pageRow, uploadedName)
+                    .then(function () {
+                        mxAdminState.pageMediaPendingCoverLocalId = null;
+                        mxAdminRenderPageMediaGrid();
+                        mxAdminRenderPagesList();
+                    })
+                    .catch(function (coverErr) {
+                        if (!mxAdminHandleUnauthorized(coverErr)) {
+                            mxAdminToast(
+                                mxAdminApiErrorMessage(coverErr),
+                                true,
+                            );
+                        }
+                    });
+            }
+        } else {
+            mxAdminRemoveMediaPendingById(
+                mxAdminState.pageMediaPending,
+                localId,
             );
+            if (err && !mxAdminHandleUnauthorized(err)) {
+                mxAdminToast(
+                    mxAdminApiErrorMessage(err, 'moduleMediaUploadError'),
+                    true,
+                );
+            }
         }
         done += 1;
         if (done >= total) {
@@ -6901,6 +7120,8 @@ function mxAdminHandlePageMediaUploadInput(evt) {
 function mxAdminOpenPageEditor(pageRow) {
     mxAdminRevokeMediaPendingList(mxAdminState.pageMediaPending);
     mxAdminState.pageMediaPending = [];
+    mxAdminClearPageMediaBlobState();
+    mxAdminState.pageMediaPendingCoverLocalId = null;
     mxAdminState.pageMediaUploadBusy = false;
     mxAdminState.activePageRow = pageRow;
     mxAdminState.pageRecord = null;
@@ -7692,12 +7913,20 @@ function mxAdminModuleHasMediaSupport(record) {
 }
 
 function mxAdminModuleMediaUrl(moduleId, filename) {
-    return mxAdminPublicSiteAssetUrl(
-        'img/' +
+    return mxAdminApiUrl(
+        '/api/admin/data/module-media/' +
             encodeURIComponent(String(moduleId)) +
             '/' +
             encodeURIComponent(String(filename)),
     );
+}
+
+function mxAdminModuleMediaThumbSrc(moduleId, filename) {
+    var blobMap = mxAdminState.moduleMediaBlobByName || {};
+    if (blobMap[filename]) {
+        return blobMap[filename];
+    }
+    return mxAdminModuleMediaUrl(moduleId, filename);
 }
 
 function mxAdminApiUpload(pathSuffix, formData) {
@@ -7930,6 +8159,7 @@ function mxAdminSelectModule(mod) {
     }
     mxAdminRevokeMediaPendingList(mxAdminState.moduleMediaPending);
     mxAdminState.moduleMediaPending = [];
+    mxAdminClearModuleMediaBlobState();
     mxAdminState.moduleMediaUploadBusy = false;
     mxAdminState.activeModuleRow = mod;
     mxAdminState.activeModuleIndex = mxAdminFindModuleIndex(mod);
@@ -8582,8 +8812,9 @@ function mxAdminRenderModuleMediaGrid() {
         card.setAttribute('data-mxadmin-module-media-file', fname);
         card.innerHTML =
             '<img class="mxadmin-module-media-thumb" src="' +
-            mxAdminEscapeHtml(mxAdminModuleMediaUrl(mod.id, fname)) +
-            '" alt="" loading="lazy" onerror="this.style.display=\'none\'" />' +
+            mxAdminEscapeHtml(mxAdminModuleMediaThumbSrc(mod.id, fname)) +
+            '" alt="" loading="lazy" />' +
+            '<span class="material-symbols-outlined mxadmin-module-media-thumb-fallback hidden">broken_image</span>' +
             '<button type="button" class="mxadmin-module-media-delete" data-mxadmin-module-media-delete="' +
             mxAdminEscapeHtml(fname) +
             '" title="' +
@@ -8593,6 +8824,8 @@ function mxAdminRenderModuleMediaGrid() {
             '<div class="mxadmin-module-media-name">' +
             mxAdminEscapeHtml(fname) +
             '</div>';
+        var modThumbEl = card.querySelector('.mxadmin-module-media-thumb');
+        mxAdminAttachModuleMediaThumbHandlers(modThumbEl, mod.id, fname);
         grid.appendChild(card);
     }
     for (i = 0; i < pending.length; i++) {
@@ -8668,6 +8901,19 @@ function mxAdminMakeModuleMediaDeleteHandler(filename) {
                     encodeURIComponent(filename),
             )
                 .then(function () {
+                    if (
+                        mxAdminState.moduleMediaBlobByName &&
+                        mxAdminState.moduleMediaBlobByName[filename]
+                    ) {
+                        try {
+                            URL.revokeObjectURL(
+                                mxAdminState.moduleMediaBlobByName[filename],
+                            );
+                        } catch (revokeErr) {
+                            
+                        }
+                        delete mxAdminState.moduleMediaBlobByName[filename];
+                    }
                     mxAdminToast(mxAdminT('moduleMediaDeleteSuccess'), false);
                     mxAdminLoadModuleFiles();
                 })
@@ -8716,19 +8962,31 @@ function mxAdminHandleModuleMediaUploadInput(evt) {
     mxAdminRenderModuleMediaGrid();
 
     function finishOne(localId, ok, resp, err) {
-        mxAdminRemoveMediaPendingById(mxAdminState.moduleMediaPending, localId);
         if (ok) {
             okCount += 1;
             var uploadedName = mxAdminExtractUploadFilename(resp);
+            mxAdminState.moduleMediaBlobByName =
+                mxAdminMoveMediaPendingToBlobMap(
+                    mxAdminState.moduleMediaPending,
+                    localId,
+                    uploadedName,
+                    mxAdminState.moduleMediaBlobByName,
+                );
             mxAdminState.moduleFiles = mxAdminAppendUniqueMediaFile(
                 mxAdminState.moduleFiles,
                 uploadedName,
             );
-        } else if (err && !mxAdminHandleUnauthorized(err)) {
-            mxAdminToast(
-                mxAdminApiErrorMessage(err, 'moduleMediaUploadError'),
-                true,
+        } else {
+            mxAdminRemoveMediaPendingById(
+                mxAdminState.moduleMediaPending,
+                localId,
             );
+            if (err && !mxAdminHandleUnauthorized(err)) {
+                mxAdminToast(
+                    mxAdminApiErrorMessage(err, 'moduleMediaUploadError'),
+                    true,
+                );
+            }
         }
         done += 1;
         if (done >= total) {

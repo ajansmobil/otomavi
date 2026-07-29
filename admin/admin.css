@@ -931,6 +931,27 @@ button {
     cursor: pointer;
 }
 
+.mxadmin-page-media-panel .mxadmin-module-media-card.is-uploading {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.mxadmin-module-media-thumb-fallback {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--mxadmin-text-muted);
+    background: var(--mxadmin-field-bg);
+    pointer-events: none;
+}
+
+.mxadmin-module-media-thumb.mxadmin-module-media-thumb-broken {
+    opacity: 0;
+}
+
 .mxadmin-module-media-card.is-primary {
     border-color: var(--mxadmin-primary);
     box-shadow: 0 0 0 2px
