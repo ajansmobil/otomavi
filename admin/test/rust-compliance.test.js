@@ -1,6 +1,4 @@
-/**
- * webmodules/admin — rust.md § Admin paneli makine uyumluluk denetimi.
- */
+
 var assert = require("assert");
 var helpers = require("./helpers");
 
@@ -17,7 +15,7 @@ var CLASS_ALLOW = {
   "material-symbols-outlined": true
 };
 
-/** admin.js icinden MX_ADMIN_I18N nesnesini guvenli parse */
+
 function parseMxAdminI18n(js) {
   var marker = "var MX_ADMIN_I18N = ";
   var start = js.indexOf(marker);
@@ -32,7 +30,7 @@ function parseMxAdminI18n(js) {
   return new Function("return " + objStr)();
 }
 
-/** :root blogu disindaki #hex renkleri */
+
 function findHexOutsideRoot(css) {
   var rootStart = css.indexOf(":root");
   var rootEnd = -1;
@@ -62,12 +60,12 @@ function findHexOutsideRoot(css) {
   return hits;
 }
 
-/** HTML yorumlarini kaldir */
+
 function stripHtmlComments(html) {
   return html.replace(/<!--[\s\S]*?-->/g, "");
 }
 
-/** Gorunur metin / title / aria-label i18n denetimi */
+
 function findHardcodedUiText(html) {
   var issues = [];
   var cleaned = stripHtmlComments(html);

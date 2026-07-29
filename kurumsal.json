@@ -1,11 +1,14 @@
 {
+  "name": "Kurumsal",
+  "path": "kurumsal",
+  "desc": [],
   "data": [
     {
       "name": {
         "tr": "Hakkımızda"
       },
       "id": "hakkimizda",
-      "index": 1,
+      "index": 0,
       "path": "hakkimizda",
       "category": "",
       "img": "index.webp",
@@ -29,7 +32,7 @@
         "tr": "Misyonumuz"
       },
       "id": "misyon",
-      "index": 2,
+      "index": 1,
       "path": "misyonumuz",
       "category": "",
       "img": "index.webp",
@@ -52,7 +55,7 @@
         "tr": "Vizyonumuz"
       },
       "id": "vizyon",
-      "index": 3,
+      "index": 2,
       "path": "vizyonumuz",
       "category": "",
       "img": "index.webp",
@@ -75,7 +78,7 @@
         "tr": "Kalite Politikamız"
       },
       "id": "kalitepolitikamiz",
-      "index": 4,
+      "index": 3,
       "path": "kalite-politikamiz",
       "category": "",
       "img": "index.webp",
@@ -98,7 +101,7 @@
         "tr": "Kariyer"
       },
       "id": "kariyer",
-      "index": 5,
+      "index": 4,
       "path": "kariyer",
       "category": "",
       "img": "index.webp",
@@ -121,7 +124,7 @@
         "tr": "Gizlilik Politikası"
       },
       "id": "gizlilikpolitikasi",
-      "index": 6,
+      "index": 5,
       "path": "gizlilik-politikasi",
       "category": "",
       "img": "index.webp",
@@ -144,7 +147,7 @@
         "tr": "Kişisel Veriler"
       },
       "id": "kisiselveriler",
-      "index": 7,
+      "index": 6,
       "path": "kisisel-veriler",
       "category": "",
       "img": "index.webp",
@@ -167,7 +170,7 @@
         "tr": "Kullanıcı Hakları"
       },
       "id": "kullanicahaklari",
-      "index": 8,
+      "index": 7,
       "path": "kullanici-haklari",
       "category": "",
       "img": "index.webp",
@@ -190,7 +193,7 @@
         "tr": "Yasal Uyarı"
       },
       "id": "yasaluyari",
-      "index": 9,
+      "index": 8,
       "path": "yasal-uyari",
       "category": "",
       "img": "index.webp",
@@ -209,7 +212,7 @@
       }
     }
   ],
-  "desc": [],
+  "index": 2,
   "desing": {
     "header": [],
     "body": [

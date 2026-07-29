@@ -1,13 +1,10 @@
-/**
- * webmodules/admin test yardimcilari — admin.js saf fonksiyonlarinin bagimsiz kopyasi.
- * admin.js'e export eklenmez; test regresyonu icin burada minimal yeniden yazim.
- */
+
 var fs = require("fs");
 var path = require("path");
 
 var ADMIN_ROOT = path.resolve(__dirname, "..");
 
-/** webmodules/admin kaynak kok — webtest/admin/test icinden de ayni hedef */
+
 function resolveWebmodulesAdminRoot() {
   var normalized = ADMIN_ROOT.replace(/\\/g, "/");
   if (normalized.indexOf("/webmodules/admin") !== -1) {
@@ -36,10 +33,7 @@ function readWebtestAdminJsIfExists() {
   return fs.readFileSync(jsPath, "utf8");
 }
 
-/**
- * API yanit sarmalayicisi: GET /api/admin/data/* → { collection, data: <json>, sha }
- * login-history → { data: [...] } (dizi — unwrap atlanir)
- */
+
 function mxAdminUnwrapApiData(resp) {
   if (!resp) {
     return resp;
@@ -82,7 +76,7 @@ function mxAdminNormalizeCategoryDoc(raw) {
   return raw;
 }
 
-/** pagesetting.json yanitini normalize eder */
+
 function mxAdminParsePagesetting(resp) {
   var ps = mxAdminUnwrapApiData(resp) || {};
   if (!Array.isArray(ps.data)) {
@@ -91,7 +85,7 @@ function mxAdminParsePagesetting(resp) {
   return ps;
 }
 
-/** Tek kategori dokumanindaki sayfa satir sayisi */
+
 function mxAdminCountPagesInDoc(doc) {
   if (!doc) {
     return 0;
@@ -100,7 +94,7 @@ function mxAdminCountPagesInDoc(doc) {
   return rows.length;
 }
 
-/** Webmaker categoryAddRoute slugify — admin.js ile ayni */
+
 function mxAdminSlugifyCategoryPath(str) {
   return String(str || "")
     .toLowerCase()
@@ -115,7 +109,7 @@ function mxAdminSlugifyCategoryPath(str) {
     .replace(/^-|-$/g, "");
 }
 
-/** Tek parca guvenli path segmenti */
+
 function mxAdminSanitizeCategoryPath(raw) {
   var seg = String(raw || "").trim();
   if (!seg) {
@@ -139,7 +133,7 @@ function mxAdminCategoryPathExists(pagesettingData, pathVal) {
   return false;
 }
 
-/** Kategori ekleme dogrulama — { ok, key?, path?, name? } */
+
 function mxAdminValidateCategoryAddInput(name, pathInput, pagesettingData) {
   var trimmedName = String(name || "").trim();
   if (!trimmedName) {
@@ -169,7 +163,7 @@ function mxAdminReindexCategories(rows) {
   }
 }
 
-/** Kategori dokumanlari dizisinden toplam sayfa sayisi (senkron) */
+
 function mxAdminCountPages(categoryDocs) {
   var total = 0;
   var i;
@@ -182,12 +176,12 @@ function mxAdminCountPages(categoryDocs) {
   return total;
 }
 
-/** Render oncesi {{adminApiUrl}} placeholder yapilandirildi mi */
+
 function mxAdminApiConfigured(apiBase) {
   return !!(apiBase && String(apiBase).indexOf("{{") !== 0);
 }
 
-/** API taban + yol birlestirme */
+
 function mxAdminApiUrl(apiBase, pathSuffix) {
   if (!mxAdminApiConfigured(apiBase)) {
     return "";
@@ -195,16 +189,13 @@ function mxAdminApiUrl(apiBase, pathSuffix) {
   return String(apiBase).replace(/\/+$/, "") + pathSuffix;
 }
 
-/** localhost / 127.0.0.1 onizleme host mu */
+
 function mxAdminIsLocalPreviewHost(hostname) {
   var host = (hostname || "").toLowerCase();
   return host === "localhost" || host === "127.0.0.1";
 }
 
-/**
- * Canli site asset URL — admin.js mxAdminPublicSiteAssetUrl saf kopyasi (test).
- * opts: { origin, apiBase, hostname }
- */
+
 function mxAdminPublicSiteAssetUrl(relPath, opts) {
   opts = opts || {};
   var path = String(relPath || "").replace(/^\/+/, "");
@@ -242,7 +233,7 @@ function mxAdminPublicSiteAssetUrl(relPath, opts) {
   return origin + "/" + path;
 }
 
-/** i18n nesnesi mi — admin.js mxAdminIsI18nObject ile ayni */
+
 function mxAdminIsI18nObject(value) {
   if (!value || typeof value !== "object" || Array.isArray(value)) {
     return false;
@@ -253,10 +244,7 @@ function mxAdminIsI18nObject(value) {
   );
 }
 
-/**
- * Modul form name input -> record.name + mod.name (i18n korunur).
- * admin.js mxAdminCollectModuleFormValues name blogu ile ayni mantik.
- */
+
 function mxAdminApplyModuleNameFromInput(recordName, modName, lang, inputValue) {
   var safeLang = lang === "en" ? "en" : "tr";
   var record = recordName;
@@ -284,7 +272,7 @@ function mxAdminApplyModuleNameFromInput(recordName, modName, lang, inputValue) 
   return { recordName: record, modName: mod };
 }
 
-/** i18n alan secimi — admin.js mxAdminPickLocalized ile ayni mantik */
+
 function mxAdminPickLocalized(obj, lang) {
   if (obj == null) {
     return "";
@@ -312,7 +300,7 @@ function mxAdminPickLocalized(obj, lang) {
   return "";
 }
 
-/** HTML escape — admin.js mxAdminEscapeHtml ile ayni */
+
 function mxAdminEscapeHtml(value) {
   var str = value == null ? "" : String(value);
   return str
@@ -322,7 +310,7 @@ function mxAdminEscapeHtml(value) {
     .replace(/"/g, "&quot;");
 }
 
-/** User-Agent → kisa cihaz etiketi — admin.js mxAdminFormatDevice ile ayni */
+
 function mxAdminFormatDevice(ua) {
   if (!ua) {
     return "—";
@@ -378,7 +366,7 @@ function mxAdminFormatDevice(ua) {
   return s;
 }
 
-/** Sayfa listesi arama filtresi — admin.js mxAdminGetFilteredPages saf kopyasi */
+
 function mxAdminFilterPages(list, searchQuery, lang) {
   var q = (searchQuery || "").toLowerCase().trim();
   if (!q) {
@@ -398,7 +386,7 @@ function mxAdminFilterPages(list, searchQuery, lang) {
   return out;
 }
 
-/** desing.colors[] icinden token adi ile renk — admin.js mxAdminFindDesingColorToken */
+
 function mxAdminFindDesingColorToken(colorsArr, tokenName) {
   if (!Array.isArray(colorsArr)) {
     return null;
@@ -436,10 +424,7 @@ function mxAdminColorWithAlpha(hex, alpha) {
   return "rgba(" + rgb.r + ", " + rgb.g + ", " + rgb.b + ", " + alpha + ")";
 }
 
-/**
- * desing.json → CSS custom property map — admin.js mxAdminApplySiteTheme saf mantik.
- * dark yoksa lite paleti kullanilir.
- */
+
 function mxAdminBuildSiteThemeVars(desingDoc) {
   var out = {};
   if (!desingDoc || typeof desingDoc !== "object") {
@@ -474,7 +459,7 @@ function mxAdminBuildSiteThemeVars(desingDoc) {
   return out;
 }
 
-/** Select chevron SVG data-uri — admin.js mxAdminBuildSelectChevronDataUri */
+
 function mxAdminBuildSelectChevronDataUri(mutedHex) {
   var stroke = String(mutedHex || "a9b0b8").replace(/^#/, "");
   return (
@@ -484,7 +469,7 @@ function mxAdminBuildSelectChevronDataUri(mutedHex) {
   );
 }
 
-/** Paket 153 — sayfa kayit oncesi istemci dogrulama (admin.js ile ayni mantik) */
+
 function mxAdminValidatePageFormFields(pageRow, nameByLang) {
   var pathVal = pageRow && pageRow.path ? String(pageRow.path).trim() : "";
   if (!pathVal) {
@@ -512,7 +497,7 @@ function mxAdminListRowIncludesText(modulestatus) {
   return !!(modulestatus && modulestatus.detail === false);
 }
 
-/** Paket 153 — page-record PUT govdesi (admin.js mxAdminHandlePageFormSubmit ile hizali) */
+
 function mxAdminBuildPageRecordPayload(opts) {
   opts = opts || {};
   var pageRow = opts.pageRow || {};
@@ -563,7 +548,7 @@ function readAdminFile(name) {
   return fs.readFileSync(path.join(ADMIN_ROOT, name), "utf8");
 }
 
-/** Kategori listesinde path cakismasi — admin.js mxAdminCategoryPagePathTaken ile ayni */
+
 function mxAdminCategoryPagePathTakenInList(pathVal, categoryPages) {
   var list = Array.isArray(categoryPages) ? categoryPages : [];
   var i;
@@ -575,7 +560,7 @@ function mxAdminCategoryPagePathTakenInList(pathVal, categoryPages) {
   return false;
 }
 
-/** Benzersiz klon path — admin.js mxAdminGenerateUniqueClonePath ile ayni */
+
 function mxAdminGenerateUniqueClonePath(sourcePath, categoryPages) {
   var base = String(sourcePath || "sayfa").trim() || "sayfa";
   var candidate = base + "-kopya";
@@ -587,7 +572,7 @@ function mxAdminGenerateUniqueClonePath(sourcePath, categoryPages) {
   return candidate;
 }
 
-/** i18n veya duz metin adina kopya eki — admin.js mxAdminClonePageName ile ayni */
+
 function mxAdminClonePageName(name) {
   var suffixTr = " (kopya)";
   var suffixEn = " (copy)";
@@ -605,7 +590,7 @@ function mxAdminClonePageName(name) {
   return String(name || "") + suffixTr;
 }
 
-/** Kaynak page-record + yeni kimlik alanlari — admin.js mxAdminBuildMergedCloneRecord ile ayni */
+
 function mxAdminBuildMergedCloneRecord(sourceRecord, newPageId, newPath, newName) {
   var merged = {};
   var key;
@@ -622,7 +607,7 @@ function mxAdminBuildMergedCloneRecord(sourceRecord, newPageId, newPath, newName
   return merged;
 }
 
-/** page-add POST govdesi — admin.js mxAdminClonePage addBody ile ayni */
+
 function mxAdminBuildPageAddCloneBody(pageRow) {
   var row = pageRow || {};
   var addBody = {
@@ -634,10 +619,7 @@ function mxAdminBuildPageAddCloneBody(pageRow) {
   return addBody;
 }
 
-/**
- * change-password POST govdesi (Paket 172).
- * mustReset: yalniz newPassword; normal oturum: currentPassword + newPassword.
- */
+
 function mxAdminBuildChangePasswordRequestBody(opts) {
   opts = opts || {};
   var body = {
@@ -649,7 +631,7 @@ function mxAdminBuildChangePasswordRequestBody(opts) {
   return body;
 }
 
-/** mustReset modal istemci dogrulama — admin.js mxAdminHandleMustResetSubmit ile hizali */
+
 function mxAdminValidateMustResetPasswordInput(newPassword, confirmPassword) {
   if (!newPassword || newPassword.length < 6) {
     return { ok: false, key: "changePasswordTooShort" };
@@ -660,10 +642,7 @@ function mxAdminValidateMustResetPasswordInput(newPassword, confirmPassword) {
   return { ok: true };
 }
 
-/**
- * HTTP golden path — webtest-live-server uzerinden (auth gerekmez).
- * WEBTEST_API_BASE=http://127.0.0.1:8080/api/admin (varsayilan)
- */
+
 var http = require("http");
 
 var API_BASE = process.env.WEBTEST_API_BASE || "http://127.0.0.1:8080/api/admin";
@@ -743,7 +722,7 @@ function isServerUnreachable(err) {
   return err && (err.code === "ECONNREFUSED" || err.code === "ENOTFOUND");
 }
 
-/** Paket 201 — siparis durum enum (Worker validateSiparisler ile ayni) */
+
 var MXADMIN_ETICARET_SIPARIS_DURUM = [
   "beklemede",
   "onaylandi",
@@ -760,11 +739,7 @@ function mxAdminEticaretIsValidDurum(kod) {
   return MXADMIN_ETICARET_SIPARIS_DURUM.indexOf(String(kod)) !== -1;
 }
 
-/**
- * Siparis listesi filtre (durum + no/musteri arama) — pack UI ile ayni mantik.
- * @param {Array} data
- * @param {{ durum?: string, q?: string }} opts
- */
+
 function mxAdminEticaretFilterSiparisler(data, opts) {
   var list = Array.isArray(data) ? data : [];
   var durum = opts && opts.durum ? String(opts.durum) : "";
@@ -788,9 +763,7 @@ function mxAdminEticaretFilterSiparisler(data, opts) {
   return out;
 }
 
-/**
- * setting merge: e-ticaret alanlari yazar; langs/description/keyword korunur.
- */
+
 function mxAdminEticaretMergeSettingFields(base, patch) {
   var setting = {};
   var key;
