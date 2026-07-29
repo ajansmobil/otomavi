@@ -1,20 +1,30 @@
 {
-  "name": "Kategori",
-  "path": "category",
-  "description": {
-    "tr": "Oto Mavi ürün kataloğu — Gaziantep BMW oto yedek parçaları: filtre, fren, gövde, motor, elektrik, sönümleme, klima, turbo, direksiyon, şanzıman, lastik, poyra, park elektroniği ve araç ekipmanları."
-  },
-  "keyword": {
-    "tr": "BMW yedek parça, Oto Mavi, Gaziantep, ürün kategorileri, turbo, direksiyon, şanzıman, lastik, orijinal parça"
-  },
-  "desc": [],
   "data": [
+    {
+      "id": "pwpp10ro9z",
+      "name": {
+        "tr": "yeni sayfa"
+      },
+      "description": {
+        "tr": ""
+      },
+      "path": "yeni-sayfa-t0bi",
+      "icon": "article",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "index": 0
+    },
     {
       "name": {
         "tr": "Filtreler"
       },
       "id": "omfltr01",
-      "index": 0,
+      "index": 1,
       "path": "filtreler",
       "category": "",
       "img": "index.webp",
@@ -38,7 +48,7 @@
         "tr": "Frenler"
       },
       "id": "omfren02",
-      "index": 1,
+      "index": 2,
       "path": "frenler",
       "category": "",
       "img": "index.webp",
@@ -62,7 +72,7 @@
         "tr": "Gövde"
       },
       "id": "omgvde03",
-      "index": 2,
+      "index": 3,
       "path": "govde",
       "category": "",
       "img": "index.webp",
@@ -86,7 +96,7 @@
         "tr": "Motor"
       },
       "id": "ommotr04",
-      "index": 3,
+      "index": 4,
       "path": "motor",
       "category": "",
       "img": "index.webp",
@@ -110,7 +120,7 @@
         "tr": "Elektrik"
       },
       "id": "omelek05",
-      "index": 4,
+      "index": 5,
       "path": "elektrik",
       "category": "",
       "img": "index.webp",
@@ -134,7 +144,7 @@
         "tr": "Sönümleme / Süspansiyon"
       },
       "id": "omsusp06",
-      "index": 5,
+      "index": 6,
       "path": "sonumleme",
       "category": "",
       "img": "index.webp",
@@ -158,7 +168,7 @@
         "tr": "Klima"
       },
       "id": "omklma07",
-      "index": 6,
+      "index": 7,
       "path": "klima",
       "category": "",
       "img": "index.webp",
@@ -182,7 +192,7 @@
         "tr": "Ateşleme ve Ön Isıtma"
       },
       "id": "omatsg08",
-      "index": 7,
+      "index": 8,
       "path": "atesleme",
       "category": "",
       "img": "index.webp",
@@ -206,7 +216,7 @@
         "tr": "Yağlar ve Sıvılar"
       },
       "id": "omsivi09",
-      "index": 8,
+      "index": 9,
       "path": "yaglar",
       "category": "",
       "img": "index.webp",
@@ -230,7 +240,7 @@
         "tr": "Bakım Kiti"
       },
       "id": "ombkim10",
-      "index": 9,
+      "index": 10,
       "path": "bakim-kiti",
       "category": "",
       "img": "index.webp",
@@ -254,7 +264,7 @@
         "tr": "İç Donanım"
       },
       "id": "omicdn11",
-      "index": 10,
+      "index": 11,
       "path": "ic-donanim",
       "category": "",
       "img": "index.webp",
@@ -278,7 +288,7 @@
         "tr": "Aydınlatma"
       },
       "id": "omaydn12",
-      "index": 11,
+      "index": 12,
       "path": "aydinlatma",
       "category": "",
       "img": "index.webp",
@@ -302,7 +312,7 @@
         "tr": "Kayışlar ve Zincirler"
       },
       "id": "omkysi13",
-      "index": 12,
+      "index": 13,
       "path": "kayislar",
       "category": "",
       "img": "index.webp",
@@ -326,7 +336,7 @@
         "tr": "Silecekler"
       },
       "id": "omslck14",
-      "index": 13,
+      "index": 14,
       "path": "silecekler",
       "category": "",
       "img": "index.webp",
@@ -350,7 +360,7 @@
         "tr": "Turbo / Zorlamalı Emme"
       },
       "id": "dnhgnxo0hg",
-      "index": 57,
+      "index": 15,
       "path": "turbo-zorlamali-emme",
       "category": "",
       "img": "index.webp",
@@ -374,7 +384,7 @@
         "tr": "Direksiyon"
       },
       "id": "ry99uefxh8",
-      "index": 58,
+      "index": 16,
       "path": "direksiyon",
       "category": "",
       "img": "index.webp",
@@ -398,7 +408,7 @@
         "tr": "Şanzıman"
       },
       "id": "knzebtecct",
-      "index": 59,
+      "index": 17,
       "path": "sanizman",
       "category": "",
       "img": "index.webp",
@@ -422,7 +432,7 @@
         "tr": "Lastik ve Jant"
       },
       "id": "yut4w6lws1",
-      "index": 60,
+      "index": 18,
       "path": "lastik-jant",
       "category": "",
       "img": "index.webp",
@@ -446,7 +456,7 @@
         "tr": "Süspansiyon / Poyra"
       },
       "id": "t3uqlrk7uh",
-      "index": 61,
+      "index": 19,
       "path": "suspansiyon-poyra",
       "category": "",
       "img": "index.webp",
@@ -470,7 +480,7 @@
         "tr": "Park ve Elektronik"
       },
       "id": "upq7zjks3k",
-      "index": 62,
+      "index": 20,
       "path": "park-elektronik",
       "category": "",
       "img": "index.webp",
@@ -494,7 +504,7 @@
         "tr": "Araç Ekipmanları"
       },
       "id": "joh4ngy8qk",
-      "index": 63,
+      "index": 21,
       "path": "arac-ekipmanlari",
       "category": "",
       "img": "index.webp",
@@ -514,7 +524,7 @@
       }
     }
   ],
-  "index": 0,
+  "desc": [],
   "desing": {
     "header": [],
     "body": [
