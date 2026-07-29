@@ -34,7 +34,8 @@ var MXADMIN_CARI_I18N = {
         phone: 'Telefon',
         email: 'E-posta',
         note: 'Not',
-        amount: 'Tutar',
+        amount: 'Miktar',
+        amountPlaceholder: '1500',
         description: 'Açıklama',
         date: 'Tarih',
         save: 'Kaydet',
@@ -91,6 +92,7 @@ var MXADMIN_CARI_I18N = {
         email: 'Email',
         note: 'Note',
         amount: 'Amount',
+        amountPlaceholder: '1500',
         description: 'Description',
         date: 'Date',
         save: 'Save',
@@ -214,6 +216,46 @@ function mxAdminCariParseAmount(raw) {
     }
     var n = parseFloat(s);
     return isNaN(n) ? NaN : n;
+}
+
+
+function mxAdminCariSanitizeAmountRaw(raw) {
+    var s = String(raw || '');
+    var out = '';
+    var sepUsed = false;
+    var i;
+    for (i = 0; i < s.length; i++) {
+        var c = s.charAt(i);
+        if (c >= '0' && c <= '9') {
+            out += c;
+            continue;
+        }
+        if ((c === ',' || c === '.') && !sepUsed) {
+            out += c;
+            sepUsed = true;
+        }
+    }
+    return out;
+}
+
+function mxAdminCariBindAmountInput(el) {
+    if (!el) {
+        return;
+    }
+    el.oninput = function () {
+        var next = mxAdminCariSanitizeAmountRaw(el.value);
+        if (el.value !== next) {
+            el.value = next;
+        }
+    };
+    el.onpaste = function (ev) {
+        if (ev && ev.preventDefault) {
+            ev.preventDefault();
+        }
+        var clip = ev && ev.clipboardData ? ev.clipboardData : window.clipboardData;
+        var text = clip && clip.getData ? clip.getData('text') : '';
+        el.value = mxAdminCariSanitizeAmountRaw(text);
+    };
 }
 
 function mxAdminCariSplitBalance(balance) {
@@ -632,6 +674,10 @@ function mxAdminCariRenderDetail() {
     html += '<div class="mxadmin-cari-form-block-title">' + mxAdminCariEsc(mxAdminCariT('addTxTitle')) + '</div>';
     html += '<div class="mxadmin-cari-form-grid mxadmin-cari-form-grid--tx">';
     html +=
+        '<div class="mx-form-group mxadmin-cari-form-desc-top"><input type="text" id="mxadminCariIslemDesc" class="mx-input" autocomplete="off" /><label class="mx-form-label">' +
+        mxAdminCariEsc(mxAdminCariT('description')) +
+        '</label></div>';
+    html +=
         '<div class="mx-form-group"><select id="mxadminCariIslemType" class="mx-select"><option value="gelir">' +
         mxAdminCariEsc(mxAdminCariT('typeGelir')) +
         '</option><option value="gider">' +
@@ -640,7 +686,9 @@ function mxAdminCariRenderDetail() {
         mxAdminCariEsc(mxAdminCariT('colType')) +
         '</label></div>';
     html +=
-        '<div class="mx-form-group"><input type="text" inputmode="decimal" id="mxadminCariIslemAmount" class="mx-input" placeholder="0,00" autocomplete="off" /><label class="mx-form-label">' +
+        '<div class="mx-form-group"><input type="text" inputmode="decimal" id="mxadminCariIslemAmount" class="mx-input mxadmin-cari-amount-input" placeholder="' +
+        mxAdminCariAttr(mxAdminCariT('amountPlaceholder')) +
+        '" autocomplete="off" /><label class="mx-form-label">' +
         mxAdminCariEsc(mxAdminCariT('amount')) +
         '</label></div>';
     html +=
@@ -648,10 +696,6 @@ function mxAdminCariRenderDetail() {
         mxAdminCariAttr(mxAdminCariTodayIsoDate()) +
         '" /><label class="mx-form-label">' +
         mxAdminCariEsc(mxAdminCariT('date')) +
-        '</label></div>';
-    html +=
-        '<div class="mx-form-group mxadmin-cari-form-grow"><input type="text" id="mxadminCariIslemDesc" class="mx-input" /><label class="mx-form-label">' +
-        mxAdminCariEsc(mxAdminCariT('description')) +
         '</label></div>';
     html += '</div>';
     html +=
@@ -667,8 +711,8 @@ function mxAdminCariRenderDetail() {
     html += '<table class="mxadmin-cari-islem-table"><thead><tr>';
     html += '<th>' + mxAdminCariEsc(mxAdminCariT('colDate')) + '</th>';
     html += '<th>' + mxAdminCariEsc(mxAdminCariT('colType')) + '</th>';
-    html += '<th class="mxadmin-cari-col-num">' + mxAdminCariEsc(mxAdminCariT('colAmount')) + '</th>';
     html += '<th>' + mxAdminCariEsc(mxAdminCariT('colDesc')) + '</th>';
+    html += '<th class="mxadmin-cari-col-num">' + mxAdminCariEsc(mxAdminCariT('colAmount')) + '</th>';
     html += '<th class="mxadmin-cari-col-actions"></th>';
     html += '</tr></thead><tbody id="mxadminCariIslemRows"></tbody></table>';
     html += '</div>';
@@ -715,14 +759,15 @@ function mxAdminCariRenderDetail() {
         };
     }
     mxAdminCariBindTxFormEnter();
+    mxAdminCariBindAmountInput(document.getElementById('mxadminCariIslemAmount'));
     mxAdminCariRenderIslemRows();
 }
 
 function mxAdminCariBindTxFormEnter() {
     var ids = [
+        'mxadminCariIslemDesc',
         'mxadminCariIslemAmount',
         'mxadminCariIslemDate',
-        'mxadminCariIslemDesc',
     ];
     var handler = function (ev) {
         if (ev && ev.key === 'Enter') {
@@ -824,13 +869,13 @@ function mxAdminCariRenderIslemRows() {
             '">' +
             mxAdminCariEsc(typeLabel) +
             '</span></td>';
+        html += '<td>' + mxAdminCariEsc(row.description || '—') + '</td>';
         html +=
             '<td class="mxadmin-cari-col-num ' +
             typeClass +
             '">' +
             mxAdminCariFormatMoney(row.amount) +
             '</td>';
-        html += '<td>' + mxAdminCariEsc(row.description || '—') + '</td>';
         html +=
             '<td class="mxadmin-cari-col-actions"><button type="button" class="mxadmin-cari-icon-btn mxadmin-cari-icon-btn-danger" data-islem-id="' +
             row.id +
@@ -930,9 +975,12 @@ function mxAdminCariLoadAll(done) {
             mxAdminCariUpdateSummaryUI();
             mxAdminCariRenderList();
             if (
+                mxAdminCariState.mode === 'detail' &&
                 mxAdminCariState.selectedId &&
                 mxAdminCariFindCari(mxAdminCariState.selectedId)
             ) {
+                mxAdminCariApplyLayout();
+                mxAdminCariRenderDetail();
                 mxAdminCariPatchDetailStats();
                 mxAdminCariRenderIslemRows();
             }
@@ -1160,6 +1208,10 @@ function mxAdminCariPackShowScreen(name) {
     if (!mxAdminCariMounted) {
         mxAdminCariMountScreens();
     }
+    
+    mxAdminCariState.selectedId = null;
+    mxAdminCariState.mode = 'none';
+    mxAdminCariState.islemler = [];
     mxAdminCariRenderShell();
     mxAdminCariLoadAll();
     return true;

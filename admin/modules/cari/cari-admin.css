@@ -385,7 +385,15 @@
 }
 
 .mxadmin-cari-form-grid--tx {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.mxadmin-cari-form-desc-top {
+  grid-column: 1 / -1;
+}
+
+.mxadmin-cari-amount-input {
+  font-variant-numeric: tabular-nums;
 }
 
 @media (max-width: 768px) {

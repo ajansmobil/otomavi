@@ -188,6 +188,7 @@ var MX_ADMIN_I18N = {
         navDashboard: 'Dashboard',
         sidebarPages: 'Sayfalar',
         sidebarPagesEmpty: 'Kategori yok',
+        sidebarPagesLoading: 'Kategoriler yükleniyor…',
         navModules: 'Modüller',
         navSettings: 'Ayarlar',
         navDesign: 'Tasarım',
@@ -467,6 +468,7 @@ var MX_ADMIN_I18N = {
         navDashboard: 'Dashboard',
         sidebarPages: 'Pages',
         sidebarPagesEmpty: 'No categories',
+        sidebarPagesLoading: 'Loading categories…',
         navModules: 'Modules',
         navSettings: 'Settings',
         navDesign: 'Design',
@@ -752,11 +754,15 @@ var mxAdminState = {
     me: null,
     settingData: null,
     pagesettingData: null,
+    pagesettingLoading: false,
+    pagesettingLoadError: null,
     activeCategoryPath: null,
     categoryDoc: null,
     categoryPages: [],
     categoryPagesLoading: false,
     categoryPagesRequestId: 0,
+    pagesScreenLoadId: 0,
+    pageRecordRequestId: 0,
     activePageRow: null,
     pageRecord: null,
     pagesSearch: '',
@@ -779,6 +785,12 @@ var mxAdminState = {
     pageDescById: {},
     pageDescCacheLoading: false,
     pageSelection: {},
+    
+    pendingPageId: '',
+    
+    pendingUrlTarget: null,
+    
+    suppressUrlSync: false,
     loaded: {
         dashboard: false,
         categories: false,
@@ -1190,6 +1202,24 @@ function mxAdminUnwrapApiData(resp) {
 }
 
 
+function mxAdminStripJsonEnvelope(obj) {
+    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) {
+        return obj;
+    }
+    var out = {};
+    var key;
+    for (key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+            if (key === 'collection' || key === 'sha') {
+                continue;
+            }
+            out[key] = obj[key];
+        }
+    }
+    return out;
+}
+
+
 function mxAdminNormalizeCategoryDoc(raw) {
     if (!raw || typeof raw !== 'object') {
         return { data: [] };
@@ -1197,6 +1227,7 @@ function mxAdminNormalizeCategoryDoc(raw) {
     if (Array.isArray(raw)) {
         return { data: raw.slice() };
     }
+    raw = mxAdminStripJsonEnvelope(raw);
     if (Array.isArray(raw.data)) {
         var first = raw.data.length ? raw.data[0] : null;
         if (
@@ -1221,7 +1252,7 @@ function mxAdminNormalizeCategoryDoc(raw) {
     if (!Array.isArray(raw.data)) {
         raw.data = [];
     }
-    return raw;
+    return mxAdminStripJsonEnvelope(raw);
 }
 
 
@@ -1928,6 +1959,28 @@ function mxAdminEnsurePagesetting(done) {
         done(null);
         return;
     }
+    if (mxAdminState.pagesettingLoading) {
+        var waitAttempts = 0;
+        var waitTimer = setInterval(function () {
+            waitAttempts += 1;
+            if (!mxAdminState.pagesettingLoading) {
+                clearInterval(waitTimer);
+                done(mxAdminState.pagesettingLoadError || null);
+                return;
+            }
+            if (waitAttempts > 600) {
+                clearInterval(waitTimer);
+                mxAdminState.pagesettingLoading = false;
+                mxAdminState.pagesettingLoadError = { code: 'TIMEOUT' };
+                done(mxAdminState.pagesettingLoadError);
+                return;
+            }
+        }, 100);
+        return;
+    }
+    mxAdminState.pagesettingLoading = true;
+    mxAdminState.pagesettingLoadError = null;
+    mxAdminRenderSidebarCategories();
     mxAdminApiRequest('GET', '/api/admin/data/pagesetting')
         .then(function (resp) {
             mxAdminState.pagesettingData = mxAdminUnwrapApiData(resp) || {
@@ -1936,10 +1989,15 @@ function mxAdminEnsurePagesetting(done) {
             if (!Array.isArray(mxAdminState.pagesettingData.data)) {
                 mxAdminState.pagesettingData.data = [];
             }
+            mxAdminState.pagesettingLoading = false;
+            mxAdminState.pagesettingLoadError = null;
             mxAdminRenderSidebarCategories();
             done(null);
         })
         .catch(function (err) {
+            mxAdminState.pagesettingLoading = false;
+            mxAdminState.pagesettingLoadError = err;
+            mxAdminRenderSidebarCategories();
             done(err);
         });
 }
@@ -1995,7 +2053,11 @@ function mxAdminRenderSidebarCategories() {
     if (!cats.length) {
         var empty = document.createElement('p');
         empty.className = 'mxadmin-sidebar-categories-empty';
-        empty.textContent = mxAdminT('sidebarPagesEmpty');
+        if (mxAdminState.pagesettingLoading) {
+            empty.textContent = mxAdminT('sidebarPagesLoading');
+        } else {
+            empty.textContent = mxAdminT('sidebarPagesEmpty');
+        }
         wrap.appendChild(empty);
     }
 }
@@ -2245,6 +2307,150 @@ function mxAdminBuildPackNav() {
     mxAdminBuildModuleNav();
 }
 
+
+
+var MX_ADMIN_URL_SYNC_TIMER = null;
+
+function mxAdminBuildStateQueryString() {
+    var params = [];
+    var screen = mxAdminState.screen || 'dashboard';
+    if (screen !== 'dashboard') {
+        params.push('screen=' + encodeURIComponent(screen));
+    }
+    if (screen === 'pages') {
+        if (mxAdminState.activeCategoryPath) {
+            params.push(
+                'category=' + encodeURIComponent(mxAdminState.activeCategoryPath),
+            );
+        }
+        if (mxAdminState.activePageRow && mxAdminState.activePageRow.id) {
+            params.push(
+                'page=' + encodeURIComponent(mxAdminState.activePageRow.id),
+            );
+        }
+    } else if (screen === 'modules') {
+        if (mxAdminState.activeModuleRow && mxAdminState.activeModuleRow.id) {
+            params.push(
+                'module=' + encodeURIComponent(mxAdminState.activeModuleRow.id),
+            );
+        }
+    }
+    return params.length ? '?' + params.join('&') : '';
+}
+
+
+function mxAdminSyncUrl() {
+    if (mxAdminState.suppressUrlSync) {
+        return;
+    }
+    if (
+        typeof window === 'undefined' ||
+        !window.history ||
+        !window.history.pushState
+    ) {
+        return;
+    }
+    if (MX_ADMIN_URL_SYNC_TIMER !== null) {
+        clearTimeout(MX_ADMIN_URL_SYNC_TIMER);
+    }
+    MX_ADMIN_URL_SYNC_TIMER = setTimeout(function () {
+        MX_ADMIN_URL_SYNC_TIMER = null;
+        if (mxAdminState.suppressUrlSync) {
+            return;
+        }
+        var query = mxAdminBuildStateQueryString();
+        var target = window.location.pathname + query;
+        var current = window.location.pathname + window.location.search;
+        if (target === current) {
+            return;
+        }
+        try {
+            window.history.pushState({ mxadmin: true }, '', target);
+        } catch (urlSyncErr) {
+            
+        }
+    }, 0);
+}
+
+
+function mxAdminParseUrlQuery() {
+    var out = {};
+    if (typeof window === 'undefined' || !window.location) {
+        return out;
+    }
+    var qs = window.location.search || '';
+    if (qs.indexOf('?') === 0) {
+        qs = qs.slice(1);
+    }
+    if (!qs) {
+        return out;
+    }
+    var parts = qs.split('&');
+    var i;
+    for (i = 0; i < parts.length; i++) {
+        if (!parts[i]) {
+            continue;
+        }
+        var eqIdx = parts[i].indexOf('=');
+        var key;
+        var val;
+        if (eqIdx === -1) {
+            key = decodeURIComponent(parts[i]);
+            val = '';
+        } else {
+            key = decodeURIComponent(parts[i].slice(0, eqIdx));
+            val = decodeURIComponent(parts[i].slice(eqIdx + 1));
+        }
+        if (key) {
+            out[key] = val;
+        }
+    }
+    return out;
+}
+
+
+function mxAdminApplyUrlTarget(target) {
+    if (!target || !target.screen) {
+        mxAdminShowScreen('dashboard');
+        return;
+    }
+    var screen = target.screen;
+    var isKnownScreen =
+        screen === 'dashboard' ||
+        screen === 'categories' ||
+        screen === 'pages' ||
+        screen === 'modules' ||
+        screen === 'settings' ||
+        screen === 'design' ||
+        !!mxAdminModuleRegistry[screen];
+    if (!isKnownScreen) {
+        mxAdminShowScreen('dashboard');
+        return;
+    }
+    mxAdminState.suppressUrlSync = true;
+    try {
+        if (screen === 'pages' && target.category) {
+            mxAdminState.pendingPageId = target.page || '';
+            mxAdminOpenCategoryPages(target.category);
+        } else if (screen === 'modules' && target.module) {
+            mxAdminOpenModuleEditor(target.module);
+        } else {
+            mxAdminShowScreen(screen);
+        }
+    } finally {
+        mxAdminState.suppressUrlSync = false;
+    }
+}
+
+
+function mxAdminHandlePopState() {
+    if (!mxAdminState.me) {
+        return;
+    }
+    var target = mxAdminParseUrlQuery();
+    mxAdminApplyUrlTarget(target);
+}
+
 function mxAdminShowScreen(name) {
     var screens = {
         dashboard: 'mxadminScreenDashboard',
@@ -2310,6 +2516,7 @@ function mxAdminShowScreen(name) {
         mxAdminClearSidebarCategoryActive();
     }
     mxAdminState.screen = name;
+    mxAdminSyncUrl();
     mxAdminCloseSidebarDrawer();
 
     if (moduleHandled) {
@@ -2406,7 +2613,14 @@ function mxAdminBootAppAfterAuth() {
     mxAdminEnsurePagesetting(function () {
         mxAdminEnsureSettingForLangs(function () {
             mxAdminUpdateUserChip();
-            mxAdminShowScreen('dashboard');
+            
+            var urlTarget = mxAdminState.pendingUrlTarget;
+            mxAdminState.pendingUrlTarget = null;
+            if (urlTarget && urlTarget.screen) {
+                mxAdminApplyUrlTarget(urlTarget);
+            } else {
+                mxAdminShowScreen('dashboard');
+            }
         });
     });
 }
@@ -2637,9 +2851,14 @@ function mxAdminAfterLogout() {
     mxAdminState.me = null;
     mxAdminState.settingData = null;
     mxAdminState.pagesettingData = null;
+    mxAdminState.pagesettingLoading = false;
+    mxAdminState.pagesettingLoadError = null;
     mxAdminState.activeCategoryPath = null;
     mxAdminState.categoryDoc = null;
     mxAdminState.categoryPages = [];
+    mxAdminState.categoryPagesRequestId = 0;
+    mxAdminState.pagesScreenLoadId = 0;
+    mxAdminState.pageRecordRequestId = 0;
     mxAdminState.activePageRow = null;
     mxAdminState.pageRecord = null;
     mxAdminState.desingData = null;
@@ -3696,6 +3915,9 @@ function mxAdminSyncPagesListLoadingUi() {
 
 function mxAdminLoadPagesScreen() {
     mxAdminState.loaded.pages = true;
+    mxAdminState.pagesScreenLoadId =
+        (mxAdminState.pagesScreenLoadId || 0) + 1;
+    var pagesScreenLoadId = mxAdminState.pagesScreenLoadId;
     var loading = mxAdminEl('mxadminPagesLoading');
     loading.classList.remove('hidden');
     mxAdminShowPagesListLoading();
@@ -3704,6 +3926,10 @@ function mxAdminLoadPagesScreen() {
 
     mxAdminEnsureSettingForLangs(function () {
         var finish = function () {
+            if (pagesScreenLoadId !== mxAdminState.pagesScreenLoadId) {
+                loading.classList.add('hidden');
+                return;
+            }
             loading.classList.add('hidden');
             if (mxAdminState.activeCategoryPath) {
                 mxAdminUpdatePagesScreenHead(mxAdminState.activeCategoryPath);
@@ -3923,6 +4149,8 @@ function mxAdminSelectCategory(path) {
     if (!path) {
         return;
     }
+    mxAdminState.pagesScreenLoadId =
+        (mxAdminState.pagesScreenLoadId || 0) + 1;
     mxAdminResetPageFilters();
     mxAdminState.activeCategoryPath = path;
     mxAdminState.activePageRow = null;
@@ -3931,6 +4159,7 @@ function mxAdminSelectCategory(path) {
     mxAdminShowPageDetailEmpty();
     mxAdminUpdatePagesScreenHead(path);
     mxAdminSetSidebarCategoryActive(path);
+    mxAdminSyncUrl();
 
     var loading = mxAdminEl('mxadminPagesLoading');
     loading.classList.remove('hidden');
@@ -3957,7 +4186,9 @@ function mxAdminSelectCategory(path) {
                 : [];
             mxAdminSortPagesInPlace(mxAdminState.categoryPages);
             mxAdminState.categoryDoc.data = mxAdminState.categoryPages;
-            mxAdminFinishCategoryPagesLoad('');
+            var keepPageId = mxAdminState.pendingPageId || '';
+            mxAdminState.pendingPageId = '';
+            mxAdminFinishCategoryPagesLoad(keepPageId);
         })
         .catch(function (err) {
             if (categoryPagesReqId !== mxAdminState.categoryPagesRequestId) {
@@ -4484,8 +4715,12 @@ function mxAdminBulkMovePages() {
                     '/api/admin/data/' + encodeURIComponent(sourcePath),
                     mxAdminCategoryDocPutPayload(),
                 ).then(function (sourcePutResult) {
-                    mxAdminOnMutationSuccess(targetPutResult);
-                    mxAdminOnMutationSuccess(sourcePutResult);
+                    mxAdminOnMutationSuccess(
+                        mxAdminMergePublishApiResult(
+                            targetPutResult,
+                            sourcePutResult,
+                        ),
+                    );
                     mxAdminToast(
                         mxAdminT('pagesBulkMoveSuccess').replace(
                             '{n}',
@@ -4996,9 +5231,6 @@ function mxAdminRenderPagesList() {
         mxAdminSyncPagesListLoadingUi();
         return;
     }
-    if (pages.length) {
-        mxAdminState.categoryPagesLoading = false;
-    }
     mxAdminHidePagesListLoading();
     var ul = mxAdminEl('mxadminPagesList');
     ul.innerHTML = '';
@@ -5408,6 +5640,7 @@ function mxAdminCollectDescFilterOptions(dataList, pathKey) {
 
 function mxAdminLoadPageDescCache(done) {
     var schema = mxAdminGetActivePageDescSchema();
+    var catPathSnapshot = mxAdminState.activeCategoryPath;
     if (!schema.length) {
         mxAdminState.pageDescById = {};
         if (done) {
@@ -5437,7 +5670,7 @@ function mxAdminLoadPageDescCache(done) {
     function loadChunk() {
         if (idx >= ids.length) {
             mxAdminState.pageDescCacheLoading = false;
-            if (done) {
+            if (done && mxAdminState.activeCategoryPath === catPathSnapshot) {
                 done();
             }
             return;
@@ -5452,6 +5685,12 @@ function mxAdminLoadPageDescCache(done) {
                     '/api/admin/data/page-record/' + encodeURIComponent(pageId),
                 )
                     .then(function (resp) {
+                        if (
+                            mxAdminState.activeCategoryPath !==
+                            catPathSnapshot
+                        ) {
+                            return;
+                        }
                         var data = mxAdminUnwrapApiData(resp) || {};
                         if (data.desc && typeof data.desc === 'object') {
                             mxAdminState.pageDescById[pageId] = data.desc;
@@ -5887,10 +6126,6 @@ function mxAdminCollectPageDescFromForm() {
 
 
 function mxAdminGetPageModuleStatus() {
-    var doc = mxAdminState.categoryDoc;
-    if (doc && doc.modulestatus && typeof doc.modulestatus === 'object') {
-        return doc.modulestatus;
-    }
     var catPath = mxAdminState.activeCategoryPath;
     var cats =
         mxAdminState.pagesettingData &&
@@ -5907,6 +6142,10 @@ function mxAdminGetPageModuleStatus() {
         ) {
             return cats[i].modulestatus;
         }
+    }
+    var doc = mxAdminState.categoryDoc;
+    if (doc && doc.modulestatus && typeof doc.modulestatus === 'object') {
+        return doc.modulestatus;
     }
     return {};
 }
@@ -6000,9 +6239,23 @@ function mxAdminApplyPageTextPlacement(pageRow, record, textObj, modulestatus) {
     }
 }
 
-function mxAdminIsPageImgActive() {
+
+function mxAdminIsPageMediaPanelActive() {
+    var ms = mxAdminGetPageModuleStatus();
+    if (ms && ms.page === false) {
+        return false;
+    }
+    return true;
+}
+
+
+function mxAdminIsPageListThumbActive() {
     var ms = mxAdminGetPageModuleStatus();
     return !!(ms && ms.img === true);
+}
+
+function mxAdminIsPageImgActive() {
+    return mxAdminIsPageMediaPanelActive();
 }
 
 function mxAdminIsLocalPreview() {
@@ -6161,7 +6414,7 @@ function mxAdminRenderPageListThumb(page) {
     if (!iconName) {
         iconName = 'description';
     }
-    if (!mxAdminIsPageImgActive()) {
+    if (!mxAdminIsPageListThumbActive()) {
         return (
             '<span class="material-symbols-outlined mxadmin-pages-list-icon">' +
             mxAdminEscapeHtml(iconName) +
@@ -6335,6 +6588,31 @@ function mxAdminRenderPageMediaGrid() {
     }
 }
 
+function mxAdminPersistPageCoverImg(pageRow, filename) {
+    if (!pageRow || !pageRow.id || !mxAdminState.activeCategoryPath) {
+        return Promise.reject({ code: 'VALIDATION' });
+    }
+    pageRow.img = filename ? String(filename) : '';
+    var idx = mxAdminFindPageRowIndex(pageRow);
+    if (
+        idx >= 0 &&
+        mxAdminState.categoryDoc &&
+        Array.isArray(mxAdminState.categoryDoc.data)
+    ) {
+        mxAdminState.categoryDoc.data[idx] = pageRow;
+        mxAdminState.categoryPages = mxAdminState.categoryDoc.data;
+    }
+    return mxAdminApiRequest(
+        'PUT',
+        '/api/admin/data/' +
+            encodeURIComponent(mxAdminState.activeCategoryPath),
+        mxAdminCategoryDocPutPayload(),
+    ).then(function (result) {
+        mxAdminOnMutationSuccess(result);
+        return result;
+    });
+}
+
 function mxAdminMakePageMediaCoverHandler(filename) {
     return function (evt) {
         if (
@@ -6349,9 +6627,17 @@ function mxAdminMakePageMediaCoverHandler(filename) {
         if (!pageRow || !filename) {
             return;
         }
-        pageRow.img = filename;
-        mxAdminRenderPageMediaGrid();
-        mxAdminRenderPagesList();
+        mxAdminPersistPageCoverImg(pageRow, filename)
+            .then(function () {
+                mxAdminRenderPageMediaGrid();
+                mxAdminRenderPagesList();
+            })
+            .catch(function (err) {
+                if (mxAdminHandleUnauthorized(err)) {
+                    return;
+                }
+                mxAdminToast(mxAdminApiErrorMessage(err), true);
+            });
     };
 }
 
@@ -6375,16 +6661,53 @@ function mxAdminMakePageMediaDeleteHandler(filename) {
                     '/' +
                     encodeURIComponent(filename),
             )
-                .then(function () {
-                    if (
+                .then(function (resp) {
+                    var hadCover =
                         pageRow.img &&
-                        String(pageRow.img) === String(filename)
-                    ) {
+                        String(pageRow.img) === String(filename);
+                    if (hadCover) {
                         pageRow.img = '';
+                        var idx = mxAdminFindPageRowIndex(pageRow);
+                        if (
+                            idx >= 0 &&
+                            mxAdminState.categoryDoc &&
+                            Array.isArray(mxAdminState.categoryDoc.data)
+                        ) {
+                            mxAdminState.categoryDoc.data[idx] = pageRow;
+                            mxAdminState.categoryPages =
+                                mxAdminState.categoryDoc.data;
+                        }
                     }
-                    mxAdminToast(mxAdminT('moduleMediaDeleteSuccess'), false);
-                    mxAdminLoadPageFiles();
-                    mxAdminRenderPagesList();
+                    mxAdminOnMutationSuccess(resp);
+                    var afterDelete = function () {
+                        mxAdminToast(
+                            mxAdminT('moduleMediaDeleteSuccess'),
+                            false,
+                        );
+                        mxAdminLoadPageFiles();
+                        mxAdminRenderPagesList();
+                    };
+                    if (hadCover && mxAdminState.activeCategoryPath) {
+                        mxAdminApiRequest(
+                            'PUT',
+                            '/api/admin/data/' +
+                                encodeURIComponent(
+                                    mxAdminState.activeCategoryPath,
+                                ),
+                            mxAdminCategoryDocPutPayload(),
+                        )
+                            .then(function (putResp) {
+                                mxAdminOnMutationSuccess(
+                                    mxAdminMergePublishApiResult(resp, putResp),
+                                );
+                                afterDelete();
+                            })
+                            .catch(function () {
+                                afterDelete();
+                            });
+                        return;
+                    }
+                    afterDelete();
                 })
                 .catch(function (err) {
                     mxAdminToast(
@@ -6405,6 +6728,7 @@ function mxAdminHandlePageMediaUploadInput(evt) {
     var total = files.length;
     var done = 0;
     var okCount = 0;
+    var mergedPublish = null;
     var fi;
     function onDone() {
         done += 1;
@@ -6412,6 +6736,7 @@ function mxAdminHandlePageMediaUploadInput(evt) {
             evt.target.value = '';
             mxAdminLoadPageFiles();
             if (okCount > 0) {
+                mxAdminOnMutationSuccess(mergedPublish);
                 mxAdminToast(mxAdminT('moduleMediaUploadSuccess'), false);
             } else {
                 mxAdminToast(mxAdminT('moduleMediaUploadError'), true);
@@ -6420,11 +6745,19 @@ function mxAdminHandlePageMediaUploadInput(evt) {
     }
     for (fi = 0; fi < files.length; fi++) {
         mxAdminUploadPageFile(pageRow.id, files[fi])
-            .then(function () {
+            .then(function (resp) {
                 okCount += 1;
+                mergedPublish = mxAdminMergePublishApiResult(
+                    mergedPublish,
+                    resp,
+                );
                 onDone();
             })
-            .catch(function () {
+            .catch(function (err) {
+                if (mxAdminHandleUnauthorized(err)) {
+                    onDone();
+                    return;
+                }
                 onDone();
             });
     }
@@ -6433,8 +6766,12 @@ function mxAdminHandlePageMediaUploadInput(evt) {
 function mxAdminOpenPageEditor(pageRow) {
     mxAdminState.activePageRow = pageRow;
     mxAdminState.pageRecord = null;
+    mxAdminState.pageRecordRequestId += 1;
+    var pageRecordReqId = mxAdminState.pageRecordRequestId;
+    var editorPageId = pageRow && pageRow.id ? String(pageRow.id) : '';
     mxAdminState.activePageTab = 'general';
     mxAdminShowPageTab('general');
+    mxAdminSyncUrl();
 
     var items = mxAdminEl('mxadminPagesList').children;
     var pageKey = pageRow.id || '';
@@ -6455,6 +6792,16 @@ function mxAdminOpenPageEditor(pageRow) {
     mxAdminShowPageDetailLoading(true);
 
     var finishRender = function () {
+        if (pageRecordReqId !== mxAdminState.pageRecordRequestId) {
+            return;
+        }
+        if (
+            editorPageId &&
+            mxAdminState.activePageRow &&
+            String(mxAdminState.activePageRow.id) !== editorPageId
+        ) {
+            return;
+        }
         mxAdminRenderPageFormFields(pageRow, mxAdminState.pageRecord);
         mxAdminShowPageDetailForm();
     };
@@ -6465,10 +6812,23 @@ function mxAdminOpenPageEditor(pageRow) {
             '/api/admin/data/page-record/' + encodeURIComponent(pageRow.id),
         )
             .then(function (resp) {
+                if (pageRecordReqId !== mxAdminState.pageRecordRequestId) {
+                    return;
+                }
+                if (
+                    editorPageId &&
+                    mxAdminState.activePageRow &&
+                    String(mxAdminState.activePageRow.id) !== editorPageId
+                ) {
+                    return;
+                }
                 mxAdminState.pageRecord = mxAdminUnwrapApiData(resp) || {};
                 finishRender();
             })
             .catch(function () {
+                if (pageRecordReqId !== mxAdminState.pageRecordRequestId) {
+                    return;
+                }
                 mxAdminState.pageRecord = {};
                 finishRender();
             });
@@ -7434,6 +7794,7 @@ function mxAdminSelectModule(mod) {
     mxAdminState.activeModuleIndex = mxAdminFindModuleIndex(mod);
     mxAdminRenderModulesList();
     mxAdminShowModuleDetailLoading(true);
+    mxAdminSyncUrl();
 
     var titleEl = mxAdminEl('mxadminModuleDetailTitle');
     var metaEl = mxAdminEl('mxadminModuleDetailMeta');
@@ -9624,10 +9985,14 @@ function mxAdminInit() {
     mxAdminBindEvents();
     mxAdminInitRegisteredModules();
     mxAdminPrefetchSiteLogo();
+    
+    var initialUrlTarget = mxAdminParseUrlQuery();
+    mxAdminState.pendingUrlTarget = initialUrlTarget.screen ? initialUrlTarget : null;
     mxAdminCheckSession();
 }
 
 window.onload = mxAdminInit;
+window.onpopstate = mxAdminHandlePopState;
 
 
 var Global_confirmDelete = mxAdminConfirmDelete;
