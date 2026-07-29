@@ -7241,12 +7241,54 @@ function mxAdminRenderPageMediaGrid() {
 }
 
 
+var MXADMIN_LIST_ROW_SYNC_TO_INDEX = [
+    'name',
+    'index',
+    'path',
+    'category',
+    'img',
+    'bg',
+    'status',
+    'url',
+    'icon',
+    'desing',
+    'pathnext',
+    'description',
+];
+
+function mxAdminIsPageRecordNotFound(err) {
+    if (!err) {
+        return false;
+    }
+    if (err.status === 404 || err.code === 'NOT_FOUND') {
+        return true;
+    }
+    return false;
+}
+
+
+function mxAdminApplyListRowFieldsToPageRecord(pageRow, record) {
+    if (!pageRow || !record) {
+        return record;
+    }
+    var fi;
+    for (fi = 0; fi < MXADMIN_LIST_ROW_SYNC_TO_INDEX.length; fi++) {
+        var field = MXADMIN_LIST_ROW_SYNC_TO_INDEX[fi];
+        if (pageRow[field] !== undefined) {
+            record[field] = pageRow[field];
+        }
+    }
+    return record;
+}
+
+
 function mxAdminSyncPageRecordImg(pageRow, filename) {
     if (!pageRow || !pageRow.id) {
         return Promise.reject({ code: 'VALIDATION' });
     }
     var pageId = String(pageRow.id);
     var imgValue = filename ? String(filename) : '';
+    var builtRecord = null;
     var buildRecord = function (base) {
         var record = base && typeof base === 'object' ? base : {};
         record.id = pageId;
@@ -7257,41 +7299,40 @@ function mxAdminSyncPageRecordImg(pageRow, filename) {
         record.update = new Date().toISOString();
         return record;
     };
-    return mxAdminApiRequest(
-        'GET',
-        '/api/admin/data/page-record/' + encodeURIComponent(pageId),
-    )
+    var putPath =
+        '/api/admin/data/page-record/' + encodeURIComponent(pageId);
+    return mxAdminApiRequest('GET', putPath)
         .then(function (getResp) {
             var record = mxAdminUnwrapApiData(getResp);
-            return mxAdminApiRequest(
-                'PUT',
-                '/api/admin/data/page-record/' + encodeURIComponent(pageId),
-                buildRecord(record),
-            );
+            builtRecord = buildRecord(record);
+            return mxAdminApiRequest('PUT', putPath, builtRecord);
         })
         .catch(function (getErr) {
             if (getErr && getErr.code === 'UNAUTHORIZED') {
                 return Promise.reject(getErr);
             }
-            var fallback =
-                mxAdminState.pageRecord &&
-                String(mxAdminState.pageRecord.id) === pageId
-                    ? mxAdminState.pageRecord
-                    : {};
-            return mxAdminApiRequest(
-                'PUT',
-                '/api/admin/data/page-record/' + encodeURIComponent(pageId),
-                buildRecord(fallback),
-            );
+            if (!mxAdminIsPageRecordNotFound(getErr)) {
+                return Promise.reject(getErr);
+            }
+            var minimal = {
+                id: pageId,
+                img: imgValue,
+                update: new Date().toISOString(),
+            };
+            if (pageRow.path) {
+                minimal.path = pageRow.path;
+            }
+            builtRecord = buildRecord(minimal);
+            return mxAdminApiRequest('PUT', putPath, builtRecord);
         })
         .then(function (putResult) {
-            var data = mxAdminUnwrapApiData(putResult);
             if (
                 mxAdminState.activePageRow &&
                 String(mxAdminState.activePageRow.id) === pageId
             ) {
                 mxAdminState.pageRecord =
-                    data || buildRecord(mxAdminState.pageRecord || {});
+                    builtRecord ||
+                    buildRecord(mxAdminState.pageRecord || {});
             }
             return putResult;
         });
@@ -8366,14 +8407,17 @@ function mxAdminHandlePageFormSubmit(evt) {
                     }
                 }
             }
+            mxAdminApplyListRowFieldsToPageRecord(pageRow, record);
+            var builtPageRecord = record;
             return mxAdminApiRequest(
                 'PUT',
                 '/api/admin/data/page-record/' + encodeURIComponent(pageRow.id),
-                record,
+                builtPageRecord,
             ).then(function (recordResult) {
                 return {
                     catResult: catResult,
                     recordResult: recordResult,
+                    builtPageRecord: builtPageRecord,
                 };
             });
         })
@@ -8383,8 +8427,7 @@ function mxAdminHandlePageFormSubmit(evt) {
             }
             saveBtn.disabled = false;
             mxAdminState.pageRecord =
-                mxAdminUnwrapApiData(bundle.recordResult) ||
-                mxAdminState.pageRecord;
+                bundle.builtPageRecord || mxAdminState.pageRecord;
             mxAdminUpdatePageDetailHeader(pageRow);
             mxAdminOnMutationSuccess(
                 mxAdminMergePublishApiResult(
