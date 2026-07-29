@@ -1,11 +1,8 @@
 {
-  "name": "Sayfalar",
-  "path": "page",
-  "desc": [],
   "data": [
     {
       "name": {
-        "tr": "Ürünler"
+        "tr": "Ürünler x"
       },
       "id": "hs54qzyeyo",
       "index": 0,
@@ -79,7 +76,7 @@
       }
     }
   ],
-  "index": 0,
+  "desc": [],
   "desing": {
     "header": [],
     "body": [],
