@@ -1,44 +1,6 @@
 {
   "data": [
     {
-      "id": "yrf9bh8y7i",
-      "name": {
-        "tr": "yeni sayfa"
-      },
-      "description": {
-        "tr": ""
-      },
-      "path": "yeni-sayfa-zd5x",
-      "icon": "article",
-      "category": "",
-      "status": "play",
-      "desing": {
-        "header": [],
-        "body": [],
-        "footer": []
-      },
-      "index": 0
-    },
-    {
-      "id": "pwpp10ro9z",
-      "name": {
-        "tr": "yeni sayfa"
-      },
-      "description": {
-        "tr": ""
-      },
-      "path": "yeni-sayfa-t0bi",
-      "icon": "article",
-      "category": "",
-      "status": "play",
-      "desing": {
-        "header": [],
-        "body": [],
-        "footer": []
-      },
-      "index": 1
-    },
-    {
       "name": {
         "tr": "Filtreler"
       },
