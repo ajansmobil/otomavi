@@ -17,7 +17,7 @@ var MX_ADMIN_MODULES_RAW = '["core","cari"]';
 var MX_ADMIN_PACKS_RAW = MX_ADMIN_MODULES_RAW;
 
 
-var MXADMIN_PANEL_VERSION = '1.6.0';
+var MXADMIN_PANEL_VERSION = '1.6.1';
 
 
 var mxAdminWeblanglist = [
@@ -311,6 +311,7 @@ var MX_ADMIN_I18N = {
         pagesFilterMismatch: 'Toplam Uyumsuz',
         pagesFilterCategory: 'Kategori',
         pagesFilterUncategorizedOption: 'Kategorisiz',
+        pageCategoryNone: 'Yok',
         pageEditTitle: 'Sayfa düzenle',
         pageDetailEmptyTitle: 'Sayfa seçin',
         pageDetailEmptySub: 'Listeden düzenlemek istediğiniz sayfayı seçin.',
@@ -593,6 +594,7 @@ var MX_ADMIN_I18N = {
         pagesFilterMismatch: 'Total mismatched',
         pagesFilterCategory: 'Category',
         pagesFilterUncategorizedOption: 'Uncategorized',
+        pageCategoryNone: 'None',
         pageEditTitle: 'Edit page',
         pageDetailEmptyTitle: 'Select a page',
         pageDetailEmptySub: 'Choose a page from the list to edit.',
@@ -794,6 +796,7 @@ var mxAdminState = {
     moduleMediaBlobByName: {},
     moduleMediaMemoryCache: {},
     pageCategoryFilter: 'all',
+    pageCategoryCatalog: [],
     pageDescFilters: {},
     pageDescById: {},
     pageDescCacheLoading: false,
@@ -4048,7 +4051,6 @@ function mxAdminFindPageRowById(pageId) {
 }
 
 function mxAdminFinishCategoryPagesLoad(keepPageId) {
-    mxAdminRenderPageFilters();
     var finishRender = function () {
         mxAdminState.categoryPagesLoading = false;
         mxAdminHidePagesListLoadingUi();
@@ -4065,13 +4067,26 @@ function mxAdminFinishCategoryPagesLoad(keepPageId) {
             }
         }
     };
-    if (mxAdminGetActivePageDescSchema().length) {
-        mxAdminLoadPageDescCache(function () {
-            mxAdminRenderPageFilters();
-            finishRender();
+    var afterFiltersReady = function () {
+        mxAdminRenderPageFilters();
+        finishRender();
+    };
+    var loadDescIfNeeded = function () {
+        if (mxAdminGetActivePageDescSchema().length) {
+            mxAdminLoadPageDescCache(function () {
+                afterFiltersReady();
+            });
+        } else {
+            afterFiltersReady();
+        }
+    };
+    if (mxAdminGetParentCategoryCatalogPath()) {
+        mxAdminLoadPageCategoryCatalog(function () {
+            loadDescIfNeeded();
         });
     } else {
-        finishRender();
+        mxAdminState.pageCategoryCatalog = [];
+        loadDescIfNeeded();
     }
 }
 
@@ -5479,6 +5494,7 @@ function mxAdminGetActivePageDescSchema() {
 
 function mxAdminResetPageFilters() {
     mxAdminState.pageCategoryFilter = 'all';
+    mxAdminState.pageCategoryCatalog = [];
     mxAdminState.pageDescFilters = {};
     mxAdminState.pageDescById = {};
     mxAdminState.pageDescCacheLoading = false;
@@ -5489,7 +5505,81 @@ function mxAdminResetPageFilters() {
     }
 }
 
+
+function mxAdminGetParentCategoryCatalogPath() {
+    if (mxAdminState.activeCategoryPath === 'products') {
+        return 'category';
+    }
+    return null;
+}
+
+
+function mxAdminLoadPageCategoryCatalog(done) {
+    var catalogPath = mxAdminGetParentCategoryCatalogPath();
+    if (!catalogPath) {
+        mxAdminState.pageCategoryCatalog = [];
+        if (done) {
+            done();
+        }
+        return;
+    }
+    var catPathSnapshot = mxAdminState.activeCategoryPath;
+    mxAdminApiRequest(
+        'GET',
+        '/api/admin/data/' + encodeURIComponent(catalogPath),
+    )
+        .then(function (resp) {
+            if (mxAdminState.activeCategoryPath !== catPathSnapshot) {
+                return;
+            }
+            var doc = mxAdminUnwrapApiData(resp) || {};
+            var rows = Array.isArray(doc.data) ? doc.data : [];
+            var lang = mxAdminState.lang;
+            var catalog = [];
+            var i;
+            for (i = 0; i < rows.length; i++) {
+                var row = rows[i] || {};
+                if (!row.id) {
+                    continue;
+                }
+                catalog.push({
+                    id: String(row.id),
+                    name:
+                        mxAdminPickLocalized(row.name, lang) ||
+                        row.path ||
+                        String(row.id),
+                    path: row.path ? String(row.path) : '',
+                });
+            }
+            mxAdminState.pageCategoryCatalog = catalog;
+        })
+        .catch(function () {
+            if (mxAdminState.activeCategoryPath === catPathSnapshot) {
+                mxAdminState.pageCategoryCatalog = [];
+            }
+        })
+        .then(function () {
+            if (done && mxAdminState.activeCategoryPath === catPathSnapshot) {
+                done();
+            }
+        });
+}
+
+function mxAdminGetPageCategoryCatalogName(categoryId) {
+    var catalog = mxAdminState.pageCategoryCatalog || [];
+    var i;
+    for (i = 0; i < catalog.length; i++) {
+        if (catalog[i].id === categoryId) {
+            return catalog[i].name || categoryId;
+        }
+    }
+    return categoryId;
+}
+
 function mxAdminHasPageCategoryFeature() {
+    if (mxAdminGetParentCategoryCatalogPath()) {
+        return true;
+    }
     var list = mxAdminState.categoryPages || [];
     var i;
     for (i = 0; i < list.length; i++) {
@@ -5771,16 +5861,35 @@ function mxAdminBuildPageCategoryFilterHtml() {
             noneCount += 1;
         }
     }
-    var categories = Object.keys(categoryCounts).sort(function (a, b) {
-        return a.localeCompare(b, mxAdminState.lang || 'tr', {
-            sensitivity: 'base',
-        });
+    var categories = [];
+    var seenIds = {};
+    var catalog = mxAdminState.pageCategoryCatalog || [];
+    for (i = 0; i < catalog.length; i++) {
+        var catalogId = catalog[i].id;
+        seenIds[catalogId] = true;
+        categories.push(catalogId);
+    }
+    var orphanKeys = Object.keys(categoryCounts).sort(function (a, b) {
+        return mxAdminGetPageCategoryCatalogName(a).localeCompare(
+            mxAdminGetPageCategoryCatalogName(b),
+            mxAdminState.lang || 'tr',
+            { sensitivity: 'base' },
+        );
     });
+    for (i = 0; i < orphanKeys.length; i++) {
+        if (!seenIds[orphanKeys[i]]) {
+            categories.push(orphanKeys[i]);
+        }
+    }
+    if (!categories.length) {
+        categories = orphanKeys;
+    }
     var filterVal = mxAdminState.pageCategoryFilter || 'all';
     if (
         filterVal !== 'all' &&
         filterVal !== MX_ADMIN_PAGE_CATEGORY_NONE &&
-        !Object.prototype.hasOwnProperty.call(categoryCounts, filterVal)
+        !Object.prototype.hasOwnProperty.call(categoryCounts, filterVal) &&
+        !seenIds[filterVal]
     ) {
         filterVal = 'all';
         mxAdminState.pageCategoryFilter = 'all';
@@ -5839,15 +5948,16 @@ function mxAdminBuildPageCategoryFilterHtml() {
         ) +
         '</option>';
     for (i = 0; i < categories.length; i++) {
-        var category = categories[i];
-        var count = categoryCounts[category] || 0;
+        var categoryId = categories[i];
+        var count = categoryCounts[categoryId] || 0;
+        var displayName = mxAdminGetPageCategoryCatalogName(categoryId);
         html +=
             '<option value="' +
-            mxAdminEscapeHtml(category) +
+            mxAdminEscapeHtml(categoryId) +
             '"' +
-            (filterVal === category ? ' selected' : '') +
+            (filterVal === categoryId ? ' selected' : '') +
             '>' +
-            mxAdminEscapeHtml(category + ' (' + count + ')') +
+            mxAdminEscapeHtml(displayName + ' (' + count + ')') +
             '</option>';
     }
     if (noneCount > 0) {
@@ -7783,6 +7893,57 @@ function mxAdminValidatePageFormBeforeSave(pageRow) {
     return { ok: true, langs: langs };
 }
 
+function mxAdminRenderPageCategoryField(pageRow) {
+    var wrap = mxAdminEl('mxadminPageCategoryFieldWrap');
+    var sel = mxAdminEl('mxadminPageCategoryField');
+    if (!wrap || !sel) {
+        return;
+    }
+    if (!mxAdminGetParentCategoryCatalogPath()) {
+        wrap.classList.add('hidden');
+        sel.innerHTML = '';
+        return;
+    }
+    wrap.classList.remove('hidden');
+    var currentVal =
+        pageRow && pageRow.category ? String(pageRow.category).trim() : '';
+    var catalog = mxAdminState.pageCategoryCatalog || [];
+    var html =
+        '<option value="">' +
+        mxAdminEscapeHtml(mxAdminT('pageCategoryNone')) +
+        '</option>';
+    var i;
+    for (i = 0; i < catalog.length; i++) {
+        var entry = catalog[i];
+        html +=
+            '<option value="' +
+            mxAdminEscapeHtml(entry.id) +
+            '"' +
+            (currentVal === entry.id ? ' selected' : '') +
+            '>' +
+            mxAdminEscapeHtml(entry.name || entry.id) +
+            '</option>';
+    }
+    if (currentVal) {
+        var found = false;
+        for (i = 0; i < catalog.length; i++) {
+            if (catalog[i].id === currentVal) {
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            html +=
+                '<option value="' +
+                mxAdminEscapeHtml(currentVal) +
+                '" selected>' +
+                mxAdminEscapeHtml(currentVal) +
+                '</option>';
+        }
+    }
+    sel.innerHTML = html;
+}
+
 function mxAdminRenderPageFormFields(pageRow, record) {
     record = record || {};
     var langs = mxAdminActiveLangs();
@@ -7912,6 +8073,7 @@ function mxAdminRenderPageFormFields(pageRow, record) {
         textWrap.appendChild(textGroup);
     }
 
+    mxAdminRenderPageCategoryField(pageRow);
     mxAdminRenderPageDescFields(pageRow, record);
     mxAdminRenderPageMediaPanel(pageRow);
 }
@@ -7948,6 +8110,12 @@ function mxAdminHandlePageFormSubmit(evt) {
 
     pageRow.status = mxAdminEl('mxadminPageStatus').value;
     pageRow.path = String(mxAdminEl('mxadminPagePath').value || '').trim();
+    if (mxAdminGetParentCategoryCatalogPath()) {
+        var catField = mxAdminEl('mxadminPageCategoryField');
+        if (catField) {
+            pageRow.category = String(catField.value || '').trim();
+        }
+    }
     var validation = mxAdminValidatePageFormBeforeSave(pageRow);
     if (!validation.ok) {
         mxAdminToast(mxAdminT(validation.key), true);
