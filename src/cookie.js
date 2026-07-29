@@ -1,19 +1,15 @@
 
-
 var cookieAutoHideTimer = null;
-
 function checkCookie(name) {
   return document.cookie
     .split(";")
     .some((c) => c.trim().startsWith(name + "="));
 }
-
 function setCookie(name, value, days) {
   const date = new Date();
   date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
   document.cookie = `${name}=${value};expires=${date.toUTCString()};path=/`;
 }
-
 function hideCookieNotice() {
   if (cookieAutoHideTimer) {
     clearTimeout(cookieAutoHideTimer);
@@ -23,7 +19,6 @@ function hideCookieNotice() {
   document.querySelector(".cookie-modal")?.remove();
   document.querySelector(".modal-overlay")?.remove();
 }
-
 function showCookieNotice() {
   if (!checkCookie("cookieConsent")) {
     const banner = document.createElement("div");
@@ -36,7 +31,6 @@ function showCookieNotice() {
             </div>
         `;
     document.body.appendChild(banner);
-
     const modal = document.createElement("div");
     modal.className = "cookie-modal";
     modal.innerHTML = `
@@ -56,15 +50,12 @@ function showCookieNotice() {
             </div>
         `;
     document.body.appendChild(modal);
-
     const overlay = document.createElement("div");
     overlay.className = "modal-overlay";
     document.body.appendChild(overlay);
-
     cookieAutoHideTimer = setTimeout(hideCookieNotice, 5000);
   }
 }
-
 function showCookieDetails() {
   if (cookieAutoHideTimer) {
     clearTimeout(cookieAutoHideTimer);
@@ -73,7 +64,6 @@ function showCookieDetails() {
   document.querySelector(".cookie-modal").classList.add("active");
   document.querySelector(".modal-overlay").classList.add("active");
 }
-
 function acceptCookies() {
   if (cookieAutoHideTimer) {
     clearTimeout(cookieAutoHideTimer);
@@ -82,5 +72,4 @@ function acceptCookies() {
   setCookie("cookieConsent", "true", 365);
   hideCookieNotice();
 }
-
 window.addEventListener("load", showCookieNotice);
