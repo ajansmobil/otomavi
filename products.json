@@ -1,46 +1,8 @@
 {
-  "name": "Ürünler",
-  "path": "products",
-  "description": {
-    "tr": "Oto Mavi ürün kataloğu — Gaziantep BMW oto yedek parçaları: filtre, fren, gövde, motor, elektrik, sönümleme, klima, turbo, direksiyon, şanzıman, lastik, poyra, park elektroniği ve araç ekipmanları."
-  },
-  "keyword": {
-    "tr": "BMW yedek parça, Oto Mavi, Gaziantep, ürün kategorileri, turbo, direksiyon, şanzıman, lastik, orijinal parça"
-  },
-  "desc": [
-    {
-      "path": "parca_kodu",
-      "name": {
-        "tr": "Parça kodu",
-        "en": "Part code"
-      }
-    },
-    {
-      "path": "tur",
-      "name": {
-        "tr": "Tür",
-        "en": "Type"
-      }
-    },
-    {
-      "path": "uyumlu",
-      "name": {
-        "tr": "Uyum",
-        "en": "Fitment"
-      }
-    },
-    {
-      "path": "kalite",
-      "name": {
-        "tr": "Kalite",
-        "en": "Quality"
-      }
-    }
-  ],
   "data": [
     {
       "name": {
-        "tr": "Yakıt Filtresi"
+        "tr": "Yakıt Filtresi dddd"
       },
       "id": "omfykt1a",
       "index": 14,
@@ -2087,7 +2049,36 @@
       }
     }
   ],
-  "index": 1,
+  "desc": [
+    {
+      "path": "parca_kodu",
+      "name": {
+        "tr": "Parça kodu",
+        "en": "Part code"
+      }
+    },
+    {
+      "path": "tur",
+      "name": {
+        "tr": "Tür",
+        "en": "Type"
+      }
+    },
+    {
+      "path": "uyumlu",
+      "name": {
+        "tr": "Uyum",
+        "en": "Fitment"
+      }
+    },
+    {
+      "path": "kalite",
+      "name": {
+        "tr": "Kalite",
+        "en": "Quality"
+      }
+    }
+  ],
   "desing": {
     "header": [],
     "body": [
