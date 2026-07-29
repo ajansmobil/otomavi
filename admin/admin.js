@@ -12,7 +12,7 @@ var MX_ADMIN_SITE_LOGO = 'logo.png';
 var MX_ADMIN_THEME_RAW = '{}';
 
 
-var MX_ADMIN_MODULES_RAW = '["core"]';
+var MX_ADMIN_MODULES_RAW = '["core","cari"]';
 
 var MX_ADMIN_PACKS_RAW = MX_ADMIN_MODULES_RAW;
 
