@@ -22,7 +22,7 @@
 <body>
   <div class="mxadmin-app" id="mxadminApp">
 
-    
+    <!-- GİRİŞ -->
     <section class="mxadmin-screen mxadmin-screen-login" id="mxadminScreenLogin">
       <div class="mxadmin-login-bg" aria-hidden="true"></div>
       <div class="mxadmin-login-card">
@@ -60,7 +60,7 @@
       </div>
     </section>
 
-    
+    <!-- UYGULAMA KABUĞU -->
     <div class="mxadmin-shell hidden" id="mxadminShell">
       <button type="button" class="mxadmin-sidebar-toggle" id="mxadminSidebarToggle" data-mxadmin-i18n-aria="navMenu">
         <span class="material-symbols-outlined">menu</span>
@@ -101,7 +101,7 @@
             <span class="material-symbols-outlined">palette</span>
             <span data-mxadmin-i18n="navDesign">Tasarım</span>
           </button>
-          
+          <!-- Modul nav (eticaret vb.) mxAdminBuildModuleNav ile enjekte edilir -->
           <div id="mxadminModuleNavHost" class="mxadmin-module-nav-host"></div>
         </nav>
         <div class="mxadmin-publish-card hidden" id="mxadminPublishCard" aria-live="polite">
@@ -149,7 +149,7 @@
 
       <main class="mxadmin-main" id="mxadminMain">
 
-        
+        <!-- DASHBOARD -->
         <section class="mxadmin-screen hidden" id="mxadminScreenDashboard">
           <div class="mxadmin-screen-head">
             <h2 data-mxadmin-i18n="dashboardTitle">Dashboard</h2>
@@ -246,7 +246,7 @@
           </div>
         </section>
 
-        
+        <!-- KATEGORİLER -->
         <section class="mxadmin-screen hidden" id="mxadminScreenCategories">
           <div class="mxadmin-screen-head mxadmin-screen-head-with-back">
             <button type="button" class="mxadmin-screen-back-btn" id="mxadminCategoriesBackBtn"
@@ -314,7 +314,7 @@
           </div>
         </section>
 
-        
+        <!-- SAYFALAR — stack: once liste, secimde tam ekran detay -->
         <section class="mxadmin-screen mxadmin-screen-pages hidden" id="mxadminScreenPages">
           <div class="mxadmin-pages-topbar">
             <div class="mxadmin-pages-topbar-main">
@@ -471,7 +471,7 @@
           </div>
         </section>
 
-        
+        <!-- MODÜLLER — master/detail: sol liste, sağ düzenleme -->
         <section class="mxadmin-screen mxadmin-screen-modules hidden" id="mxadminScreenModules">
           <div class="mxadmin-screen-head">
             <h2 data-mxadmin-i18n="modulesTitle">Modüller</h2>
@@ -591,7 +591,7 @@
           </div>
         </section>
 
-        
+        <!-- AYARLAR -->
         <section class="mxadmin-screen hidden" id="mxadminScreenSettings">
           <div class="mxadmin-screen-head">
             <h2 data-mxadmin-i18n="settingsTitle">Ayarlar</h2>
@@ -710,7 +710,7 @@
           </form>
         </section>
 
-        
+        <!-- TASARIM -->
         <section class="mxadmin-screen hidden" id="mxadminScreenDesign">
           <div class="mxadmin-screen-head">
             <h2 data-mxadmin-i18n="designTitle">Tasarım</h2>
@@ -754,7 +754,7 @@
           </form>
         </section>
 
-        
+        <!-- Pack ekranlari (Paket 199) — pack yokken hidden; pack JS doldurur -->
         <section class="mxadmin-screen hidden" id="mxadminScreenSiparisler" data-mxadmin-module="siparisler"></section>
         <section class="mxadmin-screen hidden" id="mxadminScreenEticaretSettings" data-mxadmin-module="eticaret"></section>
         <section class="mxadmin-screen hidden" id="mxadminScreenKargoSettings" data-mxadmin-module="kargo"></section>
@@ -796,7 +796,7 @@
       </div>
     </div>
   </div>
-  <script src="/admin/admin.js?v=b325a86950f8"></script>
+  <script src="/admin/admin.js?v=6f6ee7e373af"></script>
   
 </body>
 

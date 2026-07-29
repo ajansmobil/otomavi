@@ -1,46 +1,8 @@
 {
-  "name": "Ürünler",
-  "path": "products",
-  "description": {
-    "tr": "Oto Mavi ürün kataloğu — Gaziantep BMW oto yedek parçaları: filtre, fren, gövde, motor, elektrik, sönümleme, klima, turbo, direksiyon, şanzıman, lastik, poyra, park elektroniği ve araç ekipmanları."
-  },
-  "keyword": {
-    "tr": "BMW yedek parça, Oto Mavi, Gaziantep, ürün kategorileri, turbo, direksiyon, şanzıman, lastik, orijinal parça"
-  },
-  "desc": [
-    {
-      "path": "parca_kodu",
-      "name": {
-        "tr": "Parça kodu",
-        "en": "Part code"
-      }
-    },
-    {
-      "path": "tur",
-      "name": {
-        "tr": "Tür",
-        "en": "Type"
-      }
-    },
-    {
-      "path": "uyumlu",
-      "name": {
-        "tr": "Uyum",
-        "en": "Fitment"
-      }
-    },
-    {
-      "path": "kalite",
-      "name": {
-        "tr": "Kalite",
-        "en": "Quality"
-      }
-    }
-  ],
   "data": [
     {
       "name": {
-        "tr": "Yakıt Filtresi"
+        "tr": "Yakıt Filtresi xxxxxxx"
       },
       "id": "omfykt1a",
       "index": 14,
@@ -2086,21 +2048,5 @@
         "tr": "Cam silecek motoru ve redüktör kolu park konumuna getirir; yavaş çalışan motor fırça aşınması veya dişli kırığı işaretidir, bağlantı koluyla birlikte bakılır."
       }
     }
-  ],
-  "index": 1,
-  "desing": {
-    "header": [],
-    "body": [
-      "t1udo01"
-    ],
-    "footer": []
-  },
-  "modulestatus": {
-    "page": true,
-    "body": true,
-    "detail": true,
-    "img": true,
-    "bgimg": false,
-    "icon": true
-  }
+  ]
 }

@@ -10,6 +10,7 @@
   "category": "Kurumsal",
   "name": "Oto Mavi",
   "domain": "otomavi.com",
+  "adminApiUrl": "https://webmaker.yunusevgane.workers.dev",
   "langs": {
     "tr": true,
     "en": false,

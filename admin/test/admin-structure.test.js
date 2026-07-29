@@ -1,4 +1,6 @@
-
+/**
+ * webmodules/admin — statik dosya yapi ve placeholder denetimi.
+ */
 var assert = require('assert');
 var fs = require('fs');
 var path = require('path');
@@ -1057,11 +1059,11 @@ describe('webmodules/admin {{adminApiUrl}} htmlUtils uyumu', function () {
         var end = js.indexOf('function mxAdminParsePacksFromRaw', start);
         assert.ok(end !== -1);
         var fnSrc = js.slice(start, end);
-        
+        /* eslint-disable no-new-func */
         var parseFn = new Function(
             fnSrc + '; return mxAdminParseModulesFromRaw;',
         )();
-        
+        /* eslint-enable no-new-func */
         assert.deepStrictEqual(parseFn('{{adminModules}}'), ['core']);
         assert.deepStrictEqual(parseFn(''), ['core']);
         assert.deepStrictEqual(parseFn('not-json'), ['core']);
@@ -1087,7 +1089,7 @@ describe('webmodules/admin {{adminApiUrl}} htmlUtils uyumu', function () {
         var state = { modules: ['core'] };
         var registry = {};
         var bindCalled = false;
-        
+        /* eslint-disable no-new-func */
         var buildFn = new Function(
             'mxAdminEl',
             'mxAdminState',
@@ -1104,7 +1106,7 @@ describe('webmodules/admin {{adminApiUrl}} htmlUtils uyumu', function () {
                 bindCalled = true;
             },
         );
-        
+        /* eslint-enable no-new-func */
         buildFn();
         assert.strictEqual(host.innerHTML, '', 'host temizlenmeli');
         assert.strictEqual(

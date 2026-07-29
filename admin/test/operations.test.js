@@ -1,4 +1,8 @@
-
+/**
+ * webmodules/admin — sayfa CRUD kullanici islemleri registry.
+ * Yeni islem eklendiginde OPERATIONS dizisine kayit acin.
+ * Silme: deleteOp: true + Global_confirmDelete zorunlu.
+ */
 var assert = require("assert");
 var path = require("path");
 var ops = require("../../../scripts/test-operations-utils");

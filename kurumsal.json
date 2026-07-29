@@ -1,7 +1,4 @@
 {
-  "name": "Kurumsal",
-  "path": "kurumsal",
-  "desc": [],
   "data": [
     {
       "name": {
@@ -212,7 +209,7 @@
       }
     }
   ],
-  "index": 2,
+  "desc": [],
   "desing": {
     "header": [],
     "body": [

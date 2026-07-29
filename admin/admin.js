@@ -1,22 +1,44 @@
-
+/**
+ * webmodules/admin/admin.js — yayın sitesi admin paneli istemcisi (sidebar shell).
+ *
+ * KATI JS kısıtları (CLAUDE.md § JavaScript + webmodules/mantik/rust.md):
+ *   - yalnızca `var` — `let`/`const`/arrow function yasak
+ *   - `DOMContentLoaded` yasak — `window.onload` / `setTimeout`
+ *
+ * Backend: webmodules/backend/cloudflare Worker — MX_ADMIN_API_BASE render'da
+ * `https://webmaker.yunusevgane.workers.dev` ile cozulur. Localhost onizlemede de Worker kullanilir;
+ * site baglami X-Matrix-Preview-Domain (otomavi.com) ile gider.
+ */
 
 var MX_ADMIN_API_BASE = 'https://webmaker.yunusevgane.workers.dev';
 
+/** Render sirasinda setting.domain — localhost onizlemede Worker site cozumlemesi */
+var MX_ADMIN_PREVIEW_DOMAIN = 'otomavi.com';
 
+/** Render sirasinda setting.json logo dosya adi (or. logo.png) — giris ekrani icin oturumsuz onizleme */
 var MX_ADMIN_SITE_LOGO = 'logo.png';
 
-
+/**
+ * Admin tema ayarlari — render `copyAdminPanel` {} → JSON.
+ * useSiteLogo, useSiteColors, primary, accent vb. (Paket 240)
+ */
 var MX_ADMIN_THEME_RAW = '{}';
 
-
+/**
+ * Aktif admin modul id listesi — render `copyAdminPanel` ["core"] → JSON ornek ["core", "eticaret"].
+ * Kaynakta placeholder cozulmezse yalniz core. (Paket 206; eski ["core"] alias fsCopy'ta)
+ */
 var MX_ADMIN_MODULES_RAW = '["core"]';
-
+/** @deprecated Paket 206 — MX_ADMIN_MODULES_RAW kullan */
 var MX_ADMIN_PACKS_RAW = MX_ADMIN_MODULES_RAW;
 
-
+/**
+ * Admin panel surum numarasi — her onemli degisiklikte (UI, API uyumu, guvenlik,
+ * sidebar/foot duzeni vb.) surum artir (or. 1.5.0 -> 1.5.1). Alt barda gosterilir.
+ */
 var MXADMIN_PANEL_VERSION = '1.6.0';
 
-
+/** Webmaker ile ayni sabit dil katalogu — ayarlar langs UI */
 var mxAdminWeblanglist = [
     { path: 'tr', name: 'Türkçe' },
     { path: 'en', name: 'İngilizce' },
@@ -34,6 +56,11 @@ var mxAdminWeblanglist = [
 
 var MX_ADMIN_SITE_ICON = 'icon.png';
 
+/**
+ * Localhost onizleme: webtest-live-server /api/admin proxy same-origin calisir
+ * (Worker cross-origin Secure cookie http://127.0.0.1 uzerinde tutulamaz).
+ * Proxy arka planda Worker + X-Matrix-Preview-Domain kullanir.
+ */
 (function mxAdminResolveLocalApiBase() {
     if (typeof window === 'undefined' || !window.location) {
         return;
@@ -44,11 +71,15 @@ var MX_ADMIN_SITE_ICON = 'icon.png';
     }
 })();
 
-
+/**
+ * admin bagimsiz — Matrix public/src/modules import yok.
+ * Silme onay popup (Global_confirmDelete API uyumlu).
+ * Harici Global_confirmDelete (Matrix) yuklenmisse onu kullanir; yoksa minimal admin popup.
+ */
 var mxAdminExternalConfirmDelete =
     typeof Global_confirmDelete === 'function' ? Global_confirmDelete : null;
 
-
+/** Acik confirm overlay kaldir */
 function mxAdminConfirmOverlayRemove() {
     var root = document.getElementById('mxadminConfirmRoot');
     if (root) {
@@ -56,7 +87,7 @@ function mxAdminConfirmOverlayRemove() {
     }
 }
 
-
+/** Popup metinlerinde XSS onleme */
 function mxAdminConfirmDeleteEscape(str) {
     if (str == null) {
         return '';
@@ -69,7 +100,11 @@ function mxAdminConfirmDeleteEscape(str) {
         .replace(/\n/g, '<br>');
 }
 
-
+/**
+ * @param {string} [message]
+ * @param {object} [opts] title, icon, confirmText, cancelText, extraText, extraValue
+ * @returns {Promise<boolean|*>}
+ */
 function mxAdminConfirmDelete(message, opts) {
     if (
         mxAdminExternalConfirmDelete &&
@@ -742,7 +777,7 @@ var MX_ADMIN_I18N = {
 var mxAdminState = {
     lang: 'tr',
     screen: 'dashboard',
-    
+    /* Aktif admin modul id'leri (core always; eticaret when). packs = ayni dizi alias. */
     modules: ['core'],
     packs: ['core'],
     me: null,
@@ -793,10 +828,10 @@ var mxAdminState = {
     },
 };
 
-
+/** Liste ust kategori filtresi — kategorisiz sayfalar icin ozel anahtar (webmaker ile ayni) */
 var MX_ADMIN_PAGE_CATEGORY_NONE = '__none__';
 
-
+/* ---------------------------------------------------------------- yardımcılar */
 
 function mxAdminEl(id) {
     return document.getElementById(id);
@@ -811,7 +846,7 @@ function mxAdminApplyI18n() {
     var nodes = document.querySelectorAll('[data-mxadmin-i18n]');
     var i;
     for (i = 0; i < nodes.length; i++) {
-        
+        /* Yalnizca leaf node — ic span varsa buton metnini ezme (spinner/ikon korunur) */
         if (nodes[i].querySelector('[data-mxadmin-i18n]')) {
             continue;
         }
@@ -948,7 +983,10 @@ function mxAdminEscapeHtml(value) {
         .replace(/"/g, '&quot;');
 }
 
-
+/**
+ * User-Agent → kisa cihaz etiketi (Dashboard giris gecmisi).
+ * Ornek: Chrome · Windows, curl, Cursor Agent; bilinmeyen → 48 karakter ellipsis.
+ */
 function mxAdminFormatDevice(ua) {
     if (!ua) {
         return '—';
@@ -1170,7 +1208,10 @@ function mxAdminUpdatePageDetailHeader(pageRow) {
     }
 }
 
-
+/**
+ * API yanıt sarmalayıcısı: GET /api/admin/data/* → { collection, data: <json>, sha }
+ * login-history → { data: [...] } (dizi — unwrap atlanır)
+ */
 function mxAdminUnwrapApiData(resp) {
     if (!resp) {
         return resp;
@@ -1185,7 +1226,10 @@ function mxAdminUnwrapApiData(resp) {
     return resp;
 }
 
-
+/**
+ * Kategori listing GET/PUT icin kanonik { data: [...] } — API zarfini (collection, sha) atar.
+ * Legacy duz dizi yanitini da normalize eder.
+ */
 function mxAdminNormalizeCategoryDoc(raw) {
     if (!raw || typeof raw !== 'object') {
         return { data: [] };
@@ -1220,7 +1264,7 @@ function mxAdminNormalizeCategoryDoc(raw) {
     return raw;
 }
 
-
+/** Kategori JSON PUT govdesi — collection/sha API zarfini diske yazma. */
 function mxAdminCategoryDocPutPayload(doc) {
     var source =
         doc !== undefined && doc !== null
@@ -1256,7 +1300,7 @@ function mxAdminPickLocalized(obj, lang) {
     return '';
 }
 
-
+/** setting.json name/domain: string veya cok dilli nesne — input icin tek satir metin */
 function mxAdminSettingScalarToInput(val, lang) {
     return mxAdminPickLocalized(val, lang || mxAdminState.lang || 'tr');
 }
@@ -1297,7 +1341,7 @@ function mxAdminEnsureSettingForLangs(done) {
         });
 }
 
-
+/* ---------------------------------------------------------------- API istemcisi */
 
 function mxAdminApiConfigured() {
     return !!(MX_ADMIN_API_BASE && MX_ADMIN_API_BASE.indexOf('{{') !== 0);
@@ -1310,14 +1354,14 @@ function mxAdminApiUrl(pathSuffix) {
     return MX_ADMIN_API_BASE.replace(/\/+$/, '') + pathSuffix;
 }
 
-
+/** fetch icin 30sn zaman asimi — AbortSignal.timeout yoksa AbortController fallback */
 function mxAdminCreateFetchAbortSignal(timeoutMs) {
     var ms = typeof timeoutMs === 'number' ? timeoutMs : 30000;
     if (typeof AbortSignal !== 'undefined' && AbortSignal.timeout) {
         try {
             return AbortSignal.timeout(ms);
         } catch (signalErr) {
-            
+            /* fallback asagida */
         }
     }
     if (typeof AbortController !== 'undefined') {
@@ -1326,7 +1370,7 @@ function mxAdminCreateFetchAbortSignal(timeoutMs) {
             try {
                 controller.abort();
             } catch (abortErr) {
-                
+                /* yoksay */
             }
         }, ms);
         return controller.signal;
@@ -1358,7 +1402,14 @@ function mxAdminApiRequestOnce(method, pathSuffix, body) {
             apiHost = '';
         }
         if (apiHost && pageHost && apiHost !== pageHost) {
-            opts.headers['X-Matrix-Preview-Domain'] = pageHost;
+            var previewDomain = pageHost;
+            if (mxAdminIsLocalPreviewHost()) {
+                var resolvedPreview = mxAdminResolvePreviewDomainHeader();
+                if (resolvedPreview) {
+                    previewDomain = resolvedPreview;
+                }
+            }
+            opts.headers['X-Matrix-Preview-Domain'] = previewDomain;
         }
         if (body !== undefined) {
             opts.body = JSON.stringify(body);
@@ -1449,7 +1500,7 @@ function mxAdminApiRequest(method, pathSuffix, body) {
     });
 }
 
-
+/** Yayin hatti — kayit sonrasi sidebar kart + yayin durumu polling */
 var mxAdminPublishPollTimer = null;
 var mxAdminPublishPollAttempts = 0;
 var mxAdminPublishSinceMs = 0;
@@ -1463,6 +1514,32 @@ function mxAdminIsLocalPreviewHost() {
     }
     var host = (window.location.hostname || '').toLowerCase();
     return host === 'localhost' || host === '127.0.0.1';
+}
+
+/** Localhost onizlemede Worker'a gidecek site domain (setting.domain) */
+function mxAdminResolvePreviewDomainHeader() {
+    if (
+        typeof MX_ADMIN_PREVIEW_DOMAIN === 'string' &&
+        MX_ADMIN_PREVIEW_DOMAIN &&
+        MX_ADMIN_PREVIEW_DOMAIN.indexOf('{{') !== 0
+    ) {
+        return String(MX_ADMIN_PREVIEW_DOMAIN)
+            .trim()
+            .toLowerCase()
+            .replace(/^https?:\/\//, '')
+            .split('/')[0]
+            .split(':')[0];
+    }
+    var setting = mxAdminState && mxAdminState.settingData;
+    if (setting && setting.domain) {
+        return String(setting.domain)
+            .trim()
+            .toLowerCase()
+            .replace(/^https?:\/\//, '')
+            .split('/')[0]
+            .split(':')[0];
+    }
+    return '';
 }
 
 function mxAdminPublishStopPoll() {
@@ -1638,13 +1715,16 @@ function mxAdminPublishStartPoll() {
     );
 }
 
-
+/**
+ * Mutasyon basarisi sonrasi cagrilir — JSON aninda kaydedildi; yayin ayri adimlarla izlenir.
+ * @param {object} [apiResult] Worker yaniti (dispatched, local, success)
+ */
 function mxAdminTrackPublishAfterSave(apiResult) {
     apiResult = apiResult && typeof apiResult === 'object' ? apiResult : {};
     try {
         localStorage.setItem('mxadmin_last_save_at', String(Date.now()));
     } catch (lsErr) {
-        
+        /* localStorage kapali olabilir */
     }
     mxAdminPublishStopPoll();
     mxAdminPublishSinceMs = Date.now();
@@ -1692,7 +1772,7 @@ function mxAdminOnMutationSuccess(apiResult) {
     mxAdminTrackPublishAfterSave(apiResult);
 }
 
-
+/** Birden fazla PUT/POST yanitindan yayin sinyali birlestir */
 function mxAdminMergePublishApiResult(a, b) {
     var ra = a && typeof a === 'object' ? a : {};
     var rb = b && typeof b === 'object' ? b : {};
@@ -1703,7 +1783,7 @@ function mxAdminMergePublishApiResult(a, b) {
     };
 }
 
-
+/** Kategori listesi GET/POST yarisi — eski istek yanitini yoksay */
 function mxAdminBumpCategoryPagesRequest() {
     mxAdminState.categoryPagesRequestId += 1;
     return mxAdminState.categoryPagesRequestId;
@@ -1725,7 +1805,7 @@ function mxAdminApplyCategoryPagesResponse(catResp, reqId) {
     return true;
 }
 
-
+/** page-add sonrasi GET gecikirse yeni satiri listede tut */
 function mxAdminEnsurePageInCategoryList(pageId, pageRow) {
     if (pageId && mxAdminFindPageRowById(pageId)) {
         return;
@@ -1806,7 +1886,7 @@ function mxAdminHandleUnauthorized(err) {
     return false;
 }
 
-
+/* ---------------------------------------------------------------- ekran geçişleri */
 
 function mxAdminClearMainNavActive() {
     var navBtns = document.querySelectorAll('.mxadmin-nav-btn');
@@ -2023,12 +2103,19 @@ function mxAdminHandlePageStatusChange() {
     mxAdminUpdatePageDetailHeader(mxAdminState.activePageRow);
 }
 
+/* ---------------------------------------------------------------- admin modules nav (Paket 199/206/207b) */
 
-
-
+/**
+ * Opsiyonel admin modul kayit defteri — her modul kendi JS'inde mxAdminModuleRegister cagirir.
+ * Core'a modul-ozel if eklemek yasak (Paket 207b).
+ * @type {Object.<string, { id: string, init: Function|null, buildNav: Function|null, showScreen: Function|null, screens: Object|null }>}
+ */
 var mxAdminModuleRegistry = {};
 
-
+/**
+ * Admin modul kaydi (eticaret ve gelecek moduller).
+ * @param {{ id: string, init?: Function, buildNav?: Function, showScreen?: Function, screens?: Object }} spec
+ */
 function mxAdminModuleRegister(spec) {
     if (!spec || typeof spec.id !== 'string' || !spec.id) {
         return;
@@ -2046,7 +2133,9 @@ function mxAdminModuleRegister(spec) {
     };
 }
 
-
+/**
+ * Kayitli modul ekran section'larini gizler (core disi).
+ */
 function mxAdminHideRegisteredModuleScreens() {
     var moduleId;
     for (moduleId in mxAdminModuleRegistry) {
@@ -2078,7 +2167,9 @@ function mxAdminHideRegisteredModuleScreens() {
     }
 }
 
-
+/**
+ * Aktif listedeki kayitli modullerin init'ini cagirir (core hariç).
+ */
 function mxAdminInitRegisteredModules() {
     var modules = mxAdminState.modules || mxAdminState.packs || [];
     var api = {
@@ -2100,7 +2191,12 @@ function mxAdminInitRegisteredModules() {
     }
 }
 
-
+/**
+ * ["core"] ham JSON'u diziye cevirir.
+ * Placeholder / bos / gecersiz → ['core']; core yoksa basa eklenir.
+ * @param {string|*} raw
+ * @returns {string[]}
+ */
 function mxAdminParseModulesFromRaw(raw) {
     var fallback = ['core'];
     if (raw === undefined || raw === null) {
@@ -2131,12 +2227,15 @@ function mxAdminParseModulesFromRaw(raw) {
     }
 }
 
-
+/** @deprecated Paket 206 — mxAdminParseModulesFromRaw */
 function mxAdminParsePacksFromRaw(raw) {
     return mxAdminParseModulesFromRaw(raw);
 }
 
-
+/**
+ * MX_ADMIN_MODULES_RAW → mxAdminState.modules (+ packs alias).
+ * @returns {string[]}
+ */
 function mxAdminParseModules() {
     var list = mxAdminParseModulesFromRaw(MX_ADMIN_MODULES_RAW);
     mxAdminState.modules = list;
@@ -2144,7 +2243,7 @@ function mxAdminParseModules() {
     return list;
 }
 
-
+/** @deprecated Paket 206 — mxAdminParseModules */
 function mxAdminParsePacks() {
     return mxAdminParseModules();
 }
@@ -2154,7 +2253,7 @@ function mxAdminHasModule(moduleId) {
     return modules.indexOf(moduleId) !== -1;
 }
 
-
+/** @deprecated Paket 206 — mxAdminHasModule */
 function mxAdminHasPack(packId) {
     return mxAdminHasModule(packId);
 }
@@ -2172,16 +2271,19 @@ function mxAdminBindModuleNavButtons(root) {
     }
 }
 
-
+/** @deprecated Paket 206 — mxAdminBindModuleNavButtons */
 function mxAdminBindPackNavButtons(root) {
     mxAdminBindModuleNavButtons(root);
 }
 
-
+/**
+ * Aktif moduller icin kayitli buildNav(host) cagirir (Paket 207b).
+ * Basit sitede (modules=[core]) host bos kalir — modul-ozel if yok.
+ */
 function mxAdminBuildModuleNav() {
     var host = mxAdminEl('mxadminModuleNavHost');
     if (!host) {
-        
+        /* Eski id geriye uyum (Paket 206 oncesi render ciktilari) */
         host = mxAdminEl('mxadminPackNavHost');
     }
     if (!host) {
@@ -2203,7 +2305,7 @@ function mxAdminBuildModuleNav() {
     mxAdminBindModuleNavButtons(host);
 }
 
-
+/** @deprecated Paket 206 — mxAdminBuildModuleNav */
 function mxAdminBuildPackNav() {
     mxAdminBuildModuleNav();
 }
@@ -2354,6 +2456,7 @@ function mxAdminToggleSidebarDrawer() {
 
 function mxAdminShowApp(me) {
     mxAdminState.me = me || {};
+    mxAdminUpdateUserChip();
     mxAdminEl('mxadminScreenLogin').classList.add('hidden');
     mxAdminEl('mxadminShell').classList.remove('hidden');
     if (me && (me.must_reset || me.mustReset)) {
@@ -2474,7 +2577,7 @@ function mxAdminShowLogin() {
     }
 }
 
-
+/* ---------------------------------------------------------------- giriş */
 
 function mxAdminSyncPasswordToggleA11y() {
     var input = mxAdminEl('mxadminPassword');
@@ -2626,7 +2729,7 @@ function mxAdminAfterLogout() {
     mxAdminShowLogin();
 }
 
-
+/* ---------------------------------------------------------------- site tema (desing.json dark palette — Paket 142) */
 
 function mxAdminFindDesingColorToken(colorsArr, tokenName) {
     if (!Array.isArray(colorsArr)) {
@@ -2785,7 +2888,7 @@ function mxAdminApplyCustomTheme() {
     }
 }
 
-
+/* ---------------------------------------------------------------- dashboard */
 
 function mxAdminFormatDashboardTimestamp(msOrIso) {
     if (!msOrIso) {
@@ -2889,7 +2992,7 @@ function mxAdminLoadDashboard() {
             mxAdminApplyCustomTheme();
         })
         .catch(function () {
-            
+            /* varsayilan :root token */
             mxAdminApplyCustomTheme();
         });
 
@@ -2911,7 +3014,7 @@ function mxAdminLoadDashboard() {
                 siteName || '—';
         })
         .catch(function () {
-            
+            /* site adi — kalir */
         });
 
     mxAdminApiRequest('GET', '/api/admin/data/modules')
@@ -2923,7 +3026,7 @@ function mxAdminLoadDashboard() {
             );
         })
         .catch(function () {
-            
+            /* modul sayaci — kalir */
         });
 
     mxAdminLoadDashboardRenderStatus();
@@ -2947,7 +3050,7 @@ function mxAdminLoadDashboard() {
             mxAdminCountAllPages(cats);
         })
         .catch(function () {
-            
+            /* sayaçlar — kalır */
         });
 
     var loading = mxAdminEl('mxadminHistoryLoading');
@@ -3004,7 +3107,7 @@ function mxAdminCountAllPages(cats) {
                     total += rows.length;
                 })
                 .catch(function () {
-                    
+                    /* yoksay */
                 })
                 .then(function () {
                     pending -= 1;
@@ -3073,9 +3176,9 @@ function mxAdminRenderLoginHistory(list) {
     }
 }
 
+/* ---------------------------------------------------------------- kategoriler */
 
-
-
+/** Webmaker categoryAddRoute slugify ile ayni kurallar */
 function mxAdminSlugifyCategoryPath(str) {
     return String(str || '')
         .toLowerCase()
@@ -3090,7 +3193,7 @@ function mxAdminSlugifyCategoryPath(str) {
         .replace(/^-|-$/g, '');
 }
 
-
+/** Tek parca guvenli path segmenti — webmaker sanitizeSegment uyumu */
 function mxAdminSanitizeCategoryPath(raw) {
     var seg = String(raw || '').trim();
     if (!seg) {
@@ -3114,7 +3217,7 @@ function mxAdminCategoryPathExists(pagesettingData, pathVal) {
     return false;
 }
 
-
+/** Kategori ekleme istemci dogrulama — { ok, key?, path?, name? } */
 function mxAdminValidateCategoryAddInput(name, pathInput, pagesettingData) {
     var trimmedName = String(name || '').trim();
     if (!trimmedName) {
@@ -3611,7 +3714,7 @@ function mxAdminHandleCategoriesFormSubmit(evt) {
         });
 }
 
-
+/* ---------------------------------------------------------------- sayfalar */
 
 function mxAdminShowPagesListLoading() {
     var ul = mxAdminEl('mxadminPagesList');
@@ -3640,7 +3743,7 @@ function mxAdminHidePagesListLoading() {
     mxAdminState.categoryPagesLoading = false;
 }
 
-
+/** Yukleme surerken bos liste yerine spinner gosterilir */
 function mxAdminSyncPagesListLoadingUi() {
     var empty = mxAdminEl('mxadminPagesEmpty');
     var listLoading = mxAdminEl('mxadminPagesListLoading');
@@ -3725,7 +3828,7 @@ function mxAdminLoadPagesScreen() {
 }
 
 function mxAdminRenderCategoryTabs() {
-    
+    /* Kategori sekmeleri kaldirildi — yan sidebar listesi (webmaker gibi) */
 }
 
 function mxAdminSetListRefreshBusy(btn, busy) {
@@ -3972,7 +4075,7 @@ function mxAdminGetFilteredPages() {
     return out;
 }
 
-
+/** Toplu islem — secili sayfa id listesi (pageSelection state) */
 function mxAdminGetSelectedPageIds() {
     var ids = [];
     var sel = mxAdminState.pageSelection || {};
@@ -3985,7 +4088,7 @@ function mxAdminGetSelectedPageIds() {
     return ids;
 }
 
-
+/** Toplu secimi sifirla + UI senkron */
 function mxAdminClearPageSelection() {
     mxAdminState.pageSelection = {};
     var selectAll = mxAdminEl('mxadminPagesSelectAll');
@@ -4008,7 +4111,7 @@ function mxAdminClearPageSelection() {
     mxAdminUpdatePageBulkBar();
 }
 
-
+/** Hedef kategori select — pagesetting aktif kategoriler, mevcut haric */
 function mxAdminPopulateBulkCategoryTarget() {
     var sel = mxAdminEl('mxadminPagesBulkCategoryTarget');
     if (!sel) {
@@ -4043,7 +4146,7 @@ function mxAdminPopulateBulkCategoryTarget() {
     sel.innerHTML = html;
 }
 
-
+/** Toplu bar gorunurluk, sayac, tumunu sec durumu */
 function mxAdminUpdatePageBulkBar() {
     var bar = mxAdminEl('mxadminPagesBulkBar');
     var countEl = mxAdminEl('mxadminPagesBulkSelected');
@@ -4089,7 +4192,7 @@ function mxAdminUpdatePageBulkBar() {
     }
 }
 
-
+/** Tek satir checkbox — satir acmayi engelle */
 function mxAdminHandlePageSelectToggle(pageId, el, evt) {
     if (evt && evt.stopPropagation) {
         evt.stopPropagation();
@@ -4116,7 +4219,7 @@ function mxAdminHandlePageSelectToggle(pageId, el, evt) {
     mxAdminUpdatePageBulkBar();
 }
 
-
+/** Tümünü seç — yalniz filtrelenmis gorunen satirlar */
 function mxAdminHandlePagesSelectAll(el, evt) {
     if (evt && evt.stopPropagation) {
         evt.stopPropagation();
@@ -4146,7 +4249,7 @@ function mxAdminMakePageSelectHandler(pageId) {
     };
 }
 
-
+/** Secili satirlarda status guncelle + kategori PUT */
 function mxAdminBulkSetPageStatus(targetStatus) {
     var ids = mxAdminGetSelectedPageIds();
     if (!ids.length) {
@@ -4227,7 +4330,7 @@ function mxAdminBulkSetPageStatus(targetStatus) {
         });
 }
 
-
+/** Secili sayfalari sirayla sil — SHA cakismasi icin paralel degil */
 function mxAdminBulkDeletePages() {
     var ids = mxAdminGetSelectedPageIds();
     if (!ids.length) {
@@ -4316,7 +4419,7 @@ function mxAdminBulkDeletePages() {
     });
 }
 
-
+/** Id ile categoryPages indeks bul */
 function mxAdminFindPageRowIndexById(pageId) {
     var list = mxAdminState.categoryPages || [];
     var i;
@@ -4328,7 +4431,10 @@ function mxAdminFindPageRowIndexById(pageId) {
     return -1;
 }
 
-
+/**
+ * Cross-category tasima — GET hedef, satir ekle PUT hedef, kaynak listeden cikar PUT kaynak.
+ * page-record (page/{id}/) kategori bagimsiz; page-delete kullanilmaz (klasoru siler).
+ */
 function mxAdminBulkMovePages() {
     var ids = mxAdminGetSelectedPageIds();
     if (!ids.length) {
@@ -4592,7 +4698,7 @@ function mxAdminMakePageMoveHandler(pageRow, delta) {
     };
 }
 
-
+/** Aktif kategori filtresine göre page-add gövdesi (webmaker pageadd uyumu). */
 function mxAdminBuildPageAddBody() {
     var body = { status: 'play' };
     var filterVal = mxAdminState.pageCategoryFilter || 'all';
@@ -4608,7 +4714,7 @@ function mxAdminBuildPageAddBody() {
     return body;
 }
 
-
+/** Yeni sayfa ekle — POST page-add, kategori yenile, yeni sayfayı seç. */
 function mxAdminAddPage() {
     var catPath = mxAdminState.activeCategoryPath;
     if (!catPath) {
@@ -4654,7 +4760,7 @@ function mxAdminAddPage() {
         });
 }
 
-
+/** Seçili sayfayı sil — Global_confirmDelete (alias → mxAdminConfirmDelete) + DELETE page-delete. */
 function mxAdminDeletePage() {
     var pageRow = mxAdminState.activePageRow;
     if (!pageRow || !pageRow.id) {
@@ -4727,7 +4833,7 @@ function mxAdminDeletePage() {
     });
 }
 
-
+/** Kategori listesinde path cakismasi var mi */
 function mxAdminCategoryPagePathTaken(path) {
     var list = mxAdminState.categoryPages || [];
     var i;
@@ -4739,7 +4845,7 @@ function mxAdminCategoryPagePathTaken(path) {
     return false;
 }
 
-
+/** Benzersiz klon path — kaynak + '-kopya', cakisma varsa -kopya2, ... */
 function mxAdminGenerateUniqueClonePath(sourcePath) {
     var base = String(sourcePath || 'sayfa').trim() || 'sayfa';
     var candidate = base + '-kopya';
@@ -4751,7 +4857,7 @@ function mxAdminGenerateUniqueClonePath(sourcePath) {
     return candidate;
 }
 
-
+/** i18n veya duz metin adina kopya eki */
 function mxAdminClonePageName(name) {
     var suffixTr = ' (kopya)';
     var suffixEn = ' (copy)';
@@ -4769,7 +4875,7 @@ function mxAdminClonePageName(name) {
     return String(name || '') + suffixTr;
 }
 
-
+/** Kaynak page-record + yeni kimlik alanlari birlestir */
 function mxAdminBuildMergedCloneRecord(sourceRecord, newPageId, newPath, newName) {
     var merged = {};
     var key;
@@ -4786,7 +4892,7 @@ function mxAdminBuildMergedCloneRecord(sourceRecord, newPageId, newPath, newName
     return merged;
 }
 
-
+/** Kategori satirinda yeni klon sayfa path/name/status senkronu */
 function mxAdminSyncCloneCategoryRow(pages, newPageId, pageRow, newPath, newName) {
     var i;
     for (i = 0; i < pages.length; i++) {
@@ -4808,7 +4914,10 @@ function mxAdminSyncCloneCategoryRow(pages, newPageId, pageRow, newPath, newName
     }
 }
 
-
+/**
+ * Sayfa klonla — GET page-record, POST page-add, PUT page-record, kategori yenile.
+ * Worker page-clone ucu yok; istemci orkestrasyonu (webmaker guvenli alt kume).
+ */
 function mxAdminClonePage(pageRow) {
     var catPath = mxAdminState.activeCategoryPath;
     if (!catPath) {
@@ -5123,7 +5232,7 @@ function mxAdminFindPageRowIndex(pageRow) {
     return -1;
 }
 
-
+/** Kategori desc[] semasi — categoryDoc.desc veya pagesetting yedegi */
 function mxAdminGetPageDescSchema() {
     var doc = mxAdminState.categoryDoc;
     if (doc && Array.isArray(doc.desc) && doc.desc.length) {
@@ -5847,7 +5956,7 @@ function mxAdminCollectPageDescFromForm() {
     return out;
 }
 
-
+/** Kategori modulestatus — categoryDoc veya pagesetting yedegi */
 function mxAdminGetPageModuleStatus() {
     var doc = mxAdminState.categoryDoc;
     if (doc && doc.modulestatus && typeof doc.modulestatus === 'object') {
@@ -5873,7 +5982,7 @@ function mxAdminGetPageModuleStatus() {
     return {};
 }
 
-
+/** ELO R11 — detail kapali kategoride text yalnizca liste satirinda */
 function mxAdminIsPageDetailClosed() {
     var ms = mxAdminGetPageModuleStatus();
     return !!(ms && ms.detail === false);
@@ -5922,7 +6031,7 @@ function mxAdminExtractPageListRow(fullPage, modulestatus) {
     return row;
 }
 
-
+/** R15 — liste satirini beyaz listeye indirger (desc/keyword/title index-only) */
 function mxAdminPrunePageListRowInPlace(row, modulestatus) {
     if (!row || typeof row !== 'object') {
         return;
@@ -5944,7 +6053,7 @@ function mxAdminPrunePageListRowInPlace(row, modulestatus) {
     }
 }
 
-
+/** R11/R14 — text konumunu modulestatus.detail ile hizalar */
 function mxAdminApplyPageTextPlacement(pageRow, record, textObj, modulestatus) {
     var detailClosed = mxAdminListRowIncludesText(modulestatus);
     if (detailClosed) {
@@ -5975,7 +6084,10 @@ function mxAdminIsLocalPreview() {
     return host === 'localhost' || host === '127.0.0.1';
 }
 
-
+/**
+ * Canli sitede gorsel/asset — origin + relPath (page/..., img/...).
+ * Localhost onizlemede Worker page-media / module-media proxy kullanilir.
+ */
 function mxAdminPublicSiteAssetUrl(relPath) {
     var path = String(relPath || '').replace(/^\/+/, '');
     if (mxAdminIsLocalPreview()) {
@@ -6008,7 +6120,7 @@ function mxAdminPublicSiteAssetUrl(relPath) {
     return origin ? origin + '/' + path : '/' + path;
 }
 
-
+/** setting.json logo alani — dosya adi (or. logo.png) */
 function mxAdminSiteLogoFile(setting) {
     var fromSetting =
         setting && setting.logo ? String(setting.logo).trim() : '';
@@ -6025,7 +6137,7 @@ function mxAdminSiteLogoFile(setting) {
     return '';
 }
 
-
+/** Site logosu tam URL — img/ altinda (setting.logo dosya adi) */
 function mxAdminSiteLogoUrl(logoFile) {
     var file = String(logoFile || '').replace(/^\/+/, '').trim();
     if (!file) {
@@ -6034,7 +6146,7 @@ function mxAdminSiteLogoUrl(logoFile) {
     return mxAdminPublicSiteAssetUrl('img/' + file);
 }
 
-
+/** Panel kabugu: giris, sidebar, kullanici chip — setting.json logosu */
 function mxAdminApplySiteLogoPair(img, fallback, logoUrl, altText) {
     if (!img || !fallback) {
         return;
@@ -6086,7 +6198,7 @@ function mxAdminApplySiteLogo(setting) {
     );
 }
 
-
+/** Oturum oncesi logo — render embed veya yerel GET setting (Worker oturum gerektirir) */
 function mxAdminPrefetchSiteLogo() {
     if (mxAdminSiteLogoFile(null)) {
         mxAdminApplySiteLogo(null);
@@ -6104,7 +6216,7 @@ function mxAdminPrefetchSiteLogo() {
             mxAdminApplySiteLogo(data);
         })
         .catch(function () {
-            
+            /* oturum yok — ikon fallback */
         });
 }
 
@@ -6117,7 +6229,7 @@ function mxAdminPageMediaUrl(pageId, filename) {
     );
 }
 
-
+/** Liste satiri — modulestatus.img aciksa kapak thumb; degilse yalnizca ikon */
 function mxAdminRenderPageListThumb(page) {
     var iconName = page && page.icon ? String(page.icon).trim() : '';
     if (!iconName) {
@@ -6676,7 +6788,7 @@ function mxAdminCollectPageTextFromForm() {
     return out;
 }
 
-
+/** webmaker pageeditCharCounter ile uyumlu — description 160, keyword 255 */
 function mxAdminPageCharCounter(inputEl, counterEl, maxLen) {
     if (!inputEl || !counterEl) {
         return;
@@ -7082,7 +7194,7 @@ function mxAdminHandlePagesSearchInput(evt) {
     mxAdminRenderPagesList();
 }
 
-
+/* ---------------------------------------------------------------- modüller */
 
 var MX_ADMIN_MODULE_MEDIA_KEYS = [
     'img',
@@ -8413,7 +8525,7 @@ function mxAdminEnsureModulesListForDesign() {
     });
 }
 
-
+/* ---------------------------------------------------------------- ayarlar */
 
 function mxAdminLoadSettings() {
     mxAdminState.loaded.settings = true;
@@ -9015,7 +9127,7 @@ function mxAdminHandleSettingsFormSubmit(evt) {
         });
 }
 
-
+/* ---------------------------------------------------------------- tasarım */
 
 function mxAdminLoadDesign() {
     mxAdminState.loaded.design = true;
@@ -9074,7 +9186,7 @@ function mxAdminRenderDesignForm(desing) {
     mxAdminRenderColorList('mxadminDesignDark', colors.dark || [], 'dark');
 }
 
-
+/** Tasarim layout bolumunde modul sirasi degistir (yalnizca mevcut ID'ler) */
 function mxAdminMoveLayoutModule(sectionKey, fromIndex, delta) {
     var desing = mxAdminState.desingData;
     if (!desing || !Array.isArray(desing[sectionKey])) {
@@ -9319,7 +9431,7 @@ function mxAdminHandleDesignFormSubmit(evt) {
         });
 }
 
-
+/* ---------------------------------------------------------------- olay bağlama + başlangıç */
 
 function mxAdminMakeNavHandler(screenName) {
     return function () {
@@ -9562,7 +9674,7 @@ function mxAdminBindEvents() {
     }
 }
 
-
+/** Alt sidebar: surum etiketi (MXADMIN_PANEL_VERSION ile senkron). */
 function mxAdminApplyPanelVersion() {
     var el = mxAdminEl('mxadminVersion');
     if (!el) {
@@ -9591,5 +9703,5 @@ function mxAdminInit() {
 
 window.onload = mxAdminInit;
 
-
+/** Test ve geriye uyum — operations.test.js Global_confirmDelete arar */
 var Global_confirmDelete = mxAdminConfirmDelete;

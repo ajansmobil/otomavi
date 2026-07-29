@@ -1,4 +1,7 @@
-
+/**
+ * webmodules/admin — sayfa CRUD HTTP golden path (webtest-live-server).
+ * Sunucu yoksa ECONNREFUSED ile skip; 8080 calisiyorsa tam akis gecmeli.
+ */
 var assert = require("assert");
 var h = require("./helpers");
 
@@ -23,7 +26,10 @@ function categoryHasPageId(body, pageId) {
   return false;
 }
 
-
+/**
+ * Worker auth proxy — cookie yokken live-server /api/admin/auth/* Worker'a iletir.
+ * Sunucu veya Worker yoksa skip (Paket 139).
+ */
 describe("webmodules/admin backend auth proxy (Worker)", function() {
   this.timeout(30000);
 
@@ -200,7 +206,7 @@ describe("webmodules/admin backend page CRUD", function() {
         8000
       );
     } catch (_cleanupErr) {
-      
+      /* orphan oneri — test akisi zaten silmeli */
     }
   });
 

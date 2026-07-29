@@ -1,4 +1,10 @@
-
+/*
+ * webmodules/admin/admin.css — yayın sitesi admin paneli (bağımsız statik stil).
+ * Silme onay: admin.css icinde .mxadmin-confirm* (Matrix confirmDelete import yok — Paket 131).
+ * admin.css **sonra** gelmeli (global div float + button width sizintisini ezer — Paket 117).
+ * (--mxadmin-* alias). Paket 105: webadmin tarzı dashboard hissi.
+ * W2: animasyon + mobil breakpoint + prefers-reduced-motion zorunlu.
+ */
 
 *,
 *::before,
@@ -7,7 +13,7 @@
 }
 
 :root {
-    
+    /* Matrix hizalı referans token'ları (alias — admin bağımsız kalır) */
     --mx-matrix-bg-body: #292a2d;
     --mx-matrix-bg-header: #1d2226;
     --mx-matrix-bg-card: #1e3046;
@@ -62,7 +68,7 @@
     --mxadmin-zebra-bg: rgba(255, 255, 255, 0.035);
     --mxadmin-zebra-bg-alt: rgba(0, 0, 0, 0.26);
     --mxadmin-zebra-bg-base: rgba(0, 0, 0, 0.14);
-    
+    /* setting.json site logosu — px tavan (taşma koruması) */
     --mxadmin-logo-sidebar-px: 28px;
     --mxadmin-logo-chip-px: 32px;
     --mxadmin-logo-login-px: 44px;
@@ -101,7 +107,7 @@ html {
     overscroll-behavior: none;
 }
 
-
+/* Kaydirma: yalnizca tasima gerektiginde; scrollbar gizli; zincirleme overscroll yok (Paket 116) */
 .mxadmin-scroll-y,
 .mxadmin-pages-list-body,
 .mxadmin-page-detail-body,
@@ -158,12 +164,12 @@ button {
     max-width: 100vw;
 }
 
-
+/* css.css global sizintisi: div float + button genisligi (Paket 117) */
 .mxadmin-app div {
     float: none;
 }
 
-
+/* css.css * { float:left } img'ye de uygulanir — logo flex cercevesinden tasmasin */
 .mxadmin-app img {
     float: none;
     max-width: 100%;
@@ -175,7 +181,10 @@ button {
     box-sizing: border-box;
 }
 
-
+/*
+ * css.css sizintisi (Paket 176): global input[type=checkbox] 60x35 toggle switch.
+ * Admin icinde standart kare checkbox — tum panel kapsami.
+ */
 .mxadmin-app input[type='checkbox'] {
     appearance: auto;
     -webkit-appearance: checkbox;
@@ -214,7 +223,7 @@ button {
     transform: none;
 }
 
-
+/* css.css label { display:flex } — admin form etiketleri dikey */
 .mxadmin-app .mxadmin-form-group > label,
 .mxadmin-app .mxadmin-check-label,
 .mxadmin-app .mxadmin-pages-select-all-label,
@@ -231,7 +240,7 @@ button {
     gap: 6px;
 }
 
-
+/* Toplu islem + tum native select'ler — mxadmin-select ile ayni (chevron JS enjeksiyonu) */
 .mxadmin-pages-bulk-status,
 .mxadmin-pages-bulk-category,
 .mxadmin-app select:not([multiple]) {
@@ -420,7 +429,7 @@ button {
     line-height: 1.45;
 }
 
-
+/* ---------------------------------------------------------------- main / screens */
 
 .mxadmin-main {
     flex: 1;
@@ -520,7 +529,7 @@ button {
     font-size: 22px;
 }
 
-
+/* ---------------------------------------------------------------- forms */
 
 .mxadmin-form-group {
     display: flex;
@@ -538,7 +547,7 @@ button {
     color: var(--mxadmin-text-muted);
 }
 
-
+/* Ortak form alani — input, textarea, select (Paket 142) */
 .mxadmin-form-group input,
 .mxadmin-form-group textarea,
 .mxadmin-select,
@@ -588,7 +597,7 @@ button {
     background-repeat: no-repeat;
     background-position: right 10px center;
     background-size: var(--mxadmin-field-chevron-size);
-    
+    /* chevron SVG: admin.js mxAdminInjectSelectChevronStyle */
 }
 
 .mxadmin-form-group input:focus,
@@ -613,7 +622,10 @@ button {
     color: var(--mxadmin-text);
 }
 
-
+/*
+ * Matrix mx-* form siniflari (cari, eticaret modulleri) — admin koyu tema.
+ * webtest/src/css.css stub/minimal oldugunda tarayici varsayilani (beyaz input/buton) gelmesin.
+ */
 .mxadmin-app .mx-form-group,
 .mxadmin-app .form-group {
     position: relative;
@@ -820,7 +832,7 @@ button {
     min-width: 0;
 }
 
-
+/* Filtre / chip icindeki kucuk select'ler — yalnizca boyut */
 .mxadmin-select.mxadmin-select-sm,
 .mxadmin-page-category-select,
 .mxadmin-page-desc-filter-select {
@@ -841,7 +853,7 @@ button {
     min-width: 0;
 }
 
-
+/* Sayfa desc[] alanlari (kategori schema — Paket 118) */
 .mxadmin-page-desc-panel {
     margin-top: 8px;
     padding-top: 16px;
@@ -877,7 +889,7 @@ button {
     font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
 }
 
-
+/* Sayfa gorselleri (modulestatus.img — Paket 119) */
 .mxadmin-page-media-panel {
     margin-top: 8px;
     padding-top: 16px;
@@ -894,7 +906,7 @@ button {
     color: var(--mxadmin-text-dim);
 }
 
-
+/* Paket 158: modul ekleme admin'de yok — Webmaker yonlendirme bilgi kutusu */
 .mxadmin-modules-add-hint {
     margin: 0 14px 12px;
     padding: 10px 12px;
@@ -1092,7 +1104,7 @@ button {
     }
 }
 
-
+/* ---------------------------------------------------------------- alerts / feedback */
 
 .mxadmin-alert {
     padding: 10px 14px;
@@ -1179,7 +1191,7 @@ button {
     }
 }
 
-
+/* ---------------------------------------------------------------- quick actions */
 
 .mxadmin-quick-actions {
     display: flex;
@@ -1197,7 +1209,7 @@ button {
     font-size: 18px;
 }
 
-
+/* ---------------------------------------------------------------- dashboard stats list */
 
 .mxadmin-stats-panel {
     margin-bottom: 20px;
@@ -1266,7 +1278,7 @@ button {
     word-break: break-word;
 }
 
-
+/* dashboard render durumu (read-only, polling yok) */
 
 .mxadmin-dashboard-render-panel {
     margin-bottom: 20px;
@@ -1295,7 +1307,7 @@ button {
     color: var(--mxadmin-text-muted);
 }
 
-
+/* legacy card aliases — geriye uyum, yeni kod mxadmin-stats-list kullanir */
 .mxadmin-cards {
     display: none;
 }
@@ -1350,7 +1362,7 @@ button {
     margin-top: 2px;
 }
 
-
+/* ---------------------------------------------------------------- panel */
 
 .mxadmin-panel {
     background: var(--mxadmin-panel);
@@ -1412,7 +1424,7 @@ button {
     flex-shrink: 0;
 }
 
-
+/* ---------------------------------------------------------------- table */
 
 .mxadmin-table-wrap {
     overflow-x: auto;
@@ -1616,7 +1628,7 @@ button {
     color: var(--mxadmin-red);
 }
 
-
+/* ---------------------------------------------------------------- pages — master/detail workspace */
 
 .mxadmin-screen-pages {
     display: flex;
@@ -1820,7 +1832,7 @@ button {
     box-sizing: border-box;
 }
 
-
+/* Sayfa listesi filtreleri — webmaker page-filters uyumu (Paket 125) */
 .mxadmin-pages-filters {
     padding: 10px 12px;
     border-bottom: 1px solid var(--mxadmin-border);
@@ -2154,7 +2166,7 @@ button {
     display: none;
 }
 
-
+/* detail panel */
 
 .mxadmin-pages-detail-panel {
     display: none;
@@ -2327,7 +2339,7 @@ button {
     max-width: none;
 }
 
-
+/* Icerik metni HTML editoru (Paket 122) */
 .mxadmin-html-editor {
     border: 1px solid var(--mxadmin-border);
     border-radius: var(--mxadmin-radius-md);
@@ -2440,7 +2452,7 @@ button {
     background: var(--mxadmin-preview-bg);
 }
 
-
+/* ---------------------------------------------------------------- design tokens */
 
 .mxadmin-color-list {
     display: flex;
@@ -2517,7 +2529,7 @@ button {
     outline: none;
 }
 
-
+/* ---------------------------------------------------------------- sidebar shell */
 
 .mxadmin-shell {
     display: flex;
@@ -2785,7 +2797,7 @@ button {
     border-left-color: var(--mxadmin-primary);
 }
 
-
+/* Yayin hatti — sidebar kart (kayit sonrasi asamali durum) */
 .mxadmin-publish-card {
     margin: 0 10px 10px;
     padding: 12px 12px 10px;
@@ -3098,7 +3110,7 @@ button {
     display: none;
 }
 
-
+/* ---------------------------------------------------------------- category / form tabs */
 
 .mxadmin-category-tabs {
     display: flex;
@@ -3168,7 +3180,7 @@ button {
     display: none !important;
 }
 
-
+/* ---------------------------------------------------------------- search */
 
 .mxadmin-search-box {
     display: flex;
@@ -3210,7 +3222,7 @@ button {
     outline: none;
 }
 
-
+/* Liste ust arama — yatayda tam genislik (max-width:280px varsayilanini ezer) */
 .mxadmin-search-box.mxadmin-search-box-full {
     width: 100%;
     min-width: 0;
@@ -3223,7 +3235,7 @@ button {
     max-width: none;
 }
 
-
+/* ---------------------------------------------------------------- layout list */
 
 .mxadmin-layout-section {
     margin-bottom: 14px;
@@ -3370,7 +3382,7 @@ button {
     font-style: italic;
 }
 
-
+/* ---------------------------------------------------------------- modules list */
 
 .mxadmin-modules-search {
     margin-bottom: 12px;
@@ -3577,7 +3589,7 @@ button {
     color: var(--mxadmin-primary);
 }
 
-
+/* ---------------------------------------------------------------- logo preview */
 
 .mxadmin-logo-preview-wrap {
     margin-top: 4px;
@@ -3663,7 +3675,7 @@ button {
     word-break: break-all;
 }
 
-
+/* Paket 174 — favicon onizleme */
 .mxadmin-icon-preview-wrap {
     margin-top: 4px;
 }
@@ -3682,7 +3694,7 @@ button {
     object-fit: contain;
 }
 
-
+/* Paket 174 — ayarlar dil listesi */
 .mxadmin-lang-setting-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
@@ -3732,7 +3744,7 @@ button {
     color: var(--mxadmin-text-muted);
 }
 
-
+/* ---------------------------------------------------------------- table inputs */
 
 .mxadmin-table-input {
     width: 100%;
@@ -3786,9 +3798,9 @@ button {
     color: var(--mxadmin-text-muted);
 }
 
+/* checkbox boyutu .mxadmin-app input[type=checkbox] reset (Paket 176) */
 
-
-
+/* ---------------------------------------------------------------- responsive (W2) */
 
 @media (max-width: 768px) {
     .mxadmin-sidebar-toggle {
@@ -3892,7 +3904,7 @@ button {
         margin-right: -4px;
     }
 
-    
+    /* Paket 160: tablo yatay scroll, bulk bar wrap, touch hedefleri min 44px */
     .mxadmin-table-wrap {
         max-width: 100%;
         overflow-x: auto;
@@ -3995,7 +4007,7 @@ button {
     }
 }
 
-
+/* ---------------------------------------------------------------- erişilebilirlik */
 
 @media (prefers-reduced-motion: reduce) {
     .mxadmin-screen,
@@ -4020,7 +4032,7 @@ button {
     }
 }
 
-
+/* ---------------------------------------------------------------- silme onay popup (admin bagimsiz — Paket 131) */
 
 .mxadmin-confirm-root {
     position: fixed;

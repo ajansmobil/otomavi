@@ -1,4 +1,12 @@
-
+/**
+ * Admin panel Playwright golden path — Paket 139 + cross-system E2E — Paket 164.
+ *
+ * Calistir: node webmodules/admin/test/e2e-playwright.js
+ * Canli (opsiyonel): ADMIN_E2E_LIVE=1 node webmodules/admin/test/e2e-playwright.js
+ *
+ * Onkosul: node scripts/webtest-live-server.js (8080) + .env WEBMAKER_ADMIN_API_URL
+ * Opsiyonel kimlik: ADMIN_E2E_USER / ADMIN_E2E_PASS (varsayilan otomavi webadminUsers admin)
+ */
 var fs = require("fs");
 var path = require("path");
 var http = require("http");

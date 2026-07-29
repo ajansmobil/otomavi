@@ -1,4 +1,6 @@
-
+/**
+ * webmodules/admin — API yardimci birim testleri (mock fetch yok, saf fonksiyon).
+ */
 var assert = require("assert");
 var helpers = require("./helpers");
 

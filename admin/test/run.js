@@ -1,4 +1,8 @@
-
+/**
+ * webmodules/admin — test calistirici.
+ * node webmodules/admin/test/run.js
+ * Opsiyonel E2E: ADMIN_E2E=1 node webmodules/admin/test/run.js
+ */
 var path = require("path");
 var Mocha = require("mocha");
 
