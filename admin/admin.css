@@ -3600,12 +3600,13 @@ button {
 
 .mxadmin-module-media-card.is-uploading {
     opacity: 0.88;
-    pointer-events: none;
+    pointer-events: auto;
+    cursor: pointer;
     transition: opacity var(--mxadmin-transition);
 }
 
 .mxadmin-module-media-card.is-uploading .mxadmin-module-media-thumb {
-    filter: brightness(0.72);
+    filter: brightness(0.85);
 }
 
 .mxadmin-module-media-uploading {
@@ -3614,7 +3615,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.42);
+    background: color-mix(in srgb, var(--mxadmin-bg) 28%, transparent);
     pointer-events: none;
 }
 
