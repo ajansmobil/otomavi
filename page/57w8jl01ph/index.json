@@ -2,15 +2,15 @@
   "id": "57w8jl01ph",
   "path": "yakit-deposu",
   "name": {
-    "tr": "Yakıt Deposu"
+    "tr": "BMW F30 N13 YAKIT DEPOSU 56646711"
   },
   "status": "play",
   "category": "omgvde03",
   "description": {
-    "tr": "Plastik veya sac yakıt deposu çatlak ve paslanma durumunda değişir; pompa flanşı ve şamandıra contası birlikte değerlendirilir, emniyet kurallarına uyulur."
+    "tr": "OTO MAVİ MÜŞTERİ MEMNUNİYETİ\n\nOto Mavi olarak en büyük önceliğimiz müşteri memnuniyetidir. Kaliteli yedek parçaları uygun fiyatlarla sunarken, güvenilir hizmet ve hızlı teslimat anlayışıyla çalışıyoruz.\n\nMüşterilerimizin memnuniyeti bizim için en büyük referanstır. Siz de BMW yedek parça ihtiyaçlarınız için Oto Mavi’yi tercih edin; güvenilir hizmetin farkını yaşayın.\n\nOto Mavi – Güvenin ve Kalitenin Adresi."
   },
   "keyword": {
-    "tr": "yakıt deposu, fuel tank, şamandıra flanş, depo conta, BMW yakıt tankı, 3 Series, 5 Series, X5, Mercedes-Benz, Audi"
+    "tr": "BMW F30 N13 YAKIT DEPOSU 56646711"
   },
   "title": {
     "tr": "Yakıt Deposu | Oto Mavi"
@@ -19,9 +19,9 @@
     "tr": "<h2 style=\"font-size: 24px;\">Yakıt Deposu</h2><p style=\"font-size: 16px;\">Yakıt deposu çalışması uzmanlık ve güvenlik gerektirir. Çatlak koku ve sızıntıyla anlaşılır.</p><p style=\"font-size: 16px;\">Oto Mavi depo ve flanş conta setlerini model yılına göre listeler.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "local_gas_station",
-  "update": "2026-07-21T10:04:15.030Z",
+  "update": "2026-07-30T07:02:51.266Z",
   "date": "2026-07-20",
-  "img": "index.webp",
+  "img": "guk7jg3a.webp",
   "desing": {
     "header": [],
     "body": [
@@ -29,12 +29,12 @@
     ],
     "footer": []
   },
-  "index": 95,
+  "index": 75,
   "url": "",
   "desc": {
     "parca_kodu": "yakit-deposu",
     "tur": "Gövde",
-    "uyumlu": "yakıt deposu · fuel tank · şamandıra flanş · depo conta · Mercedes-Benz · BMW · Audi · 3 Series",
+    "uyumlu": "BMW F30 N13 YAKIT DEPOSU 56646711",
     "kalite": "OEM ve eşdeğer"
   }
 }
