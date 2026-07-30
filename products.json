@@ -1,25 +1,6 @@
 {
   "data": [
     {
-      "id": "lnq2zzh2ae",
-      "name": {
-        "tr": "yeni sayfa"
-      },
-      "description": {
-        "tr": ""
-      },
-      "path": "yeni-sayfa-t7aw",
-      "icon": "article",
-      "category": "",
-      "status": "play",
-      "desing": {
-        "header": [],
-        "body": [],
-        "footer": []
-      },
-      "index": 0
-    },
-    {
       "name": {
         "tr": "Mazot Fitresi"
       },
