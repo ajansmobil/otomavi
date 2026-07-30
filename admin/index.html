@@ -16,7 +16,8 @@
   <link rel="shortcut icon" href="/img/icon.png" type="image/png" />
   <link rel="stylesheet" href="/src/css.css" />
   <link rel="stylesheet" href="/admin/admin.css" />
-  <link rel="stylesheet" href="/admin/modules/cari/cari-admin.css?v=116b2ef16b54" />
+  <link rel="stylesheet" href="/admin/admin.tw.css" />
+  <link rel="stylesheet" href="/admin/modules/cari/cari-admin.css?v=8fc2683d8799" />
 </head>
 
 <body>
@@ -104,7 +105,7 @@
           
           <div id="mxadminModuleNavHost" class="mxadmin-module-nav-host"></div>
         </nav>
-        <div class="mxadmin-publish-card hidden" id="mxadminPublishCard" aria-live="polite">
+        <div class="mxadmin-publish-card hidden" id="mxadminPublishCard" data-mxadmin-static-only aria-live="polite">
           <div class="mxadmin-publish-card-head">
             <span class="material-symbols-outlined mxadmin-publish-card-icon" id="mxadminPublishCardIcon">cloud_sync</span>
             <span class="mxadmin-publish-card-title" data-mxadmin-i18n="publishCardTitle">Site güncelleniyor</span>
@@ -211,7 +212,7 @@
               </ul>
             </div>
           </div>
-          <div class="mxadmin-panel mxadmin-dashboard-render-panel" id="mxadminDashboardRenderPanel">
+          <div class="mxadmin-panel mxadmin-dashboard-render-panel" id="mxadminDashboardRenderPanel" data-mxadmin-static-only>
             <div class="mxadmin-panel-head">
               <span class="material-symbols-outlined">cloud_sync</span>
               <span data-mxadmin-i18n="dashboardRenderTitle">Yayın durumu</span>
@@ -328,9 +329,12 @@
             <aside class="mxadmin-pages-list-panel" id="mxadminPagesListPanel">
               <div class="mxadmin-pages-list-panel-head" id="mxadminPagesListHead">
                 <div class="mxadmin-pages-list-panel-title-wrap">
-                  <label class="mxadmin-pages-select-all-label" for="mxadminPagesSelectAll">
+                  <label class="mxadmin-pages-select-all-label mxadmin-toggle-chip mxadmin-pages-select-chip" for="mxadminPagesSelectAll">
                     <input type="checkbox" class="mxadmin-pages-select-all" id="mxadminPagesSelectAll"
                       data-mxadmin-i18n-aria="pagesBulkSelectAll" />
+                    <span class="mxadmin-toggle-chip-body mxadmin-pages-select-chip-body">
+                      <span class="material-symbols-outlined">check</span>
+                    </span>
                   </label>
                   <span class="mxadmin-pages-list-panel-title" data-mxadmin-i18n="pagesListHead">Sayfa listesi</span>
                   <span class="mxadmin-pages-list-panel-sub" id="mxadminPagesListCount">0</span>
@@ -381,7 +385,7 @@
                   <span data-mxadmin-i18n="loading">Yükleniyor…</span>
                 </div>
                 <div class="mxadmin-empty mxadmin-pages-list-empty hidden" id="mxadminPagesEmpty"></div>
-                <ul class="mxadmin-pages-list" id="mxadminPagesList"></ul>
+                <ul class="mxadmin-pages-list" id="mxadminPagesList" aria-live="polite"></ul>
               </div>
             </aside>
             <div class="mxadmin-pages-detail-panel" id="mxadminPagesDetailPanel">
@@ -412,8 +416,12 @@
                   <div class="mxadmin-form-tabs mxadmin-page-detail-tabs">
                     <button type="button" class="mxadmin-form-tab is-active" data-mxadmin-tab="general"
                       data-mxadmin-i18n="tabGeneral">Genel</button>
+                    <button type="button" class="mxadmin-form-tab hidden" data-mxadmin-tab="desc"
+                      data-mxadmin-i18n="tabPageDesc">Ürün özellikleri</button>
                     <button type="button" class="mxadmin-form-tab" data-mxadmin-tab="content"
                       data-mxadmin-i18n="tabContent">İçerik</button>
+                    <button type="button" class="mxadmin-form-tab hidden" data-mxadmin-tab="media"
+                      data-mxadmin-i18n="tabPageMedia">Görseller</button>
                   </div>
                 </div>
                 <div class="mxadmin-page-detail-body">
@@ -436,7 +444,9 @@
                     <div id="mxadminPageNameFields"></div>
                     <div id="mxadminPageDescriptionFields"></div>
                     <div id="mxadminPageKeywordFields"></div>
-                    <div class="mxadmin-page-desc-panel hidden" id="mxadminPageDescPanel">
+                  </div>
+                  <div class="mxadmin-tab-panel hidden" id="mxadminPageTabDesc">
+                    <div class="mxadmin-page-desc-panel" id="mxadminPageDescPanel">
                       <div class="mxadmin-page-desc-head">
                         <span class="material-symbols-outlined">tune</span>
                         <span data-mxadmin-i18n="pageDescTitle">Ürün özellikleri</span>
@@ -444,6 +454,11 @@
                       </div>
                       <div class="mxadmin-page-desc-grid" id="mxadminPageDescFields"></div>
                     </div>
+                  </div>
+                  <div class="mxadmin-tab-panel hidden" id="mxadminPageTabContent">
+                    <div id="mxadminPageTextFields"></div>
+                  </div>
+                  <div class="mxadmin-tab-panel hidden" id="mxadminPageTabMedia">
                     <div class="mxadmin-page-media-panel hidden" id="mxadminPageMediaPanel">
                       <div class="mxadmin-page-desc-head mxadmin-page-media-head">
                         <span class="material-symbols-outlined">image</span>
@@ -456,11 +471,12 @@
                       </div>
                       <p class="mxadmin-page-media-hint" id="mxadminPageMediaCoverHint"
                         data-mxadmin-i18n="pageMediaCoverHint">Kapak görseli için küçük resme tıklayın.</p>
+                      <div class="mxadmin-media-uppy-wrap hidden" id="mxadminPageMediaUppyWrap">
+                        <div class="mxadmin-media-uppy-progress" id="mxadminPageMediaUppyProgress"></div>
+                        <div class="mxadmin-media-uppy-drop" id="mxadminPageMediaUppyDrop"></div>
+                      </div>
                       <div class="mxadmin-module-media-grid" id="mxadminPageMediaGrid"></div>
                     </div>
-                  </div>
-                  <div class="mxadmin-tab-panel hidden" id="mxadminPageTabContent">
-                    <div id="mxadminPageTextFields"></div>
                   </div>
                 </div>
                 <div class="mxadmin-page-detail-foot">
@@ -581,6 +597,10 @@
                         data-mxadmin-i18n="moduleMediaUpload">Dosya yükle</button>
                       <input type="file" class="hidden" id="mxadminModuleMediaInput"
                         accept="image/jpeg,image/png,image/webp,image/gif,image/svg+xml" multiple />
+                    </div>
+                    <div class="mxadmin-media-uppy-wrap hidden" id="mxadminModuleMediaUppyWrap">
+                      <div class="mxadmin-media-uppy-progress" id="mxadminModuleMediaUppyProgress"></div>
+                      <div class="mxadmin-media-uppy-drop" id="mxadminModuleMediaUppyDrop"></div>
                     </div>
                     <div class="mxadmin-module-media-grid" id="mxadminModuleMediaGrid"></div>
                   </div>
@@ -800,8 +820,12 @@
       </div>
     </div>
   </div>
-  <script src="/admin/admin.js?v=a58da399bc84"></script>
-  <script src="/admin/modules/cari/cari-admin.js?v=116b2ef16b54"></script>
+  
+  <span class="mxadmin-tw-faz0" id="mxadminTwFaz0Marker" aria-hidden="true"></span>
+  
+  <script src="/admin/vendor/date-fns.min.js?v=8fc2683d8799"></script>
+  <script src="/admin/admin.js?v=b0c7871f3759"></script>
+  <script src="/admin/modules/cari/cari-admin.js?v=8fc2683d8799"></script>
 </body>
 
 </html>

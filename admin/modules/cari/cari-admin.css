@@ -114,6 +114,10 @@
   border: 1px solid var(--mxadmin-border, var(--color-border, #2a2f3a));
   background: var(--mxadmin-panel, var(--color-bg-panel, #1a1d24));
   overflow: hidden;
+}
+
+
+.mxadmin-cari-detail-panel {
   height: 100%;
 }
 
@@ -156,8 +160,6 @@
 
 .mxadmin-cari-table-wrap {
   overflow-x: auto;
-  max-height: min(520px, 60vh);
-  overflow-y: auto;
 }
 
 .mxadmin-cari-table {

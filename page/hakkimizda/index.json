@@ -7,7 +7,7 @@
   "path": "hakkimizda",
   "category": "",
   "text": {
-    "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi Hakkımızda</h2>\n    <p style=\"font-size: 16px;\">\n        2020 yılında kurulan Oto Mavi, Gaziantep’ten BMW araç sahiplerine ve servislere uygun fiyatlı, 1. sınıf kalitede yedek parça sunmak amacıyla yola çıktı. Amacımız; orijinal ve eşdeğer parçaları güvenilir, hızlı ve şeffaf bir şekilde ulaştırmaktır. Filtre, fren, gövde, motor, elektrik, sönümleme/süspansiyon, klima, ateşleme, yağlar, bakım kiti, iç donanım, aydınlatma, kayışlar ve silecekler kategorilerinde geniş seçim sunuyoruz.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Sitede sepet yoktur: WhatsApp veya telefonla stok sorgusu ve teklif alırsınız. Gaziantep deposumuzdan 1–3 günlük tedarik hedefiyle çalışır; uzman ekibimiz haftanın 7 günü destek verir. Castrol, Bosch, Dayco, Ridex, Ravenol gibi üretici ürün hatlarından seçenekler sunarız.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Adres: Sanayi mah. 60081 nolu cadde no 43 Şehitkamil Gaziantep · Tel: 0544 717 18 28 · E-posta: info@otomavi.com · Çalışma: Sabah 08:00 – 22:00. Sahibinden’de Oto Mavi olarak da bilinebilirsiniz.\n    </p>"
+    "tr": "<h2 style=\"font-size: 24px;\">Hakkımızda</h2>\n    <p style=\" font-size: 16px;\">\n        Biz, müşteri memnuniyetini her zaman ön planda tutarak, sektördeki en iyi hizmeti sunmayı hedefleyen bir firmayız. Yenilikçi ve yaratıcı yaklaşımlarımızla, her projede maksimum verim ve etkinliği sağlamak için çalışıyoruz. Ekibimiz, alanında uzman profesyonellerden oluşmakta ve sürekli olarak gelişim ve eğitim fırsatları ile desteklenmektedir. Bu sayede, hem müşteri taleplerini en iyi şekilde karşılıyor hem de sektördeki en son gelişmeleri takip ederek, müşterilerimize katma değer sağlayacak çözümler sunuyoruz.\n    </p>\n    <p style=\" font-size: 16px;\">\n        Vizyonumuz, sektörümüzdeki en güvenilir ve tercih edilen firma olmaktır. Bunun için, iş süreçlerimizi sürekli gözden geçiriyor, iyileştiriyor ve geliştirmeye odaklanıyoruz. Müşterilerimizin geri bildirimlerini dikkate alarak, ihtiyaçlarına en uygun çözümleri sunmak için çaba gösteriyoruz. Müşteri odaklı bir yaklaşım benimsememiz, işimizi daha da büyütmemize yardımcı oluyor ve sektördeki konumumuzu güçlendiriyor. Bizimle çalışan her müşteri, kalite ve güven arayışında olduğu için, onlara her zaman en iyi deneyimi sunmayı amaçlıyoruz.\n    </p>\n    <p style=\" font-size: 16px;\">\n        Misyonumuz, çevre dostu uygulamalarla, sürdürülebilir bir gelecek için katkıda bulunmaktır. Çalışma şeklimiz, doğaya zarar vermeden, en iyi sonuçları elde etmek üzerine kuruludur. Bu bağlamda, teknolojinin sunduğu yeniliklerden yararlanarak, enerji verimliliğini artırmaya ve kaynakları en verimli şekilde kullanmaya özen gösteriyoruz. Bu sayede, sadece müşterilerimize değil, aynı zamanda topluma ve çevreye de olumlu bir etki yaratmayı amaçlıyoruz. İleriye dönük hedeflerimiz, bu misyon doğrultusunda daha fazla proje geliştirmek ve daha fazla insanın hayatına dokunmaktır.\n    </p>"
   },
   "desing": {
     "header": [],
@@ -18,18 +18,14 @@
     ],
     "footer": []
   },
+  "desc": {},
   "index": 0,
   "icon": "home",
   "title": {
-    "tr": "Hakkımızda | Oto Mavi"
+    "tr": "Hakkımızda"
   },
-  "description": {
-    "tr": "Oto Mavi — Gaziantep BMW oto yedek parçaları. Uygun fiyat, 1. sınıf kalite; orijinal ve eşdeğer parça tedariki."
-  },
-  "keyword": {
-    "tr": "Oto Mavi, hakkımızda, BMW yedek parça, Gaziantep, orijinal parça, eşdeğer parça, uygun fiyat"
-  },
-  "update": "2026-07-21T10:04:16.696Z",
-  "date": "2026-05-19",
-  "img": "index.webp"
+  "description": {},
+  "keyword": {},
+  "update": "2026-05-19",
+  "date": "2026-05-19"
 }

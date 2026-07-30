@@ -13,83 +13,28 @@
       },
       "modulestatus": {
         "page": true,
-        "body": true,
+        "bgimg": true,
         "detail": true,
-        "img": false
+        "body": true
       }
     },
     {
-      "name": "Kategori",
-      "path": "category",
+      "name": "Ürünler",
+      "path": "products",
       "desc": [],
       "data": [],
       "index": 1,
       "desing": {
         "header": [],
         "body": [
-          "t1af01",
-          "t1ulo01"
+          "tp5jo4"
         ],
         "footer": []
       },
       "modulestatus": {
-        "page": true,
-        "body": true,
-        "detail": true,
         "img": true,
-        "bgimg": false,
-        "icon": true
-      }
-    },
-    {
-      "name": "Ürünler",
-      "path": "products",
-      "desc": [
-        {
-          "path": "parca_kodu",
-          "name": {
-            "tr": "Parça kodu",
-            "en": "Part code"
-          }
-        },
-        {
-          "path": "tur",
-          "name": {
-            "tr": "Tür",
-            "en": "Type"
-          }
-        },
-        {
-          "path": "uyumlu",
-          "name": {
-            "tr": "Uyum",
-            "en": "Fitment"
-          }
-        },
-        {
-          "path": "kalite",
-          "name": {
-            "tr": "Kalite",
-            "en": "Quality"
-          }
-        }
-      ],
-      "data": [],
-      "index": 2,
-      "desing": {
-        "header": [],
-        "body": [
-          "t1plpr"
-        ],
-        "footer": []
-      },
-      "modulestatus": {
-        "page": true,
-        "body": true,
-        "detail": true,
-        "img": true,
-        "bgimg": false,
-        "icon": true
+        "bgimg": true,
+        "detail": true
       }
     },
     {
@@ -97,7 +42,7 @@
       "path": "kurumsal",
       "desc": [],
       "data": [],
-      "index": 3,
+      "index": 2,
       "desing": {
         "header": [],
         "body": [

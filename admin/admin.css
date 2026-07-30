@@ -177,25 +177,16 @@ button {
 
 
 .mxadmin-app input[type='checkbox'] {
-    appearance: auto;
-    -webkit-appearance: checkbox;
-    -moz-appearance: checkbox;
-    width: 18px;
-    height: 18px;
-    min-width: 18px;
-    min-height: 18px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     margin: 0;
     padding: 0;
     flex-shrink: 0;
-    cursor: pointer;
-    accent-color: var(--mxadmin-primary);
     background: transparent;
     background-color: transparent;
     border: none;
-    border-radius: 2px;
-    position: static;
     outline: none;
-    transition: none;
     box-sizing: border-box;
     float: none;
 }
@@ -212,6 +203,115 @@ button {
 
 .mxadmin-app input[type='checkbox']:checked::before {
     transform: none;
+}
+
+
+
+.mxadmin-toggle-chip {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    border: 1px solid var(--mxadmin-border);
+    border-radius: var(--mxadmin-radius-sm);
+    background: rgba(255, 255, 255, 0.03);
+    transition:
+        border-color var(--mxadmin-transition),
+        background var(--mxadmin-transition),
+        color var(--mxadmin-transition),
+        box-shadow var(--mxadmin-transition);
+}
+
+.mxadmin-toggle-chip input[type='checkbox'],
+.mxadmin-app [class*='-toggle-card'] input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    pointer-events: none;
+}
+
+.mxadmin-toggle-chip:focus-within {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--mxadmin-primary-soft);
+}
+
+.mxadmin-toggle-chip:has(input:checked) {
+    border-color: color-mix(in srgb, var(--mxadmin-primary) 45%, transparent);
+    background: var(--mxadmin-primary-soft);
+    color: var(--mxadmin-primary);
+}
+
+.mxadmin-toggle-chip-body {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+.mxadmin-pages-select-chip {
+    flex-shrink: 0;
+    gap: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.mxadmin-pages-select-chip:focus-within {
+    box-shadow: none;
+}
+
+.mxadmin-pages-select-chip-body {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border: 1px solid var(--mxadmin-border);
+    border-radius: var(--mxadmin-radius-sm);
+    background: rgba(255, 255, 255, 0.04);
+    transition:
+        border-color var(--mxadmin-transition),
+        background var(--mxadmin-transition),
+        color var(--mxadmin-transition);
+}
+
+.mxadmin-pages-select-chip-body .material-symbols-outlined {
+    font-size: 16px;
+    line-height: 1;
+    color: var(--mxadmin-text);
+    opacity: 0;
+    transform: scale(0.65);
+    transition:
+        opacity var(--mxadmin-transition),
+        transform var(--mxadmin-transition),
+        color var(--mxadmin-transition);
+}
+
+.mxadmin-pages-select-chip:has(input:checked) .mxadmin-pages-select-chip-body {
+    border-color: var(--mxadmin-primary);
+    background: var(--mxadmin-primary);
+}
+
+.mxadmin-pages-select-chip:has(input:checked) .mxadmin-pages-select-chip-body .material-symbols-outlined {
+    opacity: 1;
+    transform: scale(1);
+    color: var(--mxadmin-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mxadmin-toggle-chip,
+    .mxadmin-pages-select-chip-body,
+    .mxadmin-pages-select-chip-body .material-symbols-outlined {
+        transition: none;
+    }
 }
 
 
@@ -732,8 +832,8 @@ button {
     color: var(--mxadmin-green);
     border: 1px solid color-mix(in srgb, var(--mxadmin-green) 32%, transparent);
     padding: 0 14px;
-    height: 36px;
-    min-height: 36px;
+    height: 44px;
+    min-height: 44px;
     border-radius: var(--mxadmin-radius-md);
     cursor: pointer;
     font-weight: 500;
@@ -1135,34 +1235,14 @@ button {
     border: 1px solid rgba(240, 168, 60, 0.3);
 }
 
-.mxadmin-loading,
-.mxadmin-empty {
+.mxadmin-loading {
     padding: 20px;
     text-align: center;
     color: var(--mxadmin-text-muted);
     font-size: 13px;
 }
 
-.mxadmin-empty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 80px;
-}
 
-.mxadmin-empty::before {
-    content: 'inbox';
-    font-family: 'Material Symbols Outlined';
-    font-size: 32px;
-    color: var(--mxadmin-text-dim);
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 300,
-        'GRAD' 0,
-        'opsz' 24;
-}
 
 .mxadmin-toast {
     position: fixed;
@@ -1382,16 +1462,7 @@ button {
     box-shadow: var(--mxadmin-shadow-soft);
 }
 
-.mxadmin-panel-head {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 500;
-    padding: 12px 16px;
-    background: rgba(255, 255, 255, 0.04);
-    border-bottom: 1px solid var(--mxadmin-border);
-    color: var(--mxadmin-text);
-}
+
 
 .mxadmin-panel-head .material-symbols-outlined {
     color: var(--mxadmin-primary);
@@ -1619,23 +1690,7 @@ button {
     border-bottom-right-radius: var(--mxadmin-radius-sm);
 }
 
-.mxadmin-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 3px 10px;
-    border-radius: 999px;
-    font-size: 12px;
-}
 
-.mxadmin-badge-success {
-    background: rgba(53, 196, 106, 0.15);
-    color: var(--mxadmin-green);
-}
-
-.mxadmin-badge-fail {
-    background: rgba(229, 72, 77, 0.15);
-    color: var(--mxadmin-red);
-}
 
 
 
@@ -1708,40 +1763,7 @@ button {
     gap: 0;
 }
 
-.mxadmin-pages-select-all,
-.mxadmin-pages-select {
-    flex-shrink: 0;
-}
 
-.mxadmin-pages-bulk-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--mxadmin-border);
-    background: color-mix(in srgb, var(--mxadmin-primary) 8%, transparent);
-    flex-wrap: wrap;
-}
-
-.mxadmin-pages-bulk-bar.hidden {
-    display: none;
-}
-
-.mxadmin-pages-bulk-count {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--mxadmin-text);
-    white-space: nowrap;
-}
-
-.mxadmin-pages-bulk-actions {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-    flex: 1;
-    min-width: 0;
-}
 
 .mxadmin-pages-bulk-status,
 .mxadmin-pages-bulk-category {
@@ -1796,7 +1818,8 @@ button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 36px;
+    min-width: 44px;
+    min-height: 44px;
     padding: 6px 8px;
     cursor: pointer;
 }
@@ -1998,55 +2021,80 @@ button {
     border-radius: var(--mxadmin-radius-md);
 }
 
+.mxadmin-pages-list-actions {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    padding-left: 8px;
+}
+
+.mxadmin-pages-list-actions .mxadmin-pages-select-chip {
+    flex-shrink: 0;
+}
+
+.mxadmin-pages-list-actions .mxadmin-icon-btn {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+}
+
+.mxadmin-pages-list-actions .mxadmin-icon-btn .material-symbols-outlined {
+    font-size: 17px;
+}
+
+.mxadmin-pages-list-drag-handle {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 36px;
+    padding: 0;
+    margin: 0 -2px 0 0;
+    border: none;
+    border-radius: var(--mxadmin-radius-sm);
+    background: transparent;
+    color: var(--mxadmin-text-muted);
+    cursor: grab;
+    touch-action: none;
+    transition:
+        background var(--mxadmin-transition),
+        color var(--mxadmin-transition);
+}
+
+.mxadmin-pages-list-drag-handle .material-symbols-outlined {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.mxadmin-pages-list-drag-handle:hover {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--mxadmin-text);
+}
+
+.mxadmin-pages-list-drag-handle:active {
+    cursor: grabbing;
+}
+
+.mxadmin-pages-list li.is-dragging .mxadmin-pages-list-item {
+    opacity: 0.45;
+}
+
+.mxadmin-pages-list li.is-drag-over .mxadmin-pages-list-item {
+    border-color: var(--mxadmin-primary);
+    box-shadow: 0 0 0 1px
+        color-mix(in srgb, var(--mxadmin-primary) 28%, transparent);
+    background: color-mix(in srgb, var(--mxadmin-primary) 8%, transparent);
+}
+
 .mxadmin-pages-list li:nth-child(even) .mxadmin-pages-list-item {
     background: var(--mxadmin-zebra-bg);
 }
 
-.mxadmin-pages-list-order {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    flex-shrink: 0;
-    align-self: center;
-}
-
-.mxadmin-page-move-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    border: 1px solid var(--mxadmin-border);
-    border-radius: var(--mxadmin-radius-sm);
-    background: rgba(255, 255, 255, 0.04);
-    color: var(--mxadmin-text-muted);
-    cursor: pointer;
-    transition:
-        background var(--mxadmin-transition),
-        color var(--mxadmin-transition),
-        border-color var(--mxadmin-transition);
-}
-
-.mxadmin-page-move-btn .material-symbols-outlined {
-    font-size: 14px;
-    line-height: 1;
-}
-
-.mxadmin-page-move-btn:hover {
-    background: color-mix(in srgb, var(--mxadmin-primary) 12%, transparent);
-    border-color: color-mix(in srgb, var(--mxadmin-primary) 35%, transparent);
-    color: var(--mxadmin-primary);
-}
-
-.mxadmin-page-move-btn.is-off {
-    opacity: 0.35;
-    pointer-events: none;
-    cursor: default;
-}
-
 .mxadmin-page-clone-btn .material-symbols-outlined {
-    font-size: 13px;
+    font-size: 16px;
 }
 
 .mxadmin-pages-list li:hover .mxadmin-pages-list-item {
@@ -2169,6 +2217,32 @@ button {
     flex-shrink: 0;
     font-size: 10px;
     padding: 2px 7px;
+}
+
+.mxadmin-pages-list-descchips {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.mxadmin-pages-list-descchip {
+    font-size: 10px;
+    line-height: 1.4;
+    padding: 1px 7px;
+    border-radius: var(--mxadmin-radius-sm);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--mxadmin-text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+    transition: background var(--mxadmin-transition), color var(--mxadmin-transition);
+}
+
+.mxadmin-pages-list li.is-active .mxadmin-pages-list-descchip {
+    background: color-mix(in srgb, var(--mxadmin-primary) 16%, transparent);
+    color: var(--mxadmin-primary);
 }
 
 .mxadmin-pages-list-chevron {
@@ -2346,119 +2420,6 @@ button {
 .mxadmin-shell .mxadmin-main:has(.mxadmin-screen-pages:not(.hidden)) {
     padding-bottom: 24px;
     max-width: none;
-}
-
-
-.mxadmin-html-editor {
-    border: 1px solid var(--mxadmin-border);
-    border-radius: var(--mxadmin-radius-md);
-    background: rgba(0, 0, 0, 0.18);
-    overflow: hidden;
-}
-
-.mxadmin-html-editor-toolbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-    flex-wrap: wrap;
-    padding: 8px 10px;
-    border-bottom: 1px solid var(--mxadmin-border);
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.mxadmin-html-editor-tabs {
-    display: flex;
-    gap: 4px;
-}
-
-.mxadmin-html-editor-tab {
-    padding: 6px 12px;
-    border: 1px solid transparent;
-    border-radius: var(--mxadmin-radius-sm);
-    background: transparent;
-    color: var(--mxadmin-text-muted);
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition:
-        background var(--mxadmin-transition),
-        color var(--mxadmin-transition),
-        border-color var(--mxadmin-transition);
-}
-
-.mxadmin-html-editor-tab.is-active {
-    color: var(--mxadmin-primary);
-    border-color: color-mix(in srgb, var(--mxadmin-primary) 35%, transparent);
-    background: var(--mxadmin-primary-soft);
-}
-
-.mxadmin-html-editor-tools {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-}
-
-.mxadmin-html-editor-tool {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    border: 1px solid var(--mxadmin-border);
-    border-radius: var(--mxadmin-radius-sm);
-    background: rgba(255, 255, 255, 0.04);
-    color: var(--mxadmin-text-muted);
-    cursor: pointer;
-    transition:
-        background var(--mxadmin-transition),
-        color var(--mxadmin-transition),
-        border-color var(--mxadmin-transition);
-}
-
-.mxadmin-html-editor-tool .material-symbols-outlined {
-    font-size: 18px;
-}
-
-.mxadmin-html-editor-tool:hover {
-    color: var(--mxadmin-primary);
-    border-color: color-mix(in srgb, var(--mxadmin-primary) 35%, transparent);
-    background: var(--mxadmin-primary-soft);
-}
-
-.mxadmin-html-editor-panel {
-    min-height: 280px;
-}
-
-.mxadmin-html-editor-source {
-    display: block;
-    width: 100%;
-    min-height: 280px;
-    padding: 14px;
-    border: none;
-    border-radius: 0;
-    background: rgba(0, 0, 0, 0.22);
-    color: var(--mxadmin-text);
-    font-family: ui-monospace, 'Cascadia Code', Consolas, monospace;
-    font-size: 13px;
-    line-height: 1.55;
-    resize: vertical;
-    box-sizing: border-box;
-}
-
-.mxadmin-html-editor-source:focus {
-    outline: none;
-    box-shadow: inset 0 0 0 2px var(--mxadmin-primary-glow);
-}
-
-.mxadmin-html-editor-preview {
-    display: block;
-    width: 100%;
-    min-height: 280px;
-    height: 360px;
-    border: none;
-    background: var(--mxadmin-preview-bg);
 }
 
 
@@ -3444,14 +3405,7 @@ button {
     cursor: pointer;
 }
 
-.mxadmin-module-data-toolbar,
-.mxadmin-module-media-toolbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 14px;
-}
+
 
 .mxadmin-btn-sm {
     min-height: 34px;
@@ -3654,6 +3608,44 @@ button {
 }
 
 
+.mxadmin-media-uppy-wrap {
+    margin: 10px 0 12px;
+    border: 1px dashed var(--mxadmin-border);
+    border-radius: var(--mxadmin-radius-md);
+    background: rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+}
+
+.mxadmin-media-uppy-progress {
+    padding: 6px 10px 0;
+}
+
+.mxadmin-media-uppy-drop .uppy-DragDrop-inner {
+    padding: 28px 16px;
+}
+
+.mxadmin-media-uppy-drop .uppy-DragDrop-container {
+    background: transparent;
+    border: none;
+    min-height: 0;
+}
+
+.mxadmin-media-uppy-drop .uppy-DragDrop-label,
+.mxadmin-media-uppy-drop .uppy-DragDrop-note {
+    color: var(--mxadmin-text-muted);
+}
+
+.mxadmin-media-uppy-drop .uppy-DragDrop-browse {
+    color: var(--mxadmin-accent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mxadmin-media-uppy-drop .uppy-ProgressBar-inner {
+        transition: none;
+    }
+}
+
+
 
 .mxadmin-logo-preview-wrap {
     margin-top: 4px;
@@ -3771,20 +3763,20 @@ button {
     align-items: center;
     gap: 8px;
     padding: 8px 10px;
-    border: 1px solid var(--mxadmin-border);
-    border-radius: var(--mxadmin-radius-sm);
-    cursor: pointer;
-    transition: border-color var(--mxadmin-transition),
-        background var(--mxadmin-transition);
 }
 
 .mxadmin-lang-setting-row:hover {
-    border-color: var(--mxadmin-primary);
+    border-color: color-mix(in srgb, var(--mxadmin-primary) 35%, transparent);
+    background: color-mix(in srgb, var(--mxadmin-primary) 8%, transparent);
+}
+
+.mxadmin-lang-setting-row:has(input:checked) {
+    border-color: color-mix(in srgb, var(--mxadmin-primary) 45%, transparent);
     background: var(--mxadmin-primary-soft);
 }
 
-.mxadmin-lang-setting-row input {
-    cursor: pointer;
+.mxadmin-lang-setting-row:has(input:checked) .mxadmin-lang-setting-name {
+    color: var(--mxadmin-primary);
 }
 
 .mxadmin-lang-setting-name {
@@ -3845,6 +3837,18 @@ button {
     justify-content: flex-start;
     width: 100%;
     min-height: 36px;
+    padding: 6px 10px;
+}
+
+.mxadmin-status-toggle:has(input:not(:checked)) {
+    color: var(--mxadmin-text-muted);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.mxadmin-status-toggle:has(input:checked) {
+    color: var(--mxadmin-green, var(--mxadmin-primary));
+    border-color: color-mix(in srgb, var(--mxadmin-green, var(--mxadmin-primary)) 40%, transparent);
+    background: color-mix(in srgb, var(--mxadmin-green, var(--mxadmin-primary)) 12%, transparent);
 }
 
 .mxadmin-table-input:focus {
@@ -3979,17 +3983,7 @@ button {
         min-width: 640px;
     }
 
-    .mxadmin-pages-bulk-bar {
-        flex-wrap: wrap;
-        gap: 10px;
-        max-width: 100%;
-        overflow: hidden;
-    }
-
-    .mxadmin-pages-bulk-actions {
-        flex: 1 1 100%;
-        width: 100%;
-    }
+    
 
     .mxadmin-pages-bulk-status,
     .mxadmin-pages-bulk-category {
@@ -4040,19 +4034,7 @@ button {
         font-size: 14px;
     }
 
-    .mxadmin-pages-bulk-bar {
-        padding: 8px 10px;
-        gap: 8px;
-    }
-
-    .mxadmin-pages-bulk-count {
-        font-size: 12px;
-        flex: 1 1 100%;
-    }
-
-    .mxadmin-pages-bulk-actions {
-        gap: 6px;
-    }
+    
 
     .mxadmin-pages-bulk-status,
     .mxadmin-pages-bulk-category {

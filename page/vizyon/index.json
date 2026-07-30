@@ -1,13 +1,13 @@
 {
   "name": {
-    "tr": "Vizyonumuz"
+    "tr": "Vizyon"
   },
   "status": "play",
   "id": "vizyon",
-  "path": "vizyonumuz",
+  "path": "vizyon",
   "category": "",
   "text": {
-    "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi Vizyonumuz</h2>\n    <p style=\"font-size: 16px;\">\n        Vizyonumuz, Türkiye’nin en çok tercih edilen BMW yedek parça tedarikçisi haline gelmektir. Gaziantep deposundan uygun fiyat ve 1. sınıf kaliteyle orijinal ile eşdeğer parçaları sunarak güven veren bir marka olmak istiyoruz.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Müşteri odaklı yaklaşımımız; uzman destek, hızlı tedarik ve geniş seçim ile büyümeyi güçlendirir. Filtreden frene, motordan klimaya tek noktadan çözüm sunarız.\n    </p>\n    <p style=\"font-size: 16px;\">\n        0544 717 18 28 · info@otomavi.com · otomavi.com\n    </p>"
+    "tr": "<h2 style=\"font-size: 24px;\">Vizyonumuz</h2>\n    <p style=\" font-size: 16px;\">\n        Vizyonumuz, sektörümüzdeki en güvenilir ve tercih edilen firma olmaktır. Bunun için, iş süreçlerimizi sürekli gözden geçiriyor, iyileştiriyor ve geliştirmeye odaklanıyoruz. Müşterilerimizin geri bildirimlerini dikkate alarak, ihtiyaçlarına en uygun çözümleri sunmak için çaba gösteriyoruz. Müşteri odaklı bir yaklaşım benimsememiz, işimizi daha da büyütmemize yardımcı oluyor ve sektördeki konumumuzu güçlendiriyor. Bizimle çalışan her müşteri, kalite ve güven arayışında olduğu için, onlara her zaman en iyi deneyimi sunmayı amaçlıyoruz.\n    </p>"
   },
   "desing": {
     "header": [],
@@ -17,18 +17,14 @@
     ],
     "footer": []
   },
+  "desc": {},
   "index": 2,
   "icon": "home",
   "title": {
-    "tr": "Vizyon | Oto Mavi"
+    "tr": "Vizyon"
   },
-  "description": {
-    "tr": "Oto Mavi vizyonu: Türkiye’nin en çok tercih edilen BMW yedek parça tedarikçisi haline gelmek."
-  },
-  "keyword": {
-    "tr": "Oto Mavi, vizyon, BMW yedek parça, Gaziantep, tedarikçi"
-  },
-  "update": "2026-07-21T10:04:16.764Z",
-  "date": "2026-05-19",
-  "img": "index.webp"
+  "description": {},
+  "keyword": {},
+  "update": "2026-05-19",
+  "date": "2026-05-19"
 }

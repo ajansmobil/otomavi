@@ -521,5 +521,6 @@
     "img": true,
     "bgimg": false,
     "icon": true
-  }
+  },
+  "index": 0
 }

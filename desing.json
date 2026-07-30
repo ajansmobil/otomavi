@@ -4,24 +4,20 @@
     "k4t90c"
   ],
   "body": [
-    "t1af01",
-    "t1plpr",
-    "t1br01",
-    "t1st01",
+    "t1ls01",
     "t1in01",
+    "t1st01",
     "t1ct01"
   ],
   "footer": [
-    "txt39m",
-    "t1wa01"
+    "txt39m"
   ],
   "headerdefault": [
     "vey1el"
   ],
   "bodydefault": [],
   "footerdefault": [
-    "txt39m",
-    "t1wa01"
+    "txt39m"
   ],
   "headtop": "",
   "headbottom": "",
@@ -33,7 +29,7 @@
       },
       {
         "name": "--color2--",
-        "value": "#E9F3FB"
+        "value": "#F2F4F7"
       },
       {
         "name": "--bg--",
@@ -41,11 +37,11 @@
       },
       {
         "name": "--text--",
-        "value": "#111111"
+        "value": "#0B1120"
       },
       {
         "name": "--button--",
-        "value": "#02427A"
+        "value": "#2563EB"
       },
       {
         "name": "--buttonText--",
@@ -55,23 +51,23 @@
     "dark": [
       {
         "name": "--color1--",
-        "value": "#0B1A2E"
+        "value": "#0F172A"
       },
       {
         "name": "--color2--",
-        "value": "#123A5C"
+        "value": "#1E293B"
       },
       {
         "name": "--bg--",
-        "value": "#071018"
+        "value": "#0B1120"
       },
       {
         "name": "--text--",
-        "value": "#E9F3FB"
+        "value": "#E2E8F0"
       },
       {
         "name": "--button--",
-        "value": "#1094DB"
+        "value": "#2563EB"
       },
       {
         "name": "--buttonText--",

@@ -4,10 +4,10 @@
   },
   "status": "play",
   "id": "yasaluyari",
-  "path": "yasal-uyari",
+  "path": "yasaluyari",
   "category": "",
   "text": {
-    "tr": "<h2 style=\"font-size: 24px;\">Oto Mavi Yasal Uyarı</h2>\n    <p style=\"font-size: 16px;\">\n        Oto Mavi (otomavi.com) sitesinde yer alan tüm içerik, 5846 sayılı Fikir ve Sanat Eserleri Kanunu ile 5651 sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun hükümleri uyarınca korunmaktadır. Sitede yer alan hiçbir içeriğin kopyalanması, çoğaltılması, yayılması, satılması, dağıtılması, sergilenmesi, yayımlanması, ticari amaçla kullanılması veya başka platformlarda izinsiz paylaşılması yasaktır. Bu kurallara aykırı hareket edenler ilgili kanunlar kapsamında hukuki ve cezai yaptırımlarla karşılaşabilir.\n    </p>\n    <p style=\"font-size: 16px;\">\n        Site içeriğinin hukuka aykırı kullanılması veya dağıtılması durumunda Oto Mavi yetkili mercilere başvurma ve yasal haklarını koruma hakkını saklı tutar. Marka, ürün ve BMW yedek parça bilgileri bilgilendirme amaçlıdır; güncel stok ve fiyat için iletişim kanallarımızı kullanınız.\n    </p>\n    <p style=\"font-size: 16px;\">\n        İzinsiz kullanım veya paylaşım fark ederseniz 0544 717 18 28 veya info@otomavi.com üzerinden bizimle iletişime geçin. Siteyi kullanmaya devam ederek bu yasal uyarıyı kabul etmiş sayılırsınız.\n    </p>"
+    "tr": "<h2 style=\"font-size: 24px;\">Yasal Uyarı</h2>\n    <p style=\" font-size: 16px;\">\n        Sitemizde yer alan tüm içerik, 5846 sayılı Fikir ve Sanat Eserleri Kanunu ile 5651 sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun'un hükümleri uyarınca korunmaktadır. Sitemizde yer alan hiçbir içeriğin kopyalanması, çoğaltılması, yayılması, satılması, dağıtılması, sergilenmesi, yayımlanması, herhangi bir şekilde ticari amaçla kullanılması veya başka platformlarda izinsiz olarak paylaşılması yasaktır. Bu kurallara aykırı hareket edenler, ilgili kanunlar kapsamında hukuki ve cezai yaptırımlarla karşılaşabilirler. </p>\n    <p style=\" font-size: 16px;\">\n        Sitemizde yer alan içeriğin hukuka aykırı bir şekilde kullanılması veya dağıtılması durumunda, sitemiz yetkili mercilere başvurma ve yasal haklarını koruma hakkını saklı tutar. İnternet ortamında yer alan içeriklerin izinsiz paylaşımı, hukuki olarak ağır yaptırımlar doğurabileceği gibi, eser sahiplerinin haklarını ihlal eder. Eser sahibi olarak haklarınızı korumanız gerektiği durumda, hukuki süreç başlatma hakkınız mevcuttur.</p>\n    <p style=\" font-size: 16px;\">\n        Sitemizde yer alan içeriklerin izinsiz kullanımını veya paylaşımını fark ederseniz, lütfen bizimle iletişime geçin. Sitemizi kullanmaya devam ederek, bu yasal uyarıyı kabul etmiş sayılırsınız.</p>"
   },
   "desing": {
     "header": [],
@@ -17,18 +17,14 @@
     ],
     "footer": []
   },
-  "index": 8,
+  "desc": {},
+  "index": 7,
   "icon": "home",
   "title": {
-    "tr": "Yasal Uyarı | Oto Mavi"
+    "tr": "Yasal Uyarı"
   },
-  "description": {
-    "tr": "Oto Mavi yasal uyarı: site içeriği, marka ve ürün bilgilerine ilişkin yasal sorumluluk sınırları."
-  },
-  "keyword": {
-    "tr": "Oto Mavi, yasal uyarı, telif, sorumluluk, BMW yedek parça, Gaziantep"
-  },
-  "update": "2026-07-21T10:04:16.906Z",
-  "date": "2026-05-19",
-  "img": "index.webp"
+  "description": {},
+  "keyword": {},
+  "update": "2026-05-19",
+  "date": "2026-05-19"
 }
