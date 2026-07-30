@@ -2,15 +2,15 @@
   "id": "57w8jl01ph",
   "path": "yakit-deposu",
   "name": {
-    "tr": "BMW F30 N13 YAKIT DEPOSU 56646711"
+    "tr": "BMW G20 BENZİNLİ YAKIT DEPOSU 7449039"
   },
   "status": "play",
   "category": "omgvde03",
   "description": {
-    "tr": "OTO MAVİ MÜŞTERİ MEMNUNİYETİ\n\nOto Mavi olarak en büyük önceliğimiz müşteri memnuniyetidir. Kaliteli yedek parçaları uygun fiyatlarla sunarken, güvenilir hizmet ve hızlı teslimat anlayışıyla çalışıyoruz.\n\nMüşterilerimizin memnuniyeti bizim için en büyük referanstır. Siz de BMW yedek parça ihtiyaçlarınız için Oto Mavi’yi tercih edin; güvenilir hizmetin farkını yaşayın.\n\nOto Mavi – Güvenin ve Kalitenin Adresi."
+    "tr": "OTO MAVİ MÜŞTERİ MEMNUNİYETİ\n\nOto Mavi olarak en büyük önceliğimiz müşteri memnuniyetidir. "
   },
   "keyword": {
-    "tr": "BMW F30 N13 YAKIT DEPOSU 56646711"
+    "tr": "BMW G20 BENZİNLİ YAKIT DEPOSU 7449039"
   },
   "title": {
     "tr": "Yakıt Deposu | Oto Mavi"
@@ -19,7 +19,7 @@
     "tr": "<h2 style=\"font-size: 24px;\">Yakıt Deposu</h2><p style=\"font-size: 16px;\">Yakıt deposu çalışması uzmanlık ve güvenlik gerektirir. Çatlak koku ve sızıntıyla anlaşılır.</p><p style=\"font-size: 16px;\">Oto Mavi depo ve flanş conta setlerini model yılına göre listeler.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
   },
   "icon": "local_gas_station",
-  "update": "2026-07-30T07:08:55.739Z",
+  "update": "2026-07-30T07:07:53.874Z",
   "date": "2026-07-20",
   "img": "dmvmms8g.webp",
   "desing": {
@@ -34,7 +34,7 @@
   "desc": {
     "parca_kodu": "yakit-deposu",
     "tur": "Gövde",
-    "uyumlu": "BMW F30 N13 YAKIT DEPOSU 56646711",
+    "uyumlu": "BMW G20 BENZİNLİ YAKIT DEPOSU 7449039",
     "kalite": "OEM ve eşdeğer"
   }
 }
