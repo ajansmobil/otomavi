@@ -1,27 +1,15 @@
 {
-  "id": "lo65qlydcr",
-  "path": "ara-sogutucu",
   "name": {
     "tr": "Ara Soğutucu"
   },
-  "status": "play",
+  "id": "lo65qlydcr",
+  "index": 43,
+  "path": "ara-sogutucu",
   "category": "dnhgnxo0hg",
-  "description": {
-    "tr": "Sıkıştırılmış havayı soğutan intercooler çekirdeği yanmayı stabilize eder; tıkanmış veya delik ara soğutucu boost kaybı üretir, hortum flanşıyla birlikte kontrol edilir."
-  },
-  "keyword": {
-    "tr": "intercooler ara soğutucu, boost hortumu, emiş soğutma, charge air cooler, BMW intercooler, 3 Series, 5 Series, X5, Mercedes-Benz, Audi"
-  },
-  "title": {
-    "tr": "Ara Soğutucu | Oto Mavi"
-  },
-  "text": {
-    "tr": "<h2 style=\"font-size: 24px;\">Ara Soğutucu</h2><p style=\"font-size: 16px;\">Ara soğutucu (intercooler) turbo çıkışındaki sıcak havayı düşürerek dolum verimini artırır. Çatlak çekirdek veya gevşek kelepçe basınç kaçırır.</p><p style=\"font-size: 16px;\">Oto Mavi stokunda model bazlı intercooler ve bağlantı hortumları bulunur; şasi ile doğrulayın.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
-  },
-  "icon": "ac_unit",
-  "update": "2026-07-21T10:04:11.927Z",
-  "date": "2026-07-20",
   "img": "index.webp",
+  "status": "play",
+  "url": "",
+  "icon": "ac_unit",
   "desing": {
     "header": [],
     "body": [
@@ -29,12 +17,16 @@
     ],
     "footer": []
   },
-  "index": 65,
-  "url": "",
-  "desc": {
-    "parca_kodu": "ara-sogutucu",
-    "tur": "Turbo / Zorlamalı Emme",
-    "uyumlu": "intercooler ara soğutucu · boost hortumu · emiş soğutma · charge air cooler · Mercedes-Benz · BMW · Audi · 3 Series",
-    "kalite": "OEM ve eşdeğer"
-  }
+  "description": {
+    "tr": "Sıkıştırılmış havayı soğutan intercooler çekirdeği yanmayı stabilize eder; tıkanmış veya delik ara soğutucu boost kaybı üretir, hortum flanşıyla birlikte kontrol edilir."
+  },
+  "keyword": {
+    "tr": "ara soğutucu, intercooler, turbo intercooler, BMW, Gaziantep"
+  },
+  "title": {
+    "tr": "Ara Soğutucu"
+  },
+  "imgs": [
+    "index.webp"
+  ]
 }

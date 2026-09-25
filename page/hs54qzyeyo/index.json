@@ -7,28 +7,31 @@
   "id": "hs54qzyeyo",
   "url": "",
   "path": "urunler",
-  "index": 1,
+  "index": 2,
   "icon": "home",
   "desing": {
     "header": [],
     "body": [
+      "t1ks01",
       "t1plpr"
     ],
     "footer": []
   },
   "pathnext": "",
   "description": {
-    "tr": ""
+    "tr": "BMW orijinal ve eşdeğer yedek parça kataloğu — Oto Mavi ürün listesi."
   },
-  "spot": {
-    "tr": ""
+  "img": "index.webp",
+  "keyword": {
+    "tr": "BMW yedek parça, orijinal parça, eşdeğer parça, oto yedek parça kataloğu, Oto Mavi ürünler, Gaziantep"
   },
-  "desc": {},
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Ürünler</h2><p style=\"font-size: 16px;\">BMW orijinal ve eşdeğer yedek parça kataloğu — Oto Mavi ürün listesi.</p><p style=\"font-size: 16px;\">Filtre, fren, süspansiyon, motor ve elektrik grubu dahil geniş ürün yelpazesi Oto Mavi deposundan şasi ve motor koduna göre sağlanır.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
   "title": {
     "tr": "Ürünler"
   },
-  "keyword": {},
-  "text": {},
-  "update": "2026-05-19",
-  "date": "2026-05-19"
+  "imgs": [
+    "index.webp"
+  ]
 }

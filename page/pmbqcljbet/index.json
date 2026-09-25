@@ -1,27 +1,15 @@
 {
-  "id": "pmbqcljbet",
-  "path": "basinc-donusturucu",
   "name": {
     "tr": "Basınç Dönüştürücü"
   },
-  "status": "play",
+  "id": "pmbqcljbet",
+  "index": 45,
+  "path": "basinc-donusturucu",
   "category": "dnhgnxo0hg",
-  "description": {
-    "tr": "Wastegate veya VNT aktüatörünü yöneten basınç dönüştürücü solenoidi boost haritasını korur; arızada aşırı veya düşük basınç ve hata kodu görülür."
-  },
-  "keyword": {
-    "tr": "basınç dönüştürücü, boost solenoid, wastegate vana, VNT aktüatör, N75 benzeri, BMW, 3 Series, 5 Series, X5, Mercedes-Benz, Audi"
-  },
-  "title": {
-    "tr": "Basınç Dönüştürücü | Oto Mavi"
-  },
-  "text": {
-    "tr": "<h2 style=\"font-size: 24px;\">Basınç Dönüştürücü</h2><p style=\"font-size: 16px;\">Basınç dönüştürücü (boost solenoid) turbo kontrol hattındaki elektrik-pnömatik köprüdür. Tıkalı hortum veya arızalı bobin düzensiz boost üretir.</p><p style=\"font-size: 16px;\">Kod okuma sonrası Oto Mavi deposundan doğru pin ve hortum çıkışlı üniti seçin.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
-  },
-  "icon": "speed",
-  "update": "2026-07-21T10:04:12.131Z",
-  "date": "2026-07-20",
   "img": "index.webp",
+  "status": "play",
+  "url": "",
+  "icon": "speed",
   "desing": {
     "header": [],
     "body": [
@@ -29,12 +17,13 @@
     ],
     "footer": []
   },
-  "index": 67,
-  "url": "",
-  "desc": {
-    "parca_kodu": "basinc-donusturucu",
-    "tur": "Turbo / Zorlamalı Emme",
-    "uyumlu": "basınç dönüştürücü · boost solenoid · wastegate vana · VNT aktüatör · N75 · Mercedes-Benz · BMW · Audi",
-    "kalite": "OEM ve eşdeğer"
+  "description": {
+    "tr": "Wastegate veya VNT aktüatörünü yöneten basınç dönüştürücü solenoidi boost haritasını korur; arızada aşırı veya düşük basınç ve hata kodu görülür."
+  },
+  "imgs": [
+    "index.webp"
+  ],
+  "keyword": {
+    "tr": "Basınç Dönüştürücü, BMW yedek parça, Oto Mavi, Gaziantep"
   }
 }

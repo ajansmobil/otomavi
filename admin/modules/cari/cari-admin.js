@@ -56,6 +56,12 @@ var MXADMIN_CARI_I18N = {
         nameRequired: 'Cari adı zorunlu.',
         amountRequired: 'Geçerli tutar girin.',
         dateRequired: 'Tarih zorunlu.',
+        exportListPdf: 'Liste PDF',
+        exportStatementPdf: 'Ekstre PDF',
+        pdfListTitle: 'Cari Listesi',
+        pdfStatementTitle: 'Cari Ekstresi',
+        pdfGeneratedAt: 'Oluşturma tarihi',
+        printPopupBlocked: 'Yazdırma penceresi açılamadı (popup engeli?).',
     },
     en: {
         sectionTitle: 'Accounts',
@@ -113,6 +119,12 @@ var MXADMIN_CARI_I18N = {
         nameRequired: 'Name is required.',
         amountRequired: 'Enter a valid amount.',
         dateRequired: 'Date is required.',
+        exportListPdf: 'List PDF',
+        exportStatementPdf: 'Statement PDF',
+        pdfListTitle: 'Account List',
+        pdfStatementTitle: 'Account Statement',
+        pdfGeneratedAt: 'Generated at',
+        printPopupBlocked: 'Could not open print window (popup blocked?).',
     },
 };
 
@@ -297,6 +309,282 @@ function mxAdminCariTodayIsoDate() {
     );
 }
 
+function mxAdminCariFormatPrintDate() {
+    var d = new Date();
+    var day = d.getDate();
+    var m = d.getMonth() + 1;
+    var y = d.getFullYear();
+    var h = d.getHours();
+    var min = d.getMinutes();
+    return (
+        (day < 10 ? '0' : '') +
+        day +
+        '.' +
+        (m < 10 ? '0' : '') +
+        m +
+        '.' +
+        y +
+        ' ' +
+        (h < 10 ? '0' : '') +
+        h +
+        ':' +
+        (min < 10 ? '0' : '') +
+        min
+    );
+}
+
+function mxAdminCariOpenPrintWindow(docTitle, bodyHtml) {
+    var win = window.open('', '_blank');
+    if (!win) {
+        mxAdminCariToast(mxAdminCariT('printPopupBlocked'), true);
+        return;
+    }
+    var h = '';
+    h += '<html><head><meta charset="utf-8"><title>' + mxAdminCariEsc(docTitle) + '</title>';
+    h += '<style>';
+    h += '@page{margin:16mm;}';
+    h += 'body{font-family:Arial,Helvetica,sans-serif;color:#000;background:#fff;margin:0;padding:16px;font-size:13px;}';
+    h += 'h1{font-size:18px;margin:0 0 8px;}';
+    h += '.mx-cari-print-meta{font-size:11px;color:#444;margin-bottom:16px;}';
+    h += 'table{width:100%;border-collapse:collapse;margin-top:12px;}';
+    h += 'th,td{border:1px solid #333;padding:6px 8px;text-align:left;font-size:12px;}';
+    h += 'th{background:#eee;font-weight:bold;}';
+    h += '.num{text-align:right;}';
+    h += '.totals{margin-top:16px;border-top:2px solid #333;padding-top:10px;}';
+    h += '.totals p{margin:4px 0;}';
+    h += '.info-block{margin-bottom:14px;}';
+    h += '.info-block p{margin:3px 0;}';
+    h += '</style></head><body>';
+    h += bodyHtml;
+    h += '</body></html>';
+    win.document.open();
+    win.document.write(h);
+    win.document.close();
+    win.focus();
+    setTimeout(function () {
+        win.print();
+    }, 300);
+}
+
+function mxAdminCariBuildListPdfHtml() {
+    var html = '';
+    var s = mxAdminCariState.summary || {};
+    var cariler = mxAdminCariState.cariler || [];
+    var totalAlacak = 0;
+    var totalVerecek = 0;
+    var i;
+
+    html += '<h1>' + mxAdminCariEsc(mxAdminCariT('pdfListTitle')) + '</h1>';
+    html +=
+        '<div class="mx-cari-print-meta">' +
+        mxAdminCariEsc(mxAdminCariT('pdfGeneratedAt')) +
+        ': ' +
+        mxAdminCariEsc(mxAdminCariFormatPrintDate()) +
+        '</div>';
+
+    if (!cariler.length) {
+        html += '<p>' + mxAdminCariEsc(mxAdminCariT('empty')) + '</p>';
+        return html;
+    }
+
+    html += '<table><thead><tr>';
+    html += '<th>' + mxAdminCariEsc(mxAdminCariT('colName')) + '</th>';
+    html += '<th>' + mxAdminCariEsc(mxAdminCariT('colPhone')) + '</th>';
+    html += '<th class="num">' + mxAdminCariEsc(mxAdminCariT('colAlacak')) + '</th>';
+    html += '<th class="num">' + mxAdminCariEsc(mxAdminCariT('colVerecek')) + '</th>';
+    html += '</tr></thead><tbody>';
+
+    for (i = 0; i < cariler.length; i++) {
+        var row = cariler[i];
+        var split = mxAdminCariSplitBalance(row.balance);
+        totalAlacak += split.alacak;
+        totalVerecek += split.verecek;
+        html += '<tr>';
+        html += '<td>' + mxAdminCariEsc(row.name || '') + '</td>';
+        html += '<td>' + mxAdminCariEsc(row.phone || '—') + '</td>';
+        html +=
+            '<td class="num">' +
+            (split.alacak > 0 ? mxAdminCariFormatMoney(split.alacak) : '—') +
+            '</td>';
+        html +=
+            '<td class="num">' +
+            (split.verecek > 0 ? mxAdminCariFormatMoney(split.verecek) : '—') +
+            '</td>';
+        html += '</tr>';
+    }
+    html += '</tbody></table>';
+
+    html += '<div class="totals">';
+    html +=
+        '<p><strong>' +
+        mxAdminCariEsc(mxAdminCariT('summaryGelir')) +
+        ':</strong> ' +
+        mxAdminCariFormatMoney(s.gelir || 0) +
+        '</p>';
+    html +=
+        '<p><strong>' +
+        mxAdminCariEsc(mxAdminCariT('summaryGider')) +
+        ':</strong> ' +
+        mxAdminCariFormatMoney(s.gider || 0) +
+        '</p>';
+    html +=
+        '<p><strong>' +
+        mxAdminCariEsc(mxAdminCariT('summaryAlacak')) +
+        ':</strong> ' +
+        mxAdminCariFormatMoney(totalAlacak) +
+        '</p>';
+    html +=
+        '<p><strong>' +
+        mxAdminCariEsc(mxAdminCariT('summaryVerecek')) +
+        ':</strong> ' +
+        mxAdminCariFormatMoney(totalVerecek) +
+        '</p>';
+    html +=
+        '<p><strong>' +
+        mxAdminCariEsc(mxAdminCariT('summaryBakiye')) +
+        ':</strong> ' +
+        mxAdminCariFormatMoney(s.balance || 0) +
+        '</p>';
+    html += '</div>';
+
+    return html;
+}
+
+function mxAdminCariBuildStatementPdfHtml(cari) {
+    var html = '';
+    var split = mxAdminCariSplitBalance(cari.balance);
+    var txSum = mxAdminCariComputeTxSummary(mxAdminCariState.islemler);
+    var netBal = Number(cari.balance) || 0;
+    var islemler = mxAdminCariState.islemler || [];
+    var i;
+
+    html += '<h1>' + mxAdminCariEsc(mxAdminCariT('pdfStatementTitle')) + '</h1>';
+    html +=
+        '<div class="mx-cari-print-meta">' +
+        mxAdminCariEsc(mxAdminCariT('pdfGeneratedAt')) +
+        ': ' +
+        mxAdminCariEsc(mxAdminCariFormatPrintDate()) +
+        '</div>';
+
+    html += '<div class="info-block">';
+    html +=
+        '<p><strong>' +
+        mxAdminCariEsc(mxAdminCariT('name')) +
+        ':</strong> ' +
+        mxAdminCariEsc(cari.name || '') +
+        '</p>';
+    if (cari.phone) {
+        html +=
+            '<p><strong>' +
+            mxAdminCariEsc(mxAdminCariT('phone')) +
+            ':</strong> ' +
+            mxAdminCariEsc(cari.phone) +
+            '</p>';
+    }
+    if (cari.email) {
+        html +=
+            '<p><strong>' +
+            mxAdminCariEsc(mxAdminCariT('email')) +
+            ':</strong> ' +
+            mxAdminCariEsc(cari.email) +
+            '</p>';
+    }
+    if (cari.note) {
+        html +=
+            '<p><strong>' +
+            mxAdminCariEsc(mxAdminCariT('note')) +
+            ':</strong> ' +
+            mxAdminCariEsc(cari.note) +
+            '</p>';
+    }
+    html += '</div>';
+
+    html +=
+        '<div class="mx-cari-print-meta">' +
+        mxAdminCariEsc(mxAdminCariT('transactionsTitle')) +
+        '</div>';
+    html += '<table><thead><tr>';
+    html += '<th>' + mxAdminCariEsc(mxAdminCariT('colDate')) + '</th>';
+    html += '<th>' + mxAdminCariEsc(mxAdminCariT('colType')) + '</th>';
+    html += '<th>' + mxAdminCariEsc(mxAdminCariT('colDesc')) + '</th>';
+    html += '<th class="num">' + mxAdminCariEsc(mxAdminCariT('colAmount')) + '</th>';
+    html += '</tr></thead><tbody>';
+
+    if (!islemler.length) {
+        html +=
+            '<tr><td colspan="4">' +
+            mxAdminCariEsc(mxAdminCariT('txEmpty')) +
+            '</td></tr>';
+    } else {
+        for (i = 0; i < islemler.length; i++) {
+            var row = islemler[i];
+            var typeLabel =
+                row.type === 'gelir'
+                    ? mxAdminCariT('typeGelir')
+                    : mxAdminCariT('typeGider');
+            html += '<tr>';
+            html += '<td>' + mxAdminCariEsc(row.tx_date || '') + '</td>';
+            html += '<td>' + mxAdminCariEsc(typeLabel) + '</td>';
+            html += '<td>' + mxAdminCariEsc(row.description || '—') + '</td>';
+            html +=
+                '<td class="num">' +
+                mxAdminCariFormatMoney(row.amount) +
+                '</td>';
+            html += '</tr>';
+        }
+    }
+    html += '</tbody></table>';
+
+    html += '<div class="totals">';
+    html +=
+        '<p><strong>' +
+        mxAdminCariEsc(mxAdminCariT('summaryGelir')) +
+        ':</strong> ' +
+        mxAdminCariFormatMoney(txSum.gelir) +
+        '</p>';
+    html +=
+        '<p><strong>' +
+        mxAdminCariEsc(mxAdminCariT('summaryGider')) +
+        ':</strong> ' +
+        mxAdminCariFormatMoney(txSum.gider) +
+        '</p>';
+    html +=
+        '<p><strong>' +
+        mxAdminCariEsc(mxAdminCariT('colAlacak')) +
+        ':</strong> ' +
+        mxAdminCariFormatMoney(split.alacak) +
+        '</p>';
+    html +=
+        '<p><strong>' +
+        mxAdminCariEsc(mxAdminCariT('colVerecek')) +
+        ':</strong> ' +
+        mxAdminCariFormatMoney(split.verecek) +
+        '</p>';
+    html +=
+        '<p><strong>' +
+        mxAdminCariEsc(mxAdminCariT('netBalance')) +
+        ':</strong> ' +
+        mxAdminCariFormatMoney(netBal) +
+        '</p>';
+    html += '</div>';
+
+    return html;
+}
+
+function mxAdminCariDownloadListPdf() {
+    var bodyHtml = mxAdminCariBuildListPdfHtml();
+    mxAdminCariOpenPrintWindow(mxAdminCariT('pdfListTitle'), bodyHtml);
+}
+
+function mxAdminCariDownloadStatementPdf() {
+    var cari = mxAdminCariFindCari(mxAdminCariState.selectedId);
+    if (!cari) {
+        return;
+    }
+    var bodyHtml = mxAdminCariBuildStatementPdfHtml(cari);
+    mxAdminCariOpenPrintWindow(mxAdminCariT('pdfStatementTitle'), bodyHtml);
+}
+
 function mxAdminCariMountScreens() {
     var root = document.getElementById('mxadminScreenCari');
     if (!root) {
@@ -354,10 +642,18 @@ function mxAdminCariRenderShell() {
         '<span class="mxadmin-cari-panel-title">' +
         mxAdminCariEsc(mxAdminCariT('listTitle')) +
         '</span>';
+    html += '<div class="mxadmin-cari-panel-actions">';
+    html +=
+        '<button type="button" class="mxadmin-cari-text-btn" id="mxadminCariExportListBtn" title="' +
+        mxAdminCariAttr(mxAdminCariT('exportListPdf')) +
+        '"><span class="material-symbols-outlined">picture_as_pdf</span>' +
+        mxAdminCariEsc(mxAdminCariT('exportListPdf')) +
+        '</button>';
     html +=
         '<button type="button" class="btn-add" id="mxadminCariAddBtn">' +
         mxAdminCariEsc(mxAdminCariT('addCari')) +
         '</button>';
+    html += '</div>';
     html += '</div>';
     html += '<div class="mxadmin-cari-table-wrap">';
     html += '<table class="mxadmin-cari-table">';
@@ -384,6 +680,12 @@ function mxAdminCariRenderShell() {
     if (addBtn) {
         addBtn.onclick = function () {
             mxAdminCariShowAddCariForm();
+        };
+    }
+    var exportListBtn = document.getElementById('mxadminCariExportListBtn');
+    if (exportListBtn) {
+        exportListBtn.onclick = function () {
+            mxAdminCariDownloadListPdf();
         };
     }
     mxAdminCariApplyLayout();
@@ -558,6 +860,12 @@ function mxAdminCariRenderDetail() {
     html += '</div>';
     html += '<div class="mxadmin-cari-detail-hero-actions">';
     html +=
+        '<button type="button" class="mxadmin-cari-text-btn" id="mxadminCariStatementPdfBtn" title="' +
+        mxAdminCariAttr(mxAdminCariT('exportStatementPdf')) +
+        '"><span class="material-symbols-outlined">picture_as_pdf</span>' +
+        mxAdminCariEsc(mxAdminCariT('exportStatementPdf')) +
+        '</button>';
+    html +=
         '<button type="button" class="mxadmin-cari-text-btn" id="mxadminCariEditBtn" title="' +
         mxAdminCariAttr(mxAdminCariT('edit')) +
         '"><span class="material-symbols-outlined">edit</span>' +
@@ -722,6 +1030,12 @@ function mxAdminCariRenderDetail() {
     detail.innerHTML = html;
     detail.classList.add('is-open');
 
+    var statementPdfBtn = document.getElementById('mxadminCariStatementPdfBtn');
+    if (statementPdfBtn) {
+        statementPdfBtn.onclick = function () {
+            mxAdminCariDownloadStatementPdf();
+        };
+    }
     var editBtn = document.getElementById('mxadminCariEditBtn');
     if (editBtn) {
         editBtn.onclick = function () {

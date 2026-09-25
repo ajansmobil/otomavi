@@ -1,0 +1,252 @@
+[
+  {
+    "id": 4,
+    "name": "TASARIM SERVİS",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 39500,
+    "created_at": "2026-07-29T08:19:34.481Z",
+    "updated_at": "2026-07-29T08:23:23.902Z"
+  },
+  {
+    "id": 6,
+    "name": "MY CAR",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 1500,
+    "created_at": "2026-07-29T08:27:39.689Z",
+    "updated_at": "2026-07-29T08:27:53.589Z"
+  },
+  {
+    "id": 7,
+    "name": "BARAB OTO",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 44000,
+    "created_at": "2026-07-29T08:28:45.622Z",
+    "updated_at": "2026-07-31T07:47:57.897Z"
+  },
+  {
+    "id": 8,
+    "name": "ERİŞİM SERVİS",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 25800,
+    "created_at": "2026-07-29T08:30:22.941Z",
+    "updated_at": "2026-07-30T08:19:01.350Z"
+  },
+  {
+    "id": 9,
+    "name": "GÜZEL TAŞ",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 12000,
+    "created_at": "2026-07-29T08:34:02.889Z",
+    "updated_at": "2026-08-03T15:35:56.997Z"
+  },
+  {
+    "id": 10,
+    "name": "BOYACI HACİ ABİ",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 0,
+    "created_at": "2026-07-29T08:34:42.335Z",
+    "updated_at": "2026-08-01T13:41:37.090Z"
+  },
+  {
+    "id": 11,
+    "name": "SEVİMLİ BMW",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 0,
+    "created_at": "2026-07-29T08:35:31.508Z",
+    "updated_at": "2026-07-29T08:35:31.508Z"
+  },
+  {
+    "id": 12,
+    "name": "ELEKTİRİKCİ NACİ",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 0,
+    "created_at": "2026-07-29T08:36:02.008Z",
+    "updated_at": "2026-07-29T08:36:02.008Z"
+  },
+  {
+    "id": 13,
+    "name": "ŞEREF TİCARET",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 0,
+    "created_at": "2026-07-29T08:36:52.983Z",
+    "updated_at": "2026-07-29T08:36:52.983Z"
+  },
+  {
+    "id": 14,
+    "name": "YNS OTO",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 0,
+    "created_at": "2026-07-29T08:37:18.807Z",
+    "updated_at": "2026-07-29T08:37:18.807Z"
+  },
+  {
+    "id": 15,
+    "name": "GENÇLER OTO YEDEK PARÇA",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 7000,
+    "created_at": "2026-07-29T08:37:40.514Z",
+    "updated_at": "2026-07-30T07:48:45.945Z"
+  },
+  {
+    "id": 16,
+    "name": "EMS YEDEK PARÇA",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 0,
+    "created_at": "2026-07-29T08:38:14.567Z",
+    "updated_at": "2026-07-30T08:18:25.774Z"
+  },
+  {
+    "id": 17,
+    "name": "VEDAT KAPORTA",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 500,
+    "created_at": "2026-07-29T08:38:37.253Z",
+    "updated_at": "2026-07-29T08:38:49.017Z"
+  },
+  {
+    "id": 18,
+    "name": "GRUB BMW",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 0,
+    "created_at": "2026-07-29T08:39:12.518Z",
+    "updated_at": "2026-07-29T08:39:12.518Z"
+  },
+  {
+    "id": 19,
+    "name": "LÜX EYÜP USTA",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 25000,
+    "created_at": "2026-07-29T08:39:38.811Z",
+    "updated_at": "2026-08-03T06:45:23.215Z"
+  },
+  {
+    "id": 20,
+    "name": "KILIÇ BMW",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 0,
+    "created_at": "2026-07-29T08:40:44.629Z",
+    "updated_at": "2026-08-01T09:59:26.160Z"
+  },
+  {
+    "id": 21,
+    "name": "KAYALAR SERVİS",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 0,
+    "created_at": "2026-07-29T08:41:26.421Z",
+    "updated_at": "2026-08-01T12:40:06.308Z"
+  },
+  {
+    "id": 22,
+    "name": "GARAJ BMW",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 0,
+    "created_at": "2026-07-29T08:42:58.184Z",
+    "updated_at": "2026-08-01T12:41:04.861Z"
+  },
+  {
+    "id": 23,
+    "name": "KORKMAZ OTO",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 0,
+    "created_at": "2026-07-29T08:44:58.801Z",
+    "updated_at": "2026-08-01T13:44:10.169Z"
+  },
+  {
+    "id": 24,
+    "name": "DALYAN OTO KAPORTA",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 0,
+    "created_at": "2026-07-29T08:46:22.362Z",
+    "updated_at": "2026-08-01T12:40:32.796Z"
+  },
+  {
+    "id": 25,
+    "name": "DEMİR OTO",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 18000,
+    "created_at": "2026-07-29T08:47:13.314Z",
+    "updated_at": "2026-08-03T12:53:59.891Z"
+  },
+  {
+    "id": 26,
+    "name": "ELİT BMW",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 88500,
+    "created_at": "2026-07-31T15:14:04.086Z",
+    "updated_at": "2026-08-03T06:05:26.189Z"
+  },
+  {
+    "id": 27,
+    "name": "MS RAMAZAN TEK",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 1000,
+    "created_at": "2026-08-01T07:20:29.994Z",
+    "updated_at": "2026-08-01T07:20:55.297Z"
+  },
+  {
+    "id": 28,
+    "name": "TASARIM YEDEK PARCA",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 32000,
+    "created_at": "2026-08-01T09:35:00.372Z",
+    "updated_at": "2026-08-03T07:12:40.865Z"
+  },
+  {
+    "id": 29,
+    "name": "PLATİN OTO",
+    "phone": "",
+    "email": "",
+    "note": "",
+    "balance": 4000,
+    "created_at": "2026-08-03T10:38:35.409Z",
+    "updated_at": "2026-08-03T10:38:50.667Z"
+  }
+]

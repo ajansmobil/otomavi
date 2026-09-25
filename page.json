@@ -1,5 +1,5 @@
 {
-  "name": "Sayfalar",
+  "name": "page",
   "path": "page",
   "desc": [],
   "data": [
@@ -7,70 +7,75 @@
       "name": {
         "tr": "Kurumsal"
       },
-      "status": "play",
-      "category": "",
       "id": "yvi9dlb59o",
-      "url": "",
-      "path": "kurumsal",
       "index": 0,
+      "path": "kurumsal",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
+      "icon": "home",
       "desing": {
         "header": [],
         "body": [
-          "t1in01",
-          "tp5jo4"
+          "t1in01"
         ],
         "footer": []
       },
       "pathnext": "hakkimizda",
       "description": {
-        "tr": ""
+        "tr": "Oto Mavi kurumsal menü — firma bilgileri, kariyer, politikalar ve yasal metinler."
       }
     },
     {
       "name": {
         "tr": "Ürünler"
       },
-      "status": "play",
-      "category": "",
       "id": "hs54qzyeyo",
-      "url": "",
-      "path": "urunler",
       "index": 1,
+      "path": "urunler",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
       "icon": "home",
       "desing": {
         "header": [],
         "body": [
+          "t1ks01",
           "t1plpr"
         ],
         "footer": []
       },
       "pathnext": "",
       "description": {
-        "tr": ""
+        "tr": "BMW orijinal ve eşdeğer yedek parça kataloğu — Oto Mavi ürün listesi."
       }
     },
     {
       "name": {
         "tr": "İletişim"
       },
-      "status": "play",
-      "category": "",
       "id": "xnzu5au0ag",
-      "url": "",
-      "path": "iletisim",
       "index": 2,
+      "path": "iletisim",
+      "category": "",
+      "img": "index.webp",
+      "status": "play",
+      "url": "",
       "icon": "home",
       "desing": {
         "header": [],
         "body": [
           "fhxr98",
+          "t1sb01",
           "bi4hta"
         ],
         "footer": []
       },
       "pathnext": "",
       "description": {
-        "tr": ""
+        "tr": "Oto Mavi iletişim — telefon, e-posta ve Gaziantep adres bilgileri."
       }
     }
   ],
@@ -82,8 +87,8 @@
   },
   "modulestatus": {
     "page": true,
-    "bgimg": true,
+    "body": true,
     "detail": true,
-    "body": true
+    "img": false
   }
 }

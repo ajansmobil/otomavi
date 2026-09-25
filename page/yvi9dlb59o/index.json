@@ -11,24 +11,26 @@
   "desing": {
     "header": [],
     "body": [
-      "t1in01",
-      "tp5jo4"
+      "t1in01"
     ],
     "footer": []
   },
   "pathnext": "hakkimizda",
   "description": {
-    "tr": ""
+    "tr": "Oto Mavi kurumsal menü — firma bilgileri, kariyer, politikalar ve yasal metinler."
   },
-  "spot": {
-    "tr": ""
+  "img": "index.webp",
+  "icon": "home",
+  "keyword": {
+    "tr": "Oto Mavi kurumsal, hakkımızda, firma bilgileri, kariyer, gizlilik politikası, kullanım şartları, Gaziantep oto yedek parça"
   },
-  "desc": {},
+  "text": {
+    "tr": "<h2 style=\"font-size: 24px;\">Kurumsal</h2><p style=\"font-size: 16px;\">Oto Mavi kurumsal menü — firma bilgileri, kariyer, politikalar ve yasal metinler.</p><p style=\"font-size: 16px;\">Gaziantep merkezli deposuyla BMW başta olmak üzere çok markalı yedek parça tedarik eden Oto Mavi, kurumsal kimliğini ve çalışma ilkelerini bu sayfalarda paylaşır.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
+  },
   "title": {
     "tr": "Kurumsal"
   },
-  "keyword": {},
-  "text": {},
-  "update": "2026-05-19",
-  "date": "2026-05-19"
+  "imgs": [
+    "index.webp"
+  ]
 }

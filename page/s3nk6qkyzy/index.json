@@ -1,27 +1,15 @@
 {
-  "id": "s3nk6qkyzy",
-  "path": "turbo-contasi",
   "name": {
     "tr": "Turbo Contası"
   },
-  "status": "play",
+  "id": "s3nk6qkyzy",
+  "index": 44,
+  "path": "turbo-contasi",
   "category": "dnhgnxo0hg",
-  "description": {
-    "tr": "Turbo flanş ve yağ dönüş contası egzoz ile yağ sızıntısını keser; yeniden kullanım çoğu zaman kaçak yaratır, her demontajda yeni conta seti önerilir."
-  },
-  "keyword": {
-    "tr": "turbo flanş conta, yağ dönüş contası, egzoz conta seti, turbo sızdırmazlık, gasket kit, BMW, 3 Series, 5 Series, X5, Mercedes-Benz, Audi"
-  },
-  "title": {
-    "tr": "Turbo Contası | Oto Mavi"
-  },
-  "text": {
-    "tr": "<h2 style=\"font-size: 24px;\">Turbo Contası</h2><p style=\"font-size: 16px;\">Turbo contası ince ama kritik bir parçadır; yanlış tork veya eski conta egzoz dumanı ve yağ sızıntısı bırakır.</p><p style=\"font-size: 16px;\">Oto Mavi turbo conta setlerini ünite tipine göre ayırır; montaj sırasında yüzey temizliği şarttır.</p><p style=\"font-size: 16px;\">Sipariş ve stok: 0544 717 18 28 · WhatsApp ile hızlı teklif.</p>"
-  },
-  "icon": "hexagon",
-  "update": "2026-07-21T10:04:12.026Z",
-  "date": "2026-07-20",
   "img": "index.webp",
+  "status": "play",
+  "url": "",
+  "icon": "hexagon",
   "desing": {
     "header": [],
     "body": [
@@ -29,12 +17,13 @@
     ],
     "footer": []
   },
-  "index": 66,
-  "url": "",
-  "desc": {
-    "parca_kodu": "turbo-contasi",
-    "tur": "Turbo / Zorlamalı Emme",
-    "uyumlu": "turbo flanş conta · yağ dönüş contası · egzoz conta seti · turbo sızdırmazlık · Mercedes-Benz · BMW · Audi · 3 Series",
-    "kalite": "OEM ve eşdeğer"
+  "description": {
+    "tr": "Turbo flanş ve yağ dönüş contası egzoz ile yağ sızıntısını keser; yeniden kullanım çoğu zaman kaçak yaratır, her demontajda yeni conta seti önerilir."
+  },
+  "imgs": [
+    "index.webp"
+  ],
+  "keyword": {
+    "tr": "Turbo Contası, BMW yedek parça, Oto Mavi, Gaziantep"
   }
 }

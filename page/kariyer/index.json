@@ -11,13 +11,10 @@
   },
   "desing": {
     "header": [],
-    "body": [
-      "tp5jo4",
-      "t1ct01"
-    ],
+    "body": [],
     "footer": []
   },
-  "index": 4,
+  "index": 5,
   "icon": "work",
   "title": {
     "tr": "Kariyer | Oto Mavi"
@@ -28,7 +25,10 @@
   "keyword": {
     "tr": "Oto Mavi kariyer, iş ilanı, Gaziantep, yedek parça, satış danışmanı, depo"
   },
-  "update": "2026-07-21T10:04:16.820Z",
+  "update": "2026-07-31T08:43:33.428Z",
   "date": "2026-07-20",
-  "img": "index.webp"
+  "img": "index.webp",
+  "imgs": [
+    "index.webp"
+  ]
 }

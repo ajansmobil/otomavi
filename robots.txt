@@ -26,3 +26,6 @@ Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
+
+# Sitemap
+Sitemap: https://otomavi.com/sitemap.xml

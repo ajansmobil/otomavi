@@ -1,35 +1,40 @@
 {
-  "name": {
-    "tr": "İletişim"
-  },
-  "status": "play",
-  "category": "",
   "id": "xnzu5au0ag",
-  "url": "",
-  "path": "iletisim",
+  "category": "",
+  "title": {
+    "tr": "İletişim | Oto Mavi"
+  },
   "index": 2,
-  "icon": "home",
   "desing": {
     "header": [],
     "body": [
       "fhxr98",
+      "t1sb01",
       "bi4hta"
     ],
     "footer": []
   },
-  "pathnext": "",
-  "description": {
-    "tr": ""
+  "keyword": {
+    "tr": "Oto Mavi, iletişim, Gaziantep, BMW yedek parça, telefon, adres, WhatsApp"
   },
-  "spot": {
-    "tr": ""
-  },
-  "desc": {},
-  "title": {
+  "name": {
     "tr": "İletişim"
   },
-  "keyword": {},
-  "text": {},
-  "update": "2026-05-19",
-  "date": "2026-05-19"
+  "description": {
+    "tr": "Oto Mavi iletişim — telefon, e-posta ve Gaziantep adres bilgileri."
+  },
+  "status": "play",
+  "update": "2026-08-03T06:09:42.222Z",
+  "url": "",
+  "path": "iletisim",
+  "icon": "home",
+  "date": "2026-05-19",
+  "pathnext": "",
+  "img": "index.webp",
+  "text": {
+    "tr": "<p>Oto Mavi iletişim — telefon, e-posta ve Gaziantep adres bilgileri.</p>"
+  },
+  "imgs": [
+    "index.webp"
+  ]
 }

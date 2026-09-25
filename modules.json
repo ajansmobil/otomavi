@@ -8,37 +8,93 @@
       "category": "menu",
       "id": "vey1el",
       "desing": {
-        "bgcolor": "#1e3046",
+        "bgcolor": "#02427A",
         "color": "#ffffff",
-        "activebgcolor": "#ffffff",
-        "activecolor": "#000000"
+        "activebgcolor": "#1094DB",
+        "activecolor": "#000000",
+        "height": "100px",
+        "ariaToggle": {
+          "tr": "Menüyü aç/kapat",
+          "en": "Toggle menu"
+        },
+        "ariaClose": {
+          "tr": "Menüyü kapat",
+          "en": "Close menu"
+        }
       },
       "version": "1.0.0",
       "icon": "menu"
     },
     {
-      "name": "Slider",
-      "path": "slider",
+      "index": 1,
+      "name": "Slider Text",
+      "path": "slider-text",
       "local": "header",
       "category": "slider",
       "id": "k4t90c",
-      "data": [
-        {
-          "img": "1.jpg"
-        },
-        {
-          "img": "2.jpg"
-        },
-        {
-          "img": "3.jpg"
-        }
-      ],
       "desing": {
-        "delay": 3000
+        "delay": 4500,
+        "margin": "0px 0 0 0",
+        "height": "580px",
+        "max": "1200px",
+        "overlay": "0.46",
+        "align": "left",
+        "layout": "",
+        "bgcolor": "#0B3A6E",
+        "titlecolor": "#ffffff",
+        "desccolor": "rgba(255, 255, 255, 0.90)",
+        "btncolor": "#ffffff",
+        "btnbg": "#02427A",
+        "border_radius": "10px",
+        "prevLabel": {
+          "tr": "Önceki slayt",
+          "en": "Previous slide"
+        },
+        "nextLabel": {
+          "tr": "Sonraki slayt",
+          "en": "Next slide"
+        }
       },
       "version": "1.0.0",
       "icon": "view_carousel",
-      "index": 1
+      "data": [
+        {
+          "img": "slider-otomavi-yedek-parca-01.webp",
+          "layout": "left",
+          "bgcolor": "#0B3A6E",
+          "title": {
+            "tr": "BMW yedek parça",
+            "en": "BMW spare parts"
+          },
+          "description": {
+            "tr": "Gaziantep deposundan orijinal ve eşdeğer parçalar — uygun fiyat, 1. sınıf kalite.",
+            "en": "Original and equivalent parts from our Gaziantep warehouse — fair price, first-class quality."
+          },
+          "button": {
+            "tr": "Ürünleri İncele",
+            "en": "Browse Products"
+          },
+          "link": "urunler"
+        },
+        {
+          "img": "slider-otomavi-bmw-parca-02.webp",
+          "layout": "right",
+          "bgcolor": "#0B3A6E",
+          "title": {
+            "tr": "Hızlı tedarik, net teklif",
+            "en": "Fast supply, clear quote"
+          },
+          "description": {
+            "tr": "Atölye ve araç sahipleri için stok sorgusu: telefon veya WhatsApp — 08:00–22:00.",
+            "en": "Stock checks for workshops and drivers: phone or WhatsApp — 08:00–22:00."
+          },
+          "button": {
+            "tr": "İletişime Geç",
+            "en": "Contact Us"
+          },
+          "link": "iletisim"
+        }
+      ]
     },
     {
       "name": "İletişim",
@@ -56,16 +112,17 @@
       "data": [
         {
           "icon": "phone",
-          "text": "0530 000 00 00",
-          "url": "tel:05310000000"
+          "text": "+90 544 717 18 28",
+          "url": "tel:+905447171828"
         },
         {
           "icon": "email",
-          "text": "info@{{domain}}"
+          "text": "info@otomavi.com",
+          "url": "mailto:info@otomavi.com"
         },
         {
           "icon": "map",
-          "text": "Adres Bilgis Henüz eklenmedi Şehitkamil / Gaziantep"
+          "text": "Sanayi mah. 60081 nolu cadde no 43 Şehitkamil Gaziantep"
         }
       ],
       "version": "1.0.0",
@@ -73,6 +130,7 @@
       "index": 2
     },
     {
+      "index": 3,
       "name": "Maps",
       "path": "map",
       "local": "body",
@@ -81,14 +139,13 @@
       "desing": {
         "height": "200",
         "opacity": "0.5",
-        "backgroundcolor": "#000",
+        "backgroundcolor": "#fff",
         "color": "#1e3046",
         "img": "map.png",
         "externalUrl": ""
       },
       "version": "1.0.0",
-      "icon": "map",
-      "index": 3
+      "icon": "map"
     },
     {
       "index": 4,
@@ -102,7 +159,56 @@
         "opacity": "0.5",
         "font-size": "32",
         "backgroundcolor": "#000",
-        "menu-active": "#000"
+        "menu-active": "#000",
+        "textcolor": "#fff",
+        "bgcolor": "#ffffff",
+        "border_radius": "8px",
+        "card_shadow": "0 10px 28px rgba(0, 0, 0, 0.08)",
+        "color": "#111111",
+        "colortitle": "#111111",
+        "coloractive": "#000000",
+        "ui": {
+          "tr": {
+            "home": "Anasayfa",
+            "products": "Ürünler",
+            "dimensions": "Ölçüler",
+            "dimNote": "Standart üretim referansıdır; proje bazında özelleştirilebilir.",
+            "quote": "Teklif Al",
+            "whatsapp": "WhatsApp",
+            "prev": "Önceki",
+            "next": "Sonraki"
+          },
+          "en": {
+            "home": "Home",
+            "products": "Products",
+            "dimensions": "Dimensions",
+            "dimNote": "Standard production reference; customizable per project.",
+            "quote": "Get Quote",
+            "whatsapp": "WhatsApp",
+            "prev": "Previous",
+            "next": "Next"
+          },
+          "ar": {
+            "home": "الرئيسية",
+            "products": "المنتجات",
+            "dimensions": "الأبعاد",
+            "dimNote": "مرجع إنتاج قياسي؛ قابل للتخصيص حسب المشروع.",
+            "quote": "عرض سعر",
+            "whatsapp": "واتساب",
+            "prev": "السابق",
+            "next": "التالي"
+          }
+        },
+        "noTitle": {
+          "tr": "Başlık Yok",
+          "en": "No title",
+          "ar": "بدون عنوان"
+        },
+        "productNavAria": {
+          "tr": "Ürün navigasyonu",
+          "en": "Product navigation",
+          "ar": "تنقل المنتج"
+        }
       },
       "version": "1.0.0",
       "icon": "web"
@@ -114,7 +220,7 @@
       "category": "footer",
       "id": "txt39m",
       "desing": {
-        "bgcolor": "#1e3046",
+        "bgcolor": "#0B3A6E",
         "color": "#fff",
         "img": "",
         "imgwidth": "250px"
@@ -150,12 +256,12 @@
       "icon": "business",
       "desing": {
         "name": {
-          "tr": "Bizi Tanıyın",
-          "en": "About Us"
+          "tr": "Gaziantep BMW Yedek Parça",
+          "en": "Gaziantep BMW Spare Parts"
         },
         "description": {
-          "tr": "Yıllarin deneyimi ve uzman kadromuzla kurumsal çözümler sunuyoruz.",
-          "en": "Corporate solutions with experience and expertise."
+          "tr": "Oto Mavi olarak orijinal ve eşdeğer BMW yedek parçalarında güvenilir tedarik sunuyoruz.",
+          "en": "Reliable BMW spare parts supply."
         },
         "name2": {
           "tr": "Vizyonumuz",
@@ -175,14 +281,14 @@
           "en": "Deliver solutions fast and clearly."
         },
         "icon3": "flag",
-        "img": "index.jpg",
-        "bgcolor": "#1e3046",
-        "fontcolor": "#fff",
+        "img": "index.webp",
+        "bgcolor": "#0B3A6E",
+        "fontcolor": "#E9F3FB",
         "margintop": "20",
         "marginbotton": "20",
         "title": {
-          "tr": "Kurumsal",
-          "en": "Corporate"
+          "tr": "Oto Mavi",
+          "en": "Oto Mavi"
         }
       },
       "index": 7
@@ -197,9 +303,11 @@
       "icon": "monitoring",
       "desing": {
         "max": "1200px",
-        "gradient": "linear-gradient(135deg, #1e3046 0%, #1e3046dd 100%)",
-        "numbercolor": "#2563EB",
-        "labelcolor": "#e2e8f0"
+        "gradient": "linear-gradient(135deg, #02427A 0%, #0B3A6E 100%)",
+        "numbercolor": "#1094DB",
+        "labelcolor": "#e2e8f0",
+        "iconsize": "56px",
+        "iconbox": "88px"
       },
       "data": [
         {
@@ -251,16 +359,16 @@
       "icon": "campaign",
       "desing": {
         "max": "1200px",
-        "gradient": "linear-gradient(135deg, #1e3046 0%, #1e3046ee 100%)",
-        "btnbg": "#2563EB",
+        "gradient": "linear-gradient(135deg, #02427A 0%, #0B3A6E 100%)",
+        "btnbg": "#02427A",
         "btncolor": "#ffffff",
         "title": {
-          "tr": "Projenizi Birlikte Hayata Geçirelim",
-          "en": "Let's Build Together"
+          "tr": "BMW Yedek Parça İhtiyacınız İçin Bize Ulaşın",
+          "en": "Contact us for BMW parts"
         },
         "description": {
-          "tr": "Ücretsiz keşif görüşmesi icin hemen iletisime geçin.",
-          "en": "Contact us for a free discovery call."
+          "tr": "WhatsApp veya telefon ile hızlı teklif alın.",
+          "en": "Get a quick quote via WhatsApp or phone."
         },
         "btn1Text": {
           "tr": "İletişime Gec",
@@ -276,9 +384,10 @@
       "index": 9
     },
     {
-      "id": "t1plpr",
+      "index": 10,
       "name": "Ürünler Liste",
-      "path": "page-list",
+      "path": "page-list-otomavi",
+      "id": "t1plpr",
       "local": "body",
       "category": "page-list",
       "version": "1.0.0",
@@ -287,9 +396,916 @@
         "page": "products",
         "size": 4,
         "category": "",
-        "aspect-ratio": "1 / 1"
+        "aspect-ratio": "1 / 1",
+        "max": 24,
+        "margin": "32px 0px 40px 0px",
+        "bgcolor": "#F5F8FC",
+        "cardbg": "#ffffff",
+        "titlecolor": "#0B3A6E",
+        "textcolor": "#111827",
+        "bordercolor": "rgba(11, 58, 110, 0.12)",
+        "radius": "14px"
+      }
+    },
+    {
+      "index": 11,
+      "name": "Ana Sayfa Kategori Grid",
+      "path": "page-list-otomavi",
+      "id": "t1plct",
+      "local": "body",
+      "category": "page-list",
+      "version": "1.0.0",
+      "icon": "grid_view",
+      "desing": {
+        "page": "category",
+        "size": 4,
+        "category": "",
+        "aspect-ratio": "1 / 1",
+        "max": 24,
+        "margin": "32px 0px 40px 0px",
+        "bgcolor": "#F5F8FC",
+        "cardbg": "#ffffff",
+        "titlecolor": "#0B3A6E",
+        "textcolor": "#111827",
+        "bordercolor": "rgba(11, 58, 110, 0.12)",
+        "radius": "14px",
+        "sectionTitle": {
+          "tr": "Parça Kategorileri",
+          "en": "Parts Categories"
+        },
+        "sectionSubtitle": {
+          "tr": "BMW yedek parça reyonları — hızlıca doğru kategoriye gidin.",
+          "en": "BMW spare parts aisles — jump to the right category."
+        }
+      }
+    },
+    {
+      "id": "t1ulo01",
+      "name": "Oto Mavi Ürün Liste (sidebar+grid)",
+      "path": "urun-liste-otomavi",
+      "local": "body",
+      "category": "page-category",
+      "version": "1.0.0",
+      "icon": "view_list",
+      "desing": {
+        "page": "products",
+        "sidebarTitle": {
+          "tr": "Kategorilere Göre",
+          "en": "Shop by Category"
+        },
+        "allCategoriesLabel": {
+          "tr": "Tüm kategoriler",
+          "en": "All categories"
+        },
+        "allCategoriesUrl": "/tr/urunler/",
+        "resultsLabel": {
+          "tr": "Sonuç:",
+          "en": "Results:"
+        },
+        "sortLabel": {
+          "tr": "Sırala",
+          "en": "Sort"
+        },
+        "sortAz": {
+          "tr": "Ada göre A-Z",
+          "en": "Name A-Z"
+        },
+        "sortZa": {
+          "tr": "Ada göre Z-A",
+          "en": "Name Z-A"
+        },
+        "ctaView": {
+          "tr": "İncele",
+          "en": "View"
+        },
+        "ctaQuote": {
+          "tr": "WhatsApp ile Sipariş",
+          "en": "Order via WhatsApp"
+        },
+        "emptyText": {
+          "tr": "Bu kategoride ürün bulunamadı.",
+          "en": "No products in this category."
+        },
+        "waTextPrefix": {
+          "tr": "Merhaba Oto Mavi, şu ürün için WhatsApp siparişi oluşturmak istiyorum:",
+          "en": "Hi Oto Mavi, I'd like to place a WhatsApp order for:"
+        },
+        "whatsapp": "905447171828",
+        "categorySidebar": true,
+        "showAllProducts": false,
+        "waBtnBg": "#25D366",
+        "bg": "#F5F8FC",
+        "sidebarBg": "#FFFFFF",
+        "accent": "#02427A",
+        "titlecolor": "#0B3A6E",
+        "textcolor": "#1e3046",
+        "cardbg": "#FFFFFF",
+        "bordercolor": "rgba(11,58,110,0.12)",
+        "cardRadius": "14px",
+        "max": "1200px",
+        "margin": "16px 0px 40px 0px"
       },
-      "index": 10
+      "index": 22
+    },
+    {
+      "id": "t1af01",
+      "name": "Araç Parça Arama (kompakt)",
+      "path": "arac-parca-arama-otomavi",
+      "local": "body",
+      "category": "search",
+      "version": "1.3.0",
+      "icon": "directions_car",
+      "desing": {
+        "max": "1200px",
+        "margin": "0px 0px 8px 0px",
+        "bgcolor": "#E9F3FB",
+        "panelradius": "12px",
+        "inputbg": "#ffffff",
+        "inputcolor": "#1a1a1a",
+        "hintcolor": "#5a6570",
+        "labelcolor": "#0B3A6E",
+        "orcolor": "#02427A",
+        "btnbg": "#02427A",
+        "btnhover": "#0B3A6E",
+        "btncolor": "#ffffff",
+        "resultbg": "#E9F3FB",
+        "resultcolor": "#0B3A6E",
+        "errorcolor": "#B42318",
+        "whatsapp": "905447171828",
+        "labelMake": {
+          "tr": "Araç",
+          "en": "Make"
+        },
+        "labelModel": {
+          "tr": "Model",
+          "en": "Model"
+        },
+        "labelYear": {
+          "tr": "Yılı",
+          "en": "Year"
+        },
+        "labelEngine": {
+          "tr": "Motor",
+          "en": "Engine"
+        },
+        "labelTrans": {
+          "tr": "Şanzıman",
+          "en": "Transmission"
+        },
+        "labelTrim": {
+          "tr": "Trim",
+          "en": "Trim"
+        },
+        "labelOr": {
+          "tr": "VEYA",
+          "en": "OR"
+        },
+        "vinHint": {
+          "tr": "VIN numarası girin",
+          "en": "Enter VIN number"
+        },
+        "btnSearch": {
+          "tr": "Arama",
+          "en": "Search"
+        },
+        "ariaPanel": {
+          "tr": "Araç ve VIN ile parça arama",
+          "en": "Parts search by vehicle and VIN"
+        },
+        "ariaMake": {
+          "tr": "Araç markası seçin",
+          "en": "Select vehicle make"
+        },
+        "ariaModel": {
+          "tr": "Model seçin",
+          "en": "Select model"
+        },
+        "ariaYear": {
+          "tr": "Yıl seçin",
+          "en": "Select year"
+        },
+        "ariaEngine": {
+          "tr": "Motor seçin",
+          "en": "Select engine"
+        },
+        "ariaTrans": {
+          "tr": "Şanzıman seçin",
+          "en": "Select transmission"
+        },
+        "ariaTrim": {
+          "tr": "Trim seçin",
+          "en": "Select trim"
+        },
+        "ariaVin": {
+          "tr": "VIN numarası",
+          "en": "VIN number"
+        },
+        "ariaSearch": {
+          "tr": "Parça ara",
+          "en": "Search parts"
+        },
+        "ariaResults": {
+          "tr": "Arama sonuçları",
+          "en": "Search results"
+        },
+        "msgVinInvalid": {
+          "tr": "VIN 11–17 karakter alfanumerik olmalıdır.",
+          "en": "VIN must be 11–17 alphanumeric characters."
+        },
+        "msgNeedInput": {
+          "tr": "Araç bilgisi veya VIN girin.",
+          "en": "Enter vehicle details or a VIN."
+        },
+        "msgNoMatch": {
+          "tr": "Eşleşen ürün bulunamadı — stok için iletişime geçin.",
+          "en": "No matching products — contact us for stock."
+        },
+        "msgVinCta": {
+          "tr": "VIN ile stok sor — iletişime geç",
+          "en": "Ask stock by VIN — contact us"
+        },
+        "msgWaPrefix": {
+          "tr": "Merhaba Oto Mavi, şu araç için parça arıyorum:",
+          "en": "Hello Oto Mavi, I need parts for this vehicle:"
+        },
+        "msgWaVin": {
+          "tr": "VIN:",
+          "en": "VIN:"
+        },
+        "msgResultsTitle": {
+          "tr": "Uyumlu kategoriler",
+          "en": "Matching categories"
+        },
+        "btnWa": {
+          "tr": "WhatsApp ile sor",
+          "en": "Ask on WhatsApp"
+        },
+        "phMake": {
+          "tr": "Marka seçin",
+          "en": "Select make"
+        },
+        "phModel": {
+          "tr": "Model seçin",
+          "en": "Select model"
+        },
+        "phYear": {
+          "tr": "Yıl seçin",
+          "en": "Select year"
+        },
+        "phEngine": {
+          "tr": "Motor seçin",
+          "en": "Select engine"
+        },
+        "phTrans": {
+          "tr": "Şanzıman seçin",
+          "en": "Select transmission"
+        },
+        "phTrim": {
+          "tr": "Trim seçin",
+          "en": "Select trim"
+        },
+        "panelborder": "#02427A",
+        "labelDetails": {
+          "tr": "Detaylı filtre",
+          "en": "More filters"
+        },
+        "waBtnBg": "#25D366",
+        "waBtnColor": "#ffffff",
+        "lang": "tr",
+        "fallbackBmwNote": {
+          "tr": "BMW uyumlu yedek parçalar — model netleştirmek için WhatsApp",
+          "en": "BMW-compatible spare parts — contact us on WhatsApp to narrow the model"
+        },
+        "labelPartCode": {
+          "tr": "Parça kodu veya arama",
+          "en": "Part code or search"
+        },
+        "phPartCode": {
+          "tr": "Parça kodu veya arama",
+          "en": "Part code or search"
+        },
+        "ariaPartCode": {
+          "tr": "Parça kodu veya arama metni",
+          "en": "Part code or search text"
+        }
+      },
+      "data": [
+        {
+          "make": "BMW",
+          "models": [
+            {
+              "name": "3 Series",
+              "years": [
+                {
+                  "year": "2019-2024",
+                  "engines": [
+                    {
+                      "name": "2.0 TwinPower",
+                      "transmissions": [
+                        {
+                          "name": "Automatic",
+                          "trims": [
+                            "Sport Line",
+                            "M Sport",
+                            "Luxury"
+                          ]
+                        },
+                        {
+                          "name": "Manual",
+                          "trims": [
+                            "Sport Line",
+                            "Base"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "3.0 TwinPower",
+                      "transmissions": [
+                        {
+                          "name": "Automatic",
+                          "trims": [
+                            "M Sport",
+                            "Competition"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "year": "2012-2018",
+                  "engines": [
+                    {
+                      "name": "2.0 Diesel",
+                      "transmissions": [
+                        {
+                          "name": "Automatic",
+                          "trims": [
+                            "Sport",
+                            "Luxury"
+                          ]
+                        },
+                        {
+                          "name": "Manual",
+                          "trims": [
+                            "Base",
+                            "Sport"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "5 Series",
+              "years": [
+                {
+                  "year": "2017-2024",
+                  "engines": [
+                    {
+                      "name": "2.0 TwinPower",
+                      "transmissions": [
+                        {
+                          "name": "Automatic",
+                          "trims": [
+                            "Sport Line",
+                            "M Sport",
+                            "Luxury"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "3.0 Diesel",
+                      "transmissions": [
+                        {
+                          "name": "Automatic",
+                          "trims": [
+                            "M Sport",
+                            "xDrive"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "X5",
+              "years": [
+                {
+                  "year": "2019-2024",
+                  "engines": [
+                    {
+                      "name": "3.0 TwinPower",
+                      "transmissions": [
+                        {
+                          "name": "Automatic",
+                          "trims": [
+                            "xDrive40i",
+                            "M Sport",
+                            "M50i"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "3.0 Diesel",
+                      "transmissions": [
+                        {
+                          "name": "Automatic",
+                          "trims": [
+                            "xDrive30d",
+                            "M Sport"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "year": "2014-2018",
+                  "engines": [
+                    {
+                      "name": "3.0 Diesel",
+                      "transmissions": [
+                        {
+                          "name": "Automatic",
+                          "trims": [
+                            "xDrive30d",
+                            "M Sport"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "make": "Mercedes-Benz",
+          "models": [
+            {
+              "name": "C-Class",
+              "years": [
+                {
+                  "year": "2015-2021",
+                  "engines": [
+                    {
+                      "name": "2.0 Turbo",
+                      "transmissions": [
+                        {
+                          "name": "Automatic",
+                          "trims": [
+                            "AMG Line",
+                            "Exclusive",
+                            "Avantgarde"
+                          ]
+                        },
+                        {
+                          "name": "Manual",
+                          "trims": [
+                            "Base",
+                            "AMG Line"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "year": "2022-2025",
+                  "engines": [
+                    {
+                      "name": "2.0 Mild Hybrid",
+                      "transmissions": [
+                        {
+                          "name": "Automatic",
+                          "trims": [
+                            "AMG Line",
+                            "Exclusive"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "E-Class",
+              "years": [
+                {
+                  "year": "2017-2023",
+                  "engines": [
+                    {
+                      "name": "2.0 Diesel",
+                      "transmissions": [
+                        {
+                          "name": "Automatic",
+                          "trims": [
+                            "AMG Line",
+                            "Exclusive",
+                            "Avantgarde"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "3.0 Diesel",
+                      "transmissions": [
+                        {
+                          "name": "Automatic",
+                          "trims": [
+                            "AMG Line",
+                            "4MATIC"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "make": "Audi",
+          "models": [
+            {
+              "name": "A4",
+              "years": [
+                {
+                  "year": "2016-2023",
+                  "engines": [
+                    {
+                      "name": "2.0 TFSI",
+                      "transmissions": [
+                        {
+                          "name": "S tronic",
+                          "trims": [
+                            "S line",
+                            "Design",
+                            "Sport"
+                          ]
+                        },
+                        {
+                          "name": "Manual",
+                          "trims": [
+                            "Base",
+                            "Sport"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "2.0 TDI",
+                      "transmissions": [
+                        {
+                          "name": "S tronic",
+                          "trims": [
+                            "S line",
+                            "Design"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "A6",
+              "years": [
+                {
+                  "year": "2019-2025",
+                  "engines": [
+                    {
+                      "name": "2.0 TFSI",
+                      "transmissions": [
+                        {
+                          "name": "S tronic",
+                          "trims": [
+                            "S line",
+                            "Design",
+                            "Sport"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "3.0 TDI",
+                      "transmissions": [
+                        {
+                          "name": "Tiptronic",
+                          "trims": [
+                            "S line",
+                            "quattro"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "index": 14
+    },
+    {
+      "id": "t1br01",
+      "name": "Öne Çıkan Üreticiler",
+      "path": "text",
+      "local": "body",
+      "category": "slogan",
+      "version": "1.0.0",
+      "icon": "format_quote",
+      "desing": {
+        "name": {
+          "tr": "Öne çıkan üreticiler: Castrol · Bosch · Dayco · Ridex · Ravenol"
+        },
+        "bgcolor": "#0B3A6E",
+        "bgcolor2": "#02427A",
+        "padding": "22px 16px 22px 16px",
+        "margin": "24px 0px 24px 0px",
+        "font-size": "18px",
+        "color": "#E9F3FB"
+      },
+      "index": 16
+    },
+    {
+      "index": 12,
+      "name": "WhatsApp",
+      "path": "whatsapp",
+      "local": "footer",
+      "category": "contact",
+      "id": "t1wa01",
+      "desing": {
+        "number": "905447171828",
+        "name": {
+          "tr": "WhatsApp ile Yazın"
+        },
+        "message": {
+          "tr": "Merhaba Oto Mavi, BMW yedek parça hakkında teklif almak istiyorum."
+        },
+        "position": "fixed",
+        "color": "#25D366",
+        "z_index": 10000,
+        "responsive": true,
+        "bottom": "88px"
+      },
+      "data": [],
+      "version": "1.0.0",
+      "icon": "chat"
+    },
+    {
+      "id": "t1udo01",
+      "name": "Oto Mavi Ürün Detay (PDP)",
+      "path": "urun-detay-otomavi",
+      "local": "body",
+      "category": "page",
+      "version": "1.2.0",
+      "icon": "inventory_2",
+      "desing": {
+        "bg": "#F5F8FC",
+        "panelBg": "#FFFFFF",
+        "accent": "#02427A",
+        "titlecolor": "#0B3A6E",
+        "textcolor": "#1e3046",
+        "muted": "#6b7c8f",
+        "bordercolor": "rgba(11,58,110,0.12)",
+        "badgeBg": "#E9F3FB",
+        "badgeColor": "#02427A",
+        "waBtnBg": "#25D366",
+        "callBtnBg": "#0B3A6E",
+        "checkColor": "#1a7f4c",
+        "cardRadius": "12px",
+        "max": "1200px",
+        "margin": "0 auto",
+        "whatsapp": "905447171828",
+        "phone": "05447171828",
+        "ctaQuote": {
+          "tr": "WhatsApp ile Sipariş",
+          "en": "Order via WhatsApp"
+        },
+        "ctaCall": {
+          "tr": "Ara",
+          "en": "Call"
+        },
+        "skuLabel": {
+          "tr": "Kod",
+          "en": "SKU"
+        },
+        "categoriesLabel": {
+          "tr": "Kategoriler:",
+          "en": "Categories:"
+        },
+        "infoTitle": {
+          "tr": "Ürün bilgisi",
+          "en": "Product information"
+        },
+        "featuresTitle": {
+          "tr": "Özellikler",
+          "en": "Features"
+        },
+        "descTitle": {
+          "tr": "Açıklama",
+          "en": "Description"
+        },
+        "relatedTitle": {
+          "tr": "Benzer parçalar",
+          "en": "Related parts"
+        },
+        "labelCategory": {
+          "tr": "Kategori",
+          "en": "Category"
+        },
+        "labelCode": {
+          "tr": "Parça kodu",
+          "en": "Part code"
+        },
+        "labelIcon": {
+          "tr": "Tür",
+          "en": "Type"
+        },
+        "labelUpdate": {
+          "tr": "Güncelleme",
+          "en": "Updated"
+        },
+        "breadcrumbHome": {
+          "tr": "Anasayfa",
+          "en": "Home"
+        },
+        "breadcrumbProducts": {
+          "tr": "Ürünler",
+          "en": "Products"
+        },
+        "ariaBreadcrumb": {
+          "tr": "Sayfa konumu",
+          "en": "Breadcrumb"
+        },
+        "waMessagePrefix": {
+          "tr": "Merhaba Oto Mavi, şu ürün için WhatsApp siparişi oluşturmak istiyorum:",
+          "en": "Hi Oto Mavi, I'd like to place a WhatsApp order for:"
+        },
+        "noTitle": {
+          "tr": "Başlık yok",
+          "en": "No title"
+        },
+        "ariaGalleryPrev": {
+          "tr": "Önceki görsel",
+          "en": "Previous image"
+        },
+        "ariaGalleryNext": {
+          "tr": "Sonraki görsel",
+          "en": "Next image"
+        },
+        "ariaGalleryDot": {
+          "tr": "Görsel {n}",
+          "en": "Image {n}"
+        }
+      },
+      "index": 19
+    },
+    {
+      "id": "t1ks01",
+      "name": "Kelime Ürün Arama",
+      "path": "urun-kelime-arama-otomavi",
+      "local": "body",
+      "category": "search",
+      "version": "1.0.0",
+      "icon": "manage_search",
+      "desing": {
+        "page": "products",
+        "max": "1200px",
+        "margin": "0px 0px 8px 0px",
+        "bgcolor": "#E9F3FB",
+        "panelbg": "#ffffff",
+        "panelborder": "#02427A",
+        "panelradius": "12px",
+        "inputbg": "#ffffff",
+        "inputcolor": "#1a1a1a",
+        "hintcolor": "#5a6570",
+        "titlecolor": "#0B3A6E",
+        "textcolor": "#1a1a1a",
+        "btnbg": "#02427A",
+        "btnhover": "#1094DB",
+        "btncolor": "#ffffff",
+        "resultbg": "#ffffff",
+        "cardborder": "rgba(11, 58, 110, 0.12)",
+        "waBtnBg": "#25D366",
+        "waBtnColor": "#ffffff",
+        "whatsapp": "905447171828",
+        "placeholder": {
+          "tr": "Parça veya ürün adı yazın (ör. fren, filtre, yağ)",
+          "en": "Type part or product name (e.g. brake, filter, oil)"
+        },
+        "btnSearch": {
+          "tr": "Ara",
+          "en": "Search"
+        },
+        "ariaSearch": {
+          "tr": "Kelime ile ürün ara",
+          "en": "Search products by keyword"
+        },
+        "ariaPanel": {
+          "tr": "Kelime ile ürün arama",
+          "en": "Keyword product search"
+        },
+        "ariaResults": {
+          "tr": "Arama sonuçları",
+          "en": "Search results"
+        },
+        "msgEmpty": {
+          "tr": "Aramanızla eşleşen ürün bulunamadı. Farklı kelimeler deneyin veya WhatsApp ile sorun.",
+          "en": "No products matched your search. Try different words or ask on WhatsApp."
+        },
+        "msgResults": {
+          "tr": "sonuç bulundu",
+          "en": "results found"
+        },
+        "btnView": {
+          "tr": "İncele",
+          "en": "View"
+        },
+        "btnWa": {
+          "tr": "WhatsApp ile sor",
+          "en": "Ask on WhatsApp"
+        },
+        "waMessage": {
+          "tr": "Merhaba Oto Mavi, şu ürünü arıyorum:",
+          "en": "Hello Oto Mavi, I am looking for:"
+        }
+      },
+      "index": 20
+    },
+    {
+      "id": "t1sb01",
+      "name": "Sahibinden Mağaza",
+      "path": "sahibinden-otomavi",
+      "local": "body",
+      "category": "contact",
+      "version": "1.0.0",
+      "icon": "storefront",
+      "desing": {
+        "max": "1200px",
+        "margin": "24px 0px 24px 0px",
+        "padding": "8px 16px 8px 16px",
+        "bgcolor": "#0B3A6E",
+        "bgcolor2": "#02427A",
+        "accentyellow": "#FFE800",
+        "badgecolor": "#0B3A6E",
+        "titlecolor": "#FFFFFF",
+        "desccolor": "rgba(255, 255, 255, 0.88)",
+        "listcolor": "#E9F3FB",
+        "storeUrl": "https://otomavi.sahibinden.com/",
+        "secondaryUrl": "urunler",
+        "badge": {
+          "tr": "Resmi Mağaza",
+          "en": "Official Store"
+        },
+        "title": {
+          "tr": "Sahibinden'de Oto Mavi Mağazamız",
+          "en": "Oto Mavi Store on Sahibinden"
+        },
+        "description": {
+          "tr": "BMW yedek parça ilanlarımızı Sahibinden mağazamızdan inceleyin. Güncel stok, güvenli alışveriş ve Gaziantep deposundan hızlı tedarik.",
+          "en": "Browse our BMW spare parts listings on Sahibinden. Updated stock, secure shopping and fast supply from our Gaziantep warehouse."
+        },
+        "bullet1": {
+          "tr": "Güvenli alışveriş ve doğrulanmış satıcı profili",
+          "en": "Secure shopping with a verified seller profile"
+        },
+        "bullet2": {
+          "tr": "Güncel ilanlar ve düzenli stok yenileme",
+          "en": "Up-to-date listings with regular stock updates"
+        },
+        "bullet3": {
+          "tr": "Gaziantep deposundan BMW yedek parça stoku",
+          "en": "BMW spare parts stock from our Gaziantep warehouse"
+        },
+        "btnPrimary": {
+          "tr": "Mağazayı Ziyaret Et",
+          "en": "Visit Store"
+        },
+        "btnSecondary": {
+          "tr": "Sitede Ürünleri Gör",
+          "en": "Browse Products on Site"
+        },
+        "ariaLabel": {
+          "tr": "Sahibinden Oto Mavi mağaza yönlendirmesi",
+          "en": "Sahibinden Oto Mavi store link"
+        }
+      },
+      "index": 21
     }
   ]
 }

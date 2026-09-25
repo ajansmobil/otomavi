@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "domain": "otomavi.com",
+    "username": "admin",
+    "email": null,
+    "password_hash": "24058309c800df5a21acd966b8bd949c242d6cd3f74c1ee86855f74e6601fc95",
+    "password_salt": "7b05e48fc38253bc4b071eacd4efdf7a",
+    "must_reset": 0,
+    "reset_token": null,
+    "reset_token_expires_at": null,
+    "created_at": "2026-07-30T11:44:06.202Z",
+    "updated_at": "2026-07-30T11:44:06.202Z"
+  },
+  {
+    "id": 2,
+    "domain": "otomavi.com",
+    "username": "nevzatseyfi",
+    "email": "nevzatseyfi@hotmail.com",
+    "password_hash": "52a6a911a7bed3f7ed46b71e77ef221afc70ef82be5a3dacfe00e83c58fa30a0",
+    "password_salt": "c22a976084ead61f8290c1b143a0860f",
+    "must_reset": 0,
+    "reset_token": null,
+    "reset_token_expires_at": null,
+    "created_at": "2026-07-30T11:44:06.806Z",
+    "updated_at": "2026-07-30T11:44:06.806Z"
+  }
+]

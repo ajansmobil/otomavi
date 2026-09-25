@@ -1,0 +1,13 @@
+{
+  "exportedAt": "2026-08-03T17:34:59.170Z",
+  "d1DatabaseId": "57d8a1a2-6dcf-4b2c-9d8d-f6f53b37b87d",
+  "workerName": "mx-otomavi",
+  "tenantMode": "single",
+  "counts": {
+    "webmaker": 2,
+    "login_history": 38,
+    "allowed_sites": 1,
+    "cariler": 25,
+    "islemler": 62
+  }
+}

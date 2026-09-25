@@ -1,7 +1,4 @@
 {
-  "name": "Kurumsal",
-  "path": "kurumsal",
-  "desc": [],
   "data": [
     {
       "name": {
@@ -14,14 +11,16 @@
       "desing": {
         "header": [],
         "body": [
-          "t1in01",
-          "tp5jo4",
-          "t1ct01"
+          "t1in01"
         ],
         "footer": []
       },
-      "index": 0,
-      "icon": "home"
+      "index": 1,
+      "icon": "home",
+      "img": "index.webp",
+      "description": {
+        "tr": "Oto Mavi — Gaziantep BMW oto yedek parçaları. Uygun fiyat, 1. sınıf kalite; orijinal ve eşdeğer parça tedariki."
+      }
     },
     {
       "name": {
@@ -33,14 +32,15 @@
       "category": "",
       "desing": {
         "header": [],
-        "body": [
-          "tp5jo4",
-          "t1ct01"
-        ],
+        "body": [],
         "footer": []
       },
-      "index": 1,
-      "icon": "home"
+      "index": 2,
+      "icon": "home",
+      "img": "index.webp",
+      "description": {
+        "tr": "Oto Mavi misyonu: BMW yedek parça sektöründe güvenilir, yenilikçi ve çözüm odaklı bir marka olmak."
+      }
     },
     {
       "name": {
@@ -52,14 +52,15 @@
       "category": "",
       "desing": {
         "header": [],
-        "body": [
-          "tp5jo4",
-          "t1ct01"
-        ],
+        "body": [],
         "footer": []
       },
-      "index": 2,
-      "icon": "home"
+      "index": 3,
+      "icon": "home",
+      "img": "index.webp",
+      "description": {
+        "tr": "Oto Mavi vizyonu: Türkiye’nin en çok tercih edilen BMW yedek parça tedarikçisi haline gelmek."
+      }
     },
     {
       "name": {
@@ -71,14 +72,35 @@
       "category": "",
       "desing": {
         "header": [],
-        "body": [
-          "tp5jo4",
-          "t1ct01"
-        ],
+        "body": [],
         "footer": []
       },
-      "index": 3,
-      "icon": "home"
+      "index": 4,
+      "icon": "home",
+      "img": "index.webp",
+      "description": {
+        "tr": "Oto Mavi kalite politikası: her alışverişte doğru ürün, doğru zaman ve 1. sınıf parça kalitesi."
+      }
+    },
+    {
+      "name": {
+        "tr": "Kariyer"
+      },
+      "status": "play",
+      "id": "kariyer",
+      "path": "kariyer",
+      "category": "",
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "index": 5,
+      "icon": "work",
+      "img": "index.webp",
+      "description": {
+        "tr": "Oto Mavi kariyer: Gaziantep BMW yedek parça ekibine katılın. Başvurular info@otomavi.com adresine."
+      }
     },
     {
       "name": {
@@ -90,14 +112,15 @@
       "category": "",
       "desing": {
         "header": [],
-        "body": [
-          "tp5jo4",
-          "t1ct01"
-        ],
+        "body": [],
         "footer": []
       },
-      "index": 4,
-      "icon": "home"
+      "index": 6,
+      "icon": "home",
+      "img": "index.webp",
+      "description": {
+        "tr": "Oto Mavi gizlilik politikası: ziyaretçi ve müşteri verilerinin korunması ve şeffaf bilgilendirme."
+      }
     },
     {
       "name": {
@@ -109,14 +132,15 @@
       "category": "",
       "desing": {
         "header": [],
-        "body": [
-          "tp5jo4",
-          "t1ct01"
-        ],
+        "body": [],
         "footer": []
       },
-      "index": 5,
-      "icon": "home"
+      "index": 7,
+      "icon": "home",
+      "img": "index.webp",
+      "description": {
+        "tr": "Oto Mavi KVKK bilgilendirmesi: kişisel verilerin işlenmesi, saklanması ve haklarınız."
+      }
     },
     {
       "name": {
@@ -128,14 +152,15 @@
       "category": "",
       "desing": {
         "header": [],
-        "body": [
-          "tp5jo4",
-          "t1ct01"
-        ],
+        "body": [],
         "footer": []
       },
-      "index": 6,
-      "icon": "home"
+      "index": 8,
+      "icon": "home",
+      "img": "index.webp",
+      "description": {
+        "tr": "Oto Mavi kullanıcı hakları: site kullanımı, sipariş ve hesap süreçlerinde müşteri hakları."
+      }
     },
     {
       "name": {
@@ -147,22 +172,30 @@
       "category": "",
       "desing": {
         "header": [],
-        "body": [
-          "tp5jo4",
-          "t1ct01"
-        ],
+        "body": [],
         "footer": []
       },
-      "index": 7,
-      "icon": "home"
+      "index": 9,
+      "icon": "home",
+      "img": "index.webp",
+      "description": {
+        "tr": "Oto Mavi yasal uyarı: site içeriği, marka ve ürün bilgilerine ilişkin yasal sorumluluk sınırları."
+      }
     }
   ],
-  "index": 2,
+  "desc": [],
   "desing": {
     "header": [],
     "body": [
-      "tp5jo4"
+      "tp5jo4",
+      "t1ct01"
     ],
     "footer": []
+  },
+  "modulestatus": {
+    "page": true,
+    "bgimg": false,
+    "detail": true,
+    "body": true
   }
 }

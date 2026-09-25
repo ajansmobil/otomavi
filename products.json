@@ -1,19 +1,146 @@
 {
-  "name": "Ürünler",
-  "path": "products",
-  "desc": [],
-  "data": [],
-  "index": 1,
+  "data": [
+    {
+      "id": "dbqkklcsvy",
+      "name": {
+        "tr": "yeni sayfa"
+      },
+      "description": {
+        "tr": ""
+      },
+      "path": "yeni-sayfa-na4c",
+      "icon": "article",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "text": {},
+      "index": 0
+    },
+    {
+      "id": "4wl9kgwz1v",
+      "name": {
+        "tr": "BMW  G30 ARKA AKİS 8664048-8664047"
+      },
+      "description": {
+        "tr": ""
+      },
+      "path": "yeni-sayfa-6pxd",
+      "icon": "article",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "text": {
+        "tr": "OTO MAVİ   YEDEKPARCALARI SIFIR VE ORJINAL CIKMA  ÜRÜNLERİMİZ GARANTİLİ VE GERİ İADELİDİR\n\n\n- [ ] DİĞER ÜRÜNLER İÇİN LÜTFEN İLETİŞİME GEÇİN\n\n\n- [ ] TÜM TÜRKİYE’YE KARGO VE OTOBÜS İLE ÜRÜN ÇIKIŞI AYNI GÜN İÇERİSİNDE YAPILIR                          \n\n- [ ] DETAYLI BİLGİ SORU VE ÖNERİLERİNİZ İÇİN LÜTFEN İLETİŞİME GEÇİN\n\n\n- [ ] NEVZAT SEYFİ \n\n- [ ] 0544 717 18 28\n   -  [ ]0544 717 18 29"
+      },
+      "index": 1,
+      "img": "vuty37m3.webp"
+    },
+    {
+      "id": "dxcf0nyqmj",
+      "name": {
+        "tr": "BMW G60 G61 ABS BEYNİ 5B3C859"
+      },
+      "description": {
+        "tr": ""
+      },
+      "path": "yeni-sayfa-kwca",
+      "icon": "article",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "text": {
+        "tr": "OTO MAVİ   YEDEKPARCALARI SIFIR VE ORJINAL CIKMA  ÜRÜNLERİMİZ GARANTİLİ VE GERİ İADELİDİR\n\n\n- [ ] DİĞER ÜRÜNLER İÇİN LÜTFEN İLETİŞİME GEÇİN\n\n\n- [ ] TÜM TÜRKİYE’YE KARGO VE OTOBÜS İLE ÜRÜN ÇIKIŞI AYNI GÜN İÇERİSİNDE YAPILIR                          \n\n- [ ] DETAYLI BİLGİ SORU VE ÖNERİLERİNİZ İÇİN LÜTFEN İLETİŞİME GEÇİN\n\n\n- [ ] NEVZAT SEYFİ \n\n- [ ] 0544 717 18 28​\n   -  [ ]0544 717 18 29"
+      },
+      "index": 2,
+      "img": "bcatijhn.webp"
+    },
+    {
+      "id": "r8sq4oskma",
+      "name": {
+        "tr": "BMW  F10 ARKA AKİS 7647026-7647027"
+      },
+      "description": {
+        "tr": ""
+      },
+      "path": "yeni-sayfa-ckax",
+      "icon": "article",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [],
+        "footer": []
+      },
+      "text": {
+        "tr": "OTO MAVİ   YEDEKPARCALARI SIFIR VE ORJINAL CIKMA  ÜRÜNLERİMİZ GARANTİLİ VE GERİ İADELİDİR\n\n\n- [ ] DİĞER ÜRÜNLER İÇİN LÜTFEN İLETİŞİME GEÇİN\n\n\n- [ ] TÜM TÜRKİYE’YE KARGO VE OTOBÜS İLE ÜRÜN ÇIKIŞI AYNI GÜN İÇERİSİNDE YAPILIR                          \n\n- [ ] DETAYLI BİLGİ SORU VE ÖNERİLERİNİZ İÇİN LÜTFEN İLETİŞİME GEÇİN\n\n\n- [ ] NEVZAT SEYFİ \n\n- [ ] 0544 717 18 28\n   -  [ ]0544 717 18 29"
+      },
+      "index": 3,
+      "img": "b6vspka5.webp"
+    }
+  ],
+  "desc": [
+    {
+      "path": "parca_kodu",
+      "name": {
+        "tr": "Parça kodu",
+        "en": "Part code"
+      }
+    },
+    {
+      "path": "tur",
+      "name": {
+        "tr": "Tür",
+        "en": "Type"
+      }
+    },
+    {
+      "path": "uyumlu",
+      "name": {
+        "tr": "Uyum",
+        "en": "Fitment"
+      }
+    },
+    {
+      "path": "kalite",
+      "name": {
+        "tr": "Kalite",
+        "en": "Quality"
+      }
+    },
+    {
+      "path": "fiyat",
+      "name": {
+        "tr": "Fiyat",
+        "en": "Price"
+      }
+    }
+  ],
   "desing": {
     "header": [],
     "body": [
-      "az99da"
+      "t1udo01"
     ],
     "footer": []
   },
   "modulestatus": {
+    "page": true,
+    "body": true,
+    "detail": false,
     "img": true,
-    "bgimg": true,
-    "detail": true
-  }
+    "bgimg": false,
+    "icon": false
+  },
+  "index": 0
 }

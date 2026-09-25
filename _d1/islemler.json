@@ -1,0 +1,622 @@
+[
+  {
+    "id": 10,
+    "cari_id": 4,
+    "type": "gelir",
+    "amount": 14000,
+    "description": "F10 ABS",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:21:27.560Z",
+    "updated_at": "2026-07-29T08:21:27.560Z"
+  },
+  {
+    "id": 11,
+    "cari_id": 4,
+    "type": "gelir",
+    "amount": 15000,
+    "description": "G20 FREN HORTUMU",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:22:21.342Z",
+    "updated_at": "2026-07-29T08:22:21.342Z"
+  },
+  {
+    "id": 12,
+    "cari_id": 4,
+    "type": "gelir",
+    "amount": 7000,
+    "description": "F10 SU POMPASI",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:22:53.820Z",
+    "updated_at": "2026-07-29T08:22:53.820Z"
+  },
+  {
+    "id": 13,
+    "cari_id": 4,
+    "type": "gelir",
+    "amount": 3500,
+    "description": "F10 GÜÇ MODÜLÜ",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:23:23.829Z",
+    "updated_at": "2026-07-29T08:23:23.829Z"
+  },
+  {
+    "id": 14,
+    "cari_id": 6,
+    "type": "gelir",
+    "amount": 1500,
+    "description": "F10 ORTA IZGARA",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:27:53.519Z",
+    "updated_at": "2026-07-29T08:27:53.519Z"
+  },
+  {
+    "id": 15,
+    "cari_id": 7,
+    "type": "gelir",
+    "amount": 23000,
+    "description": "TAHSİLAT KALAN",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:29:04.615Z",
+    "updated_at": "2026-07-29T08:29:04.615Z"
+  },
+  {
+    "id": 16,
+    "cari_id": 7,
+    "type": "gelir",
+    "amount": 4000,
+    "description": "F32 BAGAJ KİLİDİ",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:29:19.049Z",
+    "updated_at": "2026-07-29T08:29:19.049Z"
+  },
+  {
+    "id": 17,
+    "cari_id": 7,
+    "type": "gelir",
+    "amount": 4000,
+    "description": "F10 BESLEME MODÜLÜ",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:29:37.731Z",
+    "updated_at": "2026-07-29T08:29:37.731Z"
+  },
+  {
+    "id": 39,
+    "cari_id": 7,
+    "type": "gelir",
+    "amount": 6500,
+    "description": "F10 YAG SOGUTUCU",
+    "tx_date": "2026-07-30",
+    "created_at": "2026-07-30T07:05:33.813Z",
+    "updated_at": "2026-07-30T07:05:33.813Z"
+  },
+  {
+    "id": 44,
+    "cari_id": 7,
+    "type": "gelir",
+    "amount": 6500,
+    "description": "F10 GÖVDE",
+    "tx_date": "2026-07-31",
+    "created_at": "2026-07-31T07:47:57.823Z",
+    "updated_at": "2026-07-31T07:47:57.823Z"
+  },
+  {
+    "id": 18,
+    "cari_id": 8,
+    "type": "gelir",
+    "amount": 4000,
+    "description": "F10 CAM ELEYİ 2 ADT",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:30:44.980Z",
+    "updated_at": "2026-07-29T08:30:44.980Z"
+  },
+  {
+    "id": 19,
+    "cari_id": 8,
+    "type": "gelir",
+    "amount": 3000,
+    "description": "G30 KÖPÜK",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:30:57.292Z",
+    "updated_at": "2026-07-29T08:30:57.292Z"
+  },
+  {
+    "id": 20,
+    "cari_id": 8,
+    "type": "gelir",
+    "amount": 1800,
+    "description": "G30 6 ADET CONTA",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:31:20.756Z",
+    "updated_at": "2026-07-29T08:31:20.756Z"
+  },
+  {
+    "id": 21,
+    "cari_id": 8,
+    "type": "gelir",
+    "amount": 1750,
+    "description": "G30 KAPUT FİTİLİ",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:31:33.103Z",
+    "updated_at": "2026-07-29T08:31:33.103Z"
+  },
+  {
+    "id": 22,
+    "cari_id": 8,
+    "type": "gelir",
+    "amount": 5000,
+    "description": "F10 BAJAJ KİLİDİ",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:32:22.313Z",
+    "updated_at": "2026-07-29T08:32:22.313Z"
+  },
+  {
+    "id": 23,
+    "cari_id": 8,
+    "type": "gelir",
+    "amount": 6000,
+    "description": "F10 FAN",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:32:35.811Z",
+    "updated_at": "2026-07-29T08:32:35.811Z"
+  },
+  {
+    "id": 24,
+    "cari_id": 8,
+    "type": "gelir",
+    "amount": 4000,
+    "description": "F10 BESLEME MODÜLÜ",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:32:48.870Z",
+    "updated_at": "2026-07-29T08:32:48.870Z"
+  },
+  {
+    "id": 42,
+    "cari_id": 8,
+    "type": "gelir",
+    "amount": 250,
+    "description": "F30 FAR ÜST BAGLANTISI",
+    "tx_date": "2026-07-30",
+    "created_at": "2026-07-30T08:19:01.295Z",
+    "updated_at": "2026-07-30T08:19:01.295Z"
+  },
+  {
+    "id": 67,
+    "cari_id": 9,
+    "type": "gelir",
+    "amount": 6000,
+    "description": "F10 TURBO HORTUMU",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T12:34:20.144Z",
+    "updated_at": "2026-08-03T12:34:20.144Z"
+  },
+  {
+    "id": 75,
+    "cari_id": 9,
+    "type": "gelir",
+    "amount": 4500,
+    "description": "g20 tampon ve camurluk braketi 4 ader",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T15:35:38.436Z",
+    "updated_at": "2026-08-03T15:35:38.436Z"
+  },
+  {
+    "id": 76,
+    "cari_id": 9,
+    "type": "gelir",
+    "amount": 1500,
+    "description": "g20 panjur ayagı",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T15:35:56.931Z",
+    "updated_at": "2026-08-03T15:35:56.931Z"
+  },
+  {
+    "id": 25,
+    "cari_id": 10,
+    "type": "gelir",
+    "amount": 2500,
+    "description": "X5 KAPI KOLU",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:34:53.441Z",
+    "updated_at": "2026-07-29T08:34:53.441Z"
+  },
+  {
+    "id": 59,
+    "cari_id": 10,
+    "type": "gider",
+    "amount": 2500,
+    "description": "",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T13:41:37.021Z",
+    "updated_at": "2026-08-01T13:41:37.021Z"
+  },
+  {
+    "id": 40,
+    "cari_id": 15,
+    "type": "gelir",
+    "amount": 7000,
+    "description": "F10 SU POMPASI",
+    "tx_date": "2026-07-30",
+    "created_at": "2026-07-30T07:48:45.877Z",
+    "updated_at": "2026-07-30T07:48:45.877Z"
+  },
+  {
+    "id": 26,
+    "cari_id": 17,
+    "type": "gelir",
+    "amount": 500,
+    "description": "G30 CITA VE PERDE TUTUCU",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:38:48.945Z",
+    "updated_at": "2026-07-29T08:38:48.945Z"
+  },
+  {
+    "id": 62,
+    "cari_id": 19,
+    "type": "gelir",
+    "amount": 12000,
+    "description": "PANJUR VE CAKUZİ",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T06:44:41.889Z",
+    "updated_at": "2026-08-03T06:44:41.889Z"
+  },
+  {
+    "id": 63,
+    "cari_id": 19,
+    "type": "gelir",
+    "amount": 8000,
+    "description": "TAMPON BOŞ",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T06:44:55.552Z",
+    "updated_at": "2026-08-03T06:44:55.552Z"
+  },
+  {
+    "id": 64,
+    "cari_id": 19,
+    "type": "gelir",
+    "amount": 5000,
+    "description": "PANEL ÜST SACI",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T06:45:23.158Z",
+    "updated_at": "2026-08-03T06:45:23.158Z"
+  },
+  {
+    "id": 27,
+    "cari_id": 20,
+    "type": "gelir",
+    "amount": 20000,
+    "description": "F10 5.35 MOTOR BEYNİ",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:41:01.376Z",
+    "updated_at": "2026-07-29T08:41:01.376Z"
+  },
+  {
+    "id": 54,
+    "cari_id": 20,
+    "type": "gider",
+    "amount": 20000,
+    "description": "",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T09:59:26.104Z",
+    "updated_at": "2026-08-01T09:59:26.104Z"
+  },
+  {
+    "id": 28,
+    "cari_id": 21,
+    "type": "gelir",
+    "amount": 4000,
+    "description": "F10 BİLYA",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:41:42.444Z",
+    "updated_at": "2026-07-29T08:41:42.444Z"
+  },
+  {
+    "id": 29,
+    "cari_id": 21,
+    "type": "gelir",
+    "amount": 2000,
+    "description": "F10 DAVLUMBAZ",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:42:00.117Z",
+    "updated_at": "2026-07-29T08:42:00.117Z"
+  },
+  {
+    "id": 30,
+    "cari_id": 21,
+    "type": "gelir",
+    "amount": 7500,
+    "description": "F10 SOL AYNA CAMI",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:42:24.428Z",
+    "updated_at": "2026-07-29T08:42:24.428Z"
+  },
+  {
+    "id": 55,
+    "cari_id": 21,
+    "type": "gider",
+    "amount": 13500,
+    "description": "",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T12:40:06.235Z",
+    "updated_at": "2026-08-01T12:40:06.235Z"
+  },
+  {
+    "id": 31,
+    "cari_id": 22,
+    "type": "gelir",
+    "amount": 2500,
+    "description": "KALAN",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:43:21.154Z",
+    "updated_at": "2026-07-29T08:43:21.154Z"
+  },
+  {
+    "id": 32,
+    "cari_id": 22,
+    "type": "gelir",
+    "amount": 6500,
+    "description": "F30 ŞARJ DİNAMOSU",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:43:51.904Z",
+    "updated_at": "2026-07-29T08:43:51.904Z"
+  },
+  {
+    "id": 53,
+    "cari_id": 22,
+    "type": "gelir",
+    "amount": 2000,
+    "description": "HAVA TAHLİYE",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T09:39:00.119Z",
+    "updated_at": "2026-08-01T09:39:00.119Z"
+  },
+  {
+    "id": 57,
+    "cari_id": 22,
+    "type": "gelir",
+    "amount": 11000,
+    "description": "",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T12:40:54.440Z",
+    "updated_at": "2026-08-01T12:40:54.440Z"
+  },
+  {
+    "id": 58,
+    "cari_id": 22,
+    "type": "gider",
+    "amount": 22000,
+    "description": "",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T12:41:04.780Z",
+    "updated_at": "2026-08-01T12:41:04.780Z"
+  },
+  {
+    "id": 33,
+    "cari_id": 23,
+    "type": "gelir",
+    "amount": 14000,
+    "description": "G30 SET ÖN PANJUR JAKUZİ",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:45:20.331Z",
+    "updated_at": "2026-07-29T08:45:20.331Z"
+  },
+  {
+    "id": 34,
+    "cari_id": 23,
+    "type": "gelir",
+    "amount": 1250,
+    "description": "G30 KAPAK",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:45:30.711Z",
+    "updated_at": "2026-07-29T08:45:30.711Z"
+  },
+  {
+    "id": 60,
+    "cari_id": 23,
+    "type": "gider",
+    "amount": 15250,
+    "description": "",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T13:44:10.088Z",
+    "updated_at": "2026-08-01T13:44:10.088Z"
+  },
+  {
+    "id": 35,
+    "cari_id": 24,
+    "type": "gelir",
+    "amount": 3500,
+    "description": "G20 ORTA IZGARA",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:46:32.699Z",
+    "updated_at": "2026-07-29T08:46:32.699Z"
+  },
+  {
+    "id": 36,
+    "cari_id": 24,
+    "type": "gelir",
+    "amount": 2500,
+    "description": "G20 SİS ÇERÇEVESİ",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:46:40.918Z",
+    "updated_at": "2026-07-29T08:46:40.918Z"
+  },
+  {
+    "id": 37,
+    "cari_id": 24,
+    "type": "gelir",
+    "amount": 3000,
+    "description": "G30 FAR ÜSTÜ",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:46:49.567Z",
+    "updated_at": "2026-07-29T08:46:49.567Z"
+  },
+  {
+    "id": 56,
+    "cari_id": 24,
+    "type": "gider",
+    "amount": 9000,
+    "description": "",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T12:40:32.731Z",
+    "updated_at": "2026-08-01T12:40:32.731Z"
+  },
+  {
+    "id": 38,
+    "cari_id": 25,
+    "type": "gelir",
+    "amount": 4000,
+    "description": "FAR VE BEYİNDEN KALAN",
+    "tx_date": "2026-07-29",
+    "created_at": "2026-07-29T08:47:35.560Z",
+    "updated_at": "2026-07-29T08:47:35.560Z"
+  },
+  {
+    "id": 70,
+    "cari_id": 25,
+    "type": "gelir",
+    "amount": 1000,
+    "description": "DEVE BOYNU E90",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T12:51:13.137Z",
+    "updated_at": "2026-08-03T12:51:13.137Z"
+  },
+  {
+    "id": 71,
+    "cari_id": 25,
+    "type": "gelir",
+    "amount": 1500,
+    "description": "E90 ÜST TAKIM JONTA",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T12:51:36.242Z",
+    "updated_at": "2026-08-03T12:51:36.242Z"
+  },
+  {
+    "id": 73,
+    "cari_id": 25,
+    "type": "gelir",
+    "amount": 4000,
+    "description": "E90 KRANK KASNAĞI",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T12:52:48.177Z",
+    "updated_at": "2026-08-03T12:52:48.177Z"
+  },
+  {
+    "id": 74,
+    "cari_id": 25,
+    "type": "gelir",
+    "amount": 7500,
+    "description": "E90 YAĞ KÜTÜĞÜ",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T12:53:59.796Z",
+    "updated_at": "2026-08-03T12:53:59.796Z"
+  },
+  {
+    "id": 45,
+    "cari_id": 26,
+    "type": "gelir",
+    "amount": 7500,
+    "description": "AKİS YUVASI",
+    "tx_date": "2026-07-31",
+    "created_at": "2026-07-31T15:14:30.472Z",
+    "updated_at": "2026-07-31T15:14:30.472Z"
+  },
+  {
+    "id": 46,
+    "cari_id": 26,
+    "type": "gelir",
+    "amount": 6000,
+    "description": "F30 TAMPON",
+    "tx_date": "2026-07-31",
+    "created_at": "2026-07-31T15:14:42.922Z",
+    "updated_at": "2026-07-31T15:14:42.922Z"
+  },
+  {
+    "id": 47,
+    "cari_id": 26,
+    "type": "gelir",
+    "amount": 2000,
+    "description": "F30 KOL 2 ADET",
+    "tx_date": "2026-07-31",
+    "created_at": "2026-07-31T15:14:58.545Z",
+    "updated_at": "2026-07-31T15:14:58.545Z"
+  },
+  {
+    "id": 49,
+    "cari_id": 26,
+    "type": "gelir",
+    "amount": 1000,
+    "description": "BÜYÜK KOL",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T07:54:51.928Z",
+    "updated_at": "2026-08-01T07:54:51.928Z"
+  },
+  {
+    "id": 50,
+    "cari_id": 26,
+    "type": "gelir",
+    "amount": 14000,
+    "description": "KARTEL",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T07:55:19.055Z",
+    "updated_at": "2026-08-01T07:55:19.055Z"
+  },
+  {
+    "id": 51,
+    "cari_id": 26,
+    "type": "gelir",
+    "amount": 20000,
+    "description": "ŞANZIMAN TÜRBÜNÜ",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T07:57:51.859Z",
+    "updated_at": "2026-08-01T07:57:51.859Z"
+  },
+  {
+    "id": 61,
+    "cari_id": 26,
+    "type": "gelir",
+    "amount": 38000,
+    "description": "DİRANSİYEL",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T06:05:26.121Z",
+    "updated_at": "2026-08-03T06:05:26.121Z"
+  },
+  {
+    "id": 48,
+    "cari_id": 27,
+    "type": "gelir",
+    "amount": 1000,
+    "description": "F10 MARŞBİYEL BRAKETİ",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T07:20:55.232Z",
+    "updated_at": "2026-08-01T07:20:55.232Z"
+  },
+  {
+    "id": 52,
+    "cari_id": 28,
+    "type": "gider",
+    "amount": 38000,
+    "description": "KALAN HESAP",
+    "tx_date": "2026-08-01",
+    "created_at": "2026-08-01T09:35:29.625Z",
+    "updated_at": "2026-08-01T09:35:29.625Z"
+  },
+  {
+    "id": 65,
+    "cari_id": 28,
+    "type": "gelir",
+    "amount": 70000,
+    "description": "G20 DİFRANSİYEL",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T07:12:40.810Z",
+    "updated_at": "2026-08-03T07:12:40.810Z"
+  },
+  {
+    "id": 66,
+    "cari_id": 29,
+    "type": "gelir",
+    "amount": 4000,
+    "description": "G30 SU DEPOSU ORJ",
+    "tx_date": "2026-08-03",
+    "created_at": "2026-08-03T10:38:50.598Z",
+    "updated_at": "2026-08-03T10:38:50.598Z"
+  }
+]

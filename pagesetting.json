@@ -13,29 +13,78 @@
       },
       "modulestatus": {
         "page": true,
-        "bgimg": true,
+        "body": true,
         "detail": true,
-        "body": true
-      }
+        "img": false
+      },
+      "active": true,
+      "activeicon": "pause",
+      "activeclass": "mx-icon-btn mx-icon-btn-green",
+      "pageTypeBadge": "<span class=\"mx-badge-grey\" style=\"font-size:11px; padding:2px 8px;\">Statik</span>",
+      "pageCountBadge": "<span class=\"mx-badge mx-badge-grey\" style=\"font-size:11px; padding:2px 8px;\" title=\"Bu kategorideki sayfa sayisi\">3 sayfa</span>"
     },
     {
       "name": "Ürünler",
       "path": "products",
-      "desc": [],
+      "desc": [
+        {
+          "path": "parca_kodu",
+          "name": {
+            "tr": "Parça kodu",
+            "en": "Part code"
+          }
+        },
+        {
+          "path": "tur",
+          "name": {
+            "tr": "Tür",
+            "en": "Type"
+          }
+        },
+        {
+          "path": "uyumlu",
+          "name": {
+            "tr": "Uyum",
+            "en": "Fitment"
+          }
+        },
+        {
+          "path": "kalite",
+          "name": {
+            "tr": "Kalite",
+            "en": "Quality"
+          }
+        },
+        {
+          "path": "fiyat",
+          "name": {
+            "tr": "Fiyat",
+            "en": "Price"
+          }
+        }
+      ],
       "data": [],
       "index": 1,
       "desing": {
         "header": [],
         "body": [
-          "tp5jo4"
+          "t1udo01"
         ],
         "footer": []
       },
       "modulestatus": {
+        "page": true,
+        "body": true,
+        "detail": false,
         "img": true,
-        "bgimg": true,
-        "detail": true
-      }
+        "bgimg": false,
+        "icon": false
+      },
+      "active": true,
+      "activeicon": "pause",
+      "activeclass": "mx-icon-btn mx-icon-btn-green",
+      "pageTypeBadge": "<span class=\"mx-badge-green\" style=\"font-size:11px; padding:2px 8px;\">Urun</span>",
+      "pageCountBadge": "<span class=\"mx-badge mx-badge-grey\" style=\"font-size:11px; padding:2px 8px;\" title=\"Bu kategorideki sayfa sayisi\">3 sayfa</span>"
     },
     {
       "name": "Kurumsal",
@@ -46,16 +95,22 @@
       "desing": {
         "header": [],
         "body": [
-          "tp5jo4"
+          "tp5jo4",
+          "t1ct01"
         ],
         "footer": []
       },
       "modulestatus": {
         "page": true,
-        "bgimg": true,
+        "bgimg": false,
         "detail": true,
         "body": true
-      }
+      },
+      "active": true,
+      "activeicon": "pause",
+      "activeclass": "mx-icon-btn mx-icon-btn-green",
+      "pageTypeBadge": "<span class=\"mx-badge-purple\" style=\"font-size:11px; padding:2px 8px;\">Kurumsal</span>",
+      "pageCountBadge": "<span class=\"mx-badge mx-badge-grey\" style=\"font-size:11px; padding:2px 8px;\" title=\"Bu kategorideki sayfa sayisi\">9 sayfa</span>"
     }
   ]
 }

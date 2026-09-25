@@ -1,0 +1,35 @@
+{
+  "id": "dbqkklcsvy",
+  "name": {
+    "tr": "yeni sayfa"
+  },
+  "description": {
+    "tr": ""
+  },
+  "keyword": {
+    "tr": ""
+  },
+  "path": "yeni-sayfa-na4c",
+  "icon": "article",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [],
+    "footer": []
+  },
+  "index": 0,
+  "url": "",
+  "title": {
+    "tr": "yeni sayfa | Oto Mavi"
+  },
+  "date": "2026-08-03T15:53:25.382Z",
+  "update": "2026-08-03T15:53:25.382Z",
+  "desc": {
+    "parca_kodu": "",
+    "tur": "",
+    "uyumlu": "",
+    "kalite": "",
+    "fiyat": ""
+  }
+}
